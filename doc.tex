@@ -190,8 +190,39 @@ Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodo
 
 % Parrafo
 
-\todo[inline]{La selección de los modelos científicos sigue la misma estrucutra que la selección de las especies.}
+La ciencia es uno de esos sistemas de información cultural que emergen como una propiedad poblacional a través del tiempo.
+%
+La teoría de la probabilidad es actualmente el enfoque más aceptado y utilizado para representar la incertidumbre.
+%
+Las ciencias formales han derivado las mismas reglas de la probabilidad a partir de una gran cantidad de sistemas axiomáticos conceptualmente distintos e independientes entre sí, lo cual es sin duda un punto fuerte a su favor.
+%
+Se ha dedicado mucho más esfuerzo a justificar la teoría de la probabilidad que cualquier otro enfoque para representar la incertidumbre.
+%
+El tiempo dirá si se pueden se pueden desarrollar otros enfoques.
 
+% Parrafo
+
+Según la teoría de la probabiilidad, las ciencias empíricas se adaptan a la naturaleza del mismo modo que lo hacen los sistemas vivos.
+%
+La selección de modelos esta sujeta a la misma estructura multiplicativa típica de la selección natural.
+%
+La proporción que una especie representa de la biomasa total es consecuencia de la secuencia de tazas de supervivencia y reproducción.
+%
+Por el teorema de Bayes, la probabilidad de un modelo se cuantifica como,
+%
+\begin{equation}
+ P(\text{Modelo}|\text{Datos}) \propto P(\text{Datos}|\text{Modelo})P(\text{Modelo})
+\end{equation}
+%
+donde el prior $P(\text{Modelo})$ es una constante y donde lo único que varía es la evidencia, que por la regla del producto se puede expresar como
+%
+\begin{equation}\label{eq:evidencia_teorica}
+  P(\text{Datos}|\text{Modelo}) = \prod_i^{|\text{Datos}|} P(d_i|d_{i-1}, \dots, d_1, \text{Modelo})
+\end{equation}
+%
+Cada uno de los factores es la predicción a priori del siguiente evento usando todos los datos anteriores y el modelo causal como información.
+%
+Con que tan sólo uno de los elementos de la productoria sea 0, así como le ocurre a las especies, el modelo se extingue para siempre.
 
 % Parrafo
 
@@ -212,12 +243,21 @@ En la figura~\ref{fig:biomass} vemos estimaciones recientes~\ref{barOn2018} de l
 %
 En el gráfico de la izquierda podemos ver que la plantas y las bacterias representan el 95\% de la biomasa de la tierra.
 %
-En este sentido, el conocimiento que estas especies almacenan en su sistema genético es varios órdenes de magnitud superior al alcanzado por los seres humanos mediante el sistema de información cultural.
+En este sentido, el la capacidad de adaptación del conocimiento que estas especies almacenan en su sistema genético es varios órdenes de magnitud superior al alcanzado por los seres humanos mediante el sistema de información cultural.
 %
 A pesar de que el tamaño de la población humana aumentó enormemente durante los últimos siglos, nuestra especie representamos apenas el 3\% de toda la biomasa animal.
 
+% Parrafo
 
-\section{Cultura}
+La estructura multiplicativa a la que está sujeta el conocimiento cultural empírico impone la misma necesidad de diversificación y cooperación a la que está sujeta cualquier sistema vivo.
+%
+La masiva pérdida de diversidad cultural durante la colonial-modernidad trajo como consecuencia la masiva pérdida de biodiversidad actual, una crisis ecológica sin precedentes.
+%
+A pesar de todos los avances científicos, la ciencia metropolitana moderna no fue capaz de compensar la perdida de las conocimientos milenarios desarrollados por las comunidades autónomas locales.
+%
+A través de las recuperación de las autonomías comunitarias y la gobernanza policéntrica perdida durantre la colonial-modernidad\cite{segato, ostrom}, se podrá recuperar el proceso de evolución cultural, fuente de la inteligencia de nuestra especie.
+
+\section{Evolución cultural}
 
 \en{Empathy is the cognitive skill that allowed the development of Homo sapiens: mutual understanding, imitation, language and finally culture.}%
 \es{La empatía es la habilidad cognitiva que permitió el desarrollo del Homo sapiens: la comprensión mutua, la imitación, el lenguaje y finalmente la cultura.}%
@@ -278,16 +318,6 @@ A pesar de que el tamaño de la población humana aumentó enormemente durante l
 %
 \es{Algunas comunidades periféricas comienzan a integrarse a los centros de innovación, produciendo interdependencias culturales.}%
 %
-\es{El asilamiento, total o parcial, de una de estas poblaciones puede generar en ellas una perdida masiva de información cultural.}%
-%
-\es{Un ejemplo de aislamiento total bien documentado ocurre con la separación de Tanzania del continente Australiano por la subida del nivel del mar producida a comienzas del Holonceno \cite{henrich}.}%
-%
-\es{Un caso de asilamiento parcial ocurre cuando el mundo Árabe y el Imperio Romano de Oriente desconectan la región occidental del Imperio Romano (actuales Italia, Alemania, Francia, Inglaterra) del sistema euro-asiático.}%
-%
-\es{Esa etapa coincide con el proceso de involución cultural conocido como ``Edad media''}%
-
-% 
-
 \es{Durante el año 1400 el mundo florecía de sociedades "prósperas"~\cite{dussel2004-sistemaMundo}.}%
 % los Aztecas en MesoAmerica, Los Incas en SudAmerica, el imperio de Tonga en el pacífico, los Bantú en África, los Árabes e Indios en eurasia Occidental y Chinos en Eurasia Oriental, solo por mencionar algunos.
 %
@@ -336,7 +366,16 @@ A pesar de que el tamaño de la población humana aumentó enormemente durante l
   \label{zhengHe_columbus}
 \end{figure}
 
-% Parrafo
+\section{Involución cultural}
+
+\es{El asilamiento, total o parcial, de una de estas poblaciones puede generar en ellas una perdida masiva de información cultural.}%
+%
+\es{Un ejemplo de aislamiento total bien documentado ocurre con la separación de Tanzania del continente Australiano por la subida del nivel del mar producida a comienzas del Holonceno \cite{henrich}.}%
+%
+\es{Un caso de asilamiento parcial ocurre cuando el mundo Árabe y el Imperio Romano de Oriente desconectan la región occidental del Imperio Romano (actuales Italia, Alemania, Francia, Inglaterra) del sistema euro-asiático.}%
+%
+\es{Esa etapa coincide con el proceso de involución cultural conocido como ``Edad media''}%
+
 
 \es{En la etapa en la que Europa occidental quedó aislada del sistema mundo se produjo al interior un proceso conocido como ``edad media'' de perdida masivas de información cultural y de degradación de las condiciones socio-económicas de la población.}%
 %En el siglo XV anterior a 1492, lo que llamamos Europa occidental, la península latino-germánica, era un mundo periférico y dependiente del mundo islámico.
