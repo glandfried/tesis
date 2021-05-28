@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \input{encabezado.tex}
 \input{tikzlibrarybayesnet.code.tex}
+\usepackage{physics}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
 
 \newif\ifen
 \newif\ifes
@@ -25,9 +27,7 @@
 
 \section{Introducción}
 
-
-\en{}%
-\es{La ciencia es una institución humana que tiene pretensión de verdad, esto es de formular proposiciones que tengan validez universal.}%
+La ciencia es una institución humana que tiene pretensión de verdad, esto es de formular proposiciones que tengan validez universal.
 %
 La validación del conocimiento formal se realiza a través de la demostración de teoremas en sistemas axiomáticos cerrados.
 %
@@ -35,47 +35,49 @@ La validación del conocimiento empírico tiene la dificultad de que debe realiz
 %
 La honestidad, entendida como maximización de la incertidumbre (entropía) dadas las evidencia empíricas (datos) y las evidencias formales (modelos causales) es la fuente de validez del conocimiento empírico.
 
+\section{Conocimiento empírico}
 
-
-\section{Conocimiento}
-
-\es{En algún momento hace aproximadamente 4500 millones de años, apareció en la tierra una forma de organización de la materia capaz de auto-replicarse.}%
+En algún momento hace aproximadamente 4500 millones de años, apareció en la tierra una forma de organización de la materia capaz de auto-replicarse.
 %
-\en{A lineage growth is a multiplicative and noisy process, a sequence of survival and reproductive probabilities.}%
-\es{El crecimiento de un linaje es un proceso multiplicativo y ruidoso, una secuencia de probabilidades de supervivencia y reproducción.}%
+El crecimiento de un linaje es un proceso multiplicativo y ruidoso, una secuencia de probabilidades de supervivencia y reproducción.
 %
-\es{Los errores producidos durante la replicación diversifican las formas de organización de la materia, y las diferentes tazas de superviencia favorecen a aquellas formas que están mejor adaptas al medio.}%
+Los errores producidos durante la replicación diversifican las formas de organización de la materia, y las diferentes tazas de superviencia favorecen a aquellas formas que están mejor adaptas al medio.
 %
-\es{La vida puede ser vista como un sistema distribuido de procesamiento de información, y las diversas formas que adquiere la vida puede ser visto como conocimiento.}%
+En este sentido, la vida puede ser vista como un sistema distribuido de procesamiento de información, y las diversas formas que adquiere la vida puede ser visto como una forma de conocimiento empírico.
 
 % Parrafo
 
-\es{La evolución de la cooperación fue durante mucho tiempo uno de los principales misterios a resolver por la ciencia moderna.}%
+Hasta hace poco se consideró una verdad establecida que la cooperación requería algún tipo de comportamiento altruista para evolucionar.
 %
-\en{It was long considered an established truth that cooperation required some form of altruistic behavior to evolve.}%
-\es{Hasta hace poco se consideró una verdad establecida que la cooperación requería algún tipo de comportamiento altruista para evolucionar.}%
+Esta conclusión suponía implícitamente que los sistemas evolutivos son ergódicos.
 %
-\en{This conclusion was implicitly assuming that evolutionary systems are ergodic.}%
-\es{Esta conclusión suponía implícitamente que los sistemas evolutivos son ergódicos.}%
+La teoría ergódica es una rama muy técnica de las matemáticas.
 %
-\en{Recognizing whether the system is ergodic is important, because if not the expectation about states does not reflect what actually happens to individual agents over time~\cite{peters2019-ergodicityEconomics}.}%
-\es{Reconocer si el sistema es ergódico es importante, porque de lo contrario lo que realmente le ocurre a los agentes en el tiempo no coincide ccon la esperanza sobre los estados del sistema~\cite{peters2019-ergodicityEconomics}.}%
+Por suerte, para el propósito de esta discusión, necesitamos sólo conocer su definición.
 %
-\en{In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative and noisy process, a sequence of survival and reproductive probabilities.}%
+Diremos que un proceso es ergódico si su media temporal es igual al valor esperado,
 %
-\en{The multiplicative process of life is not ergodic because impacts of losses are often stronger than those of gains: if there is even one zero in the sequence of survival and reproductive, any lineage will be extinct forever.}%
-\es{El proceso multiplicativo de la vida no es ergódicos porque los impactos de las pérdidas son a menudo más fuertes que los de las ganancias: con que haya un cero en la secuencia de supervivencia y reproducción, cualquier linaje está extinto para siempre.}%
+\begin{equation}
+ \lim_{T \mapsto \infty} \int_0^T f(\omega(t)) \diff t  = \int_{\Omega} f(\omega)p(\omega) \diff\omega
+\end{equation}
+%
+donde $\omega \in \Omega$ representa los estados del sistema, $\omega(t)$ el estado del sistema obtenido aleatoriamente en el tiempo $t$, $p(\cdot)$ la distribución de probabilidad de los estados, y $f(\cdot)$ una transformación a los estados.
 
 % Parrafo
 
-\en{Evolutionary process, therefore, offers a concrete physical advantage in favor of cooperative behavior: given that variance in fitness realy matters, an effective way to reduce it is to cooperate by sharing risk~\cite{yaari2010-cooperationEvolution,peters2015-evolutionaryAdvantageOfCooperation}.}%
-\es{Los procesos evolutivos, por lo tanto, ofrecen una ventaja física concreta a favor del comportamiento cooperativo: dado que la varianza realmente importa para la supervivencia, una forma eficaz de reducirla es cooperar compartiendo los riesgos~\cite{yaari2010-cooperationEvolution,peters2015-evolutionaryAdvantageOfCooperation}.}%
+Reconocer si el sistema es ergódico o no es importante porque en los procesos no-ergódicos lo que le ocurre a los agentes en el tiempo no coincide con la esperanza de los estados del sistema~\cite{peters2019-ergodicityEconomics}.
 %
-\en{For example, consider the following toy environment.}%
-\es{Por ejemplo, consideremos el siguiente ejemplo de jugete.}%
+Por ejemplo, en la teoría evolutiva se enseña a todos el hecho de que el crecimiento de un linaje es un proceso multiplicativo y ruidoso, una secuencia de probabilidades de supervivencia y reproducción.
 %
-\en{Nature tosses a coin: for heads your wealth grows 50\%, for tails your wealth lose 40\%}%
-\es{La naturaleza lanza una moneda: si sale cara tu riqueza crece un 50\%, si sale cruz tu riqueza pierde un 40\%.}%
+El proceso multiplicativo de la vida no es ergódicos porque los impactos de las pérdidas son a menudo más fuertes que los de las ganancias: con que haya un cero en la secuencia de supervivencia y reproducción, cualquier linaje está extinto para siempre.
+%
+Los procesos evolutivos, por lo tanto, ofrecen una ventaja física concreta a favor del comportamiento cooperativo: dado que la varianza realmente importa para la supervivencia, una forma eficaz de reducirla es cooperar compartiendo los riesgos~\cite{yaari2010-cooperationEvolution,peters2015-evolutionaryAdvantageOfCooperation}.
+
+% Parrafo
+
+Por ejemplo, consideremos el siguiente ejemplo de jugete.
+%
+La naturaleza lanza una moneda: si sale cara tu riqueza crece un 50\%, si sale cruz tu riqueza pierde un 40\%.
 %
 \begin{equation}
 \Delta x =
@@ -85,78 +87,64 @@ La honestidad, entendida como maximización de la incertidumbre (entropía) dada
 \end{cases}
 \end{equation}
 %
-\en{The expected value suggests that the agents are going to have a positive change around $\langle \Delta x \rangle = 0.05x$.}%
-\es{El valor esperado, utilizado todavía hoy tanto por la teoría económica estandard, sugiere que los agentes van a tener un cambio positivo alrededor de $\langle \Delta x \rangle = 0.05x$.}%
+El valor esperado, utilizado todavía por las corrientes principales tanto de la teoría económica como de la teoría de toma de decisiones, predicen que los agentes van a tener un cambio positivo de alrededor de $\langle \Delta x \rangle = 0.05x$.
 %
-\en{However, what actually happens to individual agents over time is very different from what is expected: in the long run everyone loses.}%
-\es{Sin embargo, lo que realmente le ocurre a los agentes individuales en el tiempo es muy diferente a lo esperado: a largo plazo todos pierden.}%
+Sin embargo, lo que le ocurre a los agentes individuales en el tiempo es muy diferente a lo esperado: a largo plazo todos pierden.
 %
-\en{In Figure \ref{fig:simple_gamble} we show the individual trajectories over time.}%
-\es{En la figura \ref{fig:simple_gamble} mostramos las trayectorias individuales en el tiempo.}%
-%
-\en{}%
-\es{Por el contrario, cuando los agentes comparten parte de su riqueza con otros, todos se benefician.}%
-%
-\en{}%
-\es{En la figura \ref{fig:simple_gamble_incesto} mostramos las trayectorias individuales cuando los agentes comparten parte de su riqueza con el resto.}%
+En la figura \ref{fig:simple_gamble} mostramos las trayectorias individuales en el tiempo.
 %
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\linewidth]{figures/simple_gamble.pdf}
-    \caption{}
+    \caption{Trayectorias individuales}
     \label{fig:simple_gamble}
     \end{subfigure}
     \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\linewidth]{figures/simple_gamble_incesto.pdf}
-    \caption{}
+    \caption{Trayectorias cooperativas}
     \label{fig:simple_gamble_incesto}
     \end{subfigure}
     \caption{
-    \es{Riqueza de los agentes en el tiempo: en la figura \ref{fig:simple_gamble} los agentes juegan individualmente, en la figura \ref{fig:simple_gamble_incesto} los agentes comparten un porcentaje de su riqueza en cada paso.}%
+    Riqueza de los agentes en el tiempo: en la figura \ref{fig:simple_gamble} los agentes juegan individualmente, en la figura \ref{fig:simple_gamble_incesto} los agentes comparten un porcentaje de su riqueza en cada paso.
     }
     \label{fig:gamble}
 \end{figure}
 %
-\en{}%
-\es{Para entender por qué ocurre esto veamos en detalle un ejemplo.}%
+En la figura \ref{fig:simple_gamble_incesto} mostramos las trayectorias individuales cuando los agentes comparten parte de su riqueza con el resto.
 %
-\en{}%
-\es{En la tabla \ref{tab:gamble} podemos ver cómo se modifica la riqueza individual de dos agentes en el tiempo cuando no cooperan y cuando cooperan.}%
+Por el contrario, cuando los agentes comparten parte de su riqueza con otros, todos se benefician.
+%
+Para entender por qué ocurre esto veamos en detalle un ejemplo.
+%
+En la tabla \ref{tab:gamble} podemos ver cómo se modifica la riqueza individual de dos agentes en el tiempo cuando no cooperan y cuando cooperan.
 %
 \begin{table}[ht!] \centering
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
      \hline
         {\small Agentes} & {\small \en{Wealth}\es{Riqueza}} & {\small \en{Growth}\es{Aumento}} & {\small \en{Wealth}\es{Riqueza}} & {\small \en{Sharing}\es{Reparto}} & {\small \en{Growth}\es{Aumento}} & {\small \en{Wealth}\es{Riqueza}} & {\small \en{Sharing}\es{Reparto}} \\ \hline \hline
-        A non-coop& $1$ & $\times 3$ & $3$ & $3$ & $\times 1$ & $3$ & $\bm{3}$ \\ \hline
-        B non-coop & $1$ & $\times 1$ & $1$ & $1$ & $\times 3$ & $3$ & $\bm{3}$ \\ \hline\hline
-        A coop & $1$ & $\times 3$ & $3$ & $2$ & $\times 1$ & $2$ & $\bm{4}$ \\ \hline
-        B coop & $1$ & $\times 1$ & $1$ & $2$ & $\times 3$ & $6$ & $\bm{4}$\\ \hline
+        A no-coop& $1$ & $\Delta +0.5$ & $1.5$ & $1.5$ & $\Delta -0.4$ & $0.9$ & $\bm{0.9}$ \\ \hline
+        B no-coop & $1$ & $\Delta -0.4$ & $0.6$ & $0.6$ & $\Delta +0.5$ & $0.9$ & $\bm{0.9}$ \\ \hline\hline
+        A coop & $1$ & $\Delta +0.5$ & $1.5$ & $1.05$ & $\Delta -0.4$ & $0.63$ & $\bm{1.1}$ \\ \hline
+        B coop & $1$ & $\Delta -0.4$ & $0.6$ & $1.05$ & $\Delta +0.5$ & $1.58$ & $\bm{1.1}$\\ \hline
     \end{tabular}
     \caption{
-    \en{}%
-    \es{Evolución de la riqueza en procesos multiplicativos.}%
-    %
-    \en{}%
-    \es{La primera dos filas corresponden a la evolución de dos agentes que no cooperan (en la columna ``Reparto'' las riquezas individuales quesan intactas), y la segundas dos a dos agentes que sí cooperan (en la columna ``Reparto'' las riquezas individuales se igualan).}%
+    Evolución de la riqueza en procesos multiplicativos para agentes que no cooperan (primera dos filas) y agentes que sí cooperan (segundas dos filas).
     }
     \label{tab:gamble}
 \end{table}
 %
-\en{}%
-\es{Ambas personas comienzan con la misma riqueza.}%
+Ambas personas comienzan con la misma riqueza y modifican su riqueza del mismo modo pero en distito orden: en la primer paso la riqueza del agentes A aumenta y la del agente B se reduce, y viceversa.
 %
-\es{Ambos agentes modifican su riqueza del mismo modo, pero en distito orden: en la primer paso la riqueza del agentes A se triplica y la del agente B se mantiene estable, y en el segundo paso el agente B triplica y el agente A se mantiene estable.}%
+Los agentes que no dividen su riqueza en la columna ``Reparto'' terminan perdiendo 10\% de su riqueza inicial, mientras que los agentes que sí dividen su riqueza finalizan con 10\% más de su riqueza inicial.
 %
-\es{Cuando lo agentes no cooperan, ambos terminan con la misma cantidad de riqueza final.}%
-%
-\en{}%
-\es{Cuando los agentes sí cooperan, al compartir el riesgo, alcanzan mayor riqueza al final del proceso.}%
+Mediante la cooperación los agentes tienen acceso a otros estados del sistema, lo que hace que sus trayectorias temporales $\overline{x}$ se aproximen ahora sí al valor esperado $\langle x \rangle$.
 
 % Parrafo
 
-\en{The actual complexity of life~\cite{barOn2018-biomass} was achieved as a result of a series of major evolutionary transitions~\cite{maynardSmith1995-majorTransitions}.}%
-\es{La complejidad actual de la vida~\cite{barOn2018-biomasa} se alcanzó como resultado de una serie de transiciones evolutivas~\cite{maynardSmith1995-majorTransitions}.}
+En los procesos multiplicativos, como el de selección natural o el visto en el ejemplo anterior, hay una ventaja física a favor de los comportamientos cooperativos.
+%
+La complejidad actual de la vida~\cite{barOn2018-biomasa} es consecuencia de una serie de transiciones evolutivas~\cite{maynardSmith1995-majorTransitions} en las que entidades que antes eran capaces de replicarse de forma independiente,luego de la transición sólo pueden replicarse como partes de una unidad mayor.
 %
 \es{La tabla~\ref{tab:transitions} enumera algunas de las principales transiciones ocurridas en la historia evolutiva de la vida.}
 %
@@ -186,42 +174,32 @@ La honestidad, entendida como maximización de la incertidumbre (entropía) dada
     \label{tab:transitions}
 \end{table}
 %
-\en{There are common features that recur in many of the major transitions.}%
-\es{Hay características comunes que se repiten en muchas de las principales transiciones.}%
-%
-\en{In first place, entities that were capable of independent replication, before the transition can only replicate as parts of a larger unit after it.}%
-\es{En primer ligar, las entidades que eran capaces de replicarse de forma independiente, antes de la transición sólo pueden replicarse como partes de una unidad mayor después de ella.}%
-%
-\en{}%
-\es{En segundo lugar, se observa la aparición de una suerte de ``división social del trabajo'' al interior de las poblaciones.}%
-%
-\en{}%
-\es{En tercer lugar, aparecen cambios en el almacenamiento y en la transmisión de información.}%
+Junto a estas saltos en los niveles de complejidad se observan cambios en el almacenamiento y transmisión de información y la aparición de formas de ``división social del trabajo'' al interior de las poblaciones.
 
 %
 
-\en{}%
-\es{Lo que hace que los humanos sean especialmente inteligentes no es sólo las capacidades cognitivas individuales, sino fundamentalmente la informaci\'on cultural heredada.}%
+Lo que hace que los humanos sean especialmente inteligentes no es sólo las capacidades cognitivas individuales, sino fundamentalmente la información cultural heredada.
 %
-\en{}%
-\es{Cada uno de nuestros antepasados imit\'o, modific\'o y transmiti\'o parte de su conocimiento a la siguiente generaci\'on, llegando a nosotros sedimentado en forma de herramientas, creencias y rutinas esenciales para la vida.}%
+Cada uno de nuestros antepasados imit\'o, modific\'o y transmiti\'o parte de su conocimiento a la siguiente generaci\'on, llegando a nosotros sedimentado en forma de herramientas, creencias y rutinas esenciales para la vida.
 %
-\en{Other animals are also capable of creating tools, transmitting knowledge between generations and developing cultural traditions.}%
-\es{Otros animales también son capaces de crear herramientas, transmitir conocimiento entre generaciones y desarrollar tradiciones culturales.}%
+Otros animales también son capaces de crear herramientas, transmitir conocimiento entre generaciones y desarrollar tradiciones culturales.
 %
-\en{However, the level of complexity and diversification of human cultural accumulation is unparalleled.}%
-\es{Sin embargo, el nivel de complejidad y diversificación de la acumulación cultura humana no tiene comparación.}%
+Sin embargo, el nivel de complejidad y diversificación de la acumulación cultura humana no tiene comparación.
 %
-\en{Our exceptional cognitive ability to imitate, combined with long periods of juvenile dependency and postreproductive life span, allows humans to learn things from others and transmit innovations through generations~\cite{Richerson2020}.}%
-\es{Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodos de aprendizaje juvenil y vida posreproductiva, permite a los humanos aprender de los dem\'as y transmitir las innovaci\'on a trav\'es de la generaciones~\cite{Richerson2020}.}%
+Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodos de aprendizaje juvenil y vida posreproductiva, permite a los humanos aprender de los dem\'as y transmitir las innovaci\'on a trav\'es de la generaciones~\cite{Richerson2020}.
 
-%
+% Parrafo
 
-\es{La información cultural fue la que le permitió a los humanos adaptarse a todos los nichos ecológicos de la tierra sin necesidad de modificar su sistema de información genético para ellos.}%
+\todo[inline]{La selección de los modelos científicos sigue la misma estrucutra que la selección de las especies.}
+
+
+% Parrafo
+
+La información cultural fue la que le permitió a los humanos adaptarse a todos los nichos ecológicos de la tierra sin necesidad de modificar su sistema de información genético.
 %
-\es{Este éxito, basado en el conocimiento cultural, se ve relativizado cuando consideramos que nuestra especie representa sólo el 0.01\% de la biomasa actual de la tierra.}%
+Este éxito, basado en el sistema de información cultural, se ve relativizado cuando consideramos que nuestra especie representa sólo el 0.01\% de la biomasa actual de la tierra.
 %
-\es{En la figura~\ref{fig:biomass} vemos estimaciones recientes~\ref{barOn2018} de la distribución de la biomasa en el planeta tierra.}%
+En la figura~\ref{fig:biomass} vemos estimaciones recientes~\ref{barOn2018} de la distribución de la biomasa en el planeta tierra.
 %
 \begin{figure}[ht!]
     \centering
@@ -232,11 +210,12 @@ La honestidad, entendida como maximización de la incertidumbre (entropía) dada
     \label{fig:biomass}
 \end{figure}
 %
-\es{En el gráfico de la izquierda podemos ver que la plantas y las bacterias representan el 95\% de la biomasa de la tierra.}%
+En el gráfico de la izquierda podemos ver que la plantas y las bacterias representan el 95\% de la biomasa de la tierra.
 %
-\es{En este sentido, podemos decir que el conocimiento que estas especies almacenen en su sistema genético es varios órdenes de magnitud superior al alcanzado por los seres humanos mediante el sistema de información cultural.}
+En este sentido, el conocimiento que estas especies almacenan en su sistema genético es varios órdenes de magnitud superior al alcanzado por los seres humanos mediante el sistema de información cultural.
 %
-\es{A pesar de que el tamaño de la población humana aumentó enormemente durante los últimos siglos, nuestra especie representamos apenas el 3\% de toda la biomasa animal.}%
+A pesar de que el tamaño de la población humana aumentó enormemente durante los últimos siglos, nuestra especie representamos apenas el 3\% de toda la biomasa animal.
+
 
 \section{Cultura}
 
