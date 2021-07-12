@@ -1,5 +1,5 @@
 pdflatex:
-	pdflatex doc.tex
+	pdflatex -interaction=nonstopmode doc.tex
 
 compile:
 	pdflatex doc.tex
