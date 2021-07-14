@@ -45,8 +45,8 @@ En esta introducción vamos a discutir los criterios que toda``ciencia con datos
 En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4500 millones de años, apareció en la tierra una forma de organización de la materia capaz de auto-replicarse.
 El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de probabilidades de supervivencia y reproducción.
 Los errores producidos durante la replicación diversificaron las formas de organización de la materia, y las diferentes tazas de superviencia favorecieron a aquellas mejor adaptadas al medio.
-Las diversas formas que adquiere la vida constituyen conocimiento empíricamente válido en tanto que contiene información que es capaz de interectuar con el medio y sobrevivir.
-En este sentido, ``la vida'' puede ser vista como un sistema natural de validación distribuida de información empírica.
+Las diversas formas que adquiere la vida contiene información que es capaz de interectuar con el medio y sobrevivir.
+En este sentido, ``la vida'' puede ser vista conocimiento empírico y la evolución como un sistema natural de validación de la información empírica.
 
 % Parrafo
 
@@ -88,7 +88,7 @@ Esta distinción es importante porque cuando un sistema es no-ergódicos, lo que
 % Parrafo
 
 El proceso multiplicativo al que está sujeto la vida es no-ergódico porque los impactos de las pérdidas son más fuertes que los de las ganancias: con que haya un cero en la secuencia de probabilidades de supervivencia y reproducción, cualquier linaje está queda extinto para siempre.
-Así es que los procesos evolutivos ofrecen entonces una ventaja física a favor de los comportamientos cooperativos y diversificados: dado que la varianza realmente importa, una forma eficaz de reducirla es compartir los diversos riesgos~\cite{yaari2010-cooperationEvolution, peters2015-evolutionaryAdvantageOfCooperation}.
+Así es que los procesos evolutivos ofrecen entonces una ventaja física a favor de los comportamientos cooperativos y diversificados: dado que la varianza realmente importa, una forma eficaz de reducirla es compartir los riesgos~\cite{yaari2010-cooperationEvolution, peters2015-evolutionaryAdvantageOfCooperation}.
 Para entender el mecanismo, consideremos el siguiente ejemplo.
 La naturaleza lanza una moneda: si sale cara la riqueza crece un 50\%, si sale cruz la riqueza se reduce un 40\%.
 \begin{equation}
@@ -105,12 +105,12 @@ En la figura \ref{fig:simple_gamble} mostramos las trayectorias individuales en 
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
-    \includegraphics[width=\linewidth]{figures/simple_gamble.pdf}
+    \includegraphics[width=\linewidth]{figures/cpr_individual.pdf}
     \caption{}
     \label{fig:simple_gamble}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\textwidth}
-    \includegraphics[width=\linewidth]{figures/simple_gamble_incesto.pdf}
+    \includegraphics[width=\linewidth]{figures/cpr_cooperation.pdf}
     \caption{}
     \label{fig:simple_gamble_incesto}
     \end{subfigure}
@@ -226,6 +226,117 @@ El mundo \'Arabe comerciaba productos desde el Océano Pacífico, en las Filipin
 
 % Parrafo
 
+La supervivenvia de las comunidades depende de la capacidad permanente de renovación de los vínculos interpersonales, de mantener la salud de su tejido comunitario que se requiere para toda buena coordinación cooperativa.
+La experiencia acumulada a través de las generaciones por las más diversas comunidades del mundo condujo, de forma independiente, al desarrollo de tecnologías de sociabilidad sorprendentemente similares entre sí.
+En todas ellas se pueden reconocer al menos dos mecanismos que cumplen la función de re-ciclar los v\'inculos interprersonales: los ritos festivos y los ritos coercitivos~\cite{segato2016-guerraContraLasMujeres}.
+La misma naturaleza multiplicativa de los procesos evolutivos que había ofrecido una ventaja física para la agregación cooperativa de las formas de vida, favoreció también la aparición de instituciones culturales basadas en la reciprocidad.
+
+% Parrafo
+
+Uno de los desafíos más grandes que enfrenta toda comunidad para su superviencia es la administración exitosa de los sistemas ecológicos sobre los que se sostiene la alimentación de sus miembros.
+Los sistemas vivos explotados mediante riego, pezca, recolección o caza, se los conoce como ``recursos de uso común''.
+En ellos el óptimo se alcanza cuando todos los miembros cooperan, pero la estructura de pagos individuales incentiva la sobreexplotación del recurso, por lo que existe un único equilibrio en el que a todos individualmente les conviene no cooperar.
+El juego más conocido y quizás el más sencillo que ejemplifica la matriz de pagos de los bienes comunes es el llamado dilema del prisionero.
+
+% Parrafo
+
+Imagina dos jugadores, cada uno de los cuales tiene que decidir (ignorando la decisión del otro jugador) si cooperar $C$ con otra persona o desertar $D$.
+Cooperar tiene un costo $c$, para que la otra peronsa reciba un beneficio $b$, con $b > c$.
+Desertar significa evitar el costo $c$ que implica entregar el beneficio $b$ a la otra persona.
+Esto da como resultado la siguiente matriz de pagos.
+\begin{equation}
+    \bordermatrix{ & C & D \cr
+      C & b-c & -c \cr
+      D & b & 0  } 
+\end{equation}
+Obsérvese que a las personas les conviene cooperar mutuamente antes que desertar mutuamente, ya que $b - c > 0$.
+Sin embargo, no importa la situación uno siempre está mejor sin cooperar: si la otra persona deserta, es mejor desertar que cooperar, ya que $0 > -c$; si la otra persona coopera sigue siendo mejor desertar que cooperar, ya que $b > b - c$.
+De ahí el dilema: aunque la cooperación mutua es un resultado preferible que la deserción mutua, ningún jugador tiene el incentivo de cooperar.
+
+% Parrafo
+
+Para ilustrar el problema en términos de evolución cultural, imaginemos qué pasa si los comportamientos se imitan en la sociedad en función de su beneficio individual.
+Supongamos una población compuesta enteramente por desertores.
+Un comportamiento cooperador es incapaz de viralizarse debido a que cada vez que se encuentra con desertores pierde $-c$, mientras que los desertores nunca pierden, y al encontrarse con el cooperador incluso ganan $b$.
+Así en la etapa de imitación, los desertores tendrán más éxito y el único cooperador será eliminado de la población de desertores.
+Por el contrario, si la población está compuesta enteramente por cooperadores, la eventual aparición de un comportamiento desertor es capaz de viralizarse rápidamente por la diferenca de pagos que recibe cada estrategia.
+
+% Parrafo
+
+Desertar es la única estrategia evolutivamente estable en el dilema del prisionero, tal como lo hemos planteado.
+¿Cómo es posible entonces la evolución de la cooperación?
+La principal familia de solución consiste en darle estructura a la red de interacciones, de modo que los cooperadores interactúen con aquellos que también cooperan.
+En biología, la relación estrecha entre parientes favorece los genes cooperadores en tanto que su descendencia probablemente también sea cooperadora.
+La cooperación humana es única en el sentido de que tiene lugar en comunidades de un gran número de individuos relativamente no relacionados entre sí.
+La reciprocidad directa ha sido el principal mecanismo observado en todas las sociedades del mundo: dar ayuda genera comúnmente una respuesta semejante a cambio~\cite{donMauss}.
+
+% Parrafo
+
+Imaginemos el dilema del prisionero \emph{iterado}, en el que con probabilidad $w$, se juega otra ronda, y que con probabilidad $1 - w$ el juego termina.
+En este escenario existe una estrategia de reciprocidad directa, conocida como tit-for-tat (TFT), que es capaz de resisitir la aparición de desertores incodiconales (ALLD), que desertan en todas las rondas.
+La estrategia TFT comienza cooperando en la primera jugada y luego responde con el mismo comportamiento previo de la otra persona, premiando la cooperación con cooperación y castigando la deserción con la deserción.
+Cuando dos TFT juegan entre sí, ambos cooperan siempre y obtienen una recompensa esperada de $(b - c)/(1 - w)$ cada uno.
+Cuando un TFT se encuentra a un ALLD, en la primera ronda pierde $-c$ para favorecer a su oponente con $b$, a partir de la cual ambos desertan hasta terminar la serie de iteraciones.
+Dos ALLD siempre desertan y obtienen siempre $0$.
+\begin{equation}
+    \bordermatrix{ & TFT & ALLD \cr
+      TFT & \frac{b-c}{1-w} & -c \cr
+      ALLD & b & 0  } 
+\end{equation}
+La estrategia TFT es una evolutivamente estable siempre que $(b - c)/(1 - w) > b$ o, lo que es lo mismo $b/c > 1/w$, si la relación entre las personas es lo suficientemente estable en el tiempo.
+La identidad comunitaria juega en este sentido un papel fundamental.
+Lo que identifica a los sujetos colectivos, los pueblos, es la autopercepción por parte de sus miembros de compartir una historia común, que viene de un pasado y se dirige a un futuro, en el que los vínculos se mentienen aun a través de situaciones de disenso interno y conflictividad~\cite{segato2016-guerraContraLasMujeres}.
+
+% Parrafo 
+
+Los ritos coercitivos, presentes en todas las sociedades, no son otra cosa que ceremonias para la reactivación de flujos de intercambios rotos previamente por conflictos entre partes.
+Están orientados el restablecimiento de los vínculos mediante los mecanismos de ``reparación'', ``conciliación'' y ``ayuda'' \cite{zaffaroni2013-cuestionCriminal}, haciendo uso de los tres tipos de intercambios posibles entre partes: 
+($\rightarrow$) el acto en el cual el acusado (o sus representantes) da algo al acusante (o sus representantes);
+($\leftrightarrow$) el acto en el cual el acusado y acusante (o sus representantes) dan y reciben mutuamente;
+($\leftarrow$) el acto en el cual el acusado (o sus representantes) recibe algo del acusante (o sus representantes).
+La expulsión del agresor de la comunidad sólo se prevee en casos extremadamente excepcionales, pues el primer derecho de sus miembros es el derecho a la comunidad \cite{segato}.
+
+% Parrafo
+
+La identidad comunitaria y los ritos corcitivos tienden a darle estabilidad a los vínculos interpersonales, lo que favorece la estabilidad evolutiva de los comportamientos reciprocitarios en porblaciones que ya son reciprocitarias.
+Sin embargo, no resuelven el origen inicial de la reciprocidad, pues las estrategias reciprocitarias, como TFT, siguen siendo incapaces de viralizarse en poblaciones enteramente desertoras.
+Aunque la reciprocidad no pueda viralizarse dentro de poblaciones enteramente desertoras, dado que $0>-c$, los grupos compuestos por comportamientos reciprocitarios pueden verse favorecidos respecto de los grupos compuestos por desertores.
+
+% Parrafo
+
+%Lo que sí queda claro, es que los grupos con comportamientos reciprocitarios funcionan mejor que los grupos 
+%Si Para que esto ocurra parece necesario un mecanismo que favorezca unos grupos sobre otros.
+Price
+
+% Parrafo
+
+Los estudios comparativos sobre instituciones exitosas en la administradores de bienes comunes concluyen que su capacidad de supervivencia a largo plazo está asociada con la presencia de las siguientes caracterísiticas:\vspace{-0.1cm}
+\begin{description}\setlength\itemsep{-0.1cm}
+ \item[1. Identidad comunitaria y territorial:] el reconocimiento de miembros y del sistema ecológico específico sobre el cual se ejerce la jurisdicción.
+ \item[2. Normas acordes a la comunidad y el sistema ecológico:] Las normas son compatibles con las condiciones sociales y medioambientales locales.
+ \item[3. Deliberación comunitaria:] La mayoría de los individuos involucrados en el sistema ecológico están autorizados a participar en la elaboración y modificación de sus normas.\setlength\itemsep{-0.1cm}
+ \item[4. Conocimiento experto local:] La supervisión de los compartamientos de las personas el sistema ecológico está a cargo de los mismos miembros.\setlength\itemsep{-0.1cm}
+ \item[5. Garantías de derechos comunitatrias:] Las sanciones son graduales, comienzan siendo muy bajas, y sólo raramente se decide la expulsión de la comunidad porque el primer derecho es formar parte de una comunidad.
+ \item[6. Ritos festivos y coercitivos:] ceremonias de intercambio para el restablecimiento de los vínculos comunitarios mediante los mecanismos de ``reparación'', ``conciliación'' y ``ayuda''.
+ \item[7. Autonomía comunitaria:] el reconocimiento de las comunidades vecinas a establecer sus propias normas.
+ \item[8. Relaciones intercomunitarias] cuando un recurso de uso común está conectado a un sistema socioecológico más amplio, las actividades se organizan en múltiples capas anidadas.
+\end{description}
+
+% Parrafo
+
+\todo[inline]{Ejemplo Bali, perfecto order}
+
+% 
+
+A pesar de todos los avances científicos, la ciencia metropolitana moderna no fue capaz de compensar la perdida de los conocimientos milenarios acumulados por las comunidades autónomas locales.
+Los estudios comparados indican que las únicas instituciones capaces de administrar a largo plazo los bienes comunes, nunca fueron ni estatales ni privadas, son de tipo comunitarias histórico arraigo local~\cite{ostrom2009,ostrom1990}.
+La masiva pérdida de diversidad cultural trajo como consecuencia la masiva pérdida de biodiversidad actual, una crisis ecológica sin precedentes.
+Los conocimientos milenarios y sus instituciones adaptadas ecológicamente se pierden definitivamente en unas pocas generaciones.
+En un mundo de comunidades debilitadas, la pedagogía de la crueldad fedual-colonial-moderna logra introducir la cosmovisión individualista e instrumental de nuestro tiempo: la naturaleza como cosa, las personas como cosas.
+%La intervención irracional de un grupo de humanos sobre el sistema ecológico, reservorio del principal conocimiento empírico para la vida, es la analogía más acabada de la imposición de la mentira sobre la verdad.
+
+\section{Ciencia}
+
 Gracias a estar ubicada en uno de los principales centros geográficos del planeta, China pudo emerger como el corazón del sistema de intercambios planetarios~\cite{pomeranz2000}.
 Para el año 1400, China llevaba al menos 2000 de continuidad socio-pol\'itica, y 900 a\~nos de un estado meritocr\'atico en el cual sus miembros eran elegidos a trav\'es de concurso público (examen imperial).
 Inventa el acero en el siglo segundo, el papel en el siglo sexto, la imprenta en el siglo octavo, el papel moneda en el noveno, la br\'ujula en el onceavo.
@@ -319,15 +430,6 @@ Todos los conocimientos que la sociedad colonial va incorporando del resto de co
 Es una nueva era de avances científicos y tecnológicos, pero por otro es la era de pérdida de diversidad cultural.
 En todas las partes del globo, los exploradores y etnógrafos fueron documentando la perdida de cultural debida al avance del frente colonial-moderno, estatal o privado, sobre las autonomías locales.
 
-\section{Ciencia}
-
-A pesar de todos los avances científicos, la ciencia metropolitana moderna no fue capaz de compensar la perdida de los conocimientos milenarios acumulados por las comunidades autónomas locales.
-Los estudios comparados indican que las únicas instituciones capaces de administrar a largo plazo los bienes comunes, nunca fueron ni estatales ni privadas, son de tipo comunitarias histórico arraigo local~\cite{ostrom2009,ostrom1990}.
-La masiva pérdida de diversidad cultural trajo como consecuencia la masiva pérdida de biodiversidad actual, una crisis ecológica sin precedentes.
-Los conocimientos milenarios y sus instituciones adaptadas ecológicamente se pierden definitivamente en unas pocas generaciones.
-En un mundo de comunidades debilitadas, la pedagogía de la crueldad fedual-colonial-moderna logra introducir la cosmovisión individualista e instrumental de nuestro tiempo: la naturaleza como cosa, las personas como cosas.
-%La intervención irracional de un grupo de humanos sobre el sistema ecológico, reservorio del principal conocimiento empírico para la vida, es la analogía más acabada de la imposición de la mentira sobre la verdad.
-
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
@@ -346,36 +448,7 @@ En un mundo de comunidades debilitadas, la pedagogía de la crueldad fedual-colo
     \label{fig:cultural-lose}
 \end{figure}
 
-La misma naturaleza multiplicativa de los procesos evolutivos que había ofrecido una ventaja física para la agregación cooperativa de las formas de vida, favoreció también la aparición de instituciones culturales basadas en la reciprocidad.
-La supervivenvia de una comunidad depende del renovación permanente de los vínculos interpersonales, de la salud de su tejido comunitario.
-Lo que identifica a este sujeto colectivo, los pueblos, es la autopercepción por parte de sus miembros de compartir una historia común, que viene de un pasado y se dirige a un futuro, aun a través de situaciones de disenso interno y conflictividad~\cite{segato2016-guerraContraLasMujeres}.
-La experiencia acumulada a través de las generaciones por las más diversas comunidades del mundo condujo, de forma independiente, al desarrollo de tecnologías de sociabilidad sorprendentemente similares entre sí.
-En todas ellas se pueden reconocer al menos dos mecanismos que cumplen la función de re-ciclar los v\'inculos interprersonales: los ritos festivos y los ritos coercitivos~\cite{segato2016-guerraContraLasMujeres}.
-
-% Parrafo
-
-Los ritos coercitivos no son otra cosa que ceremonias para la reactivación de flujos de intercambios rotos previamente por conflictos entre partes.
-Están orientados el restablecimiento de los vínculos mediante los mecanismos de ``reparación'', ``conciliación'' y ``ayuda'' \cite{zaffaroni2013-cuestionCriminal}, haciendo uso de los tres tipos de intercambios posibles entre partes: 
-($\rightarrow$) el acto en el cual el acusado (o sus representantes) da algo al acusante (o sus representantes);
-($\leftrightarrow$) el acto en el cual el acusado y acusante (o sus representantes) dan y reciben mutuamente;
-($\leftarrow$) el acto en el cual el acusado (o sus representantes) recibe algo del acusante (o sus representantes).
-La expulsión del agresor de la comunidad sólo se prevee en casos extremadamente excepcionales, pues el primer derecho de sus miembros es el derecho a la comunidad \cite{segato}.
-
-% Parrafo
-
-Los estudios comparativos sobre instituciones administradores de bienes comunes concluyen que su capacidad de supervivencia a largo plazo está asociada con la presencia de las siguientes caracterísiticas:\vspace{-0.1cm}
-\begin{description}\setlength\itemsep{-0.1cm}
- \item[1. Identidad comunitaria y territorial:] el reconocimiento de miembros y del sistema ecológico específico sobre el cual se ejerce la jurisdicción.
- \item[2. Instituciones adaptación social y ecológica:] Las normas son compatibles con las condiciones sociales y medioambientales locales.
- \item[3. Deliberación comunitaria:] La mayoría de los individuos involucrados en el sistema ecológico están autorizados a participar en la elaboración y modificación de sus normas.\setlength\itemsep{-0.1cm}
- \item[4. Conocimiento experto local:] La supervisión de los compartamientos de las personas el sistema ecológico está a cargo de los mismos miembros.\setlength\itemsep{-0.1cm}
- \item[5. Garantías de derechos comunitatrias:] Las sanciones son graduales, comienzan siendo muy bajas, y sólo raramente se decide la expulsión de la comunidad porque el primer derecho es formar parte de una comunidad.
- \item[6. Ritos festivos y coercitivos:] ceremonias de intercambio para el restablecimiento de los vínculos comunitarios mediante los mecanismos de ``reparación'', ``conciliación'' y ``ayuda''.
- \item[7. Autonomía comunitaria:] el reconocimiento de las comunidades vecinas a establecer sus propias normas.
- \item[8. Relaciones intercomunitarias] cuando un recurso de uso común está conectado a un sistema socioecológico más amplio, las actividades se organizan en múltiples capas anidadas.
-\end{description}
-
-% Parrafo
+\todo[inline]{brake}
 
 Europa occidental también estuvo constituida por este tipo de comunidades.
 Si bien el imperio romano eliminó una parte importante de este paisaje cultural, no alcanzó a eliminarlo por completo.
