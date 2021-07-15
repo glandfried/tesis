@@ -29,24 +29,35 @@
 
 La ciencia es una institución humana que tiene pretención de verdad, esto es de formular proposiciones que valgan para todas las personas, tanto intercultural como intersubjetivamente.
 Las ciencias formales validan sus proposiciones mediante teoremas, resultados derivados de aplicar las reglas internas a un sistema axiomático cerrado.
-Las ciencias empíricas deben validar sus proposiciones dentro de sistemas abiertos, lo que impone siempre un grado de incertidumbre asociada.
+Las ciencias de la computación nacen como una rama de las matemáticas aplicadas, y desarrolla en el transcurso de su historia orientaciones tanto de ciencias formales (algoritmos, lógica y computabilidad) y como de ciencias empíricas (simulación, inteligencia artificial).
+A diferencia de las ciencia formales, las ciencias empíricas deben validar sus proposiciones dentro de sistemas abiertos, lo que impone siempre un grado de incertidumbre asociada.
 ¿Cuál es entonces la fuente de validez del conocimiento empírico?
-En esta introducción vamos a discutir los criterios que toda``ciencia con datos'', desde la física a la antropología, tiene que cumplir para formular proposiciones válidas universalmente y las herramientas metodológicas que permiten computarlas dado las evidencias empíricas (datos) y formales (modelos).
 
-
-%En el sección~\ref{sec:vida} reflexionamos respecto de la caracterísitica temporal de los conocimientos empíricos.
-
-
-%¿Por qué es necesario discutir esto en una tesis de doctorado en ciencias de la computación?
-%% Las ciencias de la computación nacen como una rama de las matemáticas aplicadas y desarrolla en el transcurso de su historia orientaciones que pueden ser clasificadas tanto como ciencias formales y como ciencias empíricas.
-
+% El conocimiento empírico se interpreta comúnmente como propiedad exclusiva de la ciencia o la técnica.
+% Este capítulo tiene por objetivo revisar este y otros lugares comunes para finalizar 
+En esta introducción vamos a discutir los criterios de validez del conocimiento empírico. % y las herramientas metodológicas que permiten computarlas dado las evidencias empíricas (datos) y formales (modelos).
+Proponemos primero considerar a la vida como la principal fuente conocimiento empírico en tanto las diversas formas que ella adquiere en el curso de la evolución contiene información capaz de interectuar con el medio y sobrevivir.
+Recordaremos que la complejidad actual de la vida es consecuencia de una serie de transiciones evolutivas en las que las entidades, que antes eran capaces de replicarse de forma independiente, luego de la transición sólo pueden replicarse como parte de una unidad mayor (i.e. unicelular a multicelular).
+Veremos que estas transiciones evolutivas ocurren debido a que los procesos multiplicativos a los que está sujeta la selección natural (secuencia de probabilidades de supervivencia y reproducción) impone una ventaja física a favor de los comportamientos cooperativos y diversificados.
+Revisaremos cómo el la crianza cooperativa hace 3 millones de años desencadenó en los humanos una coevolución genético-cultural que permitió el desarrollo de la empatía, la comprensión mutua, la imitación, el lenguaje y finalmente la cultura.
+Ratificaremos la importancia de esta transición cultural para nuestra especie, que pasó de estar en peligro de extinción a ser capaz de ocupar en pocos años todos los nichos ecológicos de la tierra.
+Relativisaremos sin embargo el antropocentrismo en tanto la selección natural favorece formas de vida más simple que la humana, medida como proporción de la biomasa que representamos respecto del conjunto de los seres vivos.
+Examinaremos cómo todos los sistemas culturales capaces de superviviencia a largo plazo desarrollaron de forma independiente tecnologías de sociabilidad orientadas al restablecimiento de los vínculos comunitarios.
+Analizaremos porqué la estabilidad de los vínculos es un elemento necesario para que una comunidad compuesta enteramente por estrategias reciprocitarias resista la invación de estrategias desertoras que ponen en peligro su supervivencia a largo plazo.
+%Revisaremos cómo la integración y el aislamiento afectan los procesos de evolución cultural, poniendo como ejemplo la milenaria ciencia y técnica China por un lado y el proceso de pérdida cultural ocurrido al interior de la Europa occidental conocido como "edad media".
+Repasaremos la serie de casualidades y causalidades que permitieron que una sociedad que migraba por la situación de violencia interna quedara de repente en una situación de privilegio en el sistema mundo, dando inicio al proceso colonial-moderno actual.
+Examineremos cómo el criterio de autoridad feudal, reinterpretado durante la colonial-modernidad como criterio de universalidad masculina blanca, sirvió de justificación para la aribitrariedad epistémica durante la era de genocidios culturales y ecológicos.
+Señalaremos que la masiva pérdida de diversidad cultural, ocurrida durante la colonial-modernidad, trajo como consecuencia la masiva pérdida de biodiversidad actual, dado que la ciencia metropolitana moderna no fue capaz de evitar la grave crisis ecológica, administrada previamente de forma exitosa por las comunidades autónomas locales.
+Propondremos el concepto de honestidad, definido como maximización de la incertidumbre dada la evidencia, como principio intercultural de acuerdos intersubjetivos y por lo tanto como criterio de validez universal del conocimiento empírico cultural.
+Se hace necesario practicar la co-existencia inter-comunitaria, de modo de reactivar localmente los procesos de evolución cultural que le permitieron a nuestra especie adptarse a los diversos nichos ecológicos sin afectarlos en sus proceso vital, fuente real del conocimiento empírico.
+ 
 \section{Vida}\label{sec:vida}
 
 En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4500 millones de años, apareció en la tierra una forma de organización de la materia capaz de auto-replicarse.
 El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de probabilidades de supervivencia y reproducción.
 Los errores producidos durante la replicación diversificaron las formas de organización de la materia, y las diferentes tazas de superviencia favorecieron a aquellas mejor adaptadas al medio.
-Las diversas formas que adquiere la vida contiene información que es capaz de interectuar con el medio y sobrevivir.
-En este sentido, ``la vida'' puede ser vista conocimiento empírico y la evolución como un sistema natural de validación de la información empírica.
+Las diversas formas que fue adquiriendo la vida representa información que es capaz de interectuar con el medio y sobrevivir.
+En este sentido, la vida puede ser vista conocimiento empírico y la evolución como un sistema natural de validación de la información empírica.
 
 % Parrafo
 
@@ -77,18 +88,21 @@ Los saltos en los niveles de complejidad traen consigo la aparición de formas d
 % Parrafo
 
 Hasta hace poco se consideró una verdad establecida que la cooperación requería algún tipo de comportamiento altruista para evolucionar.
-Esta conclusión supone implícitamente que los procesos evolutivos son ergódicos.
-Decimos que un proceso es ergódico si la media temporal de una transformación $f(\cdot)$ de los estados del sistema es igual al su valor esperado,
+Esta conclusión suponía implícitamente que los procesos evolutivos eran ergódicos.
+Decimos que un proceso es ergódico si la media de los estados temporales del sistema (o de una transformación $f$ de ellos) es igual a la media de todos los posibles estados,
 \begin{equation}
- \underbrace{\lim_{T \mapsto \infty} \int_0^T f(\omega(t)) \diff t}_{\text{Media temporal}}  = \underbrace{\int_{\Omega} f(\omega)p(\omega) \diff\omega}_{\text{Valor esperado}}
+ \underbrace{\lim_{T \mapsto \infty} \int_0^T f(\omega(t)) \diff t}_{\text{Media temporal}}  = \underbrace{\int_{\Omega} f(\omega)p(\omega) \diff\omega}_{\text{Media de estados}}
 \end{equation}
 donde $\omega \in \Omega$ representa los estados del sistema, $\omega(t)$ el estado del sistema obtenido aleatoriamente en el tiempo $t$ y $p(\cdot)$ la distribución de probabilidad de los estados.
-Esta distinción es importante porque cuando un sistema es no-ergódicos, lo que le ocurre a los agentes individuales en el tiempo no coincide con la esperanza de todos los posibles estados del sistema~\cite{peters2019-ergodicityEconomics}.
+Esta distinción es importante porque cuando un sistema es no-ergódicos, lo que le ocurre a los agentes individuales en el tiempo no coincide con la esperado según los posibles estados del sistema~\cite{peters2019-ergodicityEconomics}.
 
 % Parrafo
 
-El proceso multiplicativo al que está sujeto la vida es no-ergódico porque los impactos de las pérdidas son más fuertes que los de las ganancias: con que haya un cero en la secuencia de probabilidades de supervivencia y reproducción, cualquier linaje está queda extinto para siempre.
-Así es que los procesos evolutivos ofrecen entonces una ventaja física a favor de los comportamientos cooperativos y diversificados: dado que la varianza realmente importa, una forma eficaz de reducirla es compartir los riesgos~\cite{yaari2010-cooperationEvolution, peters2015-evolutionaryAdvantageOfCooperation}.
+El proceso multiplicativo al que está sujeto la vida es no-ergódico.
+Fundamentalmente porque los impactos de las pérdidas son más fuertes que los de las ganancias.
+Con que haya un cero en la secuencia de probabilidades de supervivencia y reproducción, cualquier linaje está queda extinto para siempre.
+Dado que la varianza realmente importa, una forma eficaz de reducirla es compartir los riesgos~\cite{yaari2010-cooperationEvolution, peters2015-evolutionaryAdvantageOfCooperation}.
+Por este motivo, los procesos evolutivos ofrecen una ventaja física a favor de los comportamientos cooperativos y diversificados.
 Para entender el mecanismo, consideremos el siguiente ejemplo.
 La naturaleza lanza una moneda: si sale cara la riqueza crece un 50\%, si sale cruz la riqueza se reduce un 40\%.
 \begin{equation}
@@ -98,32 +112,48 @@ La naturaleza lanza una moneda: si sale cara la riqueza crece un 50\%, si sale c
  -0.4x & \text{ \en{Tail}\es{Seca} }
 \end{cases}
 \end{equation}
-Basados en el valor esperado, las corrientes principales de la teoría económica y de la teoría de toma de decisiones siguen prediciendo que los agentes tendrán un cambio positivo de su riqueza de $\langle \Delta x \rangle = 0.05x$.
-Si calculáramos la riqueza promedio de una población de tamaño infinito, el cambio de la riqueza agregada será positiva $\langle \Delta x \rangle = 0.05x$.
+¿Qué es lo que le ocurre a un agente en cada paso?
+Si el agente comienza con una riqueza inicial de $100$, hay una probabiilidad de $0.5$ que termine con $150$ y una probabilidad de $0.5$ que termine con $60$.
+La media es $150\cdot0.5 + 60\cdot0.5 = 105$.
+Los agentes tendrán en promedio un cambio positivo de su riqueza de $\langle \Delta x \rangle = 0.05x$.
+Basados en este criterio, las corrientes principales de la teoría económica y de la teoría de toma de decisiones suponen que un agente racional debe tomar la apuesta.
+%Los experimentos con humanos muestra que las personas rechaza sistemáticamente esta tipo de apuestas, por lo que .
 Sin embargo, lo que le ocurre a los agentes individuales en el tiempo es muy diferente: a largo plazo todos pierden.
-En la figura \ref{fig:simple_gamble} mostramos las trayectorias individuales en el tiempo.
+En la figura \ref{fig:simple_gamble} mostramos esas trayectorias individuales en el tiempo.
+
 \begin{figure}[ht!]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\linewidth]{figures/cpr_individual.pdf}
     \caption{}
     \label{fig:simple_gamble}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\linewidth]{figures/cpr_cooperation.pdf}
     \caption{}
     \label{fig:simple_gamble_incesto}
     \end{subfigure}
     \caption{
-    Riqueza de los agentes en el tiempo: en la figura \ref{fig:simple_gamble} los agentes juegan individualmente, en la figura \ref{fig:simple_gamble_incesto} los agentes comparten un porcentaje de su riqueza en cada paso.
+    Riqueza de los agentes en el tiempo: en la figura \ref{fig:simple_gamble} los agentes juegan individualmente, en la figura \ref{fig:simple_gamble_incesto} algunos agentes comparten su riqueza en cada iteración.
     }
     \label{fig:gamble}
 \end{figure}
-En la figura \ref{fig:simple_gamble_incesto} mostramos las trayectorias individuales cuando los agentes comparten 5\% de su riqueza con el resto.
-Cuando los agentes comparten parte de su riqueza, todos se benefician.
-No hay agentes altruistas.
-Para entender por qué ocurre esto veamos en detalle un ejemplo.
-En la tabla \ref{tab:gamble} podemos ver cómo se modifica la riqueza individual de dos agentes en el tiempo cuando no cooperan y cuando cooperan.
+
+Por el contrario, cuando los agentes comparten su riqueza todos se benefician a largo plazo.
+Las curvas verdes de la figura \ref{fig:simple_gamble_incesto} representa a una población de 100 agentes que luego de cada iteración colocan su riqueza individual en un fondo común que es dividido en partes iguales.
+La estrategia cooperativa le permite obtener lo que inicialmente esperábamos observar en cada paso, 5\% de ganancia por iteración.
+
+% Parrafo
+
+El mecanismo solidario parece a primera vista fácil de ser explotado por agentes individualistas que desertan de aportar su riqueza al fondo común pero que siguen aprovechando de la distribución de la riqueza del resto.
+Las curvas azules y roja de la figura \ref{fig:simple_gamble_incesto} son las trayectorias de una población de 100 agentes con un único agente desertor en su interior, y con 10 agentes desertores respectivamente.
+Si bien los comportamientos desertores obtienen una ventaja relativa respecto de los miembros cooperadores de su propia población, desertar en una población enteramente cooperadora implica una reducción de la riqueza incluso para quien deserta.
+Los desertores, al afectar la riqueza de aquellos sobre los que se beneficia, se ven también perjudicados a largo plazo.
+%No hay agentes altruistas.
+
+% Parrafo
+
+Para entender por qué la mutua cooperación es la estrategia óptima, veamos en detalle un ejemplo.
 \begin{table}[ht!] \centering
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
      \hline
@@ -138,6 +168,7 @@ En la tabla \ref{tab:gamble} podemos ver cómo se modifica la riqueza individual
     }
     \label{tab:gamble}
 \end{table}
+En la tabla \ref{tab:gamble} podemos ver cómo se modifica la riqueza individual de dos agentes en el tiempo cuando no cooperan y cuando cooperan.
 Ambas personas comienzan con la misma riqueza y modifican su riqueza del mismo modo pero en distito orden: en la primer paso la riqueza del agentes A aumenta y la del agente B se reduce, y viceversa.
 Los agentes que no dividen su riqueza en la columna ``Reparto'' terminan perdiendo 10\% de su riqueza inicial, mientras que los agentes que sí la dividen finalizan con 10\% más de su riqueza inicial.
 Mediante la cooperación los agentes tienen acceso a los diversos estados del sistema, lo que hace que sus trayectorias temporales $\overline{x}$ se aproximen al valor esperado $\langle x \rangle$.
@@ -474,7 +505,7 @@ El poder punitivo se fue extendiendo y un nuevo sistema penal re-nació de los l
 En esta etapa, el sujeto masculino se torna modelo de lo humano y de todo cuanto sea dotado de politicidad, interés general y valor universal, y el espacio de las mujeres se transforma en margen y resto de la política.
 La guerra contra las mujeres se formaliza definitivamente con la publicación del \emph{Malleus maleficarum} en 1484, que es el segundo best seller de la modernidad después de la Biblia durante los siguientes 200 años.
 
-% Parrafo
+\section{Principio intercultural de acuerdos intersubjetivos}
 
 Sólo después de que la sociedad feudal adquiere una posición de privilegio en el sistema mundo, comienza al interior de esta sociedad, ahora colonial-moderna, un nuevo debate sobre las fuentes de validación del conocimiento.
 En esta etapa el criterio de experiencia personal comenzó ganar terreno como fundamento del ``saber auténtico'' sobre los criterios de autoridad.
@@ -578,6 +609,8 @@ El derecho a las autonomías comunitarias se sustenta en el hecho práctico de q
 
 El reconocmiento mutuo, que estuvo en la base de la evolución de nuestra especie, debe adquirir una universalidad que ni la propuesta parcial de Kant ni la cultura colonial-moderna ha sido capaz de alcanzar.
 Es necesario que el imperativo de convivencia ``Obra de tal modo que la máxima de nuestra voluntad pueda valer siempre al mismo tiempo como principio de una legislación universal'' sea efectivo, reconociendo esta vez como sujetos con valor universal: al estatus social y político que las mujeres encabezan en el espacio comunitario; las autonomías comunitarias; y los derechos de las otras especies y de la madre tierra toda (\emph{pachamama}) de no ver interrumpido sus procesos ecológicos sin justa causa: lo mínimo necesario para el buen vivir (\emph{suma kausay}).
+
+\chapter{Honestidad}
 
 \section{Funciones}
 
@@ -1049,11 +1082,7 @@ corriente filosóficas, como el empirismo y el idealismo, admiten la sensación 
 cotidianos Klimowsky los llama base empírica filosófica, indubitables aún para los filósofos.
 
 
-
-
-
-
-\section{Honestidad}
+\section{Las reglas de la honestidad}
 
 Quizás el argumento más fuerte en favor de la teoría de la probabilidad es que los filósofos han llegado de varias forma independiente a la misma conclusión.
 
@@ -1276,8 +1305,8 @@ Es decir, a partir de la creencia honesta inicial y la pista podemos decir que l
  
  \todo[inline, color=gray!50]{Explicar esta función.}
 
-
-\section{Las reglas de la probabilidad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%% \section{Las reglas de la probabilidad}
 
 \begin{equation*}
   \text{Marginal}_{i} = \sum_j \text{Conjunta}_{ij}  \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \text{Condicional}_{j|i} = \frac{\text{Conjunta}_{ij}}{\text{Marginal}_{i}}
@@ -1313,8 +1342,6 @@ Son las reglas óptimas en el sentido de la honestidad, utilizan toda la informa
 
 In 1946, thanks to Cox, it was now a theorem that any set of rules for conducting inference, in which we represent degrees of plausibility by real numbers, is necessarily either equivalent to the Laplace-Jefreys rules, or inconsistent
  
-\section{Monty Hall}
-
 \todo[inline, color=gray!50]{Explicar monty hall}
 
 \begin{figure}[H]
@@ -1528,14 +1555,13 @@ Escribir ...
 
 \newpage
 
-\section{Base empírica}
 
 \section{Selección de modelos}
 
-\section{Conclusiones}
 
+\chapter{TrueSkill Through Time}
 
-\chapter{Modelos de estimación de habilidad (TTT)}
+\chapter{Las implementaciones en Julia, Python y R}
 
 \chapter{Sistema de estimación para el juego Go (AAGo).}
 
