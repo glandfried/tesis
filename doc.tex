@@ -114,8 +114,8 @@ La naturaleza lanza una moneda: si sale cara la riqueza crece un 50\%, si sale c
 \end{equation}
 ¿Qué es lo que le ocurre a un agente en cada paso?
 Si el agente comienza con una riqueza inicial de $100$, hay una probabiilidad de $0.5$ que termine con $150$ y una probabilidad de $0.5$ que termine con $60$.
-La media es $150\cdot0.5 + 60\cdot0.5 = 105$.
-Los agentes tendrán en promedio un cambio positivo de su riqueza de $\langle \Delta x \rangle = 0.05x$.
+La media es $105 = 150\cdot0.5 + 60\cdot0.5$.
+Los agentes tendrán en promedio un cambio positivo de su riqueza de $\langle \Delta x \rangle = 5\%$.
 Basados en este criterio, las corrientes principales de la teoría económica y de la teoría de toma de decisiones suponen que un agente racional debe tomar la apuesta.
 %Los experimentos con humanos muestra que las personas rechaza sistemáticamente esta tipo de apuestas, por lo que .
 Sin embargo, lo que le ocurre a los agentes individuales en el tiempo es muy diferente: a largo plazo todos pierden.
@@ -144,6 +144,12 @@ Las curvas verdes de la figura \ref{fig:simple_gamble_incesto} representa a una 
 La estrategia cooperativa le permite obtener lo que inicialmente esperábamos observar en cada paso, 5\% de ganancia por iteración.
 
 % Parrafo
+
+% \begin{equation}
+%     \bordermatrix{ & C & 1D & 99D  \cr
+%       C & 1.05 & 1.04 & -\infty \cr
+%       D & 2 &  & 0.95  } 
+% \end{equation}
 
 El mecanismo solidario parece a primera vista fácil de ser explotado por agentes individualistas que desertan de aportar su riqueza al fondo común pero que siguen aprovechando de la distribución de la riqueza del resto.
 Las curvas azules y roja de la figura \ref{fig:simple_gamble_incesto} son las trayectorias de una población de 100 agentes con un único agente desertor en su interior, y con 10 agentes desertores respectivamente.
