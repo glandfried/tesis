@@ -4,6 +4,7 @@
 \input{tikzlibrarybayesnet.code.tex}
 \usepackage{physics}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
+\usepackage{todonotes}
 
 \newif\ifen
 \newif\ifes
@@ -13,8 +14,11 @@
 
 
 %opening
-\title{\huge Habilidad y evolución cultural}
+\title{\huge Habilidad y evolución cultural
+\todo[inline]{El titulo tiene que reflejar y capturar los aspectos computacionales, es una tesis en computacion}
+}
 \author{Gustavo Landfried}
+
 
 \begin{document}
 
@@ -27,10 +31,11 @@
 
 \chapter{Conocimiento empírico}
 
-\epigraph{El conocimiento empírico no es más que principio de incertidumbre compatible con la evidencia formal y empíricia}{}
+\epigraph{El conocimiento empírico no es más que principio de incertidumbre compatible con la evidencia formal y empírica}{}
 
 \section{Creencias}
 
+\todo[inline]{Esta secci\'on no nada, tenes que empezar con la motivaci\'on puntual de la tesis y el contexto del problema, deja estas cosas para otro momento}
 La ciencia es una institución humana que tiene pretención de verdad, esto es de formular proposiciones que valgan para todas las personas, tanto intercultural como intersubjetivamente.
 Las ciencias formales validan sus proposiciones mediante teoremas, resultados derivados de aplicar las reglas internas a un sistema axiomático cerrado.
 % Las ciencias de la computación nacen como una rama de las matemáticas aplicadas, y desarrolla en el transcurso de su historia orientaciones tanto de ciencias formales (algoritmos, lógica y computabilidad) y como de ciencias empíricas (simulación, inteligencia artificial).
@@ -41,8 +46,9 @@ Las ciencias empíricas deben validar sus proposiciones dentro de sistemas abier
 
 \subsection{Principio de incertidumbre}
 
-Supongamos que tenemos 3 cajas y sabemos que detrás de una hay un regalo.
-Una posible distribuión de creencias es:
+Supongamos que tenemos tres cajas y sabemos que detrás de una hay un regalo.
+Una posible distribución de creencias es:
+\todo[inline]{No est\'a definido ni distribuci\'on ni qu'e es una creencia, usa las t\'erminos matem\'aticos apropiados (funci\'on de masa de probabilidad) o no pongas nada, pero tirate completamente a lo coloquial}
 
 \begin{figure}[H]
 \centering
@@ -74,7 +80,9 @@ Pero si de verdad no tenemos ninguna información respecto de dónde está el re
 \end{figure}
 
 Este tipo de distribuciones de creencias, que permiten el acuerdo intersubjetivo, la vamos a llamar \textbf{creencia honesta}.
+\todo[inline]{Que es intersubjetivo?}
 Las creencias honestas son las que maximizan incertidumbre, siendo coherente con la información disponible.
+\todo[inline]{Que es la incertidumbre, para que te sirve maximizarla}
 En este caso, en el que no tenemos información previa, la obtuvimos dividiendo la creencia en partes iguales.
 Éste es un viejo principio conocido como ``de indiferencia''.
 ¿Pero cómo hacemos para actualizar las creencias de forma honesta cuando recibimos nueva información?
@@ -97,6 +105,7 @@ Aquí recibimos el dato de que el regalo no está en la caja del medio, lo que n
 Para actualizar el resto de las cajas necesitamos interpretar qué nos está diciendo la pista.
 Supongamos que la pista depende de dónde está el regalo, sólo nos puede indicar dónde no está el regalo.
 Esto lo podemos representar con el siguiente modelo causal.
+\todo[inline]{No suponer que la figura va a quedar en el lugar, usar los labels y describir la figura tambien}
 
 \begin{figure}[H]
 \centering
@@ -112,7 +121,7 @@ Esto lo podemos representar con el siguiente modelo causal.
             
 }
 \end{figure}
-
+\todo[inline]{¿como se interpreta la figura, que significa cada cosa?}
 Siguiendo con el principio de indiferencia que usamos para definir una creencia honesta, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta de ellos.
 
 \begin{figure}[H]
