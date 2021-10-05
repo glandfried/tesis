@@ -1,10 +1,69 @@
 \documentclass[a4paper,10pt]{book}
 \usepackage[utf8]{inputenc}
-\input{encabezado.tex}
-\input{tikzlibrarybayesnet.code.tex}
 \usepackage{physics}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
-\usepackage{todonotes}
+\usepackage{fullpage}
+\usepackage{cite}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float} % para que los gr\'aficos se queden en su lugar con [H]
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage{amsmath} %para escribir funci\'on partida , matrices
+\usepackage{amsthm} %para numerar definciones y teoremas
+\usepackage[hidelinks]{hyperref} % para inlcuir links dentro del texto
+\usepackage{tabu} 
+\usepackage{comment}
+\usepackage{amsfonts} % \mathbb{N} -> conjunto de los n\'umeros naturales  
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage[colorinlistoftodos, textsize=small]{todonotes} % Para poner notas en el medio del texto!! No olvidar hacer. 
+\usepackage{framed} % Para encuadrar texto. \begin{framed}
+\usepackage{csquotes} % Para citar texto \begin{displayquote}
+\usepackage{epigraph} % Epigrafe  \epigraph{texto}{\textit{autor}}
+\usepackage{authblk}
+\usepackage{titlesec}
+\usepackage{varioref}
+\usepackage{bm} % \bm{\alpha} bold greek symbol
+\usepackage{pdfpages} % \includepdf
+\usepackage[makeroom]{cancel} % \cancel{} \bcancel{} etc
+\usepackage{wrapfig} % \begin{wrapfigure} Pone figura al lado del texto
+\usepackage{mdframed}
+\usepackage{algorithm}
+%\usepackage{quoting}
+\usepackage{mathtools}	
+\usepackage{tikz}
+\usepackage{paracol}
+\input{tikzlibrarybayesnet.code.tex}
+
+\newcommand{\vm}[1]{\mathbf{#1}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\citel}[1]{\cite{#1}\label{#1}}
+\newcommand\hfrac[2]{\genfrac{}{}{0pt}{}{#1}{#2}} %\frac{}{} sin la linea del medio
+
+\newtheorem{midef}{Definition}
+\newtheorem{miteo}{Theorem}
+\newtheorem{mipropo}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+%http://latexcolor.com/
+\definecolor{azul}{rgb}{0.36, 0.54, 0.66}
+\definecolor{rojo}{rgb}{0.7, 0.2, 0.116}
+\definecolor{rojopiso}{rgb}{0.8, 0.25, 0.17}
+\definecolor{verdeingles}{rgb}{0.12, 0.5, 0.17}
+\definecolor{ubuntu}{rgb}{0.44, 0.16, 0.39}
+\definecolor{debian}{rgb}{0.84, 0.04, 0.33}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \newif\ifen
 \newif\ifes
@@ -14,9 +73,7 @@
 
 
 %opening
-\title{\huge Habilidad y evolución cultural
-\todo[inline]{El titulo tiene que reflejar y capturar los aspectos computacionales, es una tesis en computacion}
-}
+\title{\huge Algoritmos para la inferencia de habilidad y el aprendizaje social}
 \author{Gustavo Landfried}
 
 
@@ -33,22 +90,17 @@
 
 \epigraph{El conocimiento empírico no es más que principio de incertidumbre compatible con la evidencia formal y empírica}{}
 
-\section{Creencias}
-
-\todo[inline]{Esta secci\'on no nada, tenes que empezar con la motivaci\'on puntual de la tesis y el contexto del problema, deja estas cosas para otro momento}
-La ciencia es una institución humana que tiene pretención de verdad, esto es de formular proposiciones que valgan para todas las personas, tanto intercultural como intersubjetivamente.
+La ciencia es una institución humana que tiene pretención de verdad.
 Las ciencias formales validan sus proposiciones mediante teoremas, resultados derivados de aplicar las reglas internas a un sistema axiomático cerrado.
-% Las ciencias de la computación nacen como una rama de las matemáticas aplicadas, y desarrolla en el transcurso de su historia orientaciones tanto de ciencias formales (algoritmos, lógica y computabilidad) y como de ciencias empíricas (simulación, inteligencia artificial).
-% A diferencia de las ciencia formales, 
-Las ciencias empíricas deben validar sus proposiciones dentro de sistemas abiertos, lo que impone siempre un grado de incertidumbre asociada.
+Las ciencias empíricas, por el contrario, deben validar sus proposiciones dentro de sistemas abiertos, lo que impone siempre un grado de incertidumbre asociada.
 ¿Cuál es entonces la fuente de validez del conocimiento empírico?
-
 
 \subsection{Principio de incertidumbre}
 
 Supongamos que tenemos tres cajas y sabemos que detrás de una hay un regalo.
-Una posible distribución de creencias es:
-\todo[inline]{No est\'a definido ni distribuci\'on ni qu'e es una creencia, usa las t\'erminos matem\'aticos apropiados (funci\'on de masa de probabilidad) o no pongas nada, pero tirate completamente a lo coloquial}
+Al no tener certeza de su posición, nos vemos ante la obligación de repartir nuestra creencia entre las posibles opciones.
+A las diferentes formas de dividir la creencia le vamos a llamar \emph{distribución de creencias}.
+Una posible distirbución de creencias es,
 
 \begin{figure}[H]
 \centering
@@ -64,7 +116,8 @@ Una posible distribución de creencias es:
 \end{figure}
 
 lo que representa una preferencia parcial por la caja del medio.
-Pero si de verdad no tenemos ninguna información respecto de dónde está el regalo, no hay motivos para tener preferencia por ninguna de las opciones, lo que sin lugar a dudas nos hará estar de acuerdo en la siguiente distribución de creencias.
+Pero si de verdad no tenemos ninguna información respecto de dónde está el regalo, no hay motivos para tener preferencia por ninguna de las opciones, lo que sin lugar a dudas nos hará estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
+Éste es un viejo principio conocido como ``de indiferencia''.
 
 \begin{figure}[H]
 \centering
@@ -80,12 +133,21 @@ Pero si de verdad no tenemos ninguna información respecto de dónde está el re
 \end{figure}
 
 Este tipo de distribuciones de creencias, que permiten el acuerdo intersubjetivo, la vamos a llamar \textbf{creencia honesta}.
-\todo[inline]{Que es intersubjetivo?}
-Las creencias honestas son las que maximizan incertidumbre, siendo coherente con la información disponible.
-\todo[inline]{Que es la incertidumbre, para que te sirve maximizarla}
-En este caso, en el que no tenemos información previa, la obtuvimos dividiendo la creencia en partes iguales.
-Éste es un viejo principio conocido como ``de indiferencia''.
-¿Pero cómo hacemos para actualizar las creencias de forma honesta cuando recibimos nueva información?
+Elegimos el término ``intersubjetividad'', por sobre el de ``subjetividad'', debido a que el primero connota el cumplimiento de las condiciones que producen al acuerdo entre las conciencias individuales, mientras que el segundo connota una arbitrariedad que lo obstaculiza.
+Elegimos el término ``intersubjetividad'', por sobre el de ``objetividad'', porque el primero connota una actividad construcitva entre los sujetos, mientras que el segundo connota la imposición directa del objeto sobre los sujetos.
+
+% Parrafo
+
+%Una propiedad común a todas las creencias honestas es la maximización de la incertidumbre (manteniendo la coherencia con la información disponible).
+%La distribución con menor incertidumbre es la que asigna toda la creencia a una de las opciones.
+%La distirbución más lejana a esta, 
+%En este caso, en el que no tenemos información previa, la obtuvimos dividiendo la creencia en partes iguales.
+Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no tenemos información previa.
+¿Pero cómo hacemos para alcanzar acuerdos cuando recibimos nueva información?
+
+\section{Evidencia formal y empirica}
+
+Supongamos que recibimos el dato de que el regalo no está en la caja del medio, lo que nos permite asignar creencia 0 a esa caja.
 
 \begin{figure}[H]
 \centering
@@ -101,11 +163,9 @@ En este caso, en el que no tenemos información previa, la obtuvimos dividiendo 
         } 
 \end{figure}
 
-Aquí recibimos el dato de que el regalo no está en la caja del medio, lo que nos permite asignar creencia 0 a esa caja.
 Para actualizar el resto de las cajas necesitamos interpretar qué nos está diciendo la pista.
 Supongamos que la pista depende de dónde está el regalo, sólo nos puede indicar dónde no está el regalo.
 Esto lo podemos representar con el siguiente modelo causal.
-\todo[inline]{No suponer que la figura va a quedar en el lugar, usar los labels y describir la figura tambien}
 
 \begin{figure}[H]
 \centering
@@ -127,7 +187,7 @@ Siguiendo con el principio de indiferencia que usamos para definir una creencia 
 \begin{figure}[H]
 \centering
 \tikz{
-\node[latent, draw=white, yshift=0.6cm] (b0) {$ 1$};
+\node[latent, draw=white, yshift=0.6cm] (b0) {$1$};
 
 \node[latent,below=of b0,yshift=0.6cm, xshift=-3cm] (r1) {$r_1$};
 \node[latent,below=of b0,yshift=0.6cm] (r2) {$r_2$};
@@ -182,24 +242,21 @@ Nuestra creencia conjunta honesta a priori es,
 Es honesta porque maximiza la incertidumbre dada la información disponible hasta el momento: el modelo causal.
 Y es conjunta porque es la creencia de que ocurran simultaneamente ambas variables, $\text{Creencia}(r,s)$.
 
-\subsection{Reglas de la probabilidad}
+% Parrafo
 
-Las reglas de la probabilidad han sido derivadas formalmente a partir de una gran cantidad de sistemas axiomáticos conceptualmente distintos e independientes entre si, lo cual es uno de los punto fuertes a su favor.
-Pero quizás más importante es que ellas garantizan maximizar la incertidumbre dada la información empírica (datos) y formal (modelos causales).
-
-La teoría de la probabilidad tiene sólo dos reglas: la regla de la suma y la regla del producto.
-La primera computa la creencia de una variable integrando en partes iguales la creencia conjunta.
-Por ejemplo, la creencia honesta sobre los regalos nuevamente es 1/3
+Habiendo definido la creencia conjunta, las creencias sobre cada una de las variables se obtiene como el total.
+La creencia sobre el regalo nuevamente es 1/3,
 \begin{equation}
 \text{Creencia}(r_i) = \sum_j \text{Creencia}(r_i, s_j) = 1/3
 \end{equation}
-
 y sobre la pista también
 \begin{equation}
 \text{Creencia}(s_j) = \sum_i \text{Creencia}(r_i, s_j) = 1/3
 \end{equation}
 
-La segunda regla consiste en quedarnos con la creencia a priori que es compatible con el dato, $\text{Creencia}(r_i, s_2)$.
+% Parrafo
+
+Para actualizar las creencias simplemente nos quedamos con la creencia a priori que es compatible con el dato, $\text{Creencia}(r_i, s_2)$.
 %
 \begin{table}[H]
 \centering
@@ -353,7 +410,6 @@ Para actualizar nuestra creencia, nuevamente nos quedamos con la creencia a prio
 
 Que normalizado en partes iguales para que sume 1 queda como
 
-
 \begin{figure}[H]
 \centering
 \tikz{ %
@@ -372,7 +428,117 @@ Que normalizado en partes iguales para que sume 1 queda como
 Esta respuesta es diferente a la que obtuvimos con el primer modelo causal.
 Sin embargo, ambas comparten la propiedad de ser la distribución de creencias que maximiza la incertidumbre dada la evidencia formal (modelo causal) y empírica (datos), lo que hace que sean proposiciones sobre las que podemos acordar tanto intercultural como intersubjetivamente.
 
-\section{Teorema de Bayes}
+\section{Reglas de la probabilidad}
+
+Las reglas de la probabilidad han sido derivadas formalmente a partir de una gran cantidad de sistemas axiomáticos conceptualmente distintos e independientes entre si, lo cual es uno de los punto fuertes a su favor.
+Pero quizás más importante es que ellas garantizan maximizar la incertidumbre dada la información empírica (datos) y formal (modelos causales).
+
+% Parrafo
+
+La teoría de la probabilidad tiene sólo dos reglas, conocidas como la regla de la suma y la regla del producto.
+La primera regla computa la creencia de una variable simplemente como el total que ya le fue asignado en la creencia conjunta.
+\begin{equation}
+P(r_i) = \sum_j P(r_i, s_j)
+\end{equation}
+La segunda regla simplemente se queda con nueva creencia total a la creencia a priori que es compatible con el dato.
+Expresada como producto
+\begin{equation}
+P(s_j)P(r_i|s_j) = P(r_i, s_j)
+\end{equation}
+
+Toda la teoría de la probabilidad se reduce a estas dos reglas.
+
+\subsection{Teorema de Bayes}
+
+El teorema de Bayes no es más que un corolario de las reglas de las probabilidad.
+
+\begin{equation}
+\begin{split}
+P(r_i|s_2) = \frac{P(r_i, s_2)}{P(s_2)} = \frac{P(s_2|r_i)P(r_i)}{P(s_2)} 
+\end{split}
+\end{equation}
+
+En términos más generales, $r_i$ representa las hipótesis y $s_2$ reṕresenta el dato.
+
+\begin{equation*}
+\underbrace{P(\text{Hip\'otesis }|\text{ Datos})}_{\text{\scriptsize Posteriori}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis})}^{\text{\scriptsize Priori}} }{\underbrace{P(\text{Datos})}_{\text{\scriptsize Evidencia}}}
+\end{equation*}
+
+Es importante notar que todas estas probabilidades en realidad dependen de un cierto modelo causal, por lo correcto sería incluirlo explícitamente en el condicional.
+
+
+\begin{equation*}
+\underbrace{P(\text{Hip\'otesis }|\text{ Datos, Modelo})}_{\text{\scriptsize Posteriori}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis, Modelo})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis }|\text{ Modelo})}^{\text{\scriptsize Priori}} }{\underbrace{P(\text{Datos }|\text{ Modelo})}_{\text{\scriptsize Evidencia}}}
+\end{equation*}
+
+\subsection{Verosimilitud}
+
+La verosimilitud es la predicción de los datos dada las hipótesis.
+Veamos cuál es la verosimilitud, $P(s2|r_i)$, en el modelo de Monty Hall.
+
+\begin{figure}[H]
+\centering
+\tikz{
+\phantom{\node[latent, draw=white, yshift=0.8cm] (b0) {$1$};}
+\node[latent,below=of b0,yshift=0.8cm, xshift=-3cm] (r1) {$r_1$};
+\node[latent,below=of b0,yshift=0.8cm] (r2) {$r_2$};
+\node[latent,below=of b0,yshift=0.8cm, xshift=3cm] (r3) {$r_3$};
+
+\node[latent, below=of r1, draw=white, yshift=0.8cm] (br1) {$1$};
+\node[latent, below=of r2, draw=white, yshift=0.8cm] (br2) {$1$};
+\node[latent, below=of r3, draw=white, yshift=0.8cm] (br3) {$1$};
+\node[latent,below=of br1,yshift=0.8cm] (c11) {$c_1$};
+\node[latent,below=of br2,yshift=0.8cm] (c12) {$c_1$};
+\node[latent,below=of br3,yshift=0.8cm] (c13) {$c_1$};
+
+\node[latent, below=of c11, draw=white, yshift=0.8cm] (bc11) {$1$};
+\node[latent, below=of c12, draw=white, yshift=0.8cm] (bc12) {$1$};
+\node[latent, below=of c13, draw=white, yshift=0.8cm] (bc13) {$1$};
+\node[latent,below=of bc11,yshift=0.8cm, xshift=-0.7cm] (r1d2) {$s_2$};
+\node[latent,below=of bc11,yshift=0.8cm, xshift=0.7cm] (r1d3) {$s_3$};
+\node[latent,below=of bc12,yshift=0.8cm] (r2d3) {$s_3$};
+\node[latent,below=of bc13,yshift=0.8cm] (r3d2) {$s_2$};
+
+\node[latent,below=of r1d2,yshift=0.8cm,draw=white] (br1d2) {$\frac{1}{2}$};
+\node[latent,below=of r1d3,yshift=0.8cm, draw=white] (br1d3) {$\frac{1}{2}$};
+\node[latent,below=of r2d3,yshift=0.8cm,draw=white] (br2d3) {$1$};
+\node[latent,below=of r3d2,yshift=0.8cm,draw=white] (br3d2) {$1$};
+\phantom{\edge[-] {b0} {r1,r2,r3};}
+\edge[-] {r1} {br1};
+\edge[-] {r2} {br2};
+\edge[-] {r3} {br3};
+\edge[-] {br1} {c11};
+\edge[-] {br2} {c12};
+\edge[-] {br3} {c13};
+\edge[-] {c11} {bc11};
+\edge[-] {c12} {bc12};
+\edge[-] {c13} {bc13};
+\edge[-] {bc11} {r1d2,r1d3};
+\edge[-] {bc12} {r2d3};
+\edge[-] {bc13} {r3d2};
+\edge[-] {r1d2} {br1d2};
+\edge[-] {r1d3} {br1d3};
+\edge[-] {r2d3} {br2d3};
+\edge[-] {r3d2} {br3d2};
+}
+\end{figure}
+
+\begin{table}[H]
+\centering
+ $P(s_2|r_i)$   
+ 
+ \begin{tabular}{c|c|c|c} \setlength\tabcolsep{0.4cm} 
+          & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, \\ \hline 
+   $s_2$ & $1/2$ & $0$ & $1$  \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Posterior}
+
+\subsection{Evidencia}
+
+
+
 
 \section{Selección de modelos}
 
