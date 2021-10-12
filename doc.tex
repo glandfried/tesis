@@ -135,7 +135,7 @@ Algunos ejemplos paradigmáticos son la transición de las moléculas replicante
 
 \section{Evolución}
 
-En evolución, el crecimiento de una estrategia $e$ en el tiempo, $\omega(t)$, esta gobernado por una secuencias estocástica de tasas de supervivencia y reproducción $f_e(\cdot)$ dependientes de un ambiente aleatorio $a$,
+En evolución, el crecimiento de una estrategia $e$ en el tiempo, $\omega_e(t)$, esta gobernado por una secuencias estocástica de tasas de supervivencia y reproducción $f_e(\cdot)$ dependientes de un ambiente aleatorio $a$,
 %
 \begin{equation} \label{eq:modelo_exponencial}
 \omega_e(T) = \prod_t^T f_e(a(t))
@@ -158,7 +158,7 @@ Según el modelo estándar de evolución, conocido como \emph{replicator dynamic
 \begin{equation} \label{eq:replicator_dynamic}
 x_e^\prime = \frac{x_e f_e}{X}
 \end{equation}
-donde $X=\sum_i x_i f_i$ es una constante de normalización.
+donde $X=\sum_i x_i f_i$ es el tamaño total de la población y actúa como constante de normalización.
 ¿Pero cuál es la tasa de crecimiento característica, $f_e$?
 Su estimación requiere considerar explícitamente la variablidad del ambiente, $a$, y el tipo de proceso que genera esa variabilidad.
 
@@ -166,22 +166,23 @@ Su estimación requiere considerar explícitamente la variablidad del ambiente, 
 
 Buena parte de la literatura en evolución considera que la estimación correcta se obtiene mediante el valor esperado de los recursos en el tiempo, $\omega_e(t)$.
 Sea $\Omega_t$ el valor en el tiempo $t$ de todas las posibles trayectorias, su valor esperado se obtiene pesando cada estado $\omega_e \in \Omega_t$ por la probabilidad de que ocurra $P(\omega)$
+%
 \begin{equation}
 \langle \omega_e \rangle_t = \sum_{\omega \in \Omega_t} \omega \cdot  P(\omega)
 \end{equation}
-
-% Parrafo
-
-El valor esperado de la estrategia considerada en la ecuación \ref{eq:estrategia_base} es en los dos primeros pasos temporales de, 
+%
+El valor esperado en los dos primeros pasos temporales es, 
+%
 \begin{equation}
 \begin{split}
 \langle \omega_e \rangle_1 & = 1.5 \cdot \frac{1}{2} + 0.6 \cdot  \frac{1}{2} = 1.05 \\ 
 \langle \omega_e \rangle_2 &=  1.5^2 \cdot \frac{1}{4} + 2 (0.6 \cdot 1.5 \cdot \frac{1}{4} ) + 0.6^2 \cdot \frac{1}{4}= 1.05^2
 \end{split}
 \end{equation}
-Según el valor esperado, la tasa de crecimiento estimada es $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$.
-Y efectivamente eso es lo que ocurre con el promedio de una muestra suficientemente grande de trayectoria individuales en el tiempo, $\omega(t)$, 
-
+%
+Es decir, la tasa de crecimiento estimada según el valor esperado es de $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$.
+Y efectivamente eso es lo que ocurre con el promedio de las trayectoria individuales, $\omega_e(t)$, cuando la población es suficientemente grande,
+%
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -189,7 +190,7 @@ Y efectivamente eso es lo que ocurre con el promedio de una muestra suficienteme
     \end{subfigure}
     \caption{
     Promedio de los recursos individuales en el tiempo para diferentes tamaños de la población, en escala logarítimica ($10^0,10^1,10^2,10^3,10^4$).
-    A medida que aumentamos el tamaño de la población, el promedio se acerca al valor esperado $\langle \omega \rangle_t = 1.05^t$.
+    A medida que aumentamos el tamaño de la población, el promedio se acerca al valor esperado $\langle \omega_e \rangle_t = 1.05^t$.
     }
     \label{fig:ergodicity_expectedValue}
 \end{figure}
@@ -210,7 +211,7 @@ Individualmente, todas las trayectorias pierden a largo plazo a una tasa cercana
     \end{subfigure}
     \caption{
     La recta negra representan el valor esperado.
-    Figura \ref{fig:ergodicity_individual_trayectories}: tamaño de los recursos individuales en el tiempo, $ \log(\omega(t))$.
+    Figura \ref{fig:ergodicity_individual_trayectories}: tamaño de los recursos individuales en el tiempo, $ \log(\omega_e(t))$.
     Figura \ref{fig:ergodicity_individual_trayectories_longrun}: con suficiente tiempo todas las trayectorias individuales se pegan a la recta azul. 
     }
     \label{fig:cpr_individual}
@@ -218,7 +219,7 @@ Individualmente, todas las trayectorias pierden a largo plazo a una tasa cercana
 
 La diferencia entre el valor esperado y lo que le ocurre a los agentes individuales en el tiempo es un problema bien conocido en mecánica estadística, llamado ``no-ergodicidad''~\cite{peters2019-ergodicityEconomics}.
 Cuando un proceso es ergódico, las descripciones de su dinámica pueden remplazarse mediante el valor esperado, eliminado el tiempo de los modelos.
-Sin embargo, las condiciones de para que un sistema cumpla con la hipótesis de ergodicidad son muy restrictivas.
+Sin embargo, las condiciones para que un sistema cumpla con la hipótesis de ergodicidad son muy restrictivas.
 Cuando estas hipótesis no se cumplen nos vemos obligados a analizar directamente su dinámica. 
 
 La dinámica evolutiva está gobernada por un procesos multiplicativos (eq.~\ref{eq:modelo_exponencial}), que en un cierto tiempo $t$ puede expresarse como,
@@ -228,7 +229,7 @@ La dinámica evolutiva está gobernada por un procesos multiplicativos (eq.~\ref
 
 donde $n_1$ y $n_2$ representa la cantidad de ocurrencias de $f_e(\text{cara})$ y $f_e(\text{seca})$, con $n_1 + n_2 = T$.
 Las trayectorias observadas en la figura \ref{fig:ergodicity_individual_trayectories} son variables, pero cuanto más tiempo observemos el sistema más suave se vuelven esas líneas (figura \ref{fig:ergodicity_individual_trayectories_longrun}).
-En el límite, $T \rightarrow \infty$ todas las trayectoria individuales estarán determinadas por el mismo factor efectivo $\overline{f_e}$ por el que se multiplica los recursos $\omega_e(T)$ en cada iteración.
+En el límite, $T \rightarrow \infty$ todas las trayectorias individuales estarán determinadas por la misma tasa de crecimiento $\overline{f_e}$ por el que se multiplica los recursos $\omega_e(T)$ en cada iteración.
 \begin{equation}
 \begin{split}
 \lim_{T \rightarrow \infty} \omega_e(T) & = \overline{f_e}^T \\
@@ -270,10 +271,10 @@ La estrategia consiste en repartir los recursos en partes iguales luego de cada 
     \node[latent, minimum size=2cm ] (x1_0) {$\omega_1(t)$} ;
     \node[latent, below=of x1_0, minimum size=2cm ] (x2_0) {$\omega_2(t)$} ;
 
-    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega_1(t)\cdot f(r_1(t))$} ;
-    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=left] (x2_0g) {$\omega_2(t)\cdot$\\$f(r_2(t))$} ;
+    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega_1(t)\cdot f_e(a_1(t))$} ;
+    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=left] (x2_0g) {$\omega_2(t)\cdot$\\$f_e(a_2(t))$} ;
     
-    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=right] (x_0) {$\omega_1(t)\cdot f(r_1(t))$\\$+\omega_2(t)\cdot f(r_2(t))$ } ;
+    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=right] (x_0) {$\omega_1(t)\cdot f_e(a_1(t))$\\$+\omega_2(t)\cdot f_e(a_2(t))$ } ;
     
     \node[const, above=of x_0] (nx_0) {$\overbrace{\text{Pool}\hspace{2.5cm}\text{Share}}^{\text{\normalsize Cooperaci\'on}}$} ;
     
@@ -287,7 +288,7 @@ La estrategia consiste en repartir los recursos en partes iguales luego de cada 
     
 }
 }
-\caption{Estrategia cooperativa. Los agentes comienzan con los mismos recursos iniciales. Luego crecen independientemente de acuerdo con la ecuaci\'on \ref{}. Luego cooperan poniendo sus recursos en un fondo común, que finalmente es dividio en partes iguales.}
+\caption{Estrategia cooperativa. Los agentes comienzan con los mismos recursos iniciales. Luego crecen independientemente de acuerdo con la ecuaci\'on \ref{eq:estrategia_base}. Luego cooperan poniendo sus recursos en un fondo común, que finalmente es dividio en partes iguales.}
 \label{fig:protocolo}
 \end{figure}
 
