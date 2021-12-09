@@ -38,6 +38,7 @@
 \usepackage{mathtools}	
 \usepackage{tikz}
 \usepackage{paracol}
+\usepackage[binary-units]{siunitx} % \num{} \SI{}
 \input{tikzlibrarybayesnet.code.tex}
 
 
@@ -111,338 +112,23 @@
 
 \tableofcontents
 
-\chapter{Sistemas naturales de procesamiento de información}
-
-En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4500 millones de años, apareció en la tierra una forma de organización de la materia capaz de auto-replicarse.
-El crecimiento de estos linajes siguieron procesos multiplicativos ruidosos: secuencias de probabilidades de supervivencia y reproducción.
-Los errores producidos durante la replicación diversificaron las formas de vida, y las tasas de crecimiento de las diferentes estrategias favorecieron a aquellas mejor adaptadas al ambiente.
-Desde aquel momento hasta ahora la vida adquirió una extraordinaria complejidad.
-%
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.65\textwidth}
-    \includegraphics[width=\linewidth]{static/biomass.jpg}
-    \end{subfigure}
-    \caption{
-	Estimación de la distribución actual de la biomasa en la tierra realizada por Bar-On~\cite{barOn2018-biomass}.
-    }
-    \label{fig:cpr_individual}
-\end{figure}
-%
-Esta complejidad es consecuencia de una serie de transiciones evolutivas~\cite{maynardSmith1995-majorTransitions} en las que las entidades capaces de replicarse de forma independiente, cediendo algo de valor a las otras, pasan a formar unidades evolutivas de nivel superior.
-Algunos ejemplos paradigmáticos son la transición de las moléculas replicantes a las protocélulas, la endosimbiosis de las mitocondrias y los plastos por parte de las células eucariotas, la aparición de los organismos multicelulares.
-¿Cómo se explica esta tendencia permanente de la vida en favor de la agregación cooperativa?
-
-\section{Evolución}
-
-En evolución, el crecimiento de una estrategia $e$ en el tiempo, $\omega_e(t)$, esta gobernado por una secuencias estocástica de tasas de supervivencia y reproducción $f_e(\cdot)$ dependientes de un ambiente aleatorio $a$,
-%
-\begin{equation} \label{eq:modelo_exponencial}
-\omega_e(T) = \prod_t^T f_e(a(t))
-\end{equation}
-%
-donde $a(t)$ representa el estado del ambiente en el tiempo $t$.
-Supongamos que la naturaleza lanza una moneda,
-\begin{equation} \label{eq:estrategia_base}
-f_e(a) =
-\begin{cases}
- 1.5 & a = \text{ Cara } \\
- 0.6 & a = \text{ Seca }
-\end{cases}
-\end{equation}
-Si sale cara la población se reproduce un 50\% y si sale seca sobrevive el 60\%.
-
-% Parrafo
-
-Según el modelo estándar de evolución, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic, schuster1983-replicatorDynamics, hofbauer2003-evolutionaryGameDynamics}, el cambio de la proporción de una estrategia $e$ en la población, $x_e$, está determinado por su tasa de crecimiento caracterísitica $f_e$,
-\begin{equation} \label{eq:replicator_dynamic}
-x_e^\prime = \frac{x_e f_e}{X}
-\end{equation}
-donde $X=\sum_i x_i f_i$ es el tamaño total de la población y actúa como constante de normalización.
-¿Pero cuál es la tasa de crecimiento característica, $f_e$?
-Su estimación requiere considerar explícitamente la variablidad del ambiente, $a$, y el tipo de proceso que genera esa variabilidad.
-
-% Parrafo
-
-Buena parte de la literatura en evolución considera que la estimación correcta se obtiene mediante el valor esperado de los recursos en el tiempo, $\omega_e(t)$.
-Sea $\Omega_t$ el valor en el tiempo $t$ de todas las posibles trayectorias, su valor esperado se obtiene pesando cada estado $\omega_e \in \Omega_t$ por la probabilidad de que ocurra $P(\omega)$
-%
-\begin{equation}
-\langle \omega_e \rangle_t = \sum_{\omega \in \Omega_t} \omega \cdot  P(\omega)
-\end{equation}
-%
-El valor esperado en los dos primeros pasos temporales es, 
-%
-\begin{equation}
-\begin{split}
-\langle \omega_e \rangle_1 & = 1.5 \cdot \frac{1}{2} + 0.6 \cdot  \frac{1}{2} = 1.05 \\ 
-\langle \omega_e \rangle_2 &=  1.5^2 \cdot \frac{1}{4} + 2 (0.6 \cdot 1.5 \cdot \frac{1}{4} ) + 0.6^2 \cdot \frac{1}{4}= 1.05^2
-\end{split}
-\end{equation}
-%
-Es decir, la tasa de crecimiento estimada según el valor esperado es de $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$.
-Y efectivamente eso es lo que ocurre con el promedio de las trayectoria individuales, $\omega_e(t)$, cuando la población es suficientemente grande,
-%
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_expectedValue.pdf}
-    \end{subfigure}
-    \caption{
-    Promedio de los recursos individuales en el tiempo para diferentes tamaños de la población, en escala logarítimica ($10^0,10^1,10^2,10^3,10^4$).
-    A medida que aumentamos el tamaño de la población, el promedio se acerca al valor esperado $\langle \omega_e \rangle_t = 1.05^t$.
-    }
-    \label{fig:ergodicity_expectedValue}
-\end{figure}
-
-Sin embargo, el valor esperado no representa lo que lo le ocurre a los agentes en el tiempo. 
-Individualmente, todas las trayectorias pierden a largo plazo a una tasa cercana al 5\%.
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
-    \caption{}
-    \label{fig:ergodicity_individual_trayectories}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories_longrun.pdf}
-    \caption{}
-    \label{fig:ergodicity_individual_trayectories_longrun}
-    \end{subfigure}
-    \caption{
-    La recta negra representan el valor esperado.
-    Figura \ref{fig:ergodicity_individual_trayectories}: tamaño de los recursos individuales en el tiempo, $ \log(\omega_e(t))$.
-    Figura \ref{fig:ergodicity_individual_trayectories_longrun}: con suficiente tiempo todas las trayectorias individuales se pegan a la recta azul. 
-    }
-    \label{fig:cpr_individual}
-\end{figure}
-
-La diferencia entre el valor esperado y lo que le ocurre a los agentes individuales en el tiempo es un problema bien conocido en mecánica estadística, llamado ``no-ergodicidad''~\cite{peters2019-ergodicityEconomics}.
-Cuando un proceso es ergódico, las descripciones de su dinámica pueden remplazarse mediante el valor esperado, eliminado el tiempo de los modelos.
-Sin embargo, las condiciones para que un sistema cumpla con la hipótesis de ergodicidad son muy restrictivas.
-Cuando estas hipótesis no se cumplen nos vemos obligados a analizar directamente su dinámica. 
-
-La dinámica evolutiva está gobernada por un procesos multiplicativos (eq.~\ref{eq:modelo_exponencial}), que en un cierto tiempo $t$ puede expresarse como,
-\begin{equation}
-\omega_e(T) = \prod^T_{t} f_e(a(t)) = f(\text{cara})^{n_1} f(\text{seca})^{n_2}
-\end{equation}
-
-donde $n_1$ y $n_2$ representa la cantidad de ocurrencias de $f_e(\text{cara})$ y $f_e(\text{seca})$, con $n_1 + n_2 = T$.
-Las trayectorias observadas en la figura \ref{fig:ergodicity_individual_trayectories} son variables, pero cuanto más tiempo observemos el sistema más suave se vuelven esas líneas (figura \ref{fig:ergodicity_individual_trayectories_longrun}).
-En el límite, $T \rightarrow \infty$ todas las trayectorias individuales estarán determinadas por la misma tasa de crecimiento $\overline{f_e}$ por el que se multiplica los recursos $\omega_e(T)$ en cada iteración.
-\begin{equation}
-\begin{split}
-\lim_{T \rightarrow \infty} \omega_e(T) & = \overline{f_e}^T \\
-\left( \lim_{T \rightarrow \infty} \omega_e(T) \right)^{1/T} & =  \overline{f_e} \\
-\lim_{T \rightarrow \infty} f_e(\text{cara})^{n_1/T} f_e(\text{seca})^{n_2/T} & 
- \end{split}
-\end{equation}
-Donde las frecuencias $\frac{n_1}{T}$ y $\frac{n_2}{T}$ en el límite $T \rightarrow \infty$ son iguales a las probabilidades de ocurrencia de los estados del sistema.
-Por lo tanto, la mejor estimación de la tasa de crecimiento es,
-\begin{equation}
-\overline{f_e} = (1.5 \cdot 0.6)^{1/2} \approx 0.95
-\end{equation}
-
-
-Esta fórmula, que permite computar la tasa de crecimiento caracterísitica a largo plazo de las trayectorias individuales surgidas de procesos multiplicativos, se la conoce también como \emph{media geométrica} y ha sido usada previamente en la literatura de evolución~\cite{dempster1955-geometricMean}.
-Una propiedad importante es que su valor siempre es menor que el promedio de estados.
-Esto se debe a que en los procesos multiplicativos los impactos físicos de las pérdidas suelen ser más fuertes que los de las ganancias.
-En el extremo, un único cero en la productoria alcanza para generar su extinción.
-
-% Decimos que un proceso es ergódico si se cumple que,
-% \begin{equation}
-%  \underbrace{\lim_{T \mapsto \infty} \frac{1}{T} \sum_{t=1}^T \omega(t)}_{\text{Media temporal}}  = \underbrace{\sum_{\omega} \omega \cdot p(\omega)}_{\text{Media de estados}}
-% \end{equation}
-% 
-
-\subsection{Ventaja de la cooperación}
-
-En los procesos no-ergódicos, las fluctuaciones tienen un efecto negativo en la tasa de crecimiento individual a largo plazo, pero no en la tasa de crecimiento del valor esperado.
-Dado que la varianza realmente importa, una forma eficaz de reducirla es compartir los riesgos~\cite{yaari2010-cooperationEvolution, peters2015-evolutionaryAdvantageOfCooperation}.
-%Parafraseando a Den Boer~\cite{denBoer1968-spreadingRisk}, la  supervivencia de una población depende de la distribución del riesgo dentro de la población y entre las poblaciones de diferentes especies.
-Ole Peters~\cite{peters2015-evolutionaryAdvantageOfCooperation} considera las consecuencias que tiene sobre la tasa de crecimiento de los agentes la distribución del riesgo de una estrategia cooperativa sencilla.
-La estrategia consiste en repartir los recursos en partes iguales luego de cada iteración.
-
-\begin{figure}[H]
-\centering
-\scalebox{0.75}{
-\tikz{
-
-    \node[latent, minimum size=2cm ] (x1_0) {$\omega_1(t)$} ;
-    \node[latent, below=of x1_0, minimum size=2cm ] (x2_0) {$\omega_2(t)$} ;
-
-    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega_1(t)\cdot f_e(a_1(t))$} ;
-    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=left] (x2_0g) {$\omega_2(t)\cdot$\\$f_e(a_2(t))$} ;
-    
-    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=right] (x_0) {$\omega_1(t)\cdot f_e(a_1(t))$\\$+\omega_2(t)\cdot f_e(a_2(t))$ } ;
-    
-    \node[const, above=of x_0] (nx_0) {$\overbrace{\text{Pool}\hspace{2.5cm}\text{Share}}^{\text{\normalsize Cooperaci\'on}}$} ;
-    
-    \node[latent, right=of x1_0g, minimum size=2.5cm,  xshift=4.5cm] (x1_1) {$\omega_1(t+1)$ } ;
-    \node[latent, below=of x1_1, minimum size=2.5cm, yshift=0.7cm] (x2_1) {$\omega_2(t+1)$ } ;
-    
-    \edge {x1_0} {x1_0g};
-    \edge {x2_0} {x2_0g};
-    \edge {x1_0g,x2_0g} {x_0};
-    \edge {x_0} {x1_1,x2_1};
-    
-}
-}
-\caption{Estrategia cooperativa. Los agentes comienzan con los mismos recursos iniciales. Luego crecen independientemente de acuerdo con la ecuaci\'on \ref{eq:estrategia_base}. Luego cooperan poniendo sus recursos en un fondo común, que finalmente es dividio en partes iguales.}
-\label{fig:protocolo}
-\end{figure}
-
-Las poblaciones enteramente cooperadoras reducen sus fluctuaciones, lo que genera una aumento en la tasa de crecimiento de todos sus miembros.
-En la figura \ref{fig:cpr_absolute_cooperation} mostramos la trayectoria de uno de los agentes cooperadores.
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/cpr_absolute_cooperation.pdf}
-    \end{subfigure}
-    \caption{
-    Tamaño logarítimico de los recursos de un individuo de una población con 33 agentes que comparten su riqueza luego de cada iteración.
-    La recta negra que baja representa el promedio temporal, y la que sube el promedio de estados.
-    }
-    \label{fig:cpr_absolute_cooperation}
-\end{figure}
-
-Mediante la cooperación, las poblaciones de agentes logran acceder a tasas de crecimiento individuales equivalentes al promedio de estados del sistema, que en los sistemas no-ergódicos es siempre superior que el promedio temporal.
-
-% Parrafo
-
-Ole Peters considera que este aumento de la tasa de crecimiento demuestra la ventaja evolutiva de la cooperación, lo que propone como principal explicación de las transiciones evolutivas.
-Sin embargo Ole Peters no analiza el problema de la deserción, quien dice ``our cooperators are unable to break the cooperative pact''.
-No parece ser un problema menor, teniendo en cuenta la tentación que podría significar dejar de aportar al fondo común mientras se siguen recibiendo los beneficios de este.
-
-\subsection{Transiciones evolutivas}
-
-\todo[inline]{subsección no terminada}
-
-Para discutir este punto en detalle, analizamos las tasas de crecimiento de las estrategias cooperadora y desertora en un caso concreto.
-
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/cpr_absolute_cooperation_defection_costo.png}
-    \end{subfigure}
-    \caption{
-    Población de 100 agentes, a) totalmente cooperadores, b) con un desertor, c) con 10 desertores.
-    }
-    \label{fig:cpr_absolute_cooperation_defection_costo}
-\end{figure}
-
-Las estrategias desertoras, al evitar compartir sus recursos generan un aumento en sus propias fluctuaciones, afectando su tasa de crecimiento a largo plazo sin necesidad de introducir castigos.
-Esto parecería apoyar la idea de Ole Peters de que la cooperación no es altruista sino que está impulsada por el interés personal.
-Sin embargo, los agentes evolutivos no son agentes económicos, su frecuencia cambia en base a tasa de \emph{diferencial} de crecimiento.
-Por más que la mutua cooperación sea mejor en términos absolutos, un mutante desertor tendrá una tasa de crecimiento mayor a la de su comañero cooperador, por lo que invadirá evolutivamente la población. 
-
-\section{La transición cultural}
-
-Antes del surgimiento de los humanos \emph{anatómicamente} modernos (masa cerebral actual) y de los humanos \emph{conductualmente} modernos (lenguaje), surgió en África una linaje \emph{emocionalmente} moderno~\cite{hrdy2020-emotionallyModern}, capaz de leer las intenciones de los otros.
-La especial integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas se debió a una coevolución genético-cultural desencadenada por el surgimiento previo de la crianza cooperativa~\cite{hrdy2020-emotionallyModern}.
-La forma en la que estos homininos organizaron la crianza produjo un ambiente que favoreció la selección de jóvenes capaces de monitorear y comprender las intenciones de los demás, y de atraer la atención de sus cuidadadores de modo de compartir sus propias necesidades.
-
-% Parrafo
-
-La empatía fue la habilidad que permitió el desarrollo del Homo sapiens.
-Esta costosa habilidad cognitiva es especialmente eficiente para la adquisición de tradiciones complejas: la comprensión mutua, la imitación y el lenguaje
-Lo que antes debía ser redescubierto una y otra vez mediante costosa experiencia individual, ahora podía ser transmitido a la siguiente generación.
-La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que re-construirlos cada vez por prueba y error conduce un proceso de evolución y acumulativa cultural que permite a las poblaciones humanas adaptarse rápidamente ante cambios bruscos en el ambiente o migraciones a nuevos entornos.
-
-% Parrafo
-
-El surgimiento de la cultura produjo cambios radicales para nuestra especie.
-Antes de la transición cultural, estuvimos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano.
-Luego de la transición cultural, en pocos años nuestra especie ocupó todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.
-Esta proeza se logró mediante los sistemas culturales y tecnológico desarrollados por sociedades cazadores-recolectores.
-Caminando salimos de África, ocupamos Asia, y de allí Oceanía y las Américas (las flechas del mapa~\ref{fig:agricultura}).
-La información transgeneracional fue la que le permitió a estas sociedades simples adaptarse rápidamente a los nuevos desafíos ecológicos.
-
-% Parrafo
-
-El cambio climático ocurrido al inicio del Holoceno (hace 12000 años) propició el desarrollo de la agricultura, que surgió de manera independiente en los seis grandes sistemas geográficos de la tierra: en la región central de África subsahariana, en Asia occidental, en Asia oriental, en Oceanía norte, en América del norte y en América del sur (las puntos rojos del mapa~\ref{fig:agricultura}).
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.6\textwidth}
-     \includegraphics[width=\textwidth]{figures/agricultura.pdf}
-     \label{fig:agricultura}
-    \end{subfigure}
-%     \begin{subfigure}[b]{0.40\textwidth}
-%     \includegraphics[width=\textwidth]{static/polynesia.png} 
-%     \caption{Poblamiento del océano Pacífico}
-%     \label{fig:polynesia}
-%     \end{subfigure}
-    \caption{
-    Proyección políedrica de la tierra que conserva los tamaños relativos de los continentes.
-    Las felchas indican el poblamiento, desde África a Asia, y de Asia hacia Oceanía y América.
-    Los puntos rojos indican surgimiento independiente de agricultura.
-    }%
-    \label{fig:poblamiento}
-\end{figure}
-%
-Alrededor de estos puntos se desarrollaron los principales centros poblacionales de la humanidad.
-El aumento de la población promovió, a su vez, el desarrollo de nuevas innovaciones tecnológicas y científicas, como la escritura, la matem\'aticas, las ingenier\'ias, la astronomía, las ciencias políticas, entre otras.
-Durante el año 1400 el mundo florecía de sociedades "prósperas"~\cite{dussel2004-sistemaMundo}: Aztecas en Ámerica del norte, Incas en Ámerica del sur, Tongas en el Pacífico, Bantúes en África sub-sahariana, los Árabes e Indios en Asia occidental y Chinos en Asia oriental, por mencionar algunos.
-
-\subsection{Evolución cultural}
-
-La especie humana posee la peculiar capacidad de desarrollar innovaciones culturales a lo largo de m\'ultiples generaciones, un fen\'omeno denominado \emph{evoluci\'on cultural acumulada}~\cite{Derex2020} (o \textbf{CCE} por sus siglas en ingl\'es).
-El modelo causal b\'asico de la literatura de evoluci\'on cultural afirma que la adaptaci\'on humana depende, adem\'as de la experiencia individual y los cambios en el ambiente, de la informaci\'on cultural a la que tienen acceso los agentes.
-
-\begin{figure}[H]
-	\centering
-	\tikz{
-    	\node[accion] (a) {} ;
-	    \node[const,below=of a] (na) {Adaptaci\'on} ;
-	    \node[accion,above=of a, xshift=-0.8cm] (e) {} ;
-	    \node[const,left=of e] (ne) {Experiencia} ;
-	    \node[accion,above=of a, xshift=0.8cm] (s) {} ;
-	    \node[const,right=of s] (ns) {Informaci\'on cultural} ;
-	    \node[accion,above=of a, yshift=0.6 cm] (m) {} ;
-	    \node[const,above=of m] (nm) {Medio ambiente} ;
-	    \edge {e,s,m} {a};
-	}
-	\caption{Representaci\'on gr\'afica de un modelo causal para la adaptaci\'on humana.}
-\end{figure}
-
-Todas las tecnolog\'ias surgen como resultado de esfuerzo transgeneracionales.
-Basada en los principios b\'asicos de la teor\'ia evolutiva (descendencia, modificaci\'on y selecci\'on), la antropolog\'ia ha desarrollado un marco te\'orico para explicar c\'omo cambia la cultura en el tiempo.
-Este marco ha motivado el desarrollo de los primeros modelos matem\'aticos para explicar distintas din\'amicas poblacionales de producci\'on, transmisi\'on y mantenimiento de informaci\'on cultural~\cite{cavalliSforza1981-culturalTransmission,boyd1985-evolutionaryProcess}.
-
-% Parrafo
-
-Una idea central en estos trabajos es que el aprendizaje social (por imitaci\'on, observaci\'on, etc.) no es al azar, sino que los individuos eligen de qui\'en aprender.
-Por ejemplo, una estrategia simple consiste en copiar lo que hace la mayor\'ia (\emph{frequency-based strategy}).
-Otra estrategia t\'ipica toma como modelo de referencia a las personas m\'as exitosas o prestigiosas (\emph{payoff-based strategy}). %, y llama a los individuos exitosos (de los cuales otros individuos aprenden) \textbf{demostradores}.
-Las diferentes estrategias de aprendizaje social que se han propuesto~\cite{rendell2010-socialLearningTournament} pueden ser clasificadas entre aquellas que identifican de qui\'enes aprenden los individuos, y aquellas que especifican las circunstancias bajo las cuales los individuos copian a otros.
-Por ejemplo, mantener compa\~neros de equipo estable est\'a relacionado con un mayor aprendizaje~\cite{Landfried2019}.
-
-\todo[inline]{Subsección no terminada}
-
-% Parrafo
-
-\section{Objetivos}
-
-\todo[inline]{Sección objetivos}
 
 \chapter{Conocimiento empírico}
 
-\epigraph{El conocimiento empírico no es más que principio de incertidumbre compatible con la evidencia formal y empírica}{}
+\epigraph{El conocimiento empírico no es más que principio de indiferencia compatible con la evidencia formal y empírica}{}
 
 La ciencia es una institución humana que tiene pretención de verdad.
 Las ciencias formales validan sus proposiciones mediante teoremas, resultados derivados de aplicar las reglas internas a un sistema axiomático cerrado.
 Las ciencias empíricas, por el contrario, deben validar sus proposiciones dentro de sistemas abiertos, lo que impone siempre un grado de incertidumbre asociada.
 ¿Cuál es entonces la fuente de validez del conocimiento empírico?
 
-\subsection{Principio de incertidumbre}
+\section{Principio de indiferencia}
 
-Supongamos que tenemos tres cajas y sabemos que detrás de una hay un regalo.
-Al no tener certeza de su posición, nos vemos ante la obligación de repartir nuestra creencia entre las posibles opciones.
+Supongamos que tenemos tres cajas y sólo sabemos que detrás de una hay un regalo.
+Para expresar nuestra (in)certidumbre repartiremos la creencia entre las posibles opciones.
 A las diferentes formas de dividir la creencia le vamos a llamar \emph{distribución de creencias}.
 Una posible distirbución de creencias es,
-
+%
 \begin{figure}[H]
 \centering
 \tikz{ %
@@ -455,11 +141,11 @@ Una posible distirbución de creencias es,
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/10$};
         } 
 \end{figure}
-
+%
 lo que representa una preferencia parcial por la caja del medio.
 Pero si de verdad no tenemos ninguna información respecto de dónde está el regalo, no hay motivos para tener preferencia por ninguna de las opciones, lo que sin lugar a dudas nos hará estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
-Éste es un viejo principio conocido como ``de indiferencia''.
-
+Éste es un principio de validez intercultural conocido como ``de indiferencia''.
+%
 \begin{figure}[H]
 \centering
 \tikz{ %
@@ -488,8 +174,9 @@ Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no 
 
 \section{Evidencia formal y empirica}
 
-Supongamos que recibimos el dato de que el regalo no está en la caja del medio, lo que nos permite asignar creencia 0 a esa caja.
-
+Supongamos que recibimos el dato (i.e. tenemos la certeza) de que el regalo no está en la caja del medio.
+En este caso es fácil llegar a un acuerdo que nos permita asignar creencia 0 a la caja del medio.
+%
 \begin{figure}[H]
 \centering
 \tikz{ %
@@ -503,11 +190,11 @@ Supongamos que recibimos el dato de que el regalo no está en la caja del medio,
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
         } 
 \end{figure}
-
+%
 Para actualizar el resto de las cajas necesitamos interpretar qué nos está diciendo la pista.
 Supongamos que la pista depende de dónde está el regalo, sólo nos puede indicar dónde no está el regalo.
 Esto lo podemos representar con el siguiente modelo causal.
-
+%
 \begin{figure}[H]
 \centering
 \tikz{            
@@ -522,7 +209,16 @@ Esto lo podemos representar con el siguiente modelo causal.
             
 }
 \end{figure}
-\todo[inline]{¿como se interpreta la figura, que significa cada cosa?}
+%
+Lo que está diciendo este modelo gráfico es: ``la pista $s$ depende del regalo $r$''.
+Si tenemos la certeza de que el regalo $r$ está en la caja $i$ y que la pista $s$ nunca señalará la misma caja donde se ubica el regalo, será fácil llegar a un acuerdo que nos permita asignar creencia 0 a ese evento.
+%
+\begin{equation}
+\text{Creencia}(s=i|r=i) = 0
+\end{equation}
+%
+
+%
 Siguiendo con el principio de indiferencia que usamos para definir una creencia honesta, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta de ellos.
 
 \begin{figure}[H]
@@ -885,14 +581,331 @@ Veamos cuál es la verosimilitud, $P(s2|r_i)$, en el modelo de Monty Hall.
 
 \section{Selección de modelos}
 
+
+\chapter{Sistemas naturales de procesamiento de información}
+
+En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4500 millones de años, apareció en la tierra una forma de organización de la materia capaz de auto-replicarse.
+El crecimiento de estos linajes siguieron procesos multiplicativos ruidosos: secuencias de probabilidades de supervivencia y reproducción.
+Los errores producidos durante la replicación diversificaron las formas de vida, y las tasas de crecimiento de las diferentes estrategias favorecieron a aquellas mejor adaptadas al ambiente.
+Desde aquel momento hasta ahora la vida adquirió una extraordinaria complejidad.
+%
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.65\textwidth}
+    \includegraphics[width=\linewidth]{static/biomass.jpg}
+    \end{subfigure}
+    \caption{
+	Estimación de la distribución actual de la biomasa en la tierra realizada por Bar-On~\cite{barOn2018-biomass}.
+    }
+    \label{fig:cpr_individual}
+\end{figure}
+%
+Esta complejidad es consecuencia de una serie de transiciones evolutivas~\cite{maynardSmith1995-majorTransitions} en las que las entidades capaces de replicarse de forma independiente, cediendo algo de valor a las otras, pasan a formar unidades evolutivas de nivel superior.
+Algunos ejemplos paradigmáticos son la transición de las moléculas replicantes a las protocélulas, la endosimbiosis de las mitocondrias y los plastos por parte de las células eucariotas, la aparición de los organismos multicelulares.
+¿Cómo se explica esta tendencia permanente de la vida en favor de la agregación cooperativa?
+
+\section{Evolución}
+
+En evolución, el crecimiento de una estrategia $e$ en el tiempo, $\omega_e(t)$, esta gobernado por una secuencias estocástica de tasas de supervivencia y reproducción $f_e(\cdot)$ dependientes de un ambiente aleatorio $a$,
+%
+\begin{equation} \label{eq:modelo_exponencial}
+\omega_e(T) = \prod_t^T f_e(a(t))
+\end{equation}
+%
+donde $a(t)$ representa el estado del ambiente en el tiempo $t$.
+Supongamos que la naturaleza lanza una moneda,
+\begin{equation} \label{eq:estrategia_base}
+f_e(a) =
+\begin{cases}
+ 1.5 & a = \text{ Cara } \\
+ 0.6 & a = \text{ Seca }
+\end{cases}
+\end{equation}
+Si sale cara la población se reproduce un 50\% y si sale seca sobrevive el 60\%.
+
+% Parrafo
+
+Según el modelo estándar de evolución, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic, schuster1983-replicatorDynamics, hofbauer2003-evolutionaryGameDynamics}, el cambio de la proporción de una estrategia $e$ en la población, $x_e$, está determinado por su tasa de crecimiento caracterísitica $f_e$,
+\begin{equation} \label{eq:replicator_dynamic}
+x_e^\prime = \frac{x_e f_e}{X}
+\end{equation}
+donde $X=\sum_i x_i f_i$ es el tamaño total de la población y actúa como constante de normalización.
+¿Pero cuál es la tasa de crecimiento característica, $f_e$?
+Su estimación requiere considerar explícitamente la variablidad del ambiente, $a$, y el tipo de proceso que genera esa variabilidad.
+
+% Parrafo
+
+Buena parte de la literatura en evolución considera que la estimación correcta se obtiene mediante el valor esperado de los recursos en el tiempo, $\omega_e(t)$.
+Sea $\Omega_t$ el valor en el tiempo $t$ de todas las posibles trayectorias, su valor esperado se obtiene pesando cada estado $\omega_e \in \Omega_t$ por la probabilidad de que ocurra $P(\omega)$
+%
+\begin{equation}
+\langle \omega_e \rangle_t = \sum_{\omega \in \Omega_t} \omega \cdot  P(\omega)
+\end{equation}
+%
+El valor esperado en los dos primeros pasos temporales es, 
+%
+\begin{equation}
+\begin{split}
+\langle \omega_e \rangle_1 & = 1.5 \cdot \frac{1}{2} + 0.6 \cdot  \frac{1}{2} = 1.05 \\ 
+\langle \omega_e \rangle_2 &=  1.5^2 \cdot \frac{1}{4} + 2 (0.6 \cdot 1.5 \cdot \frac{1}{4} ) + 0.6^2 \cdot \frac{1}{4}= 1.05^2
+\end{split}
+\end{equation}
+%
+Es decir, la tasa de crecimiento estimada según el valor esperado es de $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$.
+Y efectivamente eso es lo que ocurre con el promedio de las trayectoria individuales, $\omega_e(t)$, cuando la población es suficientemente grande,
+%
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_expectedValue.pdf}
+    \end{subfigure}
+    \caption{
+    Promedio de los recursos individuales en el tiempo para diferentes tamaños de la población, en escala logarítimica ($10^0,10^1,10^2,10^3,10^4$).
+    A medida que aumentamos el tamaño de la población, el promedio se acerca al valor esperado $\langle \omega_e \rangle_t = 1.05^t$.
+    }
+    \label{fig:ergodicity_expectedValue}
+\end{figure}
+
+Sin embargo, el valor esperado no representa lo que lo le ocurre a los agentes en el tiempo. 
+Individualmente, todas las trayectorias pierden a largo plazo a una tasa cercana al 5\%.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
+    \caption{}
+    \label{fig:ergodicity_individual_trayectories}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories_longrun.pdf}
+    \caption{}
+    \label{fig:ergodicity_individual_trayectories_longrun}
+    \end{subfigure}
+    \caption{
+    La recta negra representan el valor esperado.
+    Figura \ref{fig:ergodicity_individual_trayectories}: tamaño de los recursos individuales en el tiempo, $ \log(\omega_e(t))$.
+    Figura \ref{fig:ergodicity_individual_trayectories_longrun}: con suficiente tiempo todas las trayectorias individuales se pegan a la recta azul. 
+    }
+    \label{fig:cpr_individual}
+\end{figure}
+
+La diferencia entre el valor esperado y lo que le ocurre a los agentes individuales en el tiempo es un problema bien conocido en mecánica estadística, llamado ``no-ergodicidad''~\cite{peters2019-ergodicityEconomics}.
+Cuando un proceso es ergódico, las descripciones de su dinámica pueden remplazarse mediante el valor esperado, eliminado el tiempo de los modelos.
+Sin embargo, las condiciones para que un sistema cumpla con la hipótesis de ergodicidad son muy restrictivas.
+Cuando estas hipótesis no se cumplen nos vemos obligados a analizar directamente su dinámica. 
+
+La dinámica evolutiva está gobernada por un procesos multiplicativos (eq.~\ref{eq:modelo_exponencial}), que en un cierto tiempo $t$ puede expresarse como,
+\begin{equation}
+\omega_e(T) = \prod^T_{t} f_e(a(t)) = f(\text{cara})^{n_1} f(\text{seca})^{n_2}
+\end{equation}
+
+donde $n_1$ y $n_2$ representa la cantidad de ocurrencias de $f_e(\text{cara})$ y $f_e(\text{seca})$, con $n_1 + n_2 = T$.
+Las trayectorias observadas en la figura \ref{fig:ergodicity_individual_trayectories} son variables, pero cuanto más tiempo observemos el sistema más suave se vuelven esas líneas (figura \ref{fig:ergodicity_individual_trayectories_longrun}).
+En el límite, $T \rightarrow \infty$ todas las trayectorias individuales estarán determinadas por la misma tasa de crecimiento $\overline{f_e}$ por el que se multiplica los recursos $\omega_e(T)$ en cada iteración.
+\begin{equation}
+\begin{split}
+\lim_{T \rightarrow \infty} \omega_e(T) & = \overline{f_e}^T \\
+\left( \lim_{T \rightarrow \infty} \omega_e(T) \right)^{1/T} & =  \overline{f_e} \\
+\lim_{T \rightarrow \infty} f_e(\text{cara})^{n_1/T} f_e(\text{seca})^{n_2/T} & 
+ \end{split}
+\end{equation}
+Donde las frecuencias $\frac{n_1}{T}$ y $\frac{n_2}{T}$ en el límite $T \rightarrow \infty$ son iguales a las probabilidades de ocurrencia de los estados del sistema.
+Por lo tanto, la mejor estimación de la tasa de crecimiento es,
+\begin{equation}
+\overline{f_e} = (1.5 \cdot 0.6)^{1/2} \approx 0.95
+\end{equation}
+
+
+Esta fórmula, que permite computar la tasa de crecimiento caracterísitica a largo plazo de las trayectorias individuales surgidas de procesos multiplicativos, se la conoce también como \emph{media geométrica} y ha sido usada previamente en la literatura de evolución~\cite{dempster1955-geometricMean}.
+Una propiedad importante es que su valor siempre es menor que el promedio de estados.
+Esto se debe a que en los procesos multiplicativos los impactos físicos de las pérdidas suelen ser más fuertes que los de las ganancias.
+En el extremo, un único cero en la productoria alcanza para generar su extinción.
+
+% Decimos que un proceso es ergódico si se cumple que,
+% \begin{equation}
+%  \underbrace{\lim_{T \mapsto \infty} \frac{1}{T} \sum_{t=1}^T \omega(t)}_{\text{Media temporal}}  = \underbrace{\sum_{\omega} \omega \cdot p(\omega)}_{\text{Media de estados}}
+% \end{equation}
+% 
+
+\subsection{Ventaja de la cooperación}
+
+En los procesos no-ergódicos, las fluctuaciones tienen un efecto negativo en la tasa de crecimiento individual a largo plazo, pero no en la tasa de crecimiento del valor esperado.
+Dado que la varianza realmente importa, una forma eficaz de reducirla es compartir los riesgos~\cite{yaari2010-cooperationEvolution, peters2015-evolutionaryAdvantageOfCooperation}.
+%Parafraseando a Den Boer~\cite{denBoer1968-spreadingRisk}, la  supervivencia de una población depende de la distribución del riesgo dentro de la población y entre las poblaciones de diferentes especies.
+Ole Peters~\cite{peters2015-evolutionaryAdvantageOfCooperation} considera las consecuencias que tiene sobre la tasa de crecimiento de los agentes la distribución del riesgo de una estrategia cooperativa sencilla.
+La estrategia consiste en repartir los recursos en partes iguales luego de cada iteración.
+
+\begin{figure}[H]
+\centering
+\scalebox{0.75}{
+\tikz{
+
+    \node[latent, minimum size=2cm ] (x1_0) {$\omega_1(t)$} ;
+    \node[latent, below=of x1_0, minimum size=2cm ] (x2_0) {$\omega_2(t)$} ;
+
+    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega_1(t)\cdot f_e(a_1(t))$} ;
+    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=left] (x2_0g) {$\omega_2(t)\cdot$\\$f_e(a_2(t))$} ;
+    
+    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=right] (x_0) {$\omega_1(t)\cdot f_e(a_1(t))$\\$+\omega_2(t)\cdot f_e(a_2(t))$ } ;
+    
+    \node[const, above=of x_0] (nx_0) {$\overbrace{\text{Pool}\hspace{2.5cm}\text{Share}}^{\text{\normalsize Cooperaci\'on}}$} ;
+    
+    \node[latent, right=of x1_0g, minimum size=2.5cm,  xshift=4.5cm] (x1_1) {$\omega_1(t+1)$ } ;
+    \node[latent, below=of x1_1, minimum size=2.5cm, yshift=0.7cm] (x2_1) {$\omega_2(t+1)$ } ;
+    
+    \edge {x1_0} {x1_0g};
+    \edge {x2_0} {x2_0g};
+    \edge {x1_0g,x2_0g} {x_0};
+    \edge {x_0} {x1_1,x2_1};
+    
+}
+}
+\caption{Estrategia cooperativa. Los agentes comienzan con los mismos recursos iniciales. Luego crecen independientemente de acuerdo con la ecuaci\'on \ref{eq:estrategia_base}. Luego cooperan poniendo sus recursos en un fondo común, que finalmente es dividio en partes iguales.}
+\label{fig:protocolo}
+\end{figure}
+
+Las poblaciones enteramente cooperadoras reducen sus fluctuaciones, lo que genera una aumento en la tasa de crecimiento de todos sus miembros.
+En la figura \ref{fig:cpr_absolute_cooperation} mostramos la trayectoria de uno de los agentes cooperadores.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/cpr_absolute_cooperation.pdf}
+    \end{subfigure}
+    \caption{
+    Tamaño logarítimico de los recursos de un individuo de una población con 33 agentes que comparten su riqueza luego de cada iteración.
+    La recta negra que baja representa el promedio temporal, y la que sube el promedio de estados.
+    }
+    \label{fig:cpr_absolute_cooperation}
+\end{figure}
+
+Mediante la cooperación, las poblaciones de agentes logran acceder a tasas de crecimiento individuales equivalentes al promedio de estados del sistema, que en los sistemas no-ergódicos es siempre superior que el promedio temporal.
+
+% Parrafo
+
+Ole Peters considera que este aumento de la tasa de crecimiento demuestra la ventaja evolutiva de la cooperación, lo que propone como principal explicación de las transiciones evolutivas.
+Sin embargo Ole Peters no analiza el problema de la deserción, quien dice ``our cooperators are unable to break the cooperative pact''.
+No parece ser un problema menor, teniendo en cuenta la tentación que podría significar dejar de aportar al fondo común mientras se siguen recibiendo los beneficios de este.
+
+\subsection{Transiciones evolutivas}
+
+\todo[inline]{subsección no terminada}
+
+Para discutir este punto en detalle, analizamos las tasas de crecimiento de las estrategias cooperadora y desertora en un caso concreto.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/cpr_absolute_cooperation_defection_costo.png}
+    \end{subfigure}
+    \caption{
+    Población de 100 agentes, a) totalmente cooperadores, b) con un desertor, c) con 10 desertores.
+    }
+    \label{fig:cpr_absolute_cooperation_defection_costo}
+\end{figure}
+
+Las estrategias desertoras, al evitar compartir sus recursos generan un aumento en sus propias fluctuaciones, afectando su tasa de crecimiento a largo plazo sin necesidad de introducir castigos.
+Esto parecería apoyar la idea de Ole Peters de que la cooperación no es altruista sino que está impulsada por el interés personal.
+Sin embargo, los agentes evolutivos no son agentes económicos, su frecuencia cambia en base a tasa de \emph{diferencial} de crecimiento.
+Por más que la mutua cooperación sea mejor en términos absolutos, un mutante desertor tendrá una tasa de crecimiento mayor a la de su comañero cooperador, por lo que invadirá evolutivamente la población. 
+
+\section{La transición cultural}
+
+Antes del surgimiento de los humanos \emph{anatómicamente} modernos (masa cerebral actual) y de los humanos \emph{conductualmente} modernos (lenguaje), surgió en África una linaje \emph{emocionalmente} moderno~\cite{hrdy2020-emotionallyModern}, capaz de leer las intenciones de los otros.
+La especial integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas se debió a una coevolución genético-cultural desencadenada por el surgimiento previo de la crianza cooperativa~\cite{hrdy2020-emotionallyModern}.
+La forma en la que estos homininos organizaron la crianza produjo un ambiente que favoreció la selección de jóvenes capaces de monitorear y comprender las intenciones de los demás, y de atraer la atención de sus cuidadadores de modo de compartir sus propias necesidades.
+
+% Parrafo
+
+La empatía fue la habilidad que permitió el desarrollo del Homo sapiens.
+Esta costosa habilidad cognitiva es especialmente eficiente para la adquisición de tradiciones complejas: la comprensión mutua, la imitación y el lenguaje
+Lo que antes debía ser redescubierto una y otra vez mediante costosa experiencia individual, ahora podía ser transmitido a la siguiente generación.
+La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que re-construirlos cada vez por prueba y error conduce un proceso de evolución y acumulativa cultural que permite a las poblaciones humanas adaptarse rápidamente ante cambios bruscos en el ambiente o migraciones a nuevos entornos.
+
+% Parrafo
+
+El surgimiento de la cultura produjo cambios radicales para nuestra especie.
+Antes de la transición cultural, estuvimos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano.
+Luego de la transición cultural, en pocos años nuestra especie ocupó todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.
+Esta proeza se logró mediante los sistemas culturales y tecnológico desarrollados por sociedades cazadores-recolectores.
+Caminando salimos de África, ocupamos Asia, y de allí Oceanía y las Américas (las flechas del mapa~\ref{fig:agricultura}).
+La información transgeneracional fue la que le permitió a estas sociedades simples adaptarse rápidamente a los nuevos desafíos ecológicos.
+
+% Parrafo
+
+El cambio climático ocurrido al inicio del Holoceno (hace 12000 años) propició el desarrollo de la agricultura, que surgió de manera independiente en los seis grandes sistemas geográficos de la tierra: en la región central de África subsahariana, en Asia occidental, en Asia oriental, en Oceanía norte, en América del norte y en América del sur (las puntos rojos del mapa~\ref{fig:agricultura}).
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+     \includegraphics[width=\textwidth]{figures/agricultura.pdf}
+     \label{fig:agricultura}
+    \end{subfigure}
+%     \begin{subfigure}[b]{0.40\textwidth}
+%     \includegraphics[width=\textwidth]{static/polynesia.png} 
+%     \caption{Poblamiento del océano Pacífico}
+%     \label{fig:polynesia}
+%     \end{subfigure}
+    \caption{
+    Proyección políedrica de la tierra que conserva los tamaños relativos de los continentes.
+    Las felchas indican el poblamiento, desde África a Asia, y de Asia hacia Oceanía y América.
+    Los puntos rojos indican surgimiento independiente de agricultura.
+    }%
+    \label{fig:poblamiento}
+\end{figure}
+%
+Alrededor de estos puntos se desarrollaron los principales centros poblacionales de la humanidad.
+El aumento de la población promovió, a su vez, el desarrollo de nuevas innovaciones tecnológicas y científicas, como la escritura, la matem\'aticas, las ingenier\'ias, la astronomía, las ciencias políticas, entre otras.
+Durante el año 1400 el mundo florecía de sociedades "prósperas"~\cite{dussel2004-sistemaMundo}: Aztecas en Ámerica del norte, Incas en Ámerica del sur, Tongas en el Pacífico, Bantúes en África sub-sahariana, los Árabes e Indios en Asia occidental y Chinos en Asia oriental, por mencionar algunos.
+
+\subsection{Evolución cultural}
+
+La especie humana posee la peculiar capacidad de desarrollar innovaciones culturales a lo largo de m\'ultiples generaciones, un fen\'omeno denominado \emph{evoluci\'on cultural acumulada}~\cite{Derex2020} (o \textbf{CCE} por sus siglas en ingl\'es).
+El modelo causal b\'asico de la literatura de evoluci\'on cultural afirma que la adaptaci\'on humana depende, adem\'as de la experiencia individual y los cambios en el ambiente, de la informaci\'on cultural a la que tienen acceso los agentes.
+
+\begin{figure}[H]
+	\centering
+	\tikz{
+    	\node[accion] (a) {} ;
+	    \node[const,below=of a] (na) {Adaptaci\'on} ;
+	    \node[accion,above=of a, xshift=-0.8cm] (e) {} ;
+	    \node[const,left=of e] (ne) {Experiencia} ;
+	    \node[accion,above=of a, xshift=0.8cm] (s) {} ;
+	    \node[const,right=of s] (ns) {Informaci\'on cultural} ;
+	    \node[accion,above=of a, yshift=0.6 cm] (m) {} ;
+	    \node[const,above=of m] (nm) {Medio ambiente} ;
+	    \edge {e,s,m} {a};
+	}
+	\caption{Representaci\'on gr\'afica de un modelo causal para la adaptaci\'on humana.}
+\end{figure}
+
+Todas las tecnolog\'ias surgen como resultado de esfuerzo transgeneracionales.
+Basada en los principios b\'asicos de la teor\'ia evolutiva (descendencia, modificaci\'on y selecci\'on), la antropolog\'ia ha desarrollado un marco te\'orico para explicar c\'omo cambia la cultura en el tiempo.
+Este marco ha motivado el desarrollo de los primeros modelos matem\'aticos para explicar distintas din\'amicas poblacionales de producci\'on, transmisi\'on y mantenimiento de informaci\'on cultural~\cite{cavalliSforza1981-culturalTransmission,boyd1985-evolutionaryProcess}.
+
+% Parrafo
+
+Una idea central en estos trabajos es que el aprendizaje social (por imitaci\'on, observaci\'on, etc.) no es al azar, sino que los individuos eligen de qui\'en aprender.
+Por ejemplo, una estrategia simple consiste en copiar lo que hace la mayor\'ia (\emph{frequency-based strategy}).
+Otra estrategia t\'ipica toma como modelo de referencia a las personas m\'as exitosas o prestigiosas (\emph{payoff-based strategy}). %, y llama a los individuos exitosos (de los cuales otros individuos aprenden) \textbf{demostradores}.
+Las diferentes estrategias de aprendizaje social que se han propuesto~\cite{rendell2010-socialLearningTournament} pueden ser clasificadas entre aquellas que identifican de qui\'enes aprenden los individuos, y aquellas que especifican las circunstancias bajo las cuales los individuos copian a otros.
+Por ejemplo, mantener compa\~neros de equipo estable est\'a relacionado con un mayor aprendizaje~\cite{Landfried2019}.
+
+\todo[inline]{Subsección no terminada}
+
+% Parrafo
+
+\section{Objetivos}
+
+\todo[inline]{Sección objetivos}
+
 \chapter{TrueSkill Through Time}
 
 \section{Introducción}
 
 
-Los humanos desarrollamos habilidades complejas gracias a una integraci\'on especial de los procesos biol\'ogicos, cognitivos y sociales~\citep{Koster2020}.
-Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodos de aprendizaje juvenil y vida posreproductiva, permite a los humanos aprender de los dem\'as y transmitir las innovaci\'on a trav\'es de la generaciones~\citep{Richerson2020}.
-Al ser un proceso poblacional, la adaptaci\'on humana tambi\'en se ve afectada por caracter\'isticas demogr\'aficas, como el tama\~no y estructura de las poblaciones~\citep{Derex2020}.
+Los humanos desarrollamos habilidades complejas gracias a una integraci\'on especial de los procesos biol\'ogicos, cognitivos y sociales~\cite{Koster2020}.
+Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodos de aprendizaje juvenil y vida posreproductiva, permite a los humanos aprender de los dem\'as y transmitir las innovaci\'on a trav\'es de la generaciones~\cite{Richerson2020}.
+Al ser un proceso poblacional, la adaptaci\'on humana tambi\'en se ve afectada por caracter\'isticas demogr\'aficas, como el tama\~no y estructura de las poblaciones~\cite{Derex2020}.
 
 %
 
@@ -906,7 +919,7 @@ El campo sigui\'o progresando con los trabajos de \cite{Bradley1952} y~\cite{Mos
 
 % Parrafo
 
-Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo probabil\'istico propuesto por Elo~\citep{Glickman1999, Herbrich2007, VanDerLinden2016, Fox2010}.
+Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo probabil\'istico propuesto por Elo~\cite{Glickman1999, Herbrich2007, VanDerLinden2016, Fox2010}.
 %
 \begin{figure}[ht!]
 \centering \small
@@ -977,7 +990,7 @@ Una soluci\'on ad-hoc fue propuesta para resolver este problema: reducir el impa
 % Parrafo
 
 Una alternativa superadora consiste en distribuir nuestra creencia entre todas las posibles hipótesis de habilidad, en vez de seleccionar un \'unico valor como estimaci\'on.
-Este enfoque conocido como inferencia bayesiana ha demostrado ser exitoso en la pr\'actica~\citep{Bishop2006} y garantiza un razonamiento consistente en contextos de incertidumbre~\citep{Jaynes2003,VanHorn2003}.
+Este enfoque conocido como inferencia bayesiana ha demostrado ser exitoso en la pr\'actica~\cite{Bishop2006} y garantiza un razonamiento consistente en contextos de incertidumbre~\cite{Jaynes2003,VanHorn2003}.
 Toda inferencia de este tipo, no importa cuan compleja sea, puede ser resuelta mediante las reglas de la probabilidad: la~\ref{eq:sum_rule} y la~\ref{eq:product_rule}.
 La \ref{eq:sum_rule} afirma que cualquier distribuci\'on marginal se puede obtener integrando o sumando la distribuci\'on conjunta.
 %
@@ -1062,9 +1075,9 @@ En cambio, en la regi\'on de hip\'otesis de muy baja habilidad, donde el resulta
 
 Es importante remarcar que la posterior, aunque se parezca, no es una distribuci\'on gaussiana, lo que nos impedir\'a usar la ecuaci\'on~\eqref{eq:posterior_win} iterativamente.
 Por la forma del posterior exacto, una gaussiana puede ser usada como una buena aproximaci\'on, permiti\'endonos evitar el costo computacional de las metodolog\'ias de sampleo.
-Uno de los principales aportes del sistema Glicko~\citep{Glikman2013} fue el desarroll\'o de un m\'etodo eficiente para aproximar la posterior exacta con una distribuci\'on gaussiana.
+Uno de los principales aportes del sistema Glicko~\cite{Glikman2013} fue el desarroll\'o de un m\'etodo eficiente para aproximar la posterior exacta con una distribuci\'on gaussiana.
 Sin embargo, este m\'etodo no garantiza que la distribuci\'on gaussiana seleccionada sea la que mejor aproxima.
-El \'exito de la soluci\'on TrueSkill~\citep{Herbrich2007} se basa en la aplicaci\'on de m\'etodo eficiente para calcular la gaussiana que mejor aproxima al posterior exacto (secci\'on~\ref{sec:approximate_posterior}),
+El \'exito de la soluci\'on TrueSkill~\cite{Herbrich2007} se basa en la aplicaci\'on de m\'etodo eficiente para calcular la gaussiana que mejor aproxima al posterior exacto (secci\'on~\ref{sec:approximate_posterior}),
 %
 \begin{equation} \label{eq:approx} 
  \widehat{p}(s_i| r, s_j) = \underset{\mu, \sigma}{\text{ arg min }} \ \ \text{KL}(\, p(s_i| r, s_j) \, || \,  \N(s_i|\mu, \sigma^2) \, )
@@ -1092,7 +1105,7 @@ Todos estos problemas están relacionados al hecho de que la información propag
 
 % Parrafo
 
-TrueSkill Through Time~\citep{Dangauthier2007} corrige los sesgos de los modelos previos mediante utilización de un único modelo probabilísitico para toda la historia de eventos.
+TrueSkill Through Time~\cite{Dangauthier2007} corrige los sesgos de los modelos previos mediante utilización de un único modelo probabilísitico para toda la historia de eventos.
 Al estar teóricamente bien fundado podemos realizar la inferencia aplicando estrictamente las reglas de la probabilidad, lo que garantiza tanto buenas estimaciones iniciales como la comparabilidad temporal y espacial de las estimaciones.
 Exluyendo el aspecto din\'amico, $\gamma = 0$, el prior de un agente $i$ en el $t$-\'esimo evento es el producto del todas sus verosimilitudes, salvo la del $t$-\'esimo evento.
 %
@@ -1195,14 +1208,14 @@ La ventaja de TrueSkill Through Time radica en que el modelo causal temporal per
 A diferencia de las redes neuronales que tienen estructuras regulares, estas redes bayesianas adquieren siempre una estructura compleja, creciéndo t\'ipicamente a millones de parámetros (e.g. videojuego).
 El procedimiento converge con unas pocas iteraciones lineales sobre los datos.
 La corrección de los sesgos es un paso fundamental para construir estimadores confiables que sirvan tanto para la toma de decisiones en áreas sensibles como para la evaluación de teorías científicas que utilicen la habilidad como dato observable.
-Con este art\'iculo ponemos a disposici\'on los primeros paquetes de TrueSkill Through Time para \proglang{Julia}, \proglang{Python} y \proglang{R}, junto con su documentaci\'on cient\'ifica completa~\citep{Landfried-repo:ttt}.
+Con este art\'iculo ponemos a disposici\'on los primeros paquetes de TrueSkill Through Time para \texttt{Julia}, \texttt{Python} y \texttt{R}, junto con su documentaci\'on cient\'ifica completa~\cite{Landfried-repo:ttt}.
 % \cite{A Guide to state-space modeling of ecological time series}
 
 
 \section{Ilustración}
 
 
-En esta secci\'on mostramos c\'omo usar los paquetes de \proglang{Julia}, \proglang{Python} y \proglang{R} para resolver un evento, una secuencia de tres eventos, la evolución de habilidad de un jugador, y la historia de la Asociación de Tenis Profesional (ATP).
+En esta secci\'on mostramos c\'omo usar los paquetes de \texttt{Julia}, \texttt{Python} y \texttt{R} para resolver un evento, una secuencia de tres eventos, la evolución de habilidad de un jugador, y la historia de la Asociación de Tenis Profesional (ATP).
 Presentamos las soluciones de los modelos TrueSkill y TrueSkill Through Time, y los pasos para obtener los posteriors, las curvas de aprendizaje, y la predicci\'on a priori del dato observado (i.e. evidencia).
 %
 \en{We identify the different programming languages using the following color scheme:}
@@ -1224,7 +1237,7 @@ Python syntax
 R syntax
 \end{lstlisting}  
 \end{paracol}
-donde la l\'inea completa la usamos cuando la sintaxis de los tres lenguajes coinciden, y las columnas las usamos cuando los lenguajes difieren: \proglang{Julia} a la izquierda, \proglang{Python} al centro, y \proglang{R} a la derecha.
+donde la l\'inea completa la usamos cuando la sintaxis de los tres lenguajes coinciden, y las columnas las usamos cuando los lenguajes difieren: \texttt{Julia} a la izquierda, \texttt{Python} al centro, y \texttt{R} a la derecha.
 
 \subsection{\en{Single event}\es{Único evento}} \label{sec:singleEvent}
 
@@ -1582,7 +1595,7 @@ def skill(experience, middle, maximum, slope):
 target = [skill(i, 500, 2, 0.0075) for i in range(N)]
 opponents = normal(target,scale=0.5)
 \end{lstlisting}
-Aquí incluimos s\'olo la versi\'on de \proglang{Python} (las versiones de \proglang{Julia} y \proglang{R} se encuentran en el anexo \ref{sec:appendix_skill_evolution}).
+Aquí incluimos s\'olo la versi\'on de \texttt{Python} (las versiones de \texttt{Julia} y \texttt{R} se encuentran en el anexo \ref{sec:appendix_skill_evolution}).
 La lista \texttt{target} contiene la habilidad del agente en cada momento: los valores comienzan en cero y crecen suavemente hasta que la habilidad del jugador objetivo llega a dos.
 La lista \texttt{opponents} incluye los oponentes generadas mediante una distribuci\'on gaussiana centrada en cada una de las habilidades del jugador objetivo con un desvío estandar de $0.5$.
 %
@@ -1649,7 +1662,7 @@ La información resumida en una archivo \texttt{csv}\footnote{Archivo disponible
 Cada partida tiene un identificador (\texttt{match\_id}) y su número de ronda (\texttt{round\_number}), donde 0 representa la partida final, 1 la semi-final, etc.
 The file also contains the identifiers and names of the players: por ejemplo \texttt{w2\_id} es el identificador del segundo jugador del equipo ganador y \texttt{l1\_name} es el nombre del primer jugador del equipo perdedor.
 Finalmente tenemos el nombre del torneo (\texttt{tour\_name}), su identificado (\texttt{tour\_id}), la fecha de inicio del torneo (\texttt{time\_start}) y el tipo de piso (\texttt{ground}).
-Aquí mostramos sólo el código de \proglang{Julia} debido a que es la versión más eficiente (los códigos de \proglang{Python} y \proglang{R} se pueden encontrar en el anexo \ref{sec:appendix_atp_code}, y la comparación de rendimiento se puede encontrar en la sección \ref{sec:computationDetails}).
+Aquí mostramos sólo el código de \texttt{Julia} debido a que es la versión más eficiente (los códigos de \texttt{Python} y \texttt{R} se pueden encontrar en el anexo \ref{sec:appendix_atp_code}, y la comparación de rendimiento se puede encontrar en la sección \ref{sec:computationDetails}).
 %
 \begin{lstlisting}[backgroundcolor=\color{julia!60},label=lst:atp, caption={\en{The history of the Association of Tennis Professionals}\es{La historia de la Asociación de Tenistas Profesionales}}, belowskip=0.1cm, aboveskip=0.1cm]
 using CSV; using Dates
@@ -1809,7 +1822,7 @@ En la secci\'on~\ref{sec:throughTime} justificamos los pasos matemáticos requer
 \subsection{Sum-product Algorithm} \label{sec:sumProductAlgorithm}
 
 
-El \emph{sum-product algorithm}~\citep{Kschischang2001} aprovecha la estructura de la distribuci\'on de probabilidad conjunta, impuesta por el modelo causal, para aplicar eficientemente las reglas de la probabilidad.
+El \emph{sum-product algorithm}~\cite{Kschischang2001} aprovecha la estructura de la distribuci\'on de probabilidad conjunta, impuesta por el modelo causal, para aplicar eficientemente las reglas de la probabilidad.
 Cualquier modelo puede factorizarse en el producto de probabilidades condicionales.
 %
 \en{As the variables are independent, our model (figure~\ref{fig:generative_model}) can be factorized as,}
@@ -1873,13 +1886,10 @@ Los ejes entre nodos variables y nodos funciones representan la relaci\'on matem
     \edge[-] {fs1} {s1};
     \edge[-] {fs2} {s2};
 }
-     \caption{%
-     
+     \caption{
      Forma gráfica de representar la factorizaci\'on de la distribución conjunta inducida por el modelo causal básico (ecuación~\eqref{eq:factorization}).
      %
-     
      Los cuadrados negros representan las funciones, los c\'irculos blancos representan las variable, y los ejes entre ellos representan la relaci\'on matem\'atica ``la variable es argumento de la funci\'on''.
-     %
      }
     \label{fig:factor_graph}
 \label{modelo}
@@ -2109,11 +2119,8 @@ En la figura~\ref{fig:modelo_trueskill_2vs2} mostramos la factorizaci\'on gr\'af
         \node[const, left=of dfp,xshift=-0.5cm] (dfs) {$f_{s_i} = \N(s_i|\mu_i,\sigma^2)$}; %
    }
    }
-  \caption{
-  
-  Factorizaci\'on gr\'afica de una partida con dos equipos de dos jugadores.
+  \caption{Factorizaci\'on gr\'afica de una partida con dos equipos de dos jugadores.
   %
-  
   El modelo Elo incorpora una variable nueva, $t$, que modela el desempeño de los equipos.
   }
   \label{fig:modelo_trueskill_2vs2}
@@ -2314,7 +2321,7 @@ En la figura~\ref{fig:draw_a} se puede ver en t\'erminos gr\'aficos las probabil
 \end{figure}
 
 Este modelo b\'asico requiere determinar el largo del margen.
-El art\'iculo original~\citep{Herbrich2007} propone usar la frecuencia emp\'irica de empates como indicio para definirlo.
+El art\'iculo original~\cite{Herbrich2007} propone usar la frecuencia emp\'irica de empates como indicio para definirlo.
 Sin embargo, este valor depende de la diferencia de habilidad real, que justamente no conocemos.
 Suponiendo que podemos definir la ``probabilidad de empate entre equipos con misma habilidad'', es importante notar que el margen tambi\'en depende de la cantidad de jugadores.
 En la figura~\ref{fig:draw_b} se puede ver que para mantener el \'area de empates constante, es necesario adaptar el margen dependiendo de la incertidumbre.
@@ -2389,7 +2396,7 @@ p(d) =
 \N(d|\psi,\vartheta^2) \mathbb{I}(d > \varepsilon) & \text{not tie}
 \end{cases}
 \end{equation}
-Se sabe que la familia exponencial, a la que pertenece la distribución gaussianas, minimizan la divergencia Kullback-Leibler respecto de la verdadera distribución $p$, $KL(p||q)$, cuando ambas tienen mismos momentos~\citep{Minka2005}.
+Se sabe que la familia exponencial, a la que pertenece la distribución gaussianas, minimizan la divergencia Kullback-Leibler respecto de la verdadera distribución $p$, $KL(p||q)$, cuando ambas tienen mismos momentos~\cite{Minka2005}.
 %
 \en{The expectation and variance of a truncated Gaussian $\N(x|\mu,\sigma^2)$ in the range from $a$ to $b$ are:}
 \es{La esperanza y la varianza de una gaussiana truncada $\N(x|\mu,\sigma^2)$ en un intervalo $[a,b]$ son,}
@@ -2987,23 +2994,20 @@ Ambas evitan el sobreajuste y penalizan suficientemente los modelos innecesariam
 Es importante esta aclaración, que no está tratada en el papar original de TrueSkill Through Time.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 \chapter{Efecto de los equipos sobre el aprendizaje (faithfull-sinergia)}
 
 \chapter{Efecto de la topología sobre el aprendizaje.}
 
 \chapter{Sistema de estimación para el juego Go (AAGo).}
+
+\newpage
+
+{\footnotesize
+
+\bibliographystyle{plos2015.bst}
+\bibliography{../../bibliografia/Gaming/gaming.bib}
+
+}
 
 
 \end{document}
