@@ -125,7 +125,8 @@ Las ciencias empíricas, por el contrario, deben validar sus proposiciones dentr
 \section{Principio de indiferencia}
 
 Supongamos que tenemos tres cajas y sólo sabemos que detrás de una hay un regalo.
-Para expresar nuestra (in)certidumbre repartiremos la creencia entre las posibles opciones.
+En este caso, el conjunto de cajas son el \emph{espacio de hipótesis}.
+Para expresar nuestra incertidumbre sobre el espacio de hipótesis podemos repartir nuestra creencia entre las posibles opciones.
 A las diferentes formas de dividir la creencia le vamos a llamar \emph{distribución de creencias}.
 Una posible distirbución de creencias es,
 %
@@ -140,11 +141,12 @@ Una posible distirbución de creencias es,
          \node[const, above=of p2, yshift=.15cm] (fp2) {$8/10$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/10$};
         } 
+\caption{}
 \end{figure}
 %
 lo que representa una preferencia parcial por la caja del medio.
 Pero si de verdad no tenemos ninguna información respecto de dónde está el regalo, no hay motivos para tener preferencia por ninguna de las opciones, lo que sin lugar a dudas nos hará estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
-Éste es un principio de validez intercultural conocido como ``de indiferencia''.
+Éste es un principio de validez intercultural conocido como ``principio de indiferencia''.
 %
 \begin{figure}[H]
 \centering
@@ -157,11 +159,13 @@ Pero si de verdad no tenemos ninguna información respecto de dónde está el re
          \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
         } 
+\caption{}
+\label{fig:principio_de_indiferencia}
 \end{figure}
-
-Este tipo de distribuciones de creencias, que permiten el acuerdo intersubjetivo, la vamos a llamar \textbf{creencia honesta}.
-Elegimos el término ``intersubjetividad'', por sobre el de ``subjetividad'', debido a que el primero connota el cumplimiento de las condiciones que producen al acuerdo entre las conciencias individuales, mientras que el segundo connota una arbitrariedad que lo obstaculiza.
-Elegimos el término ``intersubjetividad'', por sobre el de ``objetividad'', porque el primero connota una actividad construcitva entre los sujetos, mientras que el segundo connota la imposición directa del objeto sobre los sujetos.
+%
+A este tipo de distribuciones de creencias que permiten alcanzar acuerdos intersubjetivos en contextos de incertidumbre las vamos a llamar \emph{creencia honestas}.
+Elegimos el término ``intersubjetividad'', por sobre el de ``subjetividad'', debido a que el primero connota el cumplimiento de condiciones que son necesarias para producir el acuerdo entre las conciencias individuales, mientras que el segundo connota una arbitrariedad que lo obstaculiza.
+Elegimos el término ``intersubjetividad'', por sobre el de ``objetividad'', porque el primero connota una actividad constructiva entre los sujetos, mientras que el segundo connota la imposición directa del objeto sobre los sujetos.
 
 % Parrafo
 
@@ -174,8 +178,8 @@ Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no 
 
 \section{Evidencia formal y empirica}
 
-Supongamos que recibimos el dato (i.e. tenemos la certeza) de que el regalo no está en la caja del medio.
-En este caso es fácil llegar a un acuerdo que nos permita asignar creencia 0 a la caja del medio.
+Supongamos que alguien nos indica con certeza que el regalo no está en la caja del medio.
+La información que tenemos nos permite asignar creencia 0 a que el regalo $r$ esté en la caja $2$ en los casos que tenemos una señal $s$ que nos indica que el regalo no está en la caja $2$.
 %
 \begin{figure}[H]
 \centering
@@ -188,12 +192,30 @@ En este caso es fácil llegar a un acuerdo que nos permita asignar creencia 0 a 
          \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+        
         } 
+\caption{}
 \end{figure}
 %
-Para actualizar el resto de las cajas necesitamos interpretar qué nos está diciendo la pista.
-Supongamos que la pista depende de dónde está el regalo, sólo nos puede indicar dónde no está el regalo.
-Esto lo podemos representar con el siguiente modelo causal.
+Para actualizar el resto de las cajas, posiblemente nos veamos tentados a aplicar el principio de indiferencia nuevamente, asignando $0.5$ a las dos cajas que todavía están cerradas.
+%
+Aunque en este caso particular esa solución sea casualmente correcta, esa metodología conduce a errores en términos generales.
+%
+El principio de indiferencia sólo se aplica una única vez, al inicio.
+%
+Después sólo actualizaremos esa creencia en función de la nueva información que vayamos incorporando.
+
+% Parrafo
+
+Cuando aplicamos por primera vez el principio de indiferencia en la figura \ref{fig:principio_de_indiferencia}, el espacio de hipótesis se reducía a tres opciones, una por caja.
+%
+En este caso, en el que estamos considerando una variable nueva (la señal $s$) que representa la pista, el espacio de hipótesis es otro, más grande, por lo que esta creencia a priori no nos sirve.
+%
+Antes de aplicar el principio de indiferencia debemos interpretar lo que nos dice la pista, la estructura de nuestro espacio de hipótesis.
+%
+Lo único que sabemos de la pista es que nunca indicará la caja donde se encuentra el regalo.
+%
+Es decir, hay una dependencia causal entre el regalo $r$ y la señal $s$ que podemos representar con el siguiente modelo gráfico.
 %
 \begin{figure}[H]
 \centering
@@ -203,24 +225,30 @@ Esto lo podemos representar con el siguiente modelo causal.
     
     
     \node[latent, below=of r] (d) {\includegraphics[width=0.05\textwidth]{static/dedo.png}} ;
-    \node[const, left=of d] (nd) {\Large $s$} ;
+    \node[const, left=of d] (nd) {\Large $s$};
+    \node[const, below=of d] (pd) {$\text{Creencia}(s=i|r=i) = 0$} 
 
     \edge {r} {d};
             
 }
 \end{figure}
 %
-Lo que está diciendo este modelo gráfico es: ``la pista $s$ depende del regalo $r$''.
-Si tenemos la certeza de que el regalo $r$ está en la caja $i$ y que la pista $s$ nunca señalará la misma caja donde se ubica el regalo, será fácil llegar a un acuerdo que nos permita asignar creencia 0 a ese evento.
+Donde los círculos representan las variables y la felcha representa la relación causal.
 %
-\begin{equation}
-\text{Creencia}(s=i|r=i) = 0
-\end{equation}
+A su vez $r=i$ representa la proposición ``el regalo se encuentra en la posición $i$, y $s=i$ representa la proposición ``la pista señala la posición $i$''.
 %
-
+Por último, la Creencia de Lo que aparece del lado derecho del operador \emph{condicional} ($\cdot \mid \cdot$) representa hipótesis que momentáneamente se ponen fuera de toda duda, se toman como si fueran una certeza.
 %
-Siguiendo con el principio de indiferencia que usamos para definir una creencia honesta, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta de ellos.
-
+\todo[inline]{SEGUIR acá}
+%
+Dado este modelo, existe un conjuto finito de universos paralelos posibles.
+%
+Primero se abren tres universos posibles por cada uno de las posiciones que puede adquirir el regalo.
+%
+Y luego, dada la posición del regalo, se abren dos uniersos posibles por cada una de las posiciones que puede adquirir la pista. 
+%
+Siguiendo con el principio de indiferencia, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta respecto de los universos paralelos.
+%
 \begin{figure}[H]
 \centering
 \tikz{
@@ -261,25 +289,46 @@ Siguiendo con el principio de indiferencia que usamos para definir una creencia 
 \edge[-] {r3d1} {br3d1};
 \edge[-] {r3d2} {br3d2};
 }
+\caption{}
+\label{fig:modelo_pre_montyhall}
 \end{figure}
-
-Primero dividimos la creencia sobre el regalo en partes iguales, y luego volvemos a dividir la creencia sobre la pista en partes iguales.
-\todo[inline]{Explicar, la verdad es que no decis nada en el texto, contalo para alguien que no tiene porque saber nada}
-Nuestra creencia conjunta honesta a priori es,
-
+%
+Del mismo modo que aplicamos el principio de indiferencia al comienzo de la introducción, dividimos la creencia en partes iguales sobre las tres posibles posiciones del regalo.
+%
+Y según el valor que adquiera el regalo, volvemos a dividir la creencia en partes iguales sobre los posibles valores que puede tomar la pista.
+%
+Por ejemplo, la creencia honesta a priori de que el regalo se encuentre en la posición $1$ es de $1/3$.
+%
+Luego, la \textbf{creencia conjunta} honesta a priori de que el regalo se encuentre en la posición $1$ y la pista señale la caja $2$ es $1/6$.
+%
+\begin{equation}
+\text{Creencia}(r=1 \wedge s=2 | \text{Modelo} ) = \frac{1}{3} \frac{1}{2} = \frac{1}{6}
+\end{equation}
+%
+Donde $\wedge$ representa el conjunción lógica.
+%
+De aquí en adelante remplazaremos este símbolo por una simple coma ($,$).
+%
+Colocamos el modelo detrás del condicional ($\cdot|\cdot$) debido a que esta creencia conjunta es honesta cuando el modelo propuesto es cierto.
+%
+De aquí en adelante sólo haremos explícita la dependencia del modelo cuando haya algún tipo de ambigüedad, que en general ocurre cuando hay más de un modelo en disputa.
+%
+De la misma forma podemos calcular el resto de las creencias conjuntas a priori dado el modelo causal.
+%
 \begin{table}[H]
 \centering
- \begin{tabular}{c|c|c|c|} \setlength\tabcolsep{0.4cm} 
+Creencia($r=i, s=j$) \\[0.1cm]
+ \begin{tabular}{c|c|c|c|} \setlength\tabcolsep{0.4cm}
         & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, \\ \hline 
   $s_1$ & $0$ & $1/6$ & $1/6$  \\ \hline
   $s_2$ & $1/6$ & $0$ & $1/6$  \\ \hline
   $s_3$ & $1/6$ & $1/6$ & $0$ \\ \hline 
   \end{tabular}
+  \caption{}
 \end{table}
-  
-Es honesta porque maximiza la incertidumbre dada la información disponible hasta el momento: el modelo causal.
-Y es conjunta porque es la creencia de que ocurran simultaneamente ambas variables, $\text{Creencia}(r,s)$.
-\todo[inline]{el parrafo anterior y la tabla hay que explicarla, asi como esta no se entiende}
+%
+Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:modelo_pre_montyhall}.
+%
 
 % Parrafo
 
