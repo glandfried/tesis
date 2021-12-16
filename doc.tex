@@ -226,28 +226,32 @@ Es decir, hay una dependencia causal entre el regalo $r$ y la señal $s$ que pod
     
     \node[latent, below=of r] (d) {\includegraphics[width=0.05\textwidth]{static/dedo.png}} ;
     \node[const, left=of d] (nd) {\Large $s$};
-    \node[const, below=of d] (pd) {$\text{Creencia}(s=i|r=i) = 0$} 
+    \node[const, below=of d] (pd) {$\text{Creencia}(s=i|r=i, \text{Modelo}) = 0$} 
 
     \edge {r} {d};
             
 }
 \end{figure}
 %
-Donde los círculos representan las variables y la felcha representa la relación causal.
+Donde los círculos representan las variables y la felcha representa la relación causa $\rightarrow$ efecto.
 %
-A su vez $r=i$ representa la proposición ``el regalo se encuentra en la posición $i$, y $s=i$ representa la proposición ``la pista señala la posición $i$''.
+A su vez, $r=i$ representa la proposición ``el regalo se encuentra en la posición $i$'', y $s=i$ representa la proposición ``la pista señala la posición $i$''.
 %
-Por último, la Creencia de Lo que aparece del lado derecho del operador \emph{condicional} ($\cdot \mid \cdot$) representa hipótesis que momentáneamente se ponen fuera de toda duda, se toman como si fueran una certeza.
+Por último, lo que aparece del lado izquierdo del operador \emph{condicional} ($\cdot \mid \cdot$) son las proposiciones sobre las que computamos la creencia en los casos en los que las proposiciones que aparecen del lado derecha sean ciertas.
 %
-\todo[inline]{SEGUIR acá}
-%
+Es decir, la $\text{Creencia}(s=i|r=i,\text{Modelo}) = 0$ se lee como ``es imposible que la pista señale la posición $i$ cuando el regalo está en la posición $i$ y el modelo causal es cierto''. 
+
+% Parrafo
+
 Dado este modelo, existe un conjuto finito de universos paralelos posibles.
 %
-Primero se abren tres universos posibles por cada uno de las posiciones que puede adquirir el regalo.
+Primero existen tres universos paralelos por cada posición que puede adquirir el regalo.
 %
-Y luego, dada la posición del regalo, se abren dos uniersos posibles por cada una de las posiciones que puede adquirir la pista. 
+Y luego, dada la posición del regalo, existen dos unviersos paralelos por cada posición que puede adquirir la pista. 
 %
-Siguiendo con el principio de indiferencia, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta respecto de los universos paralelos.
+Del mismo modo que aplicamos el principio de indiferencia al comienzo de la introducción, dividimos la creencia en partes iguales sobre las tres posibles posiciones del regalo.
+%
+Y según el valor que adquiera el regalo, volvemos a dividir la creencia en partes iguales sobre los posibles valores que puede tomar la pista.
 %
 \begin{figure}[H]
 \centering
@@ -293,13 +297,11 @@ Siguiendo con el principio de indiferencia, dividimos la creencia en partes igua
 \label{fig:modelo_pre_montyhall}
 \end{figure}
 %
-Del mismo modo que aplicamos el principio de indiferencia al comienzo de la introducción, dividimos la creencia en partes iguales sobre las tres posibles posiciones del regalo.
-%
-Y según el valor que adquiera el regalo, volvemos a dividir la creencia en partes iguales sobre los posibles valores que puede tomar la pista.
+Siguiendo con el principio de indiferencia, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta respecto de los universos paralelos.
 %
 Por ejemplo, la creencia honesta a priori de que el regalo se encuentre en la posición $1$ es de $1/3$.
 %
-Luego, la \textbf{creencia conjunta} honesta a priori de que el regalo se encuentre en la posición $1$ y la pista señale la caja $2$ es $1/6$.
+Luego, la \emph{creencia conjunta} honesta a priori de que el regalo se encuentre en la posición $1$ y la pista señale la caja $2$ es $1/6$.
 %
 \begin{equation}
 \text{Creencia}(r=1 \wedge s=2 | \text{Modelo} ) = \frac{1}{3} \frac{1}{2} = \frac{1}{6}
