@@ -1,9 +1,12 @@
-all: tex julia
+all: tex julia R
 
 tex:
 	pdflatex agricultura.tex
 	pdfcrop --margins '0 0 0 0' agricultura.pdf agricultura.pdf
 
 julia:
-	julia ergodicity.jl
-	julia cpr.jl
+	julia main.jl
+
+R:
+	Rscript main.R
+
