@@ -10,3 +10,6 @@ if (length(args)>0){
 for (f in files){
   source(f)
 } 
+
+#require(remotes)
+#install_version("scales", version = "1.1.0")
