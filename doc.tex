@@ -995,14 +995,119 @@ Las ciencias formales validan sus proposiciones mediante teoremas, resultados de
 Las ciencias empíricas, por el contrario, deben validar sus proposiciones dentro de sistemas abiertos, lo que impone siempre un grado de incertidumbre asociada.
 ¿Cuál es entonces la fuente de validez del conocimiento empírico, y por qué?
 
+El criterio de coexistencia, como fuente de validez del conocimiento, nos obliga a rechazar la superiordad moral de subjetividades especiales o identidades particulares.
+Según este principio de convivencia, basado en el reconocimiento mutuo, el conocimiento válido es aquel que se alcanza a través de una actividad constructiva entre sujetos, y no como la imposición automática del objeto al sujeto (objetividad), pues son los sujetos quienes activamente alcanzan el equilibrio de sus subjetividades (acuerdos intersubjetivos).
+
 
 \section{Funciones}
 
-\subsection{Los datos como funciones empíricas}
+Para el proyecto intercultural de acuerdos intersubjetivos, que se propone la ciencia, se hace necesario contar con herramientas que permitan a los individuos poner en correspondencia unívoca los fenómenos percibidos por sus conciencias individuales con algún esquema de operación que sea públicamente inteligible y reproducible.
+En este sentido, las funciones ocupan un rol fundamental.
+
+% parrafo
+
+En su definición formal, una función es una relación (u operación) $f$ que a cada elemento de un conjunto (dominio) $X$ asigna un único elemento de otro conjunto (imagen) $Y$.
+%
+\begin{equation}
+ \forall x \in X \  \exists! y \in Y \text{ tal que } f(x) = y    
+\end{equation}
+%
+A primera vista puede parecer que las funciones no tienen nada en especial respecto de otro tipo de relaciones posibles entre conjuntos.
+Sin embargo, lo que hace tan poderosa a las funciones como herramienta para la ciencia es el hecho de que ellas permiten definir asignaciones no ambiguas.
+
+% Parrafo
+
+Los funciones son la base de las ciencias formales.
+Todos los sistemas matemáticos de interés están compuestos por axiomas $X$, una serie de operaciones válidas $F$, y un conjunto de consecuencias $Y$ consistentes entre sí.
+En teoría de la computabilidad, la tesis de Church-Turing afirma que toda función sobre los números naturales puede ser calculada por un ``método efectivo'' si y sólo si es computable por una máquina de Turing.
+Debido a que todos las definiciones alternativas del concepto  de ``método efectivo'' resultaron ser equivalentes a una maquina de Turing, actualmente se supone que la hipótesis Church-Turing es cierta.
+
+% Parrafo
+
+Las funciones son también la base de las ciecias empíricas.
+Veremos cómo los tres conceptos fundamentales de toda teoría empírica, los modelos causales, los datos y la incertidumbre tienen una estructura funcional.
+Al final de esta sección introduciremos el concepto funcional de honestidad como método general para la validar el conocimiento empírico.
 
 \subsection{Los modelos causales como funciones deterministas}
 
+El concepto de causa y efecto tiene nuevamete una estructura funcional, $f(x) = y$, donde $x$ representa las condiciones iniciales, $f$ el modelo causal determinista, e $y$ el efecto.
+La idea de que todo lo que ocurre en la naturaleza debe tener una causa previa que lo genere se conoce en la historia de la filosofía como el principio de \emph{razón suficiente}, o en otras palabras, todo tiene una explicación suficiente.
+Leibniz (1646-1716), \cite{Leibniz and China: A Commerce of Light}
+%La Monadología (escrita en francés en 1714 y publicada en alemán en 1720) es una de las obras de Gottfried Leibniz que mejor resume su filosofía. Escrita hacia el final de su vida para sustentar una metafísica de las sustancias simples, es un tratado acerca de las mónadas, que son los átomos verdaderos, es decir, realmente indivisibles. Se puede decir que es una proposición filosófica o metafísica, aunque en ambos casos viene a significar lo mismo.
+
+El fundador de la inferencia Bayesiana moderna, Pierre-Simon Laplace (1749-1827), tenía la convicción de que si tuvieramos conocimiento completo e \emph{infinitamente preciso} del estado del mundo en un instante de tiempo $x$, y el modelos causales correcto que rige el comportamiento del mundo $f$, entonces tendríamos conocimiento completo del estado del mundo en cualquier instante posterior $y$.
+
+
+Un ejemplo de sistema determinista capaz de adquirir comportamientos imprevisibles es el siguiente modelo ``poblacional''.
+El modelo establece que el tamaño de una población, medida como proporción respecto de la capacidad máxima de un sistema, depende exclusivamente de su tamaño en el tiempo anterior y de un factor de reproducción $r$.
+\begin{equation}
+ \text{Población}(t+1) = r \cdot \text{Población}(t)\cdot (1-\text{Población}(t))
+\end{equation}
+Dependiendo del factor de reproducción y de la población inicial, vamos diferentes tipos de comportamiento.
+En la figura~\ref{fig:poblacion} podemos ver tres comportamientos típicos.
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+    \includegraphics[page=3,width=\linewidth]{figures/poblacion.pdf}
+    \caption{Punto fijo}
+    \label{fig:poblacion_punto_fijo}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \includegraphics[page=9,width=\linewidth]{figures/poblacion.pdf}
+    \caption{Periódico}
+    \label{fig:poblacion_periodico}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \includegraphics[page=11,width=\linewidth]{figures/poblacion.pdf}
+    \caption{Caótico}
+    \label{fig:poblacion_caotico}
+    \end{subfigure}
+    \caption{
+    Tipos de atractores a medida que aumentamos el valor del reproducción $r$
+    }
+    \label{fig:poblacion}
+\end{figure}
+Cuando el valor del parámetro $r$ es chico (figura~\ref{fig:poblacion_punto_fijo}) la población tiende a un valor fijo, sin importar el tamaño inicial de la población.
+Cuando el valor del parámetro $r$ es intermedio (figura~\ref{fig:poblacion_periodico}) la población oscila en un período.
+Cuando el valor del parámetro $r$ llega a su límite (figura~\ref{fig:poblacion_caotico}) la población tiene un comportamiento denominado ``caótico''.
+
+% En la figura~\ref{fig:camino_al_caos} graficos como va ocurriendo el cambio a medida que cambiamos el parámetro $r$.
+% \begin{figure}[ht!]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{figures/camino_al_caos}
+%     \caption{Los puntos a los que converge el sistema luego de 1000 iteraciones temporales.}
+%     \label{fig:camino_al_caos}
+% \end{figure}
+
+Una de las propiedades más interesantes del atractor caótico es la sensibilidad a las condiciones inciales.
+Si hacemos zoom en los primeros 30 pasos temporales de la figura~\ref{fig:poblacion_caotico}, y observamos el comportamiento del sistema al modificar levemente las condiciones iniciales, veremos que rápidamente las historias divergen completamente.
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[page=13,width=\linewidth]{figures/poblacion}
+    \caption{}
+    \label{fig:sensibilidad}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[page=14,width=\linewidth]{figures/poblacion}
+    \caption{}
+    \label{fig:pseudo_aleatorio}
+    \end{subfigure}
+    \caption{(\subref{fig:sensibilidad}): Los primeros 30 puntos de la figura~\ref{fig:poblacion_caotico}. La linea negra comienza con una población de $0.5$ y la roja de $0.499$. (\subref{fig:pseudo_aleatorio}): Los primeros 2000 puntos de la figura~\ref{fig:poblacion_caotico}. La generación de números tiene un comportamiento pseudo aleatorio.}
+    \label{fig:propiedades_caoticas}
+\end{figure}
+A pesar de que el modelo sea totalmente determinista, la sensibilidad a las condiciones iniciales impone un límite a la capacidad predicitiva.
+Por más que la natrualeza sea determinista y conozcamos el mecanismo subyacente, si el sistema se encuentra en atractor caótico, jamás vamos a poder predecir el destino inevitable más allá de cierto tiempo debido a que en un sistema natural no podemos medir con infinita precisión las condiciones inciales.
+La imposibilidad de determinar si estamos en presencia de las ``mismas condiciones iniciales'' es una fuente de incertidumbre que tiene toda ciencia empírica.
+
+
+\subsection{Los datos como funciones empíricas}
+
 \subsection{La probabilidad como funciones de incertidumbre}
+
+%Esta idea llevada al extremo, la de un mundo totalmente determinista, es rechazada tanto por experimentos de la física cuántica como por el supuesto teórico sobre el libre albedrío de las ciencias sociales.
 
 \section{Contradicciones}
 
