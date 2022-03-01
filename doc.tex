@@ -1238,40 +1238,83 @@ El proceso de selección de las dimensiones de la variable, y el conjunto de hip
 La etapa de identificación de la fuente de datos (F), que está basa en hipótesis acerca de la autenticidad y accesibilidad de la información, se conoce como examen de \emph{viabilidad}.
 La confiabilidad del dato, por su parte, depende de que los procedimientos detecten sólo esa dimensión de la fuente y no otros estímulos asociados, y de discriminar mínimas cantidades.
 La definición de los protocolos (P), y sus hipótesis, se denomina examen de \emph{confiabilidad}.
+Finalmente, para pasar del indicador al resultado necesitamos una última hipótesis: la hipótesis indiciadora.
+En la sección \nameref{sec:principio_evidencia} veremos que existe una hipótesis indicadora general que nos permite incorporar información de los observables en nuestras distribuciones de creencia garantizando los acuerdos intersubjetivos.
 
-Es decir, todos los datos están cargados de hipótesis.
+Es cualquier caso, todos los datos están cargados de hipótesis.
 Para que ellos puedan actuar como base empírica sobre la que se evalúan las teorías científicas es necesario que sus supuestos queden, al menos por un cierto momento, fuera de toda duda.
 En este sentido, la base empírica puede ampliarse o reducirse según el conjunto de supuestos que una comunidad esté dispuesta a admitir sin poner en duda.
 Para aceptar la entidad de nuestros objetos más cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verdulería, o el resultado de la final de los últimos mundiales de fútbol, son suficientes los supuestos del sentido común.
 No hay mayor controversia al respecto.
-Este nivel de acuerdo se lo conoce como \emph{base empírica epistemológica}~\cite{kilmovsky} y es lo que se utilizará como observables en la sección \nameref{sec:principios_interculturales}.
+Este nivel de acuerdo se lo conoce como \emph{base empírica epistemológica}~\cite{klimovsky1994-desventuras}.% al cual pertenecen los observables de la sección \nameref{sec:principios_interculturales}.
 
-Sin embargo, la ciencia construye los ``datos'' que requieren suponer verdaderas ciertas teorías o técnicas especiales, como por ejemplo la inflación general del último mes en Argentina, o la habilidad que Maradona y Messi tenían cuando jugaron la final del mundial.
-En la sección \nameref{sec:principio_evidencia} revisaremos el criterio intercultural de acuerdos intersubjetivos, que nos permite proponer una hipótesis indicadora general para incorporar la información de los observables en nuestras distribuciones de creencia.
-
-Un dato no es teórico o no teórico sin más, sino relativamente a una teoría dada.
-Por eso no se debe hablar tanto de teoricidad como de T-teoricidad, teoricidad relativa a la teoría T.
-La idea es que un concepto es T-teórico si no se puede determinar sin presuponer la aplicabilidad de T, si todo procedimiento para su determinación la presupone; y puede obtenerse sin presuponer tal teoría, si tiene algún procedimiento de determinación T-independiente, por más que también tenga otros procedimientos T-dependientes~\cite{lorenzano2002-concepcionEstructuralista}.
+Sin embargo, la ciencia construye ``datos'' que requieren suponer verdaderas ciertas teorías o técnicas especiales, como por ejemplo la inflación general del último mes en Argentina, o la habilidad que Maradona y Messi tenían cuando jugaron la final del mundial.
+Un dato es depende de una teoría T si no se puede determinar sin presuponer la aplicabilidad de T, si todo procedimiento para su determinación la presupone; y puede obtenerse sin presuponer tal teoría, si tiene algún procedimiento de determinación T-independiente, por más que también tenga otros procedimientos T-dependientes~\cite{lorenzano2002-concepcionEstructuralista}.
 
 Los acuerdos que se alcanzan en este nivel se conocen como \emph{base empírica metodológica}.
-Para ello se requiere una evaluación que garantice los acuerdos intersubjetivos en la selección de los modelos causales alternativas.
-En la sección \nameref{sec:modelos_alternativos} mostramos cómo hacer esto en un ejemplo sencillo.
-En el capítulo \nameref{ch:ttt} seleccionamos modelo de estimación de habilidad de la industria del video juego, que será utilizado a lo largo de toda la tesis para estudiar los facotres de aprendizaje social.
+Para ello se requiere una evaluación que garantice los acuerdos intersubjetivos en la selección de los modelos causales alternativos.
+En la sección ``\nameref{sec:modelos_alternativos}'' mostramos cómo evaluar modelos garatizando los acuerdos intersubjetivos.
+En el capítulo \ref{ch:ttt} seleccionamos el modelo de estimación de habilidad estado-del-arte en la industria del video juego, conocido como TrueSkill Through Time (TTT).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
+    \end{subfigure}
+    \caption{Niveles de base empírica. En negro la base empírica epistemológica, en gris la base empírica metodológica, y en blanco los datos que todavía no han alcanzado un acuerdo intersubjetivo amplio. }
+\end{figure}
+
+En el modelo causal TTT los resultados de las partidas son la base empírica epistemológica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
+Estas estimaciones de habilidad serán la base empírica metodológica que utilizaremos a lo largo de la tesis para estudiar diferentes facotres de aprendizaje social.
 
 \section{Principios interculturales de acuerdos intersubjetivos}\label{sec:principios_interculturales}
 
-Las verdades empíricas requieren que de que alcancemos acuerdos intersubjetivos, universales, respecto de las distribuciones de creencias en contextos de incertidumbre.
-Existen dos criterios de validez intercultural para alcanzar acuerdos intersubjetivos en base a la evidencia formal (modelos causales) y empírica (datos).
+Las verdades empíricas requieren de que alcancemos acuerdos intersubjetivos, universales, respecto de las distribuciones de creencias en contextos de incertidumbre.
+La teoría de la probabilidad es actualmente el enfoque más aceptado y utilizado para representar incertidumbre asociada al conocimiento empírico.
+Las reglas de la probabilidad pueden derivarse formalmente a partir de una gran cantidad de sistemas axiomáticos conceptualmente distintos e independientes entre sí, lo cual es uno de los punto fuerte a su favor~\cite{halpern2017}.
+%Ciertamentese ha dedicado mucho más esfuerzo a justificar la teoría de la probabilidad que cualquier otro enfoque para representar la incertidumbre y el tiempo dirá si se pueden se pueden desarrollar otros enfoques superadores.
+Pero quizás más importante es que su aplicación estricta (lo que llamamos inferencia Bayesiana) garantiza los acuerdos intersubjetivos a través de la maximización de la incertidumbre (entropía) dada la información empírica y formal (datos y modelos causales)~\cite{Jaynes2003}.
+Por un lado, el ``principio de indiferencia'' garantiza un primer acuerdo intersubjetivo en contextos de incertidumbre maximizando la diversidad de creencias mutuamente contradictorias del modelo causal.
+Luego, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservación de la creencia contradictorias que que sigue siendo compatible con los datos de base empírica.
 
-nuestras distribuciones de creencias deben ser capaces
-La evidencia empírica 
+\subsection{Las contradicciones en el sistema lógico empírico}
+% 
+% \subsection{La escuela naturalista (frecuentista)}
+% 
+% \subsection{La escuela epistémica (Bayesiana)}
+
+
+La justificación axiomática de la teoría de la probabilidad no ha sido suficiente para unificar su interpretación.
+En contacto con problemas empíricos surgieron, incluso en las ciencias matemáticas, dos escuelas de pensamiento regidas supuestamente bajo las mismas reglas teóricas.
+El debate filosófico de fondo tiene que ver con la solución que ambas escuelas le dan al problema de la contradicción: la epistémica (bayesiana) y la ontológica (frecuentista).
+
+En el siglo 18 el concepto de probabilidad comenzó a usarse en Europa para expresar creencias contradictorias en contextos de incertidumbre.
+Este es el caso de Laplace quién, al tener la convicción de que el mundo era determinista, no podía más que utilizar la probabilidad para expresar su incertidumbre asignando simultaneamente grados de creencia a hipótesis mutuamente contradictorias.
+En un mundo determinista no es posible que A y no A ocurran al mismo tiempo, o lo que es lo mismo, que potencialmente puedan ocurrir dadas exactamente las mismas condiciones iniciales del mundo.
+Bajo este marco, la contradicción de creer simultanemente en A y no A es sólo una expresión de nuestra incertidumbre.
+Esta es la solución epistémica de la contradicción, pues más allá de que Laplace tuviera la convicción de que el mundo fuera determinista, nada dice de la naturaleza del mundo.
+
+La solución epistémica, que proponía creer simultaneamente en hipótesis mutuamente contradictorias, fue el motivo por el cual la corriente bayesiana de la toería de la probabilidad fue tan combatida a finales del siglo 19 y durante casi todo el siglo 20.
+
+La escuela frecuentista, tal como se enseña en la materia probabilidad y estadísitica de la facultad de ciencias exactas y naturales, define a la probabilidad como el número al que tiende una frecuencia obtenida luego de realizar varios ``experimentos independientes'' bajo ``las mismas condiciones''.
+Según esta corriente la probabilidad de eventos deterministas, por ejemplo de que exista un planeta no detectado en el sistema solar, es 0 o 1 aunque no conozcamos su valor.
+Sólo los objetos no deterministas, que llaman ``variables aleatorias'', tienen valores intermedios que representan la frecuencia en la que los diferentes estado del universo se producen a partir de exactamente las mismas condiciones inciales.
+De esta forma, la contradicción se propone como una propiedad externa al sistema lógico propia de la naturaleza del mundo.
+Esta es la solución ontólógica del mundo.
+
+%La escuela frecuentista, a diferencia de la bayesiana, se ve obligada a afirmar la naturaleza determinsta o aleatoria del mundo.
+% 
+% El enfoque frecuentista es el que mejor se adapta a los métodos de validación de las ciencias formales: dadas un conjunto de \emph{hipótesis axiomáticas} que no se demuestran y aplicando las reglas de la probabilidad llegan a conclusiones (probabiilidades estimadas) 
+% 
+% El esfuerzo por eliminar la contradicción del sistema lógico produjo una serie de 
 
 
 
 
 
 
-\subsection{Principio de indiferencia} \label{sec:principio_indiferencia}
+
+\subsection{Principio de máxima diversidad dado los modelos causales} \label{sec:principio_indiferencia}
 Pero si de verdad no tenemos ninguna información respecto de dónde está el regalo, no hay motivos para tener preferencia por ninguna de las opciones, lo que sin lugar a dudas nos hará estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
 Éste es un principio de validez intercultural conocido como ``principio de indiferencia''.
 %
@@ -1296,55 +1339,15 @@ Elegimos el término ``intersubjetividad'', por sobre el de ``objetividad'', por
 
 % Parrafo
 
-%Una propiedad común a todas las creencias honestas es la maximización de la incertidumbre (manteniendo la coherencia con la información disponible).
-%La distribución con menor incertidumbre es la que asigna toda la creencia a una de las opciones.
-%La distirbución más lejana a esta, 
-%En este caso, en el que no tenemos información previa, la obtuvimos dividiendo la creencia en partes iguales.
-Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no tenemos información previa.
-¿Pero cómo hacemos para alcanzar acuerdos cuando recibimos nueva información?
-% 
-% \section{Contradicciones}
-% 
-% \subsection{La escuela naturalista (frecuentista)}
-% 
-% \subsection{La escuela epistémica (Bayesiana)}
-% 
+Supongamos que la pista, además de no poder coincidir con la posición del regalo, tiene prohibida una de las puertas.
+Esto lo podemos representar con el siguiente modelo causal.
 
-\subsection{Principio de evidencia}
 
-Supongamos que alguien nos indica con certeza que el regalo no está en la caja del medio.
-La información que tenemos nos permite asignar creencia 0 a que el regalo $r$ esté en la caja $2$ en los casos que tenemos una señal $s$ que nos indica que el regalo no está en la caja $2$.
-%
-\begin{figure}[H]
-\centering
-\tikz{ %
-         \node[factor, minimum size=1cm] (p1) {} ;
-         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
 
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$?$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-        
-        } 
-\caption{}
-\end{figure}
-%
-Para actualizar el resto de las cajas, posiblemente nos veamos tentados a aplicar el principio de indiferencia nuevamente, asignando $0.5$ a las dos cajas que todavía están cerradas.
-%
-Aunque en este caso particular esa solución sea casualmente correcta, esa metodología conduce a errores en términos generales.
-%
-El principio de indiferencia sólo se aplica una única vez, al inicio.
-%
-Después sólo actualizaremos esa creencia en función de la nueva información que vayamos incorporando.
+Este modelo es más conocido como el Monty Hall.
+Para simplificar el problema, suponemos que la puerta 1 es la que queda cerrada, $c=1$.
 
-% Parrafo
 
-Cuando aplicamos por primera vez el principio de indiferencia en la figura \ref{fig:principio_de_indiferencia}, el espacio de hipótesis se reducía a tres opciones, una por caja.
-%
-En este caso, en el que estamos considerando una variable nueva (la señal $s$) que representa la pista, el espacio de hipótesis es otro, más grande, por lo que esta creencia a priori no nos sirve.
-%
 Antes de aplicar el principio de indiferencia debemos interpretar lo que nos dice la pista, la estructura de nuestro espacio de hipótesis.
 %
 Lo único que sabemos de la pista es que nunca indicará la caja donde se encuentra el regalo.
@@ -1352,18 +1355,40 @@ Lo único que sabemos de la pista es que nunca indicará la caja donde se encuen
 Es decir, hay una dependencia causal entre el regalo $r$ y la señal $s$ que podemos representar con el siguiente modelo gráfico.
 %
 \begin{figure}[H]
-\centering
-\tikz{            
-    \node[latent,] (r) {\includegraphics[width=0.06\textwidth]{static/regalo.png}} ;
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+  \centering
+  \tikz{            
+    \node[latent,] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
     \node[const,left=of r] (nr) {\Large $r$} ;    
     
     
-    \node[latent, below=of r] (d) {\includegraphics[width=0.05\textwidth]{static/dedo.png}} ;
+    \node[latent, below=of r] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
     \node[const, left=of d] (nd) {\Large $s$};
-    \node[const, below=of d] (pd) {$\text{Creencia}(s=i|r=i, \text{Modelo}) = 0$}; 
+    %\node[const, below=of d] (pd) {$\text{Creencia}(s=i|r=i, \text{Modelo}) = 0$}; 
 
     \edge {r} {d};
-}
+  }
+  \caption{}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.48\textwidth}
+  \centering
+  \tikz{        
+    
+    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
+    \node[const,above=of d] (nd) {\Large $s$} ;
+    
+    \node[latent, above=of d, xshift=-1.5cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
+    \node[const,above=of r] (nr) {\Large $r$} ;
+    
+    \node[latent, fill=black!30, above=of d, xshift=1.5cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
+    \node[const,above=of c] (nc) {\Large $c=1$} ;
+    
+    \edge {r,c} {d};
+  }
+  \caption{}
+  \end{subfigure}
+  \caption{}
 \end{figure}
 %
 Donde los círculos representan las variables y la felcha representa la relación causa $\rightarrow$ efecto.
@@ -1465,100 +1490,6 @@ Creencia($r=i, s=j$) \\[0.1cm]
 Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:modelo_pre_montyhall}.
 %
 
-% Parrafo
-
-Habiendo definido la creencia conjunta, las creencias sobre cada una de las variables se obtiene como el total.
-La creencia sobre el regalo nuevamente es 1/3,
-\begin{equation}
-\text{Creencia}(r_i) = \sum_j \text{Creencia}(r_i, s_j) = 1/3
-\end{equation}
-y sobre la pista también
-\begin{equation}
-\text{Creencia}(s_j) = \sum_i \text{Creencia}(r_i, s_j) = 1/3
-\end{equation}
-
-% Parrafo
-
-Para actualizar las creencias simplemente nos quedamos con la creencia a priori que es compatible con el dato, $\text{Creencia}(r_i, s_2)$.
-%
-\begin{table}[H]
-\centering
- \begin{tabular}{c|c|c|c|c} \setlength\tabcolsep{0.4cm} 
-        & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
-  $s_1$ &  &  & & \\ \hline
-  $s_2$ & $1/6$ & $0$ & $1/6$ & $1/3$ \\ \hline
-  $s_3$ &  &  &  & \\ \hline 
-  \end{tabular}
-\end{table}
-%
-Lo que nos permitirá cumplir el objetivo que nos habíamos propuesto, actualizar la creencia sobre el regalo luego de haber visto la pista.
-Como \textbf{la creencia que sobrevive} es ahora nuestra nueva creencia total, la normalizamos (en partes iguales) para que vuelva a sumar 1
-%
-\begin{equation}
-\text{Creencia}(r_i| s_2) = \frac{\text{Creencia}(r_i, s_2)}{\text{Creencia}(s_2)} = 1/2
-\end{equation}
-%
-La concusión a la que llegamos coincide con la intuición de la mayoría.
-\begin{figure}[H]
-\centering
-\tikz{ %
-        
-         \node[factor, minimum size=1cm] (p1) {} ;
-         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
-
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/2$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/2$};
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-}
-\end{figure}
-%
-Pero este resultado depende del modelo causal elegido.
-
-\section{Modelos causales alternativos}\label{sec:modelos_alternativos}
-
-Supongamos que la pista, además de no poder coincidir con la posición del regalo, tiene prohibida una de las puertas.
-Esto lo podemos representar con el siguiente modelo causal.
-
-\begin{figure}[H]
-\centering
-\tikz{        
-    
-    \node[latent] (d) {\includegraphics[width=0.05\textwidth]{static/dedo.png}} ;
-    \node[const,above=of d] (nd) {\Large $s$} ;
-    
-    \node[latent, above=of d, xshift=-1.5cm] (r) {\includegraphics[width=0.06\textwidth]{static/regalo.png}} ;
-    \node[const,above=of r] (nr) {\Large $r$} ;
-    
-    \node[latent, fill=black!30, above=of d, xshift=1.5cm] (c) {\includegraphics[width=0.06\textwidth]{static/cerradura.png}} ;
-    \node[const,above=of c] (nc) {\Large $c=1$} ;
-    
-    \edge {r,c} {d};
-}
-\end{figure}
-
-Este modelo es más conocido como el Monty Hall.
-Para simplificar el problema, suponemos que la puerta 1 es la que queda cerrada, $c=1$.
-Supongamos que en este contexto recibimos una pista.
-%
-\begin{figure}[H]
-\centering
-\tikz{ %
-        
-         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.025\textwidth]{static/cerradura.png}} ;
-         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$?$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-        
-        } 
-\end{figure}
-
-¿Cómo hacemos para actualizar las creencias de forma honesta?
-Como hicimos antes, maximizamos la incertidumbre dividiendo las creencias por los caminos del modelo causal de modo de definir la creencia conjunta honesta.
 
 \begin{figure}[H]
 \centering
@@ -1621,6 +1552,122 @@ Así definimos la siguiente creencia honesta conjunta (y sus marginales).
   \end{tabular}
  \end{table}
  
+% Parrafo
+
+%Una propiedad común a todas las creencias honestas es la maximización de la incertidumbre (manteniendo la coherencia con la información disponible).
+%La distribución con menor incertidumbre es la que asigna toda la creencia a una de las opciones.
+%La distirbución más lejana a esta, 
+%En este caso, en el que no tenemos información previa, la obtuvimos dividiendo la creencia en partes iguales.
+Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no tenemos información previa.
+¿Pero cómo hacemos para alcanzar acuerdos cuando recibimos nueva información?
+
+\subsection{Principio de coherencia dados los datos de base empírica}
+
+Supongamos que alguien nos indica con certeza que el regalo no está en la caja del medio.
+La información que tenemos nos permite asignar creencia 0 a que el regalo $r$ esté en la caja $2$ en los casos que tenemos una señal $s$ que nos indica que el regalo no está en la caja $2$.
+%
+\begin{figure}[H]
+\centering
+\tikz{ %
+         \node[factor, minimum size=1cm] (p1) {} ;
+         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
+
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$?$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+        
+        } 
+\caption{}
+\end{figure}
+%
+Para actualizar el resto de las cajas, posiblemente nos veamos tentados a aplicar el principio de indiferencia nuevamente, asignando $0.5$ a las dos cajas que todavía están cerradas.
+%
+Aunque en este caso particular esa solución sea casualmente correcta, esa metodología conduce a errores en términos generales.
+%
+El principio de indiferencia sólo se aplica una única vez, al inicio.
+%
+Después sólo actualizaremos esa creencia en función de la nueva información que vayamos incorporando.
+
+% Parrafo
+
+Cuando aplicamos por primera vez el principio de indiferencia en la figura \ref{fig:principio_de_indiferencia}, el espacio de hipótesis se reducía a tres opciones, una por caja.
+%
+En este caso, en el que estamos considerando una variable nueva (la señal $s$) que representa la pista, el espacio de hipótesis es otro, más grande, por lo que esta creencia a priori no nos sirve.
+%
+
+Habiendo definido la creencia conjunta, las creencias sobre cada una de las variables se obtiene como el total.
+La creencia sobre el regalo nuevamente es 1/3,
+\begin{equation}
+\text{Creencia}(r_i) = \sum_j \text{Creencia}(r_i, s_j) = 1/3
+\end{equation}
+y sobre la pista también
+\begin{equation}
+\text{Creencia}(s_j) = \sum_i \text{Creencia}(r_i, s_j) = 1/3
+\end{equation}
+
+% Parrafo
+
+Para actualizar las creencias simplemente nos quedamos con la creencia a priori que es compatible con el dato, $\text{Creencia}(r_i, s_2)$.
+%
+\begin{table}[H]
+\centering
+ \begin{tabular}{c|c|c|c|c} \setlength\tabcolsep{0.4cm} 
+        & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
+  $s_1$ &  &  & & \\ \hline
+  $s_2$ & $1/6$ & $0$ & $1/6$ & $1/3$ \\ \hline
+  $s_3$ &  &  &  & \\ \hline 
+  \end{tabular}
+\end{table}
+%
+Lo que nos permitirá cumplir el objetivo que nos habíamos propuesto, actualizar la creencia sobre el regalo luego de haber visto la pista.
+Como \textbf{la creencia que sobrevive} es ahora nuestra nueva creencia total, la normalizamos (en partes iguales) para que vuelva a sumar 1
+%
+\begin{equation}
+\text{Creencia}(r_i| s_2) = \frac{\text{Creencia}(r_i, s_2)}{\text{Creencia}(s_2)} = 1/2
+\end{equation}
+%
+La concusión a la que llegamos coincide con la intuición de la mayoría.
+\begin{figure}[H]
+\centering
+\tikz{ %
+        
+         \node[factor, minimum size=1cm] (p1) {} ;
+         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
+
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/2$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/2$};
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+}
+\end{figure}
+%
+Pero este resultado depende del modelo causal elegido.
+
+-------
+
+Supongamos que en este contexto recibimos una pista.
+%
+\begin{figure}[H]
+\centering
+\tikz{ %
+        
+         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.025\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$?$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+        
+        } 
+\end{figure}
+
+¿Cómo hacemos para actualizar las creencias de forma honesta?
+Como hicimos antes, maximizamos la incertidumbre dividiendo las creencias por los caminos del modelo causal de modo de definir la creencia conjunta honesta.
+
 Para actualizar nuestra creencia, nuevamente nos quedamos con la creencia a priori que es compatible con los datos.
 
 \begin{table}[H]
@@ -1760,10 +1807,7 @@ Veamos cuál es la verosimilitud, $P(s2|r_i)$, en el modelo de Monty Hall.
 
 \subsection{Evidencia}
 
-
-
-
-\section{Selección de modelos}
+\section{Selección de modelos}\label{sec:modelos_alternativos}
 
 
 
@@ -1877,43 +1921,6 @@ Sin embargo, el sistema Elo tiene algunas debilidades importantes.
 La regla de actualizaci\'on (Ec.~\eqref{eq:elo_update}) es sim\'etrica, as\'i que lo que gana un agente el otro lo pierde.
 Debido a que a los agentes nuevos comienzan con estimaciones arbitrarias (el mismo valor inicial para cualquier individuo), ellas tienden a generan alta sorpresa y por lo tanto pueden modificar bruscamente las estimaciones de sus oponentes a pesar de que ya hubieran convergido.
 Las debilidades del sistema ocurren por: 1. no tener en cuenta la incertidumbre sobre las estimaciones de los agentes; y 2. proponer hipótesis indicadora ad-hoc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
