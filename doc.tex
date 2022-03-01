@@ -1032,18 +1032,17 @@ Al final de esta sección introduciremos el concepto funcional de honestidad com
 
 El concepto de causa y efecto tiene nuevamete una estructura funcional, $f(x) = y$, donde $x$ representa las condiciones iniciales, $f$ el modelo causal determinista, e $y$ el efecto.
 La idea de que todo lo que ocurre en la naturaleza debe tener una causa previa que lo genere se conoce en la historia de la filosofía como el principio de \emph{razón suficiente}, o en otras palabras, todo tiene una explicación suficiente.
-Leibniz (1646-1716), \cite{Leibniz and China: A Commerce of Light}
-%La Monadología (escrita en francés en 1714 y publicada en alemán en 1720) es una de las obras de Gottfried Leibniz que mejor resume su filosofía. Escrita hacia el final de su vida para sustentar una metafísica de las sustancias simples, es un tratado acerca de las mónadas, que son los átomos verdaderos, es decir, realmente indivisibles. Se puede decir que es una proposición filosófica o metafísica, aunque en ambos casos viene a significar lo mismo.
-
+%Leibniz (1646-1716),  \cite{Leibniz and China: A Commerce of Light}
+%La Monadología (escrita en francés en 1714 y publicada en alemán en 1720) es una de las obras de Gottfried Leibniz que mejor resume su filosofía. Escrita hacia el final de su vida para sustentar una metafísica de las sustancias simples, es un tratado acerca de las mónadas, que son los átomos verdaderos, es decir, realmente indivisibles. Se puede decir que es una proposición filosófica o metafísica, aunque en ambos casos viene a significar lo mismo \cite{leibniz1714-monadologie}.
 El fundador de la inferencia Bayesiana moderna, Pierre-Simon Laplace (1749-1827), tenía la convicción de que si tuvieramos conocimiento completo e \emph{infinitamente preciso} del estado del mundo en un instante de tiempo $x$, y el modelos causales correcto que rige el comportamiento del mundo $f$, entonces tendríamos conocimiento completo del estado del mundo en cualquier instante posterior $y$.
-
+Aunque esta afirmación sea cierta, la historia de la ciencia reciente a mostrado que conocer el mundo con precisión \emph{finita} puede introducir una incertidumbre creciente que impide predecir el comportamiento del sistema incluso en el corto plazo.
 
 Un ejemplo de sistema determinista capaz de adquirir comportamientos imprevisibles es el siguiente modelo ``poblacional''.
 El modelo establece que el tamaño de una población, medida como proporción respecto de la capacidad máxima de un sistema, depende exclusivamente de su tamaño en el tiempo anterior y de un factor de reproducción $r$.
 \begin{equation}
  \text{Población}(t+1) = r \cdot \text{Población}(t)\cdot (1-\text{Población}(t))
 \end{equation}
-Dependiendo del factor de reproducción y de la población inicial, vamos diferentes tipos de comportamiento.
+Dependiendo del factor de reproducción y de la población inicial, vemos diferentes tipos de comportamiento.
 En la figura~\ref{fig:poblacion} podemos ver tres comportamientos típicos.
 \begin{figure}[ht!]
     \centering
@@ -1099,45 +1098,165 @@ Si hacemos zoom en los primeros 30 pasos temporales de la figura~\ref{fig:poblac
     \label{fig:propiedades_caoticas}
 \end{figure}
 A pesar de que el modelo sea totalmente determinista, la sensibilidad a las condiciones iniciales impone un límite a la capacidad predicitiva.
-Por más que la natrualeza sea determinista y conozcamos el mecanismo subyacente, si el sistema se encuentra en atractor caótico, jamás vamos a poder predecir el destino inevitable más allá de cierto tiempo debido a que en un sistema natural no podemos medir con infinita precisión las condiciones inciales.
+Por más que la natrualeza sea determinista y conozcamos el mecanismo subyacente, si el sistema se encuentra en atractor caótico, jamás vamos a poder predecir el destino inevitable más allá de cierto tiempo debido a que en ningún sistema natural podremos medir con infinita precisión las condiciones inciales.
 La imposibilidad de determinar si estamos en presencia de las ``mismas condiciones iniciales'' es una fuente de incertidumbre que tiene toda ciencia empírica.
-
-
-\subsection{Los datos como funciones empíricas}
 
 \subsection{La probabilidad como funciones de incertidumbre}
 
-%Esta idea llevada al extremo, la de un mundo totalmente determinista, es rechazada tanto por experimentos de la física cuántica como por el supuesto teórico sobre el libre albedrío de las ciencias sociales.
+Desde las ciencias sociales y la física cuántica se suele afirmar que el mundo no tiene forma de función, que incluso conociendo las condiciones inciales con precisión infinita no existe una función que permita determinar el estado del mundo en un tiempo posterior.
+Por ejemplo, en las ciencias sociales el concepto de libre albedrío afirma que una persona expuesta ante un estado del universo determinado, bajo exactamente las mismas condiciones iniciales, tiene todavía la capacidad de elegir una acción.
+\begin{figure}[ht!]
+\centering
+    \scalebox{1}{
+ \tikz{ %
+        \node[estado] (s) {};
+        \node[const, above=of s] {$s$};
+        \node[accion, below=of s, xshift=-1cm] (a1) {} ; %
+	\node[accion, below=of s, xshift=0cm] (a2) {} ; %
+	\node[accion, below=of s, xshift=1cm] (a3) {} ; %
+	\node[const, right=of a3] {$a$};
+        \edge[-] {s} {a1,a2,a3};
+      
+	\node[estado, below=of a1,xshift=0cm] (s1a) {}; %
+	  
+	\node[estado, below=of a2,xshift=0cm] (s2a) {}; %
+	   
+	\node[estado, below=of a3,xshift=0cm] (s3a) {}; %
+	    
+	\node[const, right=of s3a] {$s^{\prime}$};
+	\edge[-] {a1} {s1a};
+	\edge[-] {a2} {s2a};
+	\edge[-] {a3} {s3a};
+        }
+    
+    }
+    \caption{El concepto teórico libre albedrío afirma que una persona, ante un estados $s$ del universo, es capaz de elegir entre más de una acción $a_i$.}
+    \label{fig:libre_albedrio}
+\end{figure}
+Ya no es posible definir una función tal que dados los estados del universo $s$ devuelva la acción $a$ que tomará el sujeto, $f(s) = a_i$.
+Sea porque el mundo natural admite la posibilidad de que un efecto surga sin su propia causa, o sea por nuestra incapacidad de conocer el mundo en pleno detalle o de conocer los modelos causales correctos, nuestro conocimiento sobre el mundo natural contiene siempre un grado de incertidumbre.
 
-\section{Contradicciones}
-
-\subsection{La escuela naturalista (frecuentista)}
-
-\subsection{La escuela epistémica (Bayesiana)}
-
-\section{Principio intercultural de acuerdos intersubjetivos}
-
-Supongamos que tenemos tres cajas y sólo sabemos que detrás de una hay un regalo.
+Cuando la incertidumbre nos impide conocer la función, podemos todavía expresar nuestra incertidumbre utilizando funciones de probabilidad, $P : \ \text{Acciones} \mapsto \mathbb{R}$.
+En este caso supongamos que sabemos que las acciones sobre las que puede eligr la persona es dónde esconder un regalo.
+¿Cómo podemos representar nuestra incertidumbre?
+\begin{figure}[ht!]     
+ \centering
+ \tikz{
+    \node[factor, minimum size=0.8cm] (p1) {} ;
+    \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
+    \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
+    
+    \node[const, above=of p1, yshift=.15cm] (fp1) {$P(a_1)$};
+    \node[const, above=of p2, yshift=.15cm] (fp2) {$P(a_2)$};
+    \node[const, above=of p3, yshift=.15cm] (fp3) {$P(a_1)$};
+    } 
+ \caption{Espacio de hipótesis: sabemos que hay un regalo detrás de sólo una de las tres cajas.}
+ \label{fig:espacio_de_hipotesis}
+\end{figure}
+La figura~\ref{fig:espacio_de_hipotesis} nos ofrece suficiente información para definir un espacio de hipótesis: las tres cajas.
 Las cajas representan el \emph{espacio de hipótesis}.
 Para expresar nuestra incertidumbre sobre el espacio de hipótesis podemos repartir nuestra creencia entre las posibles opciones.
 A las diferentes formas de dividir la creencia le vamos a llamar \emph{distribución de creencias}.
-Una posible distirbución de creencias es,
-%
-\begin{figure}[H]
-\centering
-\tikz{ %
-        
-         \node[factor, minimum size=1cm] (p1) {} ;
-         \node[factor, minimum size=1cm, xshift=1.5cm] (p2) {} ;
-         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
+Sin embargo hay infinitas distribuciones de creencias posibles.
+Por ejemplo, podemos tener el presentimiento de que está en la caja del medio.
+En la figura \ref{fig:distribucion_de_creencias} mostramos dos posibles distribuciones de creencias que tienen preferencia esa caja.
+
+\begin{figure}[ht!]     
+ \centering
+ \begin{subfigure}[b]{0.48\textwidth}
+ \centering
+  \tikz{ %
+         \node[factor, minimum size=0.8cm] (p1) {} ;
+         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
+         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
+         
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$0$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$1$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$0$};        
+        }
+    \caption{Preferencia total}
+    \label{fig:preferencia_total}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.48\textwidth}
+ \centering
+  \tikz{ %
+         \node[factor, minimum size=0.8cm] (p1) {} ;
+         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
+         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
+         
          \node[const, above=of p1, yshift=.15cm] (fp1) {$1/10$};
          \node[const, above=of p2, yshift=.15cm] (fp2) {$8/10$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/10$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/10$};        
         } 
-\caption{}
+    \caption{Preferencia parcial}
+    \label{fig:preferencia_parcial}
+ \end{subfigure}
+\caption{Dos distribución de creencias que tienen preferencia por una de las hipótesis.}
+ \label{fig:distribucion_de_creencias}
 \end{figure}
-%
-lo que representa una preferencia parcial por la caja del medio.
+
+La distribución de creencias de la figura~\ref{fig:preferencia_total} representa la certeza de que el regalo está en la caja del medio, mientras que la figura~\ref{fig:preferencia_parcial} representa una preferencia parcial que mantiene todavía cierta duda.
+¿Cuál de todas las infinitas posibles funciones de probabilidad representan nuestra incertidumbre?
+
+\subsection{Los datos como funciones empíricas}
+
+Los datos pueden ser vistos como funciones empíricas, $f(x)=y$.
+
+Mediante las ``funciones proposicionales'' podemos afirmar por ejemplo que la habilidad de Maradona fue superior a la de Messi.
+\begin{equation}\label{eq:opiniones}
+ \emph{Habilidad}(\text{Maradona}) > \emph{Habilidad}(\text{Messi})
+\end{equation}
+En este caso, la función \emph{Habilidad} representa una cierta variable (V) o característica, que aplicada sobre una unidad de análisis (UA) particular devuelve siempre un mismo resultado (R) .
+
+% Parrafo 
+
+Si bien las proposiciones de la ecuación \ref{eq:opiniones} tienen una estructura funcional, al conversar informalmente no hacemos explícita la definición precisa de la función.
+Ahí radica el origen de muchos de los desacuerdos que tenemos cuando conversamos informalmente, porque usamos las mismas palabras para comunicar conceptos que en el fondo son distintos.
+El significado preciso del dato depende entonces de la operacionalización de la función.
+Por este motivo Juan Samaja propone que la estructura de todo dato científico contiene un cuarto elemento: el esquema indicidor.
+Esta es la estructura invariante de todo dato (Hipótesis de Samaja).
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{clcccc}
+Resultado (R) & \multicolumn{1}{r|}{} &  & Variable (V) &  &  \multicolumn{1}{|c}{Unidad de Análisis (UA)} \\ \hline
+   &  \multicolumn{1}{r|}{}    &  & Dimensiones (D) &  & \multicolumn{1}{|r}{} \\
+                 Indicador (I)  &   & =  &  &  &  Fuente de datos (F) \\
+ & \multicolumn{1}{r|}{} &  & Procedimientos (P) &        &    \multicolumn{1}{|r}{}  
+\end{tabular}
+\caption{Estructura invariante del todo dato empírico propuesta por Juan Samaja.}
+\label{tab:matriz_datos}
+\end{table}
+
+Todo esquema indicador se compone de dimensiones (D), que son especificaciones de la variable, y de procedimientos (P) protocolos, acciones a efectuar sobre cierta fuente de datos (F).
+Las reacciones del mundo natural son los indicadores (I), objetos perceptibles desde el sentido común, que interpretados con alguna hipótesis se tranforman en los resultados (R) de la variable (V).
+
+% Parrafo
+
+El contenido de cada uno de sus elementos depende de una serie de supuestos.
+La validez interna de un dato depende en gran medida de las dimensiones (D) elegidas, de que estas expresen fielmente el concepto de la variable, que expresen lo relevante de ella y sólo de ella, discriminado factores ajenos que puedan intervenir de manera no advertida.
+El proceso de selección de las dimensiones de la variable, y el conjunto de hipótesis asociaciadas, se llama examen de \emph{representatividad}.
+La etapa de identificación de la fuente de datos (F), que está basa en hipótesis acerca de la autenticidad y accesibilidad de la información, se conoce como examen de \emph{viabilidad}.
+La confiabilidad del dato, por su parte, depende de que los procedimientos detecten sólo esa dimensión de la fuente y no otros estímulos asociados, y de discriminar mínimas cantidades.
+La definición de los protocolos (P), y sus hipótesis, se denomina examen de \emph{confiabilidad}.
+
+% Parrafo
+
+La \textbf{base empírica} puede ampliarse o reducirse aumentando o disminuyendo el conjunto de supuestos que una comunidad esté dispuesta a admitir sin poner en duda.
+Para aceptar la entidad de nuestros objetos más cotidianos (e.g. el resultado de la partida) son suficientes los supuestos del sentido común.
+No hay mayor controversia al respecto.
+Sin embargo ciertos círculos filosóficos los ponen en duda y pretenden justificar incluso la existencia misma de la realidad externa.
+Para ellos la base empírica podría representarse como un conjunto vacío. Otras corriente filosóficas, como el empirismo y el idealismo, admiten la sensación y la percepción como únicos elementos indubitables.
+Estos diferentes niveles de acuerdo que no admiten objetos
+cotidianos Klimowsky los llama base empírica filosófica, indubitables aún para los filósofos.
+
+% Parrafo
+
+
+\section{Principio intercultural de acuerdos intersubjetivos}
+
+
+\subsection{Principio de indiferencia}
 Pero si de verdad no tenemos ninguna información respecto de dónde está el regalo, no hay motivos para tener preferencia por ninguna de las opciones, lo que sin lugar a dudas nos hará estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
 Éste es un principio de validez intercultural conocido como ``principio de indiferencia''.
 %
@@ -1168,8 +1287,15 @@ Elegimos el término ``intersubjetividad'', por sobre el de ``objetividad'', por
 %En este caso, en el que no tenemos información previa, la obtuvimos dividiendo la creencia en partes iguales.
 Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no tenemos información previa.
 ¿Pero cómo hacemos para alcanzar acuerdos cuando recibimos nueva información?
+% 
+% \section{Contradicciones}
+% 
+% \subsection{La escuela naturalista (frecuentista)}
+% 
+% \subsection{La escuela epistémica (Bayesiana)}
+% 
 
-\section{Inferencia Bayesiana}
+\subsection{Principio de evidencia}
 
 Supongamos que alguien nos indica con certeza que el regalo no está en la caja del medio.
 La información que tenemos nos permite asignar creencia 0 a que el regalo $r$ esté en la caja $2$ en los casos que tenemos una señal $s$ que nos indica que el regalo no está en la caja $2$.
@@ -1629,23 +1755,113 @@ Veamos cuál es la verosimilitud, $P(s2|r_i)$, en el modelo de Monty Hall.
 
 
 
+\section{Datos de base empírica metodológica}
 
+Los datos pueden ser vistos como funciones empíricas, $f(x)=y$.
 
+Por ejemplo, basados en el modelos causal \ref{ELO-seccion determinista}, podemos utilizar los resultados de las partidas (ganar/perder) como una dimensión que especifica el concepto de la variable ``habilidad''.
+Además, podemos utilizar la página oficial de la asociación de tenis profesional ATP, \texttt{atptout.com} como fuente de datos.
+Por último, a través de un \emph{scraper} podemos extraer de forma segura los resultados de las partidas, generenado en cada caso un indicador binario (verdadero/falso).
 
+% Parrafo
 
+\begin{table}[ht!]
+\centering
+\begin{tabular}{clcccc}
+¿Resultado? (R) & \multicolumn{1}{r|}{} &  & Habilidad (V) &  &  \multicolumn{1}{|c}{Tenistas (UA)} \\ \hline
+   &  \multicolumn{1}{r|}{}    &  & Ganar/perder (D) &  & \multicolumn{1}{|r}{} \\
+                 True/False (I)  &   & =  &  &  & \ \ \ \texttt{atptour.com} (F) \ \ \  \\
+ & \multicolumn{1}{r|}{} &  & Scraper (P) &        &      \multicolumn{1}{|r}{}
+\end{tabular}
+\caption{}
+\label{tab:operacionalizacion_habilidad}
+\end{table}
 
+% Parrafo
 
+Ahora bien, ¿cómo hacemos para pasar del indicador al resultado?.
+Para ello necesitamos una última hipótesis: la hipótesis indiciadora.
+La propuesta de Elo fue iniciar la variable habilidad con un valor arbitrario y actualizarla en base a la sorpresa.
+Para computar la sorpresa, la solución de Elo se basa en un modelo causal determinista con incertidumbre: a diferencia del modelo anterior~\ref{} ahora el efecto de los otros factores desconocidos se modela con una distribución gaussiana (la distribución que maximiza la incertidumbre cuando se conoce la media y el desvío de una población).
 
+%
 
+\begin{figure}[ht!]     
+ \centering
+ \begin{subfigure}[c]{0.49\textwidth}    
+   \tikz{         
+    \node[det, fill=black!10] (r) {$r$} ; 
+    \node[const, left=of r, xshift=-1.35cm] (r_name) {\small \en{Result}\es{Resultado}:}; 
+    \node[const, right=of r] (dr) {\normalsize $ r = (d > 0)$}; 
 
+    \node[latent, above=of r, yshift=-0.45cm] (d) {$d$} ; %
+    \node[const, right=of d] (dd) {\normalsize $ d = p_i-p_j$}; 
+    \node[const, left=of d, xshift=-1.35cm] (d_name) {\small \en{Difference}\es{Diferencia}:};
+    
+    \node[latent, above=of d, xshift=-0.8cm, yshift=-0.45cm] (p1) {$p_i$} ; %
+    \node[latent, above=of d, xshift=0.8cm, yshift=-0.45cm] (p2) {$p_j$} ; %
+    \node[const, left=of p1, xshift=-0.55cm] (p_name) {\small \en{Performance}\es{Desempeño}:}; 
 
+    \node[accion, above=of p1,yshift=0.3cm] (s1) {} ; %
+    \node[const, right=of s1] (ds1) {$s_i$};
+    \node[accion, above=of p2,yshift=0.3cm] (s2) {} ; %
+    \node[const, right=of s2] (ds2) {$s_j$};
+    
+    \node[const, right=of p2] (dp2) {\normalsize $p \sim \N(s,\beta^2)$};
 
+    \node[const, left=of s1, xshift=-.85cm] (s_name) {\small \en{Skill}\es{Habilidad}:}; 
+    
+    \edge {d} {r};
+    \edge {p1,p2} {d};
+    \edge {s1} {p1};
+    \edge {s2} {p2};
+    %\node[invisible, right=of p2, xshift=4.35cm] (s-dist) {};
+}
+\end{subfigure}
+   \begin{subfigure}[c]{0.49\textwidth}
+       \includegraphics[width=0.8\textwidth]{figures/probaOfWin_2D.pdf} 
+     \label{fig:probaOfWin_2D}
+    \end{subfigure}
+\caption{}
+\label{fig:elo}
+\end{figure}
 
+Las estimaciones previas, el modelo y el dato inducen una predicción a priori.
+Según el modelo, la probabilidad de ganar a priori, $P(r|s_i^{\text{old}},s_j^{\text{old}})$, es equivalemte a los volúmenes indicados en la figura \ref{fig:probaOfWin_2D}.
+\begin{equation*}
+ \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{Sorpresa}}{\text{del resultado}}}
+\end{equation*}
+La idea es que la magnitud de la sorpresa $\Delta$ est\'a relacionada con cuan buenas son las estimaciones previas, y por lo tanto puede usarse para actualizarlas.
+Resultados inesperados indicar\'ian que las estimaciones actuales no son del todo correctas y deber\'ian actualizarse en mayor medida que si hubieran ocurrido como se esperaba.
+\begin{equation}\label{eq:elo_update}
+ s_{\text{winner}_\text{new}} = s_{\text{winner}_\text{old}} + \Delta \ \ \ \ \ s_{\text{loser}_\text{new}} = s_{\text{loser}_\text{old}} - \Delta 
+\end{equation}
+Donde la sorpresa $\Delta$ act\'ua como factor de correcci\'on para ambas estimaciones previas.
+Esta es la hipótesis indicadora de Elo.
+Esta soluci\'on puede recuperar la escala relativa de los agentes, partiendo de valores iniciales arbitrarios.
 
+\begin{center}
+\tikz{ %
+        \node[const] (e) {Estimaci\'on}; 
 
+        \node[const, xshift=3cm] (p) {Predicci\'on};
+        \node[const, xshift=1.5cm, yshift=-1cm] (s) {Sorpresa}; 
+        
+         \edge {e} {p};
+         \edge {p} {s};
+         \edge {s} {e};
+} 
+\end{center}
 
+Esta definción de habilidad es usada todavía hoy por la federación internacional de ajedrez por lo que para la comunidad de ajedrecistas toman la estimación Elo como dato de base empírica, como realidad o hecho concreto.
+Para esa comunidad, los supuestos utilizados para por el sistema Elo quedan fuera toda duda.
 
+% Parrafo
 
+Sin embargo, el sistema Elo tiene algunas debilidades importantes. 
+La regla de actualizaci\'on (Ec.~\eqref{eq:elo_update}) es sim\'etrica, as\'i que lo que gana un agente el otro lo pierde.
+Debido a que a los agentes nuevos comienzan con estimaciones arbitrarias (el mismo valor inicial para cualquier individuo), ellas tienden a generan alta sorpresa y por lo tanto pueden modificar bruscamente las estimaciones de sus oponentes a pesar de que ya hubieran convergido.
+Las debilidades del sistema ocurren por: 1. no tener en cuenta la incertidumbre sobre las estimaciones de los agentes; y 2. proponer hipótesis indicadora ad-hoc.
 
 
 
