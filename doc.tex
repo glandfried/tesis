@@ -121,7 +121,11 @@
 
 
 %opening
-\title{\huge Creencias adaptativas, \\ cultura y aprendizaje social}
+\title{\huge Inferencia bayesiana para el estudio del aprendizaje social en comunidades virtuales\\[2cm]\LARGE 
+(Borrador)
+\\[2cm] 
+Tesis de doctorado en ciencias de la computación.}
+%\title{\huge Creencias adaptativas, \\ cultura y aprendizaje social}
 %%Inferencia bayesiana para el estudio del aprendizaje social en comunidades virtuales
 \author{Gustavo Landfried}
 
@@ -161,8 +165,8 @@
 
 \chapter{Evolución: sistemas naturales de procesamiento de información} \label{ch:evo}
 
-
-Primero, proponemos considerar a la vida como la principal fuente conocimiento empírico en tanto las diversas formas que ella adquiere en el curso de la evolución contiene información capaz de interectuar con el medio y sobrevivir.
+El conocimiento empírico se suele asociaciar a la ciencia y la técnica.
+Aquí proponemos considerar a la vida como la principal fuente conocimiento empírico en tanto las diversas formas que ella adquiere en el curso de la evolución contiene información capaz de interectuar con el medio y sobrevivir.
 Veremos que la complejidad actual de la vida es consecuencia de una serie de transiciones evolutivas en las que las entidades, que antes eran capaces de replicarse de forma independiente, luego de la transición sólo pueden replicarse como parte de una unidad mayor (e.g. células eucariotas, organizmos multicelular, especies sociales).
 En el capítulo \ref{ch:iso} mostraremos que la naturaleza multiplicativa de los procesos de selección son la causa que genera sistemáticamente esta emergencia irreversible de la cooperación y la especialización.
 
@@ -1296,8 +1300,7 @@ Por un lado, el ``principio de indiferencia'' garantiza un primer acuerdo inters
 Luego, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservación de la creencia contradictorias que que sigue siendo compatible con los datos de base empírica.
 
 
-
-\subsection{Principio de máxima diversidad (dado los modelos causales)} \label{sec:principio_indiferencia}
+\subsection{Principio de máxima diversidad} %(dado los modelos causales) \label{sec:principio_indiferencia}
 
 Las verdades empíricas siempre contienen incertidumbre.
 Las funciones de probabilidad nos permiten expresar incertidumbre.
@@ -1388,7 +1391,7 @@ Para simplificar el problema, suponemos que la caja 1 es la que queda cerrada, $
 
     \edge {r} {d};
   }
-  \caption{}
+  \caption{Modelo A}
   \label{fig:modelo_causal_1}
   \end{subfigure}
   \begin{subfigure}[b]{0.48\textwidth}
@@ -1406,7 +1409,7 @@ Para simplificar el problema, suponemos que la caja 1 es la que queda cerrada, $
     
     \edge {r,c} {d};
   }
-  \caption{}
+  \caption{Modelo B}
   \label{fig:modelo_causal_2}
   \end{subfigure}
   \caption{Modelos causales alternativos. Figura~\ref{fig:modelo_causal_1}: la pista sólo depende de la posición del regalo. Figura~\ref{fig:modelo_causal_2}: la pista depende de la posición del regalo y la la caja elegida previamente.
@@ -1428,13 +1431,27 @@ Cada uno de los modelos causales alternativos tiene su propio conjuto finito de 
 %
 En ambos existen tres universos paralelos por cada posición que puede adquirir el regalo.
 %
-
-
-Y luego, dada la posición del regalo, existen dos unviersos paralelos por cada posición que puede adquirir la pista. 
-%
-Del mismo modo que aplicamos el principio de indiferencia al comienzo de la introducción, dividimos la creencia en partes iguales sobre las tres posibles posiciones del regalo.
-%
 Y según el valor que adquiera el regalo, volvemos a dividir la creencia en partes iguales sobre los posibles valores que puede tomar la pista.
+%
+Sin embargo, la pista genera distintos universos paralelos según el modelo causal que consideremos.
+
+% Parrafo
+
+En el modelo de la figura~\ref{fig:modelo_causal_1}, por cada posición del regalo, se abren otros dos unviersos paralelos que se corresponden con las cajas hacia las que puede señalar la pista, en las que no está el regalo en ese universo.
+%
+En cambio, en el modelo de la figura~\ref{fig:modelo_causal_2}, la pista genera dos universos sólo cuando el regalo está en la misma caja que elegimos, $r=1$.
+%
+Podemos recibir una pista tanto en la puerta 2, $s_2$, como en la puerta 3, $s_3$.
+%
+Cuando el regalo está en otra caja, $r\neq 1$, la pista puede señalar únicamente a una de las cajas, la que no tiene el regalo y la que no fue elegida.
+%
+Por ejemplo, si el regalo está en la puerta 2, $r_2$, la pista sólo puede señalar la puerta 3, $s_3$.
+
+% Parrafo
+
+Siguiendo con el principio de indiferencia (o de máxima diversidad) dividimos la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.
+%
+En la figura~\ref{fig:caminos} mostramos cómo se dividen las creencias en partes iguales por los caminos paralelos de ambos modelos causales.
 %
 \begin{figure}[H]
 \centering
@@ -1478,7 +1495,7 @@ Y según el valor que adquiera el regalo, volvemos a dividir la creencia en part
 \edge[-] {r3d1} {br3d1};
 \edge[-] {r3d2} {br3d2};
 }
-\caption{}
+\caption{Modelo A}
 \label{fig:caminos_pre_montyhall}
 \end{subfigure}
 \begin{subfigure}[b]{0.48\textwidth}
@@ -1526,21 +1543,20 @@ Y según el valor que adquiera el regalo, volvemos a dividir la creencia en part
 \edge[-] {r2d3} {br2d3};
 \edge[-] {r3d2} {br3d2};
 }
-\caption{}
+\caption{Modelo B}
 \label{fig:caminos_montyhall}
 \end{subfigure}
+\caption{Los caminos paralelos que se generan a partir de los modelos causales alternativos. El principio de máxima diversidad (o de indiferencia) divide la creencia en partes en cada una de las bifurcaciones de los caminos paralelos del modelo causal. }
+\label{fig:caminos}
 \end{figure}
-
-
 %
-Siguiendo con el principio de indiferencia, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta respecto de los universos paralelos.
+Esto nos permite definir creencias honestas respecto de los universos paralelos.
 %
-Por ejemplo, la creencia honesta a priori de que el regalo se encuentre en la posición $1$ es de $1/3$.
+Cada camino del modelo causal tiene una combinación de valores distinta que representa nuestra \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista señale la caja $j$.
 %
-Luego, la \emph{creencia conjunta} honesta a priori de que el regalo se encuentre en la posición $1$ y la pista señale la caja $2$ es $1/6$.
-%
+Por ejemplo, la creencia conjunta de que el regalo esté en la caja $2$ y la pista señale la caja $3$ es
 \begin{equation}
-\text{Creencia}(r=1 \wedge s=2 | \text{Modelo} ) = \frac{1}{3} \frac{1}{2} = \frac{1}{6}
+\text{Creencia}(r=2 \wedge s=3 | \text{Modelo A} ) = \frac{1}{3} \frac{1}{2} = \frac{1}{6} \ \ \ \ \ \ \text{Creencia}(r=2 \wedge s=3 | \text{Modelo B} ) = \frac{1}{3} 
 \end{equation}
 %
 Donde $\wedge$ representa el conjunción lógica.
@@ -1555,116 +1571,280 @@ De la misma forma podemos calcular el resto de las creencias conjuntas a priori 
 %
 \begin{table}[H]
 \centering
-Creencia($r=i, s=j$) \\[0.1cm]
- \begin{tabular}{c|c|c|c|} \setlength\tabcolsep{0.4cm}
-        & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, \\ \hline 
+Creencia($r=i, s=j |$  Modelo A) \ \ \ \ \ \ Creencia($r=i, s=j |$  Modelo B) \\[0.1cm]
+ \begin{tabular}{|c|c|c|c|} \hline \setlength\tabcolsep{0.4cm}
+       & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, \\ \hline 
   $s_1$ & $0$ & $1/6$ & $1/6$  \\ \hline
   $s_2$ & $1/6$ & $0$ & $1/6$  \\ \hline
   $s_3$ & $1/6$ & $1/6$ & $0$ \\ \hline 
   \end{tabular}
-  \caption{}
+  \hspace{1.5cm}
+  \begin{tabular}{|c|c|c|c|} \hline  \setlength\tabcolsep{0.4cm} 
+ & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \,  \\ \hline 
+  $s_1$ & $0$ & $0$ & $0$ \\ \hline
+  $s_2$ & $1/6$ & $0$ & $1/3$ \\ \hline
+  $s_3$ & $1/6$ & $1/3$ & $0$  \\ \hline  
+  \end{tabular}
+  \caption{Creencia conjunta para cada uno de los modelos causales. El valor de las celdas representa la creencia honesta de cada uno de los caminos paralalelos de los modelos causales. }
+  \label{tab:creencia_conjunta}
 \end{table}
 %
-Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:caminos_pre_montyhall}.
-%
+Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:caminos}.
+% Parrafo
+Tenemos entonces un principio para alcanzar acuerdos sobre las creencias conjuntas cuando la única información previa es el modelo causal multidimensional.
 
-Cuando el regalo está detrás de la puerta 1, $r_1$, podemos recibir una pista tanto en la puerta 2, $s_2$, como en la puerta 3, $s_3$.
-Si el regalo está en la puerta 2, $r_2$, la pista sólo puede señalar la puerta 3, $s_3$.
-Así definimos la siguiente creencia honesta conjunta (y sus marginales).
+
+\subsection{Principio de integridad}
+
+El principio de máxima diversidad nos permitió definir creencias honestas sobre cada uno de los posibles caminos paralelos de los modelos causales multidimensionales.
+La creencia que tenemos de que ocurra cada uno de estos caminos está representada por las celdas de la tabla \ref{tab:creencia_conjunta}, que se correponde a cada posible combinación de valores posibles de la posición del reaglo y la pista posición de la pista.
+¿Pero cuál es la creencia honesta sobre una de las variables del modelo multidimensional?
+El principio de integridad establece que la creencia honesta sobre una única variable del modelo causal multidimensional no es más que el total de todos creencias conjuntas (caminos paralelos del modelo causal) en los que esa variable está presente.
+
+Los caminos paralelos del modelo causal son hipótesis mutuamente excluytentes.
+Si ocurre uno de los caminos, no puede ocurrir el resto.
+En ambos modelos, la pista señala la caja $3$ cuando el regalo está en la caja $1$ o en la caja $2$.
+Pero la creencia conjunta de esos caminos paralalelos es distinta.
+En el modelo A ambos caminos le asignamos una creencia de $1/6$, que sumadas representan $1/3$ de la creencia total.
+En el modelo B, en cambio, le asignamos una creencia de $1/6$ cuando el regalo está en la caja $1$ y $1/3$ cuando el regalo está en la caja $2$, que sumados represnetan $1/2$ del la creencia total.
+
+% Parrafo
+
+Habiendo definido la creencia conjunta sobre las hipótesis mutuamente excluyentes, las creencias sobre cada una de las variables, sin importar que ocurra con la otra variable, no es más que el total de cada una de las creencias particulares.
+\begin{equation}
+\begin{split}
+\text{Creencia}(s_j|\text{Modelo A}) = \sum_i \text{Creencia}(r_i, s_j|\text{Modelo A}) = 1/3 \\  \text{Creencia}(s_j|\text{Modelo B}) = \sum_i \text{Creencia}(r_i, s_j|\text{Modelo B}) = 1/2
+\end{split}
+\end{equation}
+
+% Parrafo
+
+Lo mismo ocurre con cualquiera de las variables de un modelo multidimensional.
+Para calcular la creencia sobre una variable, calculamos la suma de todos los caminos paralelos en los que esa variable está presente.
 
 \begin{table}[H]
 \centering
- \begin{tabular}{c|c|c|c||c} \setlength\tabcolsep{0.4cm} 
-        & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
-  $s_2$ & $1/6$ & $0$ & $1/3$ & $1/2$ \\ \hline
-  $s_3$ & $1/6$ & $1/3$ & $0$ & $1/2$ \\ \hline \hline 
-  & $1/3$& $1/3$ & $1/3$ & $1$
+Modelo A  \hspace{4.5cm}  Modelo B \\[0.1cm]
+ \begin{tabular}{|c|c|c|c||c|} \hline \setlength\tabcolsep{0.4cm}
+       & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
+  $s_1$ & $0$ & $1/6$ & $1/6$ & $1/3$ \\ \hline
+  $s_2$ & $1/6$ & $0$ & $1/6$ & $1/3$ \\ \hline
+  $s_3$ & $1/6$ & $1/6$ & $0$ & $1/3$ \\ \hline \hline
+   & $1/3$ & $1/3$ & $1/3$ & $1$ \\ \hline 
   \end{tabular}
- \end{table}
- 
-% Parrafo
+  \hspace{1.5cm}
+  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm} 
+ & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
+  $s_1$ & $0$ & $0$ & $0$ & $0$\\ \hline
+  $s_2$ & $1/6$ & $0$ & $1/3$ & $1/2$ \\ \hline
+  $s_3$ & $1/6$ & $1/3$ & $0$ & $1/2$ \\ \hline \hline
+   & $1/3$ & $1/3$ & $1/3$ & $1$  \\ \hline
+  \end{tabular}
+  \caption{Creencia marginal obtenida como la suma de las creencia conjuntas honesta de cada uno de los caminos paralalelos de los modelos causales. }
+  \label{tab:creencia_marginal}
+\end{table}
 
-%Una propiedad común a todas las creencias honestas es la maximización de la incertidumbre (manteniendo la coherencia con la información disponible).
-%La distribución con menor incertidumbre es la que asigna toda la creencia a una de las opciones.
-%La distirbución más lejana a esta, 
-%En este caso, en el que no tenemos información previa, la obtuvimos dividiendo la creencia en partes iguales.
-Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no tenemos información previa.
-¿Pero cómo hacemos para alcanzar acuerdos cuando recibimos nueva información?
-
-\subsection{Principio de coherencia (dados los datos de base empírica)}
-
-Supongamos que alguien nos indica con certeza que el regalo no está en la caja del medio.
-La información que tenemos nos permite asignar creencia 0 a que el regalo $r$ esté en la caja $2$ en los casos que tenemos una señal $s$ que nos indica que el regalo no está en la caja $2$.
-%
+En ambos modelos la creencia honesta sobre el regalos, sin importar el valor que toma pista, es $1/3$
 \begin{figure}[H]
 \centering
 \tikz{ %
-         \node[factor, minimum size=1cm] (p1) {} ;
-         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.025\textwidth]{static/cerradura.png}} ;
+         \node[factor, minimum size=1cm, xshift=1.5cm] (p2) {} ;
          \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
 
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+        } 
+\caption{Creencia marginal sobre el regalo en ambos modelos causales. }
+\end{figure}
+
+\subsection{Principio de coherencia} % (dados los datos de base empírica)
+
+El principio de máxima diversidad nos permitió definir la creencia conjunta honesta dividiendo las creencias en partes iguales por cada bifurcación del modelo causal.
+Y el principio de integridad nos permitió calcular la creencia honesta sobre una única variable del modelo causal multidimensional como la creencia total de todos los caminos paralelos en los que esa variable está presente.
+¿Pero cómo para preservar los acuerdos intersubjetivos cuando recibimos nueva información?
+El principio de coherencia establece que la nueva creeencia honesta después de haber visto un nuevo datos es la creencia previa que sigue siendo compatible con ese dato.
+
+% Parrafo
+
+Supongamos que alguien nos indica con certeza que el regalo no está en la caja del medio.
+%
+\begin{figure}[ht!]
+\centering
+\tikz{ %
+        
+         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.025\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
          \node[const, above=of p1, yshift=.15cm] (fp1) {$?$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$?$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
         
         } 
-\caption{}
 \end{figure}
+
+¿Cuál es la nueva creencia marginal honesta sobre el regalo después de haber visto esta pista?
+
+Para actualizar las creencias posiblemente nos veamos tentados a aplicar el principio de indiferencia nuevamente, asignando $0.5$ a las dos cajas que todavía ocultan información.
 %
-Para actualizar el resto de las cajas, posiblemente nos veamos tentados a aplicar el principio de indiferencia nuevamente, asignando $0.5$ a las dos cajas que todavía están cerradas.
-%
-Aunque en este caso particular esa solución sea casualmente correcta, esa metodología conduce a errores en términos generales.
+Aunque en este caso particular esa solución sea casualmente correcta para el modelo A, esa metodología conduce a errores en términos generales.
 %
 El principio de indiferencia sólo se aplica una única vez, al inicio.
 %
 Después sólo actualizaremos esa creencia en función de la nueva información que vayamos incorporando.
 
-% Parrafo
-
-Cuando aplicamos por primera vez el principio de indiferencia en la figura \ref{fig:principio_de_indiferencia}, el espacio de hipótesis se reducía a tres opciones, una por caja.
-%
-En este caso, en el que estamos considerando una variable nueva (la señal $s$) que representa la pista, el espacio de hipótesis es otro, más grande, por lo que esta creencia a priori no nos sirve.
-%
-
-Habiendo definido la creencia conjunta, las creencias sobre cada una de las variables se obtiene como el total.
-La creencia sobre el regalo nuevamente es 1/3,
-\begin{equation}
-\text{Creencia}(r_i) = \sum_j \text{Creencia}(r_i, s_j) = 1/3
-\end{equation}
-y sobre la pista también
-\begin{equation}
-\text{Creencia}(s_j) = \sum_i \text{Creencia}(r_i, s_j) = 1/3
-\end{equation}
-
-% Parrafo
-
+Para ello revisemos cuales son los caminos paralelos del modelo causal que siguen siendo compatible con el observable.
 Para actualizar las creencias simplemente nos quedamos con la creencia a priori que es compatible con el dato, $\text{Creencia}(r_i, s_2)$.
 %
-\begin{table}[H]
+\begin{table}[ht!]
 \centering
- \begin{tabular}{c|c|c|c|c} \setlength\tabcolsep{0.4cm} 
-        & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
-  $s_1$ &  &  & & \\ \hline
+Creencia($r_i, s_2|$ Modelo A)  \hspace{2.5cm}  Creencia($r_i, s_2|$ Modelo B) \\[0.1cm]
+ \begin{tabular}{|c|c|c|c||c|} \hline \setlength\tabcolsep{0.4cm}
+       & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
   $s_2$ & $1/6$ & $0$ & $1/6$ & $1/3$ \\ \hline
-  $s_3$ &  &  &  & \\ \hline 
   \end{tabular}
+  \hspace{1.5cm}
+  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm} 
+ & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline 
+  $s_2$ & $1/6$ & $0$ & $1/3$ & $1/2$ \\ \hline
+  \end{tabular}
+  \caption{La creencia conjunta y marginal que sobrevive luego de ver los datos. }
+  \label{tab:creencia_compatible}
 \end{table}
+
+En la tabla~\ref{tab:creencia_compatible} nos quedamos con la creencia conjunta y marginal que sigue siendo compatible con el dato.
 %
+Esto es exactamente lo mismo que quedarnos con los caminos del modelo causal que son posibles dado el modelo causal y el observable.
+%
+En la figura~\ref{fig:caminos_compatibles} mostramos los caminos que son compatibles en negro y los incompatibles en gris.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\tikz{
+\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
+
+\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r_1$};
+{\color{gray}\node[latent,draw=gray,below=of b0,yshift=0.7cm] (r2) {$r_2$};}
+\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r_3$};
+
+\node[latent, below=of r1, draw=white, yshift=0.7cm] (br1) {$\frac{1}{3}$};
+{\color{gray}\node[latent, below=of r2, draw=white, yshift=0.7cm] (br2) {$\frac{1}{3}$};}
+\node[latent, below=of r3, draw=white, yshift=0.7cm] (br3) {$\frac{1}{3}$};
+\node[latent,below=of br1,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s_2$};
+{\color{gray}\node[latent,draw=gray,below=of br1,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s_3$};}
+
+\node[latent,below=of r1d2,yshift=0.7cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
+{\color{gray} \node[latent,draw=gray,below=of r1d3,yshift=0.7cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$}; }
+{\color{gray}\node[latent,draw=gray,below=of br2,yshift=0.7cm, xshift=-0.5cm] (r2d1) {$s_1$}; }
+{\color{gray} \node[latent,draw=gray,below=of br2,yshift=0.7cm, xshift=0.5cm] (r2d3) {$s_3$}; }
+{\color{gray} \node[latent,draw=gray,below=of br3,yshift=0.7cm, xshift=-0.5cm] (r3d1) {$s_1$}; }
+\node[latent,below=of br3,yshift=0.7cm, xshift=0.5cm] (r3d2) {$s_2$};
+
+{\color{gray}\node[latent,below=of r2d1,yshift=0.7cm, draw=white] (br2d1) {$\frac{1}{3}\frac{1}{2}$};}
+{\color{gray}\node[latent,below=of r2d3,yshift=0.7cm,draw=white] (br2d3) {$\frac{1}{3}\frac{1}{2}$};}
+{\color{gray}\node[latent,below=of r3d1,yshift=0.7cm, draw=white] (br3d1) {$\frac{1}{3}\frac{1}{2}$};}
+\node[latent,below=of r3d2,yshift=0.7cm,draw=white] (br3d2) {$\frac{1}{3}\frac{1}{2}$};
+\edge[-] {b0} {r1,r3};
+\edge[-,draw=gray] {b0} {r2};
+\edge[-] {r1} {br1};
+\edge[-,draw=gray] {r2} {br2};
+\edge[-] {r3} {br3};
+\edge[-] {br1} {r1d2};
+\edge[-,draw=gray] {br1} {r1d3};
+\edge[-] {r1d2} {br1d2};
+\edge[-,draw=gray] {r1d3} {br1d3};
+\edge[-, draw=gray] {br2} {r2d1, r2d3};
+\edge[-] {br3} {r3d2};
+\edge[-, draw=gray] {br3} {r3d1};
+\edge[-, draw=gray] {r2d1} {br2d1};
+\edge[-, draw=gray] {r2d3} {br2d3};
+\edge[-, draw=gray] {r3d1} {br3d1};
+\edge[-] {r3d2} {br3d2};
+}
+\caption{Modelo A}
+\label{fig:caminos_pre_montyhall_compatibles}
+\end{subfigure}
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\tikz{
+\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r_1$};
+{\color{gray}\node[latent,draw=gray,below=of b0,yshift=0.7cm] (r2) {$r_2$}; }
+\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r_3$}; 
+
+% \node[latent, below=of r1, draw=white, yshift=0.8cm] (br1) {$\frac{1}{3}$};
+% \node[latent, below=of r2, draw=white, yshift=0.8cm] (br2) {$\frac{1}{3}$};
+% \node[latent, below=of r3, draw=white, yshift=0.8cm] (br3) {$\frac{1}{3}$};
+% \node[latent,below=of br1,yshift=0.8cm] (c11) {$c_1$};
+% \node[latent,below=of br2,yshift=0.8cm] (c12) {$c_1$};
+% \node[latent,below=of br3,yshift=0.8cm] (c13) {$c_1$};
+
+\node[latent, below=of r1, draw=white, yshift=0.7cm] (bc11) {$\frac{1}{3}$};
+{\color{gray}\node[latent, below=of r2, draw=white, yshift=0.7cm] (bc12) {$\frac{1}{3}$};}
+\node[latent, below=of r3, draw=white, yshift=0.7cm] (bc13) {$\frac{1}{3}$};
+\node[latent,below=of bc11,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s_2$};
+{\color{gray}\node[latent,draw=gray,below=of bc11,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s_3$};}
+{\color{gray}\node[latent, draw=gray,below=of bc12,yshift=0.7cm] (r2d3) {$s_3$};}
+\node[latent,below=of bc13,yshift=0.7cm] (r3d2) {$s_2$};
+
+\node[latent,below=of r1d2,yshift=0.7cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
+{\color{gray}\node[latent,below=of r1d3,yshift=0.7cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};}
+{\color{gray}\node[latent,below=of r2d3,yshift=0.7cm,draw=white] (br2d3) {$\frac{1}{3}$};}
+\node[latent,below=of r3d2,yshift=0.7cm,draw=white] (br3d2) {$\frac{1}{3}$};
+\edge[-] {b0} {r1,r3};
+\edge[-,draw=gray] {b0} {r2};
+% \edge[-] {r1} {br1};
+% \edge[-] {r2} {br2};
+% \edge[-] {r3} {br3};
+% \edge[-] {br1} {c11};
+% \edge[-] {br2} {c12};
+% \edge[-] {br3} {c13};
+\edge[-] {r1} {bc11};
+\edge[-,draw=gray] {r2} {bc12};
+\edge[-] {r3} {bc13};
+\edge[-] {bc11} {r1d2};
+\edge[-,draw=gray] {bc11} {r1d3};
+\edge[-,draw=gray] {bc12} {r2d3};
+\edge[-] {bc13} {r3d2};
+\edge[-] {r1d2} {br1d2};
+\edge[-,draw=gray] {r1d3} {br1d3};
+\edge[-,draw=gray] {r2d3} {br2d3};
+\edge[-] {r3d2} {br3d2};
+}
+\caption{Modelo B}
+\label{fig:caminos_montyhall_compatibles}
+\end{subfigure}
+\caption{Los caminos paralelos compatibles (negro) e incompatibles (gris) con el observable, Creencia($r_i, s_2$). }
+\label{fig:caminos_compatibles}
+\end{figure}
+% Cuando aplicamos por primera vez el principio de indiferencia en la figura \ref{fig:principio_de_indiferencia}, el espacio de hipótesis se reducía a tres opciones, una por caja.
+% %
+% En este caso, en el que estamos considerando una variable nueva (la señal $s$) que representa la pista, el espacio de hipótesis es otro, más grande, por lo que esta creencia a priori no nos sirve.
+% %
+
+Es decir, para actualizar nuestra creencia nos quedamos con la creencia a priori que es compatible con los datos.
 Lo que nos permitirá cumplir el objetivo que nos habíamos propuesto, actualizar la creencia sobre el regalo luego de haber visto la pista.
-Como \textbf{la creencia que sobrevive} es ahora nuestra nueva creencia total, la normalizamos (en partes iguales) para que vuelva a sumar 1
+\textbf{La creencia que sobrevive}, Creencia($r_i, s_2$), es ahora nuestra nueva creencia total.
+Para expresarla nuevamente como tal, la normalizamos para que vuelva a sumar 1.
 %
 \begin{equation}
-\text{Creencia}(r_i| s_2) = \frac{\text{Creencia}(r_i, s_2)}{\text{Creencia}(s_2)} = 1/2
+\text{Creencia}(r_i| s_2) = \frac{\text{Creencia}(r_i, s_2)}{\text{Creencia}(s_2)}
 \end{equation}
 %
-La concusión a la que llegamos coincide con la intuición de la mayoría.
-\begin{figure}[H]
+La concusión a la que llegamos depende del modelo causal elegido.
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
 \centering
 \tikz{ %
         
-         \node[factor, minimum size=1cm] (p1) {} ;
-         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.05\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.06\textwidth]{static/dedo.png}} ;
          \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
 
          \node[const, above=of p1, yshift=.15cm] (fp1) {$1/2$};
@@ -1672,61 +1852,27 @@ La concusión a la que llegamos coincide con la intuición de la mayoría.
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/2$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
 }
-\end{figure}
-%
-Pero este resultado depende del modelo causal elegido.
-
--------
-
-Supongamos que en este contexto recibimos una pista.
-%
-\begin{figure}[H]
+\caption{Modelos A}
+\end{subfigure}
+\begin{subfigure}[b]{0.48\textwidth}
 \centering
 \tikz{ %
         
-         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.025\textwidth]{static/cerradura.png}} ;
-         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$?$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-        
-        } 
-\end{figure}
-
-¿Cómo hacemos para actualizar las creencias de forma honesta?
-Como hicimos antes, maximizamos la incertidumbre dividiendo las creencias por los caminos del modelo causal de modo de definir la creencia conjunta honesta.
-
-Para actualizar nuestra creencia, nuevamente nos quedamos con la creencia a priori que es compatible con los datos.
-
-\begin{table}[H]
-\centering
- \begin{tabular}{c|c|c|c||c} \setlength\tabcolsep{0.4cm} 
-        & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, &  \\ \hline 
-  $s_2$ & $1/6$ & $0$ & $1/3$ & $1/2$ \\ \hline
-  \end{tabular}
-\end{table}
-
-Que normalizado en partes iguales para que sume 1 queda como
-
-\begin{figure}[H]
-\centering
-\tikz{ %
-        
-         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.025\textwidth]{static/cerradura.png}} ;
-         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.03\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=1cm] (p1) {\includegraphics[width=0.05\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.06\textwidth]{static/dedo.png}} ;
          \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
          
          \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
          \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$2/3$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-        } 
+        }
+\caption{Modelo B}
+\end{subfigure}
+\caption{Nueva creencia honesta}
 \end{figure}
-  
-Esta respuesta es diferente a la que obtuvimos con el primer modelo causal.
-Sin embargo, ambas comparten la propiedad de ser la distribución de creencias que maximiza la incertidumbre dada la evidencia formal (modelo causal) y empírica (datos), lo que hace que sean proposiciones sobre las que podemos acordar tanto intercultural como intersubjetivamente.
+%  
+Si bien ambas respuesta son diferentes, ambas comparten la propiedad de ser la distribución de creencias que maximiza la incertidumbre dada la evidencia formal (modelo causal) y empírica (datos), lo que hace que sean proposiciones sobre las que podemos acordar tanto intercultural como intersubjetivamente.
 
 \section{Reglas de la probabilidad}
 
@@ -1874,6 +2020,29 @@ Esta es la solución ontólógica del mundo.
 
 \section{Selección intersubjetiva de modelos causales}\label{sec:modelos_alternativos}
 
+\en{To evaluate the models we must calculate their probability given the data, }%
+\es{Para evaluar los modelos debemos calcular su probabilidad dados los datos, }%
+%
+\begin{equation}
+ P(\text{Model\es{o}}|\text{Dat\en{a}\es{os}}) = \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}})P(\text{Model\es{o}})}{P(\text{Dat\en{a}\es{os}})}
+\end{equation}
+
+En la siguiente figura hacemos selección de los modelo causales alternativos discutidos en este capítulo (Figura~\ref{fig:modelos_alternativos}).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{figures/monty_hall_selection.pdf}
+    \end{subfigure}
+    \caption{
+    Selección de modelos alternativos
+    }
+    \label{fig:estrategias_individuales}
+\end{figure}
+
+Con 32 observaciones es casi seguro que el modelo causal B es el que representa el modelo verdadero del programa Monty Hall.
+
+(Sin terminar)
 
 \section{Construcción de datos de base empírica metodológica}
 
@@ -9231,7 +9400,7 @@ En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribución de ha
 \es{Sea por lo motivos causales propuestos por los trabajos previos, o sea por razones de correlación, lo cierto es que los únicos jugadores que se ven afectados por la centralidad son aquellos que tienen una habilidad inicial media. }%
 
 
-\chapter{Sistema de estimación de habilidad para la Asociación Artgentina de Go.} \label{ch:aago}
+\chapter{Sistema de estimación de habilidad para la Asociación Argentina de Go.} \label{ch:aago}
 
 \section{Introducción}
 
