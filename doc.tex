@@ -43,6 +43,13 @@
 \input{tikzlibrarybayesnet.code.tex}
 
 
+%%%%%% Para no numerar los prefacios, y todo lo que viene antes del capitulo 1. Coimenzar con \frontmatter y volver a abrir con \mainmatter
+\makeatletter
+\renewcommand{\frontmatter}{\cleardoublepage\@mainmatterfalse}
+\renewcommand{\mainmatter}{\cleardoublepage\@mainmattertrue}
+\makeatother
+%%%%%%
+
 \definecolor{julia}{rgb}{1, 0.5, 1}
 \definecolor{python}{rgb}{1, 1, 0.5}
 \definecolor{r}{rgb}{0.70, 0.80, 1}
@@ -121,52 +128,63 @@
 
 \begin{document}
 
-\maketitle
+\frontmatter
+\pagenumbering{roman}
 
+\maketitle
 \tableofcontents
 
 \newpage 
 
 \vfill
+% 
+% {\Large Los pubelos indígenas practican la inferencia bayesiana}
+% 
+% \begin{quotation}
+% El proceso moderno la diferencia radical de proyectos históricos, de metas de bienestar divergentes, se extingue. La esfera pública es el mundo del referente universal y del canon de la coherencia. En otras sociedades no existe el problema de la coherencia. El tema de las religiones es un buen ejemplo. Alguien que participa todos los años del culto al cosmos pachamámico también puede ser católico, y en algunos casos raros puede entrar incluso a alguna iglesia evangélica. Puede ser budista, no habría ningún problema. La gente del candomblé, aquélla con la que me encontré en Recife en mi primer paso en la comprensión de la diferencia, va a la iglesia. Les he dicho: ``Pero ¿cómo?, ¿sos católico?'', y la respuesta fue: ``Cuando deseo pensar que podré ir al cielo ... voy a la iglesia''. No hay un problema de coherencia allí. En el hinduismo tampoco lo hay; en mis años como estudiante en Europa, veía cómo mis colegas frecuentaban el ritual de cualquier iglesia que estuviera disponible. Por el contrario, las religiones monoteístas son monopólicas, son excluyentes. Las religiones no monoteístas no lo son ni procesan las diferencias buscando compatibilizarlas. Simplemente transitan entre diferentes registros de emocionalidad, de sentimentalidad e inclusive de lógica. No hay una búsqueda de coherencia. A esa experiencia Europa no puede acceder: su pura lógica se lo impide. La gran deficiencia de ese otro mundo, el mundo nuestro, que habita nuestros paisajes, donde A y no-A pueden ser verdades al mismo tiempo y no se excluyen, es que carece de una retórica para defender su grandeza. 
+% \end{quotation}
+% 
+% {\Large La sociedad fedual colonial-moderna la combatió} \\
+% 
+% {\Large \hfill Rita Segato.}
+% \newpage 
 
-{\Large Los pubelos indígenas practican la inferencia bayesiana}
+\pagenumbering{arabic}
 
-\begin{quotation}
-El proceso moderno la diferencia radical de proyectos históricos, de metas de bienestar divergentes, se extingue. La esfera pública es el mundo del referente universal y del canon de la coherencia. En otras sociedades no existe el problema de la coherencia. El tema de las religiones es un buen ejemplo. Alguien que participa todos los años del culto al cosmos pachamámico también puede ser católico, y en algunos casos raros puede entrar incluso a alguna iglesia evangélica. Puede ser budista, no habría ningún problema. La gente del candomblé, aquélla con la que me encontré en Recife en mi primer paso en la comprensión de la diferencia, va a la iglesia. Les he dicho: ``Pero ¿cómo?, ¿sos católico?'', y la respuesta fue: ``Cuando deseo pensar que podré ir al cielo ... voy a la iglesia''. No hay un problema de coherencia allí. En el hinduismo tampoco lo hay; en mis años como estudiante en Europa, veía cómo mis colegas frecuentaban el ritual de cualquier iglesia que estuviera disponible. Por el contrario, las religiones monoteístas son monopólicas, son excluyentes. Las religiones no monoteístas no lo son ni procesan las diferencias buscando compatibilizarlas. Simplemente transitan entre diferentes registros de emocionalidad, de sentimentalidad e inclusive de lógica. No hay una búsqueda de coherencia. A esa experiencia Europa no puede acceder: su pura lógica se lo impide. La gran deficiencia de ese otro mundo, el mundo nuestro, que habita nuestros paisajes, donde A y no-A pueden ser verdades al mismo tiempo y no se excluyen, es que carece de una retórica para defender su grandeza. 
-\end{quotation}
+\chapter{Agradecimientos}
 
-{\Large La sociedad fedual colonial-moderna la combatió} \\
+\chapter{Introducción}
 
-{\Large \hfill Rita Segato.}
+\mainmatter
 
 
-\newpage 
 
 \chapter{Evolución: sistemas naturales de procesamiento de información} \label{ch:evo}
 
-El conocimiento empírico se interpreta comúnmente como propiedad exclusiva de la ciencia o la técnica.
-En este capítulo tiene por objetivo revisar este y otros lugares comunes.
 
 Primero, proponemos considerar a la vida como la principal fuente conocimiento empírico en tanto las diversas formas que ella adquiere en el curso de la evolución contiene información capaz de interectuar con el medio y sobrevivir.
 Veremos que la complejidad actual de la vida es consecuencia de una serie de transiciones evolutivas en las que las entidades, que antes eran capaces de replicarse de forma independiente, luego de la transición sólo pueden replicarse como parte de una unidad mayor (e.g. células eucariotas, organizmos multicelular, especies sociales).
-En el capítulo \ref{ch:iso} mostraremos que la naturalez multiplicativa de los procesos de selección son la causa que genera sistemáticamente esta emergencia irreversible de la cooperación y la especialización.
+En el capítulo \ref{ch:iso} mostraremos que la naturaleza multiplicativa de los procesos de selección son la causa que genera sistemáticamente esta emergencia irreversible de la cooperación y la especialización.
 
 % Parrafo
 
-Segundo, revisaremos la transición cultural de nuestra especie, que primero nos permitió dejar de estar en peligro de extinción y luego nos permitió ser capaces de ocupar en pocos años todos los nichos ecológicos de la tierra.
-Revisaremos la idea de que la cultura es una propiedad poblacional en la que la  estructura de la red de intercambiuos tiene un rol fundamental en los procesos de acumulación cultural, como la integración y el aislamiento afectan los procesos de evolución cultural, como fue el caso de la involución cultural sufrida por Europa occidental durante la edad media y el extraordinario desarrollo ocurrido luego de su integración privilegiada al sistema mundo gracias a la plata americana.
+Segundo, revisaremos cómo la transición cultural de nuestra especie, que primero nos permitió dejar de estar en peligro de extinción y luego nos permitió ser capaces de ocupar en pocos años todos los nichos ecológicos de la tierra.
+Veremos que la cultura es una propiedad poblacional que se ve influenciada por la estructura de la red de intercambios, que la integración y el aislamiento afectan los procesos de evolución cultural.%, como fue el caso de la involución cultural sufrida por Europa occidental durante la edad media y el extraordinario desarrollo ocurrido luego de su integración privilegiada al sistema mundo gracias a la plata americana.
 Para estudiar cómo cambian las habilidades de las personas en el tiempo, en el capítulo \ref{ch:ttt} implementamos el modelo estado del arte en la industria del video juego, el cual nos permitió estudiar factores de aprendizaje social que afectan la habilidad esperada por simple experiencia individual, cómo el la formación de equipos (capítulo \ref{ch:team}) y la posición en de los individuos en red (capítulo \ref{ch:topo})
 
 % Parrafo
 
-Por último, revisamos el surgimiento de la ciencia moderna en su contexto histórico, su relación con la masiva pérdida de diversidad cultural, y como consecuencia la pérdida de biodiversidad actual sin precedentes.
-Examineremos cómo el criterio de autoridad feudal, reinterpretado durante la colonial-modernidad como criterio de universalidad masculina blanca, sirvió de justificación para la aribitrariedad epistémica durante la era de genocidios culturales y ecológicos.
-Veremos cómo los sistemas culturales capaces de superviviencia a largo plazo desarrollaron de forma independiente tecnologías de reciprocidad sociales y ecológicas bien adaptados para la coexistencia basadas en cosmovisiones paraconsistentes que les permite creer en A y no A al mismo tiempo.
+Por último, revisamos el surgimiento de la ciencia moderna en su contexto histórico.
+Examineremos cómo el criterio de autoridad feudal, reinterpretado como criterio de universalidad masculina blanca, sirvió de justificación para la aribitrariedad durante la era de genocidios culturales y ecológicos de la todavía vigente colonial-modernidad.
+La masiva pérdida de diversidad cultural trajo como consecuencia la masiva pérdida de biodiversidad actual, una crisis ecológica sin precedentes.
+A pesar de todos los avances, la ciencia metropolitana moderna no ha sido capaz de compensar la pérdida de los conocimientos milenarios acumulados por las comunidades autónomas locales.
+Los sistemas culturales capaces de superviviencia a largo plazo desarrollaron de forma independiente tecnologías bien adaptados para la coexistencia intercultural y ecológica basada en cosmovisiones que, como la inferencia bayesiana, no solo permite sino que obliga a creer al mismo tiempo en hipótesis mutuamente contradictorias, A y no A.
 En el capítulo \ref{ch:proba} definiremos revisaremos las reglas de la teoría de la probabildiad desde una perspectiva Bayesiana, la cual será la utilizada a lo largo de toda la tesis.
 
 % Propondremos el concepto de honestidad, definido como maximización de la incertidumbre dada la evidencia, como principio intercultural de acuerdos intersubjetivos y por lo tanto como criterio de validez universal del conocimiento empírico cultural.
 % Se hace necesario practicar la co-existencia inter-comunitaria, de modo de reactivar localmente los procesos de evolución cultural que le permitieron a nuestra especie adptarse a los diversos nichos ecológicos sin afectarlos en sus proceso vital, fuente real del conocimiento empírico.
 %  
+
 \section{Vida}
 
 \en{In the last third of the history of the Universe, sometime around 4 billion years ago, a simple form of matter organization capable of self-replication appeared on Earth. }%
@@ -1277,49 +1295,52 @@ Pero quizás más importante es que su aplicación estricta (lo que llamamos inf
 Por un lado, el ``principio de indiferencia'' garantiza un primer acuerdo intersubjetivo en contextos de incertidumbre maximizando la diversidad de creencias mutuamente contradictorias del modelo causal.
 Luego, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservación de la creencia contradictorias que que sigue siendo compatible con los datos de base empírica.
 
-\subsection{Las contradicciones en el sistema lógico empírico}
-% 
-% \subsection{La escuela naturalista (frecuentista)}
-% 
-% \subsection{La escuela epistémica (Bayesiana)}
 
 
-La justificación axiomática de la teoría de la probabilidad no ha sido suficiente para unificar su interpretación.
-En contacto con problemas empíricos surgieron, incluso en las ciencias matemáticas, dos escuelas de pensamiento regidas supuestamente bajo las mismas reglas teóricas.
-El debate filosófico de fondo tiene que ver con la solución que ambas escuelas le dan al problema de la contradicción: la epistémica (bayesiana) y la ontológica (frecuentista).
+\subsection{Principio de máxima diversidad (dado los modelos causales)} \label{sec:principio_indiferencia}
 
-En el siglo 18 el concepto de probabilidad comenzó a usarse en Europa para expresar creencias contradictorias en contextos de incertidumbre.
-Este es el caso de Laplace quién, al tener la convicción de que el mundo era determinista, no podía más que utilizar la probabilidad para expresar su incertidumbre asignando simultaneamente grados de creencia a hipótesis mutuamente contradictorias.
-En un mundo determinista no es posible que A y no A ocurran al mismo tiempo, o lo que es lo mismo, que potencialmente puedan ocurrir dadas exactamente las mismas condiciones iniciales del mundo.
-Bajo este marco, la contradicción de creer simultanemente en A y no A es sólo una expresión de nuestra incertidumbre.
-Esta es la solución epistémica de la contradicción, pues más allá de que Laplace tuviera la convicción de que el mundo fuera determinista, nada dice de la naturaleza del mundo.
+Las verdades empíricas siempre contienen incertidumbre.
+Las funciones de probabilidad nos permiten expresar incertidumbre.
+Pero ¿Cuál de todas las infinitas posibles funciones de probabilidad representan nuestra incertidumbre?
 
-La solución epistémica, que proponía creer simultaneamente en hipótesis mutuamente contradictorias, fue el motivo por el cual la corriente bayesiana de la toería de la probabilidad fue tan combatida a finales del siglo 19 y durante casi todo el siglo 20.
-
-La escuela frecuentista, tal como se enseña en la materia probabilidad y estadísitica de la facultad de ciencias exactas y naturales, define a la probabilidad como el número al que tiende una frecuencia obtenida luego de realizar varios ``experimentos independientes'' bajo ``las mismas condiciones''.
-Según esta corriente la probabilidad de eventos deterministas, por ejemplo de que exista un planeta no detectado en el sistema solar, es 0 o 1 aunque no conozcamos su valor.
-Sólo los objetos no deterministas, que llaman ``variables aleatorias'', tienen valores intermedios que representan la frecuencia en la que los diferentes estado del universo se producen a partir de exactamente las mismas condiciones inciales.
-De esta forma, la contradicción se propone como una propiedad externa al sistema lógico propia de la naturaleza del mundo.
-Esta es la solución ontólógica del mundo.
-
-%La escuela frecuentista, a diferencia de la bayesiana, se ve obligada a afirmar la naturaleza determinsta o aleatoria del mundo.
-% 
-% El enfoque frecuentista es el que mejor se adapta a los métodos de validación de las ciencias formales: dadas un conjunto de \emph{hipótesis axiomáticas} que no se demuestran y aplicando las reglas de la probabilidad llegan a conclusiones (probabiilidades estimadas) 
-% 
-% El esfuerzo por eliminar la contradicción del sistema lógico produjo una serie de 
-
-
-
-
-
-
-
-\subsection{Principio de máxima diversidad dado los modelos causales} \label{sec:principio_indiferencia}
+Volvamos al ejemplo del libre albedrío que motivó la necesidad de expresar la incertidumbre usando fuciones de probabilidad.
+En este ejemplo sabemos que una persona escondió un regalo detrás de una de las tres cajas.
+Existen infinitas funciones que asignan mayor probabilidad a una caja que a otra.
 Pero si de verdad no tenemos ninguna información respecto de dónde está el regalo, no hay motivos para tener preferencia por ninguna de las opciones, lo que sin lugar a dudas nos hará estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
-Éste es un principio de validez intercultural conocido como ``principio de indiferencia''.
+Este es un principio de validez intercultural conocido como ``principio de indiferencia''.
 %
-\begin{figure}[H]
-\centering
+\begin{figure}[ht!]
+\begin{subfigure}[b]{0.2\textwidth}
+  \centering \vskip 0pt
+  \tikz{            
+    \node[latent] (r) {\includegraphics[width=0.24\textwidth]{static/regalo.png}} ;
+    \node[const,above=of r, yshift=.15cm] (nr) {$r \in \{1,2,3\}$} ; 
+    \node[const, below=of r, yshift=-0.8cm] (title) {(a) Modelo causal};
+   }
+   
+\end{subfigure}
+\begin{subfigure}[b]{0.44\textwidth}
+    \centering \vskip 0pt
+    \tikz{
+    \node[latent, draw=white, yshift=0.6cm] (b0) {$1$};
+       
+    \node[latent,below=of b0,yshift=0.6cm, xshift=-1.6cm] (r1) {$r_1$};
+    \node[latent,below=of b0,yshift=0.6cm] (r2) {$r_2$};
+    \node[latent,below=of b0,yshift=0.6cm, xshift=1.6cm] (r3) {$r_3$};
+
+    \node[latent, below=of r1, draw=white, yshift=0.6cm] (br1) {$\frac{1}{3}$};
+    \node[latent, below=of r2, draw=white, yshift=0.6cm] (br2) {$\frac{1}{3}$};
+    \node[latent, below=of r3, draw=white, yshift=0.6cm] (br3) {$\frac{1}{3}$};
+    \edge[-] {b0} {r1,r2,r3};
+    \edge[-] {r1} {br1};
+    \edge[-] {r2} {br2};
+    \edge[-] {r3} {br3};
+    
+    \node[const, below=of br2, yshift=-0.1cm] (title) {(b) Caminos del modelo causal};
+    }
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\centering\vskip 0pt
 \tikz{ %
         
          \node[factor, minimum size=1cm] (p1) {} ;
@@ -1328,33 +1349,31 @@ Pero si de verdad no tenemos ninguna información respecto de dónde está el re
          \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
          \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
+         \node[const, below=of p2, yshift=-0.8cm] (title) {(c) Creencia honesta};
+         
         } 
-\caption{}
+\end{subfigure}
+\caption{Principio de indiferencia. Figura (a): el modelo causal tiene una única variable $r$, que es independiente pues su valor no depende de otras variable. Figura (b): el modelo causal induce tres caminos paralelos por los que dividimos la creenciencia en partes iguales. Figura (c): como resultado obtenemos una creencia honesta que garantiza los acuerdos intersubjetivos dado el modelo causal.
+}
 \label{fig:principio_de_indiferencia}
 \end{figure}
 %
 A este tipo de distribuciones de creencias que permiten alcanzar acuerdos intersubjetivos en contextos de incertidumbre las vamos a llamar \emph{creencia honestas}.
+
 Elegimos el término ``intersubjetividad'', por sobre el de ``subjetividad'', debido a que el primero connota el cumplimiento de condiciones que son necesarias para producir el acuerdo entre las conciencias individuales, mientras que el segundo connota una arbitrariedad que lo obstaculiza.
 Elegimos el término ``intersubjetividad'', por sobre el de ``objetividad'', porque el primero connota una actividad constructiva entre los sujetos, mientras que el segundo connota la imposición directa del objeto sobre los sujetos.
 
 % Parrafo
 
-Supongamos que la pista, además de no poder coincidir con la posición del regalo, tiene prohibida una de las puertas.
-Esto lo podemos representar con el siguiente modelo causal.
-
-
-
-Este modelo es más conocido como el Monty Hall.
-Para simplificar el problema, suponemos que la puerta 1 es la que queda cerrada, $c=1$.
-
-
-Antes de aplicar el principio de indiferencia debemos interpretar lo que nos dice la pista, la estructura de nuestro espacio de hipótesis.
-%
+Supongamos que nos permiten elegir una caja y que después alguien nos puede dar una psita, indicándos con certeza que el regalo no está en alguna de las cajas.
 Lo único que sabemos de la pista es que nunca indicará la caja donde se encuentra el regalo.
+Es decir, hay una dependencia causal entre el regalo $r$ y la señal $s$ que podemos representar con el modelo causal de la figura~\ref{fig:modelo_causal_1}.
+Pero no sabemos si nuestra elección afecta la pista.
+Entonces proponemos otro modelo causal, en el que la pista depende también de nuestra elección, que nunca indicará la caja que elegimos.
+Este modelo es más conocido como el Monty Hall, que podemos representar con el modelo causal de la figura~\ref{fig:modelo_causal_2}.
+Para simplificar el problema, suponemos que la caja 1 es la que queda cerrada, $c=1$.
 %
-Es decir, hay una dependencia causal entre el regalo $r$ y la señal $s$ que podemos representar con el siguiente modelo gráfico.
-%
-\begin{figure}[H]
+\begin{figure}[ht!]
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
   \centering
@@ -1370,6 +1389,7 @@ Es decir, hay una dependencia causal entre el regalo $r$ y la señal $s$ que pod
     \edge {r} {d};
   }
   \caption{}
+  \label{fig:modelo_causal_1}
   \end{subfigure}
   \begin{subfigure}[b]{0.48\textwidth}
   \centering
@@ -1387,24 +1407,29 @@ Es decir, hay una dependencia causal entre el regalo $r$ y la señal $s$ que pod
     \edge {r,c} {d};
   }
   \caption{}
+  \label{fig:modelo_causal_2}
   \end{subfigure}
-  \caption{}
+  \caption{Modelos causales alternativos. Figura~\ref{fig:modelo_causal_1}: la pista sólo depende de la posición del regalo. Figura~\ref{fig:modelo_causal_2}: la pista depende de la posición del regalo y la la caja elegida previamente.
+  Los círculos representan las variables y la felcha representa la relación causa $\rightarrow$ efecto. 
+  %A su vez, $r=i$ representa la proposición ``el regalo se encuentra en la posición $i$'', y $s=i$ representa la proposición ``la pista señala la posición $i$''.
+  }
+  \label{fig:modelos_causales}
 \end{figure}
-%
-Donde los círculos representan las variables y la felcha representa la relación causa $\rightarrow$ efecto.
-%
-A su vez, $r=i$ representa la proposición ``el regalo se encuentra en la posición $i$'', y $s=i$ representa la proposición ``la pista señala la posición $i$''.
-%
-Por último, lo que aparece del lado izquierdo del operador \emph{condicional} ($\cdot \mid \cdot$) son las proposiciones sobre las que computamos la creencia en los casos en los que las proposiciones que aparecen del lado derecha sean ciertas.
-%
-Es decir, la $\text{Creencia}(s=i|r=i,\text{Modelo}) = 0$ se lee como ``es imposible que la pista señale la posición $i$ cuando el regalo está en la posición $i$ y el modelo causal es cierto''. 
 
 % Parrafo
+% %
+% Por último, lo que aparece del lado izquierdo del operador \emph{condicional} ($\cdot \mid \cdot$) son las proposiciones sobre las que computamos la creencia en los casos en los que las proposiciones que aparecen del lado derecha sean ciertas.
+% %
+% Es decir, la $\text{Creencia}(s=i|r=i,\text{Modelo}) = 0$ se lee como ``es imposible que la pista señale la posición $i$ cuando el regalo está en la posición $i$ y el modelo causal es cierto''. 
+% 
+% % Parrafo
 
-Dado este modelo, existe un conjuto finito de universos paralelos posibles.
+Cada uno de los modelos causales alternativos tiene su propio conjuto finito de universos paralelos.
 %
-Primero existen tres universos paralelos por cada posición que puede adquirir el regalo.
+En ambos existen tres universos paralelos por cada posición que puede adquirir el regalo.
 %
+
+
 Y luego, dada la posición del regalo, existen dos unviersos paralelos por cada posición que puede adquirir la pista. 
 %
 Del mismo modo que aplicamos el principio de indiferencia al comienzo de la introducción, dividimos la creencia en partes iguales sobre las tres posibles posiciones del regalo.
@@ -1413,30 +1438,32 @@ Y según el valor que adquiera el regalo, volvemos a dividir la creencia en part
 %
 \begin{figure}[H]
 \centering
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
 \tikz{
-\node[latent, draw=white, yshift=0.6cm] (b0) {$1$};
+\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
 
-\node[latent,below=of b0,yshift=0.6cm, xshift=-3cm] (r1) {$r_1$};
-\node[latent,below=of b0,yshift=0.6cm] (r2) {$r_2$};
-\node[latent,below=of b0,yshift=0.6cm, xshift=3cm] (r3) {$r_3$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r_1$};
+\node[latent,below=of b0,yshift=0.7cm] (r2) {$r_2$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r_3$};
 
-\node[latent, below=of r1, draw=white, yshift=0.6cm] (br1) {$\frac{1}{3}$};
-\node[latent, below=of r2, draw=white, yshift=0.6cm] (br2) {$\frac{1}{3}$};
-\node[latent, below=of r3, draw=white, yshift=0.6cm] (br3) {$\frac{1}{3}$};
-\node[latent,below=of br1,yshift=0.6cm, xshift=-0.7cm] (r1d2) {$s_2$};
-\node[latent,below=of br1,yshift=0.6cm, xshift=0.7cm] (r1d3) {$s_3$};
+\node[latent, below=of r1, draw=white, yshift=0.7cm] (br1) {$\frac{1}{3}$};
+\node[latent, below=of r2, draw=white, yshift=0.7cm] (br2) {$\frac{1}{3}$};
+\node[latent, below=of r3, draw=white, yshift=0.7cm] (br3) {$\frac{1}{3}$};
+\node[latent,below=of br1,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s_2$};
+\node[latent,below=of br1,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s_3$};
 
-\node[latent,below=of r1d2,yshift=0.6cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of r1d3,yshift=0.6cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of br2,yshift=0.6cm, xshift=-0.7cm] (r2d1) {$s_1$};
-\node[latent,below=of br2,yshift=0.6cm, xshift=0.7cm] (r2d3) {$s_3$};
-\node[latent,below=of br3,yshift=0.6cm, xshift=-0.7cm] (r3d1) {$s_1$};
-\node[latent,below=of br3,yshift=0.6cm, xshift=0.7cm] (r3d2) {$s_2$};
+\node[latent,below=of r1d2,yshift=0.7cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of r1d3,yshift=0.7cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of br2,yshift=0.7cm, xshift=-0.5cm] (r2d1) {$s_1$};
+\node[latent,below=of br2,yshift=0.7cm, xshift=0.5cm] (r2d3) {$s_3$};
+\node[latent,below=of br3,yshift=0.7cm, xshift=-0.5cm] (r3d1) {$s_1$};
+\node[latent,below=of br3,yshift=0.7cm, xshift=0.5cm] (r3d2) {$s_2$};
 
-\node[latent,below=of r2d1,yshift=0.6cm, draw=white] (br2d1) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of r2d3,yshift=0.6cm,draw=white] (br2d3) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of r3d1,yshift=0.6cm, draw=white] (br3d1) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of r3d2,yshift=0.6cm,draw=white] (br3d2) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of r2d1,yshift=0.7cm, draw=white] (br2d1) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of r2d3,yshift=0.7cm,draw=white] (br2d3) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of r3d1,yshift=0.7cm, draw=white] (br3d1) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of r3d2,yshift=0.7cm,draw=white] (br3d2) {$\frac{1}{3}\frac{1}{2}$};
 \edge[-] {b0} {r1,r2,r3};
 \edge[-] {r1} {br1};
 \edge[-] {r2} {br2};
@@ -1452,8 +1479,59 @@ Y según el valor que adquiera el regalo, volvemos a dividir la creencia en part
 \edge[-] {r3d2} {br3d2};
 }
 \caption{}
-\label{fig:modelo_pre_montyhall}
+\label{fig:caminos_pre_montyhall}
+\end{subfigure}
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\tikz{
+\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r_1$};
+\node[latent,below=of b0,yshift=0.7cm] (r2) {$r_2$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r_3$};
+
+% \node[latent, below=of r1, draw=white, yshift=0.8cm] (br1) {$\frac{1}{3}$};
+% \node[latent, below=of r2, draw=white, yshift=0.8cm] (br2) {$\frac{1}{3}$};
+% \node[latent, below=of r3, draw=white, yshift=0.8cm] (br3) {$\frac{1}{3}$};
+% \node[latent,below=of br1,yshift=0.8cm] (c11) {$c_1$};
+% \node[latent,below=of br2,yshift=0.8cm] (c12) {$c_1$};
+% \node[latent,below=of br3,yshift=0.8cm] (c13) {$c_1$};
+
+\node[latent, below=of r1, draw=white, yshift=0.7cm] (bc11) {$\frac{1}{3}$};
+\node[latent, below=of r2, draw=white, yshift=0.7cm] (bc12) {$\frac{1}{3}$};
+\node[latent, below=of r3, draw=white, yshift=0.7cm] (bc13) {$\frac{1}{3}$};
+\node[latent,below=of bc11,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s_2$};
+\node[latent,below=of bc11,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s_3$};
+\node[latent,below=of bc12,yshift=0.7cm] (r2d3) {$s_3$};
+\node[latent,below=of bc13,yshift=0.7cm] (r3d2) {$s_2$};
+
+\node[latent,below=of r1d2,yshift=0.7cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of r1d3,yshift=0.7cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};
+\node[latent,below=of r2d3,yshift=0.7cm,draw=white] (br2d3) {$\frac{1}{3}$};
+\node[latent,below=of r3d2,yshift=0.7cm,draw=white] (br3d2) {$\frac{1}{3}$};
+\edge[-] {b0} {r1,r2,r3};
+% \edge[-] {r1} {br1};
+% \edge[-] {r2} {br2};
+% \edge[-] {r3} {br3};
+% \edge[-] {br1} {c11};
+% \edge[-] {br2} {c12};
+% \edge[-] {br3} {c13};
+\edge[-] {r1} {bc11};
+\edge[-] {r2} {bc12};
+\edge[-] {r3} {bc13};
+\edge[-] {bc11} {r1d2,r1d3};
+\edge[-] {bc12} {r2d3};
+\edge[-] {bc13} {r3d2};
+\edge[-] {r1d2} {br1d2};
+\edge[-] {r1d3} {br1d3};
+\edge[-] {r2d3} {br2d3};
+\edge[-] {r3d2} {br3d2};
+}
+\caption{}
+\label{fig:caminos_montyhall}
+\end{subfigure}
 \end{figure}
+
+
 %
 Siguiendo con el principio de indiferencia, dividimos la creencia en partes iguales por los caminos del modelo causal para definir la creencia honesta respecto de los universos paralelos.
 %
@@ -1487,56 +1565,8 @@ Creencia($r=i, s=j$) \\[0.1cm]
   \caption{}
 \end{table}
 %
-Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:modelo_pre_montyhall}.
+Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:caminos_pre_montyhall}.
 %
-
-
-\begin{figure}[H]
-\centering
-\tikz{
-\node[latent, draw=white, yshift=0.8cm] (b0) {$1$};
-\node[latent,below=of b0,yshift=0.8cm, xshift=-2cm] (r1) {$r_1$};
-\node[latent,below=of b0,yshift=0.8cm] (r2) {$r_2$};
-\node[latent,below=of b0,yshift=0.8cm, xshift=2cm] (r3) {$r_3$};
-
-\node[latent, below=of r1, draw=white, yshift=0.8cm] (br1) {$\frac{1}{3}$};
-\node[latent, below=of r2, draw=white, yshift=0.8cm] (br2) {$\frac{1}{3}$};
-\node[latent, below=of r3, draw=white, yshift=0.8cm] (br3) {$\frac{1}{3}$};
-\node[latent,below=of br1,yshift=0.8cm] (c11) {$c_1$};
-\node[latent,below=of br2,yshift=0.8cm] (c12) {$c_1$};
-\node[latent,below=of br3,yshift=0.8cm] (c13) {$c_1$};
-
-\node[latent, below=of c11, draw=white, yshift=0.8cm] (bc11) {$\frac{1}{3}$};
-\node[latent, below=of c12, draw=white, yshift=0.8cm] (bc12) {$\frac{1}{3}$};
-\node[latent, below=of c13, draw=white, yshift=0.8cm] (bc13) {$\frac{1}{3}$};
-\node[latent,below=of bc11,yshift=0.8cm, xshift=-0.7cm] (r1d2) {$s_2$};
-\node[latent,below=of bc11,yshift=0.8cm, xshift=0.7cm] (r1d3) {$s_3$};
-\node[latent,below=of bc12,yshift=0.8cm] (r2d3) {$s_3$};
-\node[latent,below=of bc13,yshift=0.8cm] (r3d2) {$s_2$};
-
-\node[latent,below=of r1d2,yshift=0.8cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of r1d3,yshift=0.8cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of r2d3,yshift=0.8cm,draw=white] (br2d3) {$\frac{1}{3}$};
-\node[latent,below=of r3d2,yshift=0.8cm,draw=white] (br3d2) {$\frac{1}{3}$};
-\edge[-] {b0} {r1,r2,r3};
-\edge[-] {r1} {br1};
-\edge[-] {r2} {br2};
-\edge[-] {r3} {br3};
-\edge[-] {br1} {c11};
-\edge[-] {br2} {c12};
-\edge[-] {br3} {c13};
-\edge[-] {c11} {bc11};
-\edge[-] {c12} {bc12};
-\edge[-] {c13} {bc13};
-\edge[-] {bc11} {r1d2,r1d3};
-\edge[-] {bc12} {r2d3};
-\edge[-] {bc13} {r3d2};
-\edge[-] {r1d2} {br1d2};
-\edge[-] {r1d3} {br1d3};
-\edge[-] {r2d3} {br2d3};
-\edge[-] {r3d2} {br3d2};
-}
-\end{figure}
 
 Cuando el regalo está detrás de la puerta 1, $r_1$, podemos recibir una pista tanto en la puerta 2, $s_2$, como en la puerta 3, $s_3$.
 Si el regalo está en la puerta 2, $r_2$, la pista sólo puede señalar la puerta 3, $s_3$.
@@ -1561,7 +1591,7 @@ Así definimos la siguiente creencia honesta conjunta (y sus marginales).
 Tenemos entonces un principio para alcanzar acuerdos en los casos en los que no tenemos información previa.
 ¿Pero cómo hacemos para alcanzar acuerdos cuando recibimos nueva información?
 
-\subsection{Principio de coherencia dados los datos de base empírica}
+\subsection{Principio de coherencia (dados los datos de base empírica)}
 
 Supongamos que alguien nos indica con certeza que el regalo no está en la caja del medio.
 La información que tenemos nos permite asignar creencia 0 a que el regalo $r$ esté en la caja $2$ en los casos que tenemos una señal $s$ que nos indica que el regalo no está en la caja $2$.
@@ -1741,7 +1771,7 @@ Es importante notar que todas estas probabilidades en realidad dependen de un ci
 \underbrace{P(\text{Hip\'otesis }|\text{ Datos, Modelo})}_{\text{\scriptsize Posteriori}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis, Modelo})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis }|\text{ Modelo})}^{\text{\scriptsize Priori}} }{\underbrace{P(\text{Datos }|\text{ Modelo})}_{\text{\scriptsize Evidencia}}}
 \end{equation*}
 
-\subsection{Verosimilitud}
+\subsubsection*{Verosimilitud}
 
 La verosimilitud es la predicción de los datos dada las hipótesis.
 Veamos cuál es la verosimilitud, $P(s2|r_i)$, en el modelo de Monty Hall.
@@ -1803,18 +1833,49 @@ Veamos cuál es la verosimilitud, $P(s2|r_i)$, en el modelo de Monty Hall.
 \end{tabular}
 \end{table}
 
-\subsection{Posterior}
+\subsubsection*{Posterior}
 
-\subsection{Evidencia}
+\subsubsection*{Evidencia}
 
-\section{Selección de modelos}\label{sec:modelos_alternativos}
+\subsection{Interpretación ontológica (frecuentista) de la teoría de la probabilidad}
+% 
+% \subsection{La escuela naturalista (frecuentista)}
+% 
+% \subsection{La escuela epistémica (Bayesiana)}
+
+
+La justificación axiomática de la teoría de la probabilidad no ha sido suficiente para unificar su interpretación.
+En contacto con problemas empíricos surgieron, incluso en las ciencias matemáticas, dos escuelas de pensamiento regidas supuestamente bajo las mismas reglas teóricas.
+El debate filosófico de fondo tiene que ver con la solución que ambas escuelas le dan al problema de la contradicción: la epistémica (bayesiana) y la ontológica (frecuentista).
+
+En el siglo 18 el concepto de probabilidad comenzó a usarse en Europa para expresar creencias contradictorias en contextos de incertidumbre.
+Este es el caso de Laplace quién, al tener la convicción de que el mundo era determinista, no podía más que utilizar la probabilidad para expresar su incertidumbre asignando simultaneamente grados de creencia a hipótesis mutuamente contradictorias.
+En un mundo determinista no es posible que A y no A ocurran al mismo tiempo, o lo que es lo mismo, que potencialmente puedan ocurrir dadas exactamente las mismas condiciones iniciales del mundo.
+Bajo este marco, la contradicción de creer simultanemente en A y no A es sólo una expresión de nuestra incertidumbre.
+Esta es la solución epistémica de la contradicción, pues más allá de que Laplace tuviera la convicción de que el mundo fuera determinista, nada dice de la naturaleza del mundo.
+
+La solución epistémica, que proponía creer simultaneamente en hipótesis mutuamente contradictorias, fue el motivo por el cual la corriente bayesiana de la toería de la probabilidad fue tan combatida a finales del siglo 19 y durante casi todo el siglo 20.
+
+La escuela frecuentista, tal como se enseña en la materia probabilidad y estadísitica de la facultad de ciencias exactas y naturales, define a la probabilidad como el número al que tiende una frecuencia obtenida luego de realizar varios ``experimentos independientes'' bajo ``las mismas condiciones''.
+Según esta corriente la probabilidad de eventos deterministas, por ejemplo de que exista un planeta no detectado en el sistema solar, es 0 o 1 aunque no conozcamos su valor.
+Sólo los objetos no deterministas, que llaman ``variables aleatorias'', tienen valores intermedios que representan la frecuencia en la que los diferentes estado del universo se producen a partir de exactamente las mismas condiciones inciales.
+De esta forma, la contradicción se propone como una propiedad externa al sistema lógico propia de la naturaleza del mundo.
+Esta es la solución ontólógica del mundo.
+
+
+(SIN TERMINAR)
+%La escuela frecuentista, a diferencia de la bayesiana, se ve obligada a afirmar la naturaleza determinsta o aleatoria del mundo.
+% 
+% El enfoque frecuentista es el que mejor se adapta a los métodos de validación de las ciencias formales: dadas un conjunto de \emph{hipótesis axiomáticas} que no se demuestran y aplicando las reglas de la probabilidad llegan a conclusiones (probabiilidades estimadas) 
+% 
+% El esfuerzo por eliminar la contradicción del sistema lógico produjo una serie de 
 
 
 
+\section{Selección intersubjetiva de modelos causales}\label{sec:modelos_alternativos}
 
 
-
-\section{Datos de base empírica metodológica}
+\section{Construcción de datos de base empírica metodológica}
 
 % Parrafo
 
@@ -1921,7 +1982,6 @@ Sin embargo, el sistema Elo tiene algunas debilidades importantes.
 La regla de actualizaci\'on (Ec.~\eqref{eq:elo_update}) es sim\'etrica, as\'i que lo que gana un agente el otro lo pierde.
 Debido a que a los agentes nuevos comienzan con estimaciones arbitrarias (el mismo valor inicial para cualquier individuo), ellas tienden a generan alta sorpresa y por lo tanto pueden modificar bruscamente las estimaciones de sus oponentes a pesar de que ya hubieran convergido.
 Las debilidades del sistema ocurren por: 1. no tener en cuenta la incertidumbre sobre las estimaciones de los agentes; y 2. proponer hipótesis indicadora ad-hoc.
-
 
 
 
@@ -4193,7 +4253,7 @@ P(k)\prod_{t=1}^{T} \sum_j^{\texttt{\en{partners}\es{socios}}(r)} \frac{1}{N} P(
 
 
 
-\chapter{TrueSkill Through Time: el estimador estado del arte de la industria del video juego} \label{ch:ttt}
+\chapter{TrueSkill Through Time: el estimador de habilidad estado del arte} \label{ch:ttt}
 
 \en{Humans develop complex skills through time. }%
 \es{Los humanos desarrollamos habilidades complejas a través del tiempo. }%
@@ -9171,7 +9231,23 @@ En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribución de ha
 \es{Sea por lo motivos causales propuestos por los trabajos previos, o sea por razones de correlación, lo cierto es que los únicos jugadores que se ven afectados por la centralidad son aquellos que tienen una habilidad inicial media. }%
 
 
-\chapter{Sistema de estimación para el juego Go (AAGo).} \label{ch:aago}
+\chapter{Sistema de estimación de habilidad para la Asociación Artgentina de Go.} \label{ch:aago}
+
+\section{Introducción}
+
+\subsection{Problemas de los sistemas: incertidumbre inicial y falta de comparabilidad internacional}
+
+\section{Metodología}
+
+\subsection{Handicap y komi}
+
+\subsection{Propuesta para un sistema internacional}
+
+\section{Resultados}
+
+\subsection{Selección de modelo}
+
+\subsection{Comparaciones internacionales}
 
 \newpage
 
@@ -9184,4 +9260,5 @@ En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribución de ha
 
 
 \end{document}
+
 
