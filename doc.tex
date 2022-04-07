@@ -163,40 +163,107 @@ Tesis de doctorado en ciencias de la computación.}
 
 
 
-\chapter{Evolución: sistemas naturales de procesamiento de información} \label{ch:evo}
+\chapter{Evolución: sistemas naturales de procesamiento distribuido de información} \label{ch:evo}
 
 
+\section{Vida}
+
+\en{In the last third of the history of the Universe, sometime around 4 billion years ago, a simple form of matter organization capable of self-replication appeared on Earth. }%
+\es{En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4000 millones de años, apareció en la tierra una forma de organización de la materia capaz de auto-replicarse. }%
+%
+\en{The growth of these lineages followed multiplicative and noisy processes: sequences of survival and reproduction rates. }%
+\es{El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de tasas de supervivencia y reproducción. }%
+%
+\en{The errors produced during replication diversified the life forms, and the growth rates of the different strategies favored those better adapted to the environment. }%
+\es{Los errores producidos durante la replicación diversificaron las formas de vida, y las diferentes tasas de crecimiento favorecieron a aquellas estrategias mejor adaptadas al ambiente. }%
+%
+\en{The current complexity of life is the consequence of a series of evolutionary transitions in which entities capable of self-replication after the transition become part of higher level cooperative units~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}. }%
+\es{La complejidad actual de la vida es consecuencia de una serie de transiciones evolutivas en las que entidades capaces de autoreplicación luego de la transición pasan a formar parte de unidades cooperativas de nivel superior~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}. }%
+
+\begin{figure}[ht!]
+    \centering
+%     \begin{subfigure}[b]{0.65\textwidth}
+%     \includegraphics[width=\linewidth]{static/transition-west2015.jpg}
+%     \end{subfigure}
+    \tikz{            
+    \node[accion] (i1) {} ;
+    \node[accion, yshift=0.6cm, xshift=0.4cm] (i2) {} ;
+    \node[accion, yshift=0.6cm, xshift=-0.4cm] (i3) {} ;
+    \node[const, yshift=0.3cm, xshift=0.4cm] (i) {};
+    
+    \node[const, yshift=-0.8cm] (ni) {$\hfrac{\text{Individuos}}{\text{solitarios}}$};
+    
+    \node[const, yshift=1.2cm, xshift=1.5cm] (m1) {$\hfrac{\text{Formación}}{\text{de grupos}}$};
+    
+    \node[const, right=of i, xshift=2cm] (c) {};
+    \node[accion, below=of c, yshift=0.35cm, xshift=0.4cm] (c1) {} ;
+    \node[accion, above=of c, yshift=-0.35cm, xshift=0.6cm] (c2) {} ;
+    \node[accion, above=of c, yshift=-0.35cm, xshift=0.2cm] (c3) {} ;
+    \node[const, right=of c, xshift=0.6cm] (cc) {};
+    
+    \node[const, right=of ni, xshift=1.3cm] (nc) {$\hfrac{\text{Grupos}}{\text{cooperativos}}$};
+
+    \node[const, right=of m1, xshift=1.2cm] (m2) {$\hfrac{\text{Transición}}{\text{mayor}}$};
+    
+    \node[const, right=of cc, xshift=2cm] (t) {};
+    \node[accion, below=of t, yshift=0.35cm, xshift=0.4cm] (t1) {} ;
+    \node[accion, above=of t, yshift=-0.35cm, xshift=0.6cm] (t2) {} ;
+    \node[accion, above=of t, yshift=-0.35cm, xshift=0.2cm] (t3) {} ;
+    
+    \node[const, right=of nc, xshift=1.1cm] (nt) {$\hfrac{\text{Unidad de}}{\text{nivel superior}}$};
+
+    \edge {i} {c};
+    \edge {cc} {t};
+    
+    \plate {transition} {(t1)(t2)(t3)} {}; %
+    }
+    \caption{Transiciones evolutivas mayores}
+    \label{fig:transitions}
+\end{figure}
+
+\en{Some of the paradigmatic transitions are: from prokaryotic to eukaryotic cells; from protozoa to animals, plants and fungi (cell differentiation and emergence of multicellular organisms); and from solitary individuals to societies. }%
+\es{Algunas de las transiciones paradigmáticas son: de las células procariotas a las eucariotas; de los protozoa a los animales, plantas y hongos (diferenciación celular y emergencia de organismos multicelulares); y la formación de comunidades. }%
+%
+\en{From that moment until now, life has acquired an extraordinary complexity, both in terms of cooperation and specialization. }%
+\es{Desde su origen hasta ahora, la vida adquirió una extraordinaria complejidad, tanto a nivel de cooperación como de especialización. }%
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{static/biomass.jpg}
+    \end{subfigure}
+    \caption{
+    \en{Distribution of biomass on Earth estimated by Bar-On et al.~\cite{barOn2018-biomass}. }
+	\es{Distribución de la biomasa en la Tierra estimada por Bar-On et al.~\cite{barOn2018-biomass}. }%
+    }
+    \label{fig:biomass}
+\end{figure}
+%
+En la actualidad, el 82\% de la biomasa corresponde al reino de las plantas, el 13\% a las bacterias, el 2.2\% a los hongos, y 0.36\% a los animales, dentro de los cuales los humanos representamos el 3\%.
+%
+No es sorprendente que la plantas ocupen la mayor proporción de la biomasa, pues ellas son las principales productoras primarias, capaces de generar materia orgánica a partir de la luz solar, el agua y los gases de la atmósfera.
+Las plantas realizan este complejo proceso de forma sumamente eficiente.
+Este conocimiento está almacenedado en su material genético, y no existe conocimiento científico-técnico que sea capaz de imitar este proceso.
+Los animales, hongos y el resto de heterótrofos, están obligados a adquirir el material orgánico de otros seres vivos, lo que los obliga a coexistir con sus presas, creando una compleja red de dependecias mutuas que constituyen la unidad de nivel superior mayor, los sistemas ecológicos.
 
 \section{Cultura}
 
-Antes del surgimiento de los humanos \emph{anatómicamente} modernos (masa cerebral actual) y de los humanos \emph{conductualmente} modernos (lenguaje), surgió en África una linaje \emph{emocionalmente} moderno~\cite{hrdy2020-emotionallyModern}.
-La especial integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permiten a los humanos desarrollar culturas complejas se debió a una coevolución genético-cultural que se desencadenó por el desarrollo previo de la crianza cooperativa~\cite{hrdy2020-emotionallyModern}.
-La forma en la que estos homininos organizaron la crianza produjo un ambiente que favoreció la selección de jóvenes capaces de monitorear y comprender las intenciones de los demás, y de atraer la atención de sus cuidadores de modo de compartir sus propias necesidades.
+La especial integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permiten a los humanos desarrollar culturas complejas se debió a una coevolución genético-cultural desencadenada por el desarrollo previo de la crianza cooperativa~\cite{hrdy2020-emotionallyModern}.
+La forma en la que estos homininos organizaron la crianza produjo un ambiente que favoreció la selección de jóvenes capaces de monitorear y comprender las intenciones de los demás, y de trasmitir a sus cuidadadores sus propias necesidades.
+%A diferencia de nuestros parientes más cercanos (chimpancés, bonobos, gorilas y orangutanes)
+Antes del surgimiento de los humanos anatómicamente modernos (masa cerebral actual) y de los humanos conductualmente modernos (lenguaje), surgió en África una linaje emocionalmente moderno con capacidades para el entendimiento mutuo~\cite{hrdy2020-emotionallyModern}.
 
-% Parrafo
-
-La empatía fue la que permitió el desarrollo del Homo sapiens: la comprensión mutua, la imitación, el lenguaje y finalmente la cultura.
-Esta costosa habilidad cognitiva es especialmente eficiente para la adquisición de tradiciones complejas.
-Lo que antes debía ser redescubierto una y otra vez mediante costosa experiencia individual, ahora podía ser transmitido a la siguiente generación.
-La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que re-construirlos cada vez por prueba y error conduce un proceso de evolución y acumulativa cultural que permite a las poblaciones humanas adaptarse rápidamente ante cambios bruscos en el ambiente o migraciones a nuevos entornos.
-
-% Parrafo
-
-El surgimiento de la cultura produjo cambios radicales para nuestra especie.
+La comprensión mutua, la imitación y el lenguaje permitieron la  transmisión de conocimientos basados en la experiencia de otros (\emph{aprendizaje social}), dando inicio a un proceso cooperativo inter-generacional que produjo el desarrollo de \emph{las culturas}, sistemas de información independiente al genético que permitió a las poblaciones humanas adaptarse rápidamente a los cambiantes contextos ambientales.
+El surgimiento de este nuevo sistema de información produjo cambios radicales para nuestra especie.
 Antes de la transición cultural, estuvimos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano.
-Luego de la transición cultural, en pocos años nuestra especie ocupó todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.
-Esta proeza se logró mediante los sistemas culturales y tecnológico desarrollados por sociedades cazadores-recolectores.
-Caminando salimos de África, ocupamos Asia, y de allí Oceanía y las Américas (las flechas del mapa~\ref{fig:agricultura}).
-La información transgeneracional fue la que le permitió a estas sociedades simples adaptarse rápidamente a los nuevos desafíos ecológicos.
+Luego de la transición cultural, organizados en sociedades cazadores-recolectores, nuestra especie fue capaz de ocupar en pocos años todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.
+Saliendo de África ocupamos Asia, Oceanía y las Américas (Figura~\ref{fig:agricultura}).
+% La información transgeneracional fue la que le permitió a estas sociedades simples adaptarse rápidamente a los nuevos desafíos ecológicos.
 
-% Parrafo
-
-El cambio climático ocurrido al inicio del Holoceno (hace 12000 años) propició el desarrollo de la agricultura, que surgió de manera indendiente en los seis grandes sistemas geográficos de la tierra: en la región central de África subsahariana, en Asia occidental, en Asia oriental, en Oceanía norte, en América del norte y en América del sur (las puntos rojos del mapa~\ref{fig:agricultura}).
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.6\textwidth}
      \includegraphics[width=\textwidth]{figures/agricultura.pdf}
-     \caption{Poblamiento de la tierra y agricultura}
      \label{fig:agricultura}
     \end{subfigure}
 %     \begin{subfigure}[b]{0.40\textwidth}
@@ -205,12 +272,61 @@ El cambio climático ocurrido al inicio del Holoceno (hace 12000 años) propici�
 %     \label{fig:polynesia}
 %     \end{subfigure}
     \caption{
-    El mapa de la figura~\ref{fig:agricultura} es una proyección políedrica de la tierra que conserva los tamaños relativos de los continentes.
-    Las felchas indican el poblamiento, desde África a Asia, y de Asia hacia Oceanía y América.
-    Los puntos rojos indican surgimiento independiente de agricultura.
-    El mapa de la figura~\ref{fig:polynesia}, desarrollado por Thorsby~\cite{thorsby2016-polynesiaAmerica}, muestra el poblamiento de la Polynesia y los contactos con Ámerica evidenciados en el material genéticos. }%
+    Poblamiento humano (flechas) y surgimientos independientes de la agricultura (puntos).
+    Proyección políedrica que conserva los tamaños relativos de la tierra.
+    %Las felchas indican el poblamiento, desde África a Asia, y de Asia hacia Oceanía y América.
+    %Los puntos rojos indican surgimiento independiente de agricultura.
+    %El mapa de la figura~\ref{fig:polynesia}, desarrollado por Thorsby~\cite{thorsby2016-polynesiaAmerica}, muestra el poblamiento de la Polynesia y los contactos con Ámerica evidenciados en el material genéticos.
+    }%
     \label{fig:poblamiento}
 \end{figure}
+
+\en{Therefore, culture is a population phenomenon that emerges as a consequence of the exchange of information between individuals. }%
+\es{Por lo tanto, la cultura sea una fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos. }%
+%
+\en{Based on the principles of evolutionary theory (descent, mutation and selection), a theoretical framework of ``cultural evolution'' has been developed to explain how culture changes over time. }%
+\es{Basada en los principios de la teoría de la evolución (descendencia, modificación y selección), se ha desarrollado un marco teórico de ``evolución cultural'' que intenta explicar cómo cambia la cultura en el tiempo. }%
+%
+\en{Descent, mutation and selection of cultural information occurs when an individual adopts the behavior of others, either because it is the behavior of the majority (frequency-based strategy) or because the other individual is particularly successful or prestigious (payoff-based strategy). }%
+\es{La descendencia, mutación y selección de la información cultural se produce cuando una persona adopta el comportamiento de otras personas, sea porque es el comportamiento de la mayoría (\emph{frequency-based strategy}) o sea porque es la otra persona es particularmente exitosas o prestigiosas (\emph{payoff-based strategy}). }%
+%
+\en{All social learning processes modify to some degree the cultural variant adopted. }%
+\es{Todos los procesos de aprendizaje social modifican en algún grado la variante cultural adoptada. }%
+%
+\en{And some of these cultural variants spread faster or are more stable than others, predominating over time. }%
+\es{Y algunas de esas variantes culturales se propagan más rápido o son más estables que otras, predominando en el tiempo. }%
+
+% Parrafo
+
+La experiencia acumulada a través de las generaciones por las más diversas comunidades del mundo condujo, de forma independiente, al desarrollo de tecnologías de reciprocidad, social y ecológica, sorprendentemente similares entre sí.
+%
+Los estudios comparados indican que las instituciones capaces de interactuar de forma estable con los sistemas ecológicos locales nunca fueron ni estatales ni privadas, siempre son de tipo comunitarias con un arraigo histórico local~\cite{ostrom2010,ostrom1990}.
+%
+En todas ellas se pueden reconocer al menos dos mecanismos que cumplen la función de re-ciclar los v\'inculos interprersonales: los ritos festivos y los ritos coercitivos~\cite{segato2016-guerraContraLasMujeres}.
+Los ritos coercitivos, presentes en todas las sociedades, no son otra cosa que ceremonias para la reactivación de flujos de intercambios rotos previamente por conflictos entre partes.
+Están orientados el restablecimiento de los vínculos mediante los mecanismos de ``reparación'', ``conciliación'' y ``ayuda'' \cite{zaffaroni2013-cuestionCriminal}, haciendo uso de los tres tipos de intercambios posibles entre partes: dar ($\rightarrow$), intercambiar ($\leftrightarrow$) y recibir ($\leftarrow$).
+La expulsión del agresor de la comunidad sólo se prevee en casos extremadamente excepcionales, pues el primer derecho de sus miembros es formar parte de la comunidad \cite{segato2016-guerraContraLasMujeres}.
+
+Estas tecnologías de sociabilidad son fundamentales para la supervivencia de las comunidades, pues lograron reducir las fluctuaciones individuales que hubieran desencadenado en el fin de su existencia como pueblo autónomo.
+Además, los pueblos bien adaptados para la coexistencia intercultural y ecológica practican cosmovisiones basadas en lógicas paraconsistentes que les permite creer en A y no A al mismo tiempo, pues la preferencia de una opción no se traduce en el rechazo de su complemento.
+Estas cosmovisiones que permite creer en A y no A al mismo tiempo son también la base de las tecnologías de reciprocidad con la biocenosis que existen en todo el mundo, como son los ritos \emph{Canang sari} practicados en Bali o como los \emph{pachamámicos} practicados en América del sur.
+% Recuperar las autonomías comunitarias se sustenta en el hecho práctico de que el único conocimiento cultural ecológicamente adaptado evoluciona sólo a través de la experiencia que acumulan los pueblos en el transcurso de su historia~\cite{segato2013-colonialidad}.
+
+
+% Parrafo
+
+
+
+
+% Tecnologías de reciprocidad. 
+% Evolución de instituciones que reducen las fluctuaciones socio-ecol ́ógicas
+% 
+% 
+% 
+% El cambio climático ocurrido al inicio del Holoceno (hace 12000 años) propició el desarrollo de la agricultura, un 
+% 
+
+que surgió de manera indendiente en los seis grandes sistemas geográficos de la tierra: en la región central de África subsahariana, en Asia occidental, en Asia oriental, en Oceanía norte, en América del norte y en América del sur (las puntos rojos del mapa~\ref{fig:agricultura}).
 Alrededor de estos puntos se desarrollaron los principales centros poblacionales de la humanidad.
 El aumento de la población promovió, a su vez, el desarrollo de nuevas innovaciones tecnológicas y científicas, como la escritura, la matem\'aticas, las ingenier\'ias, la astronomía, las ciencias políticas, entre otras.
 Durante el año 1400 el mundo florecía de sociedades "prósperas"~\cite{dussel2004-sistemaMundo}: Aztecas en Ámerica del norte, Incas en Ámerica del sur, Tongas en el Pacífico, Bantúes en África sub-sahariana, los Árabes e Indios en Asia occidental y Chinos en Asia oriental, por mencionar algunos.
@@ -223,6 +339,79 @@ En la región Inca se había desarrollado un sistema de intercambios basado en l
 En la región Azteca se había desarrollado un extenso mercado regional con ciudades de hasta 300.000 habitantes, tres veces la ciudad de Venecia en esa misma época.%~\cite{www7.uc.cl}. %http://www7.uc.cl/sw_educ/historia/conquista/parte1/html/h54.html
 El mundo \'Arabe comerciaba productos desde el Océano Pacífico, en las Filipinas, hasta el Oc\'eano Atl\'antico, en Marruecos, conectando las innovaciones culturales de distintos hemisferios del planeta~\cite{dussel2004-sistemaMundo}.
 África siempre fue el continente más diverso cultural y genéticamente, pero quizás el centro más innovador en términos científicos y tecnologías haya sido la región de China~\cite{needham2004-generalConclusionsAndReflections}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Probabilidad (Bayesiana): las verdades empíricas.} \label{ch:proba}
