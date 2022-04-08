@@ -281,14 +281,13 @@ Saliendo de África ocupamos Asia, Oceanía y las Américas (Figura~\ref{fig:agr
     \label{fig:poblamiento}
 \end{figure}
 
-\en{Therefore, culture is a population phenomenon that emerges as a consequence of the exchange of information between individuals. }%
-\es{Por lo tanto, la cultura sea una fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos. }%
+El cambio cultural es un fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos.
 %
 \en{Based on the principles of evolutionary theory (descent, mutation and selection), a theoretical framework of ``cultural evolution'' has been developed to explain how culture changes over time. }%
-\es{Basada en los principios de la teoría de la evolución (descendencia, modificación y selección), se ha desarrollado un marco teórico de ``evolución cultural'' que intenta explicar cómo cambia la cultura en el tiempo. }%
+\es{Basada en los principios de la teoría de la evolución (descendencia, modificación y selección), se ha desarrollado un marco teórico de \emph{evolución cultural} que intenta explicar cómo cambia la cultura en el tiempo. }%
 %
 \en{Descent, mutation and selection of cultural information occurs when an individual adopts the behavior of others, either because it is the behavior of the majority (frequency-based strategy) or because the other individual is particularly successful or prestigious (payoff-based strategy). }%
-\es{La descendencia, mutación y selección de la información cultural se produce cuando una persona adopta el comportamiento de otras personas, sea porque es el comportamiento de la mayoría (\emph{frequency-based strategy}) o sea porque es la otra persona es particularmente exitosas o prestigiosas (\emph{payoff-based strategy}). }%
+\es{La descendencia, mutación y selección de la información cultural se produce cuando una persona adopta el comportamiento de otras, sea porque es el comportamiento de la mayoría o sea porque es la otra persona es particularmente exitosas o prestigiosas. }%
 %
 \en{All social learning processes modify to some degree the cultural variant adopted. }%
 \es{Todos los procesos de aprendizaje social modifican en algún grado la variante cultural adoptada. }%
@@ -298,16 +297,125 @@ Saliendo de África ocupamos Asia, Oceanía y las Américas (Figura~\ref{fig:agr
 
 % Parrafo
 
-La experiencia acumulada a través de las generaciones por las más diversas comunidades del mundo condujo, de forma independiente, al desarrollo de tecnologías de reciprocidad, social y ecológica, sorprendentemente similares entre sí.
+La experiencia acumulada a través de las generaciones por las más diversas comunidades del mundo condujo, de forma independiente, al desarrollo de tecnologías de reciprocidad sorprendentemente similares entre sí.
 %
-Los estudios comparados indican que las instituciones capaces de interactuar de forma estable con los sistemas ecológicos locales nunca fueron ni estatales ni privadas, siempre son de tipo comunitarias con un arraigo histórico local~\cite{ostrom2010,ostrom1990}.
+La antropología ha reconocido la existencia de una obligación universal de dar y de recibir.
 %
-En todas ellas se pueden reconocer al menos dos mecanismos que cumplen la función de re-ciclar los v\'inculos interprersonales: los ritos festivos y los ritos coercitivos~\cite{segato2016-guerraContraLasMujeres}.
-Los ritos coercitivos, presentes en todas las sociedades, no son otra cosa que ceremonias para la reactivación de flujos de intercambios rotos previamente por conflictos entre partes.
-Están orientados el restablecimiento de los vínculos mediante los mecanismos de ``reparación'', ``conciliación'' y ``ayuda'' \cite{zaffaroni2013-cuestionCriminal}, haciendo uso de los tres tipos de intercambios posibles entre partes: dar ($\rightarrow$), intercambiar ($\leftrightarrow$) y recibir ($\leftarrow$).
+De esta forma, el acto de donar, dar un regalo o hacer un favor activa un ciclo de intercambios a través de la obligación recíproca para devolver de alguna forma lo recibido.
+%
+Este tipo de intercambios es la primera forma económica y es un mecanismo de flujo de bienes y servicios fundamental incluso en las sociedades modernas, a través de las que se establecen relaciones de correspondencia, hospitalidad, protección y asistencia mutua~\cite{mauss, polanyi, salins}.
+
+% Parrafo
+
+Si bien los intercambios recíprocos ocurren generalmente de forma rutinaria, en todas las sociedades se pueden reconocer dos mecanismos que cumplen la función de re-ciclar los v\'inculos interprersonales: los ritos festivos y los ritos coercitivos~\cite{segato2016-guerraContraLasMujeres}.
+%
+Los ritos coercitivos, no son otra cosa que ceremonias para la reactivación de flujos de intercambios rotos previamente por conflictos entre partes.
+%
+Están orientados el restablecimiento de los vínculos mediante los mecanismos de ``reparación'', ``conciliación'' y ``ayuda'' \cite{zaffaroni2013-cuestionCriminal}, nombre relativamente arbitrarios para los tres tipos de intercambios posibles entre partes: dar ($\rightarrow$), intercambiar ($\leftrightarrow$) y recibir ($\leftarrow$).
+%
 La expulsión del agresor de la comunidad sólo se prevee en casos extremadamente excepcionales, pues el primer derecho de sus miembros es formar parte de la comunidad \cite{segato2016-guerraContraLasMujeres}.
 
-Estas tecnologías de sociabilidad son fundamentales para la supervivencia de las comunidades, pues lograron reducir las fluctuaciones individuales que hubieran desencadenado en el fin de su existencia como pueblo autónomo.
+% Parrafo
+
+Las tecnologías de reciprocidad social son fundamentales para la supervivencia de las comunidades en el tiempo, pues ellas reducen las fluctuaciones individuales que ponen en peligro su estabilidad.
+%
+La teoría de la probabilidad nace en 1648 justamente como respuesta a la pregunta de cuál es el \emph{precio justo} en contextos de incertidumbre.
+%
+El problema analizaban Pascal y Fermat en sus cartas es equivalente al siguiente.
+%
+Tiramos dos veces la moneda.
+%
+Si sale seca $S$ en la primera y en la segunda, una persona (en rojo) le hace un favor a la otra.
+%
+En caso contrario, el favor se invierte.
+%
+¿Cuál es el valor justo de la reciprocidad en este contexto de incertidumbre?
+
+\begin{figure}[ht!]
+    \centering
+    \tikz{
+    \node[latent, draw=white, yshift=0.7cm, minimum size=0.1cm] (b0) {};
+    \node[latent,below=of b0,yshift=0.7cm, xshift=-1cm] (r1) {$S$};
+    \node[latent,below=of b0,yshift=0.7cm, xshift=1cm] (r2) {$C$};
+
+    \node[latent, below=of r1, draw=white, yshift=0.8cm, minimum size=0.1cm] (bc11) {};
+    \node[accion, below=of r2, draw=white, yshift=0cm, color=blue!70] (bc12) {};
+    \node[latent,below=of bc11,yshift=0.8cm, xshift=-0.5cm] (r1d2) {$S$};
+    \node[latent,below=of bc11,yshift=0.8cm, xshift=0.5cm] (r1d3) {$C$};
+
+    \node[accion,below=of r1d2,yshift=0cm, color=red!70] (br1d2) {};
+    \node[accion,below=of r1d3,yshift=0cm, color=blue!70] (br1d3) {};
+    \edge[-] {b0} {r1,r2};
+    \edge[-] {r1} {bc11};
+    \edge[-] {r2} {bc12};
+    \edge[-] {bc11} {r1d2,r1d3};
+    \edge[-] {r1d2} {br1d2};
+    \edge[-] {r1d3} {br1d3};
+    }
+    \caption{El problema del \emph{valor justo} que da inicio a la teoría de la probabilidad}
+\end{figure}
+
+La respuesta a la que arribaron Pascal y Fermat es que el valor de los favores tiene que ser inversamente proporcional a la probabilidad de hacer el favor.
+%
+Si la moneda es no sesgada, hay 1/4 de probabilidad de que salgan dos secas (terminal roja), 1/4 de que salga seca en la primera y cara en la segunda (terminal azul) y 1/2 de que salga cara en la primera (terminal azul).
+%
+Luego, la probabilidad de que la persona azul haga un favor es 3/4.
+%
+Si la persona roja hace favores por un valor equivalente a 4, el azul tiene que devolver los favores con un valor de 4/3, una relación de 3 a 1.
+%
+Esta forma intuitiva de calcular la probabilidad de un conjunto de eventos mutuamente excluyentes, como suma de sus probabilidades elementales, constituye el axioma fundamental de Kolmogorov a partir del cual se puede montar toda la teoría de la probabilidad.
+
+% Parrafo
+
+Tan importantes como las tecnologías de reciprocidad social son las tecnologías de recioprocidad ecológica con las otras especies.
+%
+Los estudios comparados indican que las instituciones capaces de interactuar de forma estable con los sistemas ecológicos son de tipo comunitarias basados en normas consuetudinarias que evolucionaron como acumulación de conocimiento experto local a través de experiencia inter-generacional de sus miembrtos~\cite{ostrom1990}.
+% 
+El remplazo de estos sistemas culturales expertos locales por instituciones modernas externas, privadas o públicas, produce generalmente desequilibrios en los sistemas ecológicos que reducen el tamaño máximo de población humana que el ambiente puede soportar~\cite{ostrom2010}.
+%
+De forma similar a las tecnologías de reciprocidad social, las tecnologías de reciprocidad ecológica reducen las fluctuaciones de las especies de las cuales dependemos que podrían poner en peligro la supervivencia de la comunidad.
+
+% Parrafo
+
+Las tecnologías de reciprocidad ecológica produjeron la aparición independiente de la domesticación de especies animales y vegetales, el desarrollo de caracteres genéticos especiales que surgen como el resultado de una interacción prolongada entre las especies.
+%
+En particular, la reciprocidad con las especies fotosintéticas (agricultura), únicas con la capacidad de producir materia orgánica a partir del sol y la materia inorgánica, produjo nuevamente cambios radicales para nuestra especie.
+%
+La agricultura surgió de manera de forma paralela en los seis grandes sistemas geográficos de la tierra: en la región central de África subsahariana, en Asia occidental, en Asia oriental, en Oceanía norte, en América del norte y en América del sur (las puntos rojos de la figura~\ref{fig:agricultura}).
+%
+La agricultura produjo un aumento poblacional.
+%
+Y el aumento de la población promovió, a su vez, el desarrollo de nuevas innovaciones tecnológicas y científicas, como la escritura, la matem\'aticas, las ingenier\'ias, la astronomía, las ciencias políticas, entre otras.
+
+% Parrafo
+
+Alrededor de estos puntos se desarrollaron los principales centros poblacionales de la humanidad.
+%
+Durante el año 1400 el mundo florecía de sociedades "prósperas"~\cite{dussel2004-sistemaMundo}: Aztecas en Ámerica del norte, Incas en Ámerica del sur, Tongas en el Pacífico, Bantúes en África sub-sahariana, los Árabes e Indios en Asia occidental y Chinos en Asia oriental, por mencionar algunos.
+%
+El desarrollo tecnológico de todas estas sociedades fue extraordinario. 
+%
+El imperio de Tonga ocupaba hace siglos todo el oc\'eano Pac\'ifico (figura~\ref{fig:polynesia}) con sorprendentes tecnologías de navegación que le habían permitido tener intercambios con América, que se evidencian en el componente genético de los pueblos de la Polynesia~\cite{thorsby2016-polynesiaAmerica, ioannidis2020-polynesiaAmerica}.
+%
+En la región Inca se había desarrollado un sistema de intercambios basado en la reciprocidad de trabajo (minka, ayni y mita) que le permitía a las comunidades administrar eficientemente el uso de los bienes comunes y al Estado desarrollar la infrastructura en el vasto territorio montañoso~\cite{murra1978-organizacion}.
+%
+En la región Azteca se había desarrollado un extenso mercado regional con ciudades de hasta 300.000 habitantes, tres veces la ciudad de Venecia en esa misma época.%~\cite{www7.uc.cl}. %http://www7.uc.cl/sw_educ/historia/conquista/parte1/html/h54.html
+%
+El mundo \'Arabe comerciaba productos desde el Océano Pacífico, en las Filipinas, hasta el Oc\'eano Atl\'antico, en Marruecos, conectando las innovaciones culturales de distintos hemisferios del planeta~\cite{dussel2004-sistemaMundo}.
+%
+África siempre fue el continente más diverso cultural y genéticamente, pero quizás el centro más innovador en términos científicos y tecnologías haya sido la región de China~\cite{needham2004-generalConclusionsAndReflections}.
+
+
+
+
+
+
+
+
+
+
+% Parrafo
+
 Además, los pueblos bien adaptados para la coexistencia intercultural y ecológica practican cosmovisiones basadas en lógicas paraconsistentes que les permite creer en A y no A al mismo tiempo, pues la preferencia de una opción no se traduce en el rechazo de su complemento.
 Estas cosmovisiones que permite creer en A y no A al mismo tiempo son también la base de las tecnologías de reciprocidad con la biocenosis que existen en todo el mundo, como son los ritos \emph{Canang sari} practicados en Bali o como los \emph{pachamámicos} practicados en América del sur.
 % Recuperar las autonomías comunitarias se sustenta en el hecho práctico de que el único conocimiento cultural ecológicamente adaptado evoluciona sólo a través de la experiencia que acumulan los pueblos en el transcurso de su historia~\cite{segato2013-colonialidad}.
@@ -325,29 +433,6 @@ Estas cosmovisiones que permite creer en A y no A al mismo tiempo son también l
 % 
 % El cambio climático ocurrido al inicio del Holoceno (hace 12000 años) propició el desarrollo de la agricultura, un 
 % 
-
-que surgió de manera indendiente en los seis grandes sistemas geográficos de la tierra: en la región central de África subsahariana, en Asia occidental, en Asia oriental, en Oceanía norte, en América del norte y en América del sur (las puntos rojos del mapa~\ref{fig:agricultura}).
-Alrededor de estos puntos se desarrollaron los principales centros poblacionales de la humanidad.
-El aumento de la población promovió, a su vez, el desarrollo de nuevas innovaciones tecnológicas y científicas, como la escritura, la matem\'aticas, las ingenier\'ias, la astronomía, las ciencias políticas, entre otras.
-Durante el año 1400 el mundo florecía de sociedades "prósperas"~\cite{dussel2004-sistemaMundo}: Aztecas en Ámerica del norte, Incas en Ámerica del sur, Tongas en el Pacífico, Bantúes en África sub-sahariana, los Árabes e Indios en Asia occidental y Chinos en Asia oriental, por mencionar algunos.
-
-% Parrafo
-
-El desarrollo tecnológico de todas estas sociedades fue extraordinario. 
-El imperio de Tonga ocupaba hace siglos todo el oc\'eano Pac\'ifico (figura~\ref{fig:polynesia}) con sorprendentes tecnologías de navegación que le habían permitido tener intercambios con América, que se evidencian en el componente genético de los pueblos de la Polynesia~\cite{thorsby2016-polynesiaAmerica, ioannidis2020-polynesiaAmerica}.
-En la región Inca se había desarrollado un sistema de intercambios basado en la reciprocidad de trabajo (minka, ayni y mita) que le permitía a las comunidades administrar eficientemente el uso de los bienes comunes y al Estado desarrollar la infrastructura en el vasto territorio montañoso~\cite{murra1978-organizacion}.
-En la región Azteca se había desarrollado un extenso mercado regional con ciudades de hasta 300.000 habitantes, tres veces la ciudad de Venecia en esa misma época.%~\cite{www7.uc.cl}. %http://www7.uc.cl/sw_educ/historia/conquista/parte1/html/h54.html
-El mundo \'Arabe comerciaba productos desde el Océano Pacífico, en las Filipinas, hasta el Oc\'eano Atl\'antico, en Marruecos, conectando las innovaciones culturales de distintos hemisferios del planeta~\cite{dussel2004-sistemaMundo}.
-África siempre fue el continente más diverso cultural y genéticamente, pero quizás el centro más innovador en términos científicos y tecnologías haya sido la región de China~\cite{needham2004-generalConclusionsAndReflections}.
-
-
-
-
-
-
-
-
-
 
 
 
