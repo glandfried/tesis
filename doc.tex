@@ -353,6 +353,7 @@ En caso contrario, el favor se invierte.
     \edge[-] {r1d3} {br1d3};
     }
     \caption{El problema del \emph{valor justo} que da inicio a la teoría de la probabilidad}
+    \label{fig:pascal-fermat}
 \end{figure}
 
 La respuesta a la que arribaron Pascal y Fermat es que el valor de los favores tiene que ser inversamente proporcional a la probabilidad de hacer el favor.
@@ -966,92 +967,110 @@ Debido a que el orden relativos de las tasas de crecimiento de las diferentes es
 
 % Parrafo
 
-Para analizar lo que ocurre con las diferentes tipos de estrategias, en la figura~\ref{fig:tasa-temporal-0} calculamos la tasa de crecimiento individual (líneas continuas) y cooperativa (línea punteada) de las estrategias $\Ee \in \{0.5, 0.71, 0.99\}$ para todos los posibles ambientes $P(a)=p$.
+Para analizar lo que ocurre con las diferentes estrategias, primero calculamos la tasa de crecimiento individual.
 %
+En la figura~\ref{fig:tasa-temporal-0} vemos la tasa de crecimiento individual de todas las estrategias en un ambiente $\Aa = 0.71$.
+%
+La estrategia individual mejor adaptada al ambiente es aquella que apuesta en la misma proporción que la probabilidad de los estados ambientales, $\Ee = 0.71$ (punto rojo).
+%
+Vamos a llamar ``estrategia equilibrada'' a aquella que dividiendo los recursos en la misma proporción la probabilidad de los estados logran los retornos individuales óptimos. 
+%
+Estrategias más generalista ($\Ee = 0.5$ punto azul) y más especialistas ($\Ee=0.99$ punto verde) que la estrategia equilibrada ($\Ee = \Aa = 0.71$) siempre tienen menor tasa de crecimiento que la estrategia equilibrada.
+
+% Parrafo
+
+Hemos visto que la cooperación permite aumentar la tasa de crecimiento.
+%
+En la figura~\ref{fig:tasa-temporal-0} calculamos, para todos los posibles ambientes $P(a)=p$, la tasa de crecimiento individual (líneas continuas) y cooperativa de tamaño infinito (línea punteada) de las estrategias $\Ee \in \{0.5, 0.71, 0.99\}$.
+%
+\es{Las tasas de crecimiento individual, que siguen la media geométrica, se pueden aumentar cooperativamente hasta, en grupos de tamaño infinito, alcanzar la media aritmética. }%
+%
+En el caso especial de la estrategia $\Ee = 0.5$ ambas tasas de crecimiento son iguales, y no dependen de la probabilidad del ambiente $p$ pues, sin importar lo que ocurra, siempre recibe el mismo pago.
+%
+Para el resto de las estrategias, la cooperación aumenta la tasa de crecimiento.
+%
+Cuanto más especialistas son las estrategias, mayor es el aumento de la tasa de crecimiento que se obtiene a través de la especialización.
+
+%Parrafo 
+
 \begin{figure}[ht!]
     \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\linewidth,page=4]{figures/tasa-temporal.pdf}
+    \caption{}
+    \label{fig:tasa-temporal-3}
+    \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\linewidth,page=1]{figures/tasa-temporal.pdf}
     \caption{}
     \label{fig:tasa-temporal-0}
     \end{subfigure}
+    \caption{
+    (a)
+    Tasas de crecimiento individual para todas las estrategias en un ambiente $P(\Aa) = 0.71$.
+    %
+    Los puntos señalan las tasas de crecimiento las estrategias generalista ($\Ee = 0.5$), equilibrada ($\Ee = 0.71$) y especialista ($\Ee = 0.99$). 
+    (b)
+    \es{Tasas de crecimiento individual y cooperativa infinita (líneas continuas y punteadas) de tres estrategias $e \in \{0.5, 0.71, 0.99\}$ (eje y) en diferentes ambiente $p$ (eje x). }%
+    }
+    \label{fig:tasa-temporal}
+\end{figure}
+
+En particular, veamos en la figura~\ref{fig:tasa-temporal-0} lo que ocurre con las tasas de crecimiento individual y cooperativa infinita cuando el ambiente es $\Aa = 0.71$.
+%
+Hemos visto en la figura~\ref{fig:tasa-temporal-3} que la tasa de crecimiento de la estretgia equilibrada (punto rojo) está por arriba de la tasa de la estrategia especialista (punto verde).
+%
+\es{Sin embargo, la tasa de crecimiento que puede obtener una estretgia especialista $\Ee = 0.99$ en grupos cooperativos de tamaño infinito (cuadrado verde) es mayor a la tasa de crecimiento que la estrategia individualmente bien adaptada $\Ee = p$ obtiene en grupos cooperativos de tamaño infinito. }%
+
+% Parrafo
+
+% \en{We have computed the cooperative growth rate for groups of infinite size. }%
+% \es{La tasa de crecimiento cooperativa la hemos calculado para grupos de tamaño infinito. }%
+% %
+\en{To be an interesting conclusion for evolutionary theory we need this result to emerge also in small groups. }%
+\es{Para que sea una conclusión interesante, necesitamos que este mismo resultado ocurra en grupos finitos, particularmente pequeños. }%
+%
+\en{In Figure~\ref{fig:tasa-temporal-1} we plot the growth rates of the specialist strategy $\Ee=0.99$ for cooperative groups of size 1 to 5. }%
+\es{En la figura~\ref{fig:tasa-temporal-1} graficamos las tasas de crecimiento de la estrategia especialista $\Ee=0.99$ para grupos cooperativos de tamaño 1 a 5. }%
+%
+\es{Notar que en un ambiente $\Aa=0.71$ la estrategia especilista $\Ee=0.99$ logra en grupos cooperativos de tamaño 3 una tasa de crecimiento que está por arriba de la tasa de crecimiento que la estrategia equilibrada $\Ee = 0.71$ logran puede alcanzar en grupos cooperativos de tamaño infinito! }%
+%
+\es{Es extraordinario que el mismo proceso multiplicativo de los recursos que ofrece una ventaja evolutiva a favor de la cooperación, ofrezca también una ventaja evolutiva a favor de la especilización incuso en grupos cooperativos tan pequeños. }%
+%
+\es{La emergencia de la cooperación produce inmediatamente una ventaja evolutiva a favor de la especialización. }%
+ 
+% Parrafo
+
+\en{The optimal level of specialization depends on the size of the groups. }%
+\es{El nivel de especialización óptimo depende del tamaño de los grupos. }%
+%
+\en{In Figure~\ref{fig:tasa-temporal-2} we set the environment at $p = 0.71$ and analyze how the cooperative growth rate of all possible strategies varies in groups of sizes 1 to 5. }%
+\es{En la figura~\ref{fig:tasa-temporal-2} fijamos el ambiente en $p = 0.71$ y analizamos como varía la tasa de crecimiento cooperativa de todas las posibles estrategias en grupos de tamaños 1 a 3. }%
+%
+\begin{figure}[ht!]
+    \centering
     \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\linewidth,page=2]{figures/tasa-temporal.pdf}
     \caption{}
-    \label{fig:tasa-temporal-1}
+    \label{fig:tasa-temporal-2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\linewidth,page=3]{figures/tasa-temporal.pdf}
+    \caption{}
+    \label{fig:tasa-temporal-3}
     \end{subfigure}
     \caption{
     (a)
-    \en{Individuals and cooperative growth rates (continuous and dotted lines) of three strategies ($\Ee \in \{0.5, 0.71, 0.99\}$) in different environment $p$. }%
-    \es{Tasas de crecimiento individual y cooperativa (líneas continuas y punteadas) de tres estrategias $e \in \{0.5, 0.71, 0.99\}$ (eje y) en diferentes ambiente $p$ (eje x). }%
-    (b)
     \en{Growth rate of the specialist strategy ($\Ee=0.99$) as a function of the probability of environment $p$, for cooperative groups of size 1 to 5. }%
     \es{Tasa de crecimiento de la estrategia especialista ($\Ee=0.99$)  en función de la probabilidad del ambiente $p$, para grupos cooperativos de tamaño 1 a 5. }%
     %
     \en{The black dotted line represents the growth rate of an infinitely large cooperative group. }%
     \es{La línea punteada negra represeta la tasa de crecimiento de un grupo cooperativo inifinitamente grande. }%
     %
-    \en{The gray lines are visual references to the strategies $\Ee \in \{0.5, 0.71\}$ discussed in the figure (a). }%
-    \es{Las rectas grises son referencias visuales de las estrategias $e \in \{0.5, 0.71\}$ analizadas en la figura (a). }%
-    }
-    \label{fig:tasa-temporal}
-\end{figure}
-%
-En el caso especial de la estrategia $\Ee = 0.5$ ambas tasas de crecimiento son iguales, y no dependen de la probabilidad del ambiente $p$ pues, sin importar lo que ocurra, siempre recibe el mismo pago.
-%
-\es{La flecha representa la conclusión que sacamos en la sección anterior: las tasas de crecimiento individual, que siguen la media geométrica, se pueden aumentar cooperativamente hasta, en grupos de tamaño infinito, alcanzar la media aritmética. }%
-% %
-% \en{The red dot represents the conclusion we made in the methodology section, that in an environment with $p=0.71$ the best adapted individual strategy is $\Ee^*=0.71$. }%
-% \es{El punto rojo representa la conclusión que sacamos en la sección metodología, que en un ambiente con $p=0.71$ la estrategia individual mejor adaptada es $\Ee=0.71$. }%
-% 
-
-
-
-%Parrafo 
-
-\en{With the figure~\ref{fig:tasa-temporal-0} we can derive some new conclusions. }%
-\es{Con la figura~\ref{fig:tasa-temporal-0} podemos sacar algunas conclusiones nuevas. }%
-%
-\en{Note that above the red dot is the cooperative growth rate of the specialist strategy $\Ee=0.99$. }%
-\es{Notar que arriba del punto rojo se encuentra la tasa de crecimiento cooperativa de la estrategia especialista $\Ee=0.99$. }%
-% %
-\en{\T }%
-\es{Esto sugiere que una estrategia que individualmente están mal adaptadas al ambiente, como es el caso de la estrategia especialista $\Ee=0.99$ en un ambiente $P(\Aa)=0.71$, logra en grupos cooperativos una tasa de crecimiento que es mayor que las tasa de crecmiento que la estrategia individalmente bien adaptada logra a través de grupos cooperativos, $g_C^{N-1}(k|\Ee=0.99,p=0.71,N=\infty) > g_C^{N-1}(k|\Ee=0.71,p=0.71,N=\infty)$. }%
-% 
-% % Parrafo
-
-\en{We have computed the cooperative growth rate for groups of infinite size. }%
-\es{La tasa de crecimiento cooperativa la hemos calculado para grupos de tamaño infinito. }%
-%
-\en{To be an interesting conclusion for evolutionary theory we need this result to emerge also in small groups. }%
-\es{Para que sea una conclusión interesante en términos evolutivos, necesitamos que este mismo resultado ocurra en grupos finitos, particularmente pequeños. }%
-%
-\en{In Figure~\ref{fig:tasa-temporal-1} we plot the growth rates of the specialist strategy $\Ee=0.99$ for cooperative groups of size 1 to 5. }%
-\es{En la figura~\ref{fig:tasa-temporal-1} graficamos las tasas de crecimiento de la estrategia especialista $\Ee=0.99$ para grupos cooperativos de tamaño 1 a 5. }%
-% \en{Note that in an environment $p=0.71$ the specialist strategy $\Ee=0.99$ achieves in cooperative groups of size 3 a growth rate that is above the growth rate of the strategy individually well adapted to the environment $\Ee=0.71$, outperforming even the growth rate that the individually well-adapted strategy obtains in cooperative groups of infinite size, $g_C^{2}(k|\Ee=0.99,p=0.71,N=3) > \lim_{N \rightarrow \infty }g_C^{N-1}(k|\Ee=0.71,p=0.71,N)$! }%
-% \es{Notar que en un ambiente $p=0.71$ la estrategia especilista $\Ee=0.99$ logra en grupos cooperativos de tamaño 3 una tasa de crecimiento que está por arriba de la tasa de crecimiento de la estrategia individualmente bien adapatada al ambiente $\Ee = 0.71$, superando incluso la tasa de crecimiento que la estrategia individulamente bien adaptada obtiene en grupo cooperativos de tamaño infinito, $g_C^{2}(k|\Ee=0.99,p=0.71,N=3) > \lim_{N \rightarrow \infty }g_C^{N-1}(k|\Ee=0.71,p=0.71,N)$! }%
-% %
-% \en{It is extraordinary that the same basic assumption that offers an evolutionary advantage in favor of cooperation also offers an evolutionary advantage in favor of specialization, even in small groups. }%
-% \es{Es extraordinario que el mismo supuesto básico que ofrece una ventaja evolutiva a favor de la cooperación, ofrezca también una ventaja evolutiva a favor de la especilización incuso en grupos pequeños. }%
-% %
-% \en{The emergence of cooperation immediately produces an evolutionary advantage in favor of specialization. }%
-% \es{La emergencia de la cooperación produce inmediatamente una ventaja evolutiva a favor de la especialización. }%
-% 
-% % Parrafo
-% 
-\en{The optimal level of specialization depends on the size of the groups. }%
-\es{El nivel de especialización óptimo depende del tamaño de los grupos. }%
-%
-\en{In Figure~\ref{fig:tasa-temporal-2} we set the environment at $p = 0.71$ and analyze how the cooperative growth rate of all possible strategies varies in groups of sizes 1 to 5. }%
-\es{En la figura~\ref{fig:tasa-temporal-2} fijamos el ambiente en $p = 0.71$ y analizamos como varía la tasa de crecimiento cooperativa de todas las posibles estrategias en grupos de tamaños 1 a 5. }%
-%
-\begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth,page=3]{figures/tasa-temporal.pdf}
-    \end{subfigure}
-    \caption{
-    \en{The proportional growth rate of all possible strategies for entirely cooperative groups of size 1 to 5, in an environment $p=0.71$. }%
+    \en{The gray lines are visual references o the strategies $\Ee \in \{0.5, 0.71\}$ discussed in the figure~\ref{fig:tasa-temporal-0}. }%
+    \es{Las rectas grises son referencias visuales de las estrategias $e \in \{0.5, 0.71\}$ analizadas en la figura~\ref{fig:tasa-temporal-0}. }%
+    (b)
+    \en{The proportional growth rate of all possible strategies for entirely cooperative groups of size 1 to 3, in an environment $p=0.71$. }%
     \es{La tasa de crecimiento proprocional de todas las posibles estrategias para grupos enteramenete cooperativos de tamaño 1 a 5, en un ambiente $p=0.71$. }%
     %
     \en{The dots indicate the optimum strategy in each of the sizes. }%
@@ -1061,52 +1080,194 @@ En el caso especial de la estrategia $\Ee = 0.5$ ambas tasas de crecimiento son 
     \label{fig:tasa-temporal-2}
 \end{figure}
 
-\en{When the group has size 1, the optimal strategy is $\Ee^*=p$. }%
 \es{Cuando el grupo tiene tamaño 1, la estrategia óptima es $\Ee^*=p$. }%
-
-\en{But as soon as cooperation arises, an advantage in favor of the specialist strategies $\Ee^* > p = 0.71$ appears. }%
 \es{Pero apenas surge la cooperación aparece una ventaja a favor de las estrategias especialistas $\Ee^* > p = 0.71$. }%
-
-\en{The larger the groups, the more specialist the optimal strategy becomes. }%
+%
 \es{Cuanto más grande son los grupos, más especialista es vuelve la estrategia óptima. }%
-
+%
 \en{At the extremes (cooperative groups of infinite size) the optimal strategy is reached at the maximum level of specialization, $\Ee=1$. }%
 \es{En el extremos (grupos cooperativos de tamaño inifinito) la estrategia óptima se alcanza con el nivel de especialización máximo, $\Ee=1$. }%
-
-% \begin{conclution}[\en{The advantage of specialization}\es{La ventaja de la especialización}]
-% \en{Cooperation offers an advantage in favor of specialist strategies in groups of minimum size (two). }%
-% \es{La cooperación ofrece una ventaja a favor de las estrategias especialistas en grupos de tamaño mínimo (dos). }%
-% %
-% \en{Strategies that individually are poorly adapted to the environment, cooperatively achieve better results than those obtained by cooperative groups of individually well-adapted strategies. }
-% \es{Estrategias que individualmente están mal adaptadas al ambiente, cooperando logran mejorar los resultados que obtienen grupos cooperativos de estrategias individualmemte bien adaptada al ambiente. }%
-% \end{conclution}
-
-% 
-% \en{Here we show that strategies that are individually poorly adapted to the environment (specialists), once cooperation emerges, manage to outperform both individually well-adapted strategies (generalists), as well as their cooperative groups of infinite size. }%
-% \es{Aquí mostramos que, una vez que la cooperación emerge, las estrategias individualmente mal adaptadas al ambiente (especialistas) consigen superar tanto a las estrategias bien adaptas individualmemte (generalistas), como a sus grupos cooperativos de tamaño infinito. }%
-% %
-
-
-
+%
+\es{Aquí mostramos que, una vez que la cooperación emerge, las estrategias individualmente mal adaptadas al ambiente (especialistas) consigen superar tanto a las estrategias bien adaptas individualmemte (generalistas), como a sus grupos cooperativos de tamaño infinito. }%
 
 \section{El principio de coexistencia}
 
+El motivo por el cual surge una ventaja a favor de la cooperación y la especialización se debe a la naturaleza multiplicativa del proceso analizado.
+%
+Esta conclusión es interesante en términos evolutivos en tanto a que el  crecimientos de los linajes siguen procesos multiplicativos.
+%
+Esto puede explicar en parte por qué la emergencia de entidades cooperativas especializadas son tan comunes en la historia de la vida.
+%
+Pero también será interesante para la teoría de la probabilidad debido a que los procesos de selección de las hipótesis también se realizan a través de procesos multiplicativos. 
 
+% Parrafo
 
+En la historia de la vida, no sólo hay una ventaja a favor de la cooperación.
+%
+También se observa una ventaja a favor de la coexistencia entre entidades competitivas.
+%
+Los ecosistemas pueden ser vistos como intercambios que garantizan la coexistencia entre partes competitivas.
+%
+Todos los animales, desde los insectos a los mamíferos, somos heterótrofos, necesitamos aliemtarnos de otros seres vivos y por lo tanto necesitamos coexistir con ellos para garantizar nuestra propia vida.
+
+% Parrafo
+
+Las evolución cultural de tecnologías de reciprocidad ecológica permitió a las diferentes pueblos del mundo de forma estable con las especies propias a cada uno de los sistemas ecológicos locales, garantizando así la supervivencia de esas comunidades en el tiempo.
+%
+Como resultado de una interacción prolongada entre las especies se produce la aparición independiente de la domesticación de especies animales y vegetales.
+%
+En particular, la agricultura (producto de la reciprocidad con las especies fotosintéticas), produjo un aumento poblacional que promovió a su vez el desarrollo de nuevas innovaciones culturales y científicas.
+
+% Parrafo
+
+La coexistencia no sólo es importante en términos biológicos, también lo es en términos culturales.
+%
+Esto ha generado la emergencia de un obligación cultural de dar y de recibir, de caracter universal.
+%
+En todos los pueblos del mundo, recibir un regalo o un favor activa un ciclo la obligación recíproca para devolver de alguna forma lo recibido.
+%
+Las tecnologías de reciprocidad social ocurren de forma rutinaria y son la base de los flujo de bienes y servicios sin la cual ninguna economía del mundo podría funcionar.
+
+% Parrafo
+
+La ruptura de la coexistencia intercultural produjo procesos de involución cultural como los registrados en Tasmania y en Europa occidental durante la Edad Media.
+%
+Si bien la integración intercultural de la modernidad produjo una acelearación de innovaciones científicas y técnicas, el proceso colonial asociado produjo inició una era global de genocidios y masiva pérdida de diversidad cultural.
+%
+Las tecnologías de reciprocidad ecológica que esas sociedades habían sedimentado a través de las generaciones en forma de cosmoviones loclas, se perdieron de forma irreversible.
+%
+A pesar de todos los avances científicos, la ciencia metropolitana moderna no fue capaz de compensar la pérdida de los conocimientos milenarios acumulados por las comunidades autónomas locales.
+%
+La masiva pérdida de diversidad cultural trajo como consecuencia
+la masiva pérdida de biodiversidad actual (monocultivo), una crisis ecológica sin precedentes.
+
+% 
+% La ruptura de la coexistencia ecológica actual debida a la viralización de la cosmovisión instrumental de la colonial-modernidad, está produciendo una masiva pérdida de biodiversidad, una crisis ecológica sin precedentes.
 % %
-% \en{This does not seem to be a minor problem, considering the temptation to stop contributing to the common fund while continuing to receive its benefits. }%
-% \es{No parece ser un problema menor, teniendo en cuenta la tentación de dejar de aportar al fondo común mientras se siguen recibiendo sus beneficios. }%
-% \en{In addition, we show that as soon as cooperation emerges, an advantage in favor of specialist strategies appears. }%
-% \es{Además, mostramos que apenas surge la cooperación, aparece una ventaja a favor de las estrategias especialistas. }%
-% %
-% \en{Since the specialist strategies are individually poorly adapted to the environment, an irreversibility of the evolutionary transition is created. }%
-% \es{Como la estrategias especialistas están individualmente mal adaptadas al ambiente, se crea una irreversbilidad de la transiciones evolutivas. }%
+% 
+% 
+% Quizá la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
+% 
+% 
+% Los pueblos bien adaptados para la coexistencia intercultural y ecológica practican cosmovisiones basadas en lógicas paraconsistentes que les permite creer en A y no A al mismo tiempo.
+% Estas cosmovisiones, que obligan a no rechazar ninguna alternativa aunque se tenga preferencia por alguna, son la base de toda tecnología de reciprocidad con la biocenosis en todo el mundo, como son los ritos \emph{Canang sari} practicados en Bali o como los ritos \emph{pachamámicos} practicados en América del sur.
+% \begin{figure}[ht!]
+%     \centering
+%     \begin{subfigure}[b]{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{static/bali-offerings}
+%     \caption{Canang sari}
+%     \label{}
+%     \end{subfigure}
+%     \begin{subfigure}[b]{0.3\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{static/pachamama}
+%     \caption{Pachamama}
+%     \label{}
+%     \end{subfigure}
+%     \caption{Tecnologías de reciprocidad socio-ecológicas.}
+%     \label{fig:mito}
+% \end{figure}
+% Estas cosmovisiones basadas en lógicas paraconsistentes obliga al ser humano a fomentar la coexistencia con otras formas de vida, como con otras culturas.
 % 
 % % Parrafo
 % 
-% \en{The reason why an advantage in favor of cooperation and specialization arises in our simple causal model is due to the multiplicative (non-ergodic) nature of probabilitic and evolutionary selection process. }%
-% \es{El motivo por el cual surge una ventaja a favor de la cooperación y la especialización en este simple modelo causal se debe a la naturaleza multiplicativa (no-ergódica) los procesos de selección probabilístico y evolutivo. }%
 % 
+% 
+% 
+% Las tecnologías de reciprocidad social y ecológica 
+% 
+% 
+% 
+% social son fundamentales para la supervivencia de las comunidades en el tiempo, pues ellas reducen las fluctuaciones individuales que ponen en peligro su estabilidad.
+% %
+% La teoría de la probabilidad nace en 1648 justamente como respuesta a la pregunta de cuál es el \emph{precio justo} en contextos de incertidumbre.
+% %
+% El problema analizaban Pascal y Fermat en sus cartas es equivalente al siguiente.
+% %
+% Tiramos dos veces la moneda.
+% %
+% Si sale seca $S$ en la primera y en la segunda, una persona (en rojo) le hace un favor a la otra.
+% %
+% En caso contrario, el favor se invierte.
+% %
+% ¿Cuál es el valor justo de la reciprocidad en este contexto de incertidumbre?
+% 
+% \begin{figure}[ht!]
+%     \centering
+%     \tikz{
+%     \node[latent, draw=white, yshift=0.7cm, minimum size=0.1cm] (b0) {};
+%     \node[latent,below=of b0,yshift=0.7cm, xshift=-1cm] (r1) {$S$};
+%     \node[latent,below=of b0,yshift=0.7cm, xshift=1cm] (r2) {$C$};
+% 
+%     \node[latent, below=of r1, draw=white, yshift=0.8cm, minimum size=0.1cm] (bc11) {};
+%     \node[accion, below=of r2, draw=white, yshift=0cm, color=blue!70] (bc12) {};
+%     \node[latent,below=of bc11,yshift=0.8cm, xshift=-0.5cm] (r1d2) {$S$};
+%     \node[latent,below=of bc11,yshift=0.8cm, xshift=0.5cm] (r1d3) {$C$};
+% 
+%     \node[accion,below=of r1d2,yshift=0cm, color=red!70] (br1d2) {};
+%     \node[accion,below=of r1d3,yshift=0cm, color=blue!70] (br1d3) {};
+%     \edge[-] {b0} {r1,r2};
+%     \edge[-] {r1} {bc11};
+%     \edge[-] {r2} {bc12};
+%     \edge[-] {bc11} {r1d2,r1d3};
+%     \edge[-] {r1d2} {br1d2};
+%     \edge[-] {r1d3} {br1d3};
+%     }
+%     \caption{El problema del \emph{valor justo} que da inicio a la teoría de la probabilidad}
+%     \label{fig:pascal-fermat}
+% \end{figure}
+% 
+% La respuesta a la que arribaron Pascal y Fermat es que el valor de los favores tiene que ser inversamente proporcional a la probabilidad de hacer el favor.
+% %
+% Si la moneda es no sesgada, hay 1/4 de probabilidad de que salgan dos secas (terminal roja), 1/4 de que salga seca en la primera y cara en la segunda (terminal azul) y 1/2 de que salga cara en la primera (terminal azul).
+% %
+% Luego, la probabilidad de que la persona azul haga un favor es 3/4.
+% %
+% Si la persona roja hace favores por un valor equivalente a 4, el azul tiene que devolver los favores con un valor de 4/3, una relación de 3 a 1.
+% %
+% Esta forma intuitiva de calcular la probabilidad de un conjunto de eventos mutuamente excluyentes, como suma de sus probabilidades elementales, constituye el axioma fundamental de Kolmogorov a partir del cual se puede montar toda la teoría de la probabilidad.
+% 
+% % Parrafo
+% 
+% % 
+% 
+% % Parrafo
+
+
+
+% Parrafo
+
+¿Cuáles son las condiciones para la coexistencia?
+%
+Supongamos que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca.
+%
+Supongamos además que se conoce la probabilidad $p$ de Cara.
+%
+¿Existe un conjunto de pagos $Q_c$ y $Q_s$ que garantice la coexistencia en el tiempo entre la casa de apuestas y una población de apostadores?
+%
+¿O un grupo cooperador siempre puede romper cualquier pago que ofrezca la casa de apuestas a través de la especialización, poniendo más recursos en que la probabilidad del ambiente en uno de los estados?
+
+% Parrafo
+
+Cuando en el contexto 
+
+El \ref{fig:pascal-fermat}
+
+
+%
+
+
+
+Las casas de apuestas ofrecen pagos a cada uno de las hipótesis.
+
+
+
+
+
+
+
+
 
 
 
