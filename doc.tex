@@ -1090,176 +1090,337 @@ Hemos visto en la figura~\ref{fig:tasa-temporal-3} que la tasa de crecimiento de
 %
 \es{Aquí mostramos que, una vez que la cooperación emerge, las estrategias individualmente mal adaptadas al ambiente (especialistas) consigen superar tanto a las estrategias bien adaptas individualmemte (generalistas), como a sus grupos cooperativos de tamaño infinito. }%
 
-\section{El principio de coexistencia}
+\section{El principio de coexistencia o simbiosis: la función de costo universal.}
 
-El motivo por el cual surge una ventaja a favor de la cooperación y la especialización se debe a la naturaleza multiplicativa del proceso analizado.
-%
-Esta conclusión es interesante en términos evolutivos en tanto a que el  crecimientos de los linajes siguen procesos multiplicativos.
-%
-Esto puede explicar en parte por qué la emergencia de entidades cooperativas especializadas son tan comunes en la historia de la vida.
-%
-Pero también será interesante para la teoría de la probabilidad debido a que los procesos de selección de las hipótesis también se realizan a través de procesos multiplicativos. 
+John Larry Kelly (Jr) comienza en su artículo ``A New Interpretation of Information Rate'' para los laboratorios Bell (1956) diciendo, 
 
-% Parrafo
+\begin{quotation}
+The author believes that [the cost function approach] it is too general to shed any light on the specific problems of communication theory. (...). The point here is that an arbitrary combination of a statistical transducer (i.e., a channel) and a cost function does not necessarily constitute a communication system. (...). What can be done, however, is to take some real-life situation which seems to possess the essential features of a communication problem, and to analyze it without the introduction of an arbitrary cost function. The situation which
+will be chosen here is one in which a gambler uses knowledge of the received symbols of a communication channel in order to make profitable bets on the transmitted symbols.
+\end{quotation}
 
-En la historia de la vida, no sólo hay una ventaja a favor de la cooperación.
+Supongamos que se conoce la frecuencia típica $p$ de Cara, y $1-p$ de Seca de una moneda.
 %
-También se observa una ventaja a favor de la coexistencia entre entidades competitivas.
+Kelly considera un escenario en el que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca: por cada unidad apostada la casa devuelve $Q$ si ocurre el evento apostado y $0$ en caso contrario.
 %
-Los ecosistemas pueden ser vistos como intercambios que garantizan la coexistencia entre partes competitivas.
-%
-Todos los animales, desde los insectos a los mamíferos, somos heterótrofos, necesitamos aliemtarnos de otros seres vivos y por lo tanto necesitamos coexistir con ellos para garantizar nuestra propia vida.
+La pregunta que él se hace es: ¿Cuál es la mejor forma de apostar?
 
 % Parrafo
 
-Las evolución cultural de tecnologías de reciprocidad ecológica permitió a las diferentes pueblos del mundo de forma estable con las especies propias a cada uno de los sistemas ecológicos locales, garantizando así la supervivencia de esas comunidades en el tiempo.
+El juego propuesto por Kelly entre la casa de apuestas y les apostadores sigue las reglas típicas de la vida real.
 %
-Como resultado de una interacción prolongada entre las especies se produce la aparición independiente de la domesticación de especies animales y vegetales.
+Toda persona comienza con una riqueza $\omega_0$.
 %
-En particular, la agricultura (producto de la reciprocidad con las especies fotosintéticas), produjo un aumento poblacional que promovió a su vez el desarrollo de nuevas innovaciones culturales y científicas.
+En cada ronda, la persona apuesta una proporción $b_c$ a Cara y $b_s$ a Seca.
 
 % Parrafo
 
-La coexistencia no sólo es importante en términos biológicos, también lo es en términos culturales.
+Hay dos formas de apostar.
 %
-Esto ha generado la emergencia de un obligación cultural de dar y de recibir, de caracter universal.
+La primera es apostar a una única de las dos opciones, por ejemplo a a Caras.
 %
-En todos los pueblos del mundo, recibir un regalo o un favor activa un ciclo la obligación recíproca para devolver de alguna forma lo recibido.
+En este escenario, la persona asigna un valor $ 1 \geq b_c = l > 0 $ a Caras y $b_s = 0$ a secas.
 %
-Las tecnologías de reciprocidad social ocurren de forma rutinaria y son la base de los flujo de bienes y servicios sin la cual ninguna economía del mundo podría funcionar.
+Supongamos que en la primera sale Cara y en la segunda Seca.
+%
+La riqueza en la primera es el ahorro $1-l$ más el pago que obtiene por lo apostado en Cara $l \, Q_c$.
+%
+Y en la segunda vuelta, cuando sale Seca, la riqueza es solo el ahorro, lo no apostado a Cara $1-l$.
+%
+
+\begin{equation}
+\omega_T = \underbrace{\overbrace{(\omega_0 \, (1-l) + \omega_0 \, l \, Q_c )}^{\omega_1} \, (1-l)}_{\omega_2} \,\dots
+\end{equation}
+
+Lo que podemos reescribir como,
+
+\begin{equation}
+\begin{split}
+\omega_T &= \omega_0 \, ((1-l) + \, l \, Q_c ) \, (1-l) \, \dots \\
+ &= \omega_0 \, ( (1-l) + \, l \, Q_c )^{n_c} \, (1-l)^{n_s} 
+\end{split}
+\end{equation}
+
+donde $n_c + n_s = T$ son la cantidad de veces que salió Cara y Seca en los $T$ pasos.
+%
+Es decir, la riqueza se actualiza siguiendo un proceso multiplicativo.
 
 % Parrafo
 
-La ruptura de la coexistencia intercultural produjo procesos de involución cultural como los registrados en Tasmania y en Europa occidental durante la Edad Media.
+La otra forma de apostar consiste en utilizar todos los recursos en cada vuelta, poniendo $b_c = b$ en Cara y el resto en Seca $b_s = (1-b)$.
 %
-Si bien la integración intercultural de la modernidad produjo una acelearación de innovaciones científicas y técnicas, el proceso colonial asociado produjo inició una era global de genocidios y masiva pérdida de diversidad cultural.
-%
-Las tecnologías de reciprocidad ecológica que esas sociedades habían sedimentado a través de las generaciones en forma de cosmoviones loclas, se perdieron de forma irreversible.
-%
-A pesar de todos los avances científicos, la ciencia metropolitana moderna no fue capaz de compensar la pérdida de los conocimientos milenarios acumulados por las comunidades autónomas locales.
-%
-La masiva pérdida de diversidad cultural trajo como consecuencia
-la masiva pérdida de biodiversidad actual (monocultivo), una crisis ecológica sin precedentes.
+En este caso la riqueza también se actualiza a través de un proceso multiplicativo.
 
-% 
-% La ruptura de la coexistencia ecológica actual debida a la viralización de la cosmovisión instrumental de la colonial-modernidad, está produciendo una masiva pérdida de biodiversidad, una crisis ecológica sin precedentes.
-% %
-% 
-% 
-% Quizá la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
-% 
-% 
-% Los pueblos bien adaptados para la coexistencia intercultural y ecológica practican cosmovisiones basadas en lógicas paraconsistentes que les permite creer en A y no A al mismo tiempo.
-% Estas cosmovisiones, que obligan a no rechazar ninguna alternativa aunque se tenga preferencia por alguna, son la base de toda tecnología de reciprocidad con la biocenosis en todo el mundo, como son los ritos \emph{Canang sari} practicados en Bali o como los ritos \emph{pachamámicos} practicados en América del sur.
-% \begin{figure}[ht!]
-%     \centering
-%     \begin{subfigure}[b]{0.45\textwidth}
-%     \centering
-%     \includegraphics[width=\linewidth]{static/bali-offerings}
-%     \caption{Canang sari}
-%     \label{}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.3\textwidth}
-%     \centering
-%     \includegraphics[width=\linewidth]{static/pachamama}
-%     \caption{Pachamama}
-%     \label{}
-%     \end{subfigure}
-%     \caption{Tecnologías de reciprocidad socio-ecológicas.}
-%     \label{fig:mito}
-% \end{figure}
-% Estas cosmovisiones basadas en lógicas paraconsistentes obliga al ser humano a fomentar la coexistencia con otras formas de vida, como con otras culturas.
-% 
-% % Parrafo
-% 
-% 
-% 
-% 
-% Las tecnologías de reciprocidad social y ecológica 
-% 
-% 
-% 
-% social son fundamentales para la supervivencia de las comunidades en el tiempo, pues ellas reducen las fluctuaciones individuales que ponen en peligro su estabilidad.
-% %
-% La teoría de la probabilidad nace en 1648 justamente como respuesta a la pregunta de cuál es el \emph{precio justo} en contextos de incertidumbre.
-% %
-% El problema analizaban Pascal y Fermat en sus cartas es equivalente al siguiente.
-% %
-% Tiramos dos veces la moneda.
-% %
-% Si sale seca $S$ en la primera y en la segunda, una persona (en rojo) le hace un favor a la otra.
-% %
-% En caso contrario, el favor se invierte.
-% %
-% ¿Cuál es el valor justo de la reciprocidad en este contexto de incertidumbre?
-% 
-% \begin{figure}[ht!]
-%     \centering
-%     \tikz{
-%     \node[latent, draw=white, yshift=0.7cm, minimum size=0.1cm] (b0) {};
-%     \node[latent,below=of b0,yshift=0.7cm, xshift=-1cm] (r1) {$S$};
-%     \node[latent,below=of b0,yshift=0.7cm, xshift=1cm] (r2) {$C$};
-% 
-%     \node[latent, below=of r1, draw=white, yshift=0.8cm, minimum size=0.1cm] (bc11) {};
-%     \node[accion, below=of r2, draw=white, yshift=0cm, color=blue!70] (bc12) {};
-%     \node[latent,below=of bc11,yshift=0.8cm, xshift=-0.5cm] (r1d2) {$S$};
-%     \node[latent,below=of bc11,yshift=0.8cm, xshift=0.5cm] (r1d3) {$C$};
-% 
-%     \node[accion,below=of r1d2,yshift=0cm, color=red!70] (br1d2) {};
-%     \node[accion,below=of r1d3,yshift=0cm, color=blue!70] (br1d3) {};
-%     \edge[-] {b0} {r1,r2};
-%     \edge[-] {r1} {bc11};
-%     \edge[-] {r2} {bc12};
-%     \edge[-] {bc11} {r1d2,r1d3};
-%     \edge[-] {r1d2} {br1d2};
-%     \edge[-] {r1d3} {br1d3};
-%     }
-%     \caption{El problema del \emph{valor justo} que da inicio a la teoría de la probabilidad}
-%     \label{fig:pascal-fermat}
-% \end{figure}
-% 
-% La respuesta a la que arribaron Pascal y Fermat es que el valor de los favores tiene que ser inversamente proporcional a la probabilidad de hacer el favor.
-% %
-% Si la moneda es no sesgada, hay 1/4 de probabilidad de que salgan dos secas (terminal roja), 1/4 de que salga seca en la primera y cara en la segunda (terminal azul) y 1/2 de que salga cara en la primera (terminal azul).
-% %
-% Luego, la probabilidad de que la persona azul haga un favor es 3/4.
-% %
-% Si la persona roja hace favores por un valor equivalente a 4, el azul tiene que devolver los favores con un valor de 4/3, una relación de 3 a 1.
-% %
-% Esta forma intuitiva de calcular la probabilidad de un conjunto de eventos mutuamente excluyentes, como suma de sus probabilidades elementales, constituye el axioma fundamental de Kolmogorov a partir del cual se puede montar toda la teoría de la probabilidad.
-% 
-% % Parrafo
-% 
+\begin{equation} \label{eq:kelly_paraconsistente}
+\omega_T = \underbrace{\overbrace{(\omega_0 \, b \, Q_c)}^{\omega_1} \,  (1-b) \, Q_s}_{\omega_2} \dots = \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s}
+\end{equation}
+
+No sólo las dos formas de apostar actualizan los recursos a través de un proceso multiplicativo.
+%
+No es difícil demostrar que ambas tienen la misma solución a la pregunta que hizo Kelly: ¿Qué valores $b_c$ y $b_s$ maximizan el creciminto de los recursos?
+
+% Parrafo
+
+En la sección anterior analizamos las consecuencias de algunos sistemas multiplicativos.
+%
+Individualmente encontramos una ventaja a favor de lo que llamamos estrategias ``equilibradas'', aquellas que dividen los recursos en la misma proporción que la probabilidad $p$ de la moneda.
+%
+Pero además observamos que una ventaja a favor de los comportamientos cooperativos: una grupo de agentes, reduciendo las fluctuaciones individuales a través de un fondo común, logran aumentar la tasas de crecimiento hasta alcanzar, en grupos grandes, tasas equivalente al promedio aritmético de los pagos que siempre es mayor que la tasa de crecimiento individual, equivalente al promedio geomético de los pagos.
+%
+Y por último vimos que, una vez que surge la cooperación, el grupo de agentes puede obtener una tasa de crecimiento aún mayor a través de la especialización, esto es asignar más recursos que la probabilidad al estado más frecuente. 
+
+% Parrafo
+
+La capacidad de aumentar la tasa de crecimiento a través de la cooperación y la especialización no fue analizada por Kelly, lo que abre las siguientes preguntas.
+%
+¿Existe un conjunto de pagos $Q_c$ y $Q_s$ que garantice la coexistencia en el tiempo entre la casa de apuestas y una población de apostadoras?
+%
+¿O un grupo de cooperadoras siempre puede romper cualquier pago que ofrezca la casa de apuestas a través de la especialización, poniendo más recursos que la probabilidad en el estado más frecuente?
+
+% Parrafo
+
+Supongamos que la casa de apuestas ofrece pagos basados en el principio de reciprocidad analizados por Pascal y Fermat (figura \ref{fig:pascal-fermat}).
+%
+Si la probabilidad de Caras es $p=3/4$ y la de Seca es $(1-p) = 1/4$, luego la reciprocidad justa es inversamente proporcional a la probabilidad.
+%
+Si apostamos $10$ unidades a Seca, $3$ veces de cada $4$ vamos a perder y solo una vamos a ganar.
+%
+Luego, para que el intercambio sea ``justo'' (nadie gane), la casa de apuestas tiene que multiplicar por $Q_s = 4 = 1/(1-p)$ en Secas.
+%
+Lo mismo ocurre en Caras, $Q_c = 1.5 = 1/p$.
+
+% Parrafo
+
+En el caso general, la casa de apuesta puede ofrecer pagos recíprocos pero que están sesgados, basados en una probabilidad $q$ no necesariamente igual a $p$, $Q_c = 1/q$ y $Q_s = 1/(1-q)$
+%
+La tasa de crecimiento individalmente está dada por
+%
+\begin{equation}
+\begin{split}
+\lim_{T \rightarrow \infty } (\omega_0 \, r)^T &= \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s} \\
+r &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^{\frac{n_s}{T}} = (b \, Q_c)^{p} ((1-b) \, Q_s )^{1-p}
+\end{split}
+\end{equation}
+%
+Para maximizar $r$ tomamos el logaritmo de ambos lados, y buscamos el punto crítico de esta función cóncava,
+%
+\begin{equation}
+\begin{split}
+0 &= \frac{d}{db} p \log (b/q) + (1-p) \log ((1-b)/(1-q)) \\
+0 &= \frac{p}{b} - \frac{1-p}{1-b} \\
+p &= b 
+\end{split}
+\end{equation}
+%
+Sin importar el pago que elija la casa de apuestas, individualmente la tasa de crecimiento siempre se maximiza dividiendo los recursos en la misma proproción que la probabildad real.
+%
+Este resultado Kelly lo escribe con un signo de admiración.
+%
+\begin{quotation}
+That is, \emph{the gambler ignores the posted odds} in placing his bets!
+\end{quotation}
+%
+Del mismo modo, la casa de apuestas maximiza su tasa de crecimiento cuando $q=p$, ignorando el monto de las apuestas
+%
+\begin{equation}
+\begin{split}
+0 &= \frac{d}{dq} p \log (b/q) + (1-p) \log ((1-b)/(1-q)) \\
+0 &= - pq + (1-p)(1-q) \\
+p &= q 
+\end{split}
+\end{equation}
+%
+En este proceso antagónico ambos agentes pueden descubrir por experiencia individual la verdadera probabilidad a partir de la ignoracia total, sin necesidad de que nadie conozca la probabilidad real.
+
+\todo[inline]{Lo mismo ocurre con una comisión del 100\% o con cualquier pago arbitrario.}
+
+\todo[inline]{Simbiosis y función de costo universal}
+
+% Parrafo
+
+
 % % 
-% 
-% % Parrafo
+% % % Parrafo
+% % 
+% % En la historia de la vida, no sólo hay una ventaja a favor de la cooperación.
+% % %
+% % También se observa una ventaja a favor de la coexistencia entre entidades competitivas.
+% % %
+% % Los ecosistemas pueden ser vistos como intercambios que garantizan la coexistencia entre partes competitivas.
+% % %
+% % Todos los animales, desde los insectos a los mamíferos, somos heterótrofos, necesitamos aliemtarnos de otros seres vivos y por lo tanto necesitamos coexistir con ellos para garantizar nuestra propia vida.
+% % 
+% % % Parrafo
+% % 
+% % Las evolución cultural de tecnologías de reciprocidad ecológica permitió a las diferentes pueblos del mundo de forma estable con las especies propias a cada uno de los sistemas ecológicos locales, garantizando así la supervivencia de esas comunidades en el tiempo.
+% % %
+% % Como resultado de una interacción prolongada entre las especies se produce la aparición independiente de la domesticación de especies animales y vegetales.
+% % %
+% % En particular, la agricultura (producto de la reciprocidad con las especies fotosintéticas), produjo un aumento poblacional que promovió a su vez el desarrollo de nuevas innovaciones culturales y científicas.
+% % 
+% % % Parrafo
+% % 
+% % La coexistencia no sólo es importante en términos biológicos, también lo es en términos culturales.
+% % %
+% % Esto ha generado la emergencia de un obligación cultural de dar y de recibir, de caracter universal.
+% % %
+% % En todos los pueblos del mundo, recibir un regalo o un favor activa un ciclo la obligación recíproca para devolver de alguna forma lo recibido.
+% % %
+% % Las tecnologías de reciprocidad social ocurren de forma rutinaria y son la base de los flujo de bienes y servicios sin la cual ninguna economía del mundo podría funcionar.
+% % 
+% % % Parrafo
+% % 
+% % La ruptura de la coexistencia intercultural produjo procesos de involución cultural como los registrados en Tasmania y en Europa occidental durante la Edad Media.
+% % %
+% % Si bien la integración intercultural de la modernidad produjo una acelearación de innovaciones científicas y técnicas, el proceso colonial asociado produjo inició una era global de genocidios y masiva pérdida de diversidad cultural.
+% % %
+% % Las tecnologías de reciprocidad ecológica que esas sociedades habían sedimentado a través de las generaciones en forma de cosmoviones loclas, se perdieron de forma irreversible.
+% % %
+% % A pesar de todos los avances científicos, la ciencia metropolitana moderna no fue capaz de compensar la pérdida de los conocimientos milenarios acumulados por las comunidades autónomas locales.
+% % %
+% % La masiva pérdida de diversidad cultural trajo como consecuencia
+% % la masiva pérdida de biodiversidad actual (monocultivo), una crisis ecológica sin precedentes.
+% % 
+% % % 
+% % % La ruptura de la coexistencia ecológica actual debida a la viralización de la cosmovisión instrumental de la colonial-modernidad, está produciendo una masiva pérdida de biodiversidad, una crisis ecológica sin precedentes.
+% % % %
+% % % 
+% % % 
+% % % Quizá la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
+% % % 
+% % % 
+% % % Los pueblos bien adaptados para la coexistencia intercultural y ecológica practican cosmovisiones basadas en lógicas paraconsistentes que les permite creer en A y no A al mismo tiempo.
+% % % Estas cosmovisiones, que obligan a no rechazar ninguna alternativa aunque se tenga preferencia por alguna, son la base de toda tecnología de reciprocidad con la biocenosis en todo el mundo, como son los ritos \emph{Canang sari} practicados en Bali o como los ritos \emph{pachamámicos} practicados en América del sur.
+% % % \begin{figure}[ht!]
+% % %     \centering
+% % %     \begin{subfigure}[b]{0.45\textwidth}
+% % %     \centering
+% % %     \includegraphics[width=\linewidth]{static/bali-offerings}
+% % %     \caption{Canang sari}
+% % %     \label{}
+% % %     \end{subfigure}
+% % %     \begin{subfigure}[b]{0.3\textwidth}
+% % %     \centering
+% % %     \includegraphics[width=\linewidth]{static/pachamama}
+% % %     \caption{Pachamama}
+% % %     \label{}
+% % %     \end{subfigure}
+% % %     \caption{Tecnologías de reciprocidad socio-ecológicas.}
+% % %     \label{fig:mito}
+% % % \end{figure}
+% % % Estas cosmovisiones basadas en lógicas paraconsistentes obliga al ser humano a fomentar la coexistencia con otras formas de vida, como con otras culturas.
+% % % 
+% % % % Parrafo
+% % % 
+% % % 
+% % % 
+% % % 
+% % % Las tecnologías de reciprocidad social y ecológica 
+% % % 
+% % % 
+% % % 
+% % % social son fundamentales para la supervivencia de las comunidades en el tiempo, pues ellas reducen las fluctuaciones individuales que ponen en peligro su estabilidad.
+% % % %
+% % % La teoría de la probabilidad nace en 1648 justamente como respuesta a la pregunta de cuál es el \emph{precio justo} en contextos de incertidumbre.
+% % % %
+% % % El problema analizaban Pascal y Fermat en sus cartas es equivalente al siguiente.
+% % % %
+% % % Tiramos dos veces la moneda.
+% % % %
+% % % Si sale seca $S$ en la primera y en la segunda, una persona (en rojo) le hace un favor a la otra.
+% % % %
+% % % En caso contrario, el favor se invierte.
+% % % %
+% % % ¿Cuál es el valor justo de la reciprocidad en este contexto de incertidumbre?
+% % % 
+% % % \begin{figure}[ht!]
+% % %     \centering
+% % %     \tikz{
+% % %     \node[latent, draw=white, yshift=0.7cm, minimum size=0.1cm] (b0) {};
+% % %     \node[latent,below=of b0,yshift=0.7cm, xshift=-1cm] (r1) {$S$};
+% % %     \node[latent,below=of b0,yshift=0.7cm, xshift=1cm] (r2) {$C$};
+% % % 
+% % %     \node[latent, below=of r1, draw=white, yshift=0.8cm, minimum size=0.1cm] (bc11) {};
+% % %     \node[accion, below=of r2, draw=white, yshift=0cm, color=blue!70] (bc12) {};
+% % %     \node[latent,below=of bc11,yshift=0.8cm, xshift=-0.5cm] (r1d2) {$S$};
+% % %     \node[latent,below=of bc11,yshift=0.8cm, xshift=0.5cm] (r1d3) {$C$};
+% % % 
+% % %     \node[accion,below=of r1d2,yshift=0cm, color=red!70] (br1d2) {};
+% % %     \node[accion,below=of r1d3,yshift=0cm, color=blue!70] (br1d3) {};
+% % %     \edge[-] {b0} {r1,r2};
+% % %     \edge[-] {r1} {bc11};
+% % %     \edge[-] {r2} {bc12};
+% % %     \edge[-] {bc11} {r1d2,r1d3};
+% % %     \edge[-] {r1d2} {br1d2};
+% % %     \edge[-] {r1d3} {br1d3};
+% % %     }
+% % %     \caption{El problema del \emph{valor justo} que da inicio a la teoría de la probabilidad}
+% % %     \label{fig:pascal-fermat}
+% % % \end{figure}
+% % % 
+% % % La respuesta a la que arribaron Pascal y Fermat es que el valor de los favores tiene que ser inversamente proporcional a la probabilidad de hacer el favor.
+% % % %
+% % % Si la moneda es no sesgada, hay 1/4 de probabilidad de que salgan dos secas (terminal roja), 1/4 de que salga seca en la primera y cara en la segunda (terminal azul) y 1/2 de que salga cara en la primera (terminal azul).
+% % % %
+% % % Luego, la probabilidad de que la persona azul haga un favor es 3/4.
+% % % %
+% % % Si la persona roja hace favores por un valor equivalente a 4, el azul tiene que devolver los favores con un valor de 4/3, una relación de 3 a 1.
+% % % %
+% % % Esta forma intuitiva de calcular la probabilidad de un conjunto de eventos mutuamente excluyentes, como suma de sus probabilidades elementales, constituye el axioma fundamental de Kolmogorov a partir del cual se puede montar toda la teoría de la probabilidad.
+% % % 
+% % % % Parrafo
+% % % 
+% % % % 
+% % % 
+% % % % Parrafo
+% % 
+% % 
+% % 
+% % % Parrafo
 
 
 
-% Parrafo
-
-¿Cuáles son las condiciones para la coexistencia?
-%
-Supongamos que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca.
-%
-Supongamos además que se conoce la probabilidad $p$ de Cara.
-%
-¿Existe un conjunto de pagos $Q_c$ y $Q_s$ que garantice la coexistencia en el tiempo entre la casa de apuestas y una población de apostadores?
-%
-¿O un grupo cooperador siempre puede romper cualquier pago que ofrezca la casa de apuestas a través de la especialización, poniendo más recursos en que la probabilidad del ambiente en uno de los estados?
-
-% Parrafo
-
-Cuando en el contexto 
-
-El \ref{fig:pascal-fermat}
-
-
-%
 
 
 
-Las casas de apuestas ofrecen pagos a cada uno de las hipótesis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
