@@ -4,6 +4,7 @@ this.dir <- dirname(parent.frame(2)$ofile)
 nombre.R <-  sys.frame(1)$ofile
 require(tools)
 nombre <- print(file_path_sans_ext(nombre.R))
+nombre <- "tasa-temporal"
 pdf(paste0(nombre,".pdf"), width = 8, height = 6  )
 setwd(this.dir)
 ###############################

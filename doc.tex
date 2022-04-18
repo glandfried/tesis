@@ -1117,7 +1117,7 @@ En cada ronda, la persona apuesta una proporción $b_c$ a Cara y $b_s$ a Seca.
 
 Hay dos formas de apostar.
 %
-La primera es apostar a una única de las dos opciones, por ejemplo a a Caras.
+La primera es apostar a una única de las dos opciones, por ejemplo a Caras.
 %
 En este escenario, la persona asigna un valor $ 1 \geq b_c = l > 0 $ a Caras y $b_s = 0$ a secas.
 %
@@ -1127,20 +1127,19 @@ La riqueza en la primera es el ahorro $1-l$ más el pago que obtiene por lo apos
 %
 Y en la segunda vuelta, cuando sale Seca, la riqueza es solo el ahorro, lo no apostado a Cara $1-l$.
 %
-
 \begin{equation}
 \omega_T = \underbrace{\overbrace{(\omega_0 \, (1-l) + \omega_0 \, l \, Q_c )}^{\omega_1} \, (1-l)}_{\omega_2} \,\dots
 \end{equation}
-
+%
 Lo que podemos reescribir como,
-
+%
 \begin{equation}
 \begin{split}
 \omega_T &= \omega_0 \, ((1-l) + \, l \, Q_c ) \, (1-l) \, \dots \\
  &= \omega_0 \, ( (1-l) + \, l \, Q_c )^{n_c} \, (1-l)^{n_s} 
 \end{split}
 \end{equation}
-
+%
 donde $n_c + n_s = T$ son la cantidad de veces que salió Cara y Seca en los $T$ pasos.
 %
 Es decir, la riqueza se actualiza siguiendo un proceso multiplicativo.
@@ -1149,51 +1148,47 @@ Es decir, la riqueza se actualiza siguiendo un proceso multiplicativo.
 
 La otra forma de apostar consiste en utilizar todos los recursos en cada vuelta, poniendo $b_c = b$ en Cara y el resto en Seca $b_s = (1-b)$.
 %
-En este caso la riqueza también se actualiza a través de un proceso multiplicativo.
-
+En este caso la riqueza se actualiza como,
+%
 \begin{equation} \label{eq:kelly_paraconsistente}
 \omega_T = \underbrace{\overbrace{(\omega_0 \, b \, Q_c)}^{\omega_1} \,  (1-b) \, Q_s}_{\omega_2} \dots = \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s}
 \end{equation}
-
-No sólo las dos formas de apostar actualizan los recursos a través de un proceso multiplicativo.
 %
-No es difícil demostrar que ambas tienen la misma solución a la pregunta que hizo Kelly: ¿Qué valores $b_c$ y $b_s$ maximizan el creciminto de los recursos?
+No sólo las dos formas de apostar actualizan los recursos a través de un proceso multiplicativo. 
+%
+No es difícil demostrar que siempre existe una equivalencia.
+%
+Por ello, de aquí en adelante analizaremos únicamente esta última forma de apuestar, la que utiliza todos los recursos en cada vuelta.
 
 % Parrafo
 
-En la sección anterior analizamos las consecuencias de algunos sistemas multiplicativos.
+¿Cuáles son los pagos que puede ofrecer una casa de apuestas?
 %
-Individualmente encontramos una ventaja a favor de lo que llamamos estrategias ``equilibradas'', aquellas que dividen los recursos en la misma proporción que la probabilidad $p$ de la moneda.
-%
-Pero además observamos que una ventaja a favor de los comportamientos cooperativos: una grupo de agentes, reduciendo las fluctuaciones individuales a través de un fondo común, logran aumentar la tasas de crecimiento hasta alcanzar, en grupos grandes, tasas equivalente al promedio aritmético de los pagos que siempre es mayor que la tasa de crecimiento individual, equivalente al promedio geomético de los pagos.
-%
-Y por último vimos que, una vez que surge la cooperación, el grupo de agentes puede obtener una tasa de crecimiento aún mayor a través de la especialización, esto es asignar más recursos que la probabilidad al estado más frecuente. 
-
-% Parrafo
-
-La capacidad de aumentar la tasa de crecimiento a través de la cooperación y la especialización no fue analizada por Kelly, lo que abre las siguientes preguntas.
-%
-¿Existe un conjunto de pagos $Q_c$ y $Q_s$ que garantice la coexistencia en el tiempo entre la casa de apuestas y una población de apostadoras?
-%
-¿O un grupo de cooperadoras siempre puede romper cualquier pago que ofrezca la casa de apuestas a través de la especialización, poniendo más recursos que la probabilidad en el estado más frecuente?
-
-% Parrafo
-
 Supongamos que la casa de apuestas ofrece pagos basados en el principio de reciprocidad analizados por Pascal y Fermat (figura \ref{fig:pascal-fermat}).
 %
-Si la probabilidad de Caras es $p=3/4$ y la de Seca es $(1-p) = 1/4$, luego la reciprocidad justa es inversamente proporcional a la probabilidad.
+Según este principio, la pago justa debe ser inversamente proporcional a la probabilidad.
 %
-Si apostamos $10$ unidades a Seca, $3$ veces de cada $4$ vamos a perder y solo una vamos a ganar.
+Por ejemplo, si la probabilidad de Seca es $(1-p) = 1/4$, y apostamos una unidad a Seca en cada vuelta, $3$ de cada $4$ veces vamos a perder y solo una vamos a ganar.
 %
-Luego, para que el intercambio sea ``justo'' (nadie gane), la casa de apuestas tiene que multiplicar por $Q_s = 4 = 1/(1-p)$ en Secas.
+Luego, para que el intercambio sea ``justo'' (nadie gane), la casa de apuestas tiene que multiplicar por $Q_s = 4$ el valor apostado a Secas.
 %
-Lo mismo ocurre en Caras, $Q_c = 1.5 = 1/p$.
+Lo mismo ocurre en Caras, $Q_c = 1/p$.
 
 % Parrafo
 
-En el caso general, la casa de apuesta puede ofrecer pagos recíprocos pero que están sesgados, basados en una probabilidad $q$ no necesariamente igual a $p$, $Q_c = 1/q$ y $Q_s = 1/(1-q)$
+En general, la casa de apuesta puede ofrecer cualquier tipo de pago.
 %
-La tasa de crecimiento individalmente está dada por
+Por ejemplo, pagos justos pero sesgados, basados en una probabilidad $q$ distinta de $p$, $Q_c = 1/q$ y $Q_s = 1/(1-q)$.
+%
+O incluso ofrecer pagos sesgados, basados en $q$, y no recíprocos que incluyen una comisión $c$, $Q_c = (1/q)\,(q\,c)$, $Q_c = (1/(1-q))\,((1-q)\,c)$.
+%
+Cuando $c = 1$, la comisión es total y tanto en Cara como en Seca la casa de apuestas simplemente devuelve los recursos apostados en la opción ganadora, $Q_c = Q_s = 1$.
+%
+Si bien en este caso no habría ningún incentivo para apostar, es interesante en tanto será (a partir del principio de coherencia que veremos en la siguiente sección) la forma natural de evaluar las hipótesis. 
+
+% Parrafo
+
+La tasa de crecimiento individal para cualquier tipo de pago tal que $Q_c > 0$ y $Q_s > 0$ es
 %
 \begin{equation}
 \begin{split}
@@ -1206,37 +1201,91 @@ Para maximizar $r$ tomamos el logaritmo de ambos lados, y buscamos el punto crí
 %
 \begin{equation}
 \begin{split}
-0 &= \frac{d}{db} p \log (b/q) + (1-p) \log ((1-b)/(1-q)) \\
-0 &= \frac{p}{b} - \frac{1-p}{1-b} \\
+0 &= \frac{d}{db} p \log (b \, Q_c) + (1-p) \log ((1-b) \, Q_s) \\
+0 &= \frac{p}{b} + \frac{1-p}{1-b} \\
 p &= b 
 \end{split}
 \end{equation}
 %
-Sin importar el pago que elija la casa de apuestas, individualmente la tasa de crecimiento siempre se maximiza dividiendo los recursos en la misma proproción que la probabildad real.
+Sin importar el pago que elija la casa de apuestas, individualmente la tasa de crecimiento siempre se maximiza dividiendo los recursos en la misma proproción que la frecuencia típica $p$.
+%
+Pero no sólo pasa esto con el máximo, la derivada de la función tampoco depende de los pagos que ofrezca la casa de apuestas.
 %
 Este resultado Kelly lo escribe con un signo de admiración.
 %
 \begin{quotation}
 That is, \emph{the gambler ignores the posted odds} in placing his bets!
 \end{quotation}
+
+% Parrafo
+
+En este proceso antagónico ambos agentes pueden descubrir la verdadera probabilidad a partir de la ignoracia mutua, sin necesidad de que nadie conozca la probabilidad real.
 %
-Del mismo modo, la casa de apuestas maximiza su tasa de crecimiento cuando $q=p$, ignorando el monto de las apuestas
+A través de los resultados obtenidos en un juegos de apuestas podemos realizar ``inferencia''.
+% 
+El uso de las funciones de costo definidas de forma para resolver problemas de aprendizaje estadísitico es una práctica común.
+%
+El problema general del enfoque basado en funciones de costo ad-hoc tiene que ver con la influencia no deseada que decisiones arbitrarias tienen sobre las distribución de los recursos entre las hipótesis y por lo tanto sobre el resultado final de la inferencia.
+
+% Parrafo
+
+En este sentido, los procesos multiplicativos pueden ser vistos como la función de costo universal.
+%
+A diferencia del resto de las funciones de costo, los procesos multiplicativos tienen la propiedad especial de producir, no solo una distribución de recursos independiente de los pagos arbitrarios elegidos por la casa de apuestas (o les investigadores), sino que garantiza que en tiempo infinito la hipótesis que dividió los recursos en la misma proporción que la frecuencia típica se habrá quedado con todos los recursos que tenían las otras hipótesis.
+%
+Esto es interesante en tanto será todas las axiomatizaciones alternativas de la teoría de la probabilidad llegan a la conclusión de que la forma natural de evaluar las hipótesis es a través de un proceso multiplicativo, la ``regla del producto''.
+
+% Parrafo
+
+En la sección anterior analizamos las consecuencias de algunos sistemas multiplicativos.
+%
+Individualmente encontramos una ventaja a favor de lo que llamamos estrategias ``equilibradas'', que dividen los recursos en la misma proporción que la frecuencia $p$ (verificado nuevamente en esta sección).
+%
+Pero además observamos una ventaja a favor de los comportamientos cooperativos: una grupo de agentes, reduciendo las fluctuaciones individuales a través de un fondo común, logran aumentar la tasas de crecimiento hasta alcanzar, en grupos grandes, tasas equivalente al promedio aritmético de los pagos que siempre es mayor que el óptimo individual.
+%
+Pero además, una vez que surge la cooperación, el grupo de agentes puede obtener una tasa de crecimiento aún mayor a través de la especialización, asignando más recursos que al estado más frecuente de lo que conviene según la frecuencia típica $p$. 
+
+% Parrafo
+
+La capacidad de aumentar la tasa de crecimiento a través de la cooperación y la especialización no fue analizada por Kelly, lo que abre las siguientes preguntas.
+%
+¿Existe un conjunto de pagos $Q_c$ y $Q_s$ que garantice la coexistencia en el tiempo entre la casa de apuestas y una población de apostadoras, o siempre se puede hacer quebrar a la casa de apuestas a través de la cooperación y la especialización?
+
+% Parrafo
+
+Para analizar las apuestas óptimas en grupos coopertaivos debemos analizar el comportamiento del fondo común del cual dependen sus miembros.
+%
+En cada ronda, una cantidad $n_c$ de miembros van a recibir Caras y una cantidad $n_s$ va a recibir Secas.
+%
+El fondo común en un tiempo $t+1$ es la suma de todos los recursos individuales en el tiempo $t$.
+%
+Cuando el tamaño del grupo tiende a infinito, la cuota que se recibe del fondo común $\omega_{t+1}$ es equivalente al promedio de los estados.
 %
 \begin{equation}
 \begin{split}
-0 &= \frac{d}{dq} p \log (b/q) + (1-p) \log ((1-b)/(1-q)) \\
-0 &= - pq + (1-p)(1-q) \\
-p &= q 
+\lim_{N \rightarrow \infty} N \omega_{t+1} &= (\omega_t \, b \, Q_c ) \, n_c + (\omega_t \, (1-b) \, Q_s ) \, n_s \\
+ \omega_{t+1} &=  \omega_t \, \underbrace{\left(  b \, Q_c \, p +  (1-b) \, Q_s \, (1-p) \right)}_{\text{Tasa de crecimiento } r} 
 \end{split}
 \end{equation}
 %
-En este proceso antagónico ambos agentes pueden descubrir por experiencia individual la verdadera probabilidad a partir de la ignoracia total, sin necesidad de que nadie conozca la probabilidad real.
-
-\todo[inline]{Lo mismo ocurre con una comisión del 100\% o con cualquier pago arbitrario.}
-
-\todo[inline]{Simbiosis y función de costo universal}
+Si el pago es recíproco, $Q_c = 1/p$ y $Q_s = 1/(1-p)$, la tasa de crecimiento de la cuota del fondo común siempre vale $1$, más allá de la apuesta $b$ que elija el grupo coopertaivo!
+\begin{equation}
+\begin{split}
+r &=  b \, \frac{1}{p} \, p +  (1-b) \, \frac{1}{1-p} \, (1-p) = b + (1 - b) = 1
+\end{split}
+\end{equation}
+%
+Cooperar tiene una ventaja respecto de jugar individualmente, no importa si la apuesta es incorrecta, los individuos del grupo cooperativo nunca pierden.
 
 % Parrafo
+
+Los pago recíprocos garantizan entonces la coexistencia de una casa de apuestas con un grupo cooperativo.
+%
+Todo otro pago que ofrezca la casa de apuestas puede ser aprovechado por el grupo cooperativo.
+%
+Y a través de la especialización podrán obtener una tasa de crecimiento mayor que los agentes individuales, como vimos en la sección anterior.
+%
+Si bien la cooperación es útil para reducir fluctuaciones y aumentar la tasa de crecimiento en un juego de apuestas, jugar de forma cooperativa elimina la propiedad fundamental que hace de los procesos multiplicativos un función de costo útil como mecanismo de inferencia: la apuesta óptima ya no será aquella que divide los recursos en la misma proporción que la frecuencia típica.
 
 
 % % 
