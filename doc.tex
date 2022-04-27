@@ -1484,17 +1484,15 @@ Y a través de la especialización podrán obtener una tasa de crecimiento mayor
 %
 Si bien la cooperación es útil para reducir fluctuaciones y aumentar la tasa de crecimiento en un juego de apuestas, jugar de forma cooperativa elimina la propiedad fundamental que hace de los procesos multiplicativos un función de costo útil como mecanismo de inferencia: la apuesta óptima ya no será aquella que divide los recursos en la misma proporción que la frecuencia típica.
 
+\section{Coexistencia}
 
-% % 
-% % % Parrafo
-% % 
-% % En la historia de la vida, no sólo hay una ventaja a favor de la cooperación.
+En la historia de la vida, no sólo hay una ventaja a favor de la cooperación y la especialización.
+%
+También se observa una ventaja a favor de la coexistencia entre entidades competitivas.
+%
+Los ecosistemas pueden ser vistos como intercambios que garantizan la coexistencia entre partes competitivas.
 % % %
-% % También se observa una ventaja a favor de la coexistencia entre entidades competitivas.
-% % %
-% % Los ecosistemas pueden ser vistos como intercambios que garantizan la coexistencia entre partes competitivas.
-% % %
-% % Todos los animales, desde los insectos a los mamíferos, somos heterótrofos, necesitamos aliemtarnos de otros seres vivos y por lo tanto necesitamos coexistir con ellos para garantizar nuestra propia vida.
+Todos los animales, desde los insectos a los mamíferos, somos heterótrofos, necesitamos aliementarnos de otros seres vivos y por lo tanto necesitamos coexistir con ellos para garantizar nuestra propia vida.
 % % 
 % % % Parrafo
 % % 
@@ -1506,9 +1504,9 @@ Si bien la cooperación es útil para reducir fluctuaciones y aumentar la tasa d
 % % 
 % % % Parrafo
 % % 
-% % La coexistencia no sólo es importante en términos biológicos, también lo es en términos culturales.
-% % %
-% % Esto ha generado la emergencia de un obligación cultural de dar y de recibir, de caracter universal.
+La coexistencia no sólo es importante en términos biológicos, también lo es en términos culturales.
+%
+Esto ha generado la emergencia de un obligación cultural de dar y de recibir, de caracter universal.
 % % %
 % % En todos los pueblos del mundo, recibir un regalo o un favor activa un ciclo la obligación recíproca para devolver de alguna forma lo recibido.
 % % %
@@ -1516,7 +1514,7 @@ Si bien la cooperación es útil para reducir fluctuaciones y aumentar la tasa d
 % % 
 % % % Parrafo
 % % 
-% % La ruptura de la coexistencia intercultural produjo procesos de involución cultural como los registrados en Tasmania y en Europa occidental durante la Edad Media.
+La ruptura de la coexistencia intercultural produjo procesos de involución cultural como los registrados en Tasmania y en Europa occidental durante la Edad Media.
 % % %
 % % Si bien la integración intercultural de la modernidad produjo una acelearación de innovaciones científicas y técnicas, el proceso colonial asociado produjo inició una era global de genocidios y masiva pérdida de diversidad cultural.
 % % %
@@ -1532,7 +1530,7 @@ Si bien la cooperación es útil para reducir fluctuaciones y aumentar la tasa d
 % % % %
 % % % 
 % % % 
-% % % Quizá la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
+Quizá la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
 % % % 
 % % % 
 % % % Los pueblos bien adaptados para la coexistencia intercultural y ecológica practican cosmovisiones basadas en lógicas paraconsistentes que les permite creer en A y no A al mismo tiempo.
@@ -1624,6 +1622,194 @@ Si bien la cooperación es útil para reducir fluctuaciones y aumentar la tasa d
 % % 
 % % % Parrafo
 
+
+% Kelly considera un escenario en el que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca: por cada unidad apostada la casa devuelve $Q$ si ocurre el evento apostado y $0$ en caso contrario.
+% %
+% La pregunta que él se hace es: ¿Cuál es la mejor forma de apostar?
+% 
+% % Parrafo
+% 
+% Supongamos que se conoce la frecuencia típica $p$ de Cara, y $1-p$ de Seca de una moneda.
+% %
+% El juego propuesto por Kelly entre la casa de apuestas y les apostadores sigue las reglas típicas de la vida real.
+% %
+% Toda persona comienza con una riqueza $\omega_0$.
+% % %
+% En cada ronda, la persona apuesta una proporción $b_c$ a Cara y $b_s$ a Seca.
+% 
+% % Parrafo
+% 
+% Hay dos formas de apostar.
+% %
+% La primera es apostar a una única de las dos opciones, por ejemplo a Caras.
+% %
+% En este escenario, la persona asigna un valor $ 1 \geq b_c = l > 0 $ a Caras y $b_s = 0$ a secas.
+% %
+% Supongamos que en la primera sale Cara y en la segunda Seca.
+% %
+% La riqueza en la primera es el ahorro $1-l$ más el pago que obtiene por lo apostado en Cara $l \, Q_c$.
+% %
+% Y en la segunda vuelta, cuando sale Seca, la riqueza es solo el ahorro, lo no apostado a Cara $1-l$.
+% %
+% \begin{equation}
+% \omega_T = \underbrace{\overbrace{(\omega_0 \, (1-l) + \omega_0 \, l \, Q_c )}^{\omega_1} \, (1-l)}_{\omega_2} \,\dots
+% \end{equation}
+% %
+% Lo que podemos reescribir como,
+% %
+% \begin{equation}
+% \begin{split}
+% \omega_T &= \omega_0 \, ((1-l) + \, l \, Q_c ) \, (1-l) \, \dots \\
+%  &= \omega_0 \, ( (1-l) + \, l \, Q_c )^{n_c} \, (1-l)^{n_s} 
+% \end{split}
+% \end{equation}
+% %
+% donde $n_c + n_s = T$ son la cantidad de veces que salió Cara y Seca en los $T$ pasos.
+% %
+% Es decir, la riqueza se actualiza siguiendo un proceso multiplicativo.
+% 
+% % Parrafo
+% 
+% La otra forma de apostar consiste en utilizar todos los recursos en cada vuelta, poniendo $b_c = b$ en Cara y el resto en Seca $b_s = (1-b)$.
+% %
+% En este caso la riqueza se actualiza como,
+% %
+% \begin{equation} \label{eq:kelly_paraconsistente}
+% \omega_T = \underbrace{\overbrace{(\omega_0 \, b \, Q_c)}^{\omega_1} \,  (1-b) \, Q_s}_{\omega_2} \dots = \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s}
+% \end{equation}
+% %
+% No sólo las dos formas de apostar actualizan los recursos a través de un proceso multiplicativo. 
+% %
+% No es difícil demostrar que siempre existe una equivalencia.
+% %
+% Por ello, de aquí en adelante analizaremos únicamente esta última forma de apuestar, la que utiliza todos los recursos en cada vuelta.
+% 
+% % Parrafo
+% 
+% ¿Cuáles son los pagos que puede ofrecer una casa de apuestas?
+% %
+% Supongamos que la casa de apuestas ofrece pagos basados en el principio de reciprocidad analizados por Pascal y Fermat (figura \ref{fig:pascal-fermat}).
+% %
+% Según este principio, la pago justa debe ser inversamente proporcional a la probabilidad.
+% %
+% Por ejemplo, si la probabilidad de Seca es $(1-p) = 1/4$, y apostamos una unidad a Seca en cada vuelta, $3$ de cada $4$ veces vamos a perder y solo una vamos a ganar.
+% %
+% Luego, para que el intercambio sea ``justo'' (nadie gane), la casa de apuestas tiene que multiplicar por $Q_s = 4$ el valor apostado a Secas.
+% %
+% Lo mismo ocurre en Caras, $Q_c = 1/p$.
+% 
+% % Parrafo
+% 
+% En general, la casa de apuesta puede ofrecer cualquier tipo de pago.
+% %
+% Por ejemplo, pagos justos pero sesgados, basados en una probabilidad $q$ distinta de $p$, $Q_c = 1/q$ y $Q_s = 1/(1-q)$.
+% %
+% O incluso ofrecer pagos sesgados, basados en $q$, y no recíprocos que incluyen una comisión $c$, $Q_c = (1/q)\,(q\,c)$, $Q_c = (1/(1-q))\,((1-q)\,c)$.
+% %
+% Cuando $c = 1$, la comisión es total y tanto en Cara como en Seca la casa de apuestas simplemente devuelve los recursos apostados en la opción ganadora, $Q_c = Q_s = 1$.
+% %
+% Si bien en este caso no habría ningún incentivo para apostar, es interesante en tanto será (a partir del principio de coherencia que veremos en la siguiente sección) la forma natural de evaluar las hipótesis. 
+% 
+% % Parrafo
+% 
+% La tasa de crecimiento individal para cualquier tipo de pago tal que $Q_c > 0$ y $Q_s > 0$ es
+% %
+% \begin{equation}
+% \begin{split}
+% \lim_{T \rightarrow \infty } (\omega_0 \, r)^T &= \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s} \\
+% r &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^{\frac{n_s}{T}} = (b \, Q_c)^{p} ((1-b) \, Q_s )^{1-p}
+% \end{split}
+% \end{equation}
+% %
+% Para maximizar $r$ tomamos el logaritmo de ambos lados, y buscamos el punto crítico de esta función cóncava,
+% %
+% \begin{equation}
+% \begin{split}
+% 0 &= \frac{d}{db} p \log (b \, Q_c) + (1-p) \log ((1-b) \, Q_s) \\
+% 0 &= \frac{p}{b} + \frac{1-p}{1-b} \\
+% p &= b 
+% \end{split}
+% \end{equation}
+% %
+% Sin importar el pago que elija la casa de apuestas, individualmente la tasa de crecimiento siempre se maximiza dividiendo los recursos en la misma proproción que la frecuencia típica $p$.
+% %
+% Pero no sólo pasa esto con el máximo, la derivada de la función tampoco depende de los pagos que ofrezca la casa de apuestas.
+% %
+% Este resultado Kelly lo escribe con un signo de admiración.
+% %
+% \begin{quotation}
+% That is, \emph{the gambler ignores the posted odds} in placing his bets!
+% \end{quotation}
+% 
+% % Parrafo
+% 
+% En este proceso antagónico ambos agentes pueden descubrir la verdadera probabilidad a partir de la ignoracia mutua, sin necesidad de que nadie conozca la probabilidad real.
+% %
+% A través de los resultados obtenidos en un juegos de apuestas podemos realizar ``inferencia''.
+% % 
+% El uso de las funciones de costo definidas de forma para resolver problemas de aprendizaje estadísitico es una práctica común.
+% %
+% El problema general del enfoque basado en funciones de costo ad-hoc tiene que ver con la influencia no deseada que decisiones arbitrarias tienen sobre las distribución de los recursos entre las hipótesis y por lo tanto sobre el resultado final de la inferencia.
+% 
+% % Parrafo
+% 
+% En este sentido, los procesos multiplicativos pueden ser vistos como la función de costo universal.
+% %
+% A diferencia del resto de las funciones de costo, los procesos multiplicativos tienen la propiedad especial de producir, no solo una distribución de recursos independiente de los pagos arbitrarios elegidos por la casa de apuestas (o les investigadores), sino que garantiza que en tiempo infinito la hipótesis que dividió los recursos en la misma proporción que la frecuencia típica se habrá quedado con todos los recursos que tenían las otras hipótesis.
+% %
+% Esto es interesante en tanto será todas las axiomatizaciones alternativas de la teoría de la probabilidad llegan a la conclusión de que la forma natural de evaluar las hipótesis es a través de un proceso multiplicativo, la ``regla del producto''.
+% 
+% % Parrafo
+% 
+% En la sección anterior analizamos las consecuencias de algunos sistemas multiplicativos.
+% %
+% Individualmente encontramos una ventaja a favor de lo que llamamos estrategias ``equilibradas'', que dividen los recursos en la misma proporción que la frecuencia $p$ (verificado nuevamente en esta sección).
+% %
+% Pero además observamos una ventaja a favor de los comportamientos cooperativos: una grupo de agentes, reduciendo las fluctuaciones individuales a través de un fondo común, logran aumentar la tasas de crecimiento hasta alcanzar, en grupos grandes, tasas equivalente al promedio aritmético de los pagos que siempre es mayor que el óptimo individual.
+% %
+% Pero además, una vez que surge la cooperación, el grupo de agentes puede obtener una tasa de crecimiento aún mayor a través de la especialización, asignando más recursos que al estado más frecuente de lo que conviene según la frecuencia típica $p$. 
+% 
+% % Parrafo
+% 
+% La capacidad de aumentar la tasa de crecimiento a través de la cooperación y la especialización no fue analizada por Kelly, lo que abre las siguientes preguntas.
+% %
+% ¿Existe un conjunto de pagos $Q_c$ y $Q_s$ que garantice la coexistencia en el tiempo entre la casa de apuestas y una población de apostadoras, o siempre se puede hacer quebrar a la casa de apuestas a través de la cooperación y la especialización?
+% 
+% % Parrafo
+% 
+% Para analizar las apuestas óptimas en grupos coopertaivos debemos analizar el comportamiento del fondo común del cual dependen sus miembros.
+% %
+% En cada ronda, una cantidad $n_c$ de miembros van a recibir Caras y una cantidad $n_s$ va a recibir Secas.
+% %
+% El fondo común en un tiempo $t+1$ es la suma de todos los recursos individuales en el tiempo $t$.
+% %
+% Cuando el tamaño del grupo tiende a infinito, la cuota que se recibe del fondo común $\omega_{t+1}$ es equivalente al promedio de los estados.
+% %
+% \begin{equation}
+% \begin{split}
+% \lim_{N \rightarrow \infty} N \omega_{t+1} &= (\omega_t \, b \, Q_c ) \, n_c + (\omega_t \, (1-b) \, Q_s ) \, n_s \\
+%  \omega_{t+1} &=  \omega_t \, \underbrace{\left(  b \, Q_c \, p +  (1-b) \, Q_s \, (1-p) \right)}_{\text{Tasa de crecimiento } r} 
+% \end{split}
+% \end{equation}
+% %
+% Si el pago es recíproco, $Q_c = 1/p$ y $Q_s = 1/(1-p)$, la tasa de crecimiento de la cuota del fondo común siempre vale $1$, más allá de la apuesta $b$ que elija el grupo coopertaivo!
+% \begin{equation}
+% \begin{split}
+% r &=  b \, \frac{1}{p} \, p +  (1-b) \, \frac{1}{1-p} \, (1-p) = b + (1 - b) = 1
+% \end{split}
+% \end{equation}
+% %
+% Cooperar tiene una ventaja respecto de jugar individualmente, no importa si la apuesta es incorrecta, los individuos del grupo cooperativo nunca pierden.
+% 
+% % Parrafo
+% 
+% Los pago recíprocos garantizan entonces la coexistencia de una casa de apuestas con un grupo cooperativo.
+% %
+% Todo otro pago que ofrezca la casa de apuestas puede ser aprovechado por el grupo cooperativo.
+% %
+% Y a través de la especialización podrán obtener una tasa de crecimiento mayor que los agentes individuales, como vimos en la sección anterior.
+% %
+% Si bien la cooperación es útil para reducir fluctuaciones y aumentar la tasa de crecimiento en un juego de apuestas, jugar de forma cooperativa elimina la propiedad fundamental que hace de los procesos multiplicativos un función de costo útil como mecanismo de inferencia: la apuesta óptima ya no será aquella que divide los recursos en la misma proporción que la frecuencia típica.
 
 
 
@@ -2420,7 +2606,7 @@ En ambos modelos la creencia honesta sobre el regalos, sin importar el valor que
 \caption{Creencia marginal sobre el regalo en ambos modelos causales. }
 \end{figure}
 
-\subsection{Principio de coherencia} % (dados los datos de base empírica)
+\subsection{Principio de coherencia} \label{sec:principio_choerencia} % (dados los datos de base empírica)
 
 El principio de indiferencia nos permitió definir la creencia conjunta honesta dividiendo las creencias en partes iguales por cada bifurcación del modelo causal.
 %
@@ -2736,26 +2922,26 @@ Los diferentes factores del teorema de Bayes han recibido nombres a lo largo de 
 
 El \emph{prior} es la distribución de creencia inicial de las hipótesis dado el modelo causal antes de ver los datos.
 %
-En la sección anterior hemos visto un principio intercultural que nos permite alcanzar un primer acuerdo intersubjetivo en estos contextos de incertidumbre.
+En la sección \emph{\nameref{sec:principio_indiferencia}} hemos visto un criterio intercultural que nos permite alcanzar un primer acuerdo intersubjetivo en contextos de incertidumbre.
 %
-Los enfoques de la teoría de la probabilidad que rechazan todo criterio para definir distribuciones de creencias iniciales, como el ``frecuentista'', se ven impedidos de utilizar el teorema de Bayes.
+El enfoque ``frecuentista'' de la teoría de la probabilidad que rechaza todo criterio para definir distribuciones de creencias iniciales se ve impedido de utilizar el teorema de Bayes.
 %
-Como consecuencia de no poder ofrecer distribuciones de probabilidad sobre todo el espacio de hipótesis, el enfoque frecuentista selecciona una única hipótesis (estimación puntual) en base a funciones de costo ad-hoc, siendo las más común la maximización de la verosimilitud.
+Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hipótesis, seleccionan una única hipótesis (estimación puntual) en base a funciones de costo ad-hoc, siendo las más común la maximización de la verosimilitud.
 
 \subsubsection*{Verosimilitud}
 
-La \emph{verosimilitud} es la predicción del dato cuando la hipótesis que estamos evaluando es cierta.
+La \emph{verosimilitud} es la predicción del dato observado cuando suponemos que la hipótesis que estamos evaluando es cierta.
 %
-Veamos cuál es la verosimilitud, $P(s2|r_i, \text{Modelo A})$, la probabilidad de que la pista señale la caja $2$ en el modelo de Monty Hall dado que el regalo está en la caja $r_i$.
+Veamos cuál es la verosimilitud, $P(s2|r_i, \text{Modelo B})$, la probabilidad de que la pista haya señalado la caja $2$ en el modelo de Monty Hall para las diferentes posibles posiciones del regalo $r_i$.
 %
 \begin{figure}[ht!]
-\begin{subfigure}[c]{0.7\textwidth}
+\begin{subfigure}[b]{0.7\textwidth}
 \centering
 \tikz{
 \phantom{\node[latent, draw=white, yshift=0.8cm] (b0) {$1$};}
-\node[latent,below=of b0,yshift=0.8cm, xshift=-3cm] (r1) {$r_1$};
+\node[latent,below=of b0,yshift=0.8cm, xshift=-2.5cm] (r1) {$r_1$};
 \node[latent,below=of b0,yshift=0.8cm] (r2) {$r_2$};
-\node[latent,below=of b0,yshift=0.8cm, xshift=3cm] (r3) {$r_3$};
+\node[latent,below=of b0,yshift=0.8cm, xshift=1.8cm] (r3) {$r_3$};
 
 \node[latent, below=of r1, draw=white, yshift=0.8cm] (br1) {$1$};
 \node[latent, below=of r2, draw=white, yshift=0.8cm] (br2) {$1$};
@@ -2782,81 +2968,185 @@ Veamos cuál es la verosimilitud, $P(s2|r_i, \text{Modelo A})$, la probabilidad 
 \edge[-] {r2d3} {br2d3};
 \edge[-] {r3d2} {br3d2};
 }
+\caption{Modelos causales B cuando conocemos la posición del regalo.}
 \end{subfigure}
-\begin{subfigure}[c]{0.29\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \centering
- $P(s_2|r_i)$   
+ $P(s_2|r_i,\text{Modelo B})$   
  
  \begin{tabular}{c|c|c|c} \setlength\tabcolsep{0.4cm} 
           & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, \\ \hline 
    $s_2$ & $1/2$ & $0$ & $1$  \\ \hline
 \end{tabular}
-\end{subfigure}    
+\vspace{1cm}
+\caption{Verosimilitud}
+\end{subfigure}   
+\caption{Predicción del dato observado dado que el modelo causal B y la hipótesis son ciertas. }
 \end{figure}
+
+%
+
+Cuando el regalo está en la misma posición que la caja elegida $r=c=1$, el modelo causal permite que la pista señale cualquiera de la otras dos cajas, por lo que la creencia a priori de que la caja señalada sea la $s=2$ es $1/2$.
+%
+Cuando el regalo está en una caja distinta a la elegida $r\neq c$, el modelo causal limita la pista a una única caja.
+%
+Si el regalo está en la caja $r=2$, la creencia a priori de que la caja señalada sea la $s=2$ es $0$.
+%
+Y si el regalo está en la caja $r=3$, la creencia a priori de que la caja señalada sea la $s=2$ es $1$.
 
 \subsubsection*{Posterior}
 
+En la sección \emph{\nameref{sec:principio_choerencia}} vimos que la nueva creencia no es más que la creencia previa que sigue siendo compatible con el dato.
+%
+El teorema de Bayes nos permite ahora reconocer que la sorpresa que produce el dato observado es lo que actúa como filtro de las creencias previas.
+%
+Debido a que el denominador del teorema de Bayes es constante, la distribución de creencias a posteriori es proporcional al producto entre el prior y la verosimilitud.
+%
+\begin{table}[ht!]
+\centering
+
+$P(r_i|s_2, \text{M}_B) \propto P(r_i| \text{M}_B) P(s_2|r_i, \text{M}_B) $ \\[0.2cm]
+
+\begin{tabular}{l|c|c|c} \setlength\tabcolsep{0.4cm} 
+          & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, \\ \hline 
+   $P(s_2|r_i,\text{M}_B)$ & $1/2$ & $0$ & $1$  \\ \hline
+   $P(r_i,\text{M}_B)$ & $1/3$ & $1/3$ & $1/3$  \\ \hline
+   $P(r_i|s_2,\text{M}_B) \propto$ & $1/6$ & $0$ & $1/3$\\ \hline
+\end{tabular}
+\end{table}
+
+% Parrafo
+
+Como las verosimilitudes son predicciones, sus valores van entre $0$ y $1$.
+%
+Si la hipótesis $r=2$ fuera cierta, la sorpresa producida cuando observamos que la pista señala la caja $s=2$ sería total.
+%
+En ese caso, como la predicción del dato observado es $0$, nada del la creencia priori sobre $r=2$ pasa a la creencia a posteriori.
+%
+So la hipótesis $r=3$ fuera cierta, la sorpresa producida cuando observamos que la pista señala la caja $s=2$ es nula.
+%
+En ese caso, como la predicción del dato observado es $1$, toda la creencia priori sobre $r=2$ pasa a la creencia a posteriori.
+
+% Parrafo
+
+En inferencia Bayesiana entonces, la verosimilitud funciona como el filtro de las creencias previas. 
+
 \subsubsection*{Evidencia}
 
-\subsection{Interpretación ontológica (frecuentista) de la teoría de la probabilidad}
+De forma similar a la verosimilitud, la evidencia es una predicción a priori del dato observado, pere que está hecha con la contribución de todas las hipótesis.
+%
+Por la reglas de la probabilidad, el denominador del teorema de Bayes puede expresarse como una suma sobre todos los posibles valores del numerador, uno por cada hipótesis.
+%
+Esto hace que la evidencia sea constante para las diferentes hipótesis, por lo que puede ser ignorado cuando se comparan hipótesis alternativas.
+%
+Sin embargo, la evidencia va a ser distinta para los diferentes modelos.
+%
+En el modelo B la predicción a priori de que la caja señalada sea $s=2$, integrando todas las hipótesis, es $1/2$. 
+%
+\begin{equation}
+P(s_2|M_B) = \sum_i P(s_2|r_i, M_B) P(r_i, M_B) = \frac{1}{2} \frac{1}{3} + 0 \frac{1}{3} + \frac{1}{1} \frac{1}{3} = 1/2 
+\end{equation}
+%
+Mientras que en el modelo A la predicción a priori de que la caja señalada sea $s=2$, integrando todas las hipótesis, es $1/3$. 
+%
+\begin{equation}
+P(s_2|M_A) = \sum_i P(s_2,r_i| M_A) = 1/3 
+\end{equation}
+%
+Lo que ya había sido calculado previamente en las marginales de la tabla \ref{tab:creencia_marginal}.
+
+% Parrafo
+
+La evidencia será de interés cuando queramos evaluar modelos causales alternativos.
+%
+En la sección \ref{sec:modelos_alternativos} mostramos en un ejemplo cómo deben evaluarse modelos causales alternativos aplicando estrictamente las reglas de la probabilidad.
+
+
+\subsection{Notas sobre las interpretaciones de la probabilidad}
 % 
 % \subsection{La escuela naturalista (frecuentista)}
 % 
 % \subsection{La escuela epistémica (Bayesiana)}
 
-
+Incluso las ciencias matemáticas, en contacto con problemas empíricos, produjo diversas escuelas de pensamiento a pesar de estar regidas supuestamente bajo las mismas reglas teóricas.
+%
 La justificación axiomática de la teoría de la probabilidad no ha sido suficiente para unificar su interpretación.
-En contacto con problemas empíricos surgieron, incluso en las ciencias matemáticas, dos escuelas de pensamiento regidas supuestamente bajo las mismas reglas teóricas.
-El debate filosófico de fondo tiene que ver con la solución que ambas escuelas le dan al problema de la contradicción: la epistémica (bayesiana) y la ontológica (frecuentista).
+%
+El debate filosófico de fondo respecto de las interpretaciones de la probabilidad tiene que ver con la solución que las dos principales escuelas le dieron al problema de la contradicción: la epistémica (bayesiana) y la ontológica (frecuentista).
+
+% Parrafo
 
 En el siglo 18 el concepto de probabilidad comenzó a usarse en Europa para expresar creencias contradictorias en contextos de incertidumbre.
-Este es el caso de Laplace quién, al tener la convicción de que el mundo era determinista, no podía más que utilizar la probabilidad para expresar su incertidumbre asignando simultaneamente grados de creencia a hipótesis mutuamente contradictorias.
-En un mundo determinista no es posible que A y no A ocurran al mismo tiempo, o lo que es lo mismo, que potencialmente puedan ocurrir dadas exactamente las mismas condiciones iniciales del mundo.
+%
+Laplace, quién tenía la convicción de que el mundo era determinista, no podía más que utilizar la probabilidad para expresar grados de creencia a hipótesis mutuamente contradictorias.
+%
+En un mundo determinista no es posible que A y no A puedan ocurrir dadas exactamente las mismas condiciones iniciales del mundo.
+%
 Bajo este marco, la contradicción de creer simultanemente en A y no A es sólo una expresión de nuestra incertidumbre.
-Esta es la solución epistémica de la contradicción, pues más allá de que Laplace tuviera la convicción de que el mundo fuera determinista, nada dice de la naturaleza del mundo.
+%
+Más allá de la creencia particular de Laplace, la solución epistémica de la contradicción nada dice de la naturaleza (u ontología) del mundo.
 
-La solución epistémica, que proponía creer simultaneamente en hipótesis mutuamente contradictorias, fue el motivo por el cual la corriente bayesiana de la toería de la probabilidad fue tan combatida a finales del siglo 19 y durante casi todo el siglo 20.
+% Parrafo
+
+La solución epistémica, que proponía creer simultaneamente en hipótesis mutuamente contradictorias, fue el motivo por el cual la corriente bayesiana de la teoría de la probabilidad fue tan combatida a finales del siglo 19 y durante casi todo el siglo 20.
+%
+A diferencia de las tradiciones filosóficas de origen oriental y americano, que ya admitían algún tipo de contradicción en su sistema de creencias, la tradición filosófica Europea la rechazaba por completo.
+
+% Parrafo
 
 La escuela frecuentista, tal como se enseña en la materia probabilidad y estadísitica de la facultad de ciencias exactas y naturales, define a la probabilidad como el número al que tiende una frecuencia obtenida luego de realizar varios ``experimentos independientes'' bajo ``las mismas condiciones''.
+%
 Según esta corriente la probabilidad de eventos deterministas, por ejemplo de que exista un planeta no detectado en el sistema solar, es 0 o 1 aunque no conozcamos su valor.
+%
 Sólo los objetos no deterministas, que llaman ``variables aleatorias'', tienen valores intermedios que representan la frecuencia en la que los diferentes estado del universo se producen a partir de exactamente las mismas condiciones inciales.
-De esta forma, la contradicción se propone como una propiedad externa al sistema lógico propia de la naturaleza del mundo.
-Esta es la solución ontólógica del mundo.
-
-
-(SIN TERMINAR)
-%La escuela frecuentista, a diferencia de la bayesiana, se ve obligada a afirmar la naturaleza determinsta o aleatoria del mundo.
-% 
-% El enfoque frecuentista es el que mejor se adapta a los métodos de validación de las ciencias formales: dadas un conjunto de \emph{hipótesis axiomáticas} que no se demuestran y aplicando las reglas de la probabilidad llegan a conclusiones (probabiilidades estimadas) 
-% 
-% El esfuerzo por eliminar la contradicción del sistema lógico produjo una serie de 
-
+%
+De esta forma, la contradicción se propone como una propiedad externa al sistema lógico, propia de la naturaleza del mundo.
+%
+La escuela frecuentista, para evitar la contradicción en sus sistema lógico, se ve obligada a afirmar la naturaleza aleatoria del mundo, lo que representa una la solución ontólógica de la contracción.
 
 \section{La función de costo epistémica universal}
 
+Lo que veremos en esta sección es que la natrualeza multiplicativa de los procesos de selección evolutiva y probabilistica tiene una serie de propiedades que garantizan la adquisición de conocimiento empírico.
 
+% Parrafo
+
+La interpretación ontológica de la teoría de la probabilidad, al rechazar la contradicción epistémica, se ve impedida de definir probabilidades iniciales no justificadas observacionalmente (prior), y por lo tanto de utilizar el teorema de Bayes.
+%
+Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hipótesis, el enfoque frecuentista suele seleccionar una única hipótesis (estimación puntual) en base a funciones de costo ad-hoc.
+%
+La función de costo más utilizada por la corriente frecuentista es la maximización de la verosimilitud.
+%
+Este enfoque a mostrado tener una serie de problemas siendo el más conocido el problema del sobreajuste (o overfitting).
+%
+Para corregir este problema se han desarrollado otras funciones de costo ad-hoc que incluyen la penalización por complejidad del modelo, y la separación de los datos con objetivos de ``entrenamiento'' y ``validación''.
+%
+A pesar de que estas metodologías permiten desarrollar redes neuronales modernas, ellas sufren en general de problemas de calibración. 
+
+% Parrafo
 
 John Larry Kelly (Jr) comienza en su artículo ``A New Interpretation of Information Rate'' para los laboratorios Bell (1956) diciendo, 
-
+%
 \begin{quotation}
 The author believes that [the cost function approach] it is too general to shed any light on the specific problems of communication theory. (...). The point here is that an arbitrary combination of a statistical transducer (i.e., a channel) and a cost function does not necessarily constitute a communication system. (...). The situation which will be chosen here is one in which a gambler uses knowledge of the received symbols of a communication channel in order to make profitable bets on the transmitted symbols.
 \end{quotation}
+%
+En otras palabras, no toda función de costo garantiza la adquisición de conocimiento empírico.
 
+% Parrafo
 
+Kelly considera un escenario en el que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca: por cada unidad apostada la casa devuelve $Q$ si ocurre el evento apostado y $0$ en caso contrario.
+%
+La pregunta que él se hace es: ¿Cuál es la mejor forma de apostar?
 
-% Supongamos que se conoce la frecuencia típica $p$ de Cara, y $1-p$ de Seca de una moneda.
+% Parrafo
+
+Supongamos que se conoce la frecuencia típica $p$ de Cara, y $1-p$ de Seca de una moneda.
+%
+El juego propuesto por Kelly entre la casa de apuestas y les apostadores sigue las reglas típicas de la vida real.
+%
+Toda persona comienza con una riqueza $\omega_0$.
 % %
-% Kelly considera un escenario en el que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca: por cada unidad apostada la casa devuelve $Q$ si ocurre el evento apostado y $0$ en caso contrario.
-% %
-% La pregunta que él se hace es: ¿Cuál es la mejor forma de apostar?
-% 
-% % Parrafo
-% 
-% El juego propuesto por Kelly entre la casa de apuestas y les apostadores sigue las reglas típicas de la vida real.
-% %
-% Toda persona comienza con una riqueza $\omega_0$.
-% %
-% En cada ronda, la persona apuesta una proporción $b_c$ a Cara y $b_s$ a Seca.
+En cada ronda, la persona apuesta una proporción $b_c$ a Cara y $b_s$ a Seca.
 % 
 % % Parrafo
 % 
