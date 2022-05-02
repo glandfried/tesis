@@ -43,6 +43,12 @@
 \usepackage{multirow}
 \input{tikzlibrarybayesnet.code.tex}
 
+\tikzset{
+every picture/.append style={
+  execute at begin picture={\deactivatequoting},
+  execute at end picture={\activatequoting}
+  }
+}
 
 %%%%%% Para no numerar los prefacios, y todo lo que viene antes del capitulo 1. Coimenzar con \frontmatter y volver a abrir con \mainmatter
 \makeatletter
