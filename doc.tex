@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{book}
 \usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
 \usepackage{physics}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \usepackage{fullpage}
@@ -264,7 +265,7 @@ La cultura es un fenómeno poblacional que emerge como consecuencia del intercam
 %
 Esto sugiere que el contexto social, la estabilidad o volatilidad de los vínculos, la estructura de la red de intercambios o el tamaño de la población pueden afectar directa o indirectamente los procesos de aprendiaje social y acumulación cultural de los que dependen los individuos.
 %
-Poner a prueba estas hipótesis se ha visto obstaculizado por falta de datos granulares y longitudinales sobre el comportamiento de todos los individuos de una comunidad en el tiempo y de modelos capaces de ofrecer estimaciones de habilidad inicial fiables que garanticen además la comparabilidad entre estimaciones distantes en el tiempo y el espacio.
+Poner a prueba estas hipótesis se ha visto obstaculizado por falta de datos granulares y longitudinales sobre el comportamiento de todos los individuos de una comunidad en el tiempo y de modelos capaces de ofrecer estimaciones de habilidad que permiten estimar correctamente las curvas de aprendizaje de las personas en el tiempo.
 
 % La teoría de la probabilidad también selecciona las hipótesis a través de procesos multiplicativos: por coherencia, la creencia actual es la creencia previa que siguió siendo compatible con la evidencia.
 % %
@@ -274,25 +275,43 @@ Poner a prueba estas hipótesis se ha visto obstaculizado por falta de datos gra
 
 % Parrafo
 
-La masificación de las computadores personales y la posterior expansión de Internet produjo una explosión en la cantidad y calidad de datos generados por personas en todo el mundo.
+La masificación del poder de cómputo y la posterior expansión de Internet produjo una explosión en la cantidad y calidad de datos generados por personas en todo el mundo.
 %
 Las comunidades virtuales ofrecen nuevos horizontes en la investigación científica sobre comportamientos sociales pues reúnen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
 %
-En esta tesis decidimos estudiar las comunidades que se desarrollan alrededor de los videos juegos, dado que esos escenarios tienen algunas las caracterísiticas que las hacen especialmente interesante para estudiar los problemas de aprendizaje.
+En esta tesis decidimos estudiar las comunidades que se desarrollan alrededor de los videos juegos, dado que esos escenarios tienen algunas las caracterísiticas que las hacen especialmente interesantes para estudiar los problemas de aprendizaje.
 
 % Parrafo
 
-La estimación de habilidad ha sido un problema importante para la industria del video juego.
+Conocer como las personas aprendemos es un problema importante para muchos ámbitos de la vida, desde la educación, el trabjo y el deporte.
 %
-Sin embargo, durante la tesis fue necesario implementar el estimador de habilidad estado-del-arte de la industria del video pues todavía no se encontraba disponible en ninguno de los lenguajes de progrmación con mayor desarrollo como Julia, Python y R.
+En general las investigaciones se han enfocado principalmente en los facotres congnitivos individuales del aprendiaje.
 %
-A diferencia de los estimadores más utilizados en la industria del video juego (como Elo, Glicko y TrueSkill), el modelo TrueSkill Through Time (TTT) propaga toda la información histórica en una única red bayesiana, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad histórica. 
+A pesar de que desde la antropología se señala la importancia que los facotres sociales tienen sobre el aprendizaje, este enfoque no ha recibido la suficiente atención.
 %
+Por ello, en esta tesis decidimos estudiar algunas de las preguntas que permenacen abiertas.
 %
+¿Cómo la formación de grupo afecta al aprendizaje?
+%
+¿Cuál es el efecto que la posición en la red de intercambios tiene sobre el apendizaje?
 
 % Parrafo
 
-Este modelo de nos permitió evaluar hipótesis relativas al aprendizaje social.
+Varios modeles estadísiticos han sido propuestos por la industria del video para la estimación de habilidad.
+%
+Sin embargo, los estimadores más utilizados, como Elo, Glicko y TrueSkill, no son capaces de ofrecer estimaciones de habilidad inicial fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio.
+%
+Por este motivo, durante la tesis fue necesario implementar un modelo (TrueSkill Through Time) que resuelve estos problemas propagando toda la información histórica en una única red bayesiana. 
+%
+Nuestra implementación es la primera disponible en los lenguajes de progrmación con mayor desarrollo científico como Julia, Python y R.
+%
+La mejora se hace evidente a partir de las predicciones a priori, que son varios órdenes de magnitud más precisas que las obtenidas con los modelos mencionados.
+%
+Una algoritmo eficiente permite analizar millones de observaciones usando cualquier ordenador de gama baja.
+
+% Parrafo
+
+A través de este modelo y de los datos de comunidades virtuales pudimos estudiar las preguntas planteadas.
 %
 En primer lugar, para responder cómo la formación de grupo afecta al aprendizaje estudiamos una plataforma de juegos similares al TEG en el que las personas pueden participar individualmente o en equipos.
 %
@@ -304,7 +323,7 @@ En contra de la hipótesis común, que supone que altas conectividades favorecen
 
 % Parrafo
 
-(Frase final) Con esta tesis realizamos los primeros desarrollos en el país en ciencias sociales computacionales, una sub-disciplina que comienza a tener cada vez más crecimiento local y globalmente. 
+Durante el transcurso de esta tesis descubrimos el enorme potencial que la inferencia bayesiana y causal tiene para las ciencias sociales y las ciencias de datos en general.
 
 \vspace{0.3cm}
 
