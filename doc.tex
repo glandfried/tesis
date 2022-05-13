@@ -382,13 +382,11 @@ Our exceptional cognitive ability to imitate, combined with long periods of juve
 \mainmatter
 
 
+\chapter{Evolución: las verdades empíricas} \label{ch:evo}
 
-\chapter{Evoluci\'on: sistemas naturales de procesamiento distribuido de informaci\'on} \label{ch:evo}
+\section{Sistemas naturales de procesamiento distribuido de informaci\'on}
 
-
-\section{Vida}
-
-\en{In the last third of the history of the Universe, sometime around 4 billion years ago, a simple form of matter organization capable of self-replication appeared on Earth. }%
+\en{In the last third of the history of the Universe, sometime around 4 billion years ago, a simple form of matter organization capable of self-replication appeared on Earth. }%s
 \es{En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4000 millones de a\~nos, apareci\'o en la tierra una forma de organizaci\'on de la materia capaz de auto-replicarse. }%
 %
 \en{The growth of these lineages followed multiplicative and noisy processes: sequences of survival and reproduction rates. }%
@@ -466,7 +464,370 @@ Las plantas realizan este complejo proceso de forma sumamente eficiente.
 Este conocimiento est\'a almacenedado en su material gen\'etico, y no existe conocimiento cient\'ifico-t\'ecnico que sea capaz de imitar este proceso.
 Los animales, hongos y el resto de heter\'otrofos, est\'an obligados a adquirir el material org\'anico de otros seres vivos, lo que los obliga a coexistir con sus presas, creando una compleja red de dependecias mutuas que constituyen la unidad de nivel superior mayor, los sistemas ecol\'ogicos.
 
-\section{Cultura}
+
+\subsection{La función de costo evolutiva: los procesos multiplicativos}
+
+\en{In evolution it is said that the growth of a lineage over time, $\omega(t)$, is governed by a stochastic sequence of survival and reproduction rates $f(\cdot)$ dependent on a random environment $\Aa$, }
+\es{En evoluci\'on se dice que el crecimiento de un linaje en el tiempo, $\omega(t)$, esta gobernado por una secuencias de tasas de supervivencia y reproducci\'on $f(\cdot)$ dependientes de un ambiente aleatorio $\Aa$, }%
+%
+\begin{equation} \label{eq:modelo_exponencial}
+\omega(T) = \prod_t^T f(\Aa(t)) \approx g^T
+\end{equation}
+%
+\en{where $\Aa(t)$ represents the state of the environment at time $t$ and $g$ represents the characteristic growth rate when $T$ is sufficiently large. }%
+\es{donde $\Aa(t)$ representa el estado del ambiente en el tiempo $t$ y $g$ representa la tasa de crecimiento caracter\'istica cuando $T$ es suficientemente grande. }%
+%
+Podemos interpretar $\omega(T)$ como el tama\~no de una poblaci\'on en el tiempo, pero tambi\'en esa poblaci\'on puede ser un recurso para otro linaje.
+%
+Por eso, de aqu\'i en adelante hablaremos de recursos, pero hay que mantener la idea de que este es un proceso al que est\'an sujeto el crecimiento de los linajes en general.
+%
+\en{For example, suppose nature flips a coin, if it comes up heads the population reproduces 50\% and if it comes up tails it survives 60\%. }%
+\es{Por ejemplo, supongamos que la naturaleza lanza una moneda, si sale cara los recursos crecen \SI{50}{\percent} y si sale seca perdemos 40\%. }%
+\begin{equation} \label{eq:estrategia_base}
+f(\Aa) =
+\begin{cases}
+ 1.5 & \Aa = \text{ \en{Head}\es{Cara} } \\
+ 0.6 & \Aa = \text{ \en{Tail}\es{Seca} }
+\end{cases}
+\end{equation}
+%
+\en{A similar example was proposed by Lewontin and Cohen (1969)~\cite{lewontin1969-randomlyVaryingEnvironment}. }%
+\es{Un ejemplo similar fue analizado por Lewontin y Cohen (1969)~\cite{lewontin1969-randomlyVaryingEnvironment}. }%
+%
+% \en{Different strategies $\Ee$ can be described with different functions $f_\Ee(\Aa)$. }%
+% \es{Diferentes estrategias $\Ee$ las podemos describr con diferentes funciones $f_\Ee(\Aa)$. }%
+% %
+% \en{According to the standard model of evolution, known as \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, the change in the proportion of a strategy in the population, $x_\Ee$, is determined by its characteristic growth rate $g_\Ee$, }%
+% \es{Según el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, el cambio de la proporci\'on de una estrategia en la poblaci\'on, $x_\Ee$, est\'a determinado por su tasa de crecimiento caracter\'isitica $g_\Ee$, }%
+% % schuster1983-replicatorDynamics, hofbauer2003-evolutionaryGameDynamics
+% %
+% \begin{equation} \label{eq:replicator_dynamic}  \tag{Replicator dynamic}
+% \hspace{3cm} x_\Ee^\prime = \frac{x_\Ee g_\Ee}{\sum_i x_i g_i}
+% \end{equation}
+% %
+% \en{where the denominator acts as a normalization constant. }%
+% \es{donde el denominador actúa como constante de normalizaci\'on. }%
+% %
+\en{But, what is the characteristic growth rate $g$? }%
+\es{¿Cu\'al es la tasa de crecimiento caracter\'istica $g$ en este caso? }%
+%
+\en{Much of the evolutionary literature considers that the correct estimate is obtained by the expected value, $g^t = \langle \omega \rangle_t$. }%
+\es{Buena parte de la literatura en evoluci\'on considera que la estimaci\'on correcta se obtiene mediante el valor esperado, $g^t = \langle \omega \rangle_t$. }%
+%
+\begin{equation}
+\langle \omega \rangle_t = \sum_{\omega \in \Omega_t} \omega \cdot  P(\omega)
+\end{equation}
+%
+\es{Donde $\Omega_t$ es el conjunto de todas las posibles estados de $\omega$ en el tiempo $t$, y $P(\omega)$ es la la probabilidad de que el estado $\omega$ ocurra. }%
+% 
+\en{In the coin example, the expected value in the first two time steps is, }%
+\es{En el ejemplo de la moneda, el valor esperado en los dos primeros pasos temporales es, }%
+%
+\begin{equation}
+\begin{split}
+\langle \omega \rangle_1 & = 1.5 \cdot \frac{1}{2} + 0.6 \cdot  \frac{1}{2} = 1.05 \\ 
+\langle \omega \rangle_2 &=  1.5^2 \cdot \frac{1}{4} + 2 (0.6 \cdot 1.5 \cdot \frac{1}{4} ) + 0.6^2 \cdot \frac{1}{4}= 1.05^2
+\end{split}
+\end{equation}
+%
+\en{That is, the estimated growth rate according to the expected value is $5\%$ for each time step, $\langle \omega \rangle_t = 1.05^t$. }%
+\es{Es decir, la tasa de crecimiento estimada según el valor esperado es de $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$. }%
+%
+\en{And indeed that is what happens with the average of several individual trajectories, $\omega(t)$. }%
+\es{Y efectivamente eso es lo que ocurre con el promedio de varias trayectoria individuales, $\omega(t)$. }%
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_expectedValue.pdf}
+    \end{subfigure}
+    \caption{
+    \es{Promedio de los recursos (en escala logar\'itimica) a medida que aumentamos la cantidad de trayectorias individuales incluidas en el promedio (de $10^0$ a $10^4$). }%
+    %
+    \es{Cuando la cantidad de trayectorias individuales incluidas en el promedio es suficientemente grande, el promedio es igual al valor esperado $\langle \omega \rangle_t = 1.05^t$. }%
+    }
+    \label{fig:ergodicity_expectedValue}
+\end{figure}
+%
+\en{When the individual trajectories can be described by the expected value of the system states, then the process is said to be ergodic~\cite{peters2019-ergodicityEconomics}. }%
+\es{Cuando lo que le ocurre a los agentes individuales en el tiempo puede describirse mediante el valor esperado de los estados del sistema, luego se dice que el proceso es erg\'odico~\cite{peters2019-ergodicityEconomics}. }%
+%
+\en{However, the conditions are very restrictive, and are not fulfilled in the case of multiplicative processes. }%
+\es{Sin embargo, las condiciones para que esto se cumpla son muy restrictivas y no se satisfacen en el caso de los procesos multiplicativos. }%
+%
+\es{Es decir, en nuestro ejemplo el valor esperado no representa lo que le ocurre en el tiempo a cada una de las trayectorias individuales por separado. }%
+%
+\es{Si bien las trayectorias individuales son variables (figura \ref{fig:ergodicity_individual_trayectories}), a largo plazo todas pierden a una tasa cercana al 5\% (figura \ref{fig:ergodicity_individual_trayectories_longrun}). }%
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
+    \caption{}
+    \label{fig:ergodicity_individual_trayectories}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories_longrun.pdf}
+    \caption{}
+    \label{fig:ergodicity_individual_trayectories_longrun}
+    \end{subfigure}
+    \caption{
+    \en{The black line represents the expected value. }%
+    \es{La recta negra representan el valor esperado. }%
+    %
+    \en{Figure \ref{fig:ergodicity_individual_trayectories}: size of individual resources over time, $ \log(\omega(t))$. }%
+    \es{Figura \ref{fig:ergodicity_individual_trayectories}: tama\~no de los recursos individuales en el tiempo, $ \log(\omega(t))$. }%
+    %
+    \en{Figure \ref{fig:ergodicity_individual_trayectories_longrun}: given enough time, all individual trajectories stick to the blue line. }% 
+    \es{Figura \ref{fig:ergodicity_individual_trayectories_longrun}: con suficiente tiempo todas las trayectorias individuales se pegan a la recta azul. }% 
+    }
+    \label{fig:cpr_individual}
+\end{figure}
+%La relaci\'on entre el valor esperado y lo que le ocurre a los agentes individuales en el tiempo es un problema bien conocido en mec\'anica estad\'istica.
+%
+\en{To compute the growth rate $g$, we first express the product as follows, }%
+\es{Para calcular la tasa de crecimiento $g$, primero expresaramos la productoria de la siguiente manera, }%
+%
+\begin{equation}
+\omega(T) = \prod^T_{t=1} f(\Aa(t)) = f(\text{\en{head}\es{cara}})^{n_1} f(\text{\en{tail}\es{sello}})^{n_2}
+\end{equation}
+%
+\en{where $n_1$ and $n_2$ represents the number of occurrences of $f(\text{\en{head}\es{cara}})$ and $f(\text{\en{tail}\es{sello}})$, with $n_1 + n_2 = T$. }%
+\es{donde $n_1$ y $n_2$ representa la cantidad de ocurrencias de $f(\text{cara})$ y $f(\text{seca})$, con $n_1 + n_2 = T$. }%
+%
+\en{In the limit, $T \rightarrow \infty$ all individual trajectories will be determined by the same growth rate $g$. }%
+\es{En el l\'imite, $T \rightarrow \infty$ todas las trayectorias individuales estar\'an determinadas por la misma tasa de crecimiento $g$. }%
+%
+\begin{equation} \label{eq:geometric_mean}
+\begin{split}
+\lim_{T \rightarrow \infty} \omega_e(T) & = {g}^T \\
+\left( \lim_{T \rightarrow \infty} \omega_e(T) \right)^{1/T} & =  {g} \\
+\lim_{T \rightarrow \infty} f(\text{cara})^{n_1/T} f(\text{seca})^{n_2/T} & 
+ \end{split}
+\end{equation}
+%
+\en{Where the frequencies $\frac{n_1}{T}$ and $\frac{n_2}{T}$ in the limit $T \rightarrow \infty$ are equal to the probabilities of the environmental states $p$. }%
+\es{Donde las frecuencias $\frac{n_1}{T}$ y $\frac{n_2}{T}$ en el l\'imite $T \rightarrow \infty$ son iguales a las probabilidades de los estados ambientales $p$. }%
+%
+\en{Therefore, the growth rate is, }%
+\es{Por lo tanto, la tasa de crecimiento es, }%
+%
+\begin{equation}
+g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
+\end{equation}
+%
+\en{This formula, which allows computing the long-term growth rate of individual trajectories, has previously been used in the evolution literature under the name \emph{geometric mean}~\cite{dempster1955-geometricMean}. }%
+\es{Esta f\'ormula, que permite computar la tasa de crecimiento a largo plazo de las trayectorias individuales, ha sido usada previamente en la literatura de evoluci\'on bajo el nombre de \emph{media geom\'etrica}~\cite{dempster1955-geometricMean}. }%
+%
+\en{The geometric mean is always less than the arithmetic mean (or expected value). }%
+\es{La media geom\'etrica siempre es menor a la media aritm\'etica (o valor esperado). }%
+%
+\en{This is because in multiplicative processes the physical impacts of losses are usually stronger than those of gains. }%
+\es{Esto se debe a que en los procesos multiplicativos los impactos f\'isicos de las p\'erdidas suelen ser m\'as fuertes que los de las ganancias. }%
+%
+\en{In an extreme case, a single zero in the product is enough to generate an extinction. }%
+\es{En un caso extremo, un único cero en la productoria alcanza para generar su extinci\'on. }%
+
+% Decimos que un proceso es erg\'odico si se cumple que,
+% \begin{equation}
+%  \underbrace{\lim_{T \mapsto \infty} \frac{1}{T} \sum_{t=1}^T \omega(t)}_{\text{Media temporal}}  = \underbrace{\sum_{\omega} \omega \cdot p(\omega)}_{\text{Media de estados}}
+% \end{equation}
+% 
+
+\subsection{Transiciones evolutivas mayores}
+
+\es{Debido a que las fluctuaciones tienen un efecto negativo en las tasas de crecimiento individuales Yaari-Solomon~\cite{yaari2010-cooperationEvolution} y Peters-Adamou~\cite{peters-cooperation2019.03.04} estudian las consecuencias que el siguiente protocolo cooperativo tiene sobre la tasa de crecimiento de los agentes. }%
+%
+\begin{figure}[ht!]
+\centering
+\scalebox{0.75}{
+\tikz{
+
+    \node[latent, minimum size=2cm ] (x1_0) {$\omega(t)$} ;
+    \node[latent, below=of x1_0, minimum size=2cm ] (x2_0) {$\omega(t)$} ;
+
+    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega(t)\cdot f(\Aa_1(t))$} ;
+    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=left] (x2_0g) {$\omega(t)\cdot$\\$f(\Aa_2(t))$} ;
+    
+    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=right] (x_0) {$\omega(t)\cdot f(\Aa_1(t))$\\$+\omega(t)\cdot f(\Aa_2(t))$ } ;
+    
+    \node[const, above=of x_0] (nx_0) {$\overbrace{\text{Pool}\hspace{2.5cm}\text{Share}}^{\text{\normalsize Coopera\en{tion}\es{ci\'on}}}$} ;
+    
+    \node[latent, right=of x1_0g, minimum size=2.5cm,  xshift=4.5cm] (x1_1) {$\omega(t+1)$ } ;
+    \node[latent, below=of x1_1, minimum size=2.5cm, yshift=0.7cm] (x2_1) {$\omega(t+1)$ } ;
+    
+    \edge {x1_0} {x1_0g};
+    \edge {x2_0} {x2_0g};
+    \edge {x1_0g,x2_0g} {x_0};
+    \edge {x_0} {x1_1,x2_1};
+    
+}
+}
+\caption{
+\en{The agents start with the same initial resources, update them independently according to the equation \ref{eq:estrategia_base}, and finally redistribute it in equal parts. }%
+\es{Los agentes comienzan con los mismos recursos iniciales, los actualizan independientemente de acuerdo con la ecuaci\'on \ref{eq:estrategia_base}, y finalmente lo redistribuyen en partes iguales. }%
+}
+\label{fig:protocolo}
+\end{figure}
+%
+Despu\'es de que cada agente actualiza sus recursos individuales, se ponen todos los recursos en un fondo común que se divide en partes iguales.
+%
+Y se repite el proceso: se actualizan los recursos individualmente y se dividen en partes iguales.
+%
+La cooperaci\'on cambia la variable aleatoria de la que dependen las trayectorias individuales, de la moneda jugando individualmente, a la cuota que reciben del fondo común jugando cooperativamente.
+%
+\begin{equation}
+\omega(t+1) = \frac{1}{N}\left(n_c \, \omega(t) \, 1.5 + n_s \, \omega(t) \, 0.6\right)
+\end{equation}
+%
+Donde $N$ es el tama\~no del grupo cooperativo, $n_c$ y $n_s$ la cantidad de caras y secas obtenidas en el grupo.
+%
+En el caso extremo en el que el $N=1$, la cuota del fondo común es equivalente a los pagos generaos por la moneda.
+%
+Pero una caracter\'isitica del fondo común es que tiene menos fluctuaciones que la moneda para todo $N>1$.
+%
+En el caso extremo, un grupo cooperativo de tama\~no infinito, la cuota es siempre equivalente a la media artim\'etica.
+%
+\begin{equation}
+\omega(t+1) = \lim_{N\rightarrow \infty} \omega(t) \left(\frac{n_c}{N} 1.5 + \frac{n_s}{N} 0.6\right) = \omega(t)\,\underbrace{(p\,1.5 + (1-p)\,0.6)}_{\text{media aritm\'etica}}
+\end{equation}
+
+
+Las consecuencias de este protocolo sobre la tasa de crecimiento de los recursos son extraordinarias.
+%
+\es{La reducci\'on de las fluctuaciones producto de la mutua cooperaci\'on  en grupos de tama\~no finito genera un aumento en la tasa de crecimiento de todos sus miembros. }%
+%
+\en{In Figure \ref{fig:ergodicity_cooperation} we show the trajectory of an agent in a cooperating group of size 33. }%
+\es{En la figura \ref{fig:ergodicity_cooperation} mostramos la trayectoria de un agente en un grupo cooperador de tama\~no 33. }%
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_cooperation.pdf}
+    \end{subfigure}
+    \caption{
+    \en{The resources of an individual in a cooperative group of size 33 (green line) approaches the arithmetic mean (the black line below the green line).
+    As a visual reference we show the geometric mean that drives the growth rate of individuals (blue line). }%
+    \es{Los recursos de un individuo en un grupo cooperativo de tama\~no 33 (recta verde) se aproxima a la media aritm\'etica (la recta negra debajo de la recta verde).
+    Como referencia visual mostramos la media geom\'etrica que gobierna la tasa de crecimiento de los individuos (recta azul). }%
+    }
+    \label{fig:ergodicity_cooperation}
+\end{figure}
+% 
+\en{Individuals in fully cooperative groups achieve growth rates equivalent to the average of system states, which in non-ergodic systems is always higher than individual growth rates. }%
+\es{Los individuos de los grupos enteramente cooperadores logran acceder a tasas de crecimiento cercanas al promedio de estados del sistema (media aritm\'etica), que en los sistemas multiplicativos siempre superior que la tasas de crecimiento individual (media geom\'etrica). }%
+%
+Para ganar intuición acerca de por qué la cooperación produce un aumento en la tasa de crecimiento puede ser útil revisar lo que ocurre en un ejemplo básico.
+%
+En la siguiente comparamos lo que ocurre con los recursos de dos agentes no-cooperadores y dos agentes cooperadores.
+%
+\begin{table}[ht!]
+\centering
+ \begin{tabular}{|l|c|c|cc|c|cc|}
+     \hline
+         & {\small \, $\omega(0)$ } & {\small \  $f(\cdot) \ $}  & \multicolumn{2}{c|}{\small \, $\omega(1)$ } & {\small \  $f(\cdot) \ $} &  \multicolumn{2}{c|}{\small \,  $\omega(2)$ }  \\ \hline \hline
+        A no-coop & $1$ & $1.5$ &  \multicolumn{2}{c|}{$1.5$} & $0.6$ & \multicolumn{2}{c|}{$\bm{0.9}$} \\ \hline
+        B no-coop & $1$ & $0.6$ & \multicolumn{2}{c|}{$0.6$} & $1.5$ & \multicolumn{2}{c|}{$\bm{0.9}$}  \\ \hline\hline
+         A coop & $1$ & $1.5$ & $1.5$ & $1.05$  & $0.6$ & $0.63$ & $\bm{1.1}$  \\ \hline
+        B coop & $1$ & $0.6$ & $0.6$ & $1.05$ & $1.5$ & $1.57$ & $\bm{1.1}$ \\ \hline
+\end{tabular}
+\caption{Ilustración la actualización de los recursos en grupos no-cooperativos y cooperativos. La reducción de fluctuaciones en grupos cooperativos produce un aumento en la tasa de crecimiento de todos sus miembros. }
+\end{table}
+%
+Los individuos comienzan con una unidad de recursos.
+%
+A obtiene Cara y Seca, y B obtiene Seca y Cara.
+%
+Cuando juegan no cooperativamente, ambos terminan con una riqueza menor a la que empezaron, pues en los procesos multiplicativos los impactos de la pérdidas son más importantes que los de las ganancias.
+%
+Cuando juegan cooperativamente, ambos terminan con una riqueza mayor a la que empezaron debido a la reducción de fluctuaciones individuales en cada paso.
+%
+\es{Este aumento puede parecer suficiente para creer que existe una ventaja a favor de la cooperaci\'on. }%
+% %
+% \en{However, they do not consider the problem of defection, who say ``our cooperators are unable to break the cooperative pact''. }%
+% \es{Sin embargo ellos no consideran el problema de la deserci\'on, quienes dicen ``our cooperators are unable to break the cooperative pact''. }%
+¿Qu\'e pasa si uno de los miembros decide dejar de aportar al fondo común, pero sigue recibiendo su cuota del fondo común?
+
+% Parrafo
+
+\en{In the last few decades evolutionary biology has begun to adopt the analogy of the ``tragedy of the commons''~\cite{rankin2007-tragedyCommonsBiology}. }%
+\es{En las últimas d\'ecadas la biolog\'ia evolutiva ha comenzado a adoptar la analog\'ia de la ``tragedia de los comunes''~\cite{rankin2007-tragedyCommonsBiology}. }%
+%
+\en{This concept contains the idea that the commons has a payoff structure isomorphic to the N-player prisoner's dilemma~\cite{hardin1971-collectiveAsPrisionerDilema}. }%
+\es{Este concepto contiene la idea de que los bienes comunes tienen una estructura de pagos isomorfa al dilema del prisionero de N jugadores~\cite{hardin1971-collectiveAsPrisionerDilema}, donde desertar siempre es mejor que cooperar. }%
+%
+\en{\T }%
+\es{Una matriz de pagos dilema del prisionero de dos jugadores t\'ipica tiene la siguiente estructura, }% 
+%
+\begin{equation}
+  \bordermatrix{ & C & D \cr
+      C & b-c & -c \cr
+      D & b & 0 } 
+\end{equation}
+%
+donde el beneficio es mayor al costo, $b > c$.
+%
+\en{Players gain more if they opt for mutual cooperation than for mutual defection, since $b - c > 0$. }%
+\es{Los jugadores ganan m\'as si optan por la cooperaci\'on mutua que por la deserci\'on mutua, ya que $b - c > 0$. }%
+%
+\en{However, regardless of what the other player does, it is better not to cooperate: if my partner defects, it is better for me to defect than to cooperate, since $0 > -c$; if my partner cooperates, it is still better for me to defect than to cooperate, since $b > b - c$. }%
+\es{Sin embargo, independientemente de lo que haga el otro jugador, es mejor no cooperar: si mi compa\~nero deserta, es mejor para m\'i desertar que cooperar, ya que $0 > -c$; si mi compa\~nero coopera, sigue siendo mejor para m\'i desertar que cooperar, ya que $b > b - c$. }%
+%
+\en{This creates a dilemma: although mutual cooperation is a preferable outcome, no individual has the incentive to cooperate. }%
+\es{De ah\'i el dilema: aunque la cooperaci\'on mutua es un resultado preferible, ningún individuo tiene el incentivo de cooperar. }%
+
+% Parrafo
+
+\en{\T }%
+\es{Si este fuera el caso, los desertores deber\'ian tener una tasa de crecimiento mayor a lo cooperadores. }%
+%
+\en{However, the first defector from an entirely cooperative group obtains a lower growth rate than before defecting. }%
+\es{Sin embargo, en la figura~\ref{fig:ergodicity_desertion} podemos observar que el primer desertor de un grupo enteramente cooperador obtiene una tasa de crecimiento menor a la que ten\'ia antes de desertar. }% 
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_desertion.pdf}
+    \end{subfigure}
+    \caption{
+    \en{The colors represent groups of size 100 with 0, 1 and 2 defectors. }%
+    \es{Los colores representan los grupos de tama\~no 100 con 0, 1 y 2 desertores. }%
+    %
+    \en{The curves of the individual defectors are those at the top of each of the groups. }%
+    \es{Las curvas de los individuos desertores son las que est\'an arriba en cada uno de los grupos. }%
+    }
+    \label{fig:ergodicity_desertion}
+\end{figure}
+%
+\en{The resources of the first individual defector (blue group with 1 defector), is below the resources of the individuals in the fully cooperative group (green group with 0 defectors). }%
+\es{Los recursos del primer individuo desertor (la curva variable del grupo azul), est\'a por debajo de los recursos de los individuos del grupo enteramente cooperador (grupo verde con 0 desertores). }%
+%
+\en{Defecting, instead of increasing the growth rate of the defective individuals, reduces it. }%
+\es{Desertar, en vez de aumentar la tasa de crecimiento de los individuos desertores, la reduce. }%
+%
+\en{\T }%
+\es{Esto ocurre cada vez que una agente cambia de comportamiento de cooperador a desertor (ver grupo rojo con dos desertores). }%
+%
+\en{Without penalties, defector strategies negatively affect their own long-term growth rate because their own behavior increases the fluctuations of the random variable on which they depend. }%
+\es{Sin necesidad de introducir castigos, las estrategias desertoras afectan negativamente su propia tasa de crecimiento a largo plazo debido a que su comportamiento aumenta las fluctuaciones de la variable del fondo común del que dependen.}
+%
+\en{In other words, the commons does not have the structure of the prisoner's dilemma, as is usually claimed in the literature. }%
+\es{Es decir, los bienes comunes no tiene la estructura del dilema del prisionero como habitualmente se afirma en la literatura. }%
+% 
+% \en{This means that the payoff matrix is not isomorphic to a prisoner's dilemma. }%
+% \es{Esto significa que la matriz de pagos no son isomorfas al dilema del prisionero. }%
+
+% Parrafo
+
+En cualquier caso, los desertores siempre tienen una posici\'on relativa mejor que los cooperadores de su propio grupo.
+%
+Esto puede favorecer la selecci\'on de comportamientos desertores al interior de los grupos, por ejemplo por imitaci\'on, produciendo una cascada de deserciones que pongan fin a toda cooperaci\'on.
+%
+Pero al mismo tiempo, la tasa de crecimiento m\'as alta la obtienen los grupos enteramente cooperativos, lo que favorece la selecci\'on de grupos enteramenete cooperadores sobre el resto.
+%
+\es{Por este motivo, la selecci\'on multinivel favorece a los individuos cooperadores sobre los desertores. }
+
+\subsection{Evolución cultural}
 
 La especial integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permiten a los humanos desarrollar culturas complejas se debi\'o a una coevoluci\'on gen\'etico-cultural desencadenada por el desarrollo previo de la crianza cooperativa~\cite{hrdy2020-emotionallyModern}.
 La forma en la que estos homininos organizaron la crianza produjo un ambiente que favoreci\'o la selecci\'on de j\'ovenes capaces de monitorear y comprender las intenciones de los dem\'as, y de trasmitir a sus cuidadadores sus propias necesidades.
@@ -649,7 +1010,7 @@ El desarrollo tecnol\'ogico de todas estas sociedades fue extraordinario.
 
 % Parrafo
 
-\section{Ciencia y evoluci\'on cultural}
+\subsection{Ciencia colonial-moderna}
 
 John Needham, el brit\'anico que dedic\'o su vida a recopilar la monumental historia cient\'ifica y t\'ecnica de China, reconoce que comenz\'o a estudiar el tema motivado por responder la pregunta de por qu\'e s\'olo Europa occidental hab\'ia logrado el avance cient\'ifico.
 \begin{quotation}
@@ -805,350 +1166,171 @@ Comienza la era de los genoentocidios.
 En todas las partes del globo, los exploradores y etn\'ografos fueron documentando la perdida de cultural debida al avance del frente colonial-moderno, estatal o privado, sobre las autonom\'ias locales.
 Es una nueva era de avances cient\'ificos y tecnol\'ogicos, pero por otro es la era de p\'erdida de diversidad cultural.
 A pesar de todos los avances cient\'ificos, la ciencia metropolitana moderna no fue capaz de compensar la p\'erdida de los conocimientos milenarios acumulados por las comunidades aut\'onomas locales.
-La masiva p\'erdida de diversidad cultural trajo como consecuencia la masiva p\'erdida de biodiversidad actual, una crisis ecol\'ogica sin precedentes (figura~\ref{fig:deforestation-brazil}).
-%Quiz\'a la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
+La masiva p\'erdida de diversidad cultural trajo como consecuencia la masiva p\'erdida de biodiversidad actual (figura~\ref{fig:deforestation-brazil}).
+Quiz\'a la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
 
 % Parrafo
 
-\section{La ventaja de la cooperaci\'on y la especializaci\'on}
+\section{Propiedades de los procesos multiplicativos}
 
+%Los organismos vivientes son sujetos activos que a lo largo de sus transformaciones evolutivas han construido dispositivos de acción con los cuales "observa" e interpreta el sentido de los hechos que debe enfrentar para poder asimilarlos a sus necesidades. [Samaja]
+%
+%Las epistemologías dialéctico-genéticas proponen (con divesos matices) la gran idea de la evolución biológica y la historia social como modelo para interpretar el proceso de construcción de estos "encuentros" monadológicos entre el mundo de las formas fácticas y las formas teóricas. [Samaja]
+%
+%La acción de sujetos bióticos que emerge y evolucionan en el mundo real permite comprender el surgimiento de organismos portadores de estructuras (orgánicas y conductuales) capaz de prever lo fundamental  de las condiciones del medio en donde "ha aprendido" a sobrevivir y reproducirse. [Samaja]
+%
+%El medio nunca es completamente impredecible: si lo fuera, el viviente no podría llevar a cabo sus procesos autopoiéticos. [Samaja]
+%
+%Una evolución conjunta de los vivientes con su medio o la de una "coevolución" entre las especies.
 
-\en{In evolution it is said that the growth of a lineage over time, $\omega(t)$, is governed by a stochastic sequence of survival and reproduction rates $f(\cdot)$ dependent on a random environment $\Aa$, }
-\es{En evoluci\'on se dice que el crecimiento de un linaje en el tiempo, $\omega(t)$, esta gobernado por una secuencias de tasas de supervivencia y reproducci\'on $f(\cdot)$ dependientes de un ambiente aleatorio $\Aa$, }%
+Si los procesos multiplicativos gobiernan el desarrollo de los sistemas vivos, entonces las transformaciones evolutivas favorecerán aquellas estructuras y conductas que modifiquen las tasas de reproducción y supervivencia involucradas en el crecimiento a largo plazo de los linajes.
 %
-\begin{equation} \label{eq:modelo_exponencial}
-\omega(T) = \prod_t^T f(\Aa(t)) \approx g^T
-\end{equation}
+%Las formas mediantes las cuales los organismos vivos lo
+Para estudiar algunas de las propiedades de los procesos multiplicativos analizaremos un juego de apuestas, en el que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca sobre una moneda con frecuencia $p$.
 %
-\en{where $\Aa(t)$ represents the state of the environment at time $t$ and $g$ represents the characteristic growth rate when $T$ is sufficiently large. }%
-\es{donde $\Aa(t)$ representa el estado del ambiente en el tiempo $t$ y $g$ representa la tasa de crecimiento caracter\'istica cuando $T$ es suficientemente grande. }%
+En este ejemplo tenemos un medio ambiente aleatorio (la moneda) y un intercambio entre al menos dos agentes: la casa de apuesta y quenes apuestan.
+
+% Parrafo
+
+Individualmente hay dos formas de apostar.
 %
-Podemos interpretar $\omega(T)$ como el tama\~no de una poblaci\'on en el tiempo, pero tambi\'en esa poblaci\'on puede ser un recurso para otro linaje.
+La primera es apostar a una única de las dos opciones, por ejemplo a Caras.
 %
-Por eso, de aqu\'i en adelante hablaremos de recursos, pero hay que mantener la idea de que este es un proceso al que est\'an sujeto el crecimiento de los linajes en general.
+En este escenario, la persona asigna un valor $ 1 \geq b_c = l > 0 $ a Caras y $b_s = 0$ a secas.
 %
-\en{For example, suppose nature flips a coin, if it comes up heads the population reproduces 50\% and if it comes up tails it survives 60\%. }%
-\es{Por ejemplo, supongamos que la naturaleza lanza una moneda, si sale cara los recursos crecen \SI{50}{\percent} y si sale seca perdemos 40\%. }%
-\begin{equation} \label{eq:estrategia_base}
-f(\Aa) =
-\begin{cases}
- 1.5 & \Aa = \text{ \en{Head}\es{Cara} } \\
- 0.6 & \Aa = \text{ \en{Tail}\es{Seca} }
-\end{cases}
-\end{equation}
+Supongamos que en la primera sale Cara y en la segunda Seca.
 %
-\en{A similar example was proposed by Lewontin and Cohen (1969)~\cite{lewontin1969-randomlyVaryingEnvironment}. }%
-\es{Un ejemplo similar fue analizado por Lewontin y Cohen (1969)~\cite{lewontin1969-randomlyVaryingEnvironment}. }%
+La riqueza en la primera es el ahorro $1-l$ m\'as el pago que obtiene por lo apostado en Cara $l \, Q_c$.
 %
-% \en{Different strategies $\Ee$ can be described with different functions $f_\Ee(\Aa)$. }%
-% \es{Diferentes estrategias $\Ee$ las podemos describr con diferentes funciones $f_\Ee(\Aa)$. }%
-% %
-% \en{According to the standard model of evolution, known as \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, the change in the proportion of a strategy in the population, $x_\Ee$, is determined by its characteristic growth rate $g_\Ee$, }%
-% \es{Según el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, el cambio de la proporci\'on de una estrategia en la poblaci\'on, $x_\Ee$, est\'a determinado por su tasa de crecimiento caracter\'isitica $g_\Ee$, }%
-% % schuster1983-replicatorDynamics, hofbauer2003-evolutionaryGameDynamics
-% %
-% \begin{equation} \label{eq:replicator_dynamic}  \tag{Replicator dynamic}
-% \hspace{3cm} x_\Ee^\prime = \frac{x_\Ee g_\Ee}{\sum_i x_i g_i}
-% \end{equation}
-% %
-% \en{where the denominator acts as a normalization constant. }%
-% \es{donde el denominador actúa como constante de normalizaci\'on. }%
-% %
-\en{But, what is the characteristic growth rate $g$? }%
-\es{¿Cu\'al es la tasa de crecimiento caracter\'istica $g$ en este caso? }%
-%
-\en{Much of the evolutionary literature considers that the correct estimate is obtained by the expected value, $g^t = \langle \omega \rangle_t$. }%
-\es{Buena parte de la literatura en evoluci\'on considera que la estimaci\'on correcta se obtiene mediante el valor esperado, $g^t = \langle \omega \rangle_t$. }%
+Y en la segunda vuelta, cuando sale Seca, la riqueza es solo el ahorro, lo no apostado a Cara $1-l$.
 %
 \begin{equation}
-\langle \omega \rangle_t = \sum_{\omega \in \Omega_t} \omega \cdot  P(\omega)
+\omega_T = \underbrace{\overbrace{(\omega_0 \, (1-l) + \omega_0 \, l \, Q_c )}^{\omega_1} \, (1-l)}_{\omega_2} \,\dots
 \end{equation}
 %
-\es{Donde $\Omega_t$ es el conjunto de todas las posibles estados de $\omega$ en el tiempo $t$, y $P(\omega)$ es la la probabilidad de que el estado $\omega$ ocurra. }%
-% 
-\en{In the coin example, the expected value in the first two time steps is, }%
-\es{En el ejemplo de la moneda, el valor esperado en los dos primeros pasos temporales es, }%
+Lo que podemos reescribir como,
 %
 \begin{equation}
 \begin{split}
-\langle \omega \rangle_1 & = 1.5 \cdot \frac{1}{2} + 0.6 \cdot  \frac{1}{2} = 1.05 \\ 
-\langle \omega \rangle_2 &=  1.5^2 \cdot \frac{1}{4} + 2 (0.6 \cdot 1.5 \cdot \frac{1}{4} ) + 0.6^2 \cdot \frac{1}{4}= 1.05^2
+\omega_T &= \omega_0 \, ((1-l) + \, l \, Q_c ) \, (1-l) \, \dots \\
+ &= \omega_0 \, ( (1-l) + \, l \, Q_c )^{n_c} \, (1-l)^{n_s} 
 \end{split}
 \end{equation}
 %
-\en{That is, the estimated growth rate according to the expected value is $5\%$ for each time step, $\langle \omega \rangle_t = 1.05^t$. }%
-\es{Es decir, la tasa de crecimiento estimada según el valor esperado es de $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$. }%
+donde $n_c + n_s = T$ son la cantidad de veces que sali\'o Cara y Seca en los $T$ pasos.
 %
-\en{And indeed that is what happens with the average of several individual trajectories, $\omega(t)$. }%
-\es{Y efectivamente eso es lo que ocurre con el promedio de varias trayectoria individuales, $\omega(t)$. }%
+Es decir, la riqueza se actualiza siguiendo un proceso multiplicativo.
+
+% Parrafo
+
+La otra forma de apostar consiste en utilizar todos los recursos en cada vuelta, poniendo $b_c = b$ en Cara y el resto en Seca $b_s = (1-b)$.
 %
-\begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_expectedValue.pdf}
-    \end{subfigure}
-    \caption{
-    \es{Promedio de los recursos (en escala logar\'itimica) a medida que aumentamos la cantidad de trayectorias individuales incluidas en el promedio (de $10^0$ a $10^4$). }%
-    %
-    \es{Cuando la cantidad de trayectorias individuales incluidas en el promedio es suficientemente grande, el promedio es igual al valor esperado $\langle \omega \rangle_t = 1.05^t$. }%
-    }
-    \label{fig:ergodicity_expectedValue}
-\end{figure}
+En este caso la riqueza se actualiza como,
 %
-\en{When the individual trajectories can be described by the expected value of the system states, then the process is said to be ergodic~\cite{peters2019-ergodicityEconomics}. }%
-\es{Cuando lo que le ocurre a los agentes individuales en el tiempo puede describirse mediante el valor esperado de los estados del sistema, luego se dice que el proceso es erg\'odico~\cite{peters2019-ergodicityEconomics}. }%
-%
-\en{However, the conditions are very restrictive, and are not fulfilled in the case of multiplicative processes. }%
-\es{Sin embargo, las condiciones para que esto se cumpla son muy restrictivas y no se satisfacen en el caso de los procesos multiplicativos. }%
-%
-\es{Es decir, en nuestro ejemplo el valor esperado no representa lo que le ocurre en el tiempo a cada una de las trayectorias individuales por separado. }%
-%
-\es{Si bien las trayectorias individuales son variables (figura \ref{fig:ergodicity_individual_trayectories}), a largo plazo todas pierden a una tasa cercana al 5\% (figura \ref{fig:ergodicity_individual_trayectories_longrun}). }%
-%
-\begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
-    \caption{}
-    \label{fig:ergodicity_individual_trayectories}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_individual_trayectories_longrun.pdf}
-    \caption{}
-    \label{fig:ergodicity_individual_trayectories_longrun}
-    \end{subfigure}
-    \caption{
-    \en{The black line represents the expected value. }%
-    \es{La recta negra representan el valor esperado. }%
-    %
-    \en{Figure \ref{fig:ergodicity_individual_trayectories}: size of individual resources over time, $ \log(\omega(t))$. }%
-    \es{Figura \ref{fig:ergodicity_individual_trayectories}: tama\~no de los recursos individuales en el tiempo, $ \log(\omega(t))$. }%
-    %
-    \en{Figure \ref{fig:ergodicity_individual_trayectories_longrun}: given enough time, all individual trajectories stick to the blue line. }% 
-    \es{Figura \ref{fig:ergodicity_individual_trayectories_longrun}: con suficiente tiempo todas las trayectorias individuales se pegan a la recta azul. }% 
-    }
-    \label{fig:cpr_individual}
-\end{figure}
-%La relaci\'on entre el valor esperado y lo que le ocurre a los agentes individuales en el tiempo es un problema bien conocido en mec\'anica estad\'istica.
-%
-\en{To compute the growth rate $g$, we first express the product as follows, }%
-\es{Para calcular la tasa de crecimiento $g$, primero expresaramos la productoria de la siguiente manera, }%
-%
-\begin{equation}
-\omega(T) = \prod^T_{t=1} f(\Aa(t)) = f(\text{\en{head}\es{cara}})^{n_1} f(\text{\en{tail}\es{sello}})^{n_2}
+\begin{equation} \label{eq:kelly_paraconsistente}
+\omega_T = \underbrace{\overbrace{(\omega_0 \, b \, Q_c)}^{\omega_1} \,  (1-b) \, Q_s}_{\omega_2} \dots = \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s}
 \end{equation}
 %
-\en{where $n_1$ and $n_2$ represents the number of occurrences of $f(\text{\en{head}\es{cara}})$ and $f(\text{\en{tail}\es{sello}})$, with $n_1 + n_2 = T$. }%
-\es{donde $n_1$ y $n_2$ representa la cantidad de ocurrencias de $f(\text{cara})$ y $f(\text{seca})$, con $n_1 + n_2 = T$. }%
+No s\'olo las dos formas de apostar actualizan los recursos a trav\'es de un proceso multiplicativo. 
 %
-\en{In the limit, $T \rightarrow \infty$ all individual trajectories will be determined by the same growth rate $g$. }%
-\es{En el l\'imite, $T \rightarrow \infty$ todas las trayectorias individuales estar\'an determinadas por la misma tasa de crecimiento $g$. }%
+No es dif\'icil demostrar que existe una equivalencia.
 %
-\begin{equation} \label{eq:geometric_mean}
+Por ello, de aqu\'i en adelante analizaremos únicamente esta última forma de apostar, la que utiliza todos los recursos en cada vuelta.
+
+\subsection{La ventaja individual a favor de la diversificación (epistémica)}
+
+En general, la casa de apuestas puede ofrecer cualquier tipo de pago.
+%
+La tasa de crecimiento individal para cualquier pago no negativo, $Q_c > 0$ y $Q_s > 0$ es
+%
+\begin{equation}
 \begin{split}
-\lim_{T \rightarrow \infty} \omega_e(T) & = {g}^T \\
-\left( \lim_{T \rightarrow \infty} \omega_e(T) \right)^{1/T} & =  {g} \\
-\lim_{T \rightarrow \infty} f(\text{cara})^{n_1/T} f(\text{seca})^{n_2/T} & 
- \end{split}
+\lim_{T \rightarrow \infty } \omega_0 \, r^T &= \lim_{T \rightarrow \infty } \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s} \\
+r &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^{\frac{n_s}{T}} = (b \, Q_c)^{p} ((1-b) \, Q_s )^{1-p}
+\end{split}
 \end{equation}
 %
-\en{Where the frequencies $\frac{n_1}{T}$ and $\frac{n_2}{T}$ in the limit $T \rightarrow \infty$ are equal to the probabilities of the environmental states $p$. }%
-\es{Donde las frecuencias $\frac{n_1}{T}$ y $\frac{n_2}{T}$ en el l\'imite $T \rightarrow \infty$ son iguales a las probabilidades de los estados ambientales $p$. }%
+Donde $p = \lim_{T \rightarrow \infty} \frac{n_s}{T}$ es la frecuencia.
 %
-\en{Therefore, the growth rate is, }%
-\es{Por lo tanto, la tasa de crecimiento es, }%
+¿Cuál es la apuesta $b$ óptima?
+%
+Para responder esta pregunta, necesitamos maximizar la tasa de crecimiento $r$. 
+
+% Parrafo
+
+En primer lugar podemos ver que la relación entre las tasa de crecimiento de dos apuestas $b_1$ y $b_2$,
 %
 \begin{equation}
-g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
+\frac{r_1}{r_2} = \frac{(b_1 \  Q_c)^{p}  \,  ((1-b_1) \, Q_s \, )^{1-p} }{(b_2 \  Q_c)^{p}  \,  ((1-b_2) \, Q_s \, )^{1-p}  } = \frac{b_1^{p}  \,  (1-b_1)^{1-p} }{b_2^{p}  \,  (1-b_2)^{1-p} }
 \end{equation}
 %
-\en{This formula, which allows computing the long-term growth rate of individual trajectories, has previously been used in the evolution literature under the name \emph{geometric mean}~\cite{dempster1955-geometricMean}. }%
-\es{Esta f\'ormula, que permite computar la tasa de crecimiento a largo plazo de las trayectorias individuales, ha sido usada previamente en la literatura de evoluci\'on bajo el nombre de \emph{media geom\'etrica}~\cite{dempster1955-geometricMean}. }%
+no depende de los pagos que ofrece la casa de apuesta!
 %
-\en{The geometric mean is always less than the arithmetic mean (or expected value). }%
-\es{La media geom\'etrica siempre es menor a la media aritm\'etica (o valor esperado). }%
+Como el proceso es multiplicativo y los pagos son los mismos en el denominador y el numerador (no dependen de la apuesta que se elija), los pagos se cancelan y la relación entre las distintas apuestas queda determinada únicamente por la asignación de recursos $b$ de cada una de las apuestas. 
 %
-\en{This is because in multiplicative processes the physical impacts of losses are usually stronger than those of gains. }%
-\es{Esto se debe a que en los procesos multiplicativos los impactos f\'isicos de las p\'erdidas suelen ser m\'as fuertes que los de las ganancias. }%
+Este resultado fue descubierto por Kelly en 1954, el que escribe con un signo de admiraci\'on.
 %
-\en{In an extreme case, a single zero in the product is enough to generate an extinction. }%
-\es{En un caso extremo, un único cero en la productoria alcanza para generar su extinci\'on. }%
+\begin{quotation}
+That is, \emph{the gambler ignores the posted odds} in placing his bets!
+\end{quotation}
 
-% Decimos que un proceso es erg\'odico si se cumple que,
-% \begin{equation}
-%  \underbrace{\lim_{T \mapsto \infty} \frac{1}{T} \sum_{t=1}^T \omega(t)}_{\text{Media temporal}}  = \underbrace{\sum_{\omega} \omega \cdot p(\omega)}_{\text{Media de estados}}
-% \end{equation}
-% 
+% Parrafo
 
-\subsection{Cooperaci\'on}
+Que la elección de la apuesta no dependa de los pagos que ofrece la casa de apuestas es un resultado chocante para muchas de las personas con experiencia en apuestas reales.
+%
+Para ganar intuición de por qué los pagos no importan cuando se apuesta dividiendo todos los recursos a ambas opciones, hay que ver qué pasa cuando se apuesta a una sola opción y se ahorra el resto.
+%
+En ese caso se puede mostrar que los pagos sí importan, el cambio en los pagos cambia la fracción que conviene apostar a la mejor opción.
+%
+Para ver por qué no cambia cuando se apuestan todos los recursos hay que mostrar lo que se recibe en la mala opción es equivalente al ahorro cuando se apuesta a una opción.
+%
+El ahorro nunca debe ser nulo, porque si apostamos todos los recursos a la mejor opción, nos quedaremos si nada en caso de que salga la opción contraria.
 
-\es{Debido a que las fluctuaciones tienen un efecto negativo en las tasas de crecimiento individuales Yaari-Solomon~\cite{yaari2010-cooperationEvolution} y Peters-Adamou~\cite{peters-cooperation2019.03.04} estudian las consecuencias que el siguiente protocolo cooperativo tiene sobre la tasa de crecimiento de los agentes. }%
-%
-\begin{figure}[ht!]
-\centering
-\scalebox{0.75}{
-\tikz{
+% Parrafo
 
-    \node[latent, minimum size=2cm ] (x1_0) {$\omega(t)$} ;
-    \node[latent, below=of x1_0, minimum size=2cm ] (x2_0) {$\omega(t)$} ;
-
-    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega(t)\cdot f(\Aa_1(t))$} ;
-    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=left] (x2_0g) {$\omega(t)\cdot$\\$f(\Aa_2(t))$} ;
-    
-    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=right] (x_0) {$\omega(t)\cdot f(\Aa_1(t))$\\$+\omega(t)\cdot f(\Aa_2(t))$ } ;
-    
-    \node[const, above=of x_0] (nx_0) {$\overbrace{\text{Pool}\hspace{2.5cm}\text{Share}}^{\text{\normalsize Coopera\en{tion}\es{ci\'on}}}$} ;
-    
-    \node[latent, right=of x1_0g, minimum size=2.5cm,  xshift=4.5cm] (x1_1) {$\omega(t+1)$ } ;
-    \node[latent, below=of x1_1, minimum size=2.5cm, yshift=0.7cm] (x2_1) {$\omega(t+1)$ } ;
-    
-    \edge {x1_0} {x1_0g};
-    \edge {x2_0} {x2_0g};
-    \edge {x1_0g,x2_0g} {x_0};
-    \edge {x_0} {x1_1,x2_1};
-    
-}
-}
-\caption{
-\en{The agents start with the same initial resources, update them independently according to the equation \ref{eq:estrategia_base}, and finally redistribute it in equal parts. }%
-\es{Los agentes comienzan con los mismos recursos iniciales, los actualizan independientemente de acuerdo con la ecuaci\'on \ref{eq:estrategia_base}, y finalmente lo redistribuyen en partes iguales. }%
-}
-\label{fig:protocolo}
-\end{figure}
+Por la mencionado sabemos que la apuesta $b$ tiene que ser diferente a $0$ y a $1$.
 %
-Despu\'es de que cada agente actualiza sus recursos individuales, se ponen todos los recursos en un fondo común que se divide en partes iguales.
+¿Pero cuál debe ser su valor?
 %
-Y se repite el proceso: se actualizan los recursos individualmente y se dividen en partes iguales.
-%
-La cooperaci\'on cambia la variable aleatoria de la que dependen las trayectorias individuales, de la moneda jugando individualmente, a la cuota que reciben del fondo común jugando cooperativamente.
-%
-\begin{equation}
-\omega(t+1) = \frac{1}{N}\left(n_c \, \omega(t) \, 1.5 + n_s \, \omega(t) \, 0.6\right)
-\end{equation}
-%
-Donde $N$ es el tama\~no del grupo cooperativo, $n_c$ y $n_s$ la cantidad de caras y secas obtenidas en el grupo.
-%
-En el caso extremo en el que el $N=1$, la cuota del fondo común es equivalente a los pagos generaos por la moneda.
-%
-Pero una caracter\'isitica del fondo común es que tiene menos fluctuaciones que la moneda para todo $N>1$.
-%
-En el caso extremo, un grupo cooperativo de tama\~no infinito, la cuota es siempre equivalente a la media artim\'etica.
-%
-\begin{equation}
-\omega(t+1) = \lim_{N\rightarrow \infty} \omega(t) \left(\frac{n_c}{N} 1.5 + \frac{n_s}{N} 0.6\right) = \omega(t)\,\underbrace{(p\,1.5 + (1-p)\,0.6)}_{\text{media aritm\'etica}}
-\end{equation}
-
-
-Las consecuencias de este protocolo sobre la tasa de crecimiento de los recursos son extraordinarias.
-%
-\es{La reducci\'on de las fluctuaciones producto de la mutua cooperaci\'on  en grupos de tama\~no finito genera un aumento en la tasa de crecimiento de todos sus miembros. }%
-%
-\en{In Figure \ref{fig:ergodicity_cooperation} we show the trajectory of an agent in a cooperating group of size 33. }%
-\es{En la figura \ref{fig:ergodicity_cooperation} mostramos la trayectoria de un agente en un grupo cooperador de tama\~no 33. }%
+Si graficamos cómo cambia el proprocional de la tasa de crecimiento, $r\propto b^p (1-b)^{1-p}$ vemos que se maximiza con 
 %
 \begin{figure}[ht!]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_cooperation.pdf}
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\linewidth,page=6]{figures/tasa-temporal2.pdf}
     \end{subfigure}
-    \caption{
-    \en{The resources of an individual in a cooperative group of size 33 (green line) approaches the arithmetic mean (the black line below the green line).
-    As a visual reference we show the geometric mean that drives the growth rate of individuals (blue line). }%
-    \es{Los recursos de un individuo en un grupo cooperativo de tama\~no 33 (recta verde) se aproxima a la media aritm\'etica (la recta negra debajo de la recta verde).
-    Como referencia visual mostramos la media geom\'etrica que gobierna la tasa de crecimiento de los individuos (recta azul). }%
-    }
-    \label{fig:ergodicity_cooperation}
+    \caption{    }
 \end{figure}
-% 
-\en{Individuals in fully cooperative groups achieve growth rates equivalent to the average of system states, which in non-ergodic systems is always higher than individual growth rates. }%
-\es{Los individuos de los grupos enteramente cooperadores logran acceder a tasas de crecimiento cercanas al promedio de estados del sistema (media aritm\'etica), que en los sistemas multiplicativos siempre superior que la tasas de crecimiento individual (media geom\'etrica). }%
 %
-\es{Este aumento puede parecer suficiente para creer que existe una ventaja a favor de la cooperaci\'on. }%
-% %
-% \en{However, they do not consider the problem of defection, who say ``our cooperators are unable to break the cooperative pact''. }%
-% \es{Sin embargo ellos no consideran el problema de la deserci\'on, quienes dicen ``our cooperators are unable to break the cooperative pact''. }%
-¿Qu\'e pasa si uno de los miembros decide dejar de aportar al fondo común, pero sigue recibiendo su cuota del fondo común?
-
-% Parrafo
-
-\en{In the last few decades evolutionary biology has begun to adopt the analogy of the ``tragedy of the commons''~\cite{rankin2007-tragedyCommonsBiology}. }%
-\es{En las últimas d\'ecadas la biolog\'ia evolutiva ha comenzado a adoptar la analog\'ia de la ``tragedia de los comunes''~\cite{rankin2007-tragedyCommonsBiology}. }%
+la apuesta que divide los recursos en la misma proporción que los frecuencia típica $p$, $b = p$.
 %
-\en{This concept contains the idea that the commons has a payoff structure isomorphic to the N-player prisoner's dilemma~\cite{hardin1971-collectiveAsPrisionerDilema}. }%
-\es{Este concepto contiene la idea de que los bienes comunes tienen una estructura de pagos isomorfa al dilema del prisionero de N jugadores~\cite{hardin1971-collectiveAsPrisionerDilema}, donde desertar siempre es mejor que cooperar. }%
-%
-\en{\T }%
-\es{Una matriz de pagos dilema del prisionero de dos jugadores t\'ipica tiene la siguiente estructura, }% 
+Para maximizar la tasa de crecimiento $r$ tomamos el logaritmo de ambos lados, y buscamos el punto cr\'itico de esta funci\'on c\'oncava,
 %
 \begin{equation}
-  \bordermatrix{ & C & D \cr
-      C & b-c & -c \cr
-      D & b & 0 } 
+\begin{split}
+0 &= \frac{d}{db} p \log (b \, Q_c) + (1-p) \log ((1-b) \, Q_s) \\
+0 &= \frac{p}{b} + \frac{1-p}{1-b} \\
+p &= b 
+\end{split}
 \end{equation}
 %
-donde el beneficio es mayor al costo, $b > c$.
+Los procesos multiplicativos, jugados individualmemte, se maximiza dividiendo los recursos en la misma proproci\'on que la frecuencia t\'ipica $p$.
 %
-\en{Players gain more if they opt for mutual cooperation than for mutual defection, since $b - c > 0$. }%
-\es{Los jugadores ganan m\'as si optan por la cooperaci\'on mutua que por la deserci\'on mutua, ya que $b - c > 0$. }%
+\begin{equation}
+\underset{b}{\text{arg max}} b^p (1-b)^{1-p} = p
+\end{equation}
 %
-\en{However, regardless of what the other player does, it is better not to cooperate: if my partner defects, it is better for me to defect than to cooperate, since $0 > -c$; if my partner cooperates, it is still better for me to defect than to cooperate, since $b > b - c$. }%
-\es{Sin embargo, independientemente de lo que haga el otro jugador, es mejor no cooperar: si mi compa\~nero deserta, es mejor para m\'i desertar que cooperar, ya que $0 > -c$; si mi compa\~nero coopera, sigue siendo mejor para m\'i desertar que cooperar, ya que $b > b - c$. }%
+Esta propiedad será fundamental para la teoría de la probabilidad, pues, a trav\'es de los resultados obtenidos en un juegos de apuestas podemos realizar ``inferencia'' sin necesidad de que nadie conozca la probabilidad real.
 %
-\en{This creates a dilemma: although mutual cooperation is a preferable outcome, no individual has the incentive to cooperate. }%
-\es{De ah\'i el dilema: aunque la cooperaci\'on mutua es un resultado preferible, ningún individuo tiene el incentivo de cooperar. }%
+En este sentido, los procesos multiplicativos jugados individualmente pueden ser vistos como la funci\'on de costo epistémica.
+%
+Volveremos sobre este punto en el siguiente capítulo.
+%
+%Individualmente encontramos una ventaja a favor de lo que llamamos estrategias ``equilibradas'', que dividen los recursos en la misma proporci\'on que la frecuencia $p$ (verificado nuevamente en esta secci\'on).
 
-% Parrafo
+\subsection{La ventaja a favor de la cooperación}
 
-\en{\T }%
-\es{Si este fuera el caso, los desertores deber\'ian tener una tasa de crecimiento mayor a lo cooperadores. }%
-%
-\en{However, the first defector from an entirely cooperative group obtains a lower growth rate than before defecting. }%
-\es{Sin embargo, en la figura~\ref{fig:ergodicity_desertion} podemos observar que el primer desertor de un grupo enteramente cooperador obtiene una tasa de crecimiento menor a la que ten\'ia antes de desertar. }% 
-%
-\begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{figures/pdf/ergodicity_desertion.pdf}
-    \end{subfigure}
-    \caption{
-    \en{The colors represent groups of size 100 with 0, 1 and 2 defectors. }%
-    \es{Los colores representan los grupos de tama\~no 100 con 0, 1 y 2 desertores. }%
-    %
-    \en{The curves of the individual defectors are those at the top of each of the groups. }%
-    \es{Las curvas de los individuos desertores son las que est\'an arriba en cada uno de los grupos. }%
-    }
-    \label{fig:ergodicity_desertion}
-\end{figure}
-%
-\en{The resources of the first individual defector (blue group with 1 defector), is below the resources of the individuals in the fully cooperative group (green group with 0 defectors). }%
-\es{Los recursos del primer individuo desertor (la curva variable del grupo azul), est\'a por debajo de los recursos de los individuos del grupo enteramente cooperador (grupo verde con 0 desertores). }%
-%
-\en{Defecting, instead of increasing the growth rate of the defective individuals, reduces it. }%
-\es{Desertar, en vez de aumentar la tasa de crecimiento de los individuos desertores, la reduce. }%
-%
-\en{\T }%
-\es{Esto ocurre cada vez que una agente cambia de comportamiento de cooperador a desertor (ver grupo rojo con dos desertores). }%
-%
-\en{Without penalties, defector strategies negatively affect their own long-term growth rate because their own behavior increases the fluctuations of the random variable on which they depend. }%
-\es{Sin necesidad de introducir castigos, las estrategias desertoras afectan negativamente su propia tasa de crecimiento a largo plazo debido a que su comportamiento aumenta las fluctuaciones de la variable del fondo común del que dependen.}
-%
-\en{In other words, the commons does not have the structure of the prisoner's dilemma, as is usually claimed in the literature. }%
-\es{Es decir, los bienes comunes no tiene la estructura del dilema del prisionero como habitualmente se afirma en la literatura. }%
-% 
-% \en{This means that the payoff matrix is not isomorphic to a prisoner's dilemma. }%
-% \es{Esto significa que la matriz de pagos no son isomorfas al dilema del prisionero. }%
-
-% Parrafo
-
-En cualquier caso, los desertores siempre tienen una posici\'on relativa mejor que los cooperadores de su propio grupo.
-%
-Esto puede favorecer la selecci\'on de comportamientos desertores al interior de los grupos, por ejemplo por imitaci\'on, produciendo una cascada de deserciones que pongan fin a toda cooperaci\'on.
-%
-Pero al mismo tiempo, la tasa de crecimiento m\'as alta la obtienen los grupos enteramente cooperativos, lo que favorece la selecci\'on de grupos enteramenete cooperadores sobre el resto.
-%
-\es{Por este motivo, la selecci\'on multinivel favorece a los individuos cooperadores sobre los desertores. }
-
-\subsection{Especializaci\'on}
+\subsection{La ventaja a favor de la especializaci\'on cooperativa}
 
 Hasta ahora ven\'iamos analizando el comportamiento de recursos que crecen $1.5$ con caras y $0.6$ con secas con una moneda no sesgada, una ambiente con probabilidad $P(\Aa) = 0.5$.
 %
@@ -1312,7 +1494,11 @@ Hemos visto en la figura~\ref{fig:tasa-temporal-3} que la tasa de crecimiento de
 %
 \es{Aqu\'i mostramos que, una vez que la cooperaci\'on emerge, las estrategias individualmente mal adaptadas al ambiente (especialistas) consigen superar tanto a las estrategias bien adaptas individualmemte (generalistas), como a sus grupos cooperativos de tama\~no infinito. }%
 
-\section{Coexistencia y simbiosis}
+\subsection{La coexistencia y simbiosis}
+
+\todo[inline]{La coexistencia ($r=1$) se produce cuando la casa de apuestas elige los pagos justos propuestos por Pascal y Fermat, el inverso de la probabilidad.}
+%
+
 
 En la historia de la vida, no s\'olo hay una ventaja a favor de la cooperaci\'on y la especializaci\'on.
 %
@@ -1374,87 +1560,7 @@ La pregunta es: ¿Los pagos $Q_c$ y $Q_s$ propuestos por Pascal y Fermat garanti
 
 % Parrafo
 
-Individualmente hay dos formas de apostar.
-%
-La primera es apostar a una única de las dos opciones, por ejemplo a Caras.
-%
-En este escenario, la persona asigna un valor $ 1 \geq b_c = l > 0 $ a Caras y $b_s = 0$ a secas.
-%
-Supongamos que en la primera sale Cara y en la segunda Seca.
-%
-La riqueza en la primera es el ahorro $1-l$ m\'as el pago que obtiene por lo apostado en Cara $l \, Q_c$.
-%
-Y en la segunda vuelta, cuando sale Seca, la riqueza es solo el ahorro, lo no apostado a Cara $1-l$.
-%
-\begin{equation}
-\omega_T = \underbrace{\overbrace{(\omega_0 \, (1-l) + \omega_0 \, l \, Q_c )}^{\omega_1} \, (1-l)}_{\omega_2} \,\dots
-\end{equation}
-%
-Lo que podemos reescribir como,
-%
-\begin{equation}
-\begin{split}
-\omega_T &= \omega_0 \, ((1-l) + \, l \, Q_c ) \, (1-l) \, \dots \\
- &= \omega_0 \, ( (1-l) + \, l \, Q_c )^{n_c} \, (1-l)^{n_s} 
-\end{split}
-\end{equation}
-%
-donde $n_c + n_s = T$ son la cantidad de veces que sali\'o Cara y Seca en los $T$ pasos.
-%
-Es decir, la riqueza se actualiza siguiendo un proceso multiplicativo.
-
-% Parrafo
-
-La otra forma de apostar consiste en utilizar todos los recursos en cada vuelta, poniendo $b_c = b$ en Cara y el resto en Seca $b_s = (1-b)$.
-%
-En este caso la riqueza se actualiza como,
-%
-\begin{equation} \label{eq:kelly_paraconsistente}
-\omega_T = \underbrace{\overbrace{(\omega_0 \, b \, Q_c)}^{\omega_1} \,  (1-b) \, Q_s}_{\omega_2} \dots = \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s}
-\end{equation}
-%
-No s\'olo las dos formas de apostar actualizan los recursos a trav\'es de un proceso multiplicativo. 
-%
-No es dif\'icil demostrar que siempre existe una equivalencia.
-%
-Por ello, de aqu\'i en adelante analizaremos únicamente esta última forma de apuestar, la que utiliza todos los recursos en cada vuelta.
-
-% Parrafo
-
-En general, la casa de apuestas puede ofrecer cualquier tipo de pago.
-%
-La tasa de crecimiento individal para cualquier pago no negativo, $Q_c > 0$ y $Q_s > 0$ es
-%
-\begin{equation}
-\begin{split}
-\lim_{T \rightarrow \infty } (\omega_0 \, r)^T &= \lim_{T \rightarrow \infty } \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s} \\
-r &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^{\frac{n_s}{T}} = (b \, Q_c)^{p} ((1-b) \, Q_s )^{1-p}
-\end{split}
-\end{equation}
-%
-Para maximizar la tasa de crecimiento $r$ tomamos el logaritmo de ambos lados, y buscamos el punto cr\'itico de esta funci\'on c\'oncava,
-%
-\begin{equation}
-\begin{split}
-0 &= \frac{d}{db} p \log (b \, Q_c) + (1-p) \log ((1-b) \, Q_s) \\
-0 &= \frac{p}{b} + \frac{1-p}{1-b} \\
-p &= b 
-\end{split}
-\end{equation}
-%
-Sin importar el pago que elija la casa de apuestas, individualmente la tasa de crecimiento se maximiza dividiendo los recursos en la misma proproci\'on que la frecuencia t\'ipica $p$.
-%
-Ni siquiera la derivada de la funci\'on depende de los pagos que ofrezca la casa de apuestas.
-%
-Este resultado fue descubierto por Kelly en 1954, el cual escribe con un signo de admiraci\'on.
-%
-\begin{quotation}
-That is, \emph{the gambler ignores the posted odds} in placing his bets!
-\end{quotation}
-%
-La coexistencia ($r=1$) se produce cuando la casa de apuestas elige los pagos justos propuestos por Pascal y Fermat, el inverso de la probabilidad.
-%
-Individualmente encontramos una ventaja a favor de lo que llamamos estrategias ``equilibradas'', que dividen los recursos en la misma proporci\'on que la frecuencia $p$ (verificado nuevamente en esta secci\'on).
+\todo[inline]{Saqué la apuesta individual}
 
 % Parrafo
 
@@ -2838,7 +2944,7 @@ En este proceso antag\'onico ambos agentes pueden descubrir la verdadera probabi
 
 A diferencia del resto de las funciones de costo, los procesos multiplicativos tienen la propiedad especial de producir, no solo una distribuci\'on de recursos independiente de los pagos elegidos arbitrariamente, sino que garantiza adem\'as la hip\'otesis que apost\'o sus recursos en la misma proporci\'on que la frecuencia t\'ipica se quedar\'a en tiempo infinito con todos los recursos que ten\'ian las otras hip\'otesis.
 %
-En este sentido, los procesos multiplicativos pueden ser vistos como la funci\'on de costo universal.
+En este sentido, los procesos multiplicativos jugados individualmente pueden ser vistos como la funci\'on de costo epistémica.
 %
 Esto es interesante en tanto ser\'a todas las axiomatizaciones alternativas de la teor\'ia de la probabilidad llegan a la conclusi\'on de que la forma natural de evaluar las hip\'otesis es a trav\'es de un proceso multiplicativo, la ``regla del producto''.
 
@@ -5725,7 +5831,7 @@ print(posterior)
 %
 \en{Instead of using the message notation proposed by the sum-product algorithm, we name the messages following the criteria shown in Fig.~\ref{fig:ep_ts}. }%
 \es{En vez de utilizar la notaci\'on de mensajes propuesta por el \emph{sum-product algorithm}, le ponemos nombres a los mensajes como se muestra en la figura~\ref{fig:ep_ts}. }%
-%
+
 \begin{figure}[ht!]
   \centering
   \scalebox{.9}{
@@ -5779,7 +5885,8 @@ print(posterior)
         
         %\path[draw, ->, fill=black!50,sloped] (fr2) edge[bend left,draw=black!50] node[midway,above,color=black!75, rotate=180] {\scriptsize \textbf{5:} \emph{likelihood}$(d_{0})$} (d2);
         
-        %\path[draw, ->, fill=black!50,sloped] (fd2) edge[bend left,draw=black!50] node[midway,above,color=black!75] {\scriptsize \textbf{4:} \emph{prior}$(d_{0})$} (d2);       
+        %\path[draw, ->, fill=black!50,sloped] (fd2) edge[bend left,draw=black!50] node[midway,above,color=black!75] {\scriptsize \textbf{4:} \emph{prior}$(d_{0})$} (d2);
+        
 } 
 }
 \caption{
