@@ -33,7 +33,7 @@ axis(lwd=0,side=1,cex.axis=1.5,line=-0.3)
 axis(lwd=0,side=2,cex.axis=1.5,line=-0.3)
 axis(lwd=0,side=1, at=0.71, labels=0.71,cex.axis=1.33,line=-0.8,tck=0.015)
 axis(side=1, at=0.71, labels=NA,cex.axis=1.33,line=0,tck=0.01)
-mtext(text= "Ambiente",side =1,line=2.33,cex=2)
+mtext(text= "Probabilidad p",side =1,line=2.33,cex=2)
 mtext(text = "Tasa de crecimiento" ,side =2,line=2,cex=2)
 lines(a, (0.71^a)*(0.29^(1.0-a)), lwd=4, col=rgb(0.7,0.2,0.2))
 lines(a, (0.99^a)*(0.01^(1.0-a)), lwd=4, col=rgb(0.2,0.7,0.2))
@@ -47,7 +47,7 @@ points(c(0.71),c(0.99^0.71*0.01^0.29), col=rgb(0.2,0.7,0.2), pch=19, cex=2)
 points(c(0.71),c(0.99*0.71+0.01*0.29), col=rgb(0.2,0.7,0.2), pch=15, cex=2)
 abline(v=0.71, lty=3)
 
-legend(0.05,1,lwd=c(4,4,4),title="Estrategias",
+legend(0.05,1,lwd=c(4,4,4),title="Apuestas b",
        legend = c(0.50, 0.71, 0.99), 
        col = c(rgb(0.2,0.2,0.7),rgb(0.7,0.2,0.2),rgb(0.2,0.7,0.2)), bty = "n",cex = 1.5)
 
@@ -59,7 +59,7 @@ axis(lwd=0,side=1,cex.axis=1.5,line=-0.3)
 axis(lwd=0,side=2,cex.axis=1.5,line=-0.3)
 axis(lwd=0,side=1, at=0.71, labels=0.71,cex.axis=1.33,line=-0.8,tck=0.015)
 axis(side=1, at=0.71, labels=NA,cex.axis=1.33,line=0,tck=0.01)
-mtext(text= "Ambiente",side =1,line=2.33,cex=2)
+mtext(text= "Probabilidad p",side =1,line=2.33,cex=2)
 mtext(text = "Tasa de crecimiento" ,side =2,line=2,cex=2)
 abline(v=0.71, lty=3)
 lines(a, (0.71^a)*(0.29^(1.0-a)), lwd=2, col=rgb(0.5,0.5,0.5))
