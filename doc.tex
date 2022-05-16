@@ -1348,7 +1348,7 @@ estará compuesto por los recursos de $n_c$ individuos que obtuvieron Cara y los
 %
 Luego, la cuota del fondo común que recibe cada persona es,
 %
-\begin{equation}
+\begin{equation} \label{eq:cuota_del_fondo}
 \omega_{t+1} =  \frac{1}{N} \, \text{fondo común}_t = \omega_t  \left( b \, Q_c  \, \frac{n_c}{N} +  (1-b) \, Q_s \, \frac{n_s}{N} \right)
 \end{equation}
 %
@@ -1370,28 +1370,33 @@ Es un resultado conocido que la media aritmética siempre es mayor o igua a la m
 \end{split}
 \end{equation}
 %
-Donde $x = b \, Q_c$ y $y = (1-b) \, Q_s$.
+Si tomamos el logaritmo de ambos lado, y redefinimos $x = b \, Q_c$ e $y = (1-b) \, Q_s$, vemos que
+\begin{equation}
+p \log x +  (1-p)  \log y \leq \log \left( p \, x +  (1-p) \, y \right)
+\end{equation}
 %
-El promedio de los logaritmos siempre es menor o igual al logaritmo del promedio.
+el promedio de los logaritmos siempre es menor o igual al logaritmo del promedio.
 %
 La igualdad ocurre cuando $x = y$.
 
 % Parrafo
 
+Para calcular la tasa de crecimiento de grupos finitos simplemente hay que expandir considerar todos los posibles valores que puede tomar la cuota del fondo común (ecuación \ref{eq:cuota_del_fondo}), considerando la probabilidad de se ocurrencia.
+%
+Por ejemplo, en grupos de tamaño dos puede ocurrir que ambas personas obtengan Caras, que ambas obtengan Secas, o que una obtenga Cara y la otra Seca.
+%
+Con suficiente tiempo, la tasa de crecimiento de grupos de tamaño 2 es,
+%
+\begin{equation}
+r_2 = (b \, Q_c)^{p^2} \, ((1-b) \, Q_s)^{(1-p)^2} \, (b \, Q_c \, \frac{1}{2} + (1-b) \, Q_s \, \frac{1}{2})^{2p(1-p)} 
+\end{equation}
+%
 A diferencia de las apuestas individuales, cuando se juega cooperativamente los pagos que ofrece la casa de apuestas debe ser tenido en cuenta par decidir la apuesta óptima.
 %
 Supongamos que los pagos son los de la teoría de la probabilidad, $Q_c = Q_s = 1$.
 %
 En la figura~\ref{fig:tasa-temporal-0} calculamos, para todos los posibles ambientes $P(a)=p$, la tasa de crecimiento individual (l\'ineas continuas) y cooperativa de tama\~no infinito (l\'inea punteada) de las estrategias $\Ee \in \{0.5, 0.71, 0.99\}$.
 %
-\es{Las tasas de crecimiento individual, que siguen la media geom\'etrica, se pueden aumentar cooperativamente hasta, en grupos de tama\~no infinito, alcanzar la media aritm\'etica. }%
-%
-En el caso especial de la estrategia $\Ee = 0.5$ ambas tasas de crecimiento son iguales, y no dependen de la probabilidad del ambiente $p$ pues, sin importar lo que ocurra, siempre recibe el mismo pago.
-%
-Para el resto de las estrategias, la cooperaci\'on aumenta la tasa de crecimiento.
-
-%
-
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -1402,7 +1407,7 @@ Para el resto de las estrategias, la cooperaci\'on aumenta la tasa de crecimient
     \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\linewidth,page=2]{figures/tasa-temporal2.pdf}
     \caption{}
-    \label{fig:tasa-temporal-2}
+    \label{fig:tasa-temporal-1}
     \end{subfigure}
     \caption{
     (a) Tasas de crecimiento individual y cooperativa infinita (l\'ineas continuas y punteadas) de tres apuestas $b \in \{0.5, 0.71, 0.99\}$ (eje y) en diferentes ambientes $p$ (eje x).
@@ -1416,20 +1421,33 @@ Para el resto de las estrategias, la cooperaci\'on aumenta la tasa de crecimient
     }
     \label{fig:tasa-temporal-coop}
 \end{figure}
-
 %
+Las tasas de crecimiento individual, que siguen la media geom\'etrica, se pueden aumentar cooperativamente hasta, en grupos de tama\~no infinito, alcanzar la media aritm\'etica.
+%
+En el caso especial de la estrategia $\Ee = 0.5$ ambas tasas de crecimiento son iguales, y no dependen de la probabilidad del ambiente $p$ pues, sin importar lo que ocurra, siempre recibe el mismo pago.
+%
+Para el resto de las estrategias, la cooperaci\'on aumenta la tasa de crecimiento.
+
+
+% Parrafo
 
 Notar que el crecimiento que se logra en grupos cooperativos es mayor a medida que la apuesta es más extrema.
 %
-Incluso la tasa de crecimiento que se obtiene con una apuesta $b = 0.99$ en grupos cooperativos de tama\~no infinito (cuadrado verde) es mayor a la tasa de crecimiento que la apuesta individual óptima $b = p = 0.71$ obtiene en grupos cooperativos de tama\~no infinito.
+Incluso la tasa de crecimiento que se obtiene con una apuesta $b = 0.99$ en grupos cooperativos de tama\~no infinito (cuadrado verde) es mayor a la tasa de crecimiento que la apuesta individual óptima $b = p = 0.71$ obtiene en grupos cooperativos de tama\~no infinito (cuadrado rojo).
 %
-No es necesario que el grupo que apuesta $b=0.99$ sea de tamaño infinito para superar la tasa de crecimiento del grupo que apuesta $b=0.71$.
+No es necesario que el grupo que apuesta $b=0.99$ sea de tamaño infinito para superar la tasa de crecimiento del grupo que apuesta $b=0.71$ en un contexto donde la probabilidad es $p=0.71$.
 %
 En la figura~\ref{fig:tasa-temporal-1} graficamos las tasas de crecimiento de la apuesta $b=0.99$ para grupos cooperativos de tama\~no 1 a 5.
 %
-Grupos cooperativos de tama\~no 3 que apuestas $b=0.99$ logran una tasa de crecimiento que est\'a por arriba de la tasa de crecimiento de los grupos de tama\~no infinito que apuestan al óptimo individual $b=p=0.71$.
+Grupos cooperativos de tama\~no 3 que apuestan $b=0.99$ logran una tasa de crecimiento que est\'a por arriba de la tasa de crecimiento de los grupos de tama\~no infinito que apuestan al óptimo individual $b=p=0.71$.
 
 \subsection{La ventaja de la especializaci\'on cooperativa}
+
+Hemos visto que, a diferencia de las apuestas individuales, cuando se juega cooperativamente los pagos que ofrece la casa de apuestas debe ser tenido en cuenta par decidir la apuesta óptima.
+%
+Para analizar la apuesta óptima en grupos cooperativos seguiremos analizando el ejemplo anterior, en el que los pagos que ofrece la casa de apuestas son los que utilizará la teoría de la probabilidad, $Q_c = Q_s = 1$ (figura \ref{fig:tasa-temporal-coop}).
+
+% Parrafo
 
 Vamos a llamar ``apuesta generalistas'' a las que logran retornos similares en cada uno de los estados ambientales.
 %
@@ -1448,17 +1466,13 @@ Vamos a llamar a esta apuesta ``epistémica'', porque se ajusta a la probabilida
 Apuestas m\'as generalista y m\'as especialistas siempre tienen menor tasa de crecimiento individual que la apuesta epistémica ($b = p$).
 %
 Sin embargo, hemos visto que en grupos cooperativos, así sean pequeños, el aumento de la tasa de crecimiento que se produce por la reducción de fluctuaciones tiene una especie de efecto secundario que comienza a favorecer apuestas cada vez más especialistas, como hemos visto en la figura~\ref{fig:tasa-temporal-coop}
- 
-% Parrafo
 
-Para analizar el nivel de especialización óptimo, seguiremos analizando los pagos de la teoría de la probabilidad, $Q_c$ y $Q_s$.
-%
-En la figura~\ref{fig:tasa-temporal-2} fijamos el ambiente en $p = 0.71$ y analizamos como var\'ia la tasa de crecimiento cooperativa de todas las posibles estrategias en grupos de tama\~nos 1 a 3.
-%
+% 
+
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
-    \includegraphics[width=\linewidth,page=3]{figures/tasa-temporal.pdf}
+    \includegraphics[width=\linewidth,page=5]{figures/tasa-temporal2.pdf}
     \caption{}
     \label{fig:tasa-temporal-3}
     \end{subfigure}
@@ -1472,6 +1486,10 @@ En la figura~\ref{fig:tasa-temporal-2} fijamos el ambiente en $p = 0.71$ y anali
     }
     \label{fig:tasa-temporal-2}
 \end{figure}
+
+% Parrafo
+
+En la figura~\ref{fig:tasa-temporal-2} fijamos el ambiente en $p = 0.71$ y analizamos como var\'ia la tasa de crecimiento cooperativa de todas las posibles estrategias en grupos de tama\~nos 1 a 3.
 %
 Cuando el grupo tiene tama\~no 1, la apuesta \'optima es la epistémica $b = p = 0.71s$.
 %
@@ -1487,128 +1505,150 @@ En el extremos (grupos cooperativos de tama\~no inifinito) la estrategia \'optim
 \underset{b}{\text{arg max}} \lim_{N \rightarrow \infty} \omega_t = 1
 \end{equation}
 %
-Usando los pagos de la teoría de la probabiilidad, $Q_c = Q_s = 1$, la apuesta cooperativa óptima deja de ser la epistémica y pasa ser especialistas.
+Usando los pagos de la teoría de la probabiilidad, $Q_c = Q_s = 1$, la apuesta cooperativa óptima deja de ser la epistémica y pasa ser la especialistas.
 
 % Parrafo
 
-¿Rompimos entonces la propiedad epistémica?
+La cooperación rompe la propiedad epistémica.
 %
+Esto es, la apuesta que divide los recursos en la misma proporición que la probabilidad de los eventos, $b=p$, ya no es la apuesta óptima y por lo tanto no se quedará a largo plazo con todos los recursos del sistema.
+%
+Sin embargo, la cooperación ofrece una propiedad que podemos llamar meta-epistémica.
+%
+La ciencias es una actividad cooperativa (se hacen públicos los resultados) porque de esa forma obtenemos una tasa de crecimiento en el conocimineto que es mayor a la que obtendríamos trabajando asiladamente.
+%
+Este mismo principio se aplica en general a toda evolución cultural.
+%
+Con el surgimiento de la cultura, el aprendizaje dejó de depender exclusivamente de la experiencia individual.
+%
+La acumulación cultural que se fue produciendo generación a generación generó una especie de fondo común de conocimineto que produjo cambios radicales para nuestra especie: luego de esta transición cultural dejamos de estar en peligro de extinción y pasamos ocupar todos los nichos ecológicos como ningún vertebrado terrestre había logrado antes.
 
+% Parrafo
+
+La aparición de un fondo común de conocimiento, además de aumentar por si misma la tasa de aprendizaje de una comunidad (por la ventaja de la cooperación), produce un cambio en la política de innovación cultural.
+%
+Jugando individualmente es necesario diversificar el aprendizaje, conociendo de todo un poco, de modo de evitar la ignorancia total en alguno de los casos que vuelvan inviable la vida.
+%
+Pero jugando cooperativamente, bajo un fondo común de conocimiento, la estrategia óptima empieza orientarse en favor de los nuevos descubrimientos.
+%
+Veamos esto en un ejemplo concreto.
+
+% Parrafo
+
+Supongamos una apuesta científica que debe decidir la asignación de recursos entre tipos de investigaciones.
+%
+Entre estudiar una opción segura que va a ser exitosa con alta probabiilidad, $p>0.5$, pero que por ser relativamente conocida paga menos que un descubrimiento que tiene menor probabilidad de éxito, $1-p$.
+%
+Supongamos que el pago por la opción segura es igual o menor que el inverso de la probabilidad, $Q_c \leq 1/p$, y que el pago por el descubrimiento es mayor que el inverso de la probabilidad, $Q_s > 1/(1-p)$.
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\linewidth,page=7]{figures/tasa-temporal2.pdf}
+    \end{subfigure}
+    \caption{
+    }
+    \label{fig:tasa-temporal-apuesta-cientifica}
+\end{figure}
+%
+Debido a que la población científica es suficientemente grande en la actualidad, podemos aproximar la tasa de crecimiento con $r \approx \left( b \, Q_c  \, p +  (1-b) \, Q_s \, (1-p)\right)$.
+%
+En este contexto, la apuesta óptima consiste en asignar todos los recursos en los descubrimientos, a pesar de que la mayoría fracase individualmente.
+%
+Trabajando cooperativemente conviene arriesgarse por la mejor opción, a pesar de que esta sea riesgosa en términos individuales.
+%
+A través de este tipo de especialización cooperativa se obtiene una tasa de crecimiento que es mayor a la que se puede acceder jugando individualmente.
 
 \subsection{La coexistencia y simbiosis}
 
-\todo[inline]{La coexistencia ($r=1$) se produce cuando la casa de apuestas elige los pagos justos propuestos por Pascal y Fermat, el inverso de la probabilidad.}
+En la secci\'on anterior vimos que a trav\'es de la cooperaci\'on y la especializaci\'on se pueden obtener tasas de crecimiento mayor a la que se puede obtener individualmente.
 %
+¿Esto significa que una pobalci\'on de apostadores puede quebrar a la casa de apuestas eligiendo la apuesta $b$ a trav\'es de la cooperaci\'on y la especializaci\'on?
+%
+De ser así, la coexistencia de grupo cooperativo con la casa de apuestas (o un agente vivo) estaría en riesgo de sobreexplotación.
 
+% Parrafo
 
-En la historia de la vida, no s\'olo hay una ventaja a favor de la cooperaci\'on y la especializaci\'on.
-%
-Tambi\'en se observa una ventaja a favor de la coexistencia entre entidades aprentemente competitivas.
-%
-Todos los animales, desde los insectos a los mam\'iferos, somos heter\'otrofos, necesitamos alimentarnos de otros seres vivos y por lo tanto nos vemos obligados a coexistir con ellos para garantizar nuestra propia vida.
-% %
-% Las evoluci\'on cultural de tecnolog\'ias de reciprocidad ecol\'ogica permiti\'o a las diferentes pueblos del mundo de forma estable con las especies propias a cada uno de los sistemas ecol\'ogicos locales, garantizando as\'i la supervivencia de esas comunidades en el tiempo.
-% %
-Como resultado de nuestras tecnolog\'ias de reciprocidad ecol\'ogica se produjo la aparici\'on independiente de la domesticaci\'on de especies animales y vegetales, a trav\'es de la cual los organismos asociados obtuvieron una ventaja sobre aquellos que permanecieron fuera de esta relaci\'on, produciendo un beneficio mutuo, un tipo de simbiosis entre especies.
-% %
-% En particular, la agricultura (producto de la reciprocidad con las especies fotosint\'eticas), produjo un aumento poblacional que promovi\'o a su vez el desarrollo de nuevas innovaciones culturales y cient\'ificas.
+Si bien las interacciones interculturales de la modernidad aceleraron las innovaciones, el proceso colonial asociado produjo su ruptura especialmente durante la era genocidios que se inicia a partir de mediados del siglo 19.
 % 
-% % Parrafo
-
-La coexistencia ha mostrado ser importante tambi\'en en t\'erminos culturales en tanto todos los pueblos del mundo desarrollaron obligaciones de reciprocidad, de dar y de recibir.
+Conocimientos locales de reciprocidad ecol\'ogica se perdieron de forma irreversible y un modo de producci\'on estandarizado se globalizó, produciendo una ruptura de la coexistencia ecol\'ogica.
 %
-La interacci\'on intercultural ha mostrado adem\'as que produce una acelearaci\'on de las innovaciones cient\'ificas y t\'ecnicas, como ocurri\'o durante la modernidad reciente.
-%
-Y las rupturas de la coexistencia intercultura, en cambio, han mostrado que producen procesos de involuci\'on cultural, como los registrados en Tasmania y en Europa occidental durante la Edad Media.
-%
-El proceso colonial asociado a la modernidad fue produciendo una ruptura de la coexistencia intercultral, especialmente aguda durante la era genocidios que se inicia a partir de mediados del siglo 19.
-% 
-Los conocimientos emp\'iricos locales para la reciprocidad ecol\'ogica se perdieron de forma irreversible.
-%
-La consecuente globalizaci\'on de un modo de producci\'on estandarizado, a base de monocultivos resistetes a herbicidas, est\'a produciendo ahora una ruptura de la coexistencia ecol\'ogica.
-%
-A pesar de todos los avances, la ciencia metropolitana moderna no es capaz de revertir la masiva p\'erdida biodiversidad actual.
+A pesar de todos los avances, la ciencia metropolitana moderna no es capaz de revertir la masiva p\'erdida biodiversidad actual producto de la masiva pérdida de diversidad cultural previa.
 
 % Parrafo
 
 Para una especie heter\'otrofa como la nuestra, la coexistencia con otras especies es la única estrategia posible.
 %
-Esas relaciones jam\'as existen como sistemas asilados del resto de las relaciones de coexistencia presente en los ecosistemas.
+% Esas relaciones jam\'as existen como sistemas asilados del resto de las relaciones de coexistencia presente en los ecosistemas.
+% %
+% As\'i, la ruptura de las coexistencias de las que no dependemos directamente siempre nos afecta indirectamente en algún grado.
+% %
+% Las tecnolog\'ias de reciprocidad social y ecol\'ogica han mostrado ser fundamentales para la supervivencia de las comunidades en el tiempo, pues a trav\'es de ellas se reducen las fluctuaciones generales que ponen en peligro nuestra propia estabilidad.
 %
-As\'i, la ruptura de las coexistencias de las que no dependemos directamente siempre nos afecta indirectamente en algún grado.
+Las tecnologías de reciprocidad ecológica produjeron la aparición independiente de la domesticación de especies animales y vegetales.
 %
-Las tecnolog\'ias de reciprocidad social y ecol\'ogica han mostrado ser fundamentales para la supervivencia de las comunidades en el tiempo, pues a trav\'es de ellas se reducen las fluctuaciones generales que ponen en peligro nuestra propia estabilidad.
-
-% Parrafo
-
-La teor\'ia de la probabilidad nace en 1648 justamente como una tecnolog\'ia de reciprocidad, en respuesta a la pregunta de cu\'al es el \emph{precio justo} en contextos de incertidumbre entre entidades competitivas.
+Todos los pueblos del mundo desarrollaron obligaciones de reciprocidad social, de dar y recibir.
+%
+La teor\'ia de la probabilidad nace en 1654 justamente como una tecnolog\'ia de reciprocidad, en respuesta a la pregunta de cu\'al es el \emph{precio justo} en contextos de incertidumbre entre entidades competitivas.
 %
 Pascal y Fermat re-descubieron en la reciente sociedad post-fedual que el valor justo de los intercambios deb\'ia ser inversamente proporcional a la probabilidad de esos intercambios.
 %
-Supongamos que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ si una moneda sale Cara y Seca y que la probabilidad de Cara es $p$.
-%
 Según el principio de precio justo, por cada unidad apostada en Cara, la casa debe pagar $Q_c = 1/p$ si ocurre Cara y $0$ en caso contrario, y por cada unidad apostada en Seca, la casa debe pagar $Q_s = 1/(1-p)$ si ocurre Seca y $0$ en caso contrario.
-%
-En cada ronda, las personas apuestan una proporci\'on $b_c$ a Cara y $b_s$ a Seca.
 
 % Parrafo
 
-En la secci\'on anterior vimos que a trav\'es de la cooperaci\'on y la especializaci\'on se pueden obtener tasas de crecimiento mayor a la que se puede obtener individualmente.
+Para analizar lo que ocurre con los precios justos de la teoría de la probabilidad, primero analizamos las consecuencias que este valor tiene sobre apostadores individuales.
 %
-La pregunta es: ¿Los pagos $Q_c$ y $Q_s$ propuestos por Pascal y Fermat garantizan la coexistencia en el tiempo entre la casa de apuestas y una poblaci\'on de apostadoras?
+Para ello, recordamos que la tasa de crecimiento individual está dada por la media geométrica, $r_i = (  b \, Q_c)^p  \,  ((1-b) \, Q_s)^{1-p}$.
 %
-¿O siempre una pobalci\'on de apostadoras puede quebrar a la casa de apuestas eligiendo las apuestas $b_c$ y $b_s$ a trav\'es de la cooperaci\'on y la especializaci\'on?
+Además, recordemos que la apuesta óptima en términos individales es $b=p$.
+%
+Esto significa que, cuando la casa de apuestas paga el precio justo, y los individuos juegan óptimamente se produce la coexistencia entre la casa de apuestas y el individuo.
+%
+\begin{equation}
+r_i = (  p \, \frac{1}{p})^p  \,  ((1-p) \, \frac{1}{1-p})^{1-p} = 1
+\end{equation}
+%
+La apuesta se cancela con el pago.
+%
+Cualquier otra apuesta $b\neq p$ producirá una baja en la tasa de crecimineto de los individuos apostadores. 
+%
+Si existe un benficio mutuo en el intercambio, una simbiosis entre la especies, la emergencia de la coexistencia produce equilibrio que llamamos epistémico, pues recupera la probabilidad con la que se producen los eventos.
 
 % Parrafo
 
-\todo[inline]{Saqué la apuesta individual}
-
-% Parrafo
-
-Para analizar las apuestas \'optimas en grupos coopertaivos debemos analizar el comportamiento del fondo común del cual dependen sus miembros.
+Para analizar la posibilidad de coexistebcia entre la casa de apuesta y los grupos cooperativos de tamaño infinito, recordemos que la cuota que se recibe del fondo común $\omega_{t+1}$ es constante, $\omega_{t+1} =  \omega_t \, \left(  b \, Q_c \, p +  (1-b) \, Q_s \, (1-p) \right)$, el promedio de los estado.
 %
-En cada ronda, una cantidad $n_c$ de miembros van a recibir Caras y una cantidad $n_s$ va a recibir Secas.
-%
-El fondo común en un tiempo $t+1$ es la suma de todos los recursos individuales en el tiempo $t$.
-%
-Cuando el tama\~no del grupo tiende a infinito, la cuota que se recibe del fondo común $\omega_{t+1}$ es constante, el promedio de los estados.
+Cuando los pagos son justos, $Q_c = 1/p$ y $Q_s = 1/(1-p)$, la tasa de crecimiento cooperativa siempre vale $1$, m\'as all\'a de la apuesta $b$ que elija el grupo cooperativo!
 %
 \begin{equation}
 \begin{split}
-\lim_{N \rightarrow \infty} N \omega_{t+1} &= \lim_{N \rightarrow \infty} (\omega_t \, b \, Q_c ) \, n_c + (\omega_t \, (1-b) \, Q_s ) \, n_s \\
- \omega_{t+1} &=  \omega_t \, \underbrace{\left(  b \, Q_c \, p +  (1-b) \, Q_s \, (1-p) \right)}_{\text{Tasa de crecimiento } r} 
+r_c &=  b \, \frac{1}{p} \, p +  (1-b) \, \frac{1}{1-p} \, (1-p) = b + (1 - b) = 1
 \end{split}
 \end{equation}
 %
-Cuando los pagos son justos, $Q_c = 1/p$ y $Q_s = 1/(1-p)$, la tasa de crecimiento cooperativa siempre vale $1$, m\'as all\'a de la apuesta $b$ que elija el grupo coopertaivo!
+A pesar de que a través de la especialización cooperativa se puedan obtenr tasas de crecimiento mayores a las individuales, los pago justos garantizan la coexistencia de una casa de apuestas con esos grupos cooperativo.
 %
-\begin{equation}
-\begin{split}
-r &=  b \, \frac{1}{p} \, p +  (1-b) \, \frac{1}{1-p} \, (1-p) = b + (1 - b) = 1
-\end{split}
-\end{equation}
-%
-Cooperar tiene una ventaja respecto de jugar individualmente, no importa si la apuesta es incorrecta, los individuos del grupo cooperativo nunca pierden.
-%
-Pero los pago rec\'iprocos garantizan todav\'ia la coexistencia de una casa de apuestas con un grupo cooperativo.
+Cooperar tiene todavía una ventaja respecto de jugar individualmente: no importa si la apuesta es incorrecta, los individuos del grupo cooperativo nunca pierden.
 %
 Todo otro pago que ofrezca la casa de apuestas puede ser aprovechado por el grupo cooperativo.
 %
 Y a trav\'es de la especializaci\'on podr\'an obtener una tasa de crecimiento mayor que los agentes individuales, como vimos en la secci\'on anterior.
 
-\section{La evaluaci\'on de hip\'otesis como un juego de apuestas}
-
-Basada en los mismos principios de la teor\'ia de la evoluci\'on, se ha desarrollado un marco te\'orico de ``evoluci\'on cultural'' que intenta explicar c\'omo cambia la cultura en el tiempo.
-%
-En ella, la cultura es vista como fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
-%
-Esto sugieren que el contexto social, la estabilidad o volatilidad de los v\'inculos, la estructura de la red de intercambios o el tama\~no de la poblaci\'on pueden afectar directa o indirectamente los procesos de aprendiaje social y acumulaci\'on cultural de los que dependen los individuos.
-%
-En esta tesis nos propusimos evaluar algunas de estas hip\'otesis antropol\'ogicas haciendo uso de todas las herramientas cient\'ificas y t\'ecnicas que hicieran falta para responderlas.
-
-% Parrafo
-
-%Los dos principales problemas para la evaluaci\'on de hip\'otesis son el acceso a datos de base emp\'irica y elecci\'on de las funciones de costo para que garanticen cuantificar correctamente el valor relativo de las hip\'otesis en base a los observables.
+% 
+% \section{La evaluaci\'on de hip\'otesis como un juego de apuestas}
+% 
+% Basada en los mismos principios de la teor\'ia de la evoluci\'on, se ha desarrollado un marco te\'orico de ``evoluci\'on cultural'' que intenta explicar c\'omo cambia la cultura en el tiempo.
+% %
+% En ella, la cultura es vista como fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
+% %
+% Esto sugieren que el contexto social, la estabilidad o volatilidad de los v\'inculos, la estructura de la red de intercambios o el tama\~no de la poblaci\'on pueden afectar directa o indirectamente los procesos de aprendiaje social y acumulaci\'on cultural de los que dependen los individuos.
+% %
+% En esta tesis nos propusimos evaluar algunas de estas hip\'otesis antropol\'ogicas haciendo uso de todas las herramientas cient\'ificas y t\'ecnicas que hicieran falta para responderlas.
+% 
+% % Parrafo
+% 
+% Los dos principales problemas para la evaluaci\'on de hip\'otesis son el acceso a datos de base emp\'irica y elecci\'on de las funciones de costo para que garanticen cuantificar correctamente el valor relativo de las hip\'otesis en base a los observables.
 % %
 % Por un lado, la falta de datos granulares y longitudinales sobre el comportamiento de todos los individuos de una comunidad en el tiempo ha impedido la evaluaci\'on de algunas de las hip\'otesis mencionadas.
 % %
@@ -3100,6 +3140,26 @@ Si bien las proposiciones de la ecuaci\'on \ref{eq:opiniones} tienen una estruct
 Ahí radica el origen de muchos de los desacuerdos que tenemos cuando conversamos: usar la misma palabra para expresar conceptos que en el fondo son distintos.
 El significado preciso del dato depende de su ``operacionalizaci\'on''.
 Todo dato científico tiene una estructura que invariante compuesta por cuatro elementos, el esquema indicidor (hipótesis de Samaja~\cite{}).
+
+
+
+\begin{table}[ht!]
+\centering \footnotesize
+\begin{tabular}{cccc}
+ \small Variable (V) & \small  Unidad de An\'alisis (UA) &\small  = &\small  Resultado (R)    \\
+ \downarrow &\downarrow&&\uparrow \\
+ Examen de representatividad &Examen de viabilidad & & Hipótesis indicadora \\
+ \downarrow &\downarrow& &\uparrow \\
+ \small Dimensiones (D) & \small Fuente de datos (F) &  & \small Indicador (I) \\
+ \downarrow &\downarrow& &\uparrow \\
+ \multicolumn{2}{c}{Examen de confiabilidad} & & Sentido común \\
+ \multicolumn{2}{c}{\downarrow} & &\uparrow \\
+ \small \multicolumn{2}{c}{Procedimiento (P)} & \rightarrow & \small Percepción \\
+\end{tabular}
+\caption{Estructura invariante del todo dato emp\'irico propuesta por Juan Samaja.}
+\label{tab:matriz_datos}
+\end{table}
+
 
 \begin{table}[ht!]
 \centering
