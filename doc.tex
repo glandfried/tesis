@@ -1635,8 +1635,25 @@ Todo otro pago que ofrezca la casa de apuestas puede ser aprovechado por el grup
 %
 Y a trav\'es de la especializaci\'on podr\'an obtener una tasa de crecimiento mayor que los agentes individuales, como vimos en la secci\'on anterior.
 
-% 
-% \section{La evaluaci\'on de hip\'otesis como un juego de apuestas}
+
+\section{Hip\'otesis antropológicas y etnohistóricas}
+
+\subsection{Carta a Enrique Dussel ``La voluntad de vida''}
+
+Trabajo vivo.
+
+\subsection{Carta a Rita Segato ``El proyecto histórico de los vínculos''}
+
+\subsection{Carta a Alvaro García Linera: la }
+
+\subsection{Carta a Cristina Fernandez de Kirchner ``La constitución de los pueblos libres''}
+
+\subsection{Carta a la madre india}
+
+
+
+
+
 % 
 % Basada en los mismos principios de la teor\'ia de la evoluci\'on, se ha desarrollado un marco te\'orico de ``evoluci\'on cultural'' que intenta explicar c\'omo cambia la cultura en el tiempo.
 % %
@@ -2901,7 +2918,7 @@ La evidencia ser\'a de inter\'es cuando queramos evaluar modelos causales altern
 En la secci\'on \ref{sec:modelos_alternativos} mostramos en un ejemplo c\'omo deben evaluarse modelos causales alternativos aplicando estrictamente las reglas de la probabilidad.
 
 
-\subsection{Notas sobre las interpretaciones de la probabilidad}
+\subsection{Las interpretaciones de la contradicción en la teoría probabilidad}
 % 
 % \subsection{La escuela naturalista (frecuentista)}
 % 
@@ -2911,19 +2928,17 @@ Incluso las ciencias matem\'aticas, en contacto con problemas emp\'iricos, produ
 %
 La justificaci\'on axiom\'atica de la teor\'ia de la probabilidad no ha sido suficiente para unificar su interpretaci\'on.
 %
-El debate filos\'ofico de fondo respecto de las interpretaciones de la probabilidad tiene que ver con la soluci\'on que las dos principales escuelas le dieron al problema de la contradicci\'on: la epist\'emica (bayesiana) y la ontol\'ogica (frecuentista).
+El debate filos\'ofico de fondo respecto de las interpretaciones de la probabilidad tiene que ver con la soluci\'on que las dos principales escuelas le dieron al problema de la contradicci\'on: la solución epist\'emica (bayesiana) y la ontol\'ogica (frecuentista).
 
 % Parrafo
 
 En el siglo 18 el concepto de probabilidad comenz\'o a usarse en Europa para expresar creencias contradictorias en contextos de incertidumbre.
 %
-Laplace, qui\'en ten\'ia la convicci\'on de que el mundo era determinista, no pod\'ia m\'as que utilizar la probabilidad para expresar grados de creencia a hip\'otesis mutuamente contradictorias.
+Por ejemplo, Laplace, qui\'en ten\'ia la convicci\'on de que el mundo era determinista, no pod\'ia m\'as que utilizar la probabilidad para expresar grados de creencia a hip\'otesis mutuamente contradictorias.
 %
-En un mundo determinista no es posible que A y no A puedan ocurrir dadas exactamente las mismas condiciones iniciales del mundo.
+La estructura funcional de un mundo determinista impide por definición que A y no A ocurran dadas exactamente las mismas condiciones iniciales del mundo.
 %
-Bajo este marco, la contradicci\'on de creer simultanemente en A y no A es s\'olo una expresi\'on de nuestra incertidumbre.
-%
-M\'as all\'a de la creencia particular de Laplace, la soluci\'on epist\'emica de la contradicci\'on nada dice de la naturaleza (u ontolog\'ia) del mundo.
+M\'as all\'a de la creencia particular de Laplace, bajo este marco la contradicci\'on de creer simultanemente en A y no A es s\'olo una expresi\'on de nuestra incertidumbre, y nada dice de la naturaleza (u ontolog\'ia) del mundo.
 
 % Parrafo
 
@@ -2937,33 +2952,52 @@ La escuela frecuentista, tal como se ense\~na en la materia probabilidad y estad
 %
 Según esta corriente la probabilidad de eventos deterministas, por ejemplo de que exista un planeta no detectado en el sistema solar, es 0 o 1 aunque no conozcamos su valor.
 %
-S\'olo los objetos no deterministas, que llaman ``variables aleatorias'', tienen valores intermedios que representan la frecuencia en la que los diferentes estado del universo se producen a partir de exactamente las mismas condiciones inciales.
+S\'olo los objetos no deterministas, que llaman ``variables aleatorias'', pueden adquirir valores intermedios que representan la frecuencia en la que los diferentes estado del universo se producen a partir de exactamente las mismas condiciones inciales.
 %
 De esta forma, la contradicci\'on se propone como una propiedad externa al sistema l\'ogico, propia de la naturaleza del mundo.
 %
 La escuela frecuentista, para evitar la contradicci\'on en sus sistema l\'ogico, se ve obligada a afirmar la naturaleza aleatoria del mundo, lo que representa una la soluci\'on ont\'ol\'ogica de la contracci\'on.
 
-\subsection{La funci\'on de costo epist\'emica universal}
+\subsection{La funci\'on de costo epist\'emica}
 
 % Lo que veremos en esta secci\'on es que la natrualeza multiplicativa de los procesos de selecci\'on evolutiva y probabilistica tiene una serie de propiedades que garantizan la adquisici\'on de conocimiento emp\'irico.
 % 
 % % Parrafo
-
-La interpretaci\'on ontol\'ogica de la teor\'ia de la probabilidad, al rechazar la contradicci\'on epist\'emica, se ve impedida de definir probabilidades iniciales no justificadas observacionalmente (prior), y por lo tanto de utilizar el teorema de Bayes.
+Todas las axiomatizaciones alternativas de la teor\'ia de la probabilidad llegan a la conclusi\'on de que la forma natural de evaluar las hip\'otesis es a trav\'es de un proceso multiplicativo, la ``regla del producto''.
 %
-Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hip\'otesis, el enfoque frecuentista suele seleccionar una única hip\'otesis (estimaci\'on puntual) en base a funciones de costo ad-hoc.
+Por lo tanto, la única función de costo habilitada para actualizar los recursos (probabilidades) de las distintas hipótesis es de naturaleza multiplicativa, como la analizada en el capítulo anterior.
 %
-La funci\'on de costo m\'as utilizada por la corriente frecuentista es la maximizaci\'on de la verosimilitud.
+Por el teorema de Bayes, la probabilidad de una hipótesis $h$ dado un conjunto de observables $\{d_1, \dots, d_n \}$ y un modelo causal $M$ es,
 %
-Este enfoque a mostrado tener una serie de problemas siendo el m\'as conocido el problema del sobreajuste (o overfitting).
+\begin{equation}
+P(h|d_1, \dots, d_n, M) = \frac{P(d_1, \dots, d_n|h, M) P(h|M)}{P(d_1, \dots, d_n| M)} \propto \overbrace{P(d_1, \dots, d_n|h, M)}^{\text{Verosimilitud}} \overbrace{P(h|M)}^{\text{Prior}}
+\end{equation}
 %
-Para corregir este problema se han desarrollado otras funciones de costo ad-hoc que incluyen la penalizaci\'on por complejidad del modelo, y la separaci\'on de los datos con objetivos de ``entrenamiento'' y ``validaci\'on''.
+La proporcionalidad vale debido a que el denominador es constante para las diferentes hipótesis.
 %
-A pesar de que estas metodolog\'ias permiten desarrollar redes neuronales modernas, ellas sufren en general de problemas de calibraci\'on. 
+Además, por la regla del producto la verosimilitud puede ser expresada como el producto de las predicciones a priori.
+%
+Luego, la probabilidad de una hipótesis a posteriori es proporcional a la probabilidad a priori multiplicada por las predicciones a priori de los datos observados.
+%
+\begin{equation}
+P(h|d_1, \dots, d_n, M) \propto P(h|M) P(d_1|h,M) P(d_2|h,M,d_1) \dots
+\end{equation}
+%
+La probabilidad puede ser vista como los recursos de cada una de las hipótesis tiene como el resultado de un juego de apuestas como los analizados en el capítulo anterior: el prior representa los recursos iniciales; las predicciones a priori son la apuesta, la asignación de recursos que hace cada una de las hipótesis antes de observar el dato ($b$ en la notación del capítulo anterior); y el pago de la casa de apuestas es nulo, $Q_{d_i} = 1$.  
+%
+En el cap\'itulo anterior hemos visto que los procesos multiplicativos siempre se maximiza dividiendo los recursos en la misma proproci\'on que la frecuencia t\'ipica $p$.
+%
+Gracias a la propiedad de los procesos multiplicativos, un juego de apuestas de este tipo garantiza que la hipótesis que asigna los recursos en la misma proporición que la frecuencia típica $p$ tiene la mayor tasa de crecimiento y por lo tanto se quedará con todos los recursos (probabilidad) a largo plazo. 
+%
+Es decir, a trav\'es de los resultados obtenidos en un juegos de apuestas podemos realizar ``inferencia'', descubrir la verdadera probabilidad a partir de la ignoracia, sin necesidad de que nadie conozca la probabilidad real.
 
 % Parrafo
 
-John Larry Kelly (Jr) comienza en su art\'iculo ``A New Interpretation of Information Rate'' para los laboratorios Bell (1956) diciendo, 
+La interpretaci\'on ontol\'ogica de la teor\'ia de la probabilidad, al rechazar la contradicci\'on epist\'emica, se ve impedida de definir probabilidades iniciales (prior), y por lo tanto de utilizar el teorema de Bayes y resolver la inferencia usando el proceso multiplicativo como un juego de apuestas.
+%
+Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hip\'otesis, el enfoque frecuentista suele seleccionar una única hip\'otesis (estimaci\'on puntual) en base a funciones de costo ad-hoc.
+%
+John Larry Kelly (Jr), quien trabajando con Shannon para los laboratorios Bell descubrió la propiedad epistémica de los procesos multiplicativos, comienza su art\'iculo ``A New Interpretation of Information Rate'' para los laboratorios Bell (1956) diciendo, 
 %
 \begin{quotation}
 The author believes that [the cost function approach] it is too general to shed any light on the specific problems of communication theory. (...). The point here is that an arbitrary combination of a statistical transducer (i.e., a channel) and a cost function does not necessarily constitute a communication system. (...). The situation which will be chosen here is one in which a gambler uses knowledge of the received symbols of a communication channel in order to make profitable bets on the transmitted symbols.
@@ -2975,21 +3009,21 @@ El problema general del enfoque basado en funciones de costo ad-hoc tiene que ve
 
 % Parrafo
 
-En el cap\'itulo anterior hemos visto que los procesos multiplicativos siempre se maximiza dividiendo los recursos en la misma proproci\'on que la frecuencia t\'ipica $p$.
+La funci\'on de costo m\'as utilizada por la corriente frecuentista es la maximizaci\'on de la verosimilitud.
 %
-Es decir, a trav\'es de los resultados obtenidos en un juegos de apuestas podemos realizar ``inferencia''.
-% 
-En este proceso antag\'onico ambos agentes pueden descubrir la verdadera probabilidad a partir de la ignoracia mutua, sin necesidad de que nadie conozca la probabilidad real.
+Este enfoque a mostrado tener una serie de problemas siendo el m\'as conocido el problema del sobreajuste (u overfitting).
+%
+Para corregir este problema se han desarrollado otras funciones de costo ad-hoc que incluyen la penalizaci\'on por complejidad del modelo, y la separaci\'on de los datos con objetivos de ``entrenamiento'' y ``validaci\'on''.
+%
+A pesar de que estas metodolog\'ias se utilizan para entrenar redes neuronales modernas, ellas sufren en general de problemas de calibraci\'on: la predicción ofrecida por los modelos no se corresponde con la frecuencia observada.
 
 % Parrafo
 
 A diferencia del resto de las funciones de costo, los procesos multiplicativos tienen la propiedad especial de producir, no solo una distribuci\'on de recursos independiente de los pagos elegidos arbitrariamente, sino que garantiza adem\'as la hip\'otesis que apost\'o sus recursos en la misma proporci\'on que la frecuencia t\'ipica se quedar\'a en tiempo infinito con todos los recursos que ten\'ian las otras hip\'otesis.
 %
 En este sentido, los procesos multiplicativos jugados individualmente pueden ser vistos como la funci\'on de costo epistémica.
-%
-Esto es interesante en tanto ser\'a todas las axiomatizaciones alternativas de la teor\'ia de la probabilidad llegan a la conclusi\'on de que la forma natural de evaluar las hip\'otesis es a trav\'es de un proceso multiplicativo, la ``regla del producto''.
 
-\section{Selecci\'on intersubjetiva de modelos causales}\label{sec:modelos_alternativos}
+\subsection{Evaluación intersubjetiva de modelos causales}\label{sec:modelos_alternativos}
 
 Los modelos causales tambi\'en son hip\'otesis, y por lo tanto, pueden ser evaluadas calculando su probabilidad dados los datos.
 %
@@ -3128,66 +3162,156 @@ Este mismo m\'etodo ser\'a usado en para evaluar el modelo de estimaci\'on de ha
 
 \section{Construcci\'on de datos de base empírica} \label{sec:base_empirica_metodo}
 
-Los datos pueden ser vistos como funciones emp\'iricas, $f(x)=y$, a trav\'es de las cuales podemos afirmar, por ejemplo, que la habilidad de Maradona fue superior a la de Messi.
-\begin{equation}\label{eq:opiniones}
- \emph{Habilidad}(\text{Maradona}) > \emph{Habilidad}(\text{Messi})
-\end{equation}
-En este caso, la funci\'on \emph{Habilidad} representa una cierta variable (V) o caracter\'istica, que aplicada sobre una unidad de an\'alisis (UA) particular devuelve siempre un mismo resultado (R) .
+La ciencia, como proyecto de construcción de conocimiento universalizable, nos obliga a poner en correspondencia unívoca los fenómenos percibidos por nuestras conciencias con algún esquema de operación que sea públicamente inteligible y reproducible.
 
-% Parrafo 
+\subsection{Base empírica y datos T-teóricos}
 
-Si bien las proposiciones de la ecuaci\'on \ref{eq:opiniones} tienen una estructura funcional, al conversar informalmente no hacemos explícita la definici\'on precisa de la funci\'on.
-Ahí radica el origen de muchos de los desacuerdos que tenemos cuando conversamos: usar la misma palabra para expresar conceptos que en el fondo son distintos.
-El significado preciso del dato depende de su ``operacionalizaci\'on''.
-Todo dato científico tiene una estructura que invariante compuesta por cuatro elementos, el esquema indicidor (hipótesis de Samaja~\cite{}).
-
-
-
-\begin{table}[ht!]
-\centering \footnotesize
-\begin{tabular}{cccc}
- \small Variable (V) & \small  Unidad de An\'alisis (UA) &\small  = &\small  Resultado (R)    \\
- \downarrow &\downarrow&&\uparrow \\
- Examen de representatividad &Examen de viabilidad & & Hipótesis indicadora \\
- \downarrow &\downarrow& &\uparrow \\
- \small Dimensiones (D) & \small Fuente de datos (F) &  & \small Indicador (I) \\
- \downarrow &\downarrow& &\uparrow \\
- \multicolumn{2}{c}{Examen de confiabilidad} & & Sentido común \\
- \multicolumn{2}{c}{\downarrow} & &\uparrow \\
- \small \multicolumn{2}{c}{Procedimiento (P)} & \rightarrow & \small Percepción \\
-\end{tabular}
-\caption{Estructura invariante del todo dato emp\'irico propuesta por Juan Samaja.}
-\label{tab:matriz_datos}
-\end{table}
-
-
-\begin{table}[ht!]
-\centering
-\begin{tabular}{clcccc}
-Resultado (R) & \multicolumn{1}{r|}{} &  & Variable (V) &  &  \multicolumn{1}{|c}{Unidad de An\'alisis (UA)} \\ \hline
-   &  \multicolumn{1}{r|}{}    &  & Dimensiones (D) &  & \multicolumn{1}{|r}{} \\
-                 Indicador (I)  &   & =  &  &  &  Fuente de datos (F) \\
- & \multicolumn{1}{r|}{} &  & Procedimientos (P) &        &    \multicolumn{1}{|r}{}  
-\end{tabular}
-\caption{Estructura invariante del todo dato emp\'irico propuesta por Juan Samaja.}
-\label{tab:matriz_datos}
-\end{table}
-
-
-Todo esquema indicador se compone de dimensiones (D), que son especificaciones de la variable, y de procedimientos (P) protocolos, acciones a efectuar sobre cierta fuente de datos (F).
-Las señales que produce el mundo son los indicadores (I), objetos perceptibles desde el sentido común, que interpretados con algun modelo causal se tranforman en los resultados (R) de la variable (V).
+Llamamos \emph{base empírica} a la porción del ``mundo'' que es aceptada  como verdad por una comunidad, al menos por un cierto momento.
+%
+Para aceptar la entidad de nuestros objetos m\'as cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verduler\'ia, o el resultado de la final de los últimos mundiales de fútbol, son suficientes los supuestos del sentido común.
+%
+A pesar de que existan círculos filosóficos que pretendan poner en duda las percepciones y supuestos más básicos, reduciendo la base empírica a un conjunto vacío (base empírica \emph{filosófica}), en la vida cotidinana no hay mayor controversia al respecto.
+%
+Los objetos que cualquier persona tomaría por ciertos en su vida cotidiana constituyen una base empírica significativamente más amplia, que Klimovsky llama base empírica \emph{epistemológica}, pues son la base inicial de toda actividad científica normal.
+%
+Sin embargo, a medida que la ciencia y la técnica se desarrollan, nuevos objetos construidos a partir de hipótesis o teorías comienzan a tener una aceptación general debido a que esos nuevos supuestos dejan de estar en duda al interior de cierta comunidad científica.
+%
+El conjunto de objetos que incluye aquellos objetos derivados de los nuevos acuerdos científicos se lo conoce como base empírica \emph{metodológica}~\cite{klimovsky1994-desventuras}.
 
 % Parrafo
 
-%\todo[inline]{Los modelos causales son las hipótesis. El teorema de Bayes }
-El contenido de cada uno de sus elementos depende de una serie de supuestos.
-La selecci\'on de las dimensiones (D) depende de que en al menos un modelo causal, que debe considerarse verdadero para que el dato tenga validez, existe con la variable (V) una relación que permitia realizar un flujo de inferencia entre ellas: actualizar la distribución de creencias sobre el valor (R) una vez que todas las dimensiones elegidas sean observables.
-%de que estas expresen fielmente el concepto de la variable, que expresen lo relevante de ella y sólo de ella, discriminado factores ajenos que puedan intervenir de manera no advertida
-%Al conjunto de hip\'otesis asociaciadas a este examp se llama examen de \emph{representatividad}.
-Por ejemplo, si la variable es la \emph{Habilidad$(\cdot)$}, una dimensión posible a ser observada son los resultados de los eventos deportivos.
-Un modelo causal simple ampliamente utilizado en la actualidad afirma que las habilidades generan el resultado observable a través de desempeños aleatorios (figura~\ref{fig:modelo_Elo}).
+Es cualquier caso, todos los datos est\'an cargados de hip\'otesis.
+%
+Visto de esta manera, la base empírica depende del conjunto de supuestos que una comunidad esté dispuesta a admitir sin poner en duda.
+%
+Las diferentes niveles de bases empíricas formarían una estructura en ``capas de cebolla'', con un núcleo de base empírica epistemológica y capas sucesivas $i$ de bases empíricas metodológicas, BEM$_i$. 
+%
+Para que ellos puedan actuar como base emp\'irica sobre la que se evalúan las teor\'ias cient\'ificas es necesario que sus supuestos queden, al menos por un cierto momento, fuera de toda duda.
 %
 \begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[page=4,width=\linewidth]{figures/baseEmpirica.pdf}
+    \end{subfigure}
+    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris las bases emp\'iricas metodol\'ogicas, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio, que dependen de la aceptación de una nueva teoría T. }
+\end{figure}
+
+% Parrafo
+
+Si los datos son una construcción teórica entonces, concluyen los críticos, la actividad pierde todo control externo y la ciencia no sería más que un juego de autojustificación.
+%
+Sin embargo, es el concepto mismo de base empírica como construcción relativa a supuestos lo que permite superar esa crítica pertinente.
+%
+La actividad científica mantiene su control externo en tanto existe siempre un conjunto de datos que si bien están cargados de supuestos, no lo están de los supuestos de la teoría para los que son datos. En palabras de Díez y Lorenzano~\cite{lorenzano2002-concepcionEstructuralista},
+%
+\begin{quotation}
+Un término, un concepto, o una entidad, no es teórico o no teórico sin más, sino relativamente a una teoría dada.
+Por eso no se debe hablar tanto de teoricidad cuanto de T-teoricidad, teoricidad relativa a la teoría T. (...).
+La idea es que un concepto es T-teórico si no se puede determinar sin presuponer la aplicabilidad de T, si todo procedimiento para su determinación la presupone; y puede obtenerse sin presuponer tal teoría, si tiene algún procedimiento de determinación T-independiente, por más que también tenga otros T-dependientes.
+\end{quotation}
+%
+Los datos T-no teóricos son la base empírica de control para una teoría T pues pueden ser construidos mediante teorías independientes, previamente aceptadas.
+%
+En la secci\'on ``\nameref{sec:modelos_alternativos}'' hemos visto c\'omo garantizar los acuerdos intersubjetivos en la evaluación de los modelos causales alternativos.
+%
+En el cap\'itulo \ref{ch:ttt} seleccionamos el modelo de estimaci\'on de habilidad estado-del-arte en la industria del video juego, conocido como TrueSkill Through Time (TTT).
+
+\subsection{Estructura invariante y operacionalización del dato empírico}
+
+Los datos científicos tienen una estructura funcional, $f(x)=y$, donde la $x$ representa la unidad de análisis, las $f$ la variable, y la $y$ el resultado.
+%
+La estructura funcional de las proposiciones empíricas obliga que se cumpla la propiedad de replicabilidad: cada vez que se vuelve a medir la misma variable sobre la misma unidad de análisis debemos obtener el mismo resultado\footnote{Además de la unidad de análisis, otros parámetros de contexto pueden ser necesarios para que se cumpla esta propiedad funcional, los cuales sin pérdida de generalidad serán omitidos en esta sección, a pesar de que serán cosiderados cuando resolvamos los problemas reales en los siguientes capítulos.}.
+%
+Al conversar informalmente usamos estas estructuras funcionales para expresar, por ejemplo, que la habilidad de Maradona fue superior a la de Messi.
+%
+\begin{equation}\label{eq:opiniones}
+ \emph{Habilidad}(\text{Maradona}) > \emph{Habilidad}(\text{Messi})
+\end{equation}
+%
+En este caso, la funci\'on \emph{Habilidad} representa una cierta variable o caracter\'istica, que aplicada sobre una unidad de an\'alisis particular, Messi o Maradona, debe devolver siempre el mismo resultado.
+%
+Sin embargo, cuando conversamos hablamos en términos abstractos y no hacemos explícita la definici\'on precisa de la funci\'on, por lo que dos personas pueden usar la misma palabra para expresar conceptos que en el fondo son distintos.
+%
+Ahí radica el origen de muchos de los desacuerdos que se producen en ciencia y en la vida cotidiana.
+%
+El significado preciso del dato depende de su ``operacionalizaci\'on'', del procedimiento de determinación, que transforma la aplicación de la función en su resultado.
+%
+Allí donde identificamos, en la sección anterior, el lugar que debemos conocer en detalle para saber respecto de qué teorías T depende el dato, y por lo tanto su nivel de base empírica metodológica.
+
+% Parrafo
+
+La estructura funcional $f(x)=y$ es la parte más abstracta del dato, su parte formal.
+%
+Esto permite que los modelos de simulación, que no tienen contacto alguno con datos reales, puedan hablar del comportamiento de los datosjustamente gracias a que existe esta estructura superior puramente abstracta.
+%
+Sin embargo, los dato empíricos tiene una subestructura invariante que justifica los valores absrrtactos a través de la praxis: el esquema indicidor.
+%
+Debemos esta propuesta al epistemólogo Argentino, contemporáneo de Gregorio Klimovsky y Rolando García, el profesor Juan Samaja.
+%
+Según la hipótesis de Samaja~\cite{samaja} (que él desafía a que encuentren un contra-ejemplo), todo esquema indicador se compone de dimensiones (D), que son especificaciones de la variable (V), y de procedimientos (P) protocolos, acciones que efectuadas sobre cierta fuente de datos (F) producen señales o indicadores (I), objetos perceptibles desde el sentido común, que interpretados con alguna hipótesis indicadora definen los resultados (R).
+%
+\begin{table}[ht!]
+\centering \footnotesize
+\begin{tabular}{cccc}
+$f$ & \normalsize $x$ &\normalsize  = & $y$    \\ 
+  \normalsize  Variable (V) & \normalsize  Unidad de An\'alisis (UA) &\normalsize   &\normalsize  Resultado (R)    \\ \hline
+ \downarrow &\downarrow&&\uparrow \\
+ Examen de representatividad &Examen de viabilidad & & Hipótesis indicadora \\
+ \downarrow &\downarrow& &\uparrow \\
+ \normalsize Dimensiones (D) & \normalsize Fuente de datos (F) &  & \normalsize Indicador (I) \\
+ \downarrow &\downarrow& &\uparrow \\
+ \multicolumn{2}{c}{Examen de confiabilidad} & & Sentido común \\
+ \multicolumn{2}{c}{\downarrow} & &\uparrow \\
+ \multicolumn{2}{c}{\normalsize Procedimiento (P)} & \rightarrow & \normalsize Percepción \\
+\end{tabular}
+\caption{Estructura invariante del todo dato emp\'irico propuesta por Juan Samaja.}
+\label{tab:matriz_datos}
+\end{table}
+%
+El contenido de cada uno de sus elementos depende de una serie de supuestos.
+
+% Parrafo
+
+La selección de las dimensiones (D) depende de que estas expresen el concepto de la variable a través de algún modelo causal en el que exista con la variable (V) una relación, directa o indirecta, que permitia eventualmente realizar un flujo de inferencia entre ellas, actualizando así la distribución de creencias sobre el valor de la variable (R) una vez que todas las dimensiones elegidas hayan sido observadas.
+%
+A esta estapa se la conoce como examen de \emph{representatividad}.
+%
+Por ejemplo, si la variable es la \emph{Habilidad$(\cdot)$}, una dimensión posible a ser observada, especifica el concepto de la variable, son los resultados de los eventos deportivos (ganar/perder), pues en cualquier modelo causal que elijamos existirá un relación, directa o indirecta, entre ellas.
+%
+Durante la selección de la fuente de datos (F), el examen de \emph{viabilidad}, se evalúa la autenticidad y accesibilidad de la informaci\'on.
+%
+Por ejemplo, podemos utilizar la p\'agina oficial de la asociaci\'on de tenis profesional ATP, \texttt{atptout.com} como fuente de datos.
+%
+La definici\'on de los protocolos (P), el examen de \emph{confiabilidad}, se evalúa que los procedimientos detecten s\'olo esa dimensi\'on de la fuente y no otros est\'imulos asociados, y de discriminar m\'inimas cantidades.
+%
+Por ejemplo, un \emph{scraper} nos permite extraer de forma segura los resultados de las partidas de la página oficial, generenado en cada caso un indicador binario (verdadero/falso) que se obtiene desde el sentido común.
+%
+\begin{itemize} \itemsep-0.05cm
+\item[$\bullet$] Dimensiones (D): Ganar/Perder
+\item[$\bullet$] Fuente de datos (F): \texttt{atptour.com}
+\item[$\bullet$] Procedimiento (P): Scraper
+\item[$\bullet$] Indicador (I): True/False
+\end{itemize}
+%
+Ahora bien, ¿c\'omo hacemos para pasar del indicador al resultado?.
+%
+Para ello necesitamos determinar cual es la hip\'otesis indiciadora.
+%
+En la siguiente sección veremos una hipótesis indicadora ad-hoc que ha sido muy efectiva y sigue siendo utilizada por la federación internacional de ajedrez para determinar la habilidad de los ajedrecistas profesionales.
+%
+Y en la subsiguiente sección veremos que existe una hip\'otesis indicadora general que nos permite incorporar informaci\'on de los observables en nuestras distribuciones de creencia garantizando los acuerdos intersubjetivos.
+
+\subsection{Una hipótesis indiciadora ad-hoc exitosa}
+
+La propuesta de Elo fue iniciar la variable habilidad con un valor arbitrario y actualizarla en base a la sorpresa.
+Las estimaciones previas, el modelo y el dato inducen una predicci\'on a priori y por lo tanto la sorpresa.
+la soluci\'on de Elo se basa en un modelo causal determinista con incertidumbre: a diferencia del modelo anterior~\ref{} ahora el efecto de los otros factores desconocidos se modela con una distribuci\'on gaussiana (la distribuci\'on que maximiza la incertidumbre cuando se conoce la media y el desvío de una poblaci\'on).
+%
+
+Un modelo causal simple ampliamente utilizado en la actualidad afirma que las habilidades generan el resultado observado a través de desempeños aleatorios (figura~\ref{fig:modelo_Elo}).
+%
+\begin{figure}[ht!]\centering
+\begin{subfigure}[c]{0.49\textwidth}
 \centering \small
     \tikz{         
     \node[det, fill=black!10] (r) {$r$} ; 
@@ -3217,6 +3341,11 @@ Un modelo causal simple ampliamente utilizado en la actualidad afirma que las ha
     \edge {s2} {p2};
    
 }
+\end{subfigure}
+   \begin{subfigure}[c]{0.49\textwidth}
+       \includegraphics[width=0.8\textwidth]{figures/probaOfWin_2D.pdf} 
+     \label{fig:probaOfWin_2D}
+    \end{subfigure}
      \caption{
      \es{Modelo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$. }%
     %
@@ -3233,78 +3362,6 @@ Un modelo causal simple ampliamente utilizado en la actualidad afirma que las ha
 \es{El modelo supone que gana el agente con mayor rendimiento, $r = (p_i > p_j)$. En otras palabras, gana quien obtenga una diferencia de desempe\~no mayor a 0, $r = (p_i - p_j > 0)$. }%
 %
 
-\todo[inline]{Que Elo suba a este capitulo}
-
-La validez interna de un dato depende en gran medida de las dimensiones (D) elegidas, de que estas expresen fielmente el concepto de la variable, que expresen lo relevante de ella y s\'olo de ella, discriminado factores ajenos que puedan intervenir de manera no advertida.
-La etapa de identificaci\'on de la fuente de datos (F), que est\'a basa en hip\'otesis acerca de la autenticidad y accesibilidad de la informaci\'on, se conoce como examen de \emph{viabilidad}.
-La confiabilidad del dato, por su parte, depende de que los procedimientos detecten s\'olo esa dimensi\'on de la fuente y no otros est\'imulos asociados, y de discriminar m\'inimas cantidades.
-La definici\'on de los protocolos (P), y sus hip\'otesis, se denomina examen de \emph{confiabilidad}.
-Finalmente, para pasar del indicador al resultado necesitamos una última hip\'otesis: la hip\'otesis indiciadora.
-En la secci\'on \nameref{sec:principio_evidencia} veremos que existe una hip\'otesis indicadora general que nos permite incorporar informaci\'on de los observables en nuestras distribuciones de creencia garantizando los acuerdos intersubjetivos.
-
-Es cualquier caso, todos los datos est\'an cargados de hip\'otesis.
-Para que ellos puedan actuar como base emp\'irica sobre la que se evalúan las teor\'ias cient\'ificas es necesario que sus supuestos queden, al menos por un cierto momento, fuera de toda duda.
-En este sentido, la base emp\'irica puede ampliarse o reducirse según el conjunto de supuestos que una comunidad est\'e dispuesta a admitir sin poner en duda.
-Para aceptar la entidad de nuestros objetos m\'as cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verduler\'ia, o el resultado de la final de los últimos mundiales de fútbol, son suficientes los supuestos del sentido común.
-No hay mayor controversia al respecto.
-Este nivel de acuerdo se lo conoce como \emph{base emp\'irica epistemol\'ogica}~\cite{klimovsky1994-desventuras}.% al cual pertenecen los observables de la secci\'on \nameref{sec:principios_interculturales}.
-
-Sin embargo, la ciencia construye ``datos'' que requieren suponer verdaderas ciertas teor\'ias o t\'ecnicas especiales, como por ejemplo la inflaci\'on general del último mes en Argentina, o la habilidad que Maradona y Messi ten\'ian cuando jugaron la final del mundial.
-Un dato es depende de una teor\'ia T si no se puede determinar sin presuponer la aplicabilidad de T, si todo procedimiento para su determinaci\'on la presupone; y puede obtenerse sin presuponer tal teor\'ia, si tiene algún procedimiento de determinaci\'on T-independiente, por m\'as que tambi\'en tenga otros procedimientos T-dependientes~\cite{lorenzano2002-concepcionEstructuralista}.
-
-Los acuerdos que se alcanzan en este nivel se conocen como \emph{base emp\'irica metodol\'ogica}.
-Para ello se requiere una evaluaci\'on que garantice los acuerdos intersubjetivos en la selecci\'on de los modelos causales alternativos.
-En la secci\'on ``\nameref{sec:modelos_alternativos}'' mostramos c\'omo evaluar modelos garatizando los acuerdos intersubjetivos.
-En el cap\'itulo \ref{ch:ttt} seleccionamos el modelo de estimaci\'on de habilidad estado-del-arte en la industria del video juego, conocido como TrueSkill Through Time (TTT).
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-    \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
-    \end{subfigure}
-    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio. }
-\end{figure}
-
-En el modelo causal TTT los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
-Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo de la tesis para estudiar diferentes facotres de aprendizaje social.
-
-% Parrafo
-
-Por ejemplo, basados en el modelos causal \ref{ELO-seccion determinista}, podemos utilizar los resultados de las partidas (ganar/perder) como una dimensi\'on que especifica el concepto de la variable ``habilidad''.
-Adem\'as, podemos utilizar la p\'agina oficial de la asociaci\'on de tenis profesional ATP, \texttt{atptout.com} como fuente de datos.
-Por último, a trav\'es de un \emph{scraper} podemos extraer de forma segura los resultados de las partidas, generenado en cada caso un indicador binario (verdadero/falso).
-
-% Parrafo
-
-\begin{table}[ht!]
-\centering
-\begin{tabular}{clcccc}
-¿Resultado? (R) & \multicolumn{1}{r|}{} &  & Habilidad (V) &  &  \multicolumn{1}{|c}{Tenistas (UA)} \\ \hline
-   &  \multicolumn{1}{r|}{}    &  & Ganar/perder (D) &  & \multicolumn{1}{|r}{} \\
-                 True/False (I)  &   & =  &  &  & \ \ \ \texttt{atptour.com} (F) \ \ \  \\
- & \multicolumn{1}{r|}{} &  & Scraper (P) &        &      \multicolumn{1}{|r}{}
-\end{tabular}
-\caption{}
-\label{tab:operacionalizacion_habilidad}
-\end{table}
-
-% Parrafo
-
-Ahora bien, ¿c\'omo hacemos para pasar del indicador al resultado?.
-Para ello necesitamos una última hip\'otesis: la hip\'otesis indiciadora.
-La propuesta de Elo fue iniciar la variable habilidad con un valor arbitrario y actualizarla en base a la sorpresa.
-Las estimaciones previas, el modelo y el dato inducen una predicci\'on a priori y por lo tanto la sorpresa.
-la soluci\'on de Elo se basa en un modelo causal determinista con incertidumbre: a diferencia del modelo anterior~\ref{} ahora el efecto de los otros factores desconocidos se modela con una distribuci\'on gaussiana (la distribuci\'on que maximiza la incertidumbre cuando se conoce la media y el desvío de una poblaci\'on).
-%
-\begin{figure}[ht!]     
- \centering
-   \begin{subfigure}[c]{0.49\textwidth}
-       \includegraphics[width=0.8\textwidth]{figures/probaOfWin_2D.pdf} 
-     \label{fig:probaOfWin_2D}
-    \end{subfigure}
-\caption{}
-\label{fig:elo}
-\end{figure}
 Según el modelo, la probabilidad de ganar a priori, $P(r|s_i^{\text{old}},s_j^{\text{old}})$, es equivalemte a los volúmenes indicados en la figura \ref{fig:probaOfWin_2D}.
 \begin{equation*}
  \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{Sorpresa}}{\text{del resultado}}}
@@ -3349,9 +3406,19 @@ Las debilidades del sistema ocurren por: 1. no tener en cuenta la incertidumbre 
 
 % Cuando un problema de conocimiento posee alguna relevancia para algunos o todos los miembros de la comunidad científica, y en sus conocimientos acopiados previamente no se encuentran respuestas satisfactorias, dicho problema de conocimiento posee las condiciones mínimas como para ser considerado un problema científico.
 
+\subsection{La hipótesis indiciadora universal}
 
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
+    \end{subfigure}
+    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio. }
+\end{figure}
 
+En el modelo causal TTT los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
+Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo de la tesis para estudiar diferentes facotres de aprendizaje social.
 
 \chapter{TrueSkill Through Time: el estimador de habilidad estado del arte} \label{ch:ttt}
 
@@ -5068,7 +5135,6 @@ p(v) = \prod_{h \in n(v)} m_{h \rightarrow v}
 % \en{the dimensionality of the problem is reduced. }%
 % \es{la dimensionalidad del problema se reduce. }%
 % %
-<<<<<<< HEAD
 \en{It represents probabilities distributions of non-random discrete variables, such as the result of the games given the difference of performances $p(r|d)$. }%
 \es{Se usa para representar distribuciones de probabilidad de variables discretas no aleatorias, como el resultado de las partidas dada la diferencia de desempe\~nos $p(r|d)$. }%
 %

@@ -62,6 +62,18 @@ text(0,0,"Resultado",cex=1.25,col=rgb(1,1,1))
 
 
 
+plot(0,0,type="l",ylim=c(-5,5),xlim=c(-2,8) ,ylab = "",xlab="",axes=F)
+draw.elipse(a=0.5,b=0.5,x0=0,fill=T,lwd=2)
+draw.elipse(a=2,b=1,x0=1, lwd=2)
+draw.elipse(a=3.5,b=1.5,x0=2, fill=T, col=rgb(0,0,0,0.2),  lwd=2)
+draw.elipse(a=5,b=2,x0=3,lwd=2)
+text(1.5,0.0,expression(BEM[1]),cex=1.5)
+text(4,0.0,expression(BEM[2]),cex=1.5)
+text(6.5,0.0,expression(" "~BEM[3]~" | T"),cex=1.5)
+text(0,0,expression(BEE),cex=1.5,col=rgb(1,1,1))
+
+
+
 #######################################
 # end 
 dev.off()
