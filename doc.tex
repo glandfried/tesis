@@ -128,7 +128,7 @@ every picture/.append style={
 
 
 % % % RENOMBRES
-\newcommand{\TITULO}[0]{Inferencia bayesiana para el estudio del aprendizaje social en comunidades virtuales}
+\newcommand{\TITULO}[0]{Inferencia bayesiana para el estudio del aprendizaje social}
 \newcommand{\TITULOen}[0]{Bayesian inference for the study of social learning in virtual communities}
 
 
@@ -1638,17 +1638,27 @@ Y a trav\'es de la especializaci\'on podr\'an obtener una tasa de crecimiento ma
 
 \section{Hip\'otesis antropológicas y etnohistóricas}
 
-\subsection{Carta a Enrique Dussel ``La voluntad de vida''}
 
-Trabajo vivo.
+La cuestión de la explicación científica, como ese movimiento reflexivo entre los hechos de la base empírica y las estructuras formales de la teoría, deja atrás el dilema entre inducción y deducción, que emerge de la consideración estática, propia de los planteos anteriores, para resolverse en función de un proceso evolutivo e histórico, y en es le nuevo contexto adquieren una relevancia notable la abducción y la analogía (es decir, la captación, la exportación y la reproducción de formas). [Samaja]
 
-\subsection{Carta a Rita Segato ``El proyecto histórico de los vínculos''}
+Problema como "problema real"; una manera, extremadamente abstracta de contextualizar el concepto de problema-real, sería partir del reconocimiento de que el conjunto de las acciones, de una u otra forma, están destinadas a reproducir aquellas condiciones necesarias para su existencia como tales seres humanos. 
 
-\subsection{Carta a Alvaro García Linera: la }
+Problemas de conocimiento: cuando la resolución de un problema real, los sujetos que intervienen directamente en dicho proceso creen necesitar de más información para poder actuar sobre el problema real, enntonces a éste se le agrega un problema de conocimiento.
 
-\subsection{Carta a Cristina Fernandez de Kirchner ``La constitución de los pueblos libres''}
+Cuando un problema de conocimiento posee alguna relevancia para algunos o todos los miembros de la comunidad científica, y en sus conocimientos acopiados previamente no se encuentran respuestas satisfactorias, dicho problema de conocimiento posee las condiciones mínimas como para ser considerado un problema científico.
 
-\subsection{Carta a la madre india}
+
+% \subsection{Carta a Enrique Dussel ``El trabajo vivo''}
+% 
+% Trabajo vivo.
+% 
+% \subsection{Carta a Rita Segato ``El proyecto histórico de los vínculos''}
+% 
+% % \subsection{Carta a Alvaro García Linera: la }
+% 
+% \subsection{Carta a Cristina Fernandez de Kirchner ``La constitución de los pueblos libres''}
+% 
+% \subsection{Carta a la madre india}
 
 
 
@@ -3295,7 +3305,7 @@ Por ejemplo, un \emph{scraper} nos permite extraer de forma segura los resultado
 %
 Ahora bien, ¿c\'omo hacemos para pasar del indicador al resultado?.
 %
-Para ello necesitamos determinar cual es la hip\'otesis indiciadora.
+Para ello necesitamos determinar cual es la hip\'otesis indicadora.
 %
 En la siguiente sección veremos una hipótesis indicadora ad-hoc que ha sido muy efectiva y sigue siendo utilizada por la federación internacional de ajedrez para determinar la habilidad de los ajedrecistas profesionales.
 %
@@ -3303,12 +3313,7 @@ Y en la subsiguiente sección veremos que existe una hip\'otesis indicadora gene
 
 \subsection{Una hipótesis indiciadora ad-hoc exitosa}
 
-La propuesta de Elo fue iniciar la variable habilidad con un valor arbitrario y actualizarla en base a la sorpresa.
-Las estimaciones previas, el modelo y el dato inducen una predicci\'on a priori y por lo tanto la sorpresa.
-la soluci\'on de Elo se basa en un modelo causal determinista con incertidumbre: a diferencia del modelo anterior~\ref{} ahora el efecto de los otros factores desconocidos se modela con una distribuci\'on gaussiana (la distribuci\'on que maximiza la incertidumbre cuando se conoce la media y el desvío de una poblaci\'on).
-%
-
-Un modelo causal simple ampliamente utilizado en la actualidad afirma que las habilidades generan el resultado observado a través de desempeños aleatorios (figura~\ref{fig:modelo_Elo}).
+La hipótesis indicadora propuesta por Elo para estimar la habilidad de los ajedrecistas profesionales está basada en un modelo causal determinista con incertidumbre, en el que las habilidades generan el resultado observado a través de desempeños aleatorios (figura~\ref{fig:modelo_Elo}).
 %
 \begin{figure}[ht!]\centering
 \begin{subfigure}[c]{0.49\textwidth}
@@ -3341,9 +3346,11 @@ Un modelo causal simple ampliamente utilizado en la actualidad afirma que las ha
     \edge {s2} {p2};
    
 }
+\caption{Modelo causal}
 \end{subfigure}
    \begin{subfigure}[c]{0.49\textwidth}
        \includegraphics[width=0.8\textwidth]{figures/probaOfWin_2D.pdf} 
+     \caption{Probabilidad de ganar}
      \label{fig:probaOfWin_2D}
     \end{subfigure}
      \caption{
@@ -3355,26 +3362,34 @@ Un modelo causal simple ampliamente utilizado en la actualidad afirma que las ha
     \label{fig:modelo_Elo}
 \end{figure}
 %
-\en{The agents exhibit different performances at each event, varying around their true skill, $\N(p\,|\,s,\beta^2)$. }%
-\es{Los agentes exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$. }%
+Los agentes exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
 %
-\en{The model assumes that the agent with the highest performance wins, $r = (p_i > p_j)$. In other words, whoever obtains a difference of performance greater than 0 wins, $r = (p_i - p_j > 0)$. }%
-\es{El modelo supone que gana el agente con mayor rendimiento, $r = (p_i > p_j)$. En otras palabras, gana quien obtenga una diferencia de desempe\~no mayor a 0, $r = (p_i - p_j > 0)$. }%
+El modelo supone que gana el agente con mayor rendimiento, $r = (p_i > p_j)$.
 %
-
-Según el modelo, la probabilidad de ganar a priori, $P(r|s_i^{\text{old}},s_j^{\text{old}})$, es equivalemte a los volúmenes indicados en la figura \ref{fig:probaOfWin_2D}.
+En otras palabras, gana quien obtenga una diferencia de desempe\~no mayor a 0, $r = (p_i - p_j > 0)$.
+%
+A partir de este modelo causal podemos derivar la probabilidad de ganar a priori, $P(r|s_i^{\text{old}},s_j^{\text{old}})$, que en términos gráficos es equivalemte al volumen indicado en la figura \ref{fig:probaOfWin_2D}.
+%
+El complemento de la predicción lo vamos a llamar sorpresa.
+%
 \begin{equation*}
  \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{Sorpresa}}{\text{del resultado}}}
 \end{equation*}
+%
 La idea es que la magnitud de la sorpresa $\Delta$ est\'a relacionada con cuan buenas son las estimaciones previas, y por lo tanto puede usarse para actualizarlas.
+%
 Resultados inesperados indicar\'ian que las estimaciones actuales no son del todo correctas y deber\'ian actualizarse en mayor medida que si hubieran ocurrido como se esperaba.
+%
+La propuesta de Elo fue entonces utilizar la sorpresa como factor de corrección de las estimaciones previas.
+%
 \begin{equation}\label{eq:elo_update}
  s_{\text{winner}_\text{new}} = s_{\text{winner}_\text{old}} + \Delta \ \ \ \ \ s_{\text{loser}_\text{new}} = s_{\text{loser}_\text{old}} - \Delta 
 \end{equation}
-Donde la sorpresa $\Delta$ act\'ua como factor de correcci\'on para ambas estimaciones previas.
+%
 Esta es la hip\'otesis indicadora de Elo.
-Esta soluci\'on puede recuperar la escala relativa de los agentes, partiendo de valores iniciales arbitrarios.
-
+%
+Esta soluci\'on es capaz de recuperar la escala relativa de los agentes, partiendo de valores iniciales arbitrarios.
+%
 \begin{center}
 \tikz{ %
         \node[const] (e) {Estimaci\'on}; 
@@ -3387,38 +3402,215 @@ Esta soluci\'on puede recuperar la escala relativa de los agentes, partiendo de 
          \edge {s} {e};
 } 
 \end{center}
-
-Esta definci\'on de habilidad es usada todav\'ia hoy por la federaci\'on internacional de ajedrez por lo que para la comunidad de ajedrecistas toman la estimaci\'on Elo como dato de base emp\'irica, como realidad o hecho concreto.
-Para esa comunidad, los supuestos utilizados para por el sistema Elo quedan fuera toda duda.
-
-% Parrafo
-
-Sin embargo, el sistema Elo tiene algunas debilidades importantes. 
+%
+Esta definci\'on de habilidad es usada todav\'ia hoy por la federaci\'on internacional de ajedrez (FIDE).
+%
+Sin embargo, el sistema Elo tiene algunas debilidades importantes.
+%
 La regla de actualizaci\'on (Ec.~\eqref{eq:elo_update}) es sim\'etrica, as\'i que lo que gana un agente el otro lo pierde.
+%
 Debido a que a los agentes nuevos comienzan con estimaciones arbitrarias (el mismo valor inicial para cualquier individuo), ellas tienden a generan alta sorpresa y por lo tanto pueden modificar bruscamente las estimaciones de sus oponentes a pesar de que ya hubieran convergido.
-Las debilidades del sistema ocurren por: 1. no tener en cuenta la incertidumbre sobre las estimaciones de los agentes; y 2. proponer hip\'otesis indicadora ad-hoc.
+%
+Esta debilidad ocurre por no tener en cuenta la incertidumbre sobre las estimaciones de los agentes.
+%
+Para resolver este problema se propuso reducir el impacto de la sorpresa en funci\'on de la cantidad de veces que el agente ha participado previamente.
+%
+Ese es rol que desempe\~na el K-factor usado por la FIDE, $\Delta_i = \Delta \cdot K_i$.
+%
+A medida que la persona tiene más cantidad de partidas jugadas, el valor de K es menor.
+%
+De esa forma se rompe la simetría y se preserva las estimaciones de las personas que se consideran conocidas.
 
-% La cuestión de la explicación científica, como ese movimiento reflexivo entre los hechos de la base empírica y las estructuras formales de la teoría, deja atrás el dilema entre inducción y deducción, que emerge de la consideración estática, propia de los planteos anteriores, para resolverse en función de un proceso evolutivo e histórico, y en es le nuevo contexto adquieren una relevancia notable la abducción y la analogía (es decir, la captación, la exportación y la reproducción de formas). [Samaja]
-
-% Problema como "problema real"; una manera, extremadamente abstracta de contextualizar el concepto de problema-real, sería partir del reconocimiento de que el conjunto de las acciones, de una u otra forma, están destinadas a reproducir aquellas condiciones necesarias para su existencia como tales seres humanos. 
-
-% Problemas de conocimiento: cuando la resolución de un problema real, los sujetos que intervienen directamente en dicho proceso creen necesitar de más información para poder actuar sobre el problema real, enntonces a éste se le agrega un problema de conocimiento.
-
-% Cuando un problema de conocimiento posee alguna relevancia para algunos o todos los miembros de la comunidad científica, y en sus conocimientos acopiados previamente no se encuentran respuestas satisfactorias, dicho problema de conocimiento posee las condiciones mínimas como para ser considerado un problema científico.
 
 \subsection{La hipótesis indiciadora universal}
 
+Los problemas asociados al algoritmo Elo se generan debido a que la hipótesis indicadora utilizada no esta justificada correctamente.
+%
+En este capítulo hemos introducido los principios interculturales de acuerdos intersubjetivos a partir de los que derivamos las reglas de la probabilidad.
+%
+Por ello, para corregir los problemas del algoritmo Elo, en vez de seleccionar una única hipótesis de habilidad (estimación puntual), debemos aplicar estrictamente las reglas de la probabilidad y calcular la distribución de creencia sobre todo el espacio de hipótesis.
+%
+El teorema de Bayes, que se deriva de las reglas de la probabilidad, es en este sentido la hipótesis indicadora general, la que permite actualizar la distribución de creencia a priori de forma óptima.
+%
+En nuestro caso particular, debemos computar la probabilidad hip\'otesis de habilidades dado el resultado observado y el modelo causal. 
+%
+\begin{equation}\label{eq:event_inference} 
+ \underbrace{p(\overbrace{\text{\en{Skill}\es{Habilidad}$_i$}}^{\text{\en{Hidden}\es{Oculta}}}|\overbrace{\text{Result\es{ado}}}^{\text{Observ\en{ed}\es{ado}}}, \text{Model\es{o}})}_{\text{Posterior}} = \frac{\overbrace{P(\,\text{Result\es{ado}}\,|\,\text{\en{Skill}\es{Habilidad}$_i$}\,,\text{Model\es{o}})}^{\text{\en{Likelihood}\es{Verosimilitud}}}\overbrace{p(\text{\en{Skill}\es{Habilidad}$_i$})}^{\text{Prior}}}{\underbrace{P(\text{Result\es{ado}}\,|\,\text{Model\es{o}})}_{\text{Evidenc\en{e}\es{ia} o\en{r}\es{ predicci\'on a} prior \en{prediction}}}}
+\end{equation}
+%
+Notar que la \'unica variable libre es la hip\'otesis de habilidad del agente $i$.
+%
+El prior cuantifica la incertidumbre sobre la habilidad antes de ver el resultado, y el posterior cuantifica la incertidumbre luego de ver el resultado.
+%
+La verosimilitud y la evidencia son ambas probabilidades del resultado observado, por lo que pueden ser vistas como predicciones.
+%
+Como los resultados son variables discretas, esas probabilidad se escribe con letras may\'usculas.
+%
+Debido a que la evidencia es la misma para todas las hip\'otesis, el \'unico factor que actualiza nuestras creencias es la verosimilitud.
 
-\begin{figure}[H]
+% Parrafo
+
+A modo de ejemplo, consideremos un caso ganador ($p_i > p_j$) usando priors gaussianos, $\N(\,s\,|\,\mu, \sigma^2)$.
+%
+En la secci\'on~\ref{sec:2vs2} veremos en detalle c\'omo todas estas ecuaciones surge de aplicar las reglas de las suma y el producto sobre el modelo.
+%
+Aquí las presentamos las conclusiones finales.
+%
+Nuestra creencia a priori respecto de la diferencia de desempe\~nos, $d=p_i-p_j$, se puede expresar como una gaussiana centrada en la diferencia de las medias de las estimaciones a priori ($\mu_i - \mu_j$), con una varianza que incorpora la incertidumbre de ambas estimaciones ($\sigma$) y la varianza de ambos rendimientos ($\beta$), $\N(\, d \, | \, \mu_i -\mu_j \, ,\ 2\beta^2 + \sigma_i^2 + \sigma_j^2 \,)$.
+%
+Al observar que el agente $i$ gan\'o, sabemos por el modelo causal que la diferencia de desempe\~nos oculta fue en efecto positiva.
+%
+Por lo tanto, la predicci\'on a priori del resultado observado, o evidencia, es la densidad acumulada ($\Phi$) de todos los valores positivos de la gaussiana de diferencia de desempe\~nos (Eq.~\eqref{eq:evidence}).
+%
+A partir de ahora el rol del modelo se dejr\'a impl\'icito.
+%
+\begin{equation}\label{eq:evidence}
+ \overbrace{P(r)}^{\text{Evidenc\en{e}\es{ia}}} = 1-\Phi(0 \, | \overbrace{\mu_i^{\phantom{2}} - \mu_j}^{\hfrac{\text{\en{Expected}\es{Diferencia}}}{\text{\en{difference}\es{esperada}}}} , \, \overbrace{2\beta^2 + \sigma_i^2+ \sigma_j^2}^{\hfrac{\text{\en{Total}\es{Incertidumbre}}}{\text{\en{uncertainty}\es{total}}}})
+\end{equation}
+%
+La evidencia es una predicci\'on hecha con todas las hip\'otesis a priori.
+%
+Como es constante, la incertidumbre a posteriori de cada hip\'otesis es proporcional al producto de su incertidumbre a priori y su verosimilitud, como se muestra en la ecuaci\'on~\eqref{eq:posterior_win}. 
+%
+\begin{equation}\label{eq:posterior_win}
+\underbrace{p(\,s_i\, | \, r \, )}_{\text{Posterior}} \propto \underbrace{1-\Phi(0 \, |  s_i - \mu_j , \, 2\beta^2 + \sigma_j^2)}_{\text{\en{Likelihood}\es{Verosimilitud}} \ P(r|s_i)} \,  \underbrace{\N(s_i \, | \, \mu_i,\, \sigma_i^2)}_{\text{Prior} \ p(s_i)} 
+\end{equation}
+%
+Donde el posterior normalizado se obtiene dividiendo el lado derecho con la evidencia, $P(r)$.
+%
+Es interesante notar las similitudes y diferencias entre la verosimilitud y la evidencia.
+%
+La verosimilitud cuantifica la misma densidad acumulada que la evidencia, pero centrada ahora en la diferencia entre la hip\'otesis que estamos evaluando $s_i$ y la estimaci\'on media del oponente $\mu_j$, con una varianza que incluye todas las incertidumbres salvo la de la propia hip\'otesis $s_i$.
+%
+\begin{figure}[ht!]
+    \centering
+    \en{\includegraphics[page={1},width=.6\linewidth]{figures/posterior_win}}
+    \es{\includegraphics[page={2},width=.6\linewidth]{figures/posterior_win}}
+    \caption{
+    %
+    \en{Belief update for the winning case. }%
+    \es{Actualizaci\'on de creencias para el caso ganador. }%
+    %
+    \en{The proportional posterior is obtained as the product of the prior (Gaussian) and the likelihood (cumulative Gaussian). }%
+    \es{El posterior proporcional se obtiene como el producto de la distribuci\'on a priori (distribuci\'on gaussiana) y la verosimilitud (distribuci\'on gaussiana acumulada). }%
+    %
+    \en{The evidence is the integral of the proportional posterior. }%
+    \es{La evidencia es la integral del posterior proporcional. }%
+    %
+    \en{The distributions are not necessarily on the same scale: the prior integrates to $1$, while the likelihood goes from $0$ to $1$. }%
+    \es{Las distribuciones no est\'an necesariamente en la misma escala: la distribuci\'on a priori integra 1, mientras que la verosimilitud va de 0 a 1. }%
+    }
+    \label{fig:posterior_win}
+\end{figure}
+
+El posterior no es m\'as que la densidad del prior no filtrada por la verosimilitud.
+%
+La sorpresa, definida como el complemento de la verosimilitud, funciona como un filtro para el prior.
+%    
+En la regi\'on de hip\'otesis de muy alta habilidad, donde el resultado ganador no nos hubiera generado casi ninguna sorpresa ($\lim_{s_i \to \infty}P(r|s_i) = 1$), el posterior recibe casi toda la densidad del prior.
+%
+En cambio, en la regi\'on de hip\'otesis de muy baja habilidad, donde el resultado habr\'ia generado mucha sorpresa ($\lim_{s_i \to -\infty}P(r|s_i) = 0$), el posterior no recibe casi nada de la densidad del prior.
+
+% Parrafo
+
+Esta es la estimación de habilidad correcta dado el modelo causal Elo.
+%
+Sin embargo, cuando tenemos una historia de partidas encadenadas, la aplicación de las reglas de la probabilidad deja de ser trivial debido a una dependencia mutua entre eventos que obliga la aplicar de un algoritmo iterativo para computar las estimaciones correctas.
+%
+Este modelo, conocido como TrueSkill Through Time (TTT), es el estado del arte en la estimación de habilidad, y nuestra implementación es la primera en los tres lenguajes de programación con mayores comunidades científicas: Julia, Python y R.
+%
+El capítulo siguiente estará dedicado exclusivamente a desarrollar en detalle la solución matemática y computacional del modelo TTT.
+
+% Parrafo
+
+En cualquier caso, los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
+%
+\begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
     \end{subfigure}
     \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio. }
 \end{figure}
-
-En el modelo causal TTT los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
 Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo de la tesis para estudiar diferentes facotres de aprendizaje social.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{TrueSkill Through Time: el estimador de habilidad estado del arte} \label{ch:ttt}
 
