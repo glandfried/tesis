@@ -6856,193 +6856,324 @@ lhood_tc = lhood_lose_tc
 
 \chapter{Exploraciones sobre factores sociales en el aprendizaje individual}
 
-
+\todo[inline]{Escribir una introducción general a Exploraciones}
 
 \section{Efecto de la formación de equipos sobre el aprendizaje} \label{ch:team}
 
 
-The problem of skill acquisition is ubiquitous and fundamental to life.
-Most tasks in modern society involve the cooperation with other subjects. 
-Notwithstanding its fundamental importance, teammate selection is commonly overlooked when studying learning.
-We exploit the virtually infinite repository of human behavior available in Internet to study a relevant topic in anthropological science: how grouping strategies may affect learning.
-We analyze the impact of team play strategies in skill acquisition using a turn-based game where players can participate individually or in teams.
-We unveil a subtle but strong effect in skill acquisition based on the way teams are formed and maintained during time.
-\emph{``Faithfulness-boost effect''} provides a skill boost during the first games that would only be acquired after thousands of games.
-The tendency to play games in teams is associated with a long-run skill improvement while playing loyally with the same teammate significantly accelerates short-run skill acquisition.
+El problema de la adquisición de habilidades es ubicuo y fundamental para la vida.
+%
+La mayoría de las tareas en la sociedad moderna implican la cooperación con otros sujetos.
+%
+A pesar de su importancia fundamental, la selección de compañeros de equipo suele pasarse por alto cuando se estudia el aprendizaje.
+%
+Aprovechamos el repositorio virtualmente infinito de comportamiento humano disponible en Internet para estudiar un tema relevante en la ciencia antropológica: cómo las estrategias de agrupación pueden afectar el aprendizaje.
+%
+Analizamos el impacto de las estrategias de formación de equipos en la adquisición de habilidades mediante un juego por turnos donde los jugadores pueden participar individualmente o en equipos.
+%
+Revelamos un efecto sutil pero fuerte en la adquisición de habilidades basado en la forma en que se forman y mantienen los equipos a lo largo del tiempo.
+%
+El \emph{``Faithfulness-boost effect''} proporciona un impulso de habilidad durante los primeros juegos que solo se adquiriría después de miles de partidas de experiencia.
+%
+La tendencia a jugar en equipos se asocia con una mejora de las habilidades a largo plazo, mientras que jugar lealmente con el mismo compañero de equipo acelera significativamente la adquisición de habilidades a corto plazo.
 
+\subsection{Introducción}
 
-\subsection{Introduction}
+La habilidad se adquiere principalmente a partir de la experiencia individual.
+%
+El ser humano, por su característica social, también incorpora conocimientos aprendiendo de los demás.
+%
+El aprendizaje social puede afectar el proceso de adquisición de habilidades esperado por la experiencia individual produciendo alteraciones en las habilidades del sujeto que pueden ser tanto beneficiosas como riesgosas~\cite{Boyd2011}.
+%
+En este artículo, explotamos el repositorio virtualmente infinito del comportamiento humano disponible en Internet para estudiar un tema relevante en la ciencia antropológica: cómo las estrategias de agrupación pueden afectar la adquisición de habilidades.
 
+% Parrafo
 
-Skill is mainly acquired from individual experience. 
-Humans, due to its social characteristic, also incorporate knowledge by learning from others.
-Social learning may affect the skill acquisition process expected from experience, and involve beneficial and risky alterations to subject abilities~\cite{Boyd2011}.
-In this article, we exploit the virtually infinite repository of human behavior available in Internet to study a relevant topic in anthropological science: how grouping strategies may affect skill acquisition.
+El área de investigación sobre toma de decisiones expertas comenzó estudiando el comportamiento de los ajedrecistas profesionales~\cite{deGroot1978-thoughtAndChoiceInChess,chase1973-perceptionInChess,simon1974-howBigIsAChunk}.
+%
+La experiencia individual ha sido durante mucho tiempo un tema importante, estudiado como el factor principal en la mejora del desempeño.
+%
+Newell señaló en 1981 que la ley de potencia describía todos los datos sobre aprendizaje analizados en función del grado de práctica adquirida~\cite{Newell1981}.
+%
+En los últimos años, algunos autores señalaron que la ley de potencia explica solamente las curvas de aprendizaje poblacionales y afirman la necesidad de proponer otras funciones para aproximar las curvas de aprendizaje individuales~\cite{heathcote2000-powerLawRepealedExponentialLawOfPractice}.
+%
+Sin embargo, las curvas de aprendizaje individuales son más irregulares que las curvas de aprendizaje promediadas y la predicción del desempeño a gran escala de tiempo basado en eventos de pequeña escala de tiempo demostró ser difícil~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality}.
+%
+La práctica es un factor de aprendizaje importante pero no es el único.
+%
+Se deben tener en cuenta otros componentes esenciales para comprender mejor los procesos de aprendizaje.
 
-The study on expert decision-making grew out of research on master chess players~\cite{deGroot1978-thoughtAndChoiceInChess,chase1973-perceptionInChess,simon1974-howBigIsAChunk}.
-When making decisions under uncertainty, experts rely on heuristics that generally lead to non-rational and suboptimal behavior~\cite{tversky1975-judgmentUnderUncertaintyHeuristicsAndBiases,kahneman1979-decisionUnderRisk}.
-Individual experience has long been a major topic, studied as the main factor in performance improvement.
-Newell argued in 1981 that the generalized power law describes all of the practice data~\cite{Newell1981}.
-In recent years, some authors discuss that power law is limited to explain population learning curves and propose other functions to approximate individual learning curves~\cite{heathcote2000-powerLawRepealedExponentialLawOfPractice}.
-However, the individual learning curves are more irregular than averaged learning curves and predicting large time scale performance based on small time scale events probed to be hard~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality}.
-Practice is an important learning factor but is not the only one.
-Other essential components should be taken into account in order to better understand the learning processes.
+% Parrafo
 
-One of the factors that cause an alteration in expected learning curves is, for prosocial animals, the social learning ability.
-Social learning is defined as long-term changes in behavior caused by stimuli derived from observation 
-of -- or interaction with -- other individuals~\cite{hoppitt2013-socialLearningAnIntroductionBook,bandura1977-socialLearning}.
-Our species was involved in a unique gene-culture coevolution that caused the emergence of our special social learning abilities: a costly cognitive machinery enabling efficient acquisition of complex traditions~\cite{Richerson2010}.
-Humans learn things from others, improve and transmit them to the next generation, leading to a cultural accumulation that can not be developed by a single individual during her lifetime~\cite{boyd1985-evolutionaryProcess}.
-The ability to acquire behaviors based on the experience of others without having to build it by trial and error leads to a cumulative culture evolution, allowing humans populations to adapt rapidly to changes and new environments~\cite{Boyd2011}.
-A degree of credulity is required for this process to work, and therefore social learners can acquire inappropriate information even in uniform and stable environments~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
-Deciphering how to take advantage of social information while handling the inconveniences that arise from their use has become the main topic in the research on strategies of social learning~\cite{henrich2003-evolutionOfCulturalEvolution,rendell2011-cognitiveCulture}.
+Uno de los factores que provocan una alteración en las curvas de aprendizaje esperadas es, para los animales prosociales, la capacidad de aprendizaje social.
+%
+El aprendizaje social se define como cambios a largo plazo en el comportamiento causados por estímulos derivados de la observación o la interacción con otros individuos~\cite{hoppitt2013-socialLearningAnIntroductionBook,bandura1977-socialLearning}.
+%
+Nuestra especie estuvo involucrada en una coevolución genética-cultura única que provocó el surgimiento de nuestras habilidades especiales de aprendizaje social: una maquinaria cognitiva costosa que permite la adquisición eficiente de tradiciones complejas~\cite{Richerson2010}.
+%
+Los seres humanos aprenden cosas de los demás, las mejoran y las transmiten a la siguiente generación, lo que lleva a una acumulación cultural que no puede ser desarrollada por un solo individuo durante su vida~\cite{boyd1985-evolutionaryProcess}.
+%
+La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que construirla por ensayo y error conduce a una evolución cultural acumulativa, lo que permite que las poblaciones humanas se adapten rápidamente a los cambios y nuevos entornos~\cite{Boyd2011}.
+%
+Se requiere un grado de credulidad para que este proceso funcione y, por lo tanto, los aprendicez pueden adquirir información inapropiada incluso en entornos uniformes y estables.~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
+%
+Descifrar cómo aprovechar la información social mientras se manejan los inconvenientes que se derivan de su uso se ha convertido en el tema principal en la investigación sobre estrategias de aprendizaje social~\cite{henrich2003-evolutionOfCulturalEvolution,rendell2011-cognitiveCulture}.
 
-Many models of social learning strategies and their emerging population dynamics have been proposed.
-Researchers have identified several theoretical strategies~\cite{rendell2011-cognitiveCulture,rendell2010-socialLearningTournament}, which can be classified as: 
-(a) those that specify the circumstances under which individuals copy others, and 
-(b) those that identify from whom individuals learn.
-Recently, many studies of social learning have been conducted using different methods such as field observations~\cite{henrich2011-adaptativeLearningBiasesFiji}, controlled laboratory experiments~\cite{Baum2004,mcelreath2008-outsideLaboratorySocialLearningStrategies,efferson2008-empiricsOfFrequencyDependentCulturalTransmission,rendell2010-socialLearningTournament,mesoudi2011-experimentalPayoffBiasedSocialLearningUnderused,molleman2014-individualDifferencesSocialLearningStrategies,toelch2014-humanSocialInformationUse,caldwell2016-innovationLaboratoryCulturalEvolution,muthukrishna2016-whenAndWhoSocialLearning} and field experiments~\cite{henrich2001-eco15Soc,efferson2007-learningCulturalTransmissionBolivia,wisdom2013-experiment,Glowacki2017}.
-Social learning now constitutes a major area of study within behavioral and evolutionary biology~\cite{mesoudi2016-individualAndCulturalVariationSocialLearning}.
+% Parrafo
 
-One difficulty inherent to all the mentioned methods is their reliance on small samples.
-With the advent of datasets from virtual communities, we set to study social learning in a massive data environment.
-We rely on a vast corpus ($\sim4.5$ millions of games), capitalizing on a worldwide tendency of people to play multi-player online games and on the existence of servers that accumulate public data.
-This novel methodology seeks statistical emergent of potentially subtle effects, which may be detectable only with a remarkable number of observations and might remain undetected in a small sample sizes typical of laboratory studies~\cite{slezak2012-doNotFearYourOpponent}.
-Our study also incorporates the current capacity to analyze the value of skill acquisition with high accuracy.
-These results are obtained from a very unique experimental condition in which players engage in natural relationships, free to choose their teammates and opponents, and produce reliable outcomes which can be measured directly without hinge on indirect methods such as self-reported choice.
+Se han propuesto muchos modelos sobre estrategias de aprendizaje social y su dinámica de poblacional emergente.
+%
+Los investigadores han identificado varias estrategias teóricas~\cite{rendell2011-cognitiveCulture,rendell2010-socialLearningTournament}, que se puede clasificar como:
+(a) aquellas que especifican las circunstancias bajo las cuales los individuos copian a otros, y
+(b) aquellas que identifican de quién aprenden los individuos.
+%
+Se han realizado muchos estudios de aprendizaje social utilizando diferentes métodos, como observaciones de campo~\cite{henrich2011-adaptativeLearningBiasesFiji}, controlled laboratory experiments~\cite{mesoudi2011-experimentalPayoffBiasedSocialLearningUnderused,toelch2014-humanSocialInformationUse,caldwell2016-innovationLaboratoryCulturalEvolution,muthukrishna2016-whenAndWhoSocialLearning} y experimentos de campo~\cite{henrich2001-eco15Soc,efferson2007-learningCulturalTransmissionBolivia,wisdom2013-experiment,Glowacki2017}.
+%
+El aprendizaje social ahora constituye un área importante de estudio dentro de la biología evolutiva y del comportamiento~\cite{mesoudi2016-individualAndCulturalVariationSocialLearning}.
 
-Online games have already been used as a model to study complex cooperative processes in social science~\cite{Beheim2014,Johnson2009-onlineGuildsOfflineGangs}, neuroscience~\cite{slezak2012-doNotFearYourOpponent,sigman2010-chess}, and computational social science~\cite{delong2013-phd_teamChemistry,roy2013-socializationAndTrustFormation,borbora2012-churnPredictionOnlineGames,shim2010-teamPerformancePrediction}.  
-Chess has been, by its complexity and clear rules, a privileged model for the study of learning and decision making.
-Massive chess data allowed the analysis of the influence of age, cohorts, gender and other features on learning~\cite{chabris_glickman2006-sexDifferencesChessPerformance,roring2007-expertiseInChessAcrossLifeSpan,stafford2014-skillLearningOnlineGame,howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,gaschler2014-playingOffThePredictedLearningCurve,vaci2016-chessDatabasesAgePerformance}.
+% Parrafo
 
-Here we set to investigate the impact of team play strategies on skill acquisition in \emph{Conquer Club}, an online multiplayer turn-based game.
-Unlike the individual game nature of chess, at \emph{Conquer Club} (inspired by the board game RISK) a variable amount of players can take part in each game, playing individually or in teams (Section A in S1 File).
-In Conquer Club there is a strong incentive for collaboration: the results of the games are by teams.
-All the players of a team win or lose together.
-A player who is eliminated during a game can still end up winning if her teammates defeat the rest of the teams.
-Therefore, it is essential that teammates can coordinate their actions.
-In contrast to other platforms, there is no paid content, offering the same conditions for all players.
-There is no skill matching mechanism based on the probability of winning of the players.
-The platform has a ``Join a Game'' section, where all the players can see all the open games (Section A in S1 File).
-A typical Conquer Club game environment has four relevant elements: the current map with troops occupation in each region, the game status showing current round and a summary of players information, a public game chat, and a log of movements.
+Todos estos métodos tiene una dificultad inherente para obtener muestras de datos grandes y longitudinales.
+%
+Con el advenimineto de las comunidades virtuales surge la posibilidad de estudiar conjuntos de datos masivos sobre aprendizaje social correspondientes a largos períodos de tiempo.
+%
+En este trabajo nos apoyamos en un vasto corpus ($\sim4.5$ millones de juegos), aprovechando la tendencia mundial de las personas a jugar juegos en línea de varios jugadores y la existencia de servidores que acumulan datos públicos.
+%
+Esta novedosa metodología busca la aparición estadística de efectos potencialmente sutiles, que pueden ser detectables solo con un número notable de observaciones y pueden pasar desapercibidos en tamaños de muestra pequeños típicos de los estudios de laboratorio~\cite{slezak2012-doNotFearYourOpponent}.
+%
+Nuestro estudio también incorpora la capacidad actual para estimar las habilidades con alta precisión.
+%
+Estos resultados se obtienen en condiciones experimentales únicas en la que los jugadores se involucran en relaciones naturales, libres de elegir a sus compañeros de equipo y oponentes, produciendo resultados confiables que se pueden medir directamente sin depender de métodos indirectos como los cuestionarios.
 
-Researchers studying skill acquisition in chess rely on Elo, an estimator of skill used by the World Chess Federations~\cite{glickman1995-guideToChessRatings,glickman2001}.
-Elo can estimate a player's skill, a hidden variable, by observing only her games outcomes.
-The model assumes that, in each game, the players exhibit performance, another hidden random variable related to the true skill value with some constant noise.
-The player who exhibits the greater performance is the winner.
-Under these assumptions, we can infer in each game who had the highest performance by observing the game outcome (win/lose).
-Moreover, based on the previous skill estimate we can compute the probability of an outcome, i.e. the probability that one player will have higher performance than her opponent.
-The skill estimator is updated according to the direction and magnitude of the surprise, i.e. the difference between the expected result (the prediction) and the observed result (the outcome of a game).
-We rely on \emph{TrueSkill}~\cite{Herbrich2007}, an extension of the Elo ranking system.
+% Parrafo
 
-TrueSkill extends Elo through a Bayesian model.
-Firstly, TrueSkill uses a prior belief distribution, instead of a scalar, to represent the skill estimates.
-Since the initial skill value is unknown, the accepted procedure is to initialize all players with the same mean and a high variance.
-This allows the system to make big changes to the skill estimate early, and small changes after a series of consistent games have been played.
-As a result, TrueSkill can identify players' skill through a few games.
-Secondly, TrueSkill adds a model of team performance, which allows the system to deal with any team assignment.
-The team's performance assumption is only used to adopt the skill of individual players such that the team outcome can be best predicted based on the additive assumptions of the skills.
-Finally, TrueSkill uses a non-arbitrary update function, the posterior of the Bayesian model that could be computed by performing a marginalization over the factor graph~\cite{Kschischang2001} (See details at methods section).
+Los juegos en línea ya se han utilizado como modelo para estudiar procesos cooperativos complejos en las ciencias sociales~\cite{Beheim2014,Johnson2009-onlineGuildsOfflineGangs}, neurociencias~\cite{slezak2012-doNotFearYourOpponent,sigman2010-chess}, y ciencias sociales computacionales~\cite{delong2013-phd_teamChemistry, shim2010-teamPerformancePrediction}.
+%
+El ajedrez ha sido, por su complejidad y reglas claras, un modelo privilegiado para el estudio del aprendizaje y la toma de decisiones.
+%
+Los datos de ajedrez masivos permitieron el análisis de la influencia de la edad, las cohortes, el género y otras características en el aprendizaje~\cite{chabris_glickman2006-sexDifferencesChessPerformance, roring2007-expertiseInChessAcrossLifeSpan,vaci2016-chessDatabasesAgePerformance}.
 
-With our massive dataset, we can investigate the impact of team play strategies on individual skill acquisition that otherwise would not be possible to study.
+% Parrafo
 
-\subsection{Results}
+Aquí nos propusimos investigar el impacto de las estrategias de juego en equipo en la adquisición de habilidades en \emph{Conquer Club}, un juego multijugador en línea por turnos.
+%
+A diferencia de la naturaleza individual del ajedrez, en \emph{Conquer Club} (inspirado en el juego de mesa RISK) puede participar una cantidad variable de jugadores en cada evento, jugando individualmente o en equipos.
+%
+En Conquer Club hay un fuerte incentivo para la colaboración: los resultados de los juegos son por equipos.
+%
+Todos los miembros de un equipo ganan o pierden juntos.
+%
+Un jugador que es eliminado durante un juego aún puede terminar ganando si sus compañeros de equipo derrotan al resto de los equipos.
+%
+Por lo tanto, es fundamental que los compañeros de equipo puedan coordinar sus acciones.
+%
+A diferencia de otras plataformas, no hay contenido pago, ofreciendo las mismas condiciones para todos los jugadores.
+%
+No existe un mecanismo que defina la composición de los equipos en función de las probabilidad de ganar de los jugadores.
+%
+La plataforma tiene una sección ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
+%
+Un entorno de juego típico de Conquer Club tiene cuatro elementos relevantes: el mapa actual con la ocupación de tropas en cada región, el estado del juego que muestra la ronda actual y un resumen de la información de los jugadores, un chat público del juego y un registro de movimientos.
 
-\subsubsection{Law of practice}
+% Parrafo
 
-First, we study how players improve performance as they gain experience, i.e. the law of practice. 
-We estimate the experience of each player by the number of games played.
-Skill is estimated according to the \emph{TrueSkill} method~\cite{Herbrich2007}.
-The skill difference between opponents indicates with high precision the probability of winning (Fig.~A in S1 File).
-With two opponents (teams or individuals), the probability of winning when the other has the same skill is $1/2$ and a difference of $4$~tsp (TrueSkill points) increases the probability of winning to $2/3$. 
+Los investigadores que estudian aprendizaje en ajedrez se basan en Elo, un estimador de habilidades utilizado por la Federación Mundial de Ajedrez~\cite{glickman1995-guideToChessRatings,glickman2001}.
+%
+Nosotros nos basamos en \emph{TrueSkill}~\cite{Herbrich2007}, una extensión Bayesiana del sistema de clasificación Elo.
+%
+En primer lugar, TrueSkill utiliza una distribución de creencias anterior, en lugar de un escalar, para representar las estimaciones de habilidades.
+%
+En segundo lugar, TrueSkill modela el desempeño de los equipos, lo que le permite estimar la habilidad de las personas individuales a pesar de que el resultado sea el mismo para todos sus miembros.
+%
+Finalmente, TrueSkill utiliza una función de actualización no arbitraria, la posterior del modelo bayesiano que podría calcularse realizando una marginalización sobre el gráfico de factores~\cite{Kschischang2001}.
+%
+Como resultado, TrueSkill puede identificar con precisión la habilidad de los jugadores con la menor cantidad de partidas posibles.
 
-In our context, the learning curve is the skill progression as experience is acquired (i.e. the number of games played). 
-As mentioned, population learning curves should follow a power law function~\cite{Newell1981},
+% Parrafo
+
+Con nuestro enorme conjunto de datos, podemos investigar el impacto de las estrategias de juego en equipo en la adquisición de habilidades individuales que, de otro modo, no sería posible estudiar.
+
+\subsection{Resultados}
+
+\subsubsection{La ley de la práctica}
+
+Primero, estudiamos cómo las personas mejoran su desempeño a medida que ganan experiencia, es decir, la ley de la práctica.
+%
+Estimamos la experiencia de cada jugador por el número de partidas jugadas.
+%
+La habilidad se estima según el método \emph{TrueSkill}~\cite{Herbrich2007}.
+%
+La diferencia de habilidad entre los oponentes indica con alta precisión la probabilidad de ganar.
+%
+Con dos oponentes (equipos o individuos), la probabilidad de ganar cuando el otro tiene la misma habilidad es $1/2$ y una diferencia de $4$~tsp (puntos TrueSkill) aumenta la probabilidad de ganar a $2/3$~tsp.
+
+% Parrafo
+
+En nuestro contexto, la curva de aprendizaje es la progresión de habilidades a medida que se adquiere experiencia (es decir, la cantidad de partidas jugadas). 
+%
+Como se mencionó, las curvas de aprendizaje de la población deben seguir una función de ley de potencia~\cite{Newell1981},
+%
 \begin{equation}\label{lawOfPractice}
-   \text{\emph{Skill}} = \text{\emph{Skill}}_0 \cdot \text{\emph{Experience}}^{\alpha}
+   \text{\emph{habilidad}} = \text{\emph{habilidad}}_0 \cdot \text{\emph{Experiencia}}^{\alpha}
 \end{equation} 
-where $\alpha$ is the learning rate characteristic of the population, and \emph{Skill}$_0$ the population skill after the first game.
+%
+donde $\alpha$ es la tasa de aprendizaje característica de la población y \emph{Skill}$_0$ la habilidad de la población después del primer juego.
 
-To analyze the law of practice, we split players according to their total activity: (1) players with at least $8$ games and less than $16$, (2) players with at least $16$ games and less than $32$, and so on.
-Thus, we fit these parameters to each set of players in these subpopulation activity categories.
-In concordance to the law of practice, we observe a linear dependency in the log-log learning curves in all the population segmentation~(Fig.~\ref{learningskill_curve}).
+% Parrafo
 
-Learning curves have a dependency on players who churn out, showing lower skill for subpopulations with lower total activity.
-However, the learning rate ($\alpha$) remains stable for subpopulations with at least $32$ games played (upper right inlet in Fig.~\ref{learningskill_curve}).
-The difference between them causes little variation in long-term skill acquisition, providing less than $0.24$~tsp after $1000$ games played.
-The initial subpopulation skill ($Skill_0$) is also affected by churning out (bottom left inlet in Fig.~\ref{learningskill_curve}).
-Nevertheless, all subpopulations with at least $64$ games played, do not have a significantly different initial skill (Wilcoxon rank-sum test at Table~A in S1 File ). 
+Para analizar la ley de la práctica, dividimos a los jugadores según su actividad total: (1) jugadores con al menos $8$ partidas y menos de $16$, (2) jugadores al menos $16$ partidas y menos de $32$, etc.
+%
+Por lo tanto, ajustamos los parámetros de la ley de la práctica a cada uno de los conjuntos de jugadores según su nivel de actividad.
+%
+De acuerdo con la ley de la práctica, observamos una dependencia lineal en las curvas de aprendizaje log-log en todos los segmentos poblacionales~(Figura~\ref{learningskill_curve}).
 
-Therefore, all cohorts with at least $64$ games played have almost equivalent learning curves.
-They are what we call the ``learning curve expected by experience''.
-This baseline learning can be altered by many factors. 
-For example, the commitment to finish the games is undoubtedly a relevant factor in the process of skill acquisition.
-Indeed, players who always finish their games have a higher learning curve than the rest of the population, around $0.5$~tsp (Fig.~C in S1 File).
+% Parrafo
 
-\subsubsection{Social Learning}
+Las curvas de aprendizaje dependen del abandono, exhibiendose una habilidad más baja para las subpoblaciones con una actividad total más baja.
+%
+Sin embargo, la tasa de aprendizaje ($\alpha$) se mantiene estable para las subpoblaciones con al menos $32$ de partidas jugadas (subfigura superior derecha en~\ref{learningskill_curve}).
+%
+La diferencia entre ellos causa poca variación en la adquisición de habilidades a largo plazo, con menos de $0.24$~tsp después de $1000$ partidas jugadas.
+%
+La habilidad de inicial de la subpoblación ($Skill_0$) también se ve afectada por el abandono (subfigura abajo a la izquierda en~\ref{learningskill_curve}).
+%
+Sin embargo, todas las subpoblaciones con al menos $64$ juegos jugados, no tienen una habilidad inicial significativamente diferente (Wilcoxon rank-sum test en Anexo). 
 
-Social learning is essential to pro-social animals.
-We hypothesize that the learning curve expected by experience could be altered by different grouping behaviors. 
-To study it, we analyze players' behavior in team selection.
+% Parrafo
 
-In the game platform, users can choose between playing individually or in teams.
-We define players' \emph{team-oriented behavior} (TOB) as the number of team games played divided by the total number of games played:
+Por lo tanto, todas las cohortes con al menos $64$ partidas jugadas tienen curvas de aprendizaje casi equivalentes.
+%
+Son lo que llamamos la ``curva de aprendizaje esperada por la experiencia''.
+%
+Este aprendizaje básico puede verse alterado por muchos factores.
+%
+Por ejemplo, el compromiso de terminar los juegos es sin duda un factor relevante en el proceso de adquisición de habilidades.
+%
+De hecho, los jugadores que siempre terminan sus juegos tienen una curva de aprendizaje más alta que el resto de la población, alrededor de $0.5$~tsp (Fig.~C Anexo).
 
+\subsubsection{Aprendizaje social}
+
+El aprendizaje social es esencial para los animales prosociales.
+%
+Nuestra hipótesis es que la curva de aprendizaje esperada por la experiencia podría verse alterada por diferentes comportamientos de agrupación.
+%
+Para estudiarlo, analizamos el comportamiento de los jugadores en la selección de equipos.
+
+% Parrafo
+
+En la plataforma de juego, los usuarios pueden elegir entre jugar individualmente o en equipos.
+%
+Definimos el concepto \emph{Team-oriented behavior} (TOB) de los jugadores como el número de partidas en las que participa de un equipo dividido por el número total de partidas jugadas:
+%
 \begin{equation}
-\text{\emph{Team-oriented behavior}} = \frac{\text{\emph{Team games played}}}{\text{\emph{Games played}}}
+\text{\emph{Team-oriented behavior}} = \frac{\text{\emph{Partidas de equipo jugadas}}}{\text{\emph{Partidas jugadas}}}
 \end{equation}
+%
+Para evaluar la influencia de TOB en las curvas de aprendizaje, dividimos la población en TOB fuerte, medio y débil (es decir, $0.8<\text{\emph{TOB}}\leq 1$, $0.4 <\text{\emph{TOB}}\ leq 0,6$ y $0 <\text{\emph{TOB}}\leq 0.2$, respectivamente).
+%
+En adelante, excluimos a los jugadores con menos de cuatro partidas en equipo.
 
-To evaluate the influence of TOB on learning curves we split the population into strong, medium and weak TOB (i.e. $0.8<\text{\emph{TOB}}\leq 1$, $0.4 <\text{\emph{TOB}}\leq 0.6$, and $0 <\text{\emph{TOB}}\leq 0.2$, respectively). 
-Hereinafter, we excluded players with less than four team games played.
+% Parrafo
 
-In the long-run, between $200$ and $500$ games of experience, the learning curves are ordered according to their TOB level, exhibiting higher skill level for populations with higher TOB (Fig.~\ref{learningskill_team_hasta4team}).
+En el largo plazo, entre $200$ y $500$ juegos de experiencia, las curvas de aprendizaje se ordenan según su nivel de TOB, exhibiendo un mayor nivel de habilidad para las poblaciones con mayor TOB (Figura~\ref{learningskill_team_hasta4team}).
+%
 The strong team-oriented players evince after $250$ games played, a significantly higher final skill compared to medium and weak TOB (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
-In this interval strong and medium TOB population are distanced by about $1$~tsp.
-A more team-oriented behavior has, in the long-run, higher skill value even compared with players without team games (i.e TOB $= 0$, Fig.~D in S1 File).
+Los jugadores TOB altos muestran, después de juegos de $250$, una habilidad final significativamente más alta en comparación con TOB medio y débil (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
+
+% Parrafo
+
+En este intervalo, la población de TOB fuerte y media está distanciada por alrededor de $1$~tps.
+%
+Un comportamiento TOB alto adquiere, a largo plazo, un mayor valor de habilidad incluso en comparación con jugadores sin juegos de equipo.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.49\linewidth]{figures/Fig1}
-\caption{Law of practice. Log-log learning curve of the subpopulation of players with different total activity. Each learning curve shows the skill of the first $2^n$ games played of the subpopulation with at least $2^n$ games played and less than $2^{n+1}$. Subplots show the parameterized values (i.e. $\alpha$ and \emph{Skill}$_0$) of each learning curve following equation~\ref{lawOfPractice}.}
+\caption{
+Ley de la práctica.
+%
+Curva de aprendizaje log-log de la subpoblaciones de jugadores según su nivel actividad total.
+%
+Each learning curve shows the skill of the first $2^n$ games played of the subpopulation with at least $2^n$ games played and less than $2^{n+1}$.
+%
+Cada curva de aprendizaje muestra la habilidad de los primeros $2^n$ partidas jugadas de la subpoblación con al menos $2^n$ partidas jugadas y menos de $2^{n+1}$.
+%
+Las subfiguras muestran los valores de los parametros (es decir, $\alpha$ y \emph{Skill}$_0$) de cada curva de aprendizaje siguiendo la ecuación~\ref{lawOfPractice}.
+}
 \label{learningskill_curve}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.49\linewidth]{figures/Fig2}
-\caption{Social learning. The learning curve for strong, medium and weak team-oriented behavior. The band represents $95\%$ Wilcoxon rank-sum confident interval, and the middle line represents the pseudomedian. As a reference, we show the learning curve of the whole population. Results are analogous to those obtained with mean and $95\%$ t-test confident interval.}
+\caption{
+Aprendizaje social.
+%
+La curva de aprendizaje para TOB fuerte, medio y débil.
+%
+La banda representa el intervalo de confianza de $95\%$ del Wilcoxon rank-sum y la línea central representa la pseudomediana.
+%
+Como referencia, mostramos la curva de aprendizaje de toda la población.
+%
+Los resultados son análogos a los obtenidos con la media y el intervalo de confianza de $95\%$ del t-test.
+}
 \label{learningskill_team_hasta4team}
 \end{figure}
 
 
 \subsubsection{Faithfulness-boost effect}
 
-Players can choose between playing with the same teammate or selecting different players in each game.
-We hypothesize that a loyal behavior may affect learning (increase or decrease the rate of skill acquisition) when playing in teams.
-If we look at how many recurrent players each player has, we find that most recurrent players are teammates instead of opponents.
-Thus, we focus our analysis only on the loyalty of teammates as loyalty in opponents is not present in our database.
-We define players' \emph{loyalty} as the proportion of times played with the most recurrent teammate divided by the number of team games played:
+Los jugadores pueden elegir entre jugar con el mismo compañero de equipo o seleccionar diferentes jugadores en cada juego.
+%
+Nuestra hipótesis es que un comportamiento leal puede afectar el aprendizaje (aumentar o disminuir la tasa de adquisición de habilidades) cuando se juega en equipo.
+%
+La mayoría de las veces que dos personas aparecen recurrentemente en la misma partida vemos que la inmensa mayoría las personas son compañeras de equipo en lugar de oponentes.
+%
+Por lo tanto, enfocamos nuestro análisis solo en la lealtad de los compañeros de equipo ya que la lealtad en los oponentes no está presente en nuestra base de datos.
+%
+Definimos el concepto \emph{loyalty} de las personas como la proporción de veces que juegan con el compañero de equipo más recurrente dividida por la cantidad de partidas de equipo jugadas:
+%
 \begin{equation}
-\text{\emph{Loyalty}} = \frac{\text{\emph{Maximum of games played with a partner}}}{\text{\emph{Team games played}}}
+\text{\emph{Loyalty}} = \frac{\text{\emph{Máximo de partidas juegadas con un mismo compañero}}}{\text{\emph{Partidas de equipo jugadas}}}
 \end{equation}
+%
+Para evaluar la influencia del loyalty sobre el aprendizaje, examinamos la evolución de las habilidades de los jugadores con TOB fuerte en función de su valor de loyalty.
+%
+Definimos un jugador como \emph{leal} cuando $\text{\emph{loyalty}}>0.5$, y un jugador como \emph{casual} cuando $\text{\emph{loyalty}}\leq 0.2$.
 
-To evaluate the influence of loyalty over learning, we examine players' skill evolution in strong TOB based on their loyalty value.
-We define a player as \emph{loyal} when $\text{\emph{loyalty}}>0.5$, and a player as \emph{casual} when $\text{\emph{loyalty}}\leq 0.2$.
+% Parrafo
 
-If we compare the learning curves of loyal and casual players, we obtain a substantial separation between them at the first games of experience. 
-Loyal players show an increment in the median skill of approximately $4$~tsp over casual players (Fig.~\ref{learningskill_pteam89_ployal}).
-The skill distribution at each point of the learning curve is significantly different until $386$ games played (Wilcoxon rank-sum test $p<0.01$).
-An analogous behavior between loyal and casual subclasses is found for medium and weak TOB, less intense as they are less team-oriented (Fig.~E in S1 File).
+Si comparamos las curvas de aprendizaje de jugadores leales y casuales, obtenemos una separación sustancial entre ellos en los primeros juegos de experiencia.
+%
+Los jugadores leales muestran un incremento en la habilidad media de aproximadamente $4$~tsp sobre los jugadores casuales (Fig.~\ref{learningskill_pteam89_ployal}).
+%
+La distribución de habilidades en cada punto de la curva de aprendizaje es significativamente diferente hasta $386$ juegos jugados (Wilcoxon rank-sum test $p<0.01$).
+%
+Un comportamiento análogo entre las subclases leales y casuales se encuentra para los TOB medios y débiles, menos intensos ya que están menos orientados a equipos (Fig.~E en Anexo).
 
-To study the interaction between TOB and loyalty on skill acquisition, we fix the number of games played to $100$.
-By isolating this interaction (without the interference of experience) we find that an increase in loyalty always implies an increase in skill, more prominent for higher TOB values (Fig.~\ref{skillModels_loyaltyTeamOriented_imageEmpirical}).
-Conversely, increasing TOB values shows a decrease in skill for low levels of loyalty, and only implies an increase in skill for high levels of loyalty. 
-The skill difference from the minimum to maximum is greater than $4.5$~tsp.
+% Parrafo
+
+Para estudiar la interacción entre TOB y loyalty en la adquisición de habilidades, fijamos el número de juegos jugados en $100$.
+%
+Al aislar esta interacción (sin la interferencia de la experiencia) encontramos que un aumento en loyalty siempre implica un aumento en la habilidad, más prominente para valores más altos de TOB (Fig.~\ref{skillModels_loyaltyTeamOriented_imageEmpirical}).
+%
+Por el contrario, el aumento de los valores de TOB muestra una disminución de la habilidad para los niveles bajos de loyalty, y solo implica un aumento de la habilidad para los niveles altos de loyalty.
+%
+La diferencia de habilidad del mínimo al máximo es mayor a $4.5$~tsp.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.49\linewidth]{figures/Fig3}
-\caption{Loyalty influence over strong TOB learning curve. Learning curves of the loyal and casual subclasses of strong TOB. The band represents 95\% Wilcoxon rank-sum confident interval, and the middle line represents the pseudomedian. As a reference, we show the learning curve of the whole population and the strong TOB. Results are analogous to those obtained with mean and 95\% t-test confident interval. The vertical line at $100$ of games played indicates the analysis performed in Fig.~\protect\ref{skillModels_loyaltyTeamOriented_imageEmpirical}.
+\caption{
+Curvas de aprendizaje de las subclases leal y casual de la clase TOB fuerte.
+%
+La banda representa el intervalo de confianza 95\% Wilcoxon rank-sum, y la línea media representa la pseudomediana.
+%
+Como referencia, mostramos la curva de aprendizaje de toda la población y la clase TOB fuerte.
+%
+Los resultados son análogos a los obtenidos con la media y el intervalo de confianza 95\% t-test.
+%
+La línea vertical en $100$ partidas jugadas indica el análisis realizado en la Fig.~\protect\ref{skillModels_loyaltyTeamOriented_imageEmpirical}.
 }
 \label{learningskill_pteam89_ployal}
 \end{figure}
@@ -7050,26 +7181,45 @@ The skill difference from the minimum to maximum is greater than $4.5$~tsp.
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.49\linewidth]{figures/Fig4}
-\caption{Skill interaction between loyalty and TOB for all players. The role of experience was isolated by taken the skill of players at the same point of experience. All players have $100$ of games played. The average skill of each bin is reported by the gray-scale. Contour lines are shown. Empty bins have less than five players.}
+\caption{
+Interacción de la habilidades entre loyalty y TOB para todos los jugadores.
+%
+El papel de la experiencia se aisló tomando la habilidad de los jugadores en el mismo punto de la experiencia.
+%
+Todos los jugadores tienen $100$ de partidas jugadas.
+%
+La habilidad promedio de cada parcela se informa mediante la escala de grises.
+%
+Se muestran las curvas de nivel.
+%
+Las parcelas vacías tienen menos de cinco jugadores.
+}
 \label{skillModels_loyaltyTeamOriented_imageEmpirical}
 \end{figure}
 
-The interaction between loyalty and TOB can be summarized by $ \text{\emph{Loyalty}} \cdot \text{\emph{TOB}} = \text{\emph{faithfulness}}$ defined as,
+La interacción entre loyalty y TOB se puede resumir como $ \text{\emph{Loyalty}} \cdot \text{\emph{TOB}} = \text{\emph{faithfulness}}$, lo que queda definido como,
+%
 \begin{equation}
-\text{\emph{Faithfulness}} = \frac{\text{\emph{Maximum of games played with a partner}}}{\text{\emph{Games Played}}}
+\text{\emph{Faithfulness}} = \frac{\text{\emph{Máximo de partidas juegadas con un mismo compañero}}}{\text{\emph{Partidas jugadas}}}
 \end{equation}
-which is simply the proportion of times played with the most repeating teammate over all the games played.
+%
+que es simplemente la proporción de veces jugadas con el compañero de equipo más leal sobre todos las partidas jugadas.
 
-To measure the influence over skill acquisition of loyalty, TOB and faithfulness, we build a linear model solved by least squares. The correlation between variable loyalty and TOB is low ($0.11$), and the Variance Inflation Factor is nil ($1.01$), suggesting no evidence of collinearity.
+% Parrafo
+
+Para medir la influencia sobre la adquisición de habilidades de loyalty, TOB and faithfulness, construimos un modelo lineal que será resuelto por mínimos cuadrados.
+%
+La correlación entre las variables loyalty y TOB es baja ($0,11$) y Variance Inflation Factor es nulo ($1,01$), lo que sugiere que no hay evidencia de colinealidad.
 
 \begin{equation}
 \text{skill}_i \sim \beta_1\text{loyalty}_i + \beta_2\text{TOB}_i + \beta_3\text{faithfulness}_i
 \end{equation}
 
-At $100$ games played, loyalty has a significant positive slope, TOB has a significant negative one, while faithfulness has a significant steep positive slope (Table~\ref{model}).
-Faithfulness is strong enough to reverse the negative TOB contribution over skill to a positive one when $\text{\emph{loyalty}}>0.27$.
-The \emph{faithfulness-boost effect} is around $3.7$~tsp, which generates a skill difference between players with the same experience extremely relevant in terms of probability of winning.
-
+Con $100$ partidas jugadas, la variable loyalty tiene una pendiente positiva significativa, la variable TOB tiene una negativa significativa, mientras que la variable faithfulness tiene una pendiente positiva pronunciada significativa (Table~\ref{model}).
+%
+La variable faithfulness es lo suficientemente fuerte como para revertir la contribución nmegativa de TOB sobre la habilidad a una positiva cuando $\text{\emph{loyalty}}>0.27$.
+%
+El \emph{faithfulness-boost effect} es de alrededor de $3.7$~tsp, lo que genera una diferencia de habilidades entre jugadores con la misma experiencia extremadamente relevante en términos de probabilidad de ganar.
 
 \begin{table}[ht]
 \centering
@@ -7083,28 +7233,41 @@ Intercept & 28.5707 & 0.0405 & 705.59 & $p< 2e^{-16}$ \\
   Faithfulness & 3.7077 & 0.2611 & 14.20 & $p< 2e^{-16}$ \\ 
    \hline
 \end{tabular}
-\caption{Influence over skill acquisition of loyalty, TOB and faithfulness (linear model). We report the estimated slope value, their standard deviation and their significance difference with respect to a zero slope. All players have $100$ games of experience.}
+\caption{
+Influencia sobre el aprendizaje de las variables de loyalty, TOB and faithfulness (modelo lineal). Reportamos el valor de la pendiente estimada, su desviación estándar y la significatividad respecto a una pendiente cero. Todos los jugadores tienen juegos de $100$ de experiencia.
+}
 \label{model}
 \end{table}
 
-We repeat this procedure for players with the same experience, starting from $100$ to $1300$ games, by $100$ games played (Fig.~F in S1 File).
-The \emph{faithfulness-boost effect} remains significant until $400$ games played, always above $3$~tsp.
-Starting at $500$ played games, faithfulness ceases to be significant but TOB slope reverses its contribution to a significantly positive one.
-Loyalty has a significant positive effect at any level of experience ($\geq 100$ games played).
-Although the interaction effect of the linear model (faithfulness) is no longer significant from $500$ games of experience onwards, the point of maximum skill is always achieved by maximizing both loyalty and team-oriented behavior.
-The magnitude of this contribution is always relevant in terms of winning probability, with more than $2$~tsp.
+Repetimos este procedimiento para jugadores con la misma experiencia, a partir de $100$ a $1300$ partidas jugadas (Fig.~F en Anexo).
+%
+El \emph{faithfulness-boost effect} sigue siendo significativo hasta $400$ partidas jugadas, siempre por encima de $3$~tsp.
+%
+A partir de $500$ partidas jugadas, la variable faithfulness deja de ser significativa pero la pendiente de la variable TOB revierte su contribución a una significativa positiva.
+%
+La variable loyalty tiene un efecto positivo significativo en cualquier nivel de experiencia ($\geq 100$ partidas jugadas).
+%
+Aunque el efecto de interacción del modelo lineal (faithfulness) ya no es significativo a partir de $500$ partidas de experiencia, el punto de máxima habilidad siempre se alcanza maximizando tanto la variable loyalty y TOB.
+%
+La magnitud de esta contribución siempre es relevante en términos de probabilidad de ganar, con más de $2$~tsp.
 
-In order to integrate all the partial observations made up to here, we perform one overall model fitted to all data including experience, loyalty, TOB as the predictors, and individual player as a random effect (Table~\ref{lmm}).
-We choose a linear mixed model because the relationship between the experience and skill is linear on a log-log scale (Eq.~\ref{lawOfPractice}).
-The dependent variable, players' skill, was transformed to a logarithmic scale,
+% Parrafo
+
+Para integrar todas las observaciones parciales realizadas hasta aquí, realizamos un modelo general ajustado a todos los datos, incluyendo la experiencia, loyalty y TOB como predictores y la identidad de la persona como efecto aleatorio (Table~\ref{lmm}).
+%
+Elegimos un modelo mixto lineal porque la relación entre la experiencia y la habilidad es lineal en una escala logarítmica (Eq.~\ref{lawOfPractice}).
+%
+La variable dependiente, habilidad de los jugadores, se transformó a una escala logarítmica,
   
 \begin{center}    
 $\text{log$_{10}$(\emph{skill})} = \text{log$_{10}$(\emph{experience})} + \text{\emph{loyalty}} + \text{\emph{TOB}} + \text{\emph{individual player}} + \varepsilon$
 \end{center}
 
-The dataset used contains the values of all the players for each game between $10$ and $500$ games played of individual experience.
-The collinearity between variables is nil in terms of Variance Inflation Factor computed from a linear model solved by least squares (i.e. all VIF less than $1.5$).
-Therefore, we can fit the linear model without incurring in artificial results.
+El conjunto de datos utilizado contiene los valores para todos los jugadores entre $10$ y $500$ partidas jugadas.
+%
+La colinealidad entre variables es nula en términos del Variance Inflation Factor calculado a partir de un modelo lineal resuelto por mínimos cuadrados (es decir, todos los VIF son inferiores a $1.5$).
+%
+Por tanto, podemos ajustar el modelo lineal sin incurrir en resultados artificiales.
 
 \begin{table}[ht!]
 \centering
@@ -7123,162 +7286,284 @@ exp:loyal:tob 		& -0.026  &  -1.51   &  -56.129  & -0.027 & -0.025 \\
 Group Var     		&  0.002  &          &           &        &       \\   
    \hline
 \end{tabular}
-\caption{Linear mixed model for one overall model fitted to all data between 10 and 500 games played of individual experience. At column normalized estimates (Norm.Est.) we transform the estimators, in logarithmic scale, to their normalized value, (e.g. $\text{Intercept} = 10^{1.415}$, $\text{exp} = 10^{1.415+0.016} - 10^{1.415}$). Method: REML converged. Number of groups: $65335$. Max Group size: $491$. Mean group size: $99.5$}
+\caption{
+Modelo mixto lineal para ajustado para todos los datos entre 10 y 500 partidas jugadas de experiencia individual.
+%
+En la columnn Norm.Est. transformamos los estimadores, en escala logarítmica, a su valor normalizado (e.g. $\text{Intercept} = 10^{1.415}$, $\text{exp} = 10^{1.415+0.016} - 10^{1.415}$).
+%
+Metodo: REML converged. Número de grupos: $65335$. Tamaño máximo de grupo: $491$. Tamañop medio de grupos: $99.5$}
 \label{lmm}
 \end{table}
 
-This overall model confirms the observations already introduced.
-Experience is the main predictor in terms of their level of significance, has the most significant slope.
-Initially, loyalty only has a positive effect in contexts of team-oriented behavior (loyal:tob).
-Be loyal without a team-oriented behavior has a very marginal effect (loyal).
-Without a stable teammate, playing team games results in a bad plan (tob).
-However, as more experience is gained, while the boost-effect provided by faithfulness interaction  loses strength (exp:loyal:tob), the loyalty (exp:loyal) and team-oriented behavior effect (exp:tob) reverses their contribution to a positive one.
-Due to this dynamic, the point of maximum skill is always reached with both maximum team-oriented behavior and loyalty (i.e. maximum faithfulness).
+Este modelo general confirma las observaciones ya introducidas.
+%
+La experiencia es el principal predictor en cuanto a su nivel de significatividad, tiene la pendiente más significativa.
+%
+Inicialmente, la variable loyalty solo tiene un efecto positivo en contextos de orientados a equipos (loyal:tob).
+%
+Ser leal sin un comportamiento orientado a equipo tiene un efecto muy marginal (loyal).
+%
+Sin un compañero de equipo estable, jugar en equipos es un mal plan (tob).
+%
+Sin embargo a medida que se gana mayor experiencia, y el efecto de la interacción faithfulness pierde fuerza (exp:loyal:tob), el efecto de la variable loyalty (exp:loyal) y TOB (exp:tob) revierten su contribución a una positiva.
+%
+Debido a esta dinámica el valor máximo de habilidad se alcanza siempre cuando se maximizan ambas variables TOB y loyalty, es decir maximizando el faithfulness.
 
 \subsection{Discussion}
 
-Traditionally, learning is modeled as a function of experience. 
-In this article, we focus on how the learning curve expected from practice could be altered by different grouping strategies.
-We exploit the virtually infinite repository of human behavior available on the Internet to study a relevant topic in anthropological science: how grouping strategies may affect skill acquisition.
-Our method is based on massive data which enabled conducting a longitudinal study with very high precision to detect subtle changes.
+Tradicionalmente el aprendizaje ha sido modelado en función de la experiencia.
+%
+En este artículo nos enfocamos en cómo la curva de aprendizaje esperada por la experiencia individual se ve alterada por diferentes estrategias de agrupamiento.
+%
+Nuestro método se basa en datos masivos que permitieron realizar un estudio longitudinal con una precisión muy alta para detectar cambios sutiles.
 
-We analyze learning in the context of competing players, such as chess or RISK.
-In this types of games, learning is measured in terms of the probability that a player beats others.
-Unlike tasks in which it can be determined the absolute amount of errors that an individual makes when solving it, in competitive games the probability of winning is a relative property that depends on the learning level of opponents.
-Learning curves arising from tasks in which the skill is measured in relative terms are more volatile than those measured in absolute terms.
-Thus, individual learning curves of competing players are sometimes hard to fit~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,gaschler2014-playingOffThePredictedLearningCurve}.
+% Parrafo
 
-Regardless, the individual learning curves are more irregular than averaged learning curves and the variation among them must be explained.
-We hypothesized that social learning would expose a second-order effect in skill acquisition.
-According to social learning theories, players have two options for learning: i) discover for themselves the keys to better play; or ii) imitate the strategy of others available in her network.
-We rely on Conquer Club, an online game that -- in contrast to chess -- may also be played in teams.
-In Conquer Club both opponents and teammates are observable and, in consequence, they could be seen as models to imitate.
-However, we focus our analysis only on the loyalty of teammates as loyalty in opponents is not present in our database.
+Analizamos el aprendizaje en un contexto competitivo.
+%
+En este tipo de juegos el aprendizaje se mide en términos de la probabilidad de ganar a otras personas.
+%
+A diferencia de las tareas en las que se puede determinar la cantidad absoluta de errores que comete un individuo al resolverla, en los juegos competitivos la probabilidad de ganar es una propiedad relativa que depende del nivel de aprendizaje de los oponentes.
+%
+Las curvas de aprendizaje derivadas de tareas en las que la habilidad se mide en términos relativos son más volátiles que las medidas en términos absolutos.
+%
+Por lo tanto, las curvas de aprendizaje individuales de los jugadores que compiten a veces son difíciles de ajustar~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,gaschler2014-playingOffThePredictedLearningCurve}.
 
-For instance, a simple social learning strategy consists of copying the majority of other available models, which is known as \emph{frequency-based strategy}.
-Another social learning strategy is copying the most successful available model, named as the \emph{payoff-based strategy}.
-As far as we know, no social learning strategy has been proposed which takes into account different grouping strategies.
-We found that grouping strategies affect significantly how the skill is acquired.
+% Parrafo
 
-As in other species, it has been studied in ancient anthropology that homo-sapiens success relies on group formation~\cite{Richerson2010,dunbar1993-coevolutionNeocorticalSizeGroupSizeAndLanguage}.
-We explored if this behavior affects skill acquisition using a controlled environment, i.e. Conquer Club.
-The decision on playing individually or in teams (i.e.~the team-oriented behavior) is associated with a long-run skill improvement.
-We found that tendency of playing in groups (the number of played team games divided by the total number of played games) improves significantly the skill level achieved.
+Si bien las curvas de aprendizaje individual son más irregulares que el promedio de un conjunto de curvas de aprendizaje, la variación entre ellas debe ser explicada.
+%
+Nuestra hipótesis para explicar las variaciones observadas afirma que el aprendizaje social produce un efecto de segundo orden en la adquisición de habilidades.
+%
+Según las teorías del aprendizaje social, los jugadores tienen dos opciones para aprender: i) descubrir por sí mismos las claves para jugar mejor; o ii) imitar la estrategia de otros disponibles en su red.
+%
+Nos basamos en el juego en línea Conquer Club porque, a diferencia del ajedrez, se puede jugar en equipos.
+%
+En Conquer Club tanto los oponentes como los compañeros de equipo son observables y, en consecuencia, son modelos a imitar.
+%
+Sin embargo, enfocamos nuestro análisis solo en la lealtad de los compañeros de equipo ya que la lealtad en los oponentes no está presente en nuestra base de datos.
 
-Mathematical models show that relations between groups by individual migrants can be a risk factor for social learning when environments in which groups live differs~\cite{boyd1989-socialLearningAsAdaptation}.
-We studied a reductionist version of migration among groups by analyzing how players repeat teammates, that leads to a intra-group stability (i.e.~loyalty).
-Following environment change risk theory, we claim that there are no environmental modifications in Conquer Club and therefore inter-group mobility is not a source for the spread of maladaptive ideas.
-On the contrary, migration would imply the access to different groups and thus learn from different players an increase in skills by learning from a larger variety of teammates.
-In this sense, we tested the hypothesis that migration is beneficial for improving skill acquisition.
-However, we found the opposite. 
+% Parrafo
 
-First, we check the law of practice in our dataset.
-We found the empirical shape of what we call the ``learning curve expected by experience''.
-Taking it as a baseline, we quantify to what extent different grouping behaviors alter the skill acquisition expected by experience.
-We found that a team-oriented behavior (the proportion of the played team games and the total played games) is related to a significant improvement of skill level achieved in the long-run.
-A tendency of an intra-group stability (loyalty, i.e. the number of times played with the recurrent teammate divided by the team games played) is associated with a rapid skill improvement in the short run.
-The combination of these two features contains a positive effect that may be exploited by learners. 
-This \emph{faithfulness-boost effect} provides a skill boost that would be acquired, through experience, only after thousands of games of practice.
+Por ejemplo, una estrategia de aprendizaje social simple consiste en copiar la mayoría de los otros modelos disponibles, lo que se conoce como \emph{frequency-based strategy}.
+%
+Otra estrategia de aprendizaje social es copiar el modelo disponible más exitoso, denominado como \emph{payoff-based strategy}.
+%
+Hasta donde sabemos, no se ha propuesto ninguna estrategia de aprendizaje social que tenga en cuenta diferentes estrategias de agrupación.
+%
+Encontramos que las estrategias de agrupación afectan significativamente cómo se adquiere la habilidad.
 
-We claim that the current skill of the potential partner may be ignored.
-There are no side effects derived from the skill heterogeneity between teammates.
-The winning probability of a team is independent of the difference between teammates (Fig.~G in S1 File).
-It is also important to point out that being part of a team with a low probability of winning does not mean losing the skill.
-Partnering with a lower-skill teammate will effectively entail a decrease in the probability of winning but not necessarily imply a decrease in skill.
-If collaboration is strong, both players will benefit from skill acquisition.
+% Parrafo
 
-The evidence leaves important open questions that may have practical implications for planning training strategies.
-Our hypothesis suggests that sociability is the underlying learning factor of different grouping tactics.
-However, more work is needed to be able to formulate reliable explanations and recommendations.
-Experimental research is necessary to determine with certainty the causes of those observed effects.
-We believe that the positive effect of partnership emerges from social commitment.
-The socio-cognitive derivatives of loyalty such as trust, constancy, and fluid communication outweighs the costs of coordination and the reduction in the range of relationships that can be established.
+Se sabe que el éxito de nuestra especie depende de la formación de grupos~\cite{Richerson2010,dunbar1993-coevolutionNeocorticalSizeGroupSizeAndLanguage}.
+%
+Aquí exploramos en qué medida este comportamiento afecta la adquisición de habilidades utilizando un entorno controlado: Conquer Club.
+%
+Hemos visto que la decisión de jugar en equipos está asociada con una mejora de habilidades a largo plazo.
+%
+Encontramos que la tendencia a jugar en grupos (el número de partidas jugadas en equipo dividido por el número total de partidas jugadas) mejora significativamente el nivel de habilidad alcanzado.
 
-The grouping strategies identified cannot be classified either into those social learning strategies that specify under which circumstances copy others, nor those that describe from whom individuals learn.
-However, by definition, they are social learning strategies due to the evidence of long-term changes in behavior caused by stimuli derived from observation and interaction with other individuals.
+% Parrafo
 
-\subsection{Materials and methods}
+Los modelos matemáticos muestran que las estretgias adaptadas a entornos distintos a los actuales (e.g. migración) puede ser un factor de riesgo para el aprendizaje social~\cite{boyd1989-socialLearningAsAdaptation}.
+%
+Estudiamos una versión reducida de la migración entre grupos analizando cómo los jugadores repiten compañeros de equipo, lo que conduce a una estabilidad intragrupal (i.e.~loyalty).
+%
+Siguiendo la teoría del riesgo del cambio ambiental, afirmamos que no hay modificaciones ambientales en Conquer Club y, por lo tanto, la movilidad intergrupal no es una fuente para la difusión de ideas maladaptitivas.
+%
+Por el contrario, la migración implicaría el acceso a diferentes grupos y, por lo tanto, aprender de diferentes jugadores y aumentar las habilidades al aprender de una mayor variedad de compañeros de equipo.
+%
+En este sentido, lo que esperábamos encontrar era que este tipo de migración sea beneficiosa para mejorar el aprendizaje.
+%
+Sin embargo encontramos lo opuesto.
+
+% Parrafo
+
+Primero, verificamos la ley de la práctica en nuestro conjunto de datos.
+%
+Encontramos la forma empírica de lo que llamamos la "curva de aprendizaje esperada por la experiencia".
+%
+Tomándolo como línea de base, cuantificamos en qué medida los diferentes comportamientos de agrupamiento alteran la adquisición de habilidades esperadas por la experiencia.
+%
+Encontramos que un comportamiento orientado a equipo está relacionado con una mejora significativa del nivel de habilidad a largo plazo.
+%
+Una tendencia de estabilidad dentro del grupo (la lealtad) se asocia con una rápida mejora de las habilidades a corto plazo.
+%
+La combinación de estos dos efectos puede ser aprovechado para el aprendizaje.
+%
+El \emph{faithfulness-boost effect} proporciona un impulso de habilidad que se adquiriría, a través de la experiencia, solo después de miles de partidas de práctica.
+
+% Parrafo
+
+Afirmamos que la habilidad actual del compañero de equipo puede ser ignorada.
+%
+No se observan efectos secundarios derivados de la heterogeneidad de habilidades entre los compañeros de equipo.
+%
+La probabilidad de victoria de un equipo es independiente de la diferencia entre compañeros (Fig.~G en Anexo).
+%
+También es importante señalar que ser parte de un equipo con pocas probabilidades de ganar no significa perder la habilidad.
+%
+Asociarse con un compañero de equipo con menos habilidades implicará efectivamente una disminución en la probabilidad de ganar, pero no necesariamente implicará una disminución en la habilidad.
+%
+Si la colaboración es sólida, ambos jugadores se beneficiarán del efecto positivo sobre la adquisición de habilidades.
+
+% Parrafo
+
+La evidencia deja importantes preguntas abiertas que pueden tener implicaciones prácticas para la planificación de estrategias de capacitación.
+%
+Nuestra hipótesis sugiere que la sociabilidad es el factor de aprendizaje subyacente de diferentes tácticas de agrupación.
+%
+Sin embargo, se necesita más trabajo para poder formular explicaciones y recomendaciones confiables.
+%
+La investigación experimental es necesaria para determinar con certeza las causas de esos efectos observados.
+%
+Creemos que el efecto positivo de la asociación surge del compromiso social.
+%
+Los derivados sociocognitivos de la lealtad como la confianza, la constancia y la comunicación fluida superan los costes de coordinación y la reducción del abanico de relaciones que se pueden establecer.
 
 
-All games were downloaded from Conquer Club, a free service that offers to play RISK like games.
-The website allows any person, and not just registered participants, to explore the matches and browse their related data.
-Registered users are identified by their nicknames and, to be accepted as users, they have to agree with having their games stored in a publicly accessible server.
-Moreover, during the downloading process, each player is identified by an internal id number, anonymizing the data.
-In consequence, there is no need for individual consent due to this double layer of anonymity and the open nature of the website.
-We contacted Conquer Club' owners to get authorization for performing this process, thus complying with this site' terms of use.
+\subsection{Materiales y métodos}
 
-The application consists of a \texttt{Python} script that connects to the Conquer Club server.
-The data between $2006/01/03$ and $2009/07/12$ is stored in a \texttt{PostgreSQL} database.
-There are near $4.4$ million games played by almost $270$ thousand different users.
+Todos los juegos se descargaron de Conquer Club, un servicio gratuito que ofrece jugar juegos tipo RISK.
+%
+El sitio web permite a cualquier persona, y no solo a los participantes registrados, explorar los partidos y buscar sus datos relacionados.
+%
+Los usuarios registrados se identifican por sus apodos y, para ser aceptados como usuarios, deben aceptar que sus partidas se almacenen en un servidor de acceso público.
+%
+Además, durante el proceso de descarga, cada jugador fue identificado por un número de identificación interno, anonimizando los datos.
+%
+En consecuencia, no fue necesario el consentimiento individual debido a esta doble capa de anonimato y la naturaleza abierta del sitio web.
+%
+Nos comunicamos con los propietarios de Conquer Club para obtener la autorización para realizar este proceso, cumpliendo así con los términos de uso de este sitio.
 
-To compute the skill, we use the \texttt{TrueSkill 0.4.4} package for \texttt{Python}.
-All players start with a skill mean $\mu = 25$ and a skill standard deviation of $\sigma = 8.33$.
-The draw probability value was set to 0 since there is no chance of drawing in Conquer Club. 
+% Parrafo
+
+La aplicación consta de un script \texttt{Python} que se conecta al servidor de Conquer Club.
+%
+Los datos entre $2006/01/03$ y $2009/07/12$ se almacenan en una base de datos \texttt{PostgreSQL}.
+Hay cerca de $4.4$ millones de partidas jugadas por casi $270$ mil usuarios diferentes.
+
+Para calcular la habilidad, usamos el paquete \texttt{TrueSkill 0.4.4} de \texttt{Python}.
+%
+Todos los jugadores comienzan con una habilidad media $\mu = 25$ y una desviación estándar de habilidad de $\sigma = 8,33$.
+%
+El valor de probabilidad de empate se estableció en 0 ya que no hay posibilidad de empate en Conquer Club.
 
 \subsubsection{The game}
 
 \paragraph{Gameplay}\label{sub:gameplay}
 
-At the beginning of a game, the regions of the selected map are randomly distributed among the players and populated with troops.
-Each turn consists of i) deploy new troops, ii) assault neighboring opponent's regions, and iii) reinforce the regions.
-The game environment has four relevant elements: the current board, a panel with the game status, a public chat and a log of movements (Fig.~\ref{conquerImage}).
+Al comienzo de cada partida, las regiones del mapa se distribuyen aleatoriamente entre los jugadores a las que le asignan una cierta cantidad de tropas.
+%
+Cada turno consiste en i) desplegar nuevas tropas, ii) asaltar las regiones vecinas del oponente y iii) reforzar las regiones.
+%
+El entorno del juego tiene cuatro elementos relevantes: el tablero actual, un panel con el estado del juego, un chat público y un registro de movimientos (Fig.~\ref{conquerImage}).
 
-In this example, a double team game is played between two teams.
-The nodes of the graph represent the regions, the color indicates the player's owner, the numbers represent the number of troops, and the shapes indicate to which zone it belongs.
-Alongside there is a panel with the round number, the active player, and the time remaining time to play the current round, and a summary of total troops and total controlled regions for each player.
-The color beside the nickname identifies each players' regions in the map.
-A public chat service is available within each game.
-The Log records all movements of players, especially useful when players interact with the game sporadically.
+% Parrafo
 
-At the beginning of every turn, the players earn new troops. 
-The troop amount results from the number of occupied \emph{regions} and the bonus of the controlled \emph{zone} and eventually by the exchange of \emph{spoils} (Section A in S1 File).
-We can see in the first line of the log in Fig.~\ref{conquerImage}d that player $c$ received troops for holding Continent 4.
-These troops may be deployed at her occupied regions.
-For example, player $c$ deploy all their troops at region $M$.
+En este ejemplo, se juega una partida de dos equipos en equipos de dos jugadores.
+%
+Los nodos del gráfico representan las regiones, el color indica a quién pertenece, los números representan el número de tropas y las formas indican la agrupación de regiones por zonas.
+%
+Al lado hay un panel con el número de ronda, el jugador activo y el tiempo restante para jugar la ronda actual, y un resumen de las tropas totales y las regiones controladas totales para cada jugador.
+%
+El color junto al apodo identifica el número total de regiones que tiene cada jugador en el mapa.
+%
+Un servicio de chat público está disponible dentro de cada juego.
+%
+El Log registra todos los movimientos de los jugadores.
 
-Once the deploy is finished the assault stage begins.
-A player can assault any opponent's region as long as both are adjacent and the assaulting region has a minimum of two troops.
-The game engine rolls a die for each assaulting troop, except for one troop that needs to stay at the region, up to a maximum of three troops.
-Then, the system rolls a die for each defending troop, up to a maximum of two troops.
-The obtained values of each side are ordered increasingly and then compared one by one.
-If the assaulting dice is higher, then the defending region loses a troop.
-If the defending dice is higher or equal, then the assaulting region loses a troop.
-If the attacker destroys all the defending troops, some of the remaining troops have to be moved to occupy the newly conquered region.
+% Parrafo
+
+Al comienzo de cada turno, los jugadores ganan nuevas tropas.
+%
+La cantidad de tropas resulta del número de \emph{regions} ocupadas y la bonificación de la \emph{zone} controlada y eventualmente por el intercambio de \emph{spoils} (Section A en Anexo).
+%
+Podemos ver en la primera línea del Log en la Fig.~\ref{conquerImage}d que el jugador $c$ recibió tropas por mantener el Continente 4.
+%
+Estas tropas pueden desplegarse en sus regiones ocupadas.
+%
+Por ejemplo, el jugador $c$ despliega todas sus tropas en la región $M$.
+
+% Parrafo
+
+Una vez finalizado el despliegue comienza la fase de asalto.
+%
+Un jugador puede asaltar la región de cualquier oponente siempre que ambas estén adyacentes y la región asaltante tenga un mínimo de dos tropas.
+%
+El motor del juego tira un dado por cada tropa que asalta, excepto por una tropa que necesita permanecer en la región, hasta un máximo de tres tropas.
+%
+Luego, el sistema lanza un dado por cada tropa defensora, hasta un máximo de dos tropas.
+%
+Los valores obtenidos de cada lado se ordenan de forma creciente y luego se comparan uno por uno.
+%
+Si el dado de asalto es más alto, la región defensora pierde una tropa.
+%
+Si el dado defensor es mayor o igual, la región atacante pierde una tropa.
+%
+Si el atacante destruye todas las tropas defensoras, algunas de las tropas restantes deben moverse para ocupar la región recién conquistada.
+%
 In our example, player $c$ assaults region $N$ from region $M$ and conquers it from player $a$.
-Then, this player uses the recently moved troops to conquer another region.
+%
+Luego, este jugador usa las tropas movidas recientemente para conquistar otra región.
 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Fig5}
-    \caption{Scheme of Conquer Club game. a) The current game board showed as a graph with continents (regions of the same shape), players (regions of the same grayscale), and a number of troops in each region. The capital characters represent the names of the closest region. b) General game status: current round, the active player, and remaining time to play; and a summary of total troops and controlled regions for each player. c) Example of chat session during a game. d) Log of game used to extract game information with a scrapper.}
+    \caption{
+    Esquema del juego Conquer Club. a) El mapa mostrado como un gráfo con continentes (nodos con misma forma), jugadores (identificados con la escala de grises) y un número de tropas en cada región.
+    b) Estado general del juego: ronda actual, jugador activo y tiempo restante para jugar; y un resumen del total de tropas y regiones controladas para cada jugador.
+    c) Ejemplo de sesión de chat durante un juego.
+    d) Registro del juego utilizado para extraer información a través del web scrapper.
+    }
     \label{conquerImage}
 \end{figure}
 
-When the player finishes the assaults, some troops can be used to reinforce the defending position.
-The player may move some (but not all) the troops from one of the owned regions to any other occupied and connected region.
-The reinforcements game configuration option determines how many of these reinforcement plays are allowed.
-In our example, player $c$ reinforces region $P$ by moving two troops from region $M$.
-Finally, player $c$ finishes the turn and player $b$ starts with her round.
+Cuando el jugador termina los asaltos, se pueden usar algunas tropas para reforzar la posición de defensa.
+%
+El jugador puede mover algunas (pero no todas) las tropas de una de sus regiones a cualquier otra de sus región que estén conectadas.
+%
+La configuración de las reglas del juego de refuerzos determina cuántas de estas jugadas de refuerzo están permitidas.
+%
+En nuestro ejemplo, el jugador $c$ refuerza la región $P$ moviendo dos tropas de la región $M$.
+%
+Finalmente, el jugador $c$ termina el turno y el jugador $b$ comienza con su ronda.
 
 \paragraph{Matchmaking}
 
-The platform has a ``Join a Game'' section, where all the players can see all the open games.
-When a player creates a game, she chooses: a) gameplay options, b) game type, free-for-all or team game, c) the number of participants, and d) the join method, public, public with reserved slots, and private.
-Public games are those to which anyone can join.
-The public games with reserved slots have slots assigned to particular players, and the rest are open to general players.
-Private games can be accessed by any player who has access to the game's password.
+La plataforma tiene una sección ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
+%
+Cuando un jugador crea un juego, elige: a) opciones de juego, b) tipo de juego, todos contra todos o juego en equipo, c) el número de participantes, y d) el método de participación, público, público con espacios reservados, y privado
+%
+Los juegos públicos son aquellos a los que cualquiera puede unirse.
+%
+Los juegos públicos con espacios reservados tienen espacios asignados a jugadores particulares, y el resto está abierto a jugadores generales.
+%
+En los juegos privados solo las personas que tenga la contraseña pueden jugar.
 
-In this platform, there is no skill matching mechanism based on the probability of winning of the players.
-There are an internal ranking and a point system that players can use as a reference to estimate the skill of others.
-The point system is updated as {\small $\Delta = \text{min}(\frac{\text{Loser's score}}{\text{Winner's score}}20\,,\,100 )$}.
-However, they are not precise indicators of players' skill and the probability of winning between opponents.
-The internal ranking is the conjunction between the number of games played and the points reached.
+% Parrafo
 
-When a player selects a game, she can see the names of those who are already joined.
-An icon and a star appear next to the names.
-The icons represent the players' ranking.
-The stars summarize the opinion about the player that some of her previous opponents reported.
-At the end of a game, players can report, on a scale of 1 to 5, the behavior of the rest of the players regarding Fair Play, Gameplay, and Attitude.
+En esta plataforma, no existe un mecanismo de formación de equipos automático basado en la probabilidad de ganar entre jugadores.
+%
+Hay una clasificación interna y un sistema de puntos que los jugadores pueden usar como referencia para estimar la habilidad de los demás.
+%
+El sistema de puntos se actualiza como {\small $\Delta = \text{min}(\frac{\text{Loser's score}}{\text{Winner's score}}20\,,\,100 )$}.
+%
+Sin embargo, no son indicadores precisos de la habilidad de los jugadores y la probabilidad de ganar entre oponentes.
+%
+El ranking interno es la conjunción entre el número de partidos jugados y los puntos alcanzados.
+
+% Parrafo
+
+Cuando un jugador selecciona un juego, puede ver los nombres de los que ya se han unido.
+%
+Aparece un icono y una estrella junto a los nombres.
+%
+Los iconos representan el ranking de habilidad interno.
+%
+Las estrellas resumen la opinión sobre la jugadora que expresaron algunos de sus anteriores contrincantes.
+%
+Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el comportamiento del resto de jugadores en cuanto a Fair Play, Gameplay y Actitud.
 
 
 \section{Efecto de la posición en el red de intercambios en el aprendizaje.} \label{ch:topo}
