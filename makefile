@@ -1,6 +1,13 @@
 pdflatex:
 	pdflatex -interaction=nonstopmode doc.tex
 
+all: img/resultados/centralidades/betweenness-centrality-150-partidas-hist.pdf
+	make -C figures
+	pdflatex -interaction=nonstopmode doc.tex
+
+img/resultados/centralidades/betweenness-centrality-150-partidas-hist.pdf:
+	make -C img
+	
 compile:
 	pdflatex doc.tex
 	bibtex doc.aux

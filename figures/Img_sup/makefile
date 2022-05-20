@@ -21,6 +21,4 @@
 
 
 all:
-	pdflatex trueskill_factorGraph_2equiops.tex
-	pdflatex trueskill_factorGraph_versionGeneral-en.tex
 	/usr/bin/Rscript main.R

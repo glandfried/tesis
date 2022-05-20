@@ -1,17 +1,15 @@
+###########################################
+# Header
 oldpar <- par(no.readonly = TRUE)
+oldwd <- getwd()
+this.dir <- dirname(parent.frame(2)$ofile)
+nombre.R <-  sys.frame(1)$ofile
+require(tools)
+nombre <- print(file_path_sans_ext(nombre.R))
+pdf(paste0(nombre,".pdf"))
+setwd(this.dir)
+#####################################
 
-# No hace falta tanta generalidad
-# oldwd <- getwd()
-# this.dir <- dirname(parent.frame(2)$ofile)
-# nombre.R <-  sys.frame(1)$ofile
-# require(tools)
-# nombre <- print(file_path_sans_ext(nombre.R))
-# pdf(paste0(nombre,".pdf"))
-# setwd(this.dir)
-
-# El nombre del archivo de salida est'a fijo.
-nombre <- 'Fig9.pdf'
-pdf(nombre)
 par(mar=c(3.75,3.75,1.25,1.25))
 
 a<--10;b<-60 # limites inferior y superior de la integral en el eje de las habilidades
@@ -62,10 +60,10 @@ lines(c(0,50),c(50,0))
 mtext(expression(t[e]==c), side=3, line=0, at=0,cex=1.25)
 
 
-
 #######################################
 # end 
 dev.off()
-# setwd(oldwd)
+system(paste("pdfcrop -m '0 0 0 0'",paste0(nombre,".pdf") ,paste0(nombre,".pdf")))
+setwd(oldwd)
 par(oldpar, new=F)
 #########################################

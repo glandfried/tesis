@@ -1,17 +1,15 @@
+###########################################
+# Header
 oldpar <- par(no.readonly = TRUE)
-
-# No hace falta tanta generalidad
-# oldwd <- getwd()
-# this.dir <- dirname(parent.frame(2)$ofile)
-# nombre.R <-  sys.frame(1)$ofile
-# require(tools)
-# nombre <- print(file_path_sans_ext(nombre.R))
-# setwd(this.dir)
-# pdf(paste0(nombre,".pdf"))
-
-# El nombre del archivo de salida est'a fijo.
-nombre <- 'Fig1.pdf'
-pdf(nombre)
+oldwd <- getwd()
+this.dir <- dirname(parent.frame(2)$ofile)
+nombre.R <-  sys.frame(1)$ofile
+require(tools)
+nombre <- print(file_path_sans_ext(nombre.R))
+pdf(paste0(nombre,".pdf"))
+setwd(this.dir)
+#setwd("~/gaming/materias/inferencia_bayesiana/trabajoFinal/imagenes")
+#####################################
 par(mar=c(3.75,3.75,.33,.33))
 
 ls <- list()
@@ -173,10 +171,13 @@ mtext(side=1,"Subpopulation", line=1.33,cex=1.25)
 mtext(side=2,expression(alpha), line=1.33,cex=1.25)
 
 
+#######################################
+# end 
 dev.off()
-# setwd(oldwd)
+system(paste("pdfcrop -m '0 0 0 0'",paste0(nombre,".pdf") ,paste0(nombre,".pdf")))
+setwd(oldwd)
 par(oldpar, new=F)
-
+#########################################
 
 ##########
 # Rectas

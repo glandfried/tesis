@@ -11,5 +11,5 @@ for (f in files){
   source(f)
 } 
 
-#require(remotes)
-#install_version("scales", version = "1.1.0")
+#source('learningskill_curve2.R')
+#source('learningskill_pteam89_ployal_hasta4team_longRun_detail_w.R')

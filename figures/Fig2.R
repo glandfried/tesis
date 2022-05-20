@@ -1,17 +1,15 @@
+###########################################
+# Header
 oldpar <- par(no.readonly = TRUE)
+oldwd <- getwd()
+this.dir <- dirname(parent.frame(2)$ofile)
+nombre.R <-  sys.frame(1)$ofile
+require(tools)
+nombre <- print(file_path_sans_ext(nombre.R))
+pdf(paste0(nombre,".pdf"))
+setwd(this.dir)
+#####################################
 
-# No hace falta tanta generalidad.
-# oldwd <- getwd()
-# this.dir <- dirname(parent.frame(2)$ofile)
-# nombre.R <-  sys.frame(1)$ofile
-# require(tools)
-# nombre <- print(file_path_sans_ext(nombre.R))
-# pdf(paste0(nombre,".pdf"))
-# setwd(this.dir)
-
-# El nombre del archivo de salida est'a fijo.
-nombre <- 'Fig2.pdf'
-pdf(nombre)
 par(mar=c(3.75,3.75,.33,.33))
 
 lst89_summary <- read.csv("data/lst89_summary.csv")
@@ -208,7 +206,10 @@ mtext(side=2,"Population size", line=1.66,cex=1.33)
 #ks.test(lst45.500[[1]], "pnorm", mean(lst45.500[[1]]), sd(lst45.500[[1]])) 
 ###########################
 
+#######################################
+# end 
 dev.off()
-# setwd(oldwd)
+system(paste("pdfcrop -m '0 0 0 0'",paste0(nombre,".pdf") ,paste0(nombre,".pdf")))
+setwd(oldwd)
 par(oldpar, new=F)
-
+#########################################

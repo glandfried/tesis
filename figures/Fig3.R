@@ -1,17 +1,15 @@
+###########################################
+# Header
 oldpar <- par(no.readonly = TRUE)
+oldwd <- getwd()
+this.dir <- dirname(parent.frame(2)$ofile)
+nombre.R <-  sys.frame(1)$ofile
+require(tools)
+nombre <- print(file_path_sans_ext(nombre.R))
+pdf(paste0(nombre,".pdf"))
+setwd(this.dir)
+#####################################
 
-# No hace falta tanta generalidad
-# oldwd <- getwd()
-# this.dir <- dirname(parent.frame(2)$ofile)
-# setwd(this.dir)
-# nombre.R <-  sys.frame(1)$ofile
-# require(tools)
-# nombre <- print(file_path_sans_ext(nombre.R))
-# pdf(paste0(nombre,".pdf"))
-
-# El nombre del archivo de salida est'a fijo.
-nombre <- 'Fig3.pdf'
-pdf(nombre)
 par(mar=c(3.75,3.75,.33,.33))
 
 alpha = 0.05
@@ -169,7 +167,10 @@ axis(lwd=0,side=1, line=-0.9,cex.lab=0.6)
 
 mtext(side=2,"Population size", line=1.66,cex=1.33)
 
-
+#######################################
+# end 
 dev.off()
-# setwd(oldwd)
+system(paste("pdfcrop -m '0 0 0 0'",paste0(nombre,".pdf") ,paste0(nombre,".pdf")))
+setwd(oldwd)
 par(oldpar, new=F)
+#########################################

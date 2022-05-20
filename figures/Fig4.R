@@ -1,17 +1,15 @@
+###########################################
+# Header
 oldpar <- par(no.readonly = TRUE)
 oldwd <- getwd()
+this.dir <- dirname(parent.frame(2)$ofile)
+nombre.R <-  sys.frame(1)$ofile
+require(tools)
+nombre <- print(file_path_sans_ext(nombre.R))
+pdf(paste0(nombre,".pdf"))
+setwd(this.dir)
+#####################################
 
-# No hace falta tanta generalidad
-# this.dir <- dirname(parent.frame(2)$ofile)
-# setwd(this.dir)
-# nombre.R <-  sys.frame(1)$ofile
-# require(tools)
-# nombre <- print(file_path_sans_ext(nombre.R))
-# pdf(paste0(nombre,".pdf"))
-
-# El nombre del archivo de salida est'a fijo.
-nombre <- 'Fig4.pdf'
-pdf(nombre)
 
 #library(remotes)
 #install_version("maps", "3.3.0")
@@ -77,6 +75,13 @@ axis(lwd=0,lwd.ticks=1,side=1,labels=NA,cex.axis=0.6,tck=0.02,at = seq(0.1,0.9,b
 axis(lwd=0,side=1,las=1,cex.axis=1.33,line=-0.66,at = seq(0.1,0.9,by=0.2))
 par(xpd=NA);text(1.05,0.98,"Skill",cex=1.33);par(xpd=F)
 
+#######################################
+# end 
 dev.off()
+system(paste("pdfcrop -m '0 0 0 0'",paste0(nombre,".pdf") ,paste0(nombre,".pdf")))
 setwd(oldwd)
 par(oldpar, new=F)
+#########################################
+
+
+
