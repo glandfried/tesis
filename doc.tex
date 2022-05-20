@@ -216,7 +216,7 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 % 
 % % Parrafo
 % 
-% En el último tercio de la historia del universo surgi\'o en la tierra una organizaci\'on de la materia capaz de autoreplicarse.
+% En el \'ultimo tercio de la historia del universo surgi\'o en la tierra una organizaci\'on de la materia capaz de autoreplicarse.
 % %
 % %La evoluci\'on es un sistema de procesamiento distribuido de informaci\'on.
 % %
@@ -232,7 +232,7 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 % %
 % La cooperaci\'on produce un aumento mayor.
 % %
-% Pero con la cooperaci\'on la estrategia \'optima es aquella que pone todos los recursos ``una única canasta''.
+% Pero con la cooperaci\'on la estrategia \'optima es aquella que pone todos los recursos ``una \'unica canasta''.
 % %
 % Estas propiedades explican por qu\'e las cooperaci\'on y la especializaci\'on son tan comunes en la historia de la vida. 
 
@@ -261,7 +261,7 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 % %
 % La cooperaci\'on produce un aumento mayor.
 % %
-% Pero con la cooperaci\'on la estrategia \'optima es aquella que pone todos los recursos ``una única canasta''.
+% Pero con la cooperaci\'on la estrategia \'optima es aquella que pone todos los recursos ``una \'unica canasta''.
 % %
 % Estas propiedades explican por qu\'e las cooperaci\'on y la especializaci\'on son tan comunes en la historia de la vida. 
 
@@ -285,13 +285,13 @@ Poner a prueba estas hip\'otesis se ha visto obstaculizado por falta de datos gr
 
 La masificaci\'on del poder de c\'omputo y la posterior expansi\'on de Internet produjo una explosi\'on en la cantidad y calidad de datos generados por personas en todo el mundo.
 %
-Las comunidades virtuales ofrecen nuevos horizontes en la investigaci\'on cient\'ifica sobre comportamientos sociales pues reúnen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
+Las comunidades virtuales ofrecen nuevos horizontes en la investigaci\'on cient\'ifica sobre comportamientos sociales pues re\'unen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
 %
 En esta tesis decidimos estudiar las comunidades que se desarrollan alrededor de los videos juegos, dado que esos escenarios tienen algunas las caracter\'isticas que las hacen especialmente interesantes para estudiar los problemas de aprendizaje.
 
 % Parrafo
 
-Conocer c\'omo las personas aprendemos es un problema importante para muchos \'ambitos de la vida, desde la educaci\'on, el trabajo y el deporte.
+Conocer c\'omo las personas aprendemos es un problema importante para muchos \'ambitos de la vida, como la educaci\'on, el trabajo y el deporte.
 %
 En general las investigaciones se han enfocado principalmente en los factores cognitivos individuales del aprendizaje.
 %
@@ -305,37 +305,36 @@ Por ello, en esta tesis decidimos estudiar algunas de las preguntas que permanec
 
 % Parrafo
 
-Varios modeles estad\'isticos han sido propuestos por la industria del video para la estimaci\'on de habilidad.
+Varios modelos estad\'isticos han sido propuestos por la industria del v\'ideo juego para la estimaci\'on de habilidad.
 %
-Sin embargo, los estimadores m\'as utilizados, como Elo, Glicko y TrueSkill, no son capaces de ofrecer estimaciones de habilidad inicial fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio.
+Sin embargo, los estimadores m\'as utilizados, como Elo, Glicko y TrueSkill, no son capaces de ofrecer estimaciones de habilidad inicial fiables ni garantizar la comparabilidad entre estimaciones separadas en el tiempo o provenientes de grupos d\'ebilmente relacionados.
 %
-Por este motivo, durante la tesis fue necesario implementar un modelo (TrueSkill Through Time) que resuelve estos problemas propagando toda la informaci\'on hist\'orica en una única red bayesiana. 
+Por este motivo, durante la tesis fue necesario implementar \texttt{TrueSkill Through Time}, un modelo que resuelve estos problemas propagando toda la informaci\'on hist\'orica en una \'unica red bayesiana. 
 %
 Nuestra implementaci\'on es la primera disponible en los lenguajes de programaci\'on con mayor desarrollo cient\'ifico como \texttt{Julia}, \texttt{Python} y \texttt{R}.
 %
 La mejora se hace evidente a partir de las predicciones a priori, que son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados.
 %
-Una algoritmo eficiente permite analizar millones de observaciones usando cualquier ordenador de gama baja.
+Adem\'as, al realizar una implementaci\'on eficiente, se permite analizar millones de observaciones usando muy poco recursos computacionales.
 
 % Parrafo
 
 A trav\'es de este modelo y de los datos de comunidades virtuales pudimos estudiar las preguntas planteadas.
 %
-En primer lugar, para responder c\'omo la formaci\'on de grupo afecta al aprendizaje estudiamos una plataforma de juegos similares al TEG en el que las personas pueden participar individualmente o en equipos.
+En primer lugar, para responder c\'omo la formaci\'on de grupo afecta al aprendizaje estudiamos una plataforma de juegos de estrategia por turnos en el que las personas pueden participar individualmente o en equipos.
 %
-All\'i pudimos observar que la tendencia a jugar en equipo estaba asociada una mejora de habilidad a largo plazo, pero que quienes jugaban ``lealmente'' con el mismo compa\~nero aceleraba adem\'as la adquisici\'on de la habilidad a corto plazo.
+All\'i pudimos observar que la tendencia a jugar en equipo estaba asociada una mejora de habilidad a largo plazo, pero que quienes jugaban ``lealmente'' con el mismo compa\~nero presentaban una aceleraci\'on adicional en la adquisici\'on de la habilidad a corto plazo.
 %
-En segundo lugar, para responder cu\'al es el efecto que la posici\'on en la red de intercambios tiene sobre el aprendizaje estudiamos la evoluci\'on de la topolog\'ia de partidas de una las principales comunidad de Go a lo largo de 8 a\~nos.
+En segundo lugar, para responder cu\'al es el efecto que la posici\'on en la red de intercambios tiene sobre el aprendizaje estudiamos la evoluci\'on de la topolog\'ia de partidas de una las principales comunidad de Go a lo largo de ocho a\~nos.
 %
-En contra de la hip\'otesis común, que supone que altas conectividades favorecen los procesos de aprendizaje, en l\'inea con estudios experimentales previos encontramos que las conectividades moderadas son las que m\'as favorecen los procesos de aprendizaje social.
+A diferencia de lo que plantea la hip\'otesis directa que supone que altas conectividades favorecen los procesos de aprendizaje, en l\'inea con estudios experimentales previos encontramos que las conectividades moderadas son las que m\'as favorecen los procesos de aprendizaje social.
 
 % Parrafo
-
 Durante el transcurso de esta tesis descubrimos el enorme potencial que la inferencia bayesiana y causal tiene para las ciencias sociales y las ciencias de datos en general.
 
 \vspace{0.3cm}
 
-\noindent Palabras calves: Inferencia bayesiana, Evoluci\'on cultural, Conocimiento emp\'irico, Habilidad, Aprendizaje, Ciencias de la computaci\'on, Ciencias antropol\'ogicas, Epistemolog\'ia
+\noindent \textbf{Palabras claves}: Inferencia bayesiana, Evoluci\'on cultural, Conocimiento emp\'irico, Habilidad, Aprendizaje, Ciencias de la computaci\'on, Ciencias antropol\'ogicas, Epistemolog\'ia
 
 
 \newpage
@@ -367,7 +366,7 @@ Our exceptional cognitive ability to imitate, combined with long periods of juve
 % {\Large Los pubelos ind\'igenas practican la inferencia bayesiana}
 % 
 % \begin{quotation}
-% El proceso moderno la diferencia radical de proyectos hist\'oricos, de metas de bienestar divergentes, se extingue. La esfera pública es el mundo del referente universal y del canon de la coherencia. En otras sociedades no existe el problema de la coherencia. El tema de las religiones es un buen ejemplo. Alguien que participa todos los a\~nos del culto al cosmos pacham\'amico tambi\'en puede ser cat\'olico, y en algunos casos raros puede entrar incluso a alguna iglesia evang\'elica. Puede ser budista, no habr\'ia ningún problema. La gente del candombl\'e, aqu\'ella con la que me encontr\'e en Recife en mi primer paso en la comprensi\'on de la diferencia, va a la iglesia. Les he dicho: ``Pero ¿c\'omo?, ¿sos cat\'olico?'', y la respuesta fue: ``Cuando deseo pensar que podr\'e ir al cielo ... voy a la iglesia''. No hay un problema de coherencia all\'i. En el hinduismo tampoco lo hay; en mis a\~nos como estudiante en Europa, ve\'ia c\'omo mis colegas frecuentaban el ritual de cualquier iglesia que estuviera disponible. Por el contrario, las religiones monote\'istas son monop\'olicas, son excluyentes. Las religiones no monote\'istas no lo son ni procesan las diferencias buscando compatibilizarlas. Simplemente transitan entre diferentes registros de emocionalidad, de sentimentalidad e inclusive de l\'ogica. No hay una búsqueda de coherencia. A esa experiencia Europa no puede acceder: su pura l\'ogica se lo impide. La gran deficiencia de ese otro mundo, el mundo nuestro, que habita nuestros paisajes, donde A y no-A pueden ser verdades al mismo tiempo y no se excluyen, es que carece de una ret\'orica para defender su grandeza. Ese es nuestro papel: formular una ret\'orica para la grandeza que existe en un mundo no coherente , en un mundo múltiple, en un mundo radicahnente plural, mientras la colonial modernidad del occidente es, como he explicado, el mundo del Uno.
+% El proceso moderno la diferencia radical de proyectos hist\'oricos, de metas de bienestar divergentes, se extingue. La esfera p\'ublica es el mundo del referente universal y del canon de la coherencia. En otras sociedades no existe el problema de la coherencia. El tema de las religiones es un buen ejemplo. Alguien que participa todos los a\~nos del culto al cosmos pacham\'amico tambi\'en puede ser cat\'olico, y en algunos casos raros puede entrar incluso a alguna iglesia evang\'elica. Puede ser budista, no habr\'ia ning\'un problema. La gente del candombl\'e, aqu\'ella con la que me encontr\'e en Recife en mi primer paso en la comprensi\'on de la diferencia, va a la iglesia. Les he dicho: ``Pero ¿c\'omo?, ¿sos cat\'olico?'', y la respuesta fue: ``Cuando deseo pensar que podr\'e ir al cielo ... voy a la iglesia''. No hay un problema de coherencia all\'i. En el hinduismo tampoco lo hay; en mis a\~nos como estudiante en Europa, ve\'ia c\'omo mis colegas frecuentaban el ritual de cualquier iglesia que estuviera disponible. Por el contrario, las religiones monote\'istas son monop\'olicas, son excluyentes. Las religiones no monote\'istas no lo son ni procesan las diferencias buscando compatibilizarlas. Simplemente transitan entre diferentes registros de emocionalidad, de sentimentalidad e inclusive de l\'ogica. No hay una b\'usqueda de coherencia. A esa experiencia Europa no puede acceder: su pura l\'ogica se lo impide. La gran deficiencia de ese otro mundo, el mundo nuestro, que habita nuestros paisajes, donde A y no-A pueden ser verdades al mismo tiempo y no se excluyen, es que carece de una ret\'orica para defender su grandeza. Ese es nuestro papel: formular una ret\'orica para la grandeza que existe en un mundo no coherente , en un mundo m\'ultiple, en un mundo radicahnente plural, mientras la colonial modernidad del occidente es, como he explicado, el mundo del Uno.
 % \end{quotation}
 % 
 % {\Large La sociedad fedual colonial-moderna la combati\'o} \\
@@ -389,7 +388,7 @@ Our exceptional cognitive ability to imitate, combined with long periods of juve
 \section{Sistemas naturales de procesamiento distribuido de informaci\'on}
 
 \en{In the last third of the history of the Universe, sometime around 4 billion years ago, a simple form of matter organization capable of self-replication appeared on Earth. }%s
-\es{En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4000 millones de a\~nos, apareci\'o en la tierra una forma de organizaci\'on de la materia capaz de auto-replicarse. }%
+\es{En el \'ultimo tercio de la historia del Universo, en alg\'un momento hace aproximadamente 4000 millones de a\~nos, apareci\'o en la tierra una forma de organizaci\'on de la materia capaz de auto-replicarse. }%
 %
 \en{The growth of these lineages followed multiplicative and noisy processes: sequences of survival and reproduction rates. }%
 \es{El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de tasas de supervivencia y reproducci\'on. }%
@@ -500,7 +499,7 @@ f(\Aa) =
 % \es{Diferentes estrategias $\Ee$ las podemos describr con diferentes funciones $f_\Ee(\Aa)$. }%
 % %
 % \en{According to the standard model of evolution, known as \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, the change in the proportion of a strategy in the population, $x_\Ee$, is determined by its characteristic growth rate $g_\Ee$, }%
-% \es{Según el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, el cambio de la proporci\'on de una estrategia en la poblaci\'on, $x_\Ee$, est\'a determinado por su tasa de crecimiento caracter\'isitica $g_\Ee$, }%
+% \es{Seg\'un el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, el cambio de la proporci\'on de una estrategia en la poblaci\'on, $x_\Ee$, est\'a determinado por su tasa de crecimiento caracter\'isitica $g_\Ee$, }%
 % % schuster1983-replicatorDynamics, hofbauer2003-evolutionaryGameDynamics
 % %
 % \begin{equation} \label{eq:replicator_dynamic}  \tag{Replicator dynamic}
@@ -508,7 +507,7 @@ f(\Aa) =
 % \end{equation}
 % %
 % \en{where the denominator acts as a normalization constant. }%
-% \es{donde el denominador actúa como constante de normalizaci\'on. }%
+% \es{donde el denominador act\'ua como constante de normalizaci\'on. }%
 % %
 \en{But, what is the characteristic growth rate $g$? }%
 \es{¿Cu\'al es la tasa de crecimiento caracter\'istica $g$ en este caso? }%
@@ -533,7 +532,7 @@ f(\Aa) =
 \end{equation}
 %
 \en{That is, the estimated growth rate according to the expected value is $5\%$ for each time step, $\langle \omega \rangle_t = 1.05^t$. }%
-\es{Es decir, la tasa de crecimiento estimada según el valor esperado es de $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$. }%
+\es{Es decir, la tasa de crecimiento estimada seg\'un el valor esperado es de $5\%$ por cada paso temporal, $\langle \omega \rangle_t = 1.05^t$. }%
 %
 \en{And indeed that is what happens with the average of several individual trajectories, $\omega(t)$. }%
 \es{Y efectivamente eso es lo que ocurre con el promedio de varias trayectoria individuales, $\omega(t)$. }%
@@ -628,7 +627,7 @@ g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
 \es{Esto se debe a que en los procesos multiplicativos los impactos f\'isicos de las p\'erdidas suelen ser m\'as fuertes que los de las ganancias. }%
 %
 \en{In an extreme case, a single zero in the product is enough to generate an extinction. }%
-\es{En un caso extremo, un único cero en la productoria alcanza para generar su extinci\'on. }%
+\es{En un caso extremo, un \'unico cero en la productoria alcanza para generar su extinci\'on. }%
 
 % Decimos que un proceso es erg\'odico si se cumple que,
 % \begin{equation}
@@ -672,11 +671,11 @@ g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
 \label{fig:protocolo}
 \end{figure}
 %
-Despu\'es de que cada agente actualiza sus recursos individuales, se ponen todos los recursos en un fondo común que se divide en partes iguales.
+Despu\'es de que cada agente actualiza sus recursos individuales, se ponen todos los recursos en un fondo com\'un que se divide en partes iguales.
 %
 Y se repite el proceso: se actualizan los recursos individualmente y se dividen en partes iguales.
 %
-La cooperaci\'on cambia la variable aleatoria de la que dependen las trayectorias individuales, de la moneda jugando individualmente, a la cuota que reciben del fondo común jugando cooperativamente.
+La cooperaci\'on cambia la variable aleatoria de la que dependen las trayectorias individuales, de la moneda jugando individualmente, a la cuota que reciben del fondo com\'un jugando cooperativamente.
 %
 \begin{equation}
 \omega(t+1) = \frac{1}{N}\left(n_c \, \omega(t) \, 1.5 + n_s \, \omega(t) \, 0.6\right)
@@ -684,9 +683,9 @@ La cooperaci\'on cambia la variable aleatoria de la que dependen las trayectoria
 %
 Donde $N$ es el tama\~no del grupo cooperativo, $n_c$ y $n_s$ la cantidad de caras y secas obtenidas en el grupo.
 %
-En el caso extremo en el que el $N=1$, la cuota del fondo común es equivalente a los pagos generaos por la moneda.
+En el caso extremo en el que el $N=1$, la cuota del fondo com\'un es equivalente a los pagos generaos por la moneda.
 %
-Pero una caracter\'isitica del fondo común es que tiene menos fluctuaciones que la moneda para todo $N>1$.
+Pero una caracter\'isitica del fondo com\'un es que tiene menos fluctuaciones que la moneda para todo $N>1$.
 %
 En el caso extremo, un grupo cooperativo de tama\~no infinito, la cuota es siempre equivalente a la media artim\'etica.
 %
@@ -719,7 +718,7 @@ Las consecuencias de este protocolo sobre la tasa de crecimiento de los recursos
 \en{Individuals in fully cooperative groups achieve growth rates equivalent to the average of system states, which in non-ergodic systems is always higher than individual growth rates. }%
 \es{Los individuos de los grupos enteramente cooperadores logran acceder a tasas de crecimiento cercanas al promedio de estados del sistema (media aritm\'etica), que en los sistemas multiplicativos siempre superior que la tasas de crecimiento individual (media geom\'etrica). }%
 %
-Para ganar intuición acerca de por qué la cooperación produce un aumento en la tasa de crecimiento puede ser útil revisar lo que ocurre en un ejemplo básico.
+Para ganar intuición acerca de por qué la cooperación produce un aumento en la tasa de crecimiento puede ser \'util revisar lo que ocurre en un ejemplo básico.
 %
 En la siguiente comparamos lo que ocurre con los recursos de dos agentes no-cooperadores y dos agentes cooperadores.
 %
@@ -748,12 +747,12 @@ Cuando juegan cooperativamente, ambos terminan con una riqueza mayor a la que em
 % %
 % \en{However, they do not consider the problem of defection, who say ``our cooperators are unable to break the cooperative pact''. }%
 % \es{Sin embargo ellos no consideran el problema de la deserci\'on, quienes dicen ``our cooperators are unable to break the cooperative pact''. }%
-¿Qu\'e pasa si uno de los miembros decide dejar de aportar al fondo común, pero sigue recibiendo su cuota del fondo común?
+¿Qu\'e pasa si uno de los miembros decide dejar de aportar al fondo com\'un, pero sigue recibiendo su cuota del fondo com\'un?
 
 % Parrafo
 
 \en{In the last few decades evolutionary biology has begun to adopt the analogy of the ``tragedy of the commons''~\cite{rankin2007-tragedyCommonsBiology}. }%
-\es{En las últimas d\'ecadas la biolog\'ia evolutiva ha comenzado a adoptar la analog\'ia de la ``tragedia de los comunes''~\cite{rankin2007-tragedyCommonsBiology}. }%
+\es{En las \'ultimas d\'ecadas la biolog\'ia evolutiva ha comenzado a adoptar la analog\'ia de la ``tragedia de los comunes''~\cite{rankin2007-tragedyCommonsBiology}. }%
 %
 \en{This concept contains the idea that the commons has a payoff structure isomorphic to the N-player prisoner's dilemma~\cite{hardin1971-collectiveAsPrisionerDilema}. }%
 \es{Este concepto contiene la idea de que los bienes comunes tienen una estructura de pagos isomorfa al dilema del prisionero de N jugadores~\cite{hardin1971-collectiveAsPrisionerDilema}, donde desertar siempre es mejor que cooperar. }%
@@ -776,7 +775,7 @@ donde el beneficio es mayor al costo, $b > c$.
 \es{Sin embargo, independientemente de lo que haga el otro jugador, es mejor no cooperar: si mi compa\~nero deserta, es mejor para m\'i desertar que cooperar, ya que $0 > -c$; si mi compa\~nero coopera, sigue siendo mejor para m\'i desertar que cooperar, ya que $b > b - c$. }%
 %
 \en{This creates a dilemma: although mutual cooperation is a preferable outcome, no individual has the incentive to cooperate. }%
-\es{De ah\'i el dilema: aunque la cooperaci\'on mutua es un resultado preferible, ningún individuo tiene el incentivo de cooperar. }%
+\es{De ah\'i el dilema: aunque la cooperaci\'on mutua es un resultado preferible, ning\'un individuo tiene el incentivo de cooperar. }%
 
 % Parrafo
 
@@ -811,7 +810,7 @@ donde el beneficio es mayor al costo, $b > c$.
 \es{Esto ocurre cada vez que una agente cambia de comportamiento de cooperador a desertor (ver grupo rojo con dos desertores). }%
 %
 \en{Without penalties, defector strategies negatively affect their own long-term growth rate because their own behavior increases the fluctuations of the random variable on which they depend. }%
-\es{Sin necesidad de introducir castigos, las estrategias desertoras afectan negativamente su propia tasa de crecimiento a largo plazo debido a que su comportamiento aumenta las fluctuaciones de la variable del fondo común del que dependen.}
+\es{Sin necesidad de introducir castigos, las estrategias desertoras afectan negativamente su propia tasa de crecimiento a largo plazo debido a que su comportamiento aumenta las fluctuaciones de la variable del fondo com\'un del que dependen.}
 %
 \en{In other words, the commons does not have the structure of the prisoner's dilemma, as is usually claimed in the literature. }%
 \es{Es decir, los bienes comunes no tiene la estructura del dilema del prisionero como habitualmente se afirma en la literatura. }%
@@ -839,7 +838,7 @@ Antes del surgimiento de los humanos anat\'omicamente modernos (masa cerebral ac
 La comprensi\'on mutua, la imitaci\'on y el lenguaje permitieron la  transmisi\'on de conocimientos basados en la experiencia de otros (\emph{aprendizaje social}), dando inicio a un proceso cooperativo inter-generacional que produjo el desarrollo de \emph{las culturas}, sistemas de informaci\'on independiente al gen\'etico que permiti\'o a las poblaciones humanas adaptarse r\'apidamente a los cambiantes contextos ambientales.
 El surgimiento de este nuevo sistema de informaci\'on produjo cambios radicales para nuestra especie.
 Antes de la transici\'on cultural, estuvimos en grave peligro de extinci\'on, lo que se evidencia en la baja diversidad del genoma humano.
-Luego de la transici\'on cultural, organizados en sociedades cazadores-recolectores, nuestra especie fue capaz de ocupar en pocos a\~nos todos los nichos ecol\'ogicos de la tierra como ningún otro vertebrado terrestre lo hab\'ia logrado antes.
+Luego de la transici\'on cultural, organizados en sociedades cazadores-recolectores, nuestra especie fue capaz de ocupar en pocos a\~nos todos los nichos ecol\'ogicos de la tierra como ning\'un otro vertebrado terrestre lo hab\'ia logrado antes.
 Saliendo de África ocupamos Asia, Ocean\'ia y las Am\'ericas (Figura~\ref{fig:agricultura}).
 % La informaci\'on transgeneracional fue la que le permiti\'o a estas sociedades simples adaptarse r\'apidamente a los nuevos desaf\'ios ecol\'ogicos.
 
@@ -873,7 +872,7 @@ El cambio cultural es un fen\'omeno poblacional que emerge como consecuencia del
 \es{La descendencia, mutaci\'on y selecci\'on de la informaci\'on cultural se produce cuando una persona adopta el comportamiento de otras, sea porque es el comportamiento de la mayor\'ia o sea porque es la otra persona es particularmente exitosas o prestigiosas. }%
 %
 \en{All social learning processes modify to some degree the cultural variant adopted. }%
-\es{Todos los procesos de aprendizaje social modifican en algún grado la variante cultural adoptada. }%
+\es{Todos los procesos de aprendizaje social modifican en alg\'un grado la variante cultural adoptada. }%
 %
 \en{And some of these cultural variants spread faster or are more stable than others, predominating over time. }%
 \es{Y algunas de esas variantes culturales se propagan m\'as r\'apido o son m\'as estables que otras, predominando en el tiempo. }%
@@ -955,7 +954,7 @@ De forma similar a las tecnolog\'ias de reciprocidad social, las tecnolog\'ias d
 %
 Los estudios comparados indican que las instituciones capaces de interactuar de forma estable con los sistemas ecol\'ogicos siempre son de tipo comunitario, basados en normas que condensan la acumulaci\'on conocimiento experto resultado de un largo proceso inter-generacional de evoluci\'on cultural local~\cite{ostrom1990}.
 % 
-El remplazo repentino de estos sistemas culturales locales por instituciones modernas externas, privadas o públicas, produce generalmente desequilibrios en los sistemas ecol\'ogicos por sobre explotaci\'on de los recursos, reduciendo el tama\~no m\'aximo de poblaci\'on que el ambiente puede soportar~\cite{ostrom2010}.
+El remplazo repentino de estos sistemas culturales locales por instituciones modernas externas, privadas o p\'ublicas, produce generalmente desequilibrios en los sistemas ecol\'ogicos por sobre explotaci\'on de los recursos, reduciendo el tama\~no m\'aximo de poblaci\'on que el ambiente puede soportar~\cite{ostrom2010}.
 
 % Parrafo
 
@@ -984,7 +983,7 @@ Estas cosmovisiones basadas en l\'ogicas paraconsistentes obliga al ser humano a
 
 Las tecnolog\'ias de reciprocidad ecol\'ogica produjeron la aparici\'on independiente de la domesticaci\'on de especies animales y vegetales, el desarrollo de caracteres gen\'eticos especiales que surgen como resultado de una interacci\'on prolongada entre las especies.
 %
-En particular, la reciprocidad con las especies fotosint\'eticas (\emph{agricultura}), únicas con la capacidad de producir materia org\'anica a partir del sol y la materia inorg\'anica, produjo nuevamente cambios radicales para nuestra especie.
+En particular, la reciprocidad con las especies fotosint\'eticas (\emph{agricultura}), \'unicas con la capacidad de producir materia org\'anica a partir del sol y la materia inorg\'anica, produjo nuevamente cambios radicales para nuestra especie.
 %
 La agricultura impuls\'o un marcado aumento poblacional.
 %
@@ -996,7 +995,7 @@ La agricultura surgi\'o de manera de forma paralela en los seis grandes sistemas
 %
 Alrededor de estos puntos se desarrollaron los principales centros poblacionales de la humanidad.
 %
-Durante el a\~no 1400 el mundo florec\'ia de sociedades "pr\'osperas"~\cite{dussel2004-sistemaMundo}: Aztecas en Ámerica del norte, Incas en Ámerica del sur, Tongas en el Pac\'ifico, Bantúes en África sub-sahariana, los Árabes e Indios en Asia occidental y Chinos en Asia oriental, por mencionar algunos.
+Durante el a\~no 1400 el mundo florec\'ia de sociedades "pr\'osperas"~\cite{dussel2004-sistemaMundo}: Aztecas en Ámerica del norte, Incas en Ámerica del sur, Tongas en el Pac\'ifico, Bant\'ues en África sub-sahariana, los Árabes e Indios en Asia occidental y Chinos en Asia oriental, por mencionar algunos.
 %
 El desarrollo tecnol\'ogico de todas estas sociedades fue extraordinario. 
 %
@@ -1026,7 +1025,7 @@ Why, between the -1th century and the 15th century, was Chinese civilisation muc
 % Parrafo
 
 Desde Hegel hasta la fecha, las explicaciones euroc\'entricas intentan explicar la proposperidad actual de occidente a trav\'es de una causa interna: la ``\'etica protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de Jos\'e Luis Romero~\cite{romero1967-revolucionBurguesa}, o m\'as recientemente el ``sistema de parentezco'' de Joseph Henrich~\cite{henrich2020-weirdest}.
-La paradoja que no puede responder la f\'abula euroc\'entrica es c\'omo una sociedad sumida en un proceso de involuci\'on cultural único, como la sociedad feudal de la ``edad media'', pudo generar de repenten el extraordinario proceso de desarrollo cient\'ifico y t\'ecnico de la modernidad.
+La paradoja que no puede responder la f\'abula euroc\'entrica es c\'omo una sociedad sumida en un proceso de involuci\'on cultural \'unico, como la sociedad feudal de la ``edad media'', pudo generar de repenten el extraordinario proceso de desarrollo cient\'ifico y t\'ecnico de la modernidad.
 
 % Parrafo
 
@@ -1074,7 +1073,7 @@ Se proscribe as\'i el rol pol\'itico que las mujeres desempe\~nan en el espacio 
 
 %El avance colonial estuvo (y est\'a) motivado principalmente por una deficiencia social m\'as que por una puramente material.
 La poblaci\'on desertora de las comunidades que pierden el arraigo comunitario pasan a sumarse como mano de obra para las actividades militares contra otros pueblos.
-El mandato universal de exhibir públicamente alguna forma de poder para adquirir el estatus masculino hizo que los hombres derrotados se volvieran vulnerables al ejemplo de las masculinidades victoriosas.
+El mandato universal de exhibir p\'ublicamente alguna forma de poder para adquirir el estatus masculino hizo que los hombres derrotados se volvieran vulnerables al ejemplo de las masculinidades victoriosas.
 Con el debilitamiento de los v\'inculos comunitarios, la cosmovisi\'on colonial e instrumental logra introducirse, cosificando todas las formas de vida.
 
 % Parrafo
@@ -1086,7 +1085,7 @@ La guerra contra las mujeres se formaliza definitivamente con la publicaci\'on d
 % Parrafo
 
 % Producto de la p\'esima situaci\'on socio-econ\'omica, la sociedad fedual intenta varias veces, sin \'exito, recuperar la integraci\'on al sistema mundo por el oriente.
-% Por lo tanto, la única opci\'on que quedaba era explorar los mares del este.
+% Por lo tanto, la \'unica opci\'on que quedaba era explorar los mares del este.
 % Hab\'ia mejores tecnolog\'ias de navegaci\'on en el mundo Árabe, en China y en el imperio de Tonga.
 % Pero a diferencia de esos casos, apenas la sociedad fedual logra navegar el Atl\'antico, se desata un proceso migratorio t\'ipico de cualquier sociedad sumida en un proceso de grave violencia interna.
 % El flujo migratorio europeo hacia am\'erica comienza a finales del siglo 15 y termina reci\'en a mediados del siglo 20.
@@ -1136,7 +1135,7 @@ Las consecuencias fueron m\'as graves cuando en 1818 se desarrolla una mezcla de
 % Parrafo
 
 Mediante el narcotr\'afico Europa occidental consigue por primera vez, reci\'en en el siglo 19, revertir el d\'eficit comercial que hist\'oricamente tuvo con China.
-El número de adictos lleg\'o a ser lo suficientemente alarmante, y en 1839 China comete el error de declarar la guerra al narco-estado brit\'anico en su propio territorio.
+El n\'umero de adictos lleg\'o a ser lo suficientemente alarmante, y en 1839 China comete el error de declarar la guerra al narco-estado brit\'anico en su propio territorio.
 Los resultados fueron terribles.
 No s\'olo no pudieron impedir el ingreso de la droga.
 Perdieron tambi\'en su autonom\'ia arancelaria, el derecho a someter a los residentes extranjeros a la ley China.
@@ -1169,7 +1168,7 @@ En todas las partes del globo, los exploradores y etn\'ografos fueron documentan
 Es una nueva era de avances cient\'ificos y tecnol\'ogicos, pero por otro es la era de p\'erdida de diversidad cultural.
 A pesar de todos los avances cient\'ificos, la ciencia metropolitana moderna no fue capaz de compensar la p\'erdida de los conocimientos milenarios acumulados por las comunidades aut\'onomas locales.
 La masiva p\'erdida de diversidad cultural trajo como consecuencia la masiva p\'erdida de biodiversidad actual (figura~\ref{fig:deforestation-brazil}).
-Quiz\'a la coexistencia sea la única estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
+Quiz\'a la coexistencia sea la \'unica estrategia evolutivamente estable, y quienes la rompan sufran tarde o temprano las consecuencias.
 
 % Parrafo
 
@@ -1186,7 +1185,7 @@ En este ejemplo tenemos un medio ambiente aleatorio (la moneda) y un intercambio
 
 Individualmente hay dos formas de apostar.
 %
-La primera es apostar a una única de las dos opciones, por ejemplo a Caras.
+La primera es apostar a una \'unica de las dos opciones, por ejemplo a Caras.
 %
 En este escenario, la persona asigna un valor $ 1 \geq b_c = l > 0 $ a Caras y $b_s = 0$ a secas.
 %
@@ -1227,7 +1226,7 @@ No s\'olo las dos formas de apostar actualizan los recursos a trav\'es de un pro
 %
 No es dif\'icil demostrar que existe una equivalencia.
 %
-Por ello, de aqu\'i en adelante analizaremos únicamente esta última forma de apostar, la que utiliza todos los recursos en cada vuelta.
+Por ello, de aqu\'i en adelante analizaremos \'unicamente esta \'ultima forma de apostar, la que utiliza todos los recursos en cada vuelta.
 
 \subsection{La ventaja de la diversificación individual (propiedad epistémica)}
 
@@ -1258,7 +1257,7 @@ En primer lugar podemos ver que la relación entre las tasa de crecimiento de do
 %
 no depende de los pagos que ofrece la casa de apuesta!
 %
-Como el proceso es multiplicativo y los pagos son los mismos en el denominador y el numerador (no dependen de la apuesta que se elija), los pagos se cancelan y la relación entre las distintas apuestas queda determinada únicamente por la asignación de recursos $b$ de cada una de las apuestas. 
+Como el proceso es multiplicativo y los pagos son los mismos en el denominador y el numerador (no dependen de la apuesta que se elija), los pagos se cancelan y la relación entre las distintas apuestas queda determinada \'unicamente por la asignación de recursos $b$ de cada una de las apuestas. 
 %
 Este resultado fue descubierto por Kelly en 1954, el que escribe con un signo de admiraci\'on.
 %
@@ -1326,22 +1325,22 @@ Al inicio de este capítulo vimos, a través de un ejemplo particular, que debid
 %
 Veamos este resultado en términos más generales, en el contexto de las apuestas.
 %
-Cuando un conjunto de apuestadores deciden cooperar, conforman un fondo común.
+Cuando un conjunto de apuestadores deciden cooperar, conforman un fondo com\'un.
 %
-En cada paso temporal, el fondo común queda definido como la suma de los recursos de sus $N$ miembros.
+En cada paso temporal, el fondo com\'un queda definido como la suma de los recursos de sus $N$ miembros.
 %
-Suponiendo que todos los miembros comienzan con los mismos recursos previos, $\omega_t$, y luego de actualizarlos de forma individual, el fondo común,
+Suponiendo que todos los miembros comienzan con los mismos recursos previos, $\omega_t$, y luego de actualizarlos de forma individual, el fondo com\'un,
 %
 \begin{equation}
-\text{fondo común}_{t+1} = (\omega_t \, b \, Q_c ) \, n_c + (\omega_t \, (1-b) \, Q_s ) \, n_s 
+\text{fondo com\'un}_{t+1} = (\omega_t \, b \, Q_c ) \, n_c + (\omega_t \, (1-b) \, Q_s ) \, n_s 
 \end{equation}
 %
 estará compuesto por los recursos de $n_c$ individuos que obtuvieron Cara y los recursos de $n_s$ individuos que obtuvieron Secas.
 %
-Luego, la cuota del fondo común que recibe cada persona es,
+Luego, la cuota del fondo com\'un que recibe cada persona es,
 %
 \begin{equation} \label{eq:cuota_del_fondo}
-\omega_{t+1} =  \frac{1}{N} \, \text{fondo común}_t = \omega_t  \left( b \, Q_c  \, \frac{n_c}{N} +  (1-b) \, Q_s \, \frac{n_s}{N} \right)
+\omega_{t+1} =  \frac{1}{N} \, \text{fondo com\'un}_t = \omega_t  \left( b \, Q_c  \, \frac{n_c}{N} +  (1-b) \, Q_s \, \frac{n_s}{N} \right)
 \end{equation}
 %
 El crecimiento de los recursos queda determinado por el promedio de los pagos.
@@ -1373,7 +1372,7 @@ La igualdad ocurre cuando $x = y$.
 
 % Parrafo
 
-Para calcular la tasa de crecimiento de grupos finitos simplemente hay que expandir considerar todos los posibles valores que puede tomar la cuota del fondo común (ecuación \ref{eq:cuota_del_fondo}), considerando la probabilidad de se ocurrencia.
+Para calcular la tasa de crecimiento de grupos finitos simplemente hay que expandir considerar todos los posibles valores que puede tomar la cuota del fondo com\'un (ecuación \ref{eq:cuota_del_fondo}), considerando la probabilidad de se ocurrencia.
 %
 Por ejemplo, en grupos de tamaño dos puede ocurrir que ambas personas obtengan Caras, que ambas obtengan Secas, o que una obtenga Cara y la otra Seca.
 %
@@ -1506,21 +1505,21 @@ Esto es, la apuesta que divide los recursos en la misma proporición que la prob
 %
 Sin embargo, la cooperación ofrece una propiedad que podemos llamar meta-epistémica.
 %
-La ciencias es una actividad cooperativa (se hacen públicos los resultados) porque de esa forma obtenemos una tasa de crecimiento en el conocimineto que es mayor a la que obtendríamos trabajando asiladamente.
+La ciencias es una actividad cooperativa (se hacen p\'ublicos los resultados) porque de esa forma obtenemos una tasa de crecimiento en el conocimineto que es mayor a la que obtendríamos trabajando asiladamente.
 %
 Este mismo principio se aplica en general a toda evolución cultural.
 %
 Con el surgimiento de la cultura, el aprendizaje dejó de depender exclusivamente de la experiencia individual.
 %
-La acumulación cultural que se fue produciendo generación a generación generó una especie de fondo común de conocimineto que produjo cambios radicales para nuestra especie: luego de esta transición cultural dejamos de estar en peligro de extinción y pasamos ocupar todos los nichos ecológicos como ningún vertebrado terrestre había logrado antes.
+La acumulación cultural que se fue produciendo generación a generación generó una especie de fondo com\'un de conocimineto que produjo cambios radicales para nuestra especie: luego de esta transición cultural dejamos de estar en peligro de extinción y pasamos ocupar todos los nichos ecológicos como ning\'un vertebrado terrestre había logrado antes.
 
 % Parrafo
 
-La aparición de un fondo común de conocimiento, además de aumentar por si misma la tasa de aprendizaje de una comunidad (por la ventaja de la cooperación), produce un cambio en la política de innovación cultural.
+La aparición de un fondo com\'un de conocimiento, además de aumentar por si misma la tasa de aprendizaje de una comunidad (por la ventaja de la cooperación), produce un cambio en la política de innovación cultural.
 %
 Jugando individualmente es necesario diversificar el aprendizaje, conociendo de todo un poco, de modo de evitar la ignorancia total en alguno de los casos que vuelvan inviable la vida.
 %
-Pero jugando cooperativamente, bajo un fondo común de conocimiento, la estrategia óptima empieza orientarse en favor de los nuevos descubrimientos.
+Pero jugando cooperativamente, bajo un fondo com\'un de conocimiento, la estrategia óptima empieza orientarse en favor de los nuevos descubrimientos.
 %
 Veamos esto en un ejemplo concreto.
 
@@ -1568,11 +1567,11 @@ A pesar de todos los avances, la ciencia metropolitana moderna no es capaz de re
 
 % Parrafo
 
-Para una especie heter\'otrofa como la nuestra, la coexistencia con otras especies es la única estrategia posible.
+Para una especie heter\'otrofa como la nuestra, la coexistencia con otras especies es la \'unica estrategia posible.
 %
 % Esas relaciones jam\'as existen como sistemas asilados del resto de las relaciones de coexistencia presente en los ecosistemas.
 % %
-% As\'i, la ruptura de las coexistencias de las que no dependemos directamente siempre nos afecta indirectamente en algún grado.
+% As\'i, la ruptura de las coexistencias de las que no dependemos directamente siempre nos afecta indirectamente en alg\'un grado.
 % %
 % Las tecnolog\'ias de reciprocidad social y ecol\'ogica han mostrado ser fundamentales para la supervivencia de las comunidades en el tiempo, pues a trav\'es de ellas se reducen las fluctuaciones generales que ponen en peligro nuestra propia estabilidad.
 %
@@ -1584,7 +1583,7 @@ La teor\'ia de la probabilidad nace en 1654 justamente como una tecnolog\'ia de 
 %
 Pascal y Fermat re-descubieron en la reciente sociedad post-fedual que el valor justo de los intercambios deb\'ia ser inversamente proporcional a la probabilidad de esos intercambios.
 %
-Según el principio de precio justo, por cada unidad apostada en Cara, la casa debe pagar $Q_c = 1/p$ si ocurre Cara y $0$ en caso contrario, y por cada unidad apostada en Seca, la casa debe pagar $Q_s = 1/(1-p)$ si ocurre Seca y $0$ en caso contrario.
+Seg\'un el principio de precio justo, por cada unidad apostada en Cara, la casa debe pagar $Q_c = 1/p$ si ocurre Cara y $0$ en caso contrario, y por cada unidad apostada en Seca, la casa debe pagar $Q_s = 1/(1-p)$ si ocurre Seca y $0$ en caso contrario.
 
 % Parrafo
 
@@ -1608,7 +1607,7 @@ Si existe un benficio mutuo en el intercambio, una simbiosis entre la especies, 
 
 % Parrafo
 
-Para analizar la posibilidad de coexistebcia entre la casa de apuesta y los grupos cooperativos de tamaño infinito, recordemos que la cuota que se recibe del fondo común $\omega_{t+1}$ es constante, $\omega_{t+1} =  \omega_t \, \left(  b \, Q_c \, p +  (1-b) \, Q_s \, (1-p) \right)$, el promedio de los estado.
+Para analizar la posibilidad de coexistebcia entre la casa de apuesta y los grupos cooperativos de tamaño infinito, recordemos que la cuota que se recibe del fondo com\'un $\omega_{t+1}$ es constante, $\omega_{t+1} =  \omega_t \, \left(  b \, Q_c \, p +  (1-b) \, Q_s \, (1-p) \right)$, el promedio de los estado.
 %
 Cuando los pagos son justos, $Q_c = 1/p$ y $Q_s = 1/(1-p)$, la tasa de crecimiento cooperativa siempre vale $1$, m\'as all\'a de la apuesta $b$ que elija el grupo cooperativo!
 %
@@ -1653,7 +1652,7 @@ En este nuevo contexto adquieren una relevancia notable los conceptos de abducci
 
 Todo problema de conocimiento está en función (directamente o indirectamente) de un conjunto de problemas reales, y que de ellos obtiene su relevancia y jerarquía.
 %
-El concepto mismo de ``problema'' sólo tiene sentido en relación a algún sistema vivo.
+El concepto mismo de ``problema'' sólo tiene sentido en relación a alg\'un sistema vivo.
 %
 Los objetos de la física y de la químca no enfrentan problemas, pues ellos no se reproducen.
 %
@@ -1728,7 +1727,7 @@ Para ello, considero importante debatir con algunas personas que han dedicado to
 % %
 % Sin embargo, durante la tesis fue necesario implementar el estimador de habilidad estado-del-arte de la industria del video pues todav\'ia no se encontraba disponible en ninguno de los lenguajes de progrmaci\'on con mayor desarrollo como Julia, Python y R.
 % %
-% A diferencia de los estimadores m\'as utilizados en la industria del video juego (como Elo, Glicko y TrueSkill), el modelo TrueSkill Through Time (TTT) propaga toda la informaci\'on hist\'orica en una única red bayesiana, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica. 
+% A diferencia de los estimadores m\'as utilizados en la industria del video juego (como Elo, Glicko y TrueSkill), el modelo TrueSkill Through Time (TTT) propaga toda la informaci\'on hist\'orica en una \'unica red bayesiana, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica. 
 % %
 % %
 % 
@@ -1742,7 +1741,7 @@ Para ello, considero importante debatir con algunas personas que han dedicado to
 % %
 % En segundo lugar, para responder cu\'al es el efecto que la posici\'on en la red de intercambios tiene sobre el apendizaje estudiamos la evoluci\'on de la topolog\'ia de partidas de una las principales comunidad de Go a lo largo de 8 a\~nos.
 % %
-% En contra de la hip\'otesis común, que supone que altas conectividades favorecen los procesos de aprendizaje, en l\'inea con estudios excperimentales previos encontramos que las conectividades moderadas son las que m\'as favorecen los procesos de aprendizaje social.
+% En contra de la hip\'otesis com\'un, que supone que altas conectividades favorecen los procesos de aprendizaje, en l\'inea con estudios excperimentales previos encontramos que las conectividades moderadas son las que m\'as favorecen los procesos de aprendizaje social.
 % 
 % % Parra
 % 
@@ -1838,11 +1837,11 @@ Elegimos el t\'ermino ``intersubjetividad'', por sobre el de ``objetividad'', po
 
 % Parrafo
 
-Para el proyecto intercultural de acuerdos intersubjetivos, que se propone la ciencia, se hace necesario que los individuos pongan en correspondencia un\'ivoca los fen\'omenos percibidos por sus conciencias con algún esquema de operaci\'on que sea públicamente inteligible y reproducible.
+Para el proyecto intercultural de acuerdos intersubjetivos, que se propone la ciencia, se hace necesario que los individuos pongan en correspondencia un\'ivoca los fen\'omenos percibidos por sus conciencias con alg\'un esquema de operaci\'on que sea p\'ublicamente inteligible y reproducible.
 % 
 En este sentido, las funciones ocupan un rol fundamental.
 %
-En su definici\'on formal, una funci\'on es una relaci\'on (u operaci\'on) $f$ que a cada elemento de un conjunto (dominio) $X$ asigna un único elemento de otro conjunto (imagen) $Y$.
+En su definici\'on formal, una funci\'on es una relaci\'on (u operaci\'on) $f$ que a cada elemento de un conjunto (dominio) $X$ asigna un \'unico elemento de otro conjunto (imagen) $Y$.
 %
 \begin{equation}
  \forall x \in X \  \exists! y \in Y \text{ tal que } f(x) = y    
@@ -1857,7 +1856,7 @@ Los funciones son la base de las ciencias formales.
 %
 Todos los sistemas matem\'aticos de inter\'es est\'an compuestos por axiomas $X$, una serie de operaciones v\'alidas $F$, y un conjunto de consecuencias $Y$ consistentes entre s\'i.
 %
-En teor\'ia de la computabilidad, la tesis de Church-Turing afirma que toda funci\'on sobre los números naturales puede ser calculada por un ``m\'etodo efectivo'' si y s\'olo si es computable por una m\'aquina de Turing.
+En teor\'ia de la computabilidad, la tesis de Church-Turing afirma que toda funci\'on sobre los n\'umeros naturales puede ser calculada por un ``m\'etodo efectivo'' si y s\'olo si es computable por una m\'aquina de Turing.
 %
 Debido a que todos las definiciones alternativas del concepto  de ``m\'etodo efectivo'' resultaron ser equivalentes a una maquina de Turing, actualmente se supone que la hip\'otesis Church-Turing es cierta.
 
@@ -2005,7 +2004,7 @@ En la figura~\ref{fig:poblacion_caotico} hacemos zoom en los primeros 30 pasos t
 
 La sensibilidad a las condiciones iniciales impone un l\'imite a la capacidad predictiva.
 %
-Por m\'as que la naturaleza sea determinista y conozcamos el mecanismo subyacente, si el sistema se encuentra en atractor ca\'otico, jam\'as vamos a poder predecir el destino inevitable m\'as all\'a de cierto tiempo debido a que en ningún sistema natural podremos medir con infinita precisi\'on las condiciones iniciales.
+Por m\'as que la naturaleza sea determinista y conozcamos el mecanismo subyacente, si el sistema se encuentra en atractor ca\'otico, jam\'as vamos a poder predecir el destino inevitable m\'as all\'a de cierto tiempo debido a que en ning\'un sistema natural podremos medir con infinita precisi\'on las condiciones iniciales.
 %
 La imposibilidad de determinar si estamos en presencia de las ``mismas condiciones iniciales'' es una fuente de incertidumbre que tiene toda ciencia emp\'irica.
 
@@ -2193,7 +2192,7 @@ En los casos donde s\'olo conocemos el espacio de hip\'otesis y no tenemos m\'as
          
         } 
 \end{subfigure}
-\caption{Principio de indiferencia. Figura (a): el modelo causal tiene una única variable $r$ que puede tomar tres valores posibles. Figura (b): el modelo causal induce tres caminos paralelos por los que dividimos la creenciencia en partes iguales. Figura (c): como resultado obtenemos una creencia honesta que garantiza los acuerdos intersubjetivos dado el modelo causal.
+\caption{Principio de indiferencia. Figura (a): el modelo causal tiene una \'unica variable $r$ que puede tomar tres valores posibles. Figura (b): el modelo causal induce tres caminos paralelos por los que dividimos la creenciencia en partes iguales. Figura (c): como resultado obtenemos una creencia honesta que garantiza los acuerdos intersubjetivos dado el modelo causal.
 }
 \label{fig:principio_de_indiferencia}
 \end{figure}
@@ -2267,7 +2266,7 @@ Para simplificar el problema, consideraremos que la caja elegida es $c=1$.
 
 % Parrafo
 % %
-% Por último, lo que aparece del lado izquierdo del operador \emph{condicional} ($\cdot \mid \cdot$) son las proposiciones sobre las que computamos la creencia en los casos en los que las proposiciones que aparecen del lado derecha sean ciertas.
+% Por \'ultimo, lo que aparece del lado izquierdo del operador \emph{condicional} ($\cdot \mid \cdot$) son las proposiciones sobre las que computamos la creencia en los casos en los que las proposiciones que aparecen del lado derecha sean ciertas.
 % %
 % Es decir, la $\text{Creencia}(s=i|r=i,\text{Modelo}) = 0$ se lee como ``es imposible que la pista se\~nale la posici\'on $i$ cuando el regalo est\'a en la posici\'on $i$ y el modelo causal es cierto''. 
 % 
@@ -2288,7 +2287,7 @@ En cambio, en el modelo B, la pista genera dos universos s\'olo cuando el regalo
 %
 % Podemos recibir una pista tanto en la puerta 2, $s_2$, como en la puerta 3, $s_3$.
 % %
-% Cuando el regalo est\'a en otra caja, $r\neq 1$, la pista puede se\~nalar únicamente a una de las cajas, la que no tiene el regalo y la que no fue elegida.
+% Cuando el regalo est\'a en otra caja, $r\neq 1$, la pista puede se\~nalar \'unicamente a una de las cajas, la que no tiene el regalo y la que no fue elegida.
 % %
 % Por ejemplo, si el regalo est\'a en la puerta 2, $r_2$, la pista s\'olo puede se\~nalar la puerta 3, $s_3$.
 %
@@ -2404,7 +2403,7 @@ Cada camino del modelo causal tiene una combinaci\'on de valores distinta que re
 % %
 % Colocamos el modelo detr\'as del condicional ($\cdot|\cdot$) debido a que esta creencia conjunta es honesta cuando el modelo propuesto es cierto.
 % %
-% De aqu\'i en adelante s\'olo haremos expl\'icita la dependencia del modelo cuando haya algún tipo de ambigüedad, que en general ocurre cuando hay m\'as de un modelo en disputa.
+% De aqu\'i en adelante s\'olo haremos expl\'icita la dependencia del modelo cuando haya alg\'un tipo de ambigüedad, que en general ocurre cuando hay m\'as de un modelo en disputa.
 % %
 % De la misma forma podemos calcular el resto de las creencias conjuntas a priori dado el modelo causal.
 %
@@ -2432,7 +2431,7 @@ $P(r=i, s=j | \text{Modelo A})$ \hspace{1.8cm} $P(r=i, s=j | \text{Modelo B})$ \
 %
 Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:caminos}.
 % Parrafo
-Tenemos entonces un principio para alcanzar acuerdos sobre las creencias conjuntas cuando la única informaci\'on previa es el modelo causal multidimensional.
+Tenemos entonces un principio para alcanzar acuerdos sobre las creencias conjuntas cuando la \'unica informaci\'on previa es el modelo causal multidimensional.
 
 % Parrafo
 
@@ -2501,7 +2500,7 @@ En ambos modelos la creencia honesta sobre el regalos, sin importar el valor que
 
 El principio de indiferencia nos permiti\'o definir la creencia conjunta honesta dividiendo las creencias en partes iguales por cada bifurcaci\'on del modelo causal.
 %
-Y el principio de integridad nos permiti\'o calcular la creencia honesta sobre una única variable del modelo causal multidimensional como la creencia total de todos los caminos paralelos en los que esa variable est\'a presente.
+Y el principio de integridad nos permiti\'o calcular la creencia honesta sobre una \'unica variable del modelo causal multidimensional como la creencia total de todos los caminos paralelos en los que esa variable est\'a presente.
 %
 ¿Pero c\'omo para preservar los acuerdos intersubjetivos cuando recibimos nueva informaci\'on?
 %
@@ -2536,7 +2535,7 @@ Para actualizar las creencias posiblemente nos veamos tentados a aplicar el prin
 %
 Aunque en este caso particular esa soluci\'on sea casualmente correcta para el modelo A, esa metodolog\'ia conduce a errores en t\'erminos generales.
 %
-El principio de indiferencia s\'olo se aplica una única vez, al inicio.
+El principio de indiferencia s\'olo se aplica una \'unica vez, al inicio.
 %
 Despu\'es s\'olo actualizaremos esa creencia en funci\'on de la nueva informaci\'on que vayamos incorporando.
 
@@ -2759,7 +2758,7 @@ Sea $E$ un conjunto de elementos $e_1, e_2, \dots$, y $F$ conjunto de subconjunt
 \begin{enumerate}\itemsep-0.05cm
 \item $F$ est\'a cerrada bajo complementos, uniones e intersecciones contables.
 \item $F$ contiene al conjunto $E$
-\item Todo conjunto $S \in F$ se le asigna una número real no negativo, $P(S)$.
+\item Todo conjunto $S \in F$ se le asigna una n\'umero real no negativo, $P(S)$.
 \item $P(E) = 1$
 \item Si $S_1, S_2, \dots$ son conjuntos mutuamente excluyente, luego
 \begin{equation}
@@ -2791,7 +2790,7 @@ P(r_i|s_2) = \frac{P(r_i, s_2)}{P(s_2)} = \frac{P(s_2|r_i)P(r_i)}{P(s_2)}
 \end{split}
 \end{equation}
 %
-Es una pr\'actica muy común no expresar expl\'icitamente que esas probabilidades en realidad dependen de un cierto modelo causal, por lo que lo correcto ser\'ia incluirlo en el condicional.
+Es una pr\'actica muy com\'un no expresar expl\'icitamente que esas probabilidades en realidad dependen de un cierto modelo causal, por lo que lo correcto ser\'ia incluirlo en el condicional.
 %
 Notar adem\'as que escribimos a $r$ con un sub\'indice $i$ y a $s$ con un sub\'indice $2$.
 %
@@ -2817,7 +2816,7 @@ En la secci\'on \emph{\nameref{sec:principio_indiferencia}} hemos visto un crite
 %
 El enfoque ``frecuentista'' de la teor\'ia de la probabilidad que rechaza todo criterio para definir distribuciones de creencias iniciales se ve impedido de utilizar el teorema de Bayes.
 %
-Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hip\'otesis, seleccionan una única hip\'otesis (estimaci\'on puntual) en base a funciones de costo ad-hoc, siendo las m\'as común la maximizaci\'on de la verosimilitud.
+Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hip\'otesis, seleccionan una \'unica hip\'otesis (estimaci\'on puntual) en base a funciones de costo ad-hoc, siendo las m\'as com\'un la maximizaci\'on de la verosimilitud.
 
 \subsubsection*{Verosimilitud}
 
@@ -2879,7 +2878,7 @@ Veamos cu\'al es la verosimilitud, $P(s2|r_i, \text{Modelo B})$, la probabilidad
 
 Cuando el regalo est\'a en la misma posici\'on que la caja elegida $r=c=1$, el modelo causal permite que la pista se\~nale cualquiera de la otras dos cajas, por lo que la creencia a priori de que la caja se\~nalada sea la $s=2$ es $1/2$.
 %
-Cuando el regalo est\'a en una caja distinta a la elegida $r\neq c$, el modelo causal limita la pista a una única caja.
+Cuando el regalo est\'a en una caja distinta a la elegida $r\neq c$, el modelo causal limita la pista a una \'unica caja.
 %
 Si el regalo est\'a en la caja $r=2$, la creencia a priori de que la caja se\~nalada sea la $s=2$ es $0$.
 %
@@ -2889,7 +2888,7 @@ Y si el regalo est\'a en la caja $r=3$, la creencia a priori de que la caja se\~
 
 En la secci\'on \emph{\nameref{sec:principio_choerencia}} vimos que la nueva creencia no es m\'as que la creencia previa que sigue siendo compatible con el dato.
 %
-El teorema de Bayes nos permite ahora reconocer que la sorpresa que produce el dato observado es lo que actúa como filtro de las creencias previas.
+El teorema de Bayes nos permite ahora reconocer que la sorpresa que produce el dato observado es lo que act\'ua como filtro de las creencias previas.
 %
 Debido a que el denominador del teorema de Bayes es constante, la distribuci\'on de creencias a posteriori es proporcional al producto entre el prior y la verosimilitud.
 %
@@ -2979,13 +2978,13 @@ M\'as all\'a de la creencia particular de Laplace, bajo este marco la contradicc
 
 La soluci\'on epist\'emica, que propon\'ia creer simultaneamente en hip\'otesis mutuamente contradictorias, fue el motivo por el cual la corriente bayesiana de la teor\'ia de la probabilidad fue tan combatida a finales del siglo 19 y durante casi todo el siglo 20.
 %
-A diferencia de las tradiciones filos\'oficas de origen oriental y americano, que ya admit\'ian algún tipo de contradicci\'on en su sistema de creencias, la tradici\'on filos\'ofica Europea la rechazaba por completo.
+A diferencia de las tradiciones filos\'oficas de origen oriental y americano, que ya admit\'ian alg\'un tipo de contradicci\'on en su sistema de creencias, la tradici\'on filos\'ofica Europea la rechazaba por completo.
 
 % Parrafo
 
-La escuela frecuentista, tal como se ense\~na en la materia probabilidad y estad\'isitica de la facultad de ciencias exactas y naturales, define a la probabilidad como el número al que tiende una frecuencia obtenida luego de realizar varios ``experimentos independientes'' bajo ``las mismas condiciones''.
+La escuela frecuentista, tal como se ense\~na en la materia probabilidad y estad\'isitica de la facultad de ciencias exactas y naturales, define a la probabilidad como el n\'umero al que tiende una frecuencia obtenida luego de realizar varios ``experimentos independientes'' bajo ``las mismas condiciones''.
 %
-Según esta corriente la probabilidad de eventos deterministas, por ejemplo de que exista un planeta no detectado en el sistema solar, es 0 o 1 aunque no conozcamos su valor.
+Seg\'un esta corriente la probabilidad de eventos deterministas, por ejemplo de que exista un planeta no detectado en el sistema solar, es 0 o 1 aunque no conozcamos su valor.
 %
 S\'olo los objetos no deterministas, que llaman ``variables aleatorias'', pueden adquirir valores intermedios que representan la frecuencia en la que los diferentes estado del universo se producen a partir de exactamente las mismas condiciones inciales.
 %
@@ -3000,7 +2999,7 @@ La escuela frecuentista, para evitar la contradicci\'on en sus sistema l\'ogico,
 % % Parrafo
 Todas las axiomatizaciones alternativas de la teor\'ia de la probabilidad llegan a la conclusi\'on de que la forma natural de evaluar las hip\'otesis es a trav\'es de un proceso multiplicativo, la ``regla del producto''.
 %
-Por lo tanto, la única función de costo habilitada para actualizar los recursos (probabilidades) de las distintas hipótesis es de naturaleza multiplicativa, como la analizada en el capítulo anterior.
+Por lo tanto, la \'unica función de costo habilitada para actualizar los recursos (probabilidades) de las distintas hipótesis es de naturaleza multiplicativa, como la analizada en el capítulo anterior.
 %
 Por el teorema de Bayes, la probabilidad de una hipótesis $h$ dado un conjunto de observables $\{d_1, \dots, d_n \}$ y un modelo causal $M$ es,
 %
@@ -3030,7 +3029,7 @@ Es decir, a trav\'es de los resultados obtenidos en un juegos de apuestas podemo
 
 La interpretaci\'on ontol\'ogica de la teor\'ia de la probabilidad, al rechazar la contradicci\'on epist\'emica, se ve impedida de definir probabilidades iniciales (prior), y por lo tanto de utilizar el teorema de Bayes y resolver la inferencia usando el proceso multiplicativo como un juego de apuestas.
 %
-Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hip\'otesis, el enfoque frecuentista suele seleccionar una única hip\'otesis (estimaci\'on puntual) en base a funciones de costo ad-hoc.
+Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hip\'otesis, el enfoque frecuentista suele seleccionar una \'unica hip\'otesis (estimaci\'on puntual) en base a funciones de costo ad-hoc.
 %
 John Larry Kelly (Jr), quien trabajando con Shannon para los laboratorios Bell descubrió la propiedad epistémica de los procesos multiplicativos, comienza su art\'iculo ``A New Interpretation of Information Rate'' para los laboratorios Bell (1956) diciendo, 
 %
@@ -3104,9 +3103,9 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = \sum^{\text{Hip\'otesis}}_h P(
 %
 Notar que la media geom\'etica de la evidencia es igual a la media aritm\'etica de la contribuci\'on de todas las hip\'otesis.
 %
-Con que una única hip\'otesis asigne a los datos probabilidad mayor a $0$, la evidencia tambi\'en ser\'a mayor a $0$, evitando as\'i el peor caso.
+Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la evidencia tambi\'en ser\'a mayor a $0$, evitando as\'i el peor caso.
 %
-De esta forma, las hip\'otesis de un mismo modelo cooperan en la predicci\'on a priori de los datos observados, evitando los problemas de sobreajuste asociados a los enfoque frecuentista que seleccionan una única hip\'otesis del espacio.
+De esta forma, las hip\'otesis de un mismo modelo cooperan en la predicci\'on a priori de los datos observados, evitando los problemas de sobreajuste asociados a los enfoque frecuentista que seleccionan una \'unica hip\'otesis del espacio.
 %
 Combinando la regla del producto y de la suma podemos expresar la evidencia como una productoria de sumatorias.
 %
@@ -3124,7 +3123,7 @@ As\'i, el modelo reduce fluctuaciones en cada una de las predicciones individual
 
 El denominador de la ecuaci\'on \ref{eq:p_modelo_|_datos} es la predicci\'on a priori del dato observado con la contribuci\'on de todos los modelos (y todas sus hip\'otesis).
 %
-Cuando no conocemos el espacio completo de modelos alternativos, no vamos a poder computar la probabilidad de ningún modelo.
+Cuando no conocemos el espacio completo de modelos alternativos, no vamos a poder computar la probabilidad de ning\'un modelo.
 %
 Pero al menos, vamos a poder comparar la probabilidad relativa entre modelos.
 %
@@ -3156,7 +3155,7 @@ regaloEn1 = [ rand(1:3) == 1 ? 1 : 0 for _ in 1:32]
 %
 Supongamos que siempre elegimos la caja 1, $c=1$.
 %
-Según el modelo Monty Hall la pista s\'olo se\~nalara a la caja 2 o la caja 3, $s \in \{2,3\}$.
+Seg\'un el modelo Monty Hall la pista s\'olo se\~nalara a la caja 2 o la caja 3, $s \in \{2,3\}$.
 %
 Los datos que vamos a mostrarle a los modelos son primero la pista, y despu\'es la posici\'on real del regalo.
 %
@@ -3197,13 +3196,13 @@ Este mismo m\'etodo ser\'a usado en para evaluar el modelo de estimaci\'on de ha
 
 \section{Construcci\'on de datos de base empírica} \label{sec:base_empirica_metodo}
 
-La ciencia, como proyecto de construcción de conocimiento universalizable, nos obliga a poner en correspondencia unívoca los fenómenos percibidos por nuestras conciencias con algún esquema de operación que sea públicamente inteligible y reproducible.
+La ciencia, como proyecto de construcción de conocimiento universalizable, nos obliga a poner en correspondencia unívoca los fenómenos percibidos por nuestras conciencias con alg\'un esquema de operación que sea p\'ublicamente inteligible y reproducible.
 
 \subsection{Base empírica y datos T-teóricos}
 
 Llamamos \emph{base empírica} a la porción del ``mundo'' que es aceptada  como verdad por una comunidad, al menos por un cierto momento.
 %
-Para aceptar la entidad de nuestros objetos m\'as cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verduler\'ia, o el resultado de la final de los últimos mundiales de fútbol, son suficientes los supuestos del sentido común.
+Para aceptar la entidad de nuestros objetos m\'as cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verduler\'ia, o el resultado de la final de los \'ultimos mundiales de f\'utbol, son suficientes los supuestos del sentido com\'un.
 %
 A pesar de que existan círculos filosóficos que pretendan poner en duda las percepciones y supuestos más básicos, reduciendo la base empírica a un conjunto vacío (base empírica \emph{filosófica}), en la vida cotidinana no hay mayor controversia al respecto.
 %
@@ -3219,9 +3218,9 @@ Es cualquier caso, todos los datos est\'an cargados de hip\'otesis.
 %
 Visto de esta manera, la base empírica depende del conjunto de supuestos que una comunidad esté dispuesta a admitir sin poner en duda.
 %
-Las diferentes niveles de bases empíricas formarían una estructura en ``capas de cebolla'', con un núcleo de base empírica epistemológica y capas sucesivas $i$ de bases empíricas metodológicas, BEM$_i$. 
+Las diferentes niveles de bases empíricas formarían una estructura en ``capas de cebolla'', con un n\'ucleo de base empírica epistemológica y capas sucesivas $i$ de bases empíricas metodológicas, BEM$_i$. 
 %
-Para que ellos puedan actuar como base emp\'irica sobre la que se evalúan las teor\'ias cient\'ificas es necesario que sus supuestos queden, al menos por un cierto momento, fuera de toda duda.
+Para que ellos puedan actuar como base emp\'irica sobre la que se eval\'uan las teor\'ias cient\'ificas es necesario que sus supuestos queden, al menos por un cierto momento, fuera de toda duda.
 %
 \begin{figure}[ht!]
     \centering
@@ -3242,7 +3241,7 @@ La actividad científica mantiene su control externo en tanto existe siempre un 
 \begin{quotation}
 Un término, un concepto, o una entidad, no es teórico o no teórico sin más, sino relativamente a una teoría dada.
 Por eso no se debe hablar tanto de teoricidad cuanto de T-teoricidad, teoricidad relativa a la teoría T. (...).
-La idea es que un concepto es T-teórico si no se puede determinar sin presuponer la aplicabilidad de T, si todo procedimiento para su determinación la presupone; y puede obtenerse sin presuponer tal teoría, si tiene algún procedimiento de determinación T-independiente, por más que también tenga otros T-dependientes.
+La idea es que un concepto es T-teórico si no se puede determinar sin presuponer la aplicabilidad de T, si todo procedimiento para su determinación la presupone; y puede obtenerse sin presuponer tal teoría, si tiene alg\'un procedimiento de determinación T-independiente, por más que también tenga otros T-dependientes.
 \end{quotation}
 %
 Los datos T-no teóricos son la base empírica de control para una teoría T pues pueden ser construidos mediante teorías independientes, previamente aceptadas.
@@ -3283,7 +3282,7 @@ Sin embargo, los dato empíricos tiene una subestructura invariante que justific
 %
 Debemos esta propuesta al epistemólogo Argentino, contemporáneo de Gregorio Klimovsky y Rolando García, el profesor Juan Samaja.
 %
-Según la hipótesis de Samaja~\cite{samaja} (que él desafía a que encuentren un contra-ejemplo), todo esquema indicador se compone de dimensiones (D), que son especificaciones de la variable (V), y de procedimientos (P) protocolos, acciones que efectuadas sobre cierta fuente de datos (F) producen señales o indicadores (I), objetos perceptibles desde el sentido común, que interpretados con alguna hipótesis indicadora definen los resultados (R).
+Seg\'un la hipótesis de Samaja~\cite{samaja} (que él desafía a que encuentren un contra-ejemplo), todo esquema indicador se compone de dimensiones (D), que son especificaciones de la variable (V), y de procedimientos (P) protocolos, acciones que efectuadas sobre cierta fuente de datos (F) producen señales o indicadores (I), objetos perceptibles desde el sentido com\'un, que interpretados con alguna hipótesis indicadora definen los resultados (R).
 %
 \begin{table}[ht!]
 \centering \footnotesize
@@ -3295,7 +3294,7 @@ $f$ & \normalsize $x$ &\normalsize  = & $y$    \\
  $\downarrow$ &$\downarrow$&&$\uparrow$ \\
  \normalsize Dimensiones (D) & \normalsize Fuente de datos (F) &  & \normalsize Indicador (I) \\
  $\downarrow$ &$\downarrow$&&$\uparrow$ \\
- \multicolumn{2}{c}{Examen de confiabilidad} & & Sentido común \\
+ \multicolumn{2}{c}{Examen de confiabilidad} & & Sentido com\'un \\
  \multicolumn{2}{c}{$\downarrow$} & &$\uparrow$ \\
  \multicolumn{2}{c}{\normalsize Procedimiento (P)} & $\rightarrow$ & \normalsize Percepción \\
 \end{tabular}
@@ -3307,19 +3306,19 @@ El contenido de cada uno de sus elementos depende de una serie de supuestos.
 
 % Parrafo
 
-La selección de las dimensiones (D) depende de que estas expresen el concepto de la variable a través de algún modelo causal en el que exista con la variable (V) una relación, directa o indirecta, que permitia eventualmente realizar un flujo de inferencia entre ellas, actualizando así la distribución de creencias sobre el valor de la variable (R) una vez que todas las dimensiones elegidas hayan sido observadas.
+La selección de las dimensiones (D) depende de que estas expresen el concepto de la variable a través de alg\'un modelo causal en el que exista con la variable (V) una relación, directa o indirecta, que permitia eventualmente realizar un flujo de inferencia entre ellas, actualizando así la distribución de creencias sobre el valor de la variable (R) una vez que todas las dimensiones elegidas hayan sido observadas.
 %
 A esta estapa se la conoce como examen de \emph{representatividad}.
 %
 Por ejemplo, si la variable es la \emph{Habilidad$(\cdot)$}, una dimensión posible a ser observada, especifica el concepto de la variable, son los resultados de los eventos deportivos (ganar/perder), pues en cualquier modelo causal que elijamos existirá un relación, directa o indirecta, entre ellas.
 %
-Durante la selección de la fuente de datos (F), el examen de \emph{viabilidad}, se evalúa la autenticidad y accesibilidad de la informaci\'on.
+Durante la selección de la fuente de datos (F), el examen de \emph{viabilidad}, se eval\'ua la autenticidad y accesibilidad de la informaci\'on.
 %
 Por ejemplo, podemos utilizar la p\'agina oficial de la asociaci\'on de tenis profesional ATP, \texttt{atptout.com} como fuente de datos.
 %
-La definici\'on de los protocolos (P), el examen de \emph{confiabilidad}, se evalúa que los procedimientos detecten s\'olo esa dimensi\'on de la fuente y no otros est\'imulos asociados, y de discriminar m\'inimas cantidades.
+La definici\'on de los protocolos (P), el examen de \emph{confiabilidad}, se eval\'ua que los procedimientos detecten s\'olo esa dimensi\'on de la fuente y no otros est\'imulos asociados, y de discriminar m\'inimas cantidades.
 %
-Por ejemplo, un \emph{scraper} nos permite extraer de forma segura los resultados de las partidas de la página oficial, generenado en cada caso un indicador binario (verdadero/falso) que se obtiene desde el sentido común.
+Por ejemplo, un \emph{scraper} nos permite extraer de forma segura los resultados de las partidas de la página oficial, generenado en cada caso un indicador binario (verdadero/falso) que se obtiene desde el sentido com\'un.
 %
 \begin{itemize} \itemsep-0.05cm
 \item[$\bullet$] Dimensiones (D): Ganar/Perder
@@ -3453,7 +3452,7 @@ Los problemas asociados al algoritmo Elo se generan debido a que la hipótesis i
 %
 En este capítulo hemos introducido los principios interculturales de acuerdos intersubjetivos a partir de los que derivamos las reglas de la probabilidad.
 %
-Por ello, para corregir los problemas del algoritmo Elo, en vez de seleccionar una única hipótesis de habilidad (estimación puntual), debemos aplicar estrictamente las reglas de la probabilidad y calcular la distribución de creencia sobre todo el espacio de hipótesis.
+Por ello, para corregir los problemas del algoritmo Elo, en vez de seleccionar una \'unica hipótesis de habilidad (estimación puntual), debemos aplicar estrictamente las reglas de la probabilidad y calcular la distribución de creencia sobre todo el espacio de hipótesis.
 %
 El teorema de Bayes, que se deriva de las reglas de la probabilidad, es en este sentido la hipótesis indicadora general, la que permite actualizar la distribución de creencia a priori de forma óptima.
 %
@@ -3662,7 +3661,7 @@ Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que ut
 \es{Si bien el modelo TTT fue publicado hace m\'as una década, no se encontraba disponible hasta ahora en los lenguajes de programaci\'on con mayores comunidades. }%
 %
 \en{Here we offer the first software for \texttt{Julia}, \texttt{Python} and \texttt{R}, accompanied by an intuitive explanation for the general public and an in-depth explanation to people with basic knowledge in probability. }%
-\es{Aquí ofrecemos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicaci\'on intuitiva comprensible para el público general, y otra explicaci\'on en profundidad específica para las persona con conocimientos b\'asicos en probabilidad. }%
+\es{Aquí ofrecemos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicaci\'on intuitiva comprensible para el p\'ublico general, y otra explicaci\'on en profundidad específica para las persona con conocimientos b\'asicos en probabilidad. }%
 %%
 \en{After illustrating its basic mode of use, we show how to estimate the learning curves of historical players of the Association of Tennis Professionals (ATP). }%
 \es{Luego de ilustrar su modo de uso b\'asico, mostramos c\'omo estimar la curvas de aprendizaje de los jugadores hist\'oricas de la Asociaci\'on de Tenistas Profesionales (ATP). }%
@@ -3771,7 +3770,7 @@ Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que ut
 \en{The leading skill estimators used in the video game industry and academia, such as Elo, Glicko~\cite{Glickman1999}, TrueSkill~\cite{Herbrich2007} and IRT~\cite{VanDerLinden2016}, implemts a \emph{filtering} approach that propagate information incompletely, which prevents them from providing good initial estimates and ensuring comparability between estimates that are far away in time and space. }%
 \es{Los principales estimadores de habilidad utilizados en la industria del video juego y la academia, como Elo, Glicko~\cite{Glickman1999}, TrueSkill \cite{Herbrich2007} e IRT \cite{Fox2010,VanDerLinden2016}, implementan un enfoque de \emph{filtrado} que propaga la informaci\'on de manera incompleta, lo que les impide ofrecer buenas estimaciones iniciales y garantizar comparabilidad entre estimaciones alejadas en el tiempo y el espacio. }%
 \en{The TrueSkill Through Time (TTT) model~\cite{Dangauthier2007} implemts a \emph{smoothing} approach that performs inference using a single Bayesian network that includes all historical events, allowing information to be propagated throughout the system, ensuring reliable initial estimates and comparability between distant estimates. }%
-\es{El modelo TrueSkill Through Time (TTT)~\cite{Dangauthier2007} implementa una enfoque de \emph{smoothing} que realiza la inferencia usando una única red bayesiana que incluye todos los eventos hist\'oricos, lo que permite que la informaci\'on se propague por todo el sistema, garantizando estimaciones iniciales fiables y comparabilidad entre estimaciones distantes. }%
+\es{El modelo TrueSkill Through Time (TTT)~\cite{Dangauthier2007} implementa una enfoque de \emph{smoothing} que realiza la inferencia usando una \'unica red bayesiana que incluye todos los eventos hist\'oricos, lo que permite que la informaci\'on se propague por todo el sistema, garantizando estimaciones iniciales fiables y comparabilidad entre estimaciones distantes. }%
 %
 \en{Similar approaches were implemented by \cite{Coulom2008} (Whole History Rating) and \cite{Maystre2019} (KickScore), based on Laplacian aproximations and Gaussian processess respectively. }%
 \es{Enfoque similares fueron implementados por \cite{Coulom2008} (Whole History Rating) y \cite{Maystre2019} (KickScore), basados en aproximaciones laplacianas y procesos gaussianos respectivamente. }%
@@ -3799,7 +3798,7 @@ Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que ut
 \es{Esta expresi\'on se conoce como el \emph{Bayes factor}, el cual se suele expresar en escala logaritmica para reportar la diferencia en \'ordenes de magnitud. }%
 %
 \en{In the special case where we have no prior preference over any model ($\overset{\text{\en{if}\es{si} } *}{=}$), we need only to compare the prior predictions of the models. }%
-\es{En el caso especial en el que no tenemos preferencia a priori sobre ningún modelo ($\overset{\text{\en{if}\es{si} } *}{=}$), s\'olo debemos comparar las predicciones a priori de los modelos. }%
+\es{En el caso especial en el que no tenemos preferencia a priori sobre ning\'un modelo ($\overset{\text{\en{if}\es{si} } *}{=}$), s\'olo debemos comparar las predicciones a priori de los modelos. }%
 %
 \begin{equation}
 P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots P(d_n|d_1,\dots, d_{n-1},\text{Model\es{o}})
@@ -3842,7 +3841,7 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
   & & & & & & & & & & \\
  \multirow{2}{*}{$\hfrac{\text{\scriptsize Chess}}{\num{92004}}$} & \multirow{2}{*}{$0.3570$} & \multirow{2}{*}{\num{520}} & \multirow{2}{*}{$0.3552$} & \multirow{2}{*}{\num{1190}} & \multirow{2}{*}{$0.3580$} & \multirow{2}{*}{\num{148}} & \multirow{2}{*}{$\bm{0.3584}$} & \multirow{2}{*}{0} & \multirow{2}{*}{$\bm{0.3584}$} & \multirow{2}{*}{${0.3641}$} \\
  & & & & & & & & & \\
- \multirow{2}{*}{$\hfrac{\text{\scriptsize \en{Football}\es{Fútbol}}}{\num{5759}}$} & \multirow{2}{*}{$0.3949$} & \multirow{2}{*}{\num{30}} & \multirow{2}{*}{$0.3867$} & \multirow{2}{*}{\num{204}} & \multirow{2}{*}{$0.3921$} & \multirow{2}{*}{\num{89}} & \multirow{2}{*}{$\bm{0.3961}$} & \multirow{2}{*}{\num{4}} & \multirow{2}{*}{$\bm{0.3963}$} &  \multirow{2}{*}{${0.3974}$} \\
+ \multirow{2}{*}{$\hfrac{\text{\scriptsize \en{Football}\es{F\'utbol}}}{\num{5759}}$} & \multirow{2}{*}{$0.3949$} & \multirow{2}{*}{\num{30}} & \multirow{2}{*}{$0.3867$} & \multirow{2}{*}{\num{204}} & \multirow{2}{*}{$0.3921$} & \multirow{2}{*}{\num{89}} & \multirow{2}{*}{$\bm{0.3961}$} & \multirow{2}{*}{\num{4}} & \multirow{2}{*}{$\bm{0.3963}$} &  \multirow{2}{*}{${0.3974}$} \\
   & & & & & & & & & & \\ \hline
   \end{tabular}
   \caption{
@@ -3879,16 +3878,16 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
 \es{Para computar las predicciones ellos utilizan un cluster para crear en paralelo un modelo diferente por cada día $t$, que requieren cada uno cerca de 100 iteraciones para alcanzar convergencia. }%
 %
 \en{Instead, it was sufficient for us to use a desktop computer to create a single model adding data day by day and performing a single iteration at each step. }%
-\es{En cambio, para nosotros fue suficiente usar una computadora de escritorio para crear un único modelo al que le agregamos las datos día a día, realizando una única iteraci\'on en cada paso. }%
+\es{En cambio, para nosotros fue suficiente usar una computadora de escritorio para crear un \'unico modelo al que le agregamos las datos día a día, realizando una \'unica iteraci\'on en cada paso. }%
 %
 \en{The model selection was made by optimizing the hyperparameters, but a full Bayesian model selection should compute predictions by integrating the entire hyperparameter space.  }%
 \es{La selecci\'on de modelo la hemos realizado optimizando los hiperpar\'ametros, pero una selecci\'on de modelo bayesiana completa debería computar las predicciones integrando todo el espacio de hiperpar\'ametros. }%
 %
 \en{This procedure usually penalizes complex models when the search in the hyperparameter space is unnecessary. }%
-\es{Este procedimiento suele penalizar a los modelos complejos cuando la búsqueda en el espacio de hiperpar\'ametros es innecesaria. }%
+\es{Este procedimiento suele penalizar a los modelos complejos cuando la b\'usqueda en el espacio de hiperpar\'ametros es innecesaria. }%
 %
 \en{With no more than three intuitive hyperparameters, the TTT model achieves similar or even better results than KickScore more efficiently, because the latter must optimize on a much larger hyperparameter space, which includes the definition of a kernel and then the hyperparameters specific to that kernel. }%
-\es{Con no m\'as de tres hiperpar\'ametros intuitivos, el modelo TTT logra resultados similares y hasta mejores que KickScore de forma m\'as eficiente, debido a que el último debe optimizar en un espacio de par\'ametros mucho m\'as grande, que incluye la definci\'on de un \emph{kernel} y luego los hiperpar\'ametros específicos a ese \emph{kernel}. }%
+\es{Con no m\'as de tres hiperpar\'ametros intuitivos, el modelo TTT logra resultados similares y hasta mejores que KickScore de forma m\'as eficiente, debido a que el \'ultimo debe optimizar en un espacio de par\'ametros mucho m\'as grande, que incluye la definci\'on de un \emph{kernel} y luego los hiperpar\'ametros específicos a ese \emph{kernel}. }%
 
 % Parrafo
 
@@ -3896,7 +3895,7 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
 \es{Muchas veces el objetivo es estimar las curvas de aprendizaje en el tiempo y no las predicciones en línea que hemos computado para comparar modelos. }%
 %
 \en{In these cases we want to find the best estimates of skill, from the first to the last event of the learning curve. }%
-\es{En estos casos queremos encontrar las mejores estimaciones de habilidad, desde el primer hasta el último evento de la curva de aprendizaje. }%
+\es{En estos casos queremos encontrar las mejores estimaciones de habilidad, desde el primer hasta el \'ultimo evento de la curva de aprendizaje. }%
 %
 \en{Online predictions generate poor initial estimates because we force the model to perform inference using only past information. }%
 \es{Las predicciones en línea generan malas estimaciones iniciales debido a que forzamos al modelo a realizar la inferencia usando solamente la informaci\'on del pasado. }%
@@ -3919,7 +3918,7 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
 \es{Hay una poblaci\'on muy grande, tanto en la industria del video juego como en los sistemas educativos, que necesita conocer c\'omo funciona el algoritmo que mide su habilidad. }%
 %
 \en{This paper aims to present a working tool jointly with all the theoretical and technical details to show the foundations of the method. }%
-\es{El objetivo de este trabajo es ofrecer una reporte técnico con todos los detalles téoricos y técnicos de la forma m\'as accesible posible al público en general. }%
+\es{El objetivo de este trabajo es ofrecer una reporte técnico con todos los detalles téoricos y técnicos de la forma m\'as accesible posible al p\'ublico en general. }%
 
 \subsection{Elo Model}
 
@@ -4091,7 +4090,7 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
 \es{Este método nos permite aplicar eficientemente la ecuaci\'on~\eqref{eq:posterior_win} iterativamente sobre una secuencia de observaciones, que de otra manera sería inviable. }%
 %
 \en{The approach adopted by TrueSkill to treat the dynamical process, known as \emph{filtering}, uses the last approximate posterior as the prior for the next event. }%
-\es{El enfoque adoptado por TrueSkill para tratar el proceso din\'amico, conocido como \emph{filtering}, usa el último posterior aproximado como prior del siguiente evento. }%
+\es{El enfoque adoptado por TrueSkill para tratar el proceso din\'amico, conocido como \emph{filtering}, usa el \'ultimo posterior aproximado como prior del siguiente evento. }%
 %
 \en{The approximate posterior at any given time is defined as:}
 \es{Luego, el posterior aproximado en un determinado momento se define como,}
@@ -4117,7 +4116,7 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
  \end{equation}
  %
 \en{Because the filtering approach is an ad-hoc procedure that does not arise from any probabilistic model, its estimates have a number of problems. }%
-\es{Debido a que el enfoque de filtrado es un procedimiento ad-hoc que no surge de ningún modelo probabilístico, sus estimaciones exhiben una serie problemas. }%
+\es{Debido a que el enfoque de filtrado es un procedimiento ad-hoc que no surge de ning\'un modelo probabilístico, sus estimaciones exhiben una serie problemas. }%
 %
 \en{The most obvious is that the beginning of any sequence of estimates always has high uncertainty. }%
 \es{El m\'as obvio es que el inicio de toda secuencia de estimaciones siempre tiene alta incertidumbre. }%
@@ -4156,7 +4155,7 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
 \es{Donde $T_i$ es la cantidad total de eventos del agente $i$, siendo {\small Prior$_{i_0}$} su prior inicial. }%
 %
 \en{This produces a mutual dependence between estimates that forces us to iteratively use the last available likelihoods until convergence is reached (details in section~\ref{sec:throughTime}). }%
-\es{Esto produce una mutua dependencia entre estimaciones que nos obliga a usar iterativamente las últimas verosimilitudes disponibles hasta alcanzar convergencia (detalles en la secci\'on~\ref{sec:throughTime}). }%
+\es{Esto produce una mutua dependencia entre estimaciones que nos obliga a usar iterativamente las \'ultimas verosimilitudes disponibles hasta alcanzar convergencia (detalles en la secci\'on~\ref{sec:throughTime}). }%
 %
 \begin{figure}[ht!]
   \centering
@@ -4239,7 +4238,7 @@ P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Da
   \es{Convergencia de una red Bayesiana con dos eventos y dos agentes: la primera partida la gana el jugador $a$ y la segunda la gana el jugador $b$. }%
   %
   \en{The brightness of the curves indicates the order: the first one (the clearest) corresponds to the TrueSkill estimates, and the last one (the darkest) corresponds to the TrueSkill Through Time estimates. }%
-  \es{La luminosidad de las curvas indican el orden: la primera (la m\'as clara) correponde a las estimaciones de TrueSkill, y la última (la m\'as oscura) correponde con las estimaciones de TrueSkill Through Time. }%
+  \es{La luminosidad de las curvas indican el orden: la primera (la m\'as clara) correponde a las estimaciones de TrueSkill, y la \'ultima (la m\'as oscura) correponde con las estimaciones de TrueSkill Through Time. }%
   }
   \label{fig:smooth_example}
 \end{figure}
@@ -4314,7 +4313,7 @@ mu = 0.0; sigma = 6.0; beta = 1.0; gamma = 0.03; p_draw = 0.0
 \end{lstlisting}  
 %
 \en{The initial value of \texttt{mu}, shared by all players, can be freely chosen because it is the difference of skills that matters and not its absolute value. }%
-\es{El valor inicial de \texttt{mu}, común a todos los jugadores, puede elegirse a gusto debido que es la diferencia de habilidades lo que realmente importa y no su valor absoluto. }%
+\es{El valor inicial de \texttt{mu}, com\'un a todos los jugadores, puede elegirse a gusto debido que es la diferencia de habilidades lo que realmente importa y no su valor absoluto. }%
 %
 \en{The prior's standard deviation \texttt{sigma} must be sufficiently large to include all possible skill hypotheses. }%
 \es{El desv\'io est\'andar del prior \texttt{sigma} debe ser suficientemente grande para incluir todas las posibles hip\'otesis de habilidad. }%
@@ -4521,12 +4520,12 @@ print(lhs[[1]][[1]]*a1@prior)
 \es{Los jugadores se organizan en tres equipos de diferente tama\~no: dos equipos con un solo jugador, y el otro con dos jugadores. }%
 %
 \en{The result has a single winning team and a tie between the other two losing teams. }%
-\es{El resultado tiene un único equipo ganador y un empate entre los otros dos equipos perdedores. }%
+\es{El resultado tiene un \'unico equipo ganador y un empate entre los otros dos equipos perdedores. }%
 %
 \en{Unlike the previous example, we need to use a draw probability greater than zero. }%
 \es{A diferencia del ejemplo anterior, ahora necesitamos usar una probabilidad de empate mayor a cero. }%
 %
-\begin{lstlisting}[backgroundcolor=\color{white},label=lst:multiple_team_game, caption={\en{Game with multiple teams of different sizes and the possibility of tie}\es{Juego con múltiples equipos de diferente tama\~no y posibilidad de empate}}, belowskip=-1.0 \baselineskip, aboveskip=0.1cm]
+\begin{lstlisting}[backgroundcolor=\color{white},label=lst:multiple_team_game, caption={\en{Game with multiple teams of different sizes and the possibility of tie}\es{Juego con m\'ultiples equipos de diferente tama\~no y posibilidad de empate}}, belowskip=-1.0 \baselineskip, aboveskip=0.1cm]
 \end{lstlisting}
 \begin{paracol}{3}
 \begin{lstlisting}[backgroundcolor=\color{julia!60}, belowskip=-0.77 \baselineskip]
@@ -4677,7 +4676,7 @@ lc_print(lc[["b"]])
 %
 \en{Although in this example no player is stronger than the others, the TrueSkill estimates present strong variations between players. }%
 % events for each player and also among players for each event
-\es{A pesar de que en este ejemplo ningún jugador muestra ser m\'as fuerte que los dem\'as, las estimaciones de TrueSkill varían mucho entre jugadores. }%
+\es{A pesar de que en este ejemplo ning\'un jugador muestra ser m\'as fuerte que los dem\'as, las estimaciones de TrueSkill varían mucho entre jugadores. }%
 %
 \en{The estimates obtained after the first game, in which \texttt{"a"} beats \texttt{"b"}, have the same uncertainty and mean absolute value, being positive for the winner and negative for the other. }%
 \es{Las estimaciones obtenidas luego de la primera partida, en la que \texttt{"a"} vence a \texttt{"b"}, tienen misma incertidumbre y mismo media en valor absoluta, siendo positiva para el jugador ganador y negativo para el perdedor. }%
@@ -4856,7 +4855,7 @@ mu = [tp[1].mu for tp in h.learning_curves()["a"]]
 \subsection{\en{The History of the Association of Tennis Professionals (ATP)}\es{Historia de la Asociaci\'on de Tenistas Profesionales (ATP)}} \label{sec:atp}
 
 \en{In this last example, we analyze the complete history of the Association of Tennis Professionals (ATP) registered matches. }%
-\es{En este último ejemplo utilizamos toda la historia de partidas de la Asociaci\'on de Tenistas Profesionales (ATP). }%
+\es{En este \'ultimo ejemplo utilizamos toda la historia de partidas de la Asociaci\'on de Tenistas Profesionales (ATP). }%
 %
 \en{The database has \num{447000} games starting in 1915 until 2020 with more than \num{19000} participating players and is publicly available. }%
 \es{La base de datos cuenta con \num{447000} mil partidas que van desde el a\~no 1915 hasta el 2020, en las que participan \num{19000} jugadores. }%
@@ -4865,7 +4864,7 @@ mu = [tp[1].mu for tp in h.learning_curves()["a"]]
 \es{La informaci\'on resumida en una archivo \texttt{csv}\footnote{Archivo disponible en \nolinkurl{https://github.com/glandfried/tennis_atp/releases/download/atp/history.csv.zip}. Una fuente de datos actualizada en \nolinkurl{https://github.com/JeffSackmann/tennis_atp}} contiene tanto partidas simples como dobles: si la columna \texttt{double} tiene la letra \texttt{t} la partida es doble. }%
 %
 \en{Each game has an identifier (i.e. \texttt{match\_id}) and its tournament's round number (i.e. \texttt{round\_number}), where 0 represents the final game, 1 the semi-final, and so on. }%
-\es{Cada partida tiene un identificador (\texttt{match\_id}) y su número de ronda (\texttt{round\_number}), donde 0 representa la partida final, 1 la semi-final, etc. }%
+\es{Cada partida tiene un identificador (\texttt{match\_id}) y su n\'umero de ronda (\texttt{round\_number}), donde 0 representa la partida final, 1 la semi-final, etc. }%
 %
 \en{The file also contains players’ identifiers and names. For example, column \texttt{w2\_id} is the second player's identifier of the winning team, and \texttt{l1\_name} is the first player's name of the losing team. }%
 \es{The file also contains the identifiers and names of the players: por ejemplo \texttt{w2\_id} es el identificador del segundo jugador del equipo ganador y \texttt{l1\_name} es el nombre del primer jugador del equipo perdedor. }%
@@ -4995,7 +4994,7 @@ convergence(h, epsilon = 0.01, iterations = 10)
 \es{TrueSkill Through Time permite comparar la habilidad relativa de los jugadores en el tiempo, a diferencia del ranking hist\'orico de la ATP y de los estimadores basados en el enfoque de filtrado (como TrueSkill, Glicko e IRT). }%
 %
 \en{The learning curves share a similar pattern: they begin with rapid growth, reach an unstable plateau, and end with a slow decline (we hidden the last portion of the players who have long final stages for visualization purposes). }%
-\es{Estas curvas de aprendizaje comparten un patr\'on similar: comienzan con un crecimiento r\'apido, alcanzan una meseta inestable, y terminan con una caída lenta (por razones de visualizaci\'on hemos ocultado la última porci\'on de los jugadores que tienen etapas finales largas). }%
+\es{Estas curvas de aprendizaje comparten un patr\'on similar: comienzan con un crecimiento r\'apido, alcanzan una meseta inestable, y terminan con una caída lenta (por razones de visualizaci\'on hemos ocultado la \'ultima porci\'on de los jugadores que tienen etapas finales largas). }%
 %
 \en{Individual learning curves enable recognizing special periods of crisis and prolonged stability of the professional players, and even the effects of emotional slumps such as those suffered by Aggasi and Djokovic. }%
 \es{Las curvas de aprendizaje individuales permiten reconocer los períodos de crisis, estabilidad y éxito de los jugadores, e incluso los efectos de los bajones emocionales como los que sufrieron Aggasi y Djokovic. }%
@@ -5004,20 +5003,20 @@ convergence(h, epsilon = 0.01, iterations = 10)
 % \es{En la figura~\ref{fig:atp} se pueden observar tres grandes etapas: i) desde el comienzo hasta 1990, ii) entre 1990 y 2003, iii) desde 2003 en adelante. }%
 % %
 \en{It is worthwhile to note that the skill of tennis players did not increase abruptly over the years: contrary to what might have been expected, the players of the 1980s were more skilled than those of the 1990s, and reached a skill similar to what Federer, Nadal and Djokovic had in 2020, even though the latter reached higher values for a longer time.}%the players of the first zone are far more skilled than those of the 1990s (second zone), and those of the third zone noticeably surpassed all previous players in the history of ATP. }%
-\es{Cabe destacar que la habilidad de los tenistas no aument\'o bruscamente a lo largo de los a\~nos: en contra de lo que cabría esperar, los jugadores de la década de 1980 eran m\'as h\'abiles que los de la década de 1990, y alcanzaron una habilidad similar a la que tenían Federer, Nadal y Djokovic en 2020, aunque estos últimos alcanzaron valores m\'as altos durante m\'as tiempo. }%
+\es{Cabe destacar que la habilidad de los tenistas no aument\'o bruscamente a lo largo de los a\~nos: en contra de lo que cabría esperar, los jugadores de la década de 1980 eran m\'as h\'abiles que los de la década de 1990, y alcanzaron una habilidad similar a la que tenían Federer, Nadal y Djokovic en 2020, aunque estos \'ultimos alcanzaron valores m\'as altos durante m\'as tiempo. }%
 % \en{There is another difference in the third zone compared to the others regarding the duration of top players' careers: they can maintain their skill much longer than before. }%
 % \es{COMPLETAR }%
 
 % Parrafo
 
 \en{In the previous example, we summarize the players' skills in a single dimension. }%
-\es{En el ejemplo anterior resumimos la habilidad de los jugadores en una única dimensi\'on. }% 
+\es{En el ejemplo anterior resumimos la habilidad de los jugadores en una \'unica dimensi\'on. }% 
 %
 \en{TrueSkill Through Time allows estimating multi-dimensional skills. }%
 \es{TrueSkill Through Time permite estimar habilidades multi-dimensionales. }%
 %
 \en{It is known that the ability of certain tennis players varies significantly depending on the surface. }%
-\es{Sabemos que la habilidad de los jugadores de tenis puede variar significativamente según el tipo de suelo. }%
+\es{Sabemos que la habilidad de los jugadores de tenis puede variar significativamente seg\'un el tipo de suelo. }%
 %
 \en{To quantify this phenomenon, we propose modeling each player as a team composed of a generic player, who is included in all the games, and another player representing the ability of the player on a particular surface. } %
 \es{Para cuantificar este fen\'omeno, proponemos modelar cada jugador como un equipo compuesto por un jugador genérico, que se incluye en todos los eventos, y otro jugador que representa la habilidad del jugador en una superficie particular. }% 
@@ -5080,7 +5079,7 @@ convergence(h_ground, epsilon = 0.01, iterations=10)
 \es{La diferencia de habilidad de Nadal entre piso de polvo de ladrillo y pasto es mayor a un $\beta$, lo que significa una diferencia de al menos 76\% de probabilidad de ganar si lo comparamos consigo mismo. }%
 %
 \en{In the case of Nadal, it seems important to model the skill's multi-dimensionality, while in Djokovic's case it seems reasonable to summarize it in a single dimension. }%
-\es{En el caso de Nadal parece importante modelar la multi-dimensionalidad de la habilidad, mientras que en el caso de Djokovic parece razonable resumir la habilidad en una única dimensi\'on. }%
+\es{En el caso de Nadal parece importante modelar la multi-dimensionalidad de la habilidad, mientras que en el caso de Djokovic parece razonable resumir la habilidad en una \'unica dimensi\'on. }%
 %
 \en{To assess whether the complexity added by modeling multi-dimensionality is appropriate in general terms, we can compare the joint prior prediction of the models, calling the method \texttt{log\_evidence()} of the class \texttt{History}. }%
 \es{Para evaluar si la complejidad que se agrega al modelar la multidimensional conviene en términos generales, podemos comparar la predicci\'on a priori conjunta de los modelos, llamando al método \texttt{log\_evidence()} de la clase \texttt{History}. }%
@@ -5088,7 +5087,7 @@ convergence(h_ground, epsilon = 0.01, iterations=10)
 %Parrafo
 
 \en{In tennis, it is sufficient to summarize the skills in a single dimension since the prior prediction is maximized when the parameters of the surface's factors (i.e. $\sigma$ and $\gamma$) vanish. }%
-\es{En tenis es suficiente resumir las habilidades en una única dimensi\'on, dado que la predicci\'on a priori se maximiza cuando los par\'ametros de los factores de piso, $\sigma$ y $\gamma$, se desvanecen. }%
+\es{En tenis es suficiente resumir las habilidades en una \'unica dimensi\'on, dado que la predicci\'on a priori se maximiza cuando los par\'ametros de los factores de piso, $\sigma$ y $\gamma$, se desvanecen. }%
 %
 \en{In other examples, where the multi-dimensionality of skills could be more relevant, it should be necessary to model the skills of all agents using different components. }%
 \es{En otros ejemplos, donde la multidimensionalidad de las habilidades sea m\'as relevante, convendr\'a separar la habildiad de todos los agente en diferentes componentes. }%
@@ -5617,7 +5616,7 @@ d = ta - tb
 \end{lstlisting}
 %
 \en{The last descending message, sent by the factor $f_r$ to the variable $r$, allows to compute the evidence, i.e. the prior prediction of the observed result. }%
-\es{El último mensaje descendente, el que envía el factor $f_r$ a la variable $r$, permite computar la evidencia, es decir la predicci\'on a priori del resultado observado. }%
+\es{El \'ultimo mensaje descendente, el que envía el factor $f_r$ a la variable $r$, permite computar la evidencia, es decir la predicci\'on a priori del resultado observado. }%
 %
 \begin{equation*}\label{eq:m_fr_r} \tag{\texttt{evidence}}
 \begin{split}
@@ -6045,7 +6044,7 @@ print(posterior)
 \es{Gracias a la transitividad de los resultados, si participan $k$ equipos en un evento, es suficiente con evaluar $k-1$ diferencias de desempe\~no $d_i$ entre equipos en posiciones consecutivas. }%
 %
 \en{For this purpose, we define a list $o$ in which the teams are ordered according to the observed result with $o_1$ the winning team, and in general, $o_i$ represents the team placed in position $i$. }%
-\es{Para ello definimos una lista $o$ en la que los equipos est\'an ordenados según el resultado observado, con $o_1$ el equipo ganador, y en general con $o_i$ el equipo ubicado en la posici\'on $i$. }%
+\es{Para ello definimos una lista $o$ en la que los equipos est\'an ordenados seg\'un el resultado observado, con $o_1$ el equipo ganador, y en general con $o_i$ el equipo ubicado en la posici\'on $i$. }%
 %
 \en{In Fig.~\ref{fig:factorGraph_trueskill} we show the factorization of the general TrueSkill model. }%
 \es{En la figura~\ref{fig:factorGraph_trueskill} mostramos la factorizaci\'on del modelo general de TrueSkill. }%
@@ -6251,7 +6250,7 @@ margin = compute_margin(p_draw, sqrt(3)*beta)
 \en{Note that any marginal distribution is the product of the received messages from the neighbors. }%
 \es{Recuerden que cualquier distribuci\'on marginal es el producto de los mensajes que esta recibe de sus vecinos. }%
 %
-\begin{lstlisting}[backgroundcolor=\color{all},belowskip=0.1cm, label=lst:d1, caption={\en{Approximating the distribution $d_1$ with the last message sent by $t_b$}\es{Aproximando la distribuci\'on $d_1$ con el último mensajes enviado por $t_b$}},aboveskip=0.0 \baselineskip]
+\begin{lstlisting}[backgroundcolor=\color{all},belowskip=0.1cm, label=lst:d1, caption={\en{Approximating the distribution $d_1$ with the last message sent by $t_b$}\es{Aproximando la distribuci\'on $d_1$ con el \'ultimo mensajes enviado por $t_b$}},aboveskip=0.0 \baselineskip]
 prior_lose_tb = prior_tb * lhood_win_tb
 prior_d1 = prior_ta - prior_lose_tb
 lhood_d1_approx = approx(prior_d1, margin, !tie) / prior_d1 
@@ -6267,12 +6266,12 @@ lhood_d1_approx = approx(prior_d1, margin, !tie) / prior_d1
 \es{En la segunda línea computamos el mensaje que envía el factor $f_{d_1}$ a la variable $d_1$. }%
 %
 \en{In the last line, we compute the approximate message sent by the variable $d_1$ to the factor $f_{d_1}$. }%
-\es{En la última línea, calculamos el mensaje aproximado enviado por la variable $d_1$ al factor $f_{d_1}$. }%
+\es{En la \'ultima línea, calculamos el mensaje aproximado enviado por la variable $d_1$ al factor $f_{d_1}$. }%
 %
 \en{This allows us to update the message received by the variable $t_b$ from the factor $f_{d_1}$. }%
 \es{Esto nos permite actualizar el mensaje que recibe la variable $t_b$ del factor $f_{d_1}$. }%
 %
-\begin{lstlisting}[backgroundcolor=\color{all},label=lst:tb_lose, caption={\en{Updating the messages of $t_b$  with the last approximation of $d_1$}\es{Actualizando la distribuci\'on $t_b$ con la última aproximaci\'on de $d_1$}},aboveskip=0.0 \baselineskip,belowskip=0.1cm]
+\begin{lstlisting}[backgroundcolor=\color{all},label=lst:tb_lose, caption={\en{Updating the messages of $t_b$  with the last approximation of $d_1$}\es{Actualizando la distribuci\'on $t_b$ con la \'ultima aproximaci\'on de $d_1$}},aboveskip=0.0 \baselineskip,belowskip=0.1cm]
 lhood_lose_tb = prior_ta - lhood_d1_approx 
 \end{lstlisting}
 %
@@ -6282,7 +6281,7 @@ lhood_lose_tb = prior_ta - lhood_d1_approx
 \en{Then we approximate the distribution $d_2$ using the updated messages. }%
 \es{Luego aproximamos la distribuci\'on $d_2$ usando los mensajes actualizados. }%
 %
-\begin{lstlisting}[backgroundcolor=\color{all},label=lst:d2, caption={\en{Approximating de distribution $d_2$ with the last messages sent by $t_b$}\es{Aproximando la distribuci\'on $d_2$ con el último mensaje enviado por $t_b$}},aboveskip=0.0 \baselineskip,belowskip=0.1cm]
+\begin{lstlisting}[backgroundcolor=\color{all},label=lst:d2, caption={\en{Approximating de distribution $d_2$ with the last messages sent by $t_b$}\es{Aproximando la distribuci\'on $d_2$ con el \'ultimo mensaje enviado por $t_b$}},aboveskip=0.0 \baselineskip,belowskip=0.1cm]
 prior_win_tb = prior_tb * lhood_lose_tb
 prior_d2 = prior_win_tb - prior_tc
 lhood_d2_approx = approx(prior_d2, margin, tie) / prior_d2 
@@ -6295,12 +6294,12 @@ lhood_d2_approx = approx(prior_d2, margin, tie) / prior_d2
 \es{En la segunda línea computamos el mensaje que envía el factor $f_{d_2}$ a la variable $d_2$. }%
 %
 \en{In the last line, we compute the approximate message sent by the variable $d_2$ to the factor $f_{d_2}$. }%
-\es{En la última línea, calculamos el mensaje aproximado enviado por la variable $d_2$ al factor $f_{d_2}$. }%
+\es{En la \'ultima línea, calculamos el mensaje aproximado enviado por la variable $d_2$ al factor $f_{d_2}$. }%
 %
 \en{This allows us to update the message received by the variable $t_b$ from the factor $f_{d_2}$. }%
 \es{Esto nos permite actualizar el mensaje que recibe la variable $t_b$ del factor $f_{d_2}$. }%
 %
-\begin{lstlisting}[backgroundcolor=\color{all},label=lst:tb_win, caption={\en{Updating la distribuci\'on $t_b$ with the last approximation of $d_2$}\es{Actualizando la distribuci\'on $t_b$  con la última aproximaci\'on de $d_2$}},aboveskip=0.0 \baselineskip, belowskip=0.1cm]
+\begin{lstlisting}[backgroundcolor=\color{all},label=lst:tb_win, caption={\en{Updating la distribuci\'on $t_b$ with the last approximation of $d_2$}\es{Actualizando la distribuci\'on $t_b$  con la \'ultima aproximaci\'on de $d_2$}},aboveskip=0.0 \baselineskip, belowskip=0.1cm]
 lhood_win_tb = prior_lose_tc + lhood_d2_approx
 \end{lstlisting}
 %
@@ -6339,7 +6338,7 @@ lhood_tc = lhood_lose_tc
 \es{En esta secci\'on explicamos c\'omo la informaci\'on provista por los datos se propaga por toda la red bayesiana que contiene la historia de los eventos. }%
 %
 \en{TrueSkill Through Time creates a unique causal model in which all historical activities are linked. }%
-\es{TrueSkill Through Time crea un modelo causal único en el que todas las actividades hist\'oricas est\'an vinculadas. }%
+\es{TrueSkill Through Time crea un modelo causal \'unico en el que todas las actividades hist\'oricas est\'an vinculadas. }%
 %
 \en{The connectivity between events is generated by the basic assumption that a player's skill at time $t$ depends on his skill at an earlier time $t-1$. }%
 \es{La conectividad entre eventos surge de suponer que la habilidad de un jugador en un tiempo $t$ depende de su propia habilidad en un tiempo anterior $t-1$. }%
@@ -6465,7 +6464,7 @@ lhood_tc = lhood_lose_tc
 \es{Nuestros paquetes admiten ambas opciones. }%
 %
 \en{When we initialize the class \texttt{History} without specifying the time of the events, as we did in codes~\ref{lst:history} and \ref{lst:estimating_the_simulated}, the dynamic factors always incorporate a single $\gamma^2$ between variables that are adjacent according to the composition of the events. }%
-\es{Cuando inicializamos la clase \texttt{History} sin especificar el tiempo de los eventos, como hicimos en los c\'odigos \ref{lst:history} y \ref{lst:estimating_the_simulated}, los factores din\'amicos incorporan siempre un $\gamma$ entre variables que son adyacentes según la composici\'on de los eventos. }%
+\es{Cuando inicializamos la clase \texttt{History} sin especificar el tiempo de los eventos, como hicimos en los c\'odigos \ref{lst:history} y \ref{lst:estimating_the_simulated}, los factores din\'amicos incorporan siempre un $\gamma$ entre variables que son adyacentes seg\'un la composici\'on de los eventos. }%
 %
 \en{When we specify the time of the events, as we did in code~\ref{lst:atp}, the adjacency depends on those times, and the dynamic uncertainty depends on the elapsed time between two adjacent variables $s_t$ and $s_{t-1}$. }%
 \es{Cuando especificamos el tiempo de los eventos, como hicimos en el c\'odigo \ref{lst:atp}, la adyacencia depende de esos tiempos y la incertidumbre din\'amica depende de la distancia temporal entre dos variables adyacentes $s_t$ y $s_{t-1}$. }%
@@ -6494,7 +6493,7 @@ lhood_tc = lhood_lose_tc
 \es{Para resolver la mutua dependencia entre verosimilitudes, actualizamos repetidas veces los mensajes hacia adelante y hacia atr\'as hasta alcanzar convergencia. }%
 %
 \en{At each forward pass, we keep track of the last forward message of each agent \emph{forwardPosterior}, and at each backward pass, we keep track of the last backward message of each agent, \emph{backwardPosterior}. }%
-\es{En cada pasada hacia adelante guardamos el último mensajes que los agentes envían para adelante, \emph{forwardPosterior}, y en cada pasada hacia atr\'as guardamos el último mensajes que los agentes envían para atr\'as, \emph{backwardPosterior}. }%
+\es{En cada pasada hacia adelante guardamos el \'ultimo mensajes que los agentes envían para adelante, \emph{forwardPosterior}, y en cada pasada hacia atr\'as guardamos el \'ultimo mensajes que los agentes envían para atr\'as, \emph{backwardPosterior}. }%
 %
 \begin{equation}
 \begin{split}
@@ -6512,7 +6511,7 @@ lhood_tc = lhood_lose_tc
 \section{Resumen y discusión} \label{sec:summary}
 
 \en{The main contribution of this work is the implementation of the state-of-the-art skill estimation model in the video game industry, that was not yet available in the programming languages with larger communities, such as \texttt{Julia}, \texttt{Python} and \texttt{R}. }%
-\es{La principal contribuci\'on de este trabajo es la implementaci\'on del modelo de estimaci\'on de habilidades estado-del-arte en la industria de los videojuegos, que aún no estaba disponible en los lenguajes de programaci\'on con mayores comunidades, como \texttt{Julia}, \texttt{Python} y \texttt{R}. }%
+\es{La principal contribuci\'on de este trabajo es la implementaci\'on del modelo de estimaci\'on de habilidades estado-del-arte en la industria de los videojuegos, que a\'un no estaba disponible en los lenguajes de programaci\'on con mayores comunidades, como \texttt{Julia}, \texttt{Python} y \texttt{R}. }%
 %
 \en{The fact that such an important algorithm has so far been absent in these programming languages can only be explained by the lack of documentation that would allow software developers to understand all the theoretical aspects required for its implementation. }%
 \es{Que un algoritmo tan importante como éste haya estado ausente hasta ahora en estos lenguajes de programaci\'on s\'olo se explica por la falta de documentaci\'on que permitiera a los desarrolladores de software entender todos los aspectos te\'oricos que se requieren para su implementaci\'on. }%
@@ -6524,10 +6523,10 @@ lhood_tc = lhood_lose_tc
 \es{Por este motivo, hemos dedicado la secci\'on metodología para documentar todos los argumentos te\'oricos paso a paso, de modo que sea comprensible para cualquier persona con conocimientos b\'asicos de probabilidad. }%
 %
 \en{But in addition, as skill estimation is a very sensitive issue for many people, it is imperative to provide an explanation accessible to the general public that is both intuitive and exhaustive. }%
-\es{Pero adem\'as, como la estimaci\'on de habilidad es un tema muy sensible para muchas personas, es imperativo ofrecer una explicaci\'on accesible al público en general que sea al mismo tiempo intuitiva y exaustiva. }%
+\es{Pero adem\'as, como la estimaci\'on de habilidad es un tema muy sensible para muchas personas, es imperativo ofrecer una explicaci\'on accesible al p\'ublico en general que sea al mismo tiempo intuitiva y exaustiva. }%
 %
 \en{For this reason, we have devoted the introductory section to review, in the most accessible way possible to the general public, the most widely used skill estimation models currently in use, thus contextualizing the importance and benefits of the skill model we propose. }%
-\es{Por eso, hemos dedicado la secci\'on introducci\'on a revisar, de la forma m\'as accesible posible al público en general, los modelos de estimaci\'on de habilidad m\'as utilizados en la actualidad, contextualizando así la importancia y los beneficios del modelo de habilidad que proponemos. }%
+\es{Por eso, hemos dedicado la secci\'on introducci\'on a revisar, de la forma m\'as accesible posible al p\'ublico en general, los modelos de estimaci\'on de habilidad m\'as utilizados en la actualidad, contextualizando así la importancia y los beneficios del modelo de habilidad que proponemos. }%
 %
 \en{We begin by offering an intuitive explanation of the Elo model (used since the mid-20th century until today by the international chess federation): its point estimates are updated based on the surprise (the complement of the prediction) generated by the observed results. }%
 \es{Comenzamos ofreciendo una explicaci\'on intuitiva del modelo Elo (utilizado desde mediados del siglo 20 hasta hoy por la federaci\'on internacional de ajedrez): sus estimaciones puntuales se actualizan en base a la sorpresa (el complemento de la predicci\'on) que le generan los resultados observados. }%
@@ -6604,7 +6603,7 @@ lhood_tc = lhood_lose_tc
 % Parrafo
 
 \en{Offering the first implementation in Julia, Python and R of the state-of-the-art skill estimation model, accompanied by an explanation understandable to the general public, and another in-depth explanation specific to people with basic knowledge in probability, is our small attempt to democratize a knowledge that should be available to all those who want to know how their skill is evaluated in the video game industry and in some educational systems. }%
-\es{Ofrecer la primera implementaci\'on en Julia, Python y R del modelo de estimaci\'on de habilidad estado-del-arte, acompa\~nado por una explicaci\'on comprensible para el público general, y otra explicaci\'on en profundidad específica para las persona con conocimientos b\'asicos en probabilidad, es nuestro peque\~no intento por democratizar un conocimiento que debe estar disponibe para todas aquellas personas que quieren saber como se le evalúa su habilidad en la idustria del video juego y en algunos sistemas educativos. }%
+\es{Ofrecer la primera implementaci\'on en Julia, Python y R del modelo de estimaci\'on de habilidad estado-del-arte, acompa\~nado por una explicaci\'on comprensible para el p\'ublico general, y otra explicaci\'on en profundidad específica para las persona con conocimientos b\'asicos en probabilidad, es nuestro peque\~no intento por democratizar un conocimiento que debe estar disponibe para todas aquellas personas que quieren saber como se le eval\'ua su habilidad en la idustria del video juego y en algunos sistemas educativos. }%
 
 
 %% -- Optional special unnumbered sections -------------------------------------
@@ -6631,7 +6630,7 @@ lhood_tc = lhood_lose_tc
 % \en{In the examples that handle single events we also analyze the runtimes of the basic package \texttt{trueskill}~0.4.5 of \texttt{Python}~\cite{}. }%
 % \es{En los ejemplos que resuelven eventos individuales también analizamos los tiempos de ejecuci\'on del paquete b\'asico \texttt{trueskill}~0.4.5 de \texttt{Python}~\cite{}. }%
 
-\textbf{\en{Single event}\es{Evento único}:}
+\textbf{\en{Single event}\es{Evento \'unico}:}
 %
 \en{In section~\ref{sec:singleEvent} we present two examples: a game with two teams in code~\ref{lst:game} and a game with three teams in code~\ref{lst:multiple_team_game}. }%
 \es{En la secci\'on \ref{sec:singleEvent} presentamos dos ejemplos: en el c\'odigo~\ref{lst:game} y \ref{lst:multiple_team_game} presentamos una partida con dos y tres equipos respectivamente. }%
@@ -6701,7 +6700,7 @@ lhood_tc = lhood_lose_tc
 \es{Si bien la inicializaci\'on de la clase \texttt{History} calcula las estimaciones para las cuales est\'a pensado el paquete original \texttt{trueskill}~$0.4.5$, no hacer m\'as comparaciones debido a que este paquete no cuenta con una funci\'on para resolver las secuencias de eventos autom\'aticamente. }%
 %
 \en{Table~\ref{Tab:Sequence} presents the execution times for the initialization of the \texttt{History} class and call of a single \texttt{convergence()} iteration. }%
-\es{En la tabla~\ref{Tab:Sequence} presentamos los tiempos de ejecuci\'on para inicializar la clase \texttt{History} y realizar una única iteraci\'on del método \texttt{convergence()}. }%
+\es{En la tabla~\ref{Tab:Sequence} presentamos los tiempos de ejecuci\'on para inicializar la clase \texttt{History} y realizar una \'unica iteraci\'on del método \texttt{convergence()}. }%
 %
 \begin{table}[H] \centering
     \begin{tabular}{ccc} 
@@ -6715,7 +6714,7 @@ lhood_tc = lhood_lose_tc
     \end{tabular}
     \caption{
      \en{Three events of two teams: execution time for the initialization of the \texttt{History} class and a single iteration of the method \texttt{convergence()}. }%
-     \es{Tres eventos de dos equipos: tiempos de ejecuci\'on de la inicializaci\'on de la clase \texttt{History} y una única iteraci\'on del método \texttt{convergencia()}. }%
+     \es{Tres eventos de dos equipos: tiempos de ejecuci\'on de la inicializaci\'on de la clase \texttt{History} y una \'unica iteraci\'on del método \texttt{convergencia()}. }%
     }
     \label{Tab:Sequence}
 \end{table}
@@ -6724,7 +6723,7 @@ lhood_tc = lhood_lose_tc
 \es{La inicializaci\'on de la clase \texttt{History} incluye la creaci\'on de la red bayesiana y una pasada por todas las partidas, mientras que la convergencia realiza dos pasadas por la secuencia de eventos, una para atr\'as y otra para adelante. }%
 %
 \en{The initialization in the \texttt{Python} package is even faster than the computation of a single isolated event using the original \texttt{trueskill} package. }%
-\es{La inicializci\'on en el paquete \texttt{Python} es todavía m\'as r\'apida que el computo de un úninco evento aislado mediante el paquete original \texttt{trueskill}. }%
+\es{La inicializci\'on en el paquete \texttt{Python} es todavía m\'as r\'apida que el computo de un \'uninco evento aislado mediante el paquete original \texttt{trueskill}. }%
 %
 \en{The \texttt{Julia} package increases the time difference with our \texttt{Python} package. }%
 \es{El paquete de \texttt{Julia} aumenta la velocidad respecto de nuestro paquete \texttt{Python}. }%
@@ -6738,7 +6737,7 @@ lhood_tc = lhood_lose_tc
 \es{En la secci\'on \ref{sec:skill_evolution} analizamos la evoluci\'on de habilidad de un jugador que juega contra 1000 oponentes distintos. }%
 %
 \en{Table~\ref{Tab:Evolution} presents the execution times to initialize the class \texttt{History} and perform a single convergence iteration.}
-\es{Los tiempos de ejecuci\'on para inicializar la clase \texttt{History} y para una única iteraci\'on de convergencia fueron,}
+\es{Los tiempos de ejecuci\'on para inicializar la clase \texttt{History} y para una \'unica iteraci\'on de convergencia fueron,}
 %
 \begin{table}[H] \centering
     \begin{tabular}{rrr} 
@@ -6751,7 +6750,7 @@ lhood_tc = lhood_lose_tc
     \end{tabular}
     \caption{
      \en{Initialization of the \texttt{History} class and a single iteration of the \texttt{convergence()} method in a sequence of $1000$ games of a player against different opponents. }%
-     \es{Inicializaci\'on de la clase \texttt{History} y una única iteraci\'on del método \texttt{convergencia()} en una secuencia de $1000$ partidas que un jugador tiene contra oponentes distintos. }%
+     \es{Inicializaci\'on de la clase \texttt{History} y una \'unica iteraci\'on del método \texttt{convergencia()} en una secuencia de $1000$ partidas que un jugador tiene contra oponentes distintos. }%
     }
     \label{Tab:Evolution}
 \end{table}
@@ -6800,7 +6799,7 @@ lhood_tc = lhood_lose_tc
 \end{table}
 %
 \en{The initialization and the ten convergence iterations evaluate approximately $447000 \times 21$ events: one sweep over all events corresponding to computing TrueSkill estimates during initialization, and two passes over all items per iteration (backward and forward). }%
-\es{La inicializaci\'on m\'as las 10 iteraciones de convergencia evalúan en total $447000\times 21$ eventos: una pasada sobre todas las partidas correspondiente al computar la estimaciones de TrueSkill durante la inicializaci\'on, y dos pasadas sobre todas las partidas por cada iteraci\'on (backward y forward). }%
+\es{La inicializaci\'on m\'as las 10 iteraciones de convergencia eval\'uan en total $447000\times 21$ eventos: una pasada sobre todas las partidas correspondiente al computar la estimaciones de TrueSkill durante la inicializaci\'on, y dos pasadas sobre todas las partidas por cada iteraci\'on (backward y forward). }%
 %
 \en{Given the execution times of a single event included in Table~\ref{Tab:TwoTeams}, the minimum execution time it would take to compute the TrueSkill Through Time estimates using the original \texttt{trueskill}~$0.4.5$ package could not be less than \SI{13611}{\s} on computer A, three times longer than it takes our \texttt{Python} package to perform the entire computation. }%
 \es{Dados los tiempos de ejecuci\'on de los eventos reportados en la tabla \ref{Tab:TwoTeams}, el tiempo de ejecuci\'on mínimo que se necesitaría para computar las estimaciones TrueSkill Through Time mediante el paquete original \texttt{trueskill}~$0.4.5$ no podría ser menor a \SI{13611}{\s} en la computadora A, tres veces m\'as de lo que tarda nuestro paquete \texttt{Python} para realizar la totalidad del computo. }%
@@ -6895,11 +6894,11 @@ La experiencia individual ha sido durante mucho tiempo un tema importante, estud
 %
 Newell señaló en 1981 que la ley de potencia describía todos los datos sobre aprendizaje analizados en función del grado de práctica adquirida~\cite{Newell1981}.
 %
-En los últimos años, algunos autores señalaron que la ley de potencia explica solamente las curvas de aprendizaje poblacionales y afirman la necesidad de proponer otras funciones para aproximar las curvas de aprendizaje individuales~\cite{heathcote2000-powerLawRepealedExponentialLawOfPractice}.
+En los \'ultimos años, algunos autores señalaron que la ley de potencia explica solamente las curvas de aprendizaje poblacionales y afirman la necesidad de proponer otras funciones para aproximar las curvas de aprendizaje individuales~\cite{heathcote2000-powerLawRepealedExponentialLawOfPractice}.
 %
 Sin embargo, las curvas de aprendizaje individuales son más irregulares que las curvas de aprendizaje promediadas y la predicción del desempeño a gran escala de tiempo basado en eventos de pequeña escala de tiempo demostró ser difícil~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality}.
 %
-La práctica es un factor de aprendizaje importante pero no es el único.
+La práctica es un factor de aprendizaje importante pero no es el \'unico.
 %
 Se deben tener en cuenta otros componentes esenciales para comprender mejor los procesos de aprendizaje.
 
@@ -6909,7 +6908,7 @@ Uno de los factores que provocan una alteración en las curvas de aprendizaje es
 %
 El aprendizaje social se define como cambios a largo plazo en el comportamiento causados por estímulos derivados de la observación o la interacción con otros individuos~\cite{hoppitt2013-socialLearningAnIntroductionBook,bandura1977-socialLearning}.
 %
-Nuestra especie estuvo involucrada en una coevolución genética-cultura única que provocó el surgimiento de nuestras habilidades especiales de aprendizaje social: una maquinaria cognitiva costosa que permite la adquisición eficiente de tradiciones complejas~\cite{Richerson2010}.
+Nuestra especie estuvo involucrada en una coevolución genética-cultura \'unica que provocó el surgimiento de nuestras habilidades especiales de aprendizaje social: una maquinaria cognitiva costosa que permite la adquisición eficiente de tradiciones complejas~\cite{Richerson2010}.
 %
 Los seres humanos aprenden cosas de los demás, las mejoran y las transmiten a la siguiente generación, lo que lleva a una acumulación cultural que no puede ser desarrollada por un solo individuo durante su vida~\cite{boyd1985-evolutionaryProcess}.
 %
@@ -6937,13 +6936,13 @@ Todos estos métodos tiene una dificultad inherente para obtener muestras de dat
 %
 Con el advenimineto de las comunidades virtuales surge la posibilidad de estudiar conjuntos de datos masivos sobre aprendizaje social correspondientes a largos períodos de tiempo.
 %
-En este trabajo nos apoyamos en un vasto corpus ($\sim4.5$ millones de juegos), aprovechando la tendencia mundial de las personas a jugar juegos en línea de varios jugadores y la existencia de servidores que acumulan datos públicos.
+En este trabajo nos apoyamos en un vasto corpus ($\sim4.5$ millones de juegos), aprovechando la tendencia mundial de las personas a jugar juegos en línea de varios jugadores y la existencia de servidores que acumulan datos p\'ublicos.
 %
-Esta novedosa metodología busca la aparición estadística de efectos potencialmente sutiles, que pueden ser detectables solo con un número notable de observaciones y pueden pasar desapercibidos en tamaños de muestra pequeños típicos de los estudios de laboratorio~\cite{slezak2012-doNotFearYourOpponent}.
+Esta novedosa metodología busca la aparición estadística de efectos potencialmente sutiles, que pueden ser detectables solo con un n\'umero notable de observaciones y pueden pasar desapercibidos en tamaños de muestra pequeños típicos de los estudios de laboratorio~\cite{slezak2012-doNotFearYourOpponent}.
 %
 Nuestro estudio también incorpora la capacidad actual para estimar las habilidades con alta precisión.
 %
-Estos resultados se obtienen en condiciones experimentales únicas en la que los jugadores se involucran en relaciones naturales, libres de elegir a sus compañeros de equipo y oponentes, produciendo resultados confiables que se pueden medir directamente sin depender de métodos indirectos como los cuestionarios.
+Estos resultados se obtienen en condiciones experimentales \'unicas en la que los jugadores se involucran en relaciones naturales, libres de elegir a sus compañeros de equipo y oponentes, produciendo resultados confiables que se pueden medir directamente sin depender de métodos indirectos como los cuestionarios.
 
 % Parrafo
 
@@ -6963,7 +6962,7 @@ En Conquer Club hay un fuerte incentivo para la colaboración: los resultados de
 %
 Todos los miembros de un equipo ganan o pierden juntos.
 %
-Un jugador que es eliminado durante un juego aún puede terminar ganando si sus compañeros de equipo derrotan al resto de los equipos.
+Un jugador que es eliminado durante un juego a\'un puede terminar ganando si sus compañeros de equipo derrotan al resto de los equipos.
 %
 Por lo tanto, es fundamental que los compañeros de equipo puedan coordinar sus acciones.
 %
@@ -6973,7 +6972,7 @@ No existe un mecanismo que defina la composición de los equipos en función de 
 %
 La plataforma tiene una sección ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
 %
-Un entorno de juego típico de Conquer Club tiene cuatro elementos relevantes: el mapa actual con la ocupación de tropas en cada región, el estado del juego que muestra la ronda actual y un resumen de la información de los jugadores, un chat público del juego y un registro de movimientos.
+Un entorno de juego típico de Conquer Club tiene cuatro elementos relevantes: el mapa actual con la ocupación de tropas en cada región, el estado del juego que muestra la ronda actual y un resumen de la información de los jugadores, un chat p\'ublico del juego y un registro de movimientos.
 
 % Parrafo
 
@@ -6999,9 +6998,9 @@ Con nuestro enorme conjunto de datos, podemos investigar el impacto de las estra
 
 Primero, estudiamos cómo las personas mejoran su desempeño a medida que ganan experiencia, es decir, la ley de la práctica.
 %
-Estimamos la experiencia de cada jugador por el número de partidas jugadas.
+Estimamos la experiencia de cada jugador por el n\'umero de partidas jugadas.
 %
-La habilidad se estima según el método \emph{TrueSkill}~\cite{Herbrich2007}.
+La habilidad se estima seg\'un el método \emph{TrueSkill}~\cite{Herbrich2007}.
 %
 La diferencia de habilidad entre los oponentes indica con alta precisión la probabilidad de ganar.
 %
@@ -7021,9 +7020,9 @@ donde $\alpha$ es la tasa de aprendizaje característica de la población y \emp
 
 % Parrafo
 
-Para analizar la ley de la práctica, dividimos a los jugadores según su actividad total: (1) jugadores con al menos $8$ partidas y menos de $16$, (2) jugadores al menos $16$ partidas y menos de $32$, etc.
+Para analizar la ley de la práctica, dividimos a los jugadores seg\'un su actividad total: (1) jugadores con al menos $8$ partidas y menos de $16$, (2) jugadores al menos $16$ partidas y menos de $32$, etc.
 %
-Por lo tanto, ajustamos los parámetros de la ley de la práctica a cada uno de los conjuntos de jugadores según su nivel de actividad.
+Por lo tanto, ajustamos los parámetros de la ley de la práctica a cada uno de los conjuntos de jugadores seg\'un su nivel de actividad.
 %
 De acuerdo con la ley de la práctica, observamos una dependencia lineal en las curvas de aprendizaje log-log en todos los segmentos poblacionales~(Figura~\ref{learningskill_curve}).
 
@@ -7063,7 +7062,7 @@ Para estudiarlo, analizamos el comportamiento de los jugadores en la selección 
 
 En la plataforma de juego, los usuarios pueden elegir entre jugar individualmente o en equipos.
 %
-Definimos el concepto \emph{Team-oriented behavior} (TOB) de los jugadores como el número de partidas en las que participa de un equipo dividido por el número total de partidas jugadas:
+Definimos el concepto \emph{Team-oriented behavior} (TOB) de los jugadores como el n\'umero de partidas en las que participa de un equipo dividido por el n\'umero total de partidas jugadas:
 %
 \begin{equation}
 \text{\emph{Team-oriented behavior}} = \frac{\text{\emph{Partidas de equipo jugadas}}}{\text{\emph{Partidas jugadas}}}
@@ -7075,7 +7074,7 @@ En adelante, excluimos a los jugadores con menos de cuatro partidas en equipo.
 
 % Parrafo
 
-En el largo plazo, entre $200$ y $500$ juegos de experiencia, las curvas de aprendizaje se ordenan según su nivel de TOB, exhibiendo un mayor nivel de habilidad para las poblaciones con mayor TOB (Figura~\ref{learningskill_team_hasta4team}).
+En el largo plazo, entre $200$ y $500$ juegos de experiencia, las curvas de aprendizaje se ordenan seg\'un su nivel de TOB, exhibiendo un mayor nivel de habilidad para las poblaciones con mayor TOB (Figura~\ref{learningskill_team_hasta4team}).
 %
 The strong team-oriented players evince after $250$ games played, a significantly higher final skill compared to medium and weak TOB (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
 Los jugadores TOB altos muestran, después de juegos de $250$, una habilidad final significativamente más alta en comparación con TOB medio y débil (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
@@ -7092,7 +7091,7 @@ Un comportamiento TOB alto adquiere, a largo plazo, un mayor valor de habilidad 
 \caption{
 Ley de la práctica.
 %
-Curva de aprendizaje log-log de la subpoblaciones de jugadores según su nivel actividad total.
+Curva de aprendizaje log-log de la subpoblaciones de jugadores seg\'un su nivel actividad total.
 %
 Each learning curve shows the skill of the first $2^n$ games played of the subpopulation with at least $2^n$ games played and less than $2^{n+1}$.
 %
@@ -7153,7 +7152,7 @@ Un comportamiento análogo entre las subclases leales y casuales se encuentra pa
 
 % Parrafo
 
-Para estudiar la interacción entre TOB y loyalty en la adquisición de habilidades, fijamos el número de juegos jugados en $100$.
+Para estudiar la interacción entre TOB y loyalty en la adquisición de habilidades, fijamos el n\'umero de juegos jugados en $100$.
 %
 Al aislar esta interacción (sin la interferencia de la experiencia) encontramos que un aumento en loyalty siempre implica un aumento en la habilidad, más prominente para valores más altos de TOB (Fig.~\ref{skillModels_loyaltyTeamOriented_imageEmpirical}).
 %
@@ -7291,7 +7290,7 @@ Modelo mixto lineal para ajustado para todos los datos entre 10 y 500 partidas j
 %
 En la columnn Norm.Est. transformamos los estimadores, en escala logarítmica, a su valor normalizado (e.g. $\text{Intercept} = 10^{1.415}$, $\text{exp} = 10^{1.415+0.016} - 10^{1.415}$).
 %
-Metodo: REML converged. Número de grupos: $65335$. Tamaño máximo de grupo: $491$. Tamañop medio de grupos: $99.5$}
+Metodo: REML converged. N\'umero de grupos: $65335$. Tamaño máximo de grupo: $491$. Tamañop medio de grupos: $99.5$}
 \label{lmm}
 \end{table}
 
@@ -7335,7 +7334,7 @@ Si bien las curvas de aprendizaje individual son más irregulares que el promedi
 %
 Nuestra hipótesis para explicar las variaciones observadas afirma que el aprendizaje social produce un efecto de segundo orden en la adquisición de habilidades.
 %
-Según las teorías del aprendizaje social, los jugadores tienen dos opciones para aprender: i) descubrir por sí mismos las claves para jugar mejor; o ii) imitar la estrategia de otros disponibles en su red.
+Seg\'un las teorías del aprendizaje social, los jugadores tienen dos opciones para aprender: i) descubrir por sí mismos las claves para jugar mejor; o ii) imitar la estrategia de otros disponibles en su red.
 %
 Nos basamos en el juego en línea Conquer Club porque, a diferencia del ajedrez, se puede jugar en equipos.
 %
@@ -7361,7 +7360,7 @@ Aquí exploramos en qué medida este comportamiento afecta la adquisición de ha
 %
 Hemos visto que la decisión de jugar en equipos está asociada con una mejora de habilidades a largo plazo.
 %
-Encontramos que la tendencia a jugar en grupos (el número de partidas jugadas en equipo dividido por el número total de partidas jugadas) mejora significativamente el nivel de habilidad alcanzado.
+Encontramos que la tendencia a jugar en grupos (el n\'umero de partidas jugadas en equipo dividido por el n\'umero total de partidas jugadas) mejora significativamente el nivel de habilidad alcanzado.
 
 % Parrafo
 
@@ -7428,9 +7427,9 @@ Todos los juegos se descargaron de Conquer Club, un servicio gratuito que ofrece
 %
 El sitio web permite a cualquier persona, y no solo a los participantes registrados, explorar los partidos y buscar sus datos relacionados.
 %
-Los usuarios registrados se identifican por sus apodos y, para ser aceptados como usuarios, deben aceptar que sus partidas se almacenen en un servidor de acceso público.
+Los usuarios registrados se identifican por sus apodos y, para ser aceptados como usuarios, deben aceptar que sus partidas se almacenen en un servidor de acceso p\'ublico.
 %
-Además, durante el proceso de descarga, cada jugador fue identificado por un número de identificación interno, anonimizando los datos.
+Además, durante el proceso de descarga, cada jugador fue identificado por un n\'umero de identificación interno, anonimizando los datos.
 %
 En consecuencia, no fue necesario el consentimiento individual debido a esta doble capa de anonimato y la naturaleza abierta del sitio web.
 %
@@ -7457,19 +7456,19 @@ Al comienzo de cada partida, las regiones del mapa se distribuyen aleatoriamente
 %
 Cada turno consiste en i) desplegar nuevas tropas, ii) asaltar las regiones vecinas del oponente y iii) reforzar las regiones.
 %
-El entorno del juego tiene cuatro elementos relevantes: el tablero actual, un panel con el estado del juego, un chat público y un registro de movimientos (Fig.~\ref{conquerImage}).
+El entorno del juego tiene cuatro elementos relevantes: el tablero actual, un panel con el estado del juego, un chat p\'ublico y un registro de movimientos (Fig.~\ref{conquerImage}).
 
 % Parrafo
 
 En este ejemplo, se juega una partida de dos equipos en equipos de dos jugadores.
 %
-Los nodos del gráfico representan las regiones, el color indica a quién pertenece, los números representan el número de tropas y las formas indican la agrupación de regiones por zonas.
+Los nodos del gráfico representan las regiones, el color indica a quién pertenece, los n\'umeros representan el n\'umero de tropas y las formas indican la agrupación de regiones por zonas.
 %
-Al lado hay un panel con el número de ronda, el jugador activo y el tiempo restante para jugar la ronda actual, y un resumen de las tropas totales y las regiones controladas totales para cada jugador.
+Al lado hay un panel con el n\'umero de ronda, el jugador activo y el tiempo restante para jugar la ronda actual, y un resumen de las tropas totales y las regiones controladas totales para cada jugador.
 %
-El color junto al apodo identifica el número total de regiones que tiene cada jugador en el mapa.
+El color junto al apodo identifica el n\'umero total de regiones que tiene cada jugador en el mapa.
 %
-Un servicio de chat público está disponible dentro de cada juego.
+Un servicio de chat p\'ublico está disponible dentro de cada juego.
 %
 El Log registra todos los movimientos de los jugadores.
 
@@ -7477,7 +7476,7 @@ El Log registra todos los movimientos de los jugadores.
 
 Al comienzo de cada turno, los jugadores ganan nuevas tropas.
 %
-La cantidad de tropas resulta del número de \emph{regions} ocupadas y la bonificación de la \emph{zone} controlada y eventualmente por el intercambio de \emph{spoils} (Section A en Anexo).
+La cantidad de tropas resulta del n\'umero de \emph{regions} ocupadas y la bonificación de la \emph{zone} controlada y eventualmente por el intercambio de \emph{spoils} (Section A en Anexo).
 %
 Podemos ver en la primera línea del Log en la Fig.~\ref{conquerImage}d que el jugador $c$ recibió tropas por mantener el Continente 4.
 %
@@ -7511,7 +7510,7 @@ Luego, este jugador usa las tropas movidas recientemente para conquistar otra re
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Fig5}
     \caption{
-    Esquema del juego Conquer Club. a) El mapa mostrado como un gráfo con continentes (nodos con misma forma), jugadores (identificados con la escala de grises) y un número de tropas en cada región.
+    Esquema del juego Conquer Club. a) El mapa mostrado como un gráfo con continentes (nodos con misma forma), jugadores (identificados con la escala de grises) y un n\'umero de tropas en cada región.
     b) Estado general del juego: ronda actual, jugador activo y tiempo restante para jugar; y un resumen del total de tropas y regiones controladas para cada jugador.
     c) Ejemplo de sesión de chat durante un juego.
     d) Registro del juego utilizado para extraer información a través del web scrapper.
@@ -7533,11 +7532,11 @@ Finalmente, el jugador $c$ termina el turno y el jugador $b$ comienza con su ron
 
 La plataforma tiene una sección ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
 %
-Cuando un jugador crea un juego, elige: a) opciones de juego, b) tipo de juego, todos contra todos o juego en equipo, c) el número de participantes, y d) el método de participación, público, público con espacios reservados, y privado
+Cuando un jugador crea un juego, elige: a) opciones de juego, b) tipo de juego, todos contra todos o juego en equipo, c) el n\'umero de participantes, y d) el método de participación, p\'ublico, p\'ublico con espacios reservados, y privado
 %
-Los juegos públicos son aquellos a los que cualquiera puede unirse.
+Los juegos p\'ublicos son aquellos a los que cualquiera puede unirse.
 %
-Los juegos públicos con espacios reservados tienen espacios asignados a jugadores particulares, y el resto está abierto a jugadores generales.
+Los juegos p\'ublicos con espacios reservados tienen espacios asignados a jugadores particulares, y el resto está abierto a jugadores generales.
 %
 En los juegos privados solo las personas que tenga la contraseña pueden jugar.
 
@@ -7551,7 +7550,7 @@ El sistema de puntos se actualiza como {\small $\Delta = \text{min}(\frac{\text{
 %
 Sin embargo, no son indicadores precisos de la habilidad de los jugadores y la probabilidad de ganar entre oponentes.
 %
-El ranking interno es la conjunción entre el número de partidos jugados y los puntos alcanzados.
+El ranking interno es la conjunción entre el n\'umero de partidos jugados y los puntos alcanzados.
 
 % Parrafo
 
@@ -7581,7 +7580,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 \es{¿Cu\'al es entonces la influencia que la estructura de la red tiene sobre el aprendizaje humano? }%
 %
 \en{A common hypothesis assumes that high connectivities would favor the processes of cultural accumulation and learning. }%
-\es{Una hip\'otesis común supone que altas conectividades favorecen los procesos de acumulaci\'on cultural y aprendizaje. }%
+\es{Una hip\'otesis com\'un supone que altas conectividades favorecen los procesos de acumulaci\'on cultural y aprendizaje. }%
 %
 \en{Recent theoretical and experimental studies have shown, however, that structures with moderate connectivity are better for the processes of cultural evolution. }%
 \es{Estudios te\'oricos y experimentales recientes han mostrado, sin embargo, que estructuras con conecci\'on moderada son las que favorecen los procesos de evoluci\'on cultural. }%
@@ -7641,7 +7640,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 \en{The ``descendence'' of cultural information occurs when a person copies the behavior of other people, either because it is the behavior of the majority (frequency-based strategy) or because the other person is particularly successful or prestigious (payoff-based strategy). }%
 \es{La ``descendencia'' de la informaci\'on cultural se produce cuando una persona copia el comportamiento de otras personas, sea porque es el comportamiento de la mayor\'ia (\emph{frequency-based strategy}) o sea porque es la otra persona es particularmente exitosas o prestigiosas (\emph{payoff-based strategy}). }%
 %
-\es{Toda imitaci\'on incluye algún tipo de modificaci\'on. }%
+\es{Toda imitaci\'on incluye alg\'un tipo de modificaci\'on. }%
 %
 \es{En ese proceso surgen variantes culturales que se propagan m\'as r\'apido, que son m\'as estables que otras, y se mantienen en el tiempo. }%
 
@@ -7776,7 +7775,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 % Parrafo
 
 \en{A common hypothesis assumes that high connectivities would favor the processes of cultural accumulation and learning. }%
-\es{Una hip\'otesis común supone que altas conectividades favorecen los procesos de acumulaci\'on cultural y aprendizaje. }%
+\es{Una hip\'otesis com\'un supone que altas conectividades favorecen los procesos de acumulaci\'on cultural y aprendizaje. }%
 %
 \en{Recent theoretical and experimental studies have shown, however, that structures with moderate connectivity are better for the processes of cultural evolution~\cite{Creanza2017,derex2018-divideAndConquer}. }%
 \es{Estudios te\'oricos y experimentales recientes han mostrado, sin embargo, que estructuras con moderada conexi\'on son las que favorecen los procesos de evoluci\'on cultural~\cite{Creanza2017,derex2018-divideAndConquer}. }%
@@ -7793,7 +7792,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 \es{Poner a prueba estos modelos con datos del mundo real se ha visto obstaculizado debido a que estos procesos involucran redes din\'amicas de gran escala. }%
 %
 \en{Thanks to the Internet revolution and the massive amount of public data, information is no longer a problem in many domains. }%
-\es{Gracias a la revoluci\'on de internet y a la masiva cantidad de datos públicos, la informaci\'on est\'a dejando de ser un problema en muchos dominios. }%
+\es{Gracias a la revoluci\'on de internet y a la masiva cantidad de datos p\'ublicos, la informaci\'on est\'a dejando de ser un problema en muchos dominios. }%
 %
 \en{In particular, online games are one of the most interesting sources of data for analyzing cultural evolution and social learning. }%
 \es{En particular, los juegos en l\'inea resultan una de las m\'as interesantes fuentes de datos para analizar evoluci\'on cultural y aprendizaje social. }%$
@@ -7953,7 +7952,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 % Parrafo
 
 \en{To analyze people's ability over time, most models use the last posterior as the prior of the next event. }%
-\es{Para analizar la habilidad de las personas en el tiempo, la mayor\'ia de los modelos ultiza el último posterior como prior del siguiente evento. }%
+\es{Para analizar la habilidad de las personas en el tiempo, la mayor\'ia de los modelos ultiza el \'ultimo posterior como prior del siguiente evento. }%
 %
 \en{Since skills change over time, it is important to incorporate some uncertainty $\gamma$ after each step, $\N(s_{i_t} | \mu_{i_{t-1}}, \sigma_{i_{t-1}}^2 + \gamma^2 )$. }%
 \es{Debido a que las habilidades cambian en el tiempo, es importante agregar alguna incertidumbre $\gamma$ luego de cada paso, $\N(s_{i_t} | \mu_{i_{t-1}}, \sigma_{i_{t-1}}^2 + \gamma^2 )$. }%
@@ -8064,7 +8063,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 \es{La metodolog\'ia m\'as comunmente utilizada para analizar grafos din\'amicos miden indicadores est\'aticos en ventanas deslizantes. }%
 %
 \en{That is, create small subgraphs composed only of the nodes and edges active in a certain period of time, and analyze them with the existing tools for static graphs. }%
-\es{Esto es, crear peque\~nos subgrafos compuesto únicamente por los nodos y las ejes activas en un cierto per\'iodo de tiempo, y analizarlos con las herramientas existentes para grafos est\'aticos. }%
+\es{Esto es, crear peque\~nos subgrafos compuesto \'unicamente por los nodos y las ejes activas en un cierto per\'iodo de tiempo, y analizarlos con las herramientas existentes para grafos est\'aticos. }%
 %
 \en{A paradigmatic example of this type of work is provided by Kossinets and Watts~\cite{Kossinets2006}. }%
 \es{Un ejemplo paradigm\'atico de este tipo de trabajo lo ofrecen Kossinets y Watts~\cite{Kossinets2006}. }%
@@ -8163,7 +8162,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 \subsubsection{\en{Dynamic analysis of networks}\es{An\'alisis din\'amico de grafos}}
 
 \en{The most commonly used methodology to analyze dynamic graphs consists of splitting the graph into small subgraphs composed only of the nodes and vertices active in a certain period of time, to analyze them with the specific indicators for static graphs. }%
-\es{La metodolog\'ia m\'as comunmente utilizada para analizar grafos din\'amicos consiste en partir el grafo en peque\~nos subgrafos compuesto únicamente por los nodos y v\'ertices activos en un cierto per\'iodo de tiempo, para analizarlos con los indicadores espec\'ificos para grafos est\'aticos. }%
+\es{La metodolog\'ia m\'as comunmente utilizada para analizar grafos din\'amicos consiste en partir el grafo en peque\~nos subgrafos compuesto \'unicamente por los nodos y v\'ertices activos en un cierto per\'iodo de tiempo, para analizarlos con los indicadores espec\'ificos para grafos est\'aticos. }%
 %
 \en{To determine the window size, Kossinets and Watts~\cite{Kossinets2006} study how the behavior of a set of static indicators changes. }%
 \es{Para determinar el tama\~no de la ventana, Kossinets y Watts~\cite{Kossinets2006} estudian c\'omo cambia el comportamiento de un conjunto de indicadores est\'aticos. }%
@@ -8207,7 +8206,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 \es{El largo promedio de los caminos m\'inimos de la componente m\'as grande muestra que, en general, los jugadores se encuentran a cuatro grados de separaci\'on. }%
 %
 \en{Finally, the clustering coefficient shows that the network density (the proportion of triangles) is low for any window size. }%
-\es{Por último, el coeficiente de clustering muestra que la densidad del grafo (la proporci\'on de tr\'iangulos) es baja utilizando para cualquier tama\~no de ventana. }%
+\es{Por \'ultimo, el coeficiente de clustering muestra que la densidad del grafo (la proporci\'on de tr\'iangulos) es baja utilizando para cualquier tama\~no de ventana. }%
 
 % Parrafo
 
@@ -8296,7 +8295,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 	\end{subfigure}
 	\caption{
 	\en{Distribution of mean Load Centrality values, taking into account only the first 50 games of players with at least 150 games played. The dotted lines show the 33rd and 66th percentiles. }%
-	\es{Distribuci\'on de los valores medios de Load Centrality, teniendo en cuenta únicamente las primeras 50 partidas de jugadores con al menos 150 partidas jugadas. Las l\'ineas punteadas muestran los percentiles 33 y 66. }%
+	\es{Distribuci\'on de los valores medios de Load Centrality, teniendo en cuenta \'unicamente las primeras 50 partidas de jugadores con al menos 150 partidas jugadas. Las l\'ineas punteadas muestran los percentiles 33 y 66. }%
 	}
 	\label{Figuras.HistogramasCentralidades}
  \end{figure}
@@ -8305,7 +8304,7 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 \es{La distribuci\'on de las centralidades medias es unimodal en escala logar\'itmica en el eje x. }%
 %
 \en{To study the effect of net position, we classified players into cohorts according to their mean centrality value into three groups. }%
-\es{Para estudiar el efecto de la posici\'on en la red, clasificamos a los jugadores en cohortes según su valor de centralidad medio en tres grupos. }%
+\es{Para estudiar el efecto de la posici\'on en la red, clasificamos a los jugadores en cohortes seg\'un su valor de centralidad medio en tres grupos. }%
 %
 \en{All players whose mean is below the 33rd percentile will be classified as low centrality, between the 33rd and 66th as medium centrality, and above the 66th as high centrality. }%
 \es{Todos los jugadores cuya media est\'e por debajo del percentil 33 ser\'an clasificados como de centralidad baja, los que est\'en entre el 33avo y el 66avo, como de centralidad media, y por encima del 66avo, como de centralidad alta. }%
@@ -8461,10 +8460,10 @@ En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribuci\'on de h
 \es{Por otro lado, las variantes culturales complejas, al ser dif\'iciles de aprender, no se popagar\'ian apropiadamente a trav\'es de contactos ocasionales. }%
 %
 \en{We believe that our results are explained by this last idea. }%
-\es{Creemos que nuestros resultados se alinean con esta última idea. }%
+\es{Creemos que nuestros resultados se alinean con esta \'ultima idea. }%
 %
 \en{However, we do not rule out an eventual common cause responsible for the correlation between learning and centrality, such as the level of engagement. }%
-\es{Sin embargo, no descartamos que exista una eventual causa común que sea la responsable de la correlaci\'on entre el aprendizaje y la centralidad, como podr\'ia ser el nivel de compromiso. }%
+\es{Sin embargo, no descartamos que exista una eventual causa com\'un que sea la responsable de la correlaci\'on entre el aprendizaje y la centralidad, como podr\'ia ser el nivel de compromiso. }%
 %
 \en{Players who have no particular interest in learning, perhaps play against any opponent, which would diversify their network and place them in a more central position. }%
 \es{Los jugadores que no tienen un particular inter\'es por aprender, que tal vez juegan para pasar el rato, contra cualquier oponente, lo que diversificar\'ia su red y los colocar\'ia en una posici\'on m\'as central. }%
@@ -8475,7 +8474,7 @@ En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribuci\'on de h
 % Parrafo
 
 \en{In any case, whether for causal reasons, such as those proposed by previous works, or for correlation reasons, the fact is that the only players who are affected by centrality are those with intermediate initial skill. }%
-\es{Sea por lo motivos causales propuestos por los trabajos previos, o sea por razones de correlaci\'on, lo cierto es que los únicos jugadores que se ven afectados por la centralidad son aquellos que tienen una habilidad inicial media. }%
+\es{Sea por lo motivos causales propuestos por los trabajos previos, o sea por razones de correlaci\'on, lo cierto es que los \'unicos jugadores que se ven afectados por la centralidad son aquellos que tienen una habilidad inicial media. }%
 
 \section{Conclusiones generales}
 
