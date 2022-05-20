@@ -1,0 +1,194 @@
+\documentclass[10pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts} % \mathbb{N} -> conjunto de los n\'umeros naturales  
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{fit}
+\usetikzlibrary{chains}
+\usetikzlibrary{arrows}
+
+% Latent node
+\tikzstyle{latent} = [circle,fill=white,draw=black,inner sep=1pt,
+minimum size=20pt, font=\fontsize{10}{10}\selectfont, node distance=1]
+% Observed node
+\tikzstyle{obs} = [latent,fill=gray!25]
+% Invisible node
+\tikzstyle{invisible} = [latent,minimum size=0pt,color=white, node distance=0]
+% Constant node
+\tikzstyle{const} = [rectangle, inner sep=0pt, node distance=0.1]
+%state
+\tikzstyle{estado} = [latent,minimum size=8pt,node distance=0.4]
+%action
+\tikzstyle{accion} =[latent,circle,minimum size=5pt,fill=black,node distance=0.4]
+
+
+% Factor node
+\tikzstyle{factor} = [rectangle, fill=black,minimum size=10pt, draw=black, inner
+sep=0pt, node distance=1]
+% Deterministic node
+\tikzstyle{det} = [latent, rectangle]
+
+% Plate node
+\tikzstyle{plate} = [draw, rectangle, rounded corners, fit=#1]
+% Invisible wrapper node
+\tikzstyle{wrap} = [inner sep=0pt, fit=#1]
+% Gate
+\tikzstyle{gate} = [draw, rectangle, dashed, fit=#1]
+
+% Caption node
+\tikzstyle{caption} = [font=\footnotesize, node distance=0] %
+\tikzstyle{plate caption} = [caption, node distance=0, inner sep=0pt,
+below left=5pt and 0pt of #1.south east] %
+\tikzstyle{factor caption} = [caption] %
+\tikzstyle{every label} += [caption] %
+
+\tikzset{>={triangle 45}}
+
+%\pgfdeclarelayer{b}
+%\pgfdeclarelayer{f}
+%\pgfsetlayers{b,main,f}
+
+% \factoredge [options] {inputs} {factors} {outputs}
+\newcommand{\factoredge}[4][]{ %
+  % Connect all nodes #2 to all nodes #4 via all factors #3.
+  \foreach \f in {#3} { %
+    \foreach \x in {#2} { %
+      \path (\x) edge[-,#1] (\f) ; %
+      %\draw[-,#1] (\x) edge[-] (\f) ; %
+    } ;
+    \foreach \y in {#4} { %
+      \path (\f) edge[->,#1] (\y) ; %
+      %\draw[->,#1] (\f) -- (\y) ; %
+    } ;
+  } ;
+}
+
+% \edge [options] {inputs} {outputs}
+\newcommand{\edge}[3][]{ %
+  % Connect all nodes #2 to all nodes #3.
+  \foreach \x in {#2} { %
+    \foreach \y in {#3} { %
+      \path (\x) edge [->,#1] (\y) ;%
+      %\draw[->,#1] (\x) -- (\y) ;%
+    } ;
+  } ;
+}
+
+% \factor [options] {name} {caption} {inputs} {outputs}
+\newcommand{\factor}[5][]{ %
+  % Draw the factor node. Use alias to allow empty names.
+  \node[factor, label={[name=#2-caption]#3}, name=#2, #1,
+  alias=#2-alias] {} ; %
+  % Connect all inputs to outputs via this factor
+  \factoredge {#4} {#2-alias} {#5} ; %
+}
+
+% \plate [options] {name} {fitlist} {caption}
+\newcommand{\plate}[4][]{ %
+  \node[wrap=#3] (#2-wrap) {}; %
+  \node[plate caption=#2-wrap] (#2-caption) {#4}; %
+  \node[plate=(#2-wrap)(#2-caption), #1] (#2) {}; %
+}
+
+% \gate [options] {name} {fitlist} {inputs}
+\newcommand{\gate}[4][]{ %
+  \node[gate=#3, name=#2, #1, alias=#2-alias] {}; %
+  \foreach \x in {#4} { %
+    \draw [-*,thick] (\x) -- (#2-alias); %
+  } ;%
+}
+
+% \vgate {name} {fitlist-left} {caption-left} {fitlist-right}
+% {caption-right} {inputs}
+\newcommand{\vgate}[6]{ %
+  % Wrap the left and right parts
+  \node[wrap=#2] (#1-left) {}; %
+  \node[wrap=#4] (#1-right) {}; %
+  % Draw the gate
+  \node[gate=(#1-left)(#1-right)] (#1) {}; %
+  % Add captions
+  \node[caption, below left=of #1.north ] (#1-left-caption)
+  {#3}; %
+  \node[caption, below right=of #1.north ] (#1-right-caption)
+  {#5}; %
+  % Draw middle separation
+  \draw [-, dashed] (#1.north) -- (#1.south); %
+  % Draw inputs
+  \foreach \x in {#6} { %
+    \draw [-*,thick] (\x) -- (#1); %
+  } ;%
+}
+
+% \hgate {name} {fitlist-top} {caption-top} {fitlist-bottom}
+% {caption-bottom} {inputs}
+\newcommand{\hgate}[6]{ %
+  % Wrap the left and right parts
+  \node[wrap=#2] (#1-top) {}; %
+  \node[wrap=#4] (#1-bottom) {}; %
+  % Draw the gate
+  \node[gate=(#1-top)(#1-bottom)] (#1) {}; %
+  % Add captions
+  \node[caption, above right=of #1.west ] (#1-top-caption)
+  {#3}; %
+  \node[caption, below right=of #1.west ] (#1-bottom-caption)
+  {#5}; %
+  % Draw middle separation
+  \draw [-, dashed] (#1.west) -- (#1.east); %
+  % Draw inputs
+  \foreach \x in {#6} { %
+    \draw [-*,thick] (\x) -- (#1); %
+  } ;%
+}
+
+\begin{document}
+ 
+\tikz{ %
+        
+      
+        \node[factor] (fr) {} ;
+        \node[const, above=of fr] (nfr) {$f_r$}; %
+	\node[const, above=of nfr] (dfr) {\large $\mathbb{I}(d_j>0)$}; %
+        \node[latent, left=of fr] (d) {$d_j$} ; %
+        \node[factor, left=of d] (fd) {} ;
+        \node[const, above=of fd] (nfd) {$f_d$}; %
+        \node[const, above=of nfd] (dfd) {\large $\mathbb{I}(d_j=t_{o_j} - t_{o_{j+1}})$}; %
+        %\node[const, below=of fr,yshift=-0.4cm] (j) {\footnotesize with $o:=$ outcome};
+        
+        \node[latent, left=of fd,xshift=-0.9cm] (t) {$t_e$} ; %
+        \node[factor, left=of t] (ft) {} ;
+        \node[const, above=of ft] (nft) {$f_t$}; %
+        \node[const, above=of nft,xshift=0.5cm] (dft) {\large $\mathbb{I}(t_e = \sum_{i \in A_e} p_i)$}; %
+        
+        \node[latent, left=of ft] (p) {$p_i$} ; %
+        \node[factor, left=of p] (fp) {} ;
+        \node[const, above=of fp] (nfp) {$f_p$}; %
+        \node[const, above=of nfp] (dfp) {\large $N(p_i;s_i,\beta^2)$}; %
+ 
+        \node[latent, left=of fp] (s) {$s_i$} ; %
+        \node[factor, left=of s] (fs) {} ;
+        \node[const, above=of fs] (nfs) {$f_s$}; %
+        \node[const, above=of nfs] (dfs) {\large $N(s_i;\mu_i,\sigma^2)$}; %
+         
+        \edge[-] {d} {fr};
+	\edge[-] {fd} {d};
+        \edge[-] {fd} {t};
+        \edge[-] {t} {ft};
+        \edge[-] {ft} {p};
+        \edge[-] {p} {fp};
+        \edge[-] {fp} {s};
+        \edge[-] {s} {fs};
+	
+        \plate {personas} {(p)(s)(fs)(nfs)(dfp)(dfs)} {$i \in A_e$}; %
+        \node[invisible, below=of ft, yshift=-0.6cm] (inv_below_e) {};
+	\node[invisible, above=of ft, yshift=1.1cm] (inv_above_e) {};
+	\plate {equipos} {(personas) (t)(ft)(dft) (inv_above_e) (inv_below_e)} {with $A$ partition of players \hspace{3.5cm}   $0 < e \leq |A|$}; %
+	\node[invisible, below=of fr, yshift=-0.6cm] (inv_below) {};
+	\node[invisible, above=of fr, yshift=1.1cm] (inv_above) {};
+	\plate {comparaciones} {(fd) (dfd) (d) (fr) (dfr) (inv_below) (inv_above)} {with $o:=$ outcome \hspace{1cm} $0 < j < |A|$}
+	
+	
+	%\node[const, right= of r, xshift=1.2cm ,yshift=-2.1cm] (result-dist) {$r_{ab} \sim B\left(\Phi\left(\frac{\mu_a - \mu_b}{\sqrt{\beta_a^2+\beta_b^2}}\right)\right)$} ; %
+	      
+        }
+        
+\end{document}

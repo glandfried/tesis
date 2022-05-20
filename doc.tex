@@ -8904,6 +8904,172 @@ P(2) & := \iint \delta(t_2 = x_1 + x_2) \N(x_1|\mu_1, \sigma_1^2)\N(x_2|\mu_2, \
 \end{equation}
 
 
+\section{Efectos sociales sobre el aprendizaje}
+
+\subsection{Formación de grupos}
+ 
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1\linewidth]{figures/Img_sup/skillProba2Team}
+    \caption{Dos equipos}
+    \label{skillProba2_ind_team}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth} 
+    \includegraphics[width=1\linewidth]{figures/Img_sup/skillProba3all}
+    \caption{Tres equipos}
+    \label{skillProba3all}
+  \end{subfigure}
+  \caption{Probabilidad de ganar en función de la diferencia de habilidad estimada.}
+  \label{skill_proba}
+\end{figure}
+
+%The fitted parameters of the probability of winning of two individual opponents (Fig.~\ref{skillProba2}) and two team opponents (Fig.~\ref{skillProba2Team}) are similar, showing $\beta_1 \approx 0$ and $\beta_2 \approx 0.17$.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.49\linewidth]{figures/Img_sup/skill_hist}
+    \caption{
+    Histograma de habilidades al final (12-07-2009).
+    La distribución empírica no es exactamente una distribuición Normal. Un test Kolmogorov-Smirnov entre el histograma y la distribución Normal con misma media y varianza rechaza la hipótesis nula ($D = 0.0599$ and \emph{p-value}$\approx 0$).}
+    \label{skill_hist}
+\end{figure}
+
+
+\begin{table}
+\centering
+\scriptsize
+\begin{tabular}{cc|ccccccccccc}
+ 
+  \hline
+n & Interval & Size & 9 & 8 & 7 & (b) & 6 & (a)  & 5 & 4 & 3 \\ 
+  \hline
+10 & 1024-$\infty$ & 2997   & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\ 
+9 & 512-1024 & 3141   &  & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\ 
+8 & 256-512 & 5410   &  &  & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\ 
+7 & 128-256 & 8490   &  &  &  & 0 & 0 & 1 & 1 & 1 & 1 \\ 
+(b) & (90-128) & 5624   &  &  &  &  & 0 & 0 & 1 & 1 & 1 \\ 
+6 & 64-128 & 12108   &  &  &  &  &  & 0 & 1 & 1 & 1 \\ 
+(a) & (64-90) & 6484   &  &  &  &  &  &  & 0 & 1 & 1 \\ 
+5 & 32-64 & 16481   &  &  &  &  &  &  &  & 1 & 1 \\ 
+4 & 16-32 & 20746   &  &  &  &  &  &  &  &  & 1 \\ 
+3 & 8-16 & 25319   &  &  &  &  &  &  &  &  &  \\ 
+   \hline
+  
+\end{tabular}
+\caption{
+Wilcoxon rank-sum test entre curvas de aprendizaje de la figura~\ref{learningskill_curve_wilcoxon}.
+El cero $0$ representa una diferencia no significativa, uno $1$ representa una diferencia significativa.
+Las comparaciones se realizan entre subpoblaciones: personas con al menos 8 partidas juegadas y menos de 16; con al menos $16$ y menos de $32$, y así sucesivamente.
+Agregamos dos subpoblaciones para un análisis más detallado. 
+}
+  \label{learningskill_curve_wilcoxon}
+\end{table}
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{cccc}
+  \hline
+  TOB & size & p-value (vs Weak) & p-value (vs Medium) \\ 
+  \hline
+Strong & $103$ & $4.5e^{-17}$ &  $1.1e^{-5}$\\ 
+Medium & $271$ & $6.7e^{-9}$ \\
+Weak & $3845$ &  \\
+\hline
+\end{tabular}
+\caption{Wilcoxon rank-sum test entre las distribuciones de habilidad empírica después de $500$ partidas jugadas entre TOB fuerte, medio y debil.}
+\label{learningskill_team_hasta4team_wilcoxon}
+\end{table}
+
+\begin{figure}
+\centering
+  \begin{subfigure}[b]{0.49\textwidth} 
+  \includegraphics[width=1\linewidth]{figures/Img_sup/learningskill_comprometidos}
+  \caption{}
+  \label{learningskill_comprometidos}  
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth} 
+   \includegraphics[width=1\linewidth]{figures/Img_sup/learningskill_neverTeam}
+   \label{learningskill_neverTeam}
+  \end{subfigure}
+  \caption{Habilidad media, la banda representa 2 errores estandars.
+  (a) Curva de aprendizaje de la población comprometida (i.e. personas que no abandonan ninguna partida), de la población no comprometida (i.e. personas con al menos una partida abandonada). 
+  (b) Curva de aprendizaje de la población de personas sin partidas en equipo jugadas.
+  Como referencia mostramos la curva de aprendizaje de toda la población.}
+\end{figure}
+
+
+
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.49\textwidth} 
+  \includegraphics[width=1\linewidth]{figures/Img_sup/learningskill_pteam45_ployal_hasta4team_longRun}
+  \label{learningskill_pteam45_ployal_hasta4team_longRun}
+   \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth} 
+  \includegraphics[width=1\linewidth]{figures/Img_sup/learningskill_pteam10_ployal_hasta4team_longRun}
+  \label{learningskill_pteam10_ployal_hasta4team_longRun}
+  \end{subfigure}
+  \caption{Learning curve of loyal and casual subclasses for medium (a) and weak (b) team-oriented behavior. For reference, we show the learning curve of the whole population and team-oriented behavior. The average skill is reported. The band represent 2 times the standard error.}
+    \label{learning_curve_ployal_hasta4team_longRun}
+\end{figure}
+
+
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.49\linewidth]{figures/Img_sup/skillModels_loyaltyTeamOriented_parameterGifFitted}
+    \caption{
+    Influencia de las variables loyalty, TOB, y la interacción faithfulness sobre la adquisición de habilidades evaluada bajo misma experiencia individual.
+    Modelo: $\text{skill}_i \sim \beta_1\text{loyalty}_i + \beta_2\text{TOB}_i + \beta_3\text{faithfulness}_i$.
+    Ajustamos un modelo lineal cada $100$ partidas de experiencia, desde $100$ to $1300$.
+    Agregamos una población extra con $50$ partidas de experiencia.
+    La subfigura superior muestra el tamaño de la población para cada punto de experiencia.
+    La subfigura inferior muestra la contribución al aprendizaje cuando la interacción es $\text{faithfulness}=1$ (i.e el effecto del faithfulness).
+    Mostramos la contribución de la interacción hasta $400$ partidas de experiencia cuando la interacción deja de ser significativa.
+    Luego de las $400$ partidas de experiencia reportamos la constribución del modelo sin interacción (i.e. $\text{skill}_i \sim \beta_1\text{loyalty}_i + \beta_2\text{TOB}_i $).}
+    \label{skillModels_loyaltyTeamOriented_parameterGifFitted}
+  \end{figure}
+
+
+\begin{figure}
+\centering
+  \begin{subfigure}[b]{0.49\textwidth} 
+  \includegraphics[width=1\linewidth]{figures/Img_sup/trueskillDimorphismMaxMin_ProbWin}
+  \caption{}
+  \label{fig:trueskillDimorphismMaxMin_ProbWin_a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth} 
+  \includegraphics[width=1\linewidth]{figures/Img_sup/trueskillDimorphismMaxMin_ProbWin_cortes}
+  \caption{}
+  \label{fig:trueskillDimorphismMaxMin_ProbWin_b}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth} 
+  \includegraphics[width=1\linewidth]{figures/Img_sup/trueskillDimorphismMaxMin_ProbWin_test}
+  \caption{}
+  \label{fig:trueskillDimorphismMaxMin_ProbWin_c}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth} 
+  \includegraphics[width=1\linewidth]{figures/Img_sup/trueskillDimorphismMaxMin_ProbWin_imageModels}
+  \caption{}
+  \label{fig:trueskillDimorphismMaxMin_ProbWin_imageModels}
+  \end{subfigure}
+\caption{La probabilidad de ganar de los equipos en función de la diferencia de habailidad entre los miembros del mismo equipo y la diferencia entre equipos.
+  (a) Cada parcela reporta la frecuencia observada de victorias. En cada parcela no vacía hay al menos 32 partidas.
+  (b) Cada curva corresponde con una diferencia de habilidad determinada entre los miembros del equipo, observando la frecuencia de victorias en función de la diferencia de habilidad dentre equipos.
+  (c) Las curvas logísticas que mejor ajustan las curvas empíricas en b.
+  (d) Las curvas ajustadas en c representadas en dos dimensiones (i.e. cada parcela contiene el valor de las curvas ajustadas en c). }
+  \label{fig:trueskillDimorphismMaxMin_ProbWin}
+\end{figure}
+
+
+
 
 \end{document}
 
