@@ -34,5 +34,5 @@ clean:
 	- rm -f *~
 
 draft:
-	pdftk A=doc.pdf cat A1-6 A19 output doc.draft.pdf
+	pdftk doc.pdf cat 6-11 output doc.draft.pdf
 
