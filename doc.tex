@@ -208,6 +208,15 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 \textbf{Resumen}
 \end{center}
 
+% Motivación
+% Agujaro de investigación cientifico ()
+% Agujero de investigaciíon tecnico (TTT, sin hablar de glicko)
+% Falta lo que hice para solucionarlo
+%%
+% Resultados
+
+% Parrafo: Motivación
+
 La cultura es un fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
 %
 Esto sugiere que el contexto social, la estabilidad o volatilidad de los v\'inculos, la estructura de la red de intercambios o el tama\~no de la poblaci\'on pueden afectar directa o indirectamente los procesos de aprendizaje social y acumulaci\'on cultural de los que dependen los individuos.
@@ -215,14 +224,15 @@ Esto sugiere que el contexto social, la estabilidad o volatilidad de los v\'incu
 Poner a prueba estas hip\'otesis se ha visto obstaculizado por falta de datos granulares y longitudinales sobre el comportamiento de todos los individuos de una comunidad en el tiempo y de modelos capaces de ofrecer estimaciones de habilidad que permiten estimar correctamente las curvas de aprendizaje de las personas en el tiempo.
 
 % Parrafo
-
-La masificaci\'on del poder de c\'omputo y la posterior expansi\'on de Internet produjo una explosi\'on en la cantidad y calidad de datos generados por personas en todo el mundo.
 %
-Las comunidades virtuales ofrecen nuevos horizontes en la investigaci\'on cient\'ifica sobre comportamientos sociales pues re\'unen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
+% La masificaci\'on del poder de c\'omputo y la posterior expansi\'on de Internet produjo una explosi\'on en la cantidad y calidad de datos generados por personas en todo el mundo.
+% %
+% Las comunidades virtuales ofrecen nuevos horizontes en la investigaci\'on cient\'ifica sobre comportamientos sociales pues re\'unen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
+% %
+% En esta tesis decidimos estudiar las comunidades que se desarrollan alrededor de los videos juegos, dado que esos escenarios tienen algunas las caracter\'isticas que las hacen especialmente interesantes para estudiar los problemas de aprendizaje.
 %
-En esta tesis decidimos estudiar las comunidades que se desarrollan alrededor de los videos juegos, dado que esos escenarios tienen algunas las caracter\'isticas que las hacen especialmente interesantes para estudiar los problemas de aprendizaje.
 
-% Parrafo
+% Parrafo. Agujero de investiagación (Aprendizaje)
 
 Conocer c\'omo las personas aprendemos es un problema importante para muchos \'ambitos de la vida, como la educaci\'on, el trabajo y el deporte.
 %
@@ -230,28 +240,32 @@ En general las investigaciones se han enfocado principalmente en los factores co
 %
 A pesar de que desde la antropolog\'ia se se\~nala la importancia que los factores sociales tienen sobre el aprendizaje, este enfoque no ha recibido la suficiente atenci\'on.
 %
-Por ello, en esta tesis decidimos estudiar algunas de las preguntas que permanecen abiertas.
+Por ello, en esta tesis decidimos estudiar algunas de las siguientes preguntas.
 %
 ¿C\'omo la formaci\'on de grupo afecta al aprendizaje?
 %
 ¿Cu\'al es el efecto que la posici\'on en la red de intercambios tiene sobre el aprendizaje?
 
-% Parrafo
+\todo{Conectar los parrafos, hablando de habilidad y aprendizaje en ambos. PRegunta computín tambi+en para abrir el siguiente gráfico }
+% Parrafo. Agujero de investiagación (Computin)
 
-Varios modelos estad\'isticos han sido propuestos por la industria del v\'ideo juego para la estimaci\'on de habilidad.
-%
+% Varios modelos estad\'isticos han sido propuestos por la industria del v\'ideo juego para la estimaci\'on de habilidad.
+% %
 Sin embargo, los estimadores m\'as utilizados, como Elo, Glicko y TrueSkill, no son capaces de ofrecer estimaciones de habilidad inicial fiables ni garantizar la comparabilidad entre estimaciones separadas en el tiempo o provenientes de grupos d\'ebilmente relacionados.
 %
 Por este motivo, durante la tesis fue necesario implementar \texttt{TrueSkill Through Time}, un modelo que resuelve estos problemas propagando toda la informaci\'on hist\'orica en una \'unica red bayesiana. 
-%
+
+% Parrafo
+
 Nuestra implementaci\'on es la primera disponible en los lenguajes de programaci\'on con mayor desarrollo cient\'ifico como \texttt{Julia}, \texttt{Python} y \texttt{R}.
 %
 La mejora se hace evidente a partir de las predicciones a priori, que son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados.
 %
 Adem\'as, al realizar una implementaci\'on eficiente, se permite analizar millones de observaciones usando muy poco recursos computacionales.
 
-% Parrafo
+% Parrafo. Lo que hicimos.
 
+\todo{Agregar: Base de datos. Y aplicación para responder preguntas}
 A trav\'es de este modelo y de los datos de comunidades virtuales pudimos estudiar las preguntas planteadas.
 %
 En primer lugar, para responder c\'omo la formaci\'on de grupo afecta al aprendizaje estudiamos una plataforma de juegos de estrategia por turnos en el que las personas pueden participar individualmente o en equipos.
