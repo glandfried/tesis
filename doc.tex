@@ -219,64 +219,69 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 
 La cultura es un fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
 %
-Esto sugiere que el contexto social, la estabilidad o volatilidad de los v\'inculos, la estructura de la red de intercambios o el tama\~no de la poblaci\'on pueden afectar directa o indirectamente los procesos de aprendizaje social y acumulaci\'on cultural de los que dependen los individuos.
+%Esto sugiere que el contexto social, la estabilidad o volatilidad de los v\'inculos,
+Esto sugiere que la estructura de la red de intercambios de información afecta los procesos de evolución y acumulaci\'on cultural de los que dependen los individuos para el aprendizaje social.
 %
-Poner a prueba estas hip\'otesis se ha visto obstaculizado por falta de datos granulares y longitudinales sobre el comportamiento de todos los individuos de una comunidad en el tiempo y de modelos capaces de ofrecer estimaciones de habilidad que permiten estimar correctamente las curvas de aprendizaje de las personas en el tiempo.
-
-% Parrafo
+Las hipótesis que han podido ser evaluadas confirman, por ejemplo, que la capacidad de acumulación cultural es proprocional al tamaño efectivo de la población, y que estructuras con moderada conexión favorecen la evolución cultural.
 %
-% La masificaci\'on del poder de c\'omputo y la posterior expansi\'on de Internet produjo una explosi\'on en la cantidad y calidad de datos generados por personas en todo el mundo.
-% %
-% Las comunidades virtuales ofrecen nuevos horizontes en la investigaci\'on cient\'ifica sobre comportamientos sociales pues re\'unen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
-% %
-% En esta tesis decidimos estudiar las comunidades que se desarrollan alrededor de los videos juegos, dado que esos escenarios tienen algunas las caracter\'isticas que las hacen especialmente interesantes para estudiar los problemas de aprendizaje.
-%
+Sin embargo poner a prueba hipótesis más específicas se ha visto obstaculizado por la falta de modelos capaces de estimar correctamente las curvas de aprendizaje individuales y la falta de datos comportamentales de todos los individuos de una comunidad en el tiempo.
 
 % Parrafo. Agujero de investiagación (Aprendizaje)
 
-Conocer c\'omo las personas aprendemos es un problema importante para muchos \'ambitos de la vida, como la educaci\'on, el trabajo y el deporte.
+Para explorar como la estructura de la red de intercambios afecta el aprnedizaje indivudal decidimos analizar las comunidades que se desarrollan alrededor de los videos juegos debido a que, además de permitirnos estudiar poblaciones suficientemente grandes con un alto grado de detalle, en ellas emergen y se desarrollan estrategias complejas de origen cultural.
 %
-En general las investigaciones se han enfocado principalmente en los factores cognitivos individuales del aprendizaje.
+En este contexto nos propusimos responder las siguientes preguntas.
 %
-A pesar de que desde la antropolog\'ia se se\~nala la importancia que los factores sociales tienen sobre el aprendizaje, este enfoque no ha recibido la suficiente atenci\'on.
+¿Cómo se mide el aprendizaje de un individuo en el tiempo?
 %
-Por ello, en esta tesis decidimos estudiar algunas de las siguientes preguntas.
+¿C\'ual es la realción entre la formaci\'on de equipos y el aprendizaje individual a largo plazo?
 %
-¿C\'omo la formaci\'on de grupo afecta al aprendizaje?
+¿Cómo tener en cuenta la estructura de la red de intercambios puede permitirnos mejorar la estimación de habilidad de las personas en el tiempo?
 %
-¿Cu\'al es el efecto que la posici\'on en la red de intercambios tiene sobre el aprendizaje?
+¿Cu\'al es el efecto que la posici\'on topológica de un individuo en la red de intercambios dinámica tiene sobre el aprendizaje individual?
 
-\todo{Conectar los parrafos, hablando de habilidad y aprendizaje en ambos. PRegunta computín tambi+en para abrir el siguiente gráfico }
 % Parrafo. Agujero de investiagación (Computin)
 
-% Varios modelos estad\'isticos han sido propuestos por la industria del v\'ideo juego para la estimaci\'on de habilidad.
-% %
-Sin embargo, los estimadores m\'as utilizados, como Elo, Glicko y TrueSkill, no son capaces de ofrecer estimaciones de habilidad inicial fiables ni garantizar la comparabilidad entre estimaciones separadas en el tiempo o provenientes de grupos d\'ebilmente relacionados.
+A diferencia de las ciencias formales, las ciencias empíricas deben validar sus proposiciones en sistemas abiertos que por definición contienen siempre algún grado de incertidumbre.
 %
-Por este motivo, durante la tesis fue necesario implementar \texttt{TrueSkill Through Time}, un modelo que resuelve estos problemas propagando toda la informaci\'on hist\'orica en una \'unica red bayesiana. 
+¿Es posible alcanzar ``verdades'' si es inevitable decir `no sé''?
+%
+Sí.
+%
+La aplicación estricta de las reglas de la probabilidad (enfoque bayesiano) garantiza los acuerdos intersubjetivos en contextos de incertidumbre.
+%
+A pesar de que ha mostrado ser la lógica ideal, su adopción se vio históricamente limitada debido al alto costo computacional asociado a la evaluación de todo el espacio de hipótesis de acuerdo a los datos y los modelos causales.
+%
+A pesar de que en las últimas décadas estas limitaciones computacionales han sido superadas en gran medida gracias al desarrollo de métodos eficientes de aproximación, la inercia histórica sigue siendo una limitación importante.
 
 % Parrafo
 
-Nuestra implementaci\'on es la primera disponible en los lenguajes de programaci\'on con mayor desarrollo cient\'ifico como \texttt{Julia}, \texttt{Python} y \texttt{R}.
+% El problema de estimación de habilidad, por ejemplo, a sido solucionado durante el siglo 20 utilizando enfoques clásicos que seleccionan una única hipótesis del espacio.
+% %
+Los estimadores de habilidad utilizados en la industria y la academia, por ejemplo, no aplican estrictamente las reglas de la probabilidad y como consecuencia no logran estimar correctamente las curvas de aprnedizaje individuales en el tiempo.
 %
-La mejora se hace evidente a partir de las predicciones a priori, que son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados.
+Por este motivo, en esta tésis nos vimos obligados a implementar un modelo de estimación de habilidad (TrueSkill Through Time), que resuelve la inferencia apropiadamente, proporciona estimaciones con baja incertidumbre en todo la secuencua, permitiendo estimaciones iniciales de habilidad fiables y asegurando su comparabilidad hist\'orica.
 %
-Adem\'as, al realizar una implementaci\'on eficiente, se permite analizar millones de observaciones usando muy poco recursos computacionales.
+Si bien la teoría había sido publicada hace más una década, nuestra implementaci\'on es la primera que la hace disponible en los lenguajes de programaci\'on con mayor desarrollo cient\'ifico como \texttt{Julia}, \texttt{Python} y \texttt{R}.
+%
+Los métodos de aproximación analítica y los algoritmos de pasaje de mensajes permite resolver la inferencia de forma eficiente utilizando cualquier ordenador de gama baja, incluso en redes causales con millones de nodos y estructuras irregulares.
 
-% Parrafo. Lo que hicimos.
+% Parrafo. Lo que hicimos. (Antropologia)
 
-\todo{Agregar: Base de datos. Y aplicación para responder preguntas}
+%\todo{Agregar: Base de datos. Y aplicación para responder preguntas}
 A trav\'es de este modelo y de los datos de comunidades virtuales pudimos estudiar las preguntas planteadas.
 %
-En primer lugar, para responder c\'omo la formaci\'on de grupo afecta al aprendizaje estudiamos una plataforma de juegos de estrategia por turnos en el que las personas pueden participar individualmente o en equipos.
+%En primer lugar, para responder c\'omo la formaci\'on de grupo afecta al aprendizaje estudiamos una plataforma de juegos de estrategia por turnos en el que las personas pueden participar individualmente o en equipos.
 %
-All\'i pudimos observar que la tendencia a jugar en equipo estaba asociada una mejora de habilidad a largo plazo, pero que quienes jugaban ``lealmente'' con el mismo compa\~nero presentaban una aceleraci\'on adicional en la adquisici\'on de la habilidad a corto plazo.
+En primer lugar pudimos observar, en una plataforma en el que las personas juegan individualmente o en equipos, que la tendencia a jugar en equipo estaba asociada una mejora de habilidad a largo plazo, y que quienes jugaban ``lealmente'' con una misma persona exhibian un mayor velocidad en el la tasa de aprendizaje.
 %
-En segundo lugar, para responder cu\'al es el efecto que la posici\'on en la red de intercambios tiene sobre el aprendizaje estudiamos la evoluci\'on de la topolog\'ia de partidas de una las principales comunidad de Go a lo largo de ocho a\~nos.
+%En segundo lugar, para responder cu\'al es el efecto que la posici\'on en la red de intercambios tiene sobre el aprendizaje estudiamos la evoluci\'on de la topolog\'ia de partidas de una las principales comunidad de Go a lo largo de ocho a\~nos.
 %
-A diferencia de lo que plantea la hip\'otesis directa que supone que altas conectividades favorecen los procesos de aprendizaje, en l\'inea con estudios experimentales previos encontramos que las conectividades moderadas son las que m\'as favorecen los procesos de aprendizaje social.
+En segundo lugar pudimos evaluar, estudiando la dinámica de una red de intercambios de información durante 8 años, que la posición topológica de los individuos tiene un efecto de segundo orden, sólo en los jugadores que están en el medio del proceso de aprendizaje: los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada más que aprender.
+%que  diferencia de lo que plantea la hip\'otesis directa que supone que altas conectividades favorecen los procesos de aprendizaje, en l\'inea con estudios experimentales previos encontramos que las conectividades moderadas son las que m\'as favorecen los procesos de aprendizaje social.
 
 % Parrafo
+
 Durante el transcurso de esta tesis descubrimos el enorme potencial que la inferencia bayesiana y causal tiene para las ciencias sociales y las ciencias de datos en general.
 
 \vspace{0.3cm}
