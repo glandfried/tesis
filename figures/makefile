@@ -4,8 +4,9 @@ agricultura.pdf:
 	pdflatex agricultura.tex
 	pdfcrop --margins '0 0 0 0' agricultura.pdf agricultura.pdf
 
-tasa-temporal2.pdf:
+R:
 	Rscript main.R
+	make -C Img_sup
 	
 pdf/ergodicity_individual_trayectories_longrun.pdf:
 	julia main.jl
