@@ -131,8 +131,8 @@ every picture/.append style={
 
 
 % % % RENOMBRES
-\newcommand{\TITULO}[0]{Evaluaci\'on bayesiana del efecto que los factores sociales tienen sobre el aprendizaje individual}
-\newcommand{\TITULOen}[0]{Bayesian evaluation of the effect that social factors have on individual learning}
+\newcommand{\TITULO}[0]{Análisis bayesiano del aprendizaje individual en comunidades de video juegos}
+\newcommand{\TITULOen}[0]{Bayesian analysis of individual learning in video game communities}
 
 
 
@@ -253,13 +253,6 @@ Durante el transcurso de esta tesis descubrimos el enorme potencial que la infer
 \end{center}
 
 
-
-Humans develop and acquire complex skills because of an special integration of biological, cognitive and social processes.
-%
-Our exceptional cognitive ability to imitate, combined with long periods of juvenile dependency and postreproductive life span, allows humans to learn things from others and transmit innovations through generations.
-
-
-
 \vspace{0.3cm}
 
 \noindent Keywords: Bayesian inference, Skill estimation, Learning, Computer science, Anthropological science, Computational social science 
@@ -271,26 +264,79 @@ Our exceptional cognitive ability to imitate, combined with long periods of juve
 \newpage 
 
 \vfill
-% 
-% {\Large Los pubelos ind\'igenas practican la inferencia bayesiana}
-% 
-% \begin{quotation}
-% El proceso moderno la diferencia radical de proyectos hist\'oricos, de metas de bienestar divergentes, se extingue. La esfera p\'ublica es el mundo del referente universal y del canon de la coherencia. En otras sociedades no existe el problema de la coherencia. El tema de las religiones es un buen ejemplo. Alguien que participa todos los a\~nos del culto al cosmos pacham\'amico tambi\'en puede ser cat\'olico, y en algunos casos raros puede entrar incluso a alguna iglesia evang\'elica. Puede ser budista, no habr\'ia ning\'un problema. La gente del candombl\'e, aqu\'ella con la que me encontr\'e en Recife en mi primer paso en la comprensi\'on de la diferencia, va a la iglesia. Les he dicho: ``Pero ¿c\'omo?, ¿sos cat\'olico?'', y la respuesta fue: ``Cuando deseo pensar que podr\'e ir al cielo ... voy a la iglesia''. No hay un problema de coherencia all\'i. En el hinduismo tampoco lo hay; en mis a\~nos como estudiante en Europa, ve\'ia c\'omo mis colegas frecuentaban el ritual de cualquier iglesia que estuviera disponible. Por el contrario, las religiones monote\'istas son monop\'olicas, son excluyentes. Las religiones no monote\'istas no lo son ni procesan las diferencias buscando compatibilizarlas. Simplemente transitan entre diferentes registros de emocionalidad, de sentimentalidad e inclusive de l\'ogica. No hay una b\'usqueda de coherencia. A esa experiencia Europa no puede acceder: su pura l\'ogica se lo impide. La gran deficiencia de ese otro mundo, el mundo nuestro, que habita nuestros paisajes, donde A y no-A pueden ser verdades al mismo tiempo y no se excluyen, es que carece de una ret\'orica para defender su grandeza. Ese es nuestro papel: formular una ret\'orica para la grandeza que existe en un mundo no coherente , en un mundo m\'ultiple, en un mundo radicahnente plural, mientras la colonial modernidad del occidente es, como he explicado, el mundo del Uno.
-% \end{quotation}
-% 
-% {\Large La sociedad fedual colonial-moderna la combati\'o} \\
-% 
-% {\Large \hfill Rita Segato.}
-% \newpage 
 
 \pagenumbering{arabic}
 
 \chapter{Agradecimientos}
 
+
+
+\chapter{Prefacio}
+
+
 \mainmatter
 
 
+
+
 \chapter{Introducci\'on} \label{ch:evo}
+
+% Parrafo: El objetivo subyacente de esta tesis. Interdisciplina entre la computación y las ciencias sociales.
+
+Esta es una tesis, desde su concepción, ha tenido como objetivo subyacente sacar provecho del trabajo interdisciplinario entre las ciencias de la computación y las ciencias sociales.
+%
+Durante el transcurso del doctorado emergió con fuerza una sub disciplina, conocida como ciencias sociales computacionales~\ref{lazer2009-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
+%
+Bajo esta categoría quedaron enmarcadas una gran variedad de actividades, a veces bastante diferentes entre si, desde aquellas que usan la computación como una herramienta para analizar datos de origen sociales, hasta aquellas que usan problemas de ciencias sociales para motivar desarrollos en la frontera del conocimiento en las ciencias de la computación~\ref{lazer2020-computationalSocialScience}.
+%
+Pero la emergencia de la interdiciplina es un fenómeno más general.
+%
+En la última década, impulsadas por los avances en el área de la inteligencia artificial, la masificación datos y métodos de aprendizaje automático, las ciencias de la computación ha tenido un impacto profundo en casi todas las disciplinas científicas, por no decir todas.
+%
+Una de sus consecuecias más contundentes quizás sea la emergencia e institucionalización de un área científica que ha nacido interdisciplinaria por definción: la ciencia de datos.
+
+% Parrafo: interdisciplina sin datos (el ejemplo de la evolución cultural y la física)
+
+Otras formas de interdisciplina sin datos, basada en modelos matemáticos, es posible y tiene una larga tradición entre las ciencias físicas y las ciencias sociales.
+%
+Si bien estos modelos son casi siempre demasiado simples para hacer predicciones, ayudan a entender procesos que son demasiado complejos para desentrañarse usando únicamente el lenguaje natural.
+%
+De la aplicación de la teoría de juegos al problema de la cooperación se desprendió uno de los cuerpos teóricos más influyentes para explicar como cambia la información cultural en el tiempo.
+%
+En la teorı́a de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory} es capaz de explicar equilibrios evolutivos que se producen entre estrategias en competencia cuando la adaptabilidad de ellas depende de las frecuencias de las otras posibles estrategias en la población.
+%
+Estos trabajos son, esencialmente, modelos formales teóricos que poseen poca o nula corroboración empı́rica, pero que están destinados a comprender las consecuecias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
+
+
+% Parrafo: Datos y pregunta (evolución cultural / aprendizaje)
+
+Para poner a prueba los métodos computacionales desarrolladas en el doctorado decidimos responder preguntas antropológicas sobre el aprendizaje social de los individuos en base de datos de comunidades de juegos en línea.
+
+
+% Parrafo: Inferencia Bayesiana
+
+Si bien el tema de la tesis está motivado por preguntas específicas acerca del del aprendizaje individual en comunidades de video juegos, esta tesis estuvo enfocada principalmente en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
+%
+La ciencia es una institución humana que tiene pretención de verdad, esto es de formular proposiciones que valgan ``universalmente'' para todas las personas.
+%
+Las ciencias formales validan sus proposiciones mediante teoremas derivados de aplicar las reglas internas a un sistema axiomático cerrado.
+%
+Las ciencias empíricas, sin embargo, deben validar sus proposiciones dentro de sistemas abiertos que contienen siempre algún grado de incertidumbre.
+%
+Y el resultado, en términos profesionales y personales, ha sido mejor de lo esperado.
+%
+El razonamiento causal, basado en el enfoque bayesiano de la probabilidad, respondió las preguntas que tenía en antropología: cómo alcanzar acuerdos intersubjetivos en contextos de incertidumbre, fundamento de las verdades en todas las ciencias empíricas.
+%
+Para colmo resultó ser ideal para las ciencias sociales porque permite expresar los modelos causales mediante métodos gráficos intuitivos. Esto es más que una herramienta.
+
+
+
+
+
+%Al inicio de la última revolución científica, entre mediados del 1600 y hasta mediados del 1800, la división de los problemas científicos en la ciencia se en disciplinaria
+
+% La ciencia
+
 
 \section{Evoluci\'on cultural}
 
