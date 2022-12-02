@@ -283,7 +283,7 @@ Durante el transcurso de esta tesis descubrimos el enorme potencial que la infer
 
 % Parrafo: El objetivo subyacente de esta tesis. Interdisciplina entre la computación y las ciencias sociales.
 
-Esta es una tesis, desde su concepción, ha tenido como objetivo subyacente sacar provecho del trabajo interdisciplinario entre las ciencias de la computación y las ciencias sociales.
+Esta es una tesis interdisciplina que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las ciencias de la computación y las ciencias sociales.
 %
 Durante el transcurso del doctorado emergió con fuerza una sub disciplina, conocida como ciencias sociales computacionales~\ref{lazer2009-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
 %
@@ -297,21 +297,69 @@ Una de sus consecuecias más contundentes quizás sea la emergencia e institucio
 
 % Parrafo: interdisciplina sin datos (el ejemplo de la evolución cultural y la física)
 
-Otras formas de interdisciplina sin datos, basada en modelos matemáticos, es posible y tiene una larga tradición entre las ciencias físicas y las ciencias sociales.
-%
-Si bien estos modelos son casi siempre demasiado simples para hacer predicciones, ayudan a entender procesos que son demasiado complejos para desentrañarse usando únicamente el lenguaje natural.
+Otras formas de interdisciplina, basada en modelos matemáticos en vez de en datos, es posible y tiene una larga tradición entre las ciencias físicas y las ciencias sociales.
 %
 De la aplicación de la teoría de juegos al problema de la cooperación se desprendió uno de los cuerpos teóricos más influyentes para explicar como cambia la información cultural en el tiempo.
 %
-En la teoría de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory} es capaz de explicar equilibrios evolutivos que se producen entre estrategias en competencia cuando la adaptabilidad de ellas depende de las frecuencias de las otras posibles estrategias en la población.
+La teoría de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory, boyd1985} ha sido desarrollada para explicar los equilibrios evolutivos que se producen entre estrategias en competencia, en el que la adaptabilidad de cada variante depende de las frecuencias de las otras variantes en la población.
 %
-Estos trabajos son, esencialmente, modelos formales teóricos que poseen poca o nula corroboración empírica, pero que están destinados a comprender las consecuecias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
+Estos trabajos son, esencialmente, modelos formales teóricos destinados a comprender las consecuecias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
+%
+Esta es una estrategia útil para entender procesos que son demasiado complejos para comprenderlos únicamente a través del lenguaje natural, como son las propiedades que emergen en los sistemas a partir de la interacción de sus partes.
+%
+Sin embargo, suelen ser modelos simples que no están destinados a realizar predicciones, y por lo tanto poseen poca o nula corroboración empírica.
+
+% Parrafo: Motivación (evolución cultural / aprendizaje)
+
+En este contexto, diseñamos un plan tesis en ciencias de la computación motivada por preguntas antropológicas basado en datos para poder poner a prueba los métodos computacionales que fueramos a desarrollar durante el transcurso del doctorado.
+%
+El sistema de información cultural, principal objeto de estudio de la antropología, puede ser visto como un sistemas natural de procesamiento de información distribudio.
+%
+Entender cómo cambia la cultura en el tiempo no solo es, y seguirá siendo, uno de los problemas fundamentales de la antropología.
+%
+Es también uno de los problemas que las ciencias de la computación deberán responder en los próximos años.
+%
+A los dos años de empezada la tesis pude verificar, realizando un estudio de antecedentes y consultando personalmente a expertos del área, que todavía no había madurado lo suficiente el área intelgencia artificial donde se produjera la emergencia de un sistema de información distribuido como el cultural a partir de sistemas basada en aprendizaje por refuerzo multiagente.
+%
+En efecto, el enfoque interdisciplinario basado en modelos ya había logrado, al momento desarrollar el plan, introducir respuestas que todavía en la actualidad tienen una gran influencia en la antropología.
+%
+Algunos de esos conceptos, que aparecerán tangencialmente durante las tesis, motivaron el diseño del plan original.
+%
+En un plan orientado a datos, esos conceptos ayudan a guiar la intuición, pero su incorporación en sistema predictivo está lejos de ser obvia.
+
+% Parrafo: Datos. (La dificultad)
+
+Como suele ocurrir con todas las ciencias empíricas, la recolección de datos es quizás una de las actividades que mayor cantidad y calidad de recursos demanda.
+%
+En esa cosa concreta se juega la suerte de las teorías, y con ellas, del trabajo de generaciones de investigadores.
+%
+Como en ocurre en cualquier proceso judicial, llegar a un acuerdo respecto de qué debe ser considerado datos, base empírica donde evaluar las hipótesis, es en sí mismo un problema.
+%
+Esto hace que la recolección de datos, en ciencias empíricas, sea una tarea en si misma.
+%
+En particular la antropología, que se ocupa de estudiar todo los tipos de sociedades en el tiempo y el espacio (desde las sociedades cazadoras-recolectoras actuales hasta del surgimiento hace varios milenios de las primeras sociedades estatales), los proyectos importantes de recolección de datos involucra la coordinación de varios grupos de investigación que trabajan de forma independiente en diferentes sitios alrededor del mundo.
+
+% Parrafo: Video juego.
+
+En nuestro contexto, elegimos una estrategia de recolección de datos basada en la enorme cantidad de información sobre el comportamiento humano disponible en la Internet.
+%
+Y en particular, decidimos enfocamos en las comunidades de video juegos en línea.
+%
+De esta forma, pudimos cumplir dos objetivos.
+%
+Por un lado, evitamos sobrecargar al doctorado en computación de tareas de recolección auxiliares, que pudimos resolver creando sistemas computaciones específicos para extraer, transformar y cargar los información disponible en servidores públicos que alimentaron las bases de datos sobre las que trabajamos a lo largo de esta tesis.
+%
+Y por otro, los video juegos aparecen como un lugar privilegiado para estudiar la pregunta antropológica que nos habíamos propuesto: analizar cómo cambian las estrategias en el tiempo en un escenario social relativamente simplificado, donde las reglas se mantienen estables.
+%
+En el transcurso de la tesis esta pregunta fue mutando hacia estudiar los facotres sociales que afectan el aprendizaje individual esperado por el simple experiencia indivudal.
+%
+Como se discutirá más adelante, los mecanismos fundamentales que gobiernan el cambio cultural, según los modelos matemáticos, están relacionados a estrategias  de aoporendizaje social.
+%
+Imitar a la mayoría, imitar a la persona más perstigiosa, son diferentes estrategias de aprendizaje social, que afectan el comportamiento del sistema de información cultural.
 
 
-% Parrafo: Datos y pregunta (evolución cultural / aprendizaje)
 
-Para poner a prueba los métodos computacionales desarrolladas en el doctorado decidimos responder preguntas antropológicas sobre el aprendizaje social de los individuos en base de datos de comunidades de juegos en línea.
-
+% del aprendizaje individual en comunidades de video juegos, esta tesis estuvo enfocada principalmente en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
 
 % Parrafo: Inferencia Bayesiana
 
@@ -319,24 +367,37 @@ Si bien el tema de la tesis está motivado por preguntas específicas acerca del
 %
 La ciencia es una institución humana que tiene pretención de verdad, esto es de formular proposiciones que valgan ``universalmente'' para todas las personas.
 %
-Las ciencias formales validan sus proposiciones mediante teoremas derivados de aplicar las reglas internas a un sistema axiomático cerrado.
+Las ciencias formales (matemática, lógica, computabilidad) validan sus proposiciones mediante teoremas derivados de aplicar las reglas internas a un sistema axiomático cerrado.
 %
-Las ciencias empíricas, sin embargo, deben validar sus proposiciones dentro de sistemas abiertos que contienen siempre algún grado de incertidumbre.
+Las ciencias empíricas (desde la Física hasta las Ciencias Sociales) deben validar sus proposiciones dentro de sistemas abiertos que contienen siempre algún grado de incertidumbre.
 %
+¿Es posible alcanzar verdades si es imposible eliminar completamente la incerteza?
+%
+Sí.
+%
+A diferencia de los enfoques que seleccionan una única hipótesis, el enfoque bayesiano, mediante la aplicación estricta de las reglas de la probabilidad, evalúa todas y cada una de las hipótesis de acuerdo a la evidencia empírica y formal (datos y modelos causales), garantiza los acuerdos intersubjetivos en contextos de incertidumbre.
+%
+Creer en hipótesis mutuamente contradictorias (A y no A) permite que la sorpresa, única fuente de información, actúe como filtro de las creencias previas.
+
+% Parrafo: Objetivo
+
 Y el resultado, en términos profesionales y personales, ha sido mejor de lo esperado.
 %
-El razonamiento causal, basado en el enfoque bayesiano de la probabilidad, respondió las preguntas que tenía en antropología: cómo alcanzar acuerdos intersubjetivos en contextos de incertidumbre, fundamento de las verdades en todas las ciencias empíricas.
+Si bien hubieron algunas partes de la tesis que por algún motivo, sea técnico o teórico, no se pudo evaluar todo el espacio de hipótesis, hemos hecho un esfuerzo general por aplicación estricta de la probabilidad es lo ideal en contextos de incertidumbre,
 %
-Para colmo resultó ser ideal para las ciencias sociales porque permite expresar los modelos causales mediante métodos gráficos intuitivos. Esto es más que una herramienta.
+En definitiva, el razonamiento causal, basado en el enfoque bayesiano de la probabilidad, respondió las preguntas que tenía en antropología: cómo validar verdades en las ciencias empíricas.
+%
+Y para colmo resultó ser ideal para las ciencias sociales porque permite expresar los modelos causales mediante métodos gráficos intuitivos.
+%
+La respuesta que me llevo de esta doctorado no sólo es epistemológica.
+%
+Es también un respuesta metodológica concreta, cómo hacerlo.
+%
+Pero es más que una herramienta que me la llevo para el resto de mi vida profesional y personal.
 
+% Parrafo
 
-
-
-
-%Al inicio de la última revolución científica, entre mediados del 1600 y hasta mediados del 1800, la división de los problemas científicos en la ciencia se en disciplinaria
-
-% La ciencia
-
+Esta tesis está dividida en ....
 
 \section{Evoluci\'on cultural}
 
