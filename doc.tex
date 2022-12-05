@@ -202,36 +202,29 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 %%%%%%%%%%%%% FIN CARATULA
 
 \begin{center}
-\Large \TITULO \normalsize
-\end{center}
+\Large \TITULO \normalsize \\[0.5cm]
 
-\hspace{-0.4cm}
-
-\begin{center}
 \textbf{Resumen}
 \end{center}
 
 Esta es una tesis en ciencias de la computación motivada por una pregunta antropológica.
-Entender las propiedades de los sistemas de información cultural es uno de los problemas fundamentales de la antropología, relevante para las ciencias de la computación y la inteligencia artificial multiagente: la sociedad puede ser vista como un sistema de procesamiento distribuido de información, y la cultura como el emergente del intercambio de información.
-Hasta ahora ha sido a través de modelos matemáticos que se ha logrado proponer respuestas con influencia para la antropología.
-De allí surguieron, por ejemplo, las hipótesis de que la capacidad de acumulaci\'on cultural es proporcional al tamaño efectivo de la poblaci\'on, y que estructuras con moderada conexi\'on favorecen la innovación cultural.
+Entender las propiedades de los sistemas de información cultural es uno de los problemas fundamentales de la antropología, relevante para las ciencias de la computación y la inteligencia artificial multiagente: la sociedad puede ser vista como un sistema de procesamiento distribuido de información, y la cultura como el emergente de su intercambio de información.
+Hasta ahora, las respuestas con mayor influencia para la antropología se han propuesto a través de modelos matemáticos simples.
+De allí surgieron, por ejemplo, las hipótesis de que la capacidad de acumulación cultural es proporcional al tamaño efectivo de la población, y que estructuras con moderada conexión favorecen la innovación cultural.
 Si bien los resultados de estos modelos sirven para ganar intuición de procesos complejos, sus resultados son analogías que no están destinadas a realizar predicciones y por lo tanto poseen una débil corroboración empírica.
 
 % Parrafo
 
 En la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas, produciendo la emergencia de la ciencia de datos.
 Esta tesis se enmarca en esta nueva forma de interdisciplina, que pone a prueba los métodos computacionales en base al desempeño que tienen sobre datos reales.
-Para ello, decidimos centrarnos en las comunidades de video juegos en línea debido a que ellas son un lugar privilegiado para estudiar cómo cambian las estrategias en el tiempo.
-En el transcurso de la tesis, esta pregunta fue mutando hasta enfocarse en el estudio de los facotres sociales que afectan el aprendizaje individual.
+Para ello, decidimos centrarnos en las comunidades de videojuegos en línea debido a que ellas son un lugar privilegiado para estudiar cómo cambian las estrategias en el tiempo.
+En el transcurso de la tesis, esta pregunta fue mutando hasta enfocarse en el estudio de los factores sociales que afectan el aprendizaje individual.
 En este contexto nos propusimos responder las siguientes preguntas.
 ¿Cuál es la mejor forma de medir el aprendizaje de un individuo en el tiempo?
-¿Cuál es la relaci\'on entre la formaci\'on de equipos y el aprendizaje individual a largo plazo?
-%¿C\'omo tener en cuenta la estructura de la red de intercambios puede impactar en la mejora de la estimaci\'on de habilidad de las personas en el tiempo?
+¿Cuál es la relaci\'on entre la formación de equipos y el aprendizaje individual a largo plazo?
 ¿Cu\'al es el efecto que la posici\'on topol\'ogica de un individuo en la red de intercambios dinámica tiene sobre el aprendizaje individual?
 
 % Parrafo
-
-
 
 Si bien el aprendizaje automático funciona muy bien en ciertos contextos, puede colapsar si los datos se desvían un poco de lo que el modelo está acostumbrado.
 Las ciencias, sin embargo, buscan verdades con validez universal.
@@ -242,28 +235,64 @@ Si bien hubieron algunas partes de la tesis que no pudimos evaluar todo el espac
 
 % Parrafo
 
-%A trav\'es de este modelo y de los datos de comunidades virtuales pudimos estudiar las preguntas planteadas.
-En el primer trabajo usamos el modelo bayesiano de habilidad más utilizado en la industria del video juego para estudiar un juego en el que las personas podían jugar individualmente o en equipos.
-Encontramos que jugar en equipo estaba asociada un mayor aprendendizaje a largo plazo, y que las personas que mentenían su compañero de equipo, exhib\'ian mayor velocidad en el aprendizaje.
-En un segundo trabajo, replicamos el estimador de habilidad y descubrimos que todos los estimadores disponibles no obtenían estimaciones iniciales fiables ni garantizaban comparabilidad en el tiempo debido a una incorrecta propagación de la información histórica, en una sola dirección, del pasado hacia el futuro.
-En este contexto, implementamos un modelo que, propagando correctamente la información histórica, proporciona estimaciones con baja incertidumbre en todo momento, asegurando la comparabilidad hist\'orica, el cual publicamos en los lenguajes de programación Julia, Python y R.
-Con este algoritmo, en un tercer trabajo estudiamos la evolución de una red partidas de Go durante un periodo de ocho años y encontramos que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje, s\'olo en los jugadores que están en el medio del proceso de aprendizaje, ausente en los jugadores novatos y jugadores expertos.
+En el primer trabajo usamos el modelo bayesiano de habilidad más utilizado en la industria del video juego para estudiar una comunidad en el que las personas podían jugar individualmente o en equipos.
+Allí encontramos que jugar en equipo está asociado a mayor aprendizaje a largo plazo, y que mantener un equipo estable está asociado a mayor velocidad de aprendizaje.
+En el segundo trabajo, replicamos el estimador de habilidad y descubrimos que ninguno de los modelos disponibles en aquel momento podía obtener estimaciones iniciales fiables ni garantizaban comparabilidad en el tiempo debido a una incorrecta propagación de la información histórica, solo en la dirección del pasado hacia el futuro.
+En este contexto, implementamos un modelo (disponible hoy en Julia, Python y R) que al propagar correctamente la información histórica es capaz de proporcionar estimaciones con baja incertidumbre en todo momento, asegurando la comparabilidad histórica.
+En un tercer trabajo, estudiamos la evolución de una red de partidas en el juego de Go durante un periodo de ocho años y encontramos, con el nuevo estimador, que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje en los personas que están en el medio del proceso de aprendizaje, ausente entre novatas y expertas.
 
 \vspace{0.1cm}
 
-\noindent \textbf{Palabras claves}: Ciencias Sociales Computacionales, Inferencia bayesiana, Cultura, Habilidad, Aprendizaje, Videojuegos
+\noindent \textbf{Palabras claves}: Ciencias Sociales Computacionales, Inferencia bayesiana, Cultura, Habilidad, Aprendizaje, Comunidades virtuales, Videojuegos
 
 
 \newpage
 
+
 \begin{center}
+\Large \TITULOen \normalsize \\[0.5cm]
+
 \textbf{Abstract}
 \end{center}
 
+This is a thesis in computer science motivated by an anthropological question.
+Understanding the properties of cultural information systems is one of the fundamental problems of anthropology, relevant to computer science and multi-agent artificial intelligence: society can be seen as a distributed information processing system, and culture as the emergent of their information exchange.
+So far, the most influential answers for anthropology have been proposed through simple mathematical models.
+This has given rise, for example, to the hypotheses that the capacity for cultural accumulation is proportional to the effective population size, and that moderately connected structures favor cultural innovation.
+Although the results of these models serve to gain intuition of complex processes, their results are analogies that are not intended to make predictions and therefore have weak empirical corroboration.
 
-\vspace{0.3cm}
+% Parrafo
 
-\noindent Keywords: Bayesian inference, Skill estimation, Learning, Computer science, Anthropological science, Computational social science
+In the last decade, computer science has had a profound impact on almost all scientific disciplines, producing the emergence of data science.
+This thesis is framed within this new form of interdiscipline, which tests computational methods based on their performance on real data.
+To this end, we decided to focus on online video game communities because they are a privileged place to study how strategies change over time.
+In the course of the thesis, this question gradually evolved into the study of the social factors that affect individual learning.
+In this context we set out to answer the following questions.
+What is the best way to measure an individual's learning over time?
+What is the relationship between team formation and individual learning over time?
+What is the effect that an individual's topological position in the dynamic exchange network has on individual learning?
+
+% Parrafo
+
+While machine learning works very well in certain contexts, it can crash if the data deviates a bit from what the model is accustomed to.
+The sciences, however, seek truths with universal validity.
+To avoid lying in contexts of uncertainty, we must not assert more than we know, without saying less.
+Therefore, the strict application of the rules of probability (Bayesian approach) is the method by which truths are grounded in contexts of uncertainty.
+When evaluating mutually contradictory hypotheses (A and not A) surprise, the only source of information, acts as the only filter of prior beliefs, allowing not to say more than what is known by incorporating all available information (maximizes uncertainty compatible with the data).
+Although there were some parts of the thesis that we could not evaluate the entire hypothesis space, we made an effort to conform to this ideal.
+
+% Parrafo
+
+In the first paper we used the Bayesian skill model most commonly used in the video game industry to study a community in which people could play individually or in teams.
+There we find that playing in teams is associated with higher long-term learning, and that maintaining a stable team is associated with higher learning speed.
+In the second paper, we replicated the skill estimator and we found that none of the models available at that time could obtain reliable initial estimates nor did they guarantee comparability over time due to an incorrect propagation of historical information, only in the direction from the past to the future.
+In this context, we implemented a model (available today in Julia, Python and R) that by correctly propagating historical information is able to provide estimates with low uncertainty at all times, ensuring historical comparability.
+In a third paper, we study the evolution of a network of games in the game of Go over a period of eight years and we find, thanks to the new estimator, that the position of individuals in the network has a second-order effect on learning for individuals in the middle of the learning process, absent among novices and experts.
+
+
+\vspace{0.1cm}
+
+\noindent \textbf{Keywords}: Computational social science, Bayesian inference, Culture, Skill, Learning, Virtual communities, Video games
 
 \normalsize
 
