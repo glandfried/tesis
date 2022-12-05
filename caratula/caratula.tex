@@ -1,0 +1,298 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{physics}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\usepackage{fullpage}
+\usepackage{cite}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float} % para que los gr\'aficos se queden en su lugar con [H]
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage{amsmath} %para escribir funci\'on partida , matrices
+\usepackage{amsthm} %para numerar definciones y teoremas
+\usepackage[hidelinks]{hyperref} % para inlcuir links dentro del texto
+\usepackage{tabu}
+\usepackage{comment}
+\usepackage{amsfonts} % \mathbb{N} -> conjunto de los n\'umeros naturales
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage[colorinlistoftodos, textsize=small]{todonotes} % Para poner notas en el medio del texto!! No olvidar hacer.
+\usepackage{framed} % Para encuadrar texto. \begin{framed}
+\usepackage{csquotes} % Para citar texto \begin{displayquote}
+\usepackage{epigraph} % Epigrafe  \epigraph{texto}{\textit{autor}}
+\usepackage{authblk}
+\usepackage{titlesec}
+\usepackage{varioref}
+\usepackage{bm} % \bm{\alpha} bold greek symbol
+\usepackage{pdfpages} % \includepdf
+\usepackage[makeroom]{cancel} % \cancel{} \bcancel{} etc
+\usepackage{wrapfig} % \begin{wrapfigure} Pone figura al lado del texto
+\usepackage{mdframed}
+\usepackage{algorithm}
+%\usepackage{quoting}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{paracol}
+\usepackage[binary-units]{siunitx} % \num{} \SI{}
+\usepackage{multirow}
+
+\tikzset{
+every picture/.append style={
+  execute at begin picture={\deactivatequoting},
+  execute at end picture={\activatequoting}
+  }
+}
+
+%%%%%% Para no numerar los prefacios, y todo lo que viene antes del capitulo 1. Coimenzar con \frontmatter y volver a abrir con \mainmatter
+\makeatletter
+\renewcommand{\frontmatter}{\cleardoublepage\@mainmatterfalse}
+\renewcommand{\mainmatter}{\cleardoublepage\@mainmattertrue}
+\makeatother
+%%%%%%
+
+\definecolor{julia}{rgb}{1, 0.5, 1}
+\definecolor{python}{rgb}{1, 1, 0.5}
+\definecolor{r}{rgb}{0.70, 0.80, 1}
+\definecolor{all}{rgb}{0.85, 0.85, 0.85}
+
+
+\usepackage{listings}
+\lstset{
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=true,
+  columns=flexible,
+  basicstyle={\footnotesize\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  showlines=true
+}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black!50!black},
+    citecolor={black!50!black},
+    urlcolor={black!80!black}
+}
+
+\newcommand{\T}{Traducir. }
+\newcommand{\vm}[1]{\mathbf{#1}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\citel}[1]{\cite{#1}\label{#1}}
+\newcommand\hfrac[2]{\genfrac{}{}{0pt}{}{#1}{#2}} %\frac{}{} sin la linea del medio
+
+\newtheorem{midef}{Definition}
+\newtheorem{miteo}{Theorem}
+\newtheorem{mipropo}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\newtheorem{conclution}{\en{Conclution}\es{Conclusi\'on}}%[section]
+\newtheorem{objective}{\en{Objective}\es{Objetivo}}%[section]
+
+
+%http://latexcolor.com/
+\definecolor{azul}{rgb}{0.36, 0.54, 0.66}
+\definecolor{rojo}{rgb}{0.7, 0.2, 0.116}
+\definecolor{rojopiso}{rgb}{0.8, 0.25, 0.17}
+\definecolor{verdeingles}{rgb}{0.12, 0.5, 0.17}
+\definecolor{ubuntu}{rgb}{0.44, 0.16, 0.39}
+\definecolor{debian}{rgb}{0.84, 0.04, 0.33}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newif\ifen
+\newif\ifes
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\es}[1]{\ifes#1\fi}
+\newcommand{\En}[1]{\ifen#1\fi}
+\newcommand{\Es}[1]{\ifes#1\fi}
+
+\estrue
+
+
+\newcommand{\E}{\en{S}\es{E}}
+\newcommand{\A}{\en{E}\es{A}}
+\newcommand{\Ee}{\en{s}\es{e}}
+\newcommand{\Aa}{\en{e}\es{a}}
+
+
+
+% % % RENOMBRES
+\newcommand{\TITULO}[0]{Análisis bayesiano del aprendizaje en comunidades de video juegos}
+\newcommand{\TITULOen}[0]{Bayesian analysis of learning in video game communities}
+
+
+
+%\title{\huge Creencias adaptativas, \\ cultura y aprendizaje social}
+%%Inferencia bayesiana para el estudio del aprendizaje social en comunidades virtuales
+\author{Gustavo Landfried}
+
+
+\begin{document}
+
+\deactivatequoting % Por incompatibilidad entre Babel spanish con > y <
+
+\frontmatter
+\pagenumbering{roman}
+
+\begin{center}
+
+\includegraphics[scale=.8]{../../logofcen.pdf}
+
+\medskip
+UNIVERSIDAD DE BUENOS AIRES
+
+Facultad de Ciencias Exactas y Naturales
+
+Departamento de Computaci\'on
+
+
+\vspace{3cm}
+
+\textbf{\LARGE \TITULO}
+% \textsc{}
+
+\vspace{1cm}
+
+
+
+Tesis presentada para optar al t\'itulo de Doctor de la \\
+Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
+
+\vspace{3cm}
+
+\textbf{Lic. Gustavo Andr\'es Landfried}
+
+\end{center}
+
+\vspace{2.5cm}
+
+\noindent Director de tesis: Dr. Esteban Mocskos
+
+\noindent Codirector de tesis: Dr. Diego Fern\'andez Slezak
+
+\noindent Consejero de estudios: Dr. Hern\'an Melgratti \\
+
+\noindent Lugar de trabajo: Departamento de Computaci\'on, Facultad de Ciencias Exactas y Naturales
+
+\vspace{0.5cm}
+
+\noindent Buenos Aires, Abril de 2022\\
+
+\noindent Fecha de defensa: \\%13 de diciembre de 2018\\
+
+\vspace{0.5cm}
+
+\hspace*{0pt}\hfill Firma \hspace{2cm}
+
+\newpage
+%%%%%%%%%%%%% FIN CARATULA
+
+\begin{center}
+\Large \TITULO \normalsize \\[0.5cm]
+
+\textbf{Resumen}
+\end{center}
+
+Esta es una tesis en ciencias de la computación motivada por una pregunta antropológica.
+Entender las propiedades de los sistemas de información cultural es uno de los problemas fundamentales de la antropología, relevante para las ciencias de la computación y la inteligencia artificial multiagente: la sociedad puede ser vista como un sistema de procesamiento distribuido de información, y la cultura como el emergente de su intercambio de información.
+Hasta ahora, las respuestas con mayor influencia para la antropología se han propuesto a través de modelos matemáticos simples.
+De allí surgieron, por ejemplo, las hipótesis de que la capacidad de acumulación cultural es proporcional al tamaño efectivo de la población, y que estructuras con moderada conexión favorecen la innovación cultural.
+Si bien los resultados de estos modelos sirven para ganar intuición de procesos complejos, sus resultados son analogías que no están destinadas a realizar predicciones y por lo tanto poseen una débil corroboración empírica.
+
+% Parrafo
+
+En la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas, produciendo la emergencia de la ciencia de datos.
+Esta tesis se enmarca en esta nueva forma de interdisciplina, que pone a prueba los métodos computacionales en base al desempeño que tienen sobre datos reales.
+Para ello, decidimos centrarnos en las comunidades de videojuegos en línea debido a que ellas son un lugar privilegiado para estudiar cómo cambian las estrategias en el tiempo.
+En el transcurso de la tesis, esta pregunta fue mutando hasta enfocarse en el estudio de los factores sociales que afectan el aprendizaje individual.
+En este contexto nos propusimos responder las siguientes preguntas.
+¿Cuál es la mejor forma de medir el aprendizaje de un individuo en el tiempo?
+¿Cuál es la relaci\'on entre la formación de equipos y el aprendizaje individual a largo plazo?
+¿Cu\'al es el efecto que la posici\'on topol\'ogica de un individuo en la red de intercambios dinámica tiene sobre el aprendizaje individual?
+
+% Parrafo
+
+Si bien el aprendizaje automático funciona muy bien en ciertos contextos, puede colapsar si los datos se desvían un poco de lo que el modelo está acostumbrado.
+Las ciencias, sin embargo, buscan verdades con validez universal.
+Para no mentir en contextos de incertidumbre debemos no afirmar más de lo que sabemos, sin decir menos.
+Por ello, la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano) es el método con el que se fundamentan las verdades en contextos de incertidumbre.
+Al evaluar hipótesis mutuamente contradictorias (A y no A) la sorpresa, única fuente de información, actúa como el único filtro de las creencias previas, permitiendo no decir más de lo que se sabe incorporando toda la información disponible (maximiza incertidumbre compatible con los datos).
+Si bien hubieron algunas partes de la tesis que no pudimos evaluar todo el espacio de hipótesis, hicimos un esfuerzo por ajustarnos a este ideal.
+
+% Parrafo
+
+En el primer trabajo usamos el modelo bayesiano de habilidad más utilizado en la industria del video juego para estudiar una comunidad en el que las personas podían jugar individualmente o en equipos.
+Allí encontramos que jugar en equipo está asociado a mayor aprendizaje a largo plazo, y que mantener un equipo estable está asociado a mayor velocidad de aprendizaje.
+En el segundo trabajo, replicamos el estimador de habilidad y descubrimos que ninguno de los modelos disponibles en aquel momento podía obtener estimaciones iniciales fiables ni garantizaban comparabilidad en el tiempo debido a una incorrecta propagación de la información histórica, solo en la dirección del pasado hacia el futuro.
+En este contexto, implementamos un modelo (disponible hoy en Julia, Python y R) que al propagar correctamente la información histórica es capaz de proporcionar estimaciones con baja incertidumbre en todo momento, asegurando la comparabilidad histórica.
+En un tercer trabajo, estudiamos la evolución de una red de partidas en el juego de Go durante un periodo de ocho años y encontramos, con el nuevo estimador, que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje en los personas que están en el medio del proceso de aprendizaje, ausente entre novatas y expertas.
+
+\vspace{0.1cm}
+
+\noindent \textbf{Palabras claves}: Ciencias Sociales Computacionales, Inferencia bayesiana, Cultura, Habilidad, Aprendizaje, Comunidades virtuales, Videojuegos
+
+
+\newpage
+
+
+\begin{center}
+\Large \TITULOen \normalsize \\[0.5cm]
+
+\textbf{Abstract}
+\end{center}
+
+This is a thesis in computer science motivated by an anthropological question.
+Understanding the properties of cultural information systems is one of the fundamental problems of anthropology, relevant to computer science and multi-agent artificial intelligence: society can be seen as a distributed information processing system, and culture as the emergent of their information exchange.
+So far, the most influential answers for anthropology have been proposed through simple mathematical models.
+This has given rise, for example, to the hypotheses that the capacity for cultural accumulation is proportional to the effective population size, and that moderately connected structures favor cultural innovation.
+Although the results of these models serve to gain intuition of complex processes, their results are analogies that are not intended to make predictions and therefore have weak empirical corroboration.
+
+% Parrafo
+
+In the last decade, computer science has had a profound impact on almost all scientific disciplines, producing the emergence of data science.
+This thesis is framed within this new form of interdiscipline, which tests computational methods based on their performance on real data.
+To this end, we decided to focus on online video game communities because they are a privileged place to study how strategies change over time.
+In the course of the thesis, this question gradually evolved into the study of the social factors that affect individual learning.
+In this context we set out to answer the following questions.
+What is the best way to measure an individual's learning over time?
+What is the relationship between team formation and individual learning over time?
+What is the effect that an individual's topological position in the dynamic exchange network has on individual learning?
+
+% Parrafo
+
+While machine learning works very well in certain contexts, it can crash if the data deviates a bit from what the model is accustomed to.
+The sciences, however, seek truths with universal validity.
+To avoid lying in contexts of uncertainty, we must not assert more than we know, without saying less.
+Therefore, the strict application of the rules of probability (Bayesian approach) is the method by which truths are grounded in contexts of uncertainty.
+When evaluating mutually contradictory hypotheses (A and not A) surprise, the only source of information, acts as the only filter of prior beliefs, allowing not to say more than what is known by incorporating all available information (maximizes uncertainty compatible with the data).
+Although there were some parts of the thesis that we could not evaluate the entire hypothesis space, we made an effort to conform to this ideal.
+
+% Parrafo
+
+In the first paper we used the Bayesian skill model most commonly used in the video game industry to study a community in which people could play individually or in teams.
+There we find that playing in teams is associated with higher long-term learning, and that maintaining a stable team is associated with higher learning speed.
+In the second paper, we replicated the skill estimator and we found that none of the models available at that time could obtain reliable initial estimates nor did they guarantee comparability over time due to an incorrect propagation of historical information, only in the direction from the past to the future.
+In this context, we implemented a model (available today in Julia, Python and R) that by correctly propagating historical information is able to provide estimates with low uncertainty at all times, ensuring historical comparability.
+In a third paper, we study the evolution of a network of games in the game of Go over a period of eight years and we find, thanks to the new estimator, that the position of individuals in the network has a second-order effect on learning for individuals in the middle of the learning process, absent among novices and experts.
+
+
+\vspace{0.1cm}
+
+\noindent \textbf{Keywords}: Computational social science, Bayesian inference, Culture, Skill, Learning, Virtual communities, Video games
+
+\end{document}
+
+
