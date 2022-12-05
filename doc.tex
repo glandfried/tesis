@@ -205,25 +205,23 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 \Large \TITULO \normalsize
 \end{center}
 
-\hspace{2cm}
+\hspace{-0.4cm}
 
 \begin{center}
 \textbf{Resumen}
 \end{center}
 
-La sociedades pueden ser vistas como sistemas naturales de procesamiento distribuido de información, y la cultura un fen\'omeno poblacional que emerge como consecuencia del intercambio entre sus individuos.
-Entender cómo cambia la cultura en el tiempo es uno de los problemas fundamentales de la antropología que las ciencias de la computación deberá responder en los próximos años, un área que no ha madurado todavía.
-En efecto, a través de los modelos matemáticos se ha logrado introducir respuestas que todavı́a tienen una gran influencia en la antropologı́a.
-Por ejemplo, hoy en día se considera ampliamente aceptada la hipótesis de que la capacidad de acumulaci\'on cultural es proporcional al tamaño efectivo de la poblaci\'on, y que estructuras con moderada conexi\'on favorecen la innovación cultural.
-Si bien estos modelos sirven para ganar intuición de procesos complejos, sus resultados no están destinados a realizar predicciones, y por lo tanto poseen una débil corroboración empı́rica, basada principalmente en analogías.
+Esta es una tesis en ciencias de la computación motivada por una pregunta antropológica.
+Entender las propiedades de los sistemas de información cultural es uno de los problemas fundamentales de la antropología, relevante para las ciencias de la computación y la inteligencia artificial multiagente: la sociedad puede ser vista como un sistema de procesamiento distribuido de información, y la cultura como el emergente del intercambio de información.
+Hasta ahora ha sido a través de modelos matemáticos que se ha logrado proponer respuestas con influencia para la antropología.
+De allí surguieron, por ejemplo, las hipótesis de que la capacidad de acumulaci\'on cultural es proporcional al tamaño efectivo de la poblaci\'on, y que estructuras con moderada conexi\'on favorecen la innovación cultural.
+Si bien los resultados de estos modelos sirven para ganar intuición de procesos complejos, sus resultados son analogías que no están destinadas a realizar predicciones y por lo tanto poseen una débil corroboración empírica.
 
 % Parrafo
 
-En la última década, las ciencias de la computación ha tenido un impacto profundo en casi todas las disciplinas cientı́ficas, produciendo la emergencia de la ciencia de datos, una disciplina que nace interdisciplinaria por definción.
+En la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas, produciendo la emergencia de la ciencia de datos.
 Esta tesis se enmarca en esta nueva forma de interdisciplina, que pone a prueba los métodos computacionales en base al desempeño que tienen sobre datos reales.
-% Sin embargo, poner a prueba hip\'otesis más espec\'ificas se ha visto obstaculizado por la falta de modelos capaces de estimar correctamente las curvas de aprendizaje individuales y la falta de datos de comportamiento de todos los individuos de una comunidad en el tiempo.
-En el contexto de una tesis en ciencias de la computación que está motivada por una pregunta antropológica, decidimos estudiar el comportamiento de comunidades virtuales.
-En particular, los video juegos en línea aparecen como un lugar privilegiado para estudiar cómo cambian las estrategias en el tiempo, donde las reglas se mantienen estables.
+Para ello, decidimos centrarnos en las comunidades de video juegos en línea debido a que ellas son un lugar privilegiado para estudiar cómo cambian las estrategias en el tiempo.
 En el transcurso de la tesis, esta pregunta fue mutando hasta enfocarse en el estudio de los facotres sociales que afectan el aprendizaje individual.
 En este contexto nos propusimos responder las siguientes preguntas.
 ¿Cuál es la mejor forma de medir el aprendizaje de un individuo en el tiempo?
@@ -233,12 +231,14 @@ En este contexto nos propusimos responder las siguientes preguntas.
 
 % Parrafo
 
-Para hacer un análisis lo más correcto posible de la evidencia empı́rica, en esta tesis nos trabajamos principalmente con el enfoque bayesiano de la probabilidad.
-A diferencia de las ciencias puramente formales, las ciencias empı́ricas deben validar sus proposiciones dentro de sistemas abiertos que contienen siempre algún grado de incertidumbre.
-El enfoque bayesiano, mediante la aplicación estricta de las reglas de la probabilidad, evalúa todas y cada una de las hipótesis de acuerdo a la evidencia empı́rica y formal (datos y modelos causales), garantiza los acuerdos
-intersubjetivos en contextos de incertidumbre.
-Creer en hipótesis mutuamente contradictorias (A y no A) permite que la sorpresa, única fuente de información, actúe como filtro de las creencias previas.
-Si bien hubieron algunas partes de la tesis que no evaluamos todo el espacio de hipótesis, hicimos un esfuerzo por aplicar estrictamente las reglas de la probabilidad.
+
+
+Si bien el aprendizaje automático funciona muy bien en ciertos contextos, puede colapsar si los datos se desvían un poco de lo que el modelo está acostumbrado.
+Las ciencias, sin embargo, buscan verdades con validez universal.
+Para no mentir en contextos de incertidumbre debemos no afirmar más de lo que sabemos, sin decir menos.
+Por ello, la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano) es el método con el que se fundamentan las verdades en contextos de incertidumbre.
+Al evaluar hipótesis mutuamente contradictorias (A y no A) la sorpresa, única fuente de información, actúa como el único filtro de las creencias previas, permitiendo no decir más de lo que se sabe incorporando toda la información disponible (maximiza incertidumbre compatible con los datos).
+Si bien hubieron algunas partes de la tesis que no pudimos evaluar todo el espacio de hipótesis, hicimos un esfuerzo por ajustarnos a este ideal.
 
 % Parrafo
 
@@ -248,9 +248,10 @@ Encontramos que jugar en equipo estaba asociada un mayor aprendendizaje a largo 
 En un segundo trabajo, replicamos el estimador de habilidad y descubrimos que todos los estimadores disponibles no obtenían estimaciones iniciales fiables ni garantizaban comparabilidad en el tiempo debido a una incorrecta propagación de la información histórica, en una sola dirección, del pasado hacia el futuro.
 En este contexto, implementamos un modelo que, propagando correctamente la información histórica, proporciona estimaciones con baja incertidumbre en todo momento, asegurando la comparabilidad hist\'orica, el cual publicamos en los lenguajes de programación Julia, Python y R.
 Con este algoritmo, en un tercer trabajo estudiamos la evolución de una red partidas de Go durante un periodo de ocho años y encontramos que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje, s\'olo en los jugadores que están en el medio del proceso de aprendizaje, ausente en los jugadores novatos y jugadores expertos.
-\vspace{0.3cm}
 
-\noindent \textbf{Palabras claves}: Inferencia bayesiana, Evoluci\'on cultural, Conocimiento emp\'irico, Habilidad, Aprendizaje, Ciencias de la computaci\'on, Ciencias antropol\'ogicas, Epistemolog\'ia
+\vspace{0.1cm}
+
+\noindent \textbf{Palabras claves}: Ciencias Sociales Computacionales, Inferencia bayesiana, Cultura, Habilidad, Aprendizaje, Videojuegos
 
 
 \newpage
@@ -264,7 +265,7 @@ Con este algoritmo, en un tercer trabajo estudiamos la evolución de una red par
 
 \noindent Keywords: Bayesian inference, Skill estimation, Learning, Computer science, Anthropological science, Computational social science
 
-
+\normalsize
 
 \tableofcontents
 
