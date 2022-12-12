@@ -699,16 +699,12 @@ g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
 % \end{equation}
 %
 
-\subsection{La ventaja de la diversificación}
-
 \subsection{La ventaja de la cooperación}
 
-\en{As a consequence of the non-ergodicity of multiplicative processes, fluctuations have a negative effect on individual growth rates. }%
-\es{Como consecuencia de la no-ergodicidad de los procesos multiplicativos, las fluctuaciones tienen un efecto negativo en las tasas de crecimiento individuales. }%
+Como consecuencia de la no-ergodicidad de los procesos multiplicativos, las fluctuaciones tienen un efecto negativo en las tasas de crecimiento individuales.
 %
 %Parafraseando a Den Boer~\cite{denBoer1968-spreadingRisk}, la  supervivencia de una población depende de la distribución del riesgo dentro de la población y entre las poblaciones de diferentes especies.
-\en{Yaari-Solomon~\cite{yaari2010-cooperationEvolution} and Peters-Adamou~\cite{peters-cooperation2019.03.04} (hereinafter Yaari and Peters) study the consequences that the following cooperative strategy has on the agents' growth rate. }%
-\es{Yaari-Solomon~\cite{yaari2010-cooperationEvolution} and Peters-Adamou~\cite{peters-cooperation2019.03.04} (de aquí en adelante Yaari y Peters) estudian las consecuencias que la siguiente estrategia cooperativa tiene sobre la tasa de crecimiento de los agentes. }%
+Yaari-Solomon~\cite{yaari2010-cooperationEvolution} y Peters-Adamou~\cite{peters-cooperation2019.03.04} (de aquí en adelante Yaari y Peters) estudian las consecuencias que la siguiente estrategia cooperativa tiene sobre la tasa de crecimiento de los agentes.
 %
 \begin{figure}[H]
 \centering
@@ -736,14 +732,12 @@ g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
 }
 }
 \caption{
-\en{The agents start with the same initial resources, update them independently according to the equation \ref{eq:estrategia_base}, and finally redistribute it in equal parts. }%
-\es{Los agentes comienzan con los mismos recursos iniciales, los actualizan independientemente de acuerdo con la ecuación \ref{eq:estrategia_base}, y finalmente lo redistribuyen en partes iguales. }%
+Los agentes comienzan con los mismos recursos iniciales, los actualizan independientemente de acuerdo con la ecuación \ref{eq:estrategia_base}, y finalmente lo redistribuyen en partes iguales.
 }
 \label{fig:protocolo}
 \end{figure}
 %
-\en{In Figure \ref{fig:ergodicity_cooperation} we show the trajectory of an agent in a cooperating group of size 33. }%
-\es{En la figura \ref{fig:ergodicity_cooperation} mostramos la trayectoria de un agente en un grupo cooperador de tamaño 33. }%
+En la figura \ref{fig:ergodicity_cooperation} mostramos la trayectoria de un agente en un grupo cooperador de tamaño 33.
 %
 \begin{figure}[ht!]
     \centering
@@ -751,10 +745,8 @@ g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
     \includegraphics[width=\linewidth]{figures/pdf/ergodicity_cooperation.pdf}
     \end{subfigure}
     \caption{
-    \en{The resources of an individual in a cooperative group of size 33 (green line) approaches the arithmetic mean (the black line below the green line).
-    As a visual reference we show the geometric mean that drives the growth rate of individuals (blue line). }%
-    \es{Los recursos de un individuo en un grupo cooperativo de tamaño 33 (recta verde) se aproxima a la media aritmética (la recta negra debajo de la recta verde).
-    Como referencia visual mostramos la media geométrica que gobierna la tasa de crecimiento de los individuos (recta azul). }%
+    Los recursos de un individuo en un grupo cooperativo de tamaño 33 (recta verde) se aproxima a la media aritmética (la recta negra debajo de la recta verde).
+    Como referencia visual mostramos la media geométrica que gobierna la tasa de crecimiento de los individuos (recta azul).
     }
     \label{fig:ergodicity_cooperation}
 \end{figure}
@@ -865,7 +857,9 @@ g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
 % \es{Por este motivo, la selección multinivel favorecerá a los individuos cooperadores sobre los desertores, a pesar de que la presencia de destores afecte negativa su tasa de crecimiento. }%
 
 
-\subsection{La ventaja de la especialización cooperativa}
+\subsection{Ventaja de diversifiación individual y especialización cooperativa}
+
+...
 
 
 \en{To explain evolutionary transitions, it is necessary to demonstrate the evolutionary advantage of cooperation in the presence of defection, but also the advantage of specialization. }%
@@ -2997,7 +2991,88 @@ Este mismo m\'etodo ser\'a usado en para evaluar el modelo de estimaci\'on de ha
 
 
 
-\chapter{Primera base empírica: TrueSkill}
+\chapter{Base empírica 1: TrueSkill}
+
+Los humanos desarrollamos habilidades complejas gracias a una integraci\'on especial de los procesos biol\'ogicos, cognitivos y sociales~\cite{Koster2020}.
+%
+Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodos de aprendizaje juvenil y vida posreproductiva, permite a los humanos aprender de los dem\'as y transmitir las innovaci\'on a trav\'es de la generaciones~\cite{Richerson2020}.
+%
+Al ser un proceso poblacional, la adaptaci\'on humana tambi\'en se ve afectada por caracter\'isticas demogr\'aficas, como el tama\~no y estructura de las poblaciones~\cite{Derex2020}.
+
+% Parrafo
+
+Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
+%
+Dado que son variables ocultas, lo mejor que podemos hacer es estimarlas a partir de sus consecuencias observables directas: el producto de la resoluci\'on de problemas y competencias.
+%
+Sin embargo la estimaci\'on de curvas de aprendiaje es tema sensible, especialmente cuando se las pretende utilizar para tomar decisiones que pueden impactar a las personas.
+%
+Considerar s\'olo la frecuencia de resultados positivos como indicador de la habilidad de los individuos puede conducir a aproximaciones erroneas, fundamentalmente porque su valor depende tambi\'en de la dificultad de los desaf\'ios.
+%
+Por esta raz\'on, todos los estimadores de habilidad ampliamente usados se basan en comparaciones por pares.
+%
+Desde los primeros modelos generativos, propuestos hace casi un siglo por~\cite{Thurstone1927} y~\cite{Zermelo1929}, se supone que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ del agente $i$ y de su oponente $j$, expresada como $P(\, r \,|\, p_i, \, p_j \,)$.
+%
+El campo sigui\'o progresando con los trabajos de \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}, que condujeron al gran avance que tuvo lugar cuando~\cite{Elo2008} desarroll\'o una metodología para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
+
+% Parrafo
+
+Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo probabil\'istico propuesto por Elo~\cite{Glickman1999, Herbrich2007, VanDerLinden2016}.
+%
+\begin{figure}[ht!]
+\centering \small
+    \tikz{
+    \node[det, fill=black!10] (r) {$r$} ;
+    \node[const, left=of r, xshift=-1.35cm] (r_name) {\small Resultado:};
+    \node[const, right=of r] (dr) {\normalsize $ r = (d > 0)$};
+    \node[latent, above=of r, yshift=-0.45cm] (d) {$d$} ; %
+    \node[const, right=of d] (dd) {\normalsize $ d = p_i-p_j$};
+    \node[const, left=of d, xshift=-1.35cm] (d_name) {\small Diferencia:};
+    \node[latent, above=of d, xshift=-0.8cm, yshift=-0.45cm] (p1) {$p_i$} ; %
+    \node[latent, above=of d, xshift=0.8cm, yshift=-0.45cm] (p2) {$p_j$} ; %
+    \node[const, left=of p1, xshift=-0.55cm] (p_name) {\small Desempeño:};
+    \node[accion, above=of p1,yshift=0.3cm] (s1) {} ; %
+    \node[const, right=of s1] (ds1) {$s_i$};
+    \node[accion, above=of p2,yshift=0.3cm] (s2) {} ; %
+    \node[const, right=of s2] (ds2) {$s_j$};
+    \node[const, right=of p2] (dp2) {\normalsize $p \sim \N(s,\beta^2)$};
+    \node[const, left=of s1, xshift=-.85cm] (s_name) {\small Habilidad:};
+    \edge {d} {r};
+    \edge {p1,p2} {d};
+    \edge {s1} {p1};
+    \edge {s2} {p2};
+}
+     \caption{
+    Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
+    %
+    Quien haya obtenido mayor rendimiento gana, $r = (d > 0)$.
+    %
+    Las variables observables se pintan de gris, las ocultas en blanco, y las constantes se muestran como puntos negros.
+    }
+    \label{fig:generative_model}
+\end{figure}
+%
+La figura~\ref{fig:generative_model} ofrece un modelo causal en el que las habilidades generan el resultado observable.
+%
+Los agentes exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
+%
+El modelo supone que gana el agente con mayor rendimiento, $r = (p_i > p_j)$.
+%
+El parámetro $\beta^2$, al ser el mismo para todos los agentes, act\'ua como la escala de las estimaciones: habilidades a una distancia de un $\beta$ implica 76\% probabilidad de ganar, independiente del valor absoluto de las estimaciones%
+
+% Parrafo
+
+En la sección \ref{sec:base_empirica_metodo} discutiremos la estructura invariante del dato empírico y el rol que cumplen las hipótesis en la construcción de datos.
+%
+Allí ... .
+%
+En la sección \ref{sec:teo_info} revisamos los elementos de la teoría de la información que garantizan una mejor comunicación con la realidad.
+%
+Allí ... .
+%
+En la sección \ref{sec:trueskill} mostramos en detalle uno de los modelo bayesianos más utilizados en el industria del video juego.
+%
+Por sus propiedades y su aceptación general, es el estimador de habilidad que usamos para construir estimaciones de habilidad que sirvan de base empírica para aanlizar los factores de aprendizaje social el siguiente capítulo.
 
 \section{Construcci\'on de datos de base emp\'irica} \label{sec:base_empirica_metodo}
 
@@ -3053,9 +3128,9 @@ La idea es que un concepto es T-te\'orico si no se puede determinar sin presupon
 %
 Los datos T-no te\'oricos son la base emp\'irica de control para una teor\'ia T pues pueden ser construidos mediante teor\'ias independientes, previamente aceptadas.
 %
-En la secci\'on ``\nameref{sec:modelos_alternativos}'' hemos visto c\'omo garantizar los acuerdos intersubjetivos en la evaluaci\'on de los modelos causales alternativos.
-%
-En el cap\'itulo \ref{ch:ttt} seleccionamos el modelo de estimaci\'on de habilidad estado-del-arte en la industria del video juego, conocido como TrueSkill Through Time (TTT).
+% En la secci\'on ``\nameref{sec:modelos_alternativos}'' hemos visto c\'omo garantizar los acuerdos intersubjetivos en la evaluaci\'on de los modelos causales alternativos.
+% %
+% En el cap\'itulo \ref{ch:ttt} seleccionamos el modelo de estimaci\'on de habilidad estado-del-arte en la industria del video juego, conocido como TrueSkill Through Time (TTT).
 
 \subsection{La estructura invariante del dato emp\'irico}
 
@@ -3142,80 +3217,21 @@ En la siguiente secci\'on veremos una hip\'otesis indicadora ad-hoc que ha sido 
 %
 Y en la subsiguiente secci\'on veremos que existe una hip\'otesis indicadora general que nos permite incorporar informaci\'on de los observables en nuestras distribuciones de creencia garantizando los acuerdos intersubjetivos.
 
+\subsection{El estimadores de habilidad Elo}
 
-\section{Estimadores de habilidad}
-
-
-Los humanos desarrollamos habilidades complejas gracias a una integraci\'on especial de los procesos biol\'ogicos, cognitivos y sociales~\cite{Koster2020}.
+A partir de este modelo causal podemos derivar la probabilidad de ganar a priori, $P(r|s_i^{\text{old}},s_j^{\text{old}})$.
 %
-Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodos de aprendizaje juvenil y vida posreproductiva, permite a los humanos aprender de los dem\'as y transmitir las innovaci\'on a trav\'es de la generaciones~\cite{Richerson2020}.
-%
-Al ser un proceso poblacional, la adaptaci\'on humana tambi\'en se ve afectada por caracter\'isticas demogr\'aficas, como el tama\~no y estructura de las poblaciones~\cite{Derex2020}.
-
-% Parrafo
-
-Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
-%
-Dado que son variables ocultas, lo mejor que podemos hacer es estimarlas a partir de sus consecuencias observables directas: el producto de la resoluci\'on de problemas y competencias.
-%
-Sin embargo la estimaci\'on de curvas de aprendiaje es tema sensible, especialmente cuando se las pretende utilizar para tomar decisiones que pueden impactar a las personas.
-%
-Considerar s\'olo la frecuencia de resultados positivos como indicador de la habilidad de los individuos puede conducir a aproximaciones erroneas, fundamentalmente porque su valor depende tambi\'en de la dificultad de los desaf\'ios.
-%
-Por esta raz\'on, todos los estimadores de habilidad ampliamente usados se basan en comparaciones por pares.
-%
-Desde los primeros modelos generativos, propuestos hace casi un siglo por~\cite{Thurstone1927} y~\cite{Zermelo1929}, se supone que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ del agente $i$ y de su oponente $j$, expresada como $P(\, r \,|\, p_i, \, p_j \,)$.
-%
-El campo sigui\'o progresando con los trabajos de \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}, que condujeron al gran avance que tuvo lugar cuando~\cite{Elo2008} desarroll\'o una metodología para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
-
-% Parrafo
-
-Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo probabil\'istico propuesto por Elo~\cite{Glickman1999, Herbrich2007, VanDerLinden2016}.
+En términos gráficos, podemos representar esa probabilidad como el volumen indicado en la figura \ref{fig:probaOfWin_2D}.
 %
 \begin{figure}[ht!]
 \centering \small
-    \tikz{
-    \node[det, fill=black!10] (r) {$r$} ;
-    \node[const, left=of r, xshift=-1.35cm] (r_name) {\small Resultado:};
-    \node[const, right=of r] (dr) {\normalsize $ r = (d > 0)$};
-    \node[latent, above=of r, yshift=-0.45cm] (d) {$d$} ; %
-    \node[const, right=of d] (dd) {\normalsize $ d = p_i-p_j$};
-    \node[const, left=of d, xshift=-1.35cm] (d_name) {\small Diferencia:};
-    \node[latent, above=of d, xshift=-0.8cm, yshift=-0.45cm] (p1) {$p_i$} ; %
-    \node[latent, above=of d, xshift=0.8cm, yshift=-0.45cm] (p2) {$p_j$} ; %
-    \node[const, left=of p1, xshift=-0.55cm] (p_name) {\small Desempeño:};
-    \node[accion, above=of p1,yshift=0.3cm] (s1) {} ; %
-    \node[const, right=of s1] (ds1) {$s_i$};
-    \node[accion, above=of p2,yshift=0.3cm] (s2) {} ; %
-    \node[const, right=of s2] (ds2) {$s_j$};
-    \node[const, right=of p2] (dp2) {\normalsize $p \sim \N(s,\beta^2)$};
-    \node[const, left=of s1, xshift=-.85cm] (s_name) {\small Habilidad:};
-    \edge {d} {r};
-    \edge {p1,p2} {d};
-    \edge {s1} {p1};
-    \edge {s2} {p2};
-}
-     \caption{
-    Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
-    %
-    Quien haya obtenido mayor rendimiento gana, $r = (d > 0)$.
-    %
-    Las variables observables se pintan de gris, las ocultas en blanco, y las constantes se muestran como puntos negros.
-    }
-    \label{fig:generative_model}
+\begin{subfigure}[c]{0.49\textwidth}
+       \includegraphics[width=1\textwidth]{figures/probaOfWin_2D.pdf}
+     \label{fig:probaOfWin_2D}
+    \end{subfigure}
+\caption{}
+\label{fig:elo}
 \end{figure}
-%
-La figura~\ref{fig:generative_model} ofrece un modelo causal en el que las habilidades generan el resultado observable.
-%
-Los agentes exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
-%
-El modelo supone que gana el agente con mayor rendimiento, $r = (p_i > p_j)$.
-%
-El parámetro $\beta^2$, al ser el mismo para todos los agentes, act\'ua como la escala de las estimaciones: habilidades a una distancia de un $\beta$ implica 76\% probabilidad de ganar, independiente del valor absoluto de las estimaciones%
-
-\subsection{Elo. Una hip\'otesis indiciadora ad-hoc exitosa}
-
-A partir de este modelo causal podemos derivar la probabilidad de ganar a priori, $P(r|s_i^{\text{old}},s_j^{\text{old}})$, que en términos gráficos es equivalente al volumen indicado en la figura \ref{fig:probaOfWin_2D}.
 %
 El complemento de la predicci\'on lo vamos a llamar sorpresa.
 %
@@ -3268,14 +3284,16 @@ A medida que la persona tiene más cantidad de partidas jugadas, el valor de K e
 %
 De esa forma se rompe la simetr\'ia y se preserva las estimaciones de las personas que se consideran conocidas.
 
-\subsection{TrueSkill: La hip\'otesis indiciadora universal}
+\section{Teoría de la información} \label{sec:teo_info}
 
-Los problemas asociados al algoritmo Elo se generan debido a que la hip\'otesis indicadora utilizada no esta justificada correctamente.
-%
-En este cap\'itulo hemos introducido los principios interculturales de acuerdos intersubjetivos a partir de los que derivamos las reglas de la probabilidad.
-%
-Por ello, para corregir los problemas del algoritmo Elo, en vez de seleccionar una \'unica hip\'otesis de habilidad (estimaci\'on puntual), debemos aplicar estrictamente las reglas de la probabilidad y calcular la distribuci\'on de creencia sobre todo el espacio de hip\'otesis.
-%
+\subsection{El problema de la comunicación con la realidad}
+
+\subsection{La sorpresa como fuente de información}
+
+La estructura invariante del dato propuesta por Samaja contiene los mismo elementos que el esquema emisor receptor de la teoría de la información.
+
+\todo[inline, color = gray]{}
+
 El teorema de Bayes, que se deriva de las reglas de la probabilidad, es en este sentido la hip\'otesis indicadora general, la que permite actualizar la distribuci\'on de creencia a priori de forma \'optima.
 %
 En nuestro caso particular, debemos computar la probabilidad hip\'otesis de habilidades dado el resultado observado y el modelo causal.
@@ -3294,7 +3312,112 @@ Como los resultados son variables discretas, esas probabilidad se escribe con le
 %
 Debido a que la evidencia es la misma para todas las hip\'otesis, el \'unico factor que actualiza nuestras creencias es la verosimilitud.
 
+
+\subsection{La hipótesis indicadora universal} \label{sec:trueskill}
+
+\section{TrueSkill: el estimador de la industria del video juego}
+
+Los problemas asociados al algoritmo Elo se generan debido a que la hip\'otesis indicadora utilizada no esta justificada correctamente.
+%
+%En este cap\'itulo hemos introducido los principios interculturales de acuerdos intersubjetivos a partir de los que derivamos las reglas de la probabilidad.
+%
+Por ello, para corregir los problemas del algoritmo Elo, en vez de seleccionar una \'unica hip\'otesis de habilidad (estimaci\'on puntual) a través de un método ad-hoc, debemos aplicar estrictamente las reglas de la probabilidad y calcular la distribuci\'on de creencia sobre todo el espacio de hip\'otesis.
+
 % Parrafo
+
+El método TrueSkill~\cite{herbrich2006-trueskill} fue presentado en 2006 por Ralf Herbrich y tiene dos patentes~\cite{trueskill_patent_06, trueskill_patent_09}.
+%
+TrueSkill comparte el modelo de dependencia del sistema de calificación Elo entre habilidad, desempeño y probabilidad de ganar.
+%
+Lo extiende a través de un modelo bayesiano que incorpora una distribución de creencias de habilidades (el prior), y una función de actualización no arbitraria (el posterior).
+
+% Parrafo
+
+
+Además, se extiende el modelo causal, permitiendo estimar la habilidad de los jugadores cuando participan en equipo, algo que no estaba incluido en el modelo causal original.
+
+
+\subsection{Predicción bayesiana (verosimilitud marginal)}
+
+Una de las novedades de TrueSkill es la noción de incertidumbre de la estimación de la habilidad.
+%
+La estimación de habilidad $s_i$, anteriormente representada por un escalar, ahora se representa mediante una distribución de creencias gaussiana.
+%
+\begin{equation}
+p(s_i) = \N(s_i | \mu_i, \sigma_i^2)
+\end{equation}
+%
+para definir el valor a priori de la media, $\mu$, hay que recordar que lo que importa no es su valor absoluto sino la diferencia con otros jugadores (un $\beta$ de diferencia equivale a 76\% de probabilidad de ganar).
+%
+la incertidumbre a priori, $\sigma$, tiene ue ser lo suficientemente grande para asegurarnos de cubrir todas las posibles valores de habilidad que la persona puede tener.
+%
+Este valor depende del contexto.
+%
+En general se usa una incertidumbre que es 3 veces el desvío estandar del desempeño.
+
+% Parrafo
+
+Al igual que en el sistema Elo, se supone que el resultado final del juego depende del rendimiento $p_i$ de los jugadores.
+%
+Sin embargo, en el modelo TrueSkill tenemos la definición del desempeño condicional.
+%
+\begin{equation}
+p(p_i|s_i) = \N(p_i | s_i, \beta^2)
+\end{equation}
+%
+Para calcular el desempeño tenemos que integrar todos los posibles valores de habilidad,
+%
+\begin{equation}\label{p.p_i}
+p(p_i) = \int \N(p_i | s_i, \beta^2) \N(s_i | \mu_i,\sigma_i^2) ds_i
+\end{equation}
+%
+Entonces, para calcular la probabilidad de un desempeño, $p_i$, debemos integrar el área debajo de la línea sólida en la Fig.~\ref{paso_1_multiplicacion_normales}.
+%
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=.4\linewidth]{figures/Fig8}
+\caption{Distribución conjunta de habilidades y desempeños, calculada como el producto de la distribución de priori de las habilidad, $\N(s_i \, | \, \mu_i, \sigma_i^2)$, por la distribución condicional del desempeño, $\N(p_i \, | \, s_i, \beta^2)$.
+%
+El área debajo de la línea sólida representa representa la probabilidad marginal de un cierto desempeño $p_i$.
+%
+La línea punteada representa el valor máximo.
+}
+\label{paso_1_multiplicacion_normales}
+\end{figure}
+%
+Por las propiedades de la distribución gaussiana, esta integral se puede parametrizar usando otra gaussiana, centrada en la distribución de creencias a priori de la habilidad, $\mu$, y con la suma de incertidumbres del priori y del desempeño, $\N(s_i | \mu_i, \beta^2 +\sigma_i^2)$.
+
+% Parrafo
+
+
+\noindent{}The difference teams' performances are what determines the outcome of the game.
+\begin{equation}
+d_{ab}=t_a - t_b
+\end{equation}
+%
+% In the same way, as in the Fig.~\ref{probaOfWin_2D}, the difference of performance isobars are the lines parallel to the diagonal of zero difference.
+% To compute the probability of a given difference of performance $d_ {ab}$ is:
+% \begin{align}
+%  P(d_{ab}|A_a,A_b) = \iint & \mathbb{I}(d_{ab}=t_a -t_b)\cdot N(t_a;\sum_{i\in A_a} \mu_i,\sum_{i\in A_a} \beta^2 + \sigma_i^2) \cdot \nonumber \\
+%  & N(t_b;\sum_{i\in A_b} \mu_i,\sum_{i\in A_b} \beta^2 + \sigma_i^2) \, dt_a dt_b
+% \end{align}
+%
+% It can be shown (S2 File) that them probability of a given difference of performance $d_ {ab} $ is:
+% \begin{equation}
+% P(d_{ab}|A_a,A_b) = N\Bigg(d_{ab} \ ; \  \underbrace{\sum_{i\in A_a} \mu_i - \sum_{i\in A_b} \mu_i}_{\text{Expected difference }(\delta)},\underbrace{\sum_{i\in A_a\cup A_b} \beta^2 + \sigma_i^2}_{\text{Total variance }(\vartheta)}\Bigg) = N(d_{ab} \ ; \  \delta, \vartheta )
+% \end{equation}
+%
+% \noindent{}A win of a team $ a $ over another team $ b $ is modeled as:
+% \begin{equation}
+% r_{ab} = d_{ab} > 0
+% \end{equation}
+%
+% Then, the probability of victory of a team over another is computed as:
+% \begin{equation}
+%  P(r_{ab}=\text{True}|A_a,A_b) = P(d_{ab} > 0 | A_a,A_b) = \Phi\left( \frac{\delta}{\sqrt{\vartheta} } \right)
+% \end{equation}
+
+
 
 A modo de ejemplo, consideremos un caso ganador ($p_i > p_j$) usando priors gaussianos, $\N(\,s\,|\,\mu, \sigma^2)$.
 %
@@ -3317,6 +3440,14 @@ A partir de ahora el rol del modelo se dejar\'a impl\'icito.
 La evidencia es una predicci\'on hecha con todas las hip\'otesis a priori.
 %
 Como es constante, la incertidumbre a posteriori de cada hip\'otesis es proporcional al producto de su incertidumbre a priori y su verosimilitud, como se muestra en la ecuaci\'on~\eqref{eq:posterior_win}.
+
+\subsection{Posterior}
+
+La evidencia es la verosimilitud marginal.
+%
+Para calcular el posterior $p(s_i|r)$ necesitamos la verosimilitud condicional, $p(r|s_i)$.
+%
+En el capítulo~\ref{} mostramos todos los detalles que se requieren para llegar a la siguiente expresión análítica exacta.
 %
 \begin{equation}\label{eq:posterior_win}
 \underbrace{p(\,s_i\, | \, r \, )}_{\text{Posterior}} \propto \underbrace{1-\Phi(0 \, |  s_i - \mu_j , \, 2\beta^2 + \sigma_j^2)}_{\text{\en{Likelihood}\es{Verosimilitud}} \ P(r|s_i)} \,  \underbrace{\N(s_i \, | \, \mu_i,\, \sigma_i^2)}_{\text{Prior} \ p(s_i)}
@@ -3359,192 +3490,168 @@ En cambio, en la regi\'on de hip\'otesis de muy baja habilidad, donde el resulta
 
 % Parrafo
 
+
 Esta es la estimaci\'on de habilidad correcta dado el modelo causal Elo.
+
+\subsubsection{La mejor aproximación del posterior}
+
+Es importante remarcar que la posterior, aunque se parezca, no es una distribuci\'on gaussiana, lo que nos impedir\'a usar la ecuaci\'on~\eqref{eq:posterior_win} iterativamente.
 %
-Sin embargo, cuando tenemos una historia de partidas encadenadas, la aplicaci\'on de las reglas de la probabilidad deja de ser trivial debido a una dependencia mutua entre eventos que obliga la aplicar de un algoritmo iterativo para computar las estimaciones correctas.
+Por la forma del posterior exacto, una gaussiana puede ser usada como una buena aproximaci\'on, permiti\'endonos evitar el costo computacional de las metodolog\'ias de sampleo.
 %
-Este modelo, conocido como TrueSkill Through Time (TTT), es el estado del arte en la estimaci\'on de habilidad, y nuestra implementaci\'on es la primera en los tres lenguajes de programaci\'on con mayores comunidades cient\'ificas: Julia, Python y R.
+Uno de los principales aportes del sistema Glicko~\cite{Glikman2013} fue el desarroll\'o de un m\'etodo eficiente para aproximar la posterior exacta con una distribuci\'on gaussiana.
 %
-El cap\'itulo siguiente estará dedicado exclusivamente a desarrollar en detalle la soluci\'on matemática y computacional del modelo TTT.
+Sin embargo, este m\'etodo no garantiza que la distribuci\'on gaussiana seleccionada sea la que mejor aproxima.
+%
+El \'exito de la soluci\'on TrueSkill~\cite{Herbrich2007} se basa en la aplicaci\'on de m\'etodo eficiente para calcular la gaussiana que mejor aproxima al posterior exacto (secci\'on~\ref{sec:approximate_posterior}),
+%
+\begin{equation} \label{eq:approx}
+ \widehat{p}(s_i| r, s_j) = \underset{\mu, \sigma}{\text{ arg min }} \ \ \text{KL}(\, p(s_i| r, s_j) \, || \,  \N(s_i|\mu, \sigma^2) \, )
+\end{equation}
+%
+en términos de minizaci\'on de la divergencia Kullback-Leibler entre la distribuci\'on verdadera y la aproximada.
+%
+Este método nos permite aplicar eficientemente la ecuaci\'on~\eqref{eq:posterior_win} iterativamente sobre una secuencia de observaciones, que de otra manera sería inviable.
+
+
+\subsubsection{El posterior en el tiempo}
+
+%
+El enfoque adoptado por TrueSkill para tratar el proceso din\'amico, conocido como \emph{filtering}, usa el \'ultimo posterior aproximado como prior del siguiente evento.
+%
+Luego, el posterior aproximado en un determinado momento se define como,
+%
+\begin{equation}\label{eq:filter} %\tag{\text{filtering}}
+ \widehat{\text{Posterior}}_t \propto \widehat{\text{Likelihood}}_t  \overbrace{\widehat{\text{Likelihood}}_{t-1} \dots \underbrace{\widehat{\text{Likelihood}}_{1} \text{Prior}_1}_{\widehat{\text{Posterior}}_{1} \text{ como } \text{Prior}_{2}} }^{\widehat{\text{Posterior}}_{t-1} \text{ \en{as}\es{como} } \text{Prior}_{t}} %= \text{Prior}_1 \prod_{i=1}^t \text{Likelihood}_i
+\end{equation}
+%
+Donde {\footnotesize $\widehat{\text{Posterior}}_i$} y {\footnotesize $\widehat{\text{Likelihood}}_i$} representan la aproximaciones inducidas por la ecuaci\'on~\eqref{eq:approx} en el $i$-\'esimo evento.
+%
+Si consideramos la verosimilitud como un filtro del prior, cada posterior puede ser visto como una acumulaci\'on de todos los filtros anteriores.
+%
+De esta forma, la informaci\'on propaga del estimaciones pasadas hacia futuras.
+%
+Debido a que las habilidades cambian en el tiempo, es importante agregar alguna incertidumbre $\gamma$ luego de cada paso.
+%
+\begin{equation}\label{eq:dynamic_factor}
+ \widehat{p}(s_{i_t}) = \N(s_{i_t} | \mu_{i_{t-1}}, \sigma_{i_{t-1}}^2 + \gamma^2 )
+ \end{equation}
+ %
+
+
+
+
+\subsection{Equipos}
+
+\noindent{}The second novelty of TrueSkill enables to update the players' skill when they play team games.
+TrueSkill model states that one team beats another when their team's performance is greater than the opponent team's performance.
+With $A$ the partition of players (the team assignment), the performance of a team is defined as the sum of the performances of its members,
+\begin{equation}
+t_e = \sum_{j\in A_e } p_j
+\end{equation}
 
 % Parrafo
+
+
+
+
+\noindent{}In summary, the TrueSkill model can be represented by a graphical network (Fig.~\ref{modelo_trueskill}).
+
 \begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-    \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
-    \end{subfigure}
-    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio. }
+\centering
+\tikz{ %
+
+        \node[det, fill=black!10] (r) {$r_j$} ; %
+        \node[const, below=of r, yshift=-0.8cm,xshift=-0.8cm] (c_1a) {\scriptsize  with $o:=$ outcome};
+        \node[latent, left=of r] (d) {$d_j$} ; %
+        \node[latent, left=of d] (t) {$t_e$} ; %
+        \node[latent, left=of t] (p) {$p_i$} ; %
+        \node[latent, left=of p] (s) {$s_i$} ; %
+        %\node[obs, left=of s] (mu) {$\widehat{\mu}_i$} ; %
+        %\node[obs, left=of s, yshift=1.2cm] (sigma) {$\widehat{\sigma}_i$} ; %
+
+
+        \edge {d} {r};
+        \edge {t} {d};
+        \edge {p} {t};
+        \edge {s} {p};
+%
+%
+%         {(p)(s)(fs)(nfs)(dfp)(dfs)} {Miembros del equipo $o_j$ \hspace{0.5cm} $i \in \text{\en{Team}\es{Equipo}}_{o_j}$}; %
+%         \node[invisible, below=of ft, yshift=-0.6cm] (inv_below_e) {};
+% 	\node[invisible, above=of ft, yshift=1.1cm] (inv_above_e) {};
+% 	\plate {equipos} {(personas) (t)(ft)(dft) (inv_above_e) (inv_below_e)} {$o\equiv$ lista de equipos ordenados de acuerdo al resultado  \hspace{0.3cm} $1 \leq j \leq |o|$}; %
+
+
+        \plate {personas} {(p)(s)} {$i \in A_e$}; %
+        \plate {equipos} {(personas) (t)} { {\scriptsize $A$:= partition of players} ,   $ 0 < e \leq |A|$}; %
+	\node[invisible, below=of d, yshift=-0.5cm,xshift=-0.5cm] (inv_below) {};
+	\node[invisible, above=of r, yshift=0.2cm] (inv_above) {};
+	\plate {comparaciones} {(d) (r) (inv_below) (inv_above)} {$0 < j < |A|$}
+
+	\node[const, right= of r, xshift=1.2cm ,yshift=-2.1cm] (result-dist) {$r_j = d_j > 0$} ; %
+	\node[const, above=of result-dist,yshift=0.3cm] (d-dist) {$d_j = t_{o_j} - t_{o_{j+1}}$};  %
+	\node[const, above=of d-dist,yshift=0.3cm] (t-dist) {$t_e = \sum_{i\in A_e} p_i $} ; %
+	\node[const, above=of t-dist,yshift=0.3cm] (p-dist) {$p_i \sim N(s_i,\beta^2)$} ; %
+	\node[const, above=of p-dist,yshift=0.3cm] (s-dist) {$s_i \sim N(\mu_i,\sigma_i^2)$} ; %
+
+        }
+
+\caption{Bayes network of TrueSkill method.}
+\label{modelo_trueskill}
+\end{figure}
+
+
+
+% Parrafo
+
+Entonces, la probabilidad del desempeño de un equipo dado se define como
+\begin{equation}
+ P(t_e|A_e) = \int \dots \int \mathbb{I}(t_e = \sum_{j\in A_e } p_j ) \left(\prod_{i \in A_e} \N(p_i;\mu_i,\beta^2 + \sigma^2) \right) d\vec{p}
+\end{equation}
+%
+El rendimiento de un equipo con dos jugadores lo podemos ver gráficamente en la Fig.~\ref{paso_3_suma_normales_image}.
+%
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=.49\linewidth]{figures/Fig9}
+\caption{Probabilidad conjunta del desempeño de dos compañeros de equipo.
+Las líneas paralelas a la diagonal $ t_e = c $ representan isobaras de rendimiento del equipo.}
+\label{paso_3_suma_normales_image}
 \end{figure}
 %
-En cualquier caso, los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
+Para calcular la probabilidad del desempeño de un equipo dado $c$ debemos integrar el área debajo de la isobara correspondiente, $ t_e = c $ (Ver Fig.~\ref{paso_3_suma_normales_image}).
 %
-Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo de la tesis para estudiar facotres de aprendizaje social durante el cap\'itulo \ref{papers}.
+En el anexo de demuestra que integral tiene la siguiente solución.
+%
+\begin{equation}
+\begin{split}
+ P(t_e|A_e=\{i,j\}) & = \int \N(p_i\, |\,\mu_{*},\sigma_{*}^2) \overbrace{\N(t_e\,|\,\mu_i+\mu_j,2\beta^2 + \sigma_i^2 + \sigma_j^2)}^{\text{Scalar independent of $p_i$}} dp_i \\[0.3cm]
+& = \N(t_e \,|\, \mu_i+\mu_j,2\beta^2 + \sigma_i^2 + \sigma_j^2)
+\end{split}
+\end{equation}
+%
+Y en general, la distribución de probabilidad de desempeño de un equipo es,
+\begin{equation}
+P(t_e|A_e) = \N\left(t\,|\,\sum_{i\in A_e} \mu_i,\sum_{i\in A_e} \beta^2 + \sigma_i^2\right)
+\end{equation}
 
+El resultado observado de un juego se modela con un vector ordenado de equipos $o$, tal que $t_{o_1}< \dots < t_{o_{|A|}}$.
+%
+Con dos equipos, la función exacta de actualización posterior es (ver \ref{}),
+%
+\begin{equation}
+ P(s_i \mid r, A) \propto
+ \begin{cases}
+  \N(s_i \, | \, \mu_i, \sigma_i^2) \, \Phi(0 \, | \, \delta(s_i), \vartheta - \sigma_i^2) & \text{Winning case} \\
+  \N(s_i \, | \, \mu_i, \sigma_i^2 ) \, (1 - \Phi(0 \, | \, \delta(s_i), \vartheta - \sigma_i^2)) & \text{Losing case}
+ \end{cases}
+\end{equation}
+%
+donde $\delta(s_i) = \delta - \mu_i + s_i$, la diferencia esperada entre equipos reemplazando la habilidad estimada ($\mu$) por su verdadera habilidad $s_i$.
+%
+La solución multiequipos no tiene una forma cerreda, requiere una iteración para alcanzar convergencia que será explicada en detalle en el capítulo \ref{}.
 
-
-
-
-
-%
-%
-%
-%
-%
-% The TrueSkill method~\cite{herbrich2006-trueskill} was introduced in 2006 by Ralf Herbrich and has two patents~\cite{trueskill_patent_06,trueskill_patent_09}.
-% TrueSkill shares the dependency model of the Elo rating system between skill, performance, and probability of winning.
-% It extends it through a Bayesian model that incorporates a belief distribution of skills (prior), a model of team performance and a non-arbitrary update function (the posterior distribution).
-%
-% \subsubsubsection{Skill}
-%
-% \noindent{}One of the novelties of TrueSkill is the notion of the uncertainty of the skill estimation.
-% The skill estimate $s_i$, previously represented by a scalar, is now represented as a prior distribution of beliefs with normal density function.
-% \begin{equation}
-% s_i \sim N(\mu_i, \sigma_i^2)
-% \end{equation}
-% where $\mu$ and $\sigma$ initially acquire arbitrary values.
-%
-% This is not an issue.
-% What matters about the average is not its absolute value but the difference with other players.
-% On the other hand, the standard deviation should be large enough to represent the uncertainty that we actually have with respect to the average.
-% In general, $ \mu = 25 $ and $ \sigma=\frac{25}{3} $ are used as initial values.
-%
-% \subsubsubsection{Performance}
-%
-% \noindent{}As in the Elo system, it is assumed that the final outcome of the game depends on the $p_i$ performance of the players,
-% \begin{equation}
-% p_i \sim N(s_i, \beta^2)
-% \end{equation}
-%
-% Now the probability of a given performance $p_i$ is defined as,
-% \begin{equation}\label{p.p_i}
-% P(p_i|\mu_i,\sigma_i) = \int N(p_i; s_i, \beta^2)N(s_i;\mu_i,\sigma_i^2) ds_i
-% \end{equation}
-%
-% \begin{figure}[ht!]
-% \centering
-% \includegraphics[width=.49\linewidth]{figures/Fig8}
-% \caption{\small Performance distributions, $N(p_i \, ; \, s_i, \beta^2)$ weighted by the probability of the skill belief distribution $N(s_i \, ; \, \mu_i, \sigma_i^2)$. The area under the solid line must be integrated to compute a certain probability $p_i$.}
-% \label{paso_1_multiplicacion_normales}
-% \end{figure}
-%
-% Then, we can compute the probability of a given performance, $p_i$, by integrating the area under the solid line in Fig.~\ref{paso_1_multiplicacion_normales}.
-% We rewrite the integral~\ref{p.p_i} using the symmetry property, $ N (x; \mu, \sigma^2) = N (\mu; x, \sigma^2)$.
-% \begin{equation}
-% P(p_i|\mu_i,\sigma_i) = \int N(s_i; p_i, \beta^2)N(s_i;\mu_i,\sigma_i^2) ds_i
-% \end{equation}
-%
-% It can be shown (S2 File) that the product of Gaussians is also normally distributed,
-% \begin{equation}
-% P(p_i|\mu_i,\sigma_i) = \int \underbrace{N(p_i;\mu_i,\beta^2 + \sigma_i^2)}_{\text{Scalar independent of $s_i$}} N(s_i,\mu_{*},\sigma_{*}^2)  \ ds_i  = N(p_i;\mu_i,\beta^2 + \sigma_i^2)
-% \end{equation}
-%
-% \subsubsubsection{Teams}
-%
-% \noindent{}The second novelty of TrueSkill enables to update the players' skill when they play team games.
-% TrueSkill model states that one team beats another when their team's performance is greater than the opponent team's performance.
-% With $A$ the partition of players (the team assignment), the performance of a team is defined as the sum of the performances of its members,
-% \begin{equation}
-% t_e = \sum_{j\in A_e } p_j
-% \end{equation}
-%
-% Then, the probability of a given team's performance is defined as
-% \begin{equation}
-%  P(t_e|A_e) = \int \dots \int \mathbb{I}(t_e = \sum_{j\in A_e } p_j ) \left(\prod_{i \in A_e} N(p_i;\mu_i,\beta^2 + \sigma^2) \right) d\vec{p}
-% \end{equation}
-%
-% The team's performance assumption is only used to adopt the skill of individual players such that the team outcome can be best predicted based on the additive assumptions of the skills.
-% The empirical probability distribution of individual and team games are exactly the same based on a Kolmogorov-Smirnov test, showing that the skill estimated by simple addition preserves the probability of winning based on this measure of team skill (Fig.~A in S1 File).
-%
-% Mathematically, a team's performance with two players we can see graphically in Fig.~\ref{paso_3_suma_normales_image}.
-% \begin{figure}[ht!]
-% \centering
-% \includegraphics[width=.49\linewidth]{figures/Fig9}
-% \caption{\small Joint probability of the performance of two teammates $i$, $j$. Lines parallel to the diagonal $ t_e = c $ represent team performance isobars.}
-% \label{paso_3_suma_normales_image}
-% \end{figure}
-% To compute the probability of a given team's performance $c$ we must integrate the area under the corresponding isobar, $ t_e = c $ (See Fig.~\ref{paso_3_suma_normales_image}).
-%
-% It can be shown in a team with 2 members (S2 File),
-% \begin{equation}
-% \begin{split}
-%  P(t_e|A_e=\{i,j\}) & = \int N(p_i\,;\,\mu_{*},\sigma_{*}^2) \overbrace{N(t_e\,;\,\mu_i+\mu_j,2*\beta^2 + \sigma_i^2 + \sigma_j^2)}^{\text{Scalar independent of $p_i$}} dp_i \\[0.3cm]
-% & = N(t_e \,;\, \mu_i+\mu_j,2\beta^2 + \sigma_i^2 + \sigma_j^2)
-% \end{split}
-% \end{equation}
-%
-% It can be shown by induction (S2 File) that in a team with $n$ members the probability of a given team's performance is:
-% \begin{equation}
-% P(t_e|A_e) = N\left(t\,;\,\sum_{i\in A_e} \mu_i,\sum_{i\in A_e} \beta^2 + \sigma_i^2\right)
-% \end{equation}
-%
-% \subsubsubsection{Difference}
-%
-% \noindent{}The difference teams' performances are what determines the outcome of the game.
-% \begin{equation}
-% d_{ab}=t_a - t_b
-% \end{equation}
-%
-% In the same way, as in the Fig.~\ref{probaOfWin_2D}, the difference of performance isobars are the lines parallel to the diagonal of zero difference.
-% To compute the probability of a given difference of performance $d_ {ab}$ is:
-% \begin{align}
-%  P(d_{ab}|A_a,A_b) = \iint & \mathbb{I}(d_{ab}=t_a -t_b)\cdot N(t_a;\sum_{i\in A_a} \mu_i,\sum_{i\in A_a} \beta^2 + \sigma_i^2) \cdot \nonumber \\
-%  & N(t_b;\sum_{i\in A_b} \mu_i,\sum_{i\in A_b} \beta^2 + \sigma_i^2) \, dt_a dt_b
-% \end{align}
-%
-% It can be shown (S2 File) that them probability of a given difference of performance $d_ {ab} $ is:
-% \begin{equation}
-% P(d_{ab}|A_a,A_b) = N\Bigg(d_{ab} \ ; \  \underbrace{\sum_{i\in A_a} \mu_i - \sum_{i\in A_b} \mu_i}_{\text{Expected difference }(\delta)},\underbrace{\sum_{i\in A_a\cup A_b} \beta^2 + \sigma_i^2}_{\text{Total variance }(\vartheta)}\Bigg) = N(d_{ab} \ ; \  \delta, \vartheta )
-% \end{equation}
-%
-% \subsubsubsection{Result}
-%
-% \noindent{}A win of a team $ a $ over another team $ b $ is modeled as:
-% \begin{equation}
-% r_{ab} = d_{ab} > 0
-% \end{equation}
-%
-% Then, the probability of victory of a team over another is computed as:
-% \begin{equation}
-%  P(r_{ab}=\text{True}|A_a,A_b) = P(d_{ab} > 0 | A_a,A_b) = \Phi\left( \frac{\delta}{\sqrt{\vartheta} } \right)
-% \end{equation}
-%
-% The observed outcome of a game it is modeled with an ordered vector of teams, $o$, such that $t_{o_1}< \dots < t_{o_{|A|}}$.
-%
-% \subsubsubsection{Posterior}
-% \noindent{}In summary, the TrueSkill model can be represented by a graphical network (Fig.~\ref{modelo_trueskill}).
-%
-% \begin{figure}[ht!]
-% \centering
-% \includegraphics[width=1\linewidth]{figures/Fig10}
-% \caption{Bayes network of TrueSkill method.}
-% \label{modelo_trueskill}
-% \end{figure}
-%
-% From Bayes rule, we obtain the posterior distribution,
-% \begin{equation}
-%   P(\bm{s} \mid \bm{o}, A) =  \frac{P(\bm{o} \mid \bm{s}, A)  P(\bm{s})}{ P( \bm{o} \mid A)}
-% \end{equation}
-%
-% The exact posterior could be computed by performing the sum-product algorithm~\cite{kschischang2001-factorGraphsAndTheSumProductAlgorithm} over the factor graph (Fig.~\ref{bayes_factor_network}).
-%
-% \begin{figure}[ht!]
-% \centering
-% \includegraphics[width=1\linewidth]{figures/Fig11}
-% \caption{Bayes factor network of TrueSkill method.}
-% \label{bayes_factor_network}
-% \end{figure}
-%
-% With two teams, the exact posterior update function is (See all the details S2 File),
-%
-% \begin{equation}
-%  P(s_i \mid \bm{o}, A) \propto
-%  \begin{cases}
-%   N(s_i \, ; \, \mu_i, \sigma_i^2) \, \Phi(0 \, ; \, \delta(s_i), \vartheta - \sigma_i^2) & \text{Winning case} \\
-%   N(s_i \, ; \, \mu_i, \sigma_i^2 ) \, (1 - \Phi(0 \, ; \, \delta(s_i), \vartheta - \sigma_i^2)) & \text{Losing case}
-%  \end{cases}
-% \end{equation}
-% where $\delta(s_i) = \delta - \mu_i + s_i$, the expected difference between teams replacing the estimated skill ($\mu$) by their true skill $s_i$ (Fig.~\ref{posterior_ganador} and~\ref{posterior_perdedor}).
-%
 % \begin{figure}[ht!]
 % \centering
 % \includegraphics[width=.49\linewidth]{figures/Fig12}
@@ -3561,12 +3668,35 @@ Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que ut
 % \end{figure}
 %
 % Finally, TrueSkill takes as the posterior of the model the Gaussian that minimizes the KL divergence with the exact posterior.
+
+
+
+
+\section{Conclusiones}
+
+El modelo de habilidad TrueSkill corrije los errores del modelo Elo a través del la evaluación bayesiana de todo el espacio de hipótesis.
 %
+Si bien en la actualidad la federación de internacional de ajedrez, y una parte de la industria del video juego sigue usando el modelo Elo por tradición histórica, los resultados que se obtienen con el modelo TrueSkill son ampliamente superiores.
 %
+El sistema Glicko~\cite{Glikman2013} es un desarroll\'o bayesiano previo, que a diferencia de TrueSkill, no garantiza que la distribuci\'on gaussiana seleccionada para aproximar al posterior exacto sea la mejor en términos de minizaci\'on de la divergencia Kullback-Leibler entre la distribuci\'on verdadera y la aproximada.
+
+% Pararfo
+
+Ambos modelos bayesianos de habilidad, TrueSkill y Glicko, son los elegidos por la industria del video juego, condierados como los estándares para estimar la habilidad de los usarios en el tiempo.
 %
+Al ser los modelos más ampliamente adoptados por la comunidad de los video juegos, las estimaciones de habilidad pueden ser considerada base empírica metodológica sobre la cual evaluar modelos de aprendizaje.
+% Parrafo
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
+    \end{subfigure}
+    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio. }
+\end{figure}
 %
+En cualquier caso, los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
 %
-%
+Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo del próximo capítulo para estudiar los facotres de aprendizaje social.
 
 
 
@@ -3574,13 +3704,7 @@ Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que ut
 
 
 
-
-
-
-\chapter{Primer Artículo. }
-
-
-\section{Efecto de la formaci\'on de equipos sobre el aprendizaje} \label{ch:team}
+\chapter{Efecto de la formaci\'on de equipos sobre el aprendizaje}\label{ch:team}
 
 
 El problema de la adquisici\'on de habilidades es ubicuo y fundamental para la vida.
@@ -3599,7 +3723,7 @@ El \emph{``Faithfulness-boost effect''} proporciona un impulso de habilidad dura
 %
 La tendencia a jugar en equipos se asocia con una mejora de las habilidades a largo plazo, mientras que jugar lealmente con el mismo compañero de equipo acelera significativamente la adquisici\'on de habilidades a corto plazo.
 
-\subsection{Introducci\'on}
+\section{Introducci\'on}
 
 La habilidad se adquiere principalmente a partir de la experiencia individual.
 %
@@ -3715,9 +3839,9 @@ Como resultado, TrueSkill puede identificar con precisi\'on la habilidad de los 
 
 Con nuestro enorme conjunto de datos, podemos investigar el impacto de las estrategias de juego en equipo en la adquisici\'on de habilidades individuales que, de otro modo, no ser\'ia posible estudiar.
 
-\subsection{Resultados}
+\section{Resultados}
 
-\subsubsection{La ley de la práctica}
+\subsection{La ley de la práctica}
 
 Primero, estudiamos c\'omo las personas mejoran su desempeño a medida que ganan experiencia, es decir, la ley de la práctica.
 %
@@ -3773,7 +3897,7 @@ Por ejemplo, el compromiso de terminar los juegos es sin duda un factor relevant
 %
 De hecho, los jugadores que siempre terminan sus juegos tienen una curva de aprendizaje más alta que el resto de la poblaci\'on, alrededor de $0.5$~tsp (Fig.~C Anexo).
 
-\subsubsection{Aprendizaje social}
+\subsection{Aprendizaje social}
 
 El aprendizaje social es esencial para los animales prosociales.
 %
@@ -3843,7 +3967,7 @@ Los resultados son análogos a los obtenidos con la media y el intervalo de conf
 \end{figure}
 
 
-\subsubsection{Faithfulness-boost effect}
+\subsection{Faithfulness-boost effect}
 
 Los jugadores pueden elegir entre jugar con el mismo compañero de equipo o seleccionar diferentes jugadores en cada juego.
 %
@@ -4031,7 +4155,7 @@ Sin embargo a medida que se gana mayor experiencia, y el efecto de la interacci\
 %
 Debido a esta dinámica el valor máximo de habilidad se alcanza siempre cuando se maximizan ambas variables TOB y loyalty, es decir maximizando el faithfulness.
 
-\subsection{Discussion}
+\section{Discussion}
 
 Tradicionalmente el aprendizaje ha sido modelado en funci\'on de la experiencia.
 %
@@ -4144,7 +4268,7 @@ Creemos que el efecto positivo de la asociaci\'on surge del compromiso social.
 Los derivados sociocognitivos de la lealtad como la confianza, la constancia y la comunicaci\'on fluida superan los costes de coordinaci\'on y la reducci\'on del abanico de relaciones que se pueden establecer.
 
 
-\subsection{Materiales y métodos}
+\section{Materiales y métodos}
 
 Todos los juegos se descargaron de Conquer Club, un servicio gratuito que ofrece jugar juegos tipo RISK.
 %
@@ -4171,7 +4295,7 @@ Todos los jugadores comienzan con una habilidad media $\mu = 25$ y una desviaci\
 %
 El valor de probabilidad de empate se estableci\'o en 0 ya que no hay posibilidad de empate en Conquer Club.
 
-\subsubsection{The game}
+\subsection{La plataforma}
 
 \paragraph{Gameplay}\label{sub:gameplay}
 
@@ -4405,274 +4529,9 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 % Parrafo
 
 Los estimadores de habilidad comúnmente utilizados en la industria del video juego y la academia, como Elo, Glicko~\cite{Glickman1999}, TrueSkill \cite{Herbrich2007} e IRT \cite{Fox2010,VanDerLinden2016}, no pueden obtener estimaciones iniciales fiables ni asegurar la comparabilidad histórica debido a que propagan la información en una sola dirección a través del sistema, utilizando el último posterior como prior del siguiente evento (enfoque \emph{filtering}).
-%
-En cambio, el modelo TrueSkill Through Time (TTT)~\cite{Dangauthier2007} propaga la información histórica a través de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio (enfoque \emph{smoothing}).
-%
-Enfoque similares fueron implementados por \cite{Coulom2008} (Whole History Rating) y \cite{Maystre2019} (KickScore), basados en aproximaciones laplacianas y procesos gaussianos respectivamente.
-% Parrafo
 
-En la tabla~\ref{Tab:Models} comparamos nuestra implementaci\'on del algoritmo TTT contra KickScore TrueSkill, Elo, y un modelo ``Constante'' en el que las habilidades no cambian en el tiempo.
 %
-Para evaluar los modelos debemos calcular su probabilidad dados los datos,%
-%
-\begin{equation}
- P(\text{Modelo}|\text{Datos}) = \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}})P(\text{Model\es{o}})}{P(\text{Dat\en{a}\es{os}})}
-\end{equation}
-%
-Cuando no tenemos acceso a todos los modelos, no podremos calcular la probabilidad $P(\text{Modelo}|\text{Datos})$, pero sí podremos comparar modelos.
-%
-\begin{equation}\label{eq:bayes_factor}
- \frac{P(\text{Modelo}_i|\text{Dat\en{a}\es{os}})}{P(\text{Model\es{o}}_j|\text{Dat\en{a}\es{os}})} = \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_i)P(\text{Model\es{o}}_i)}{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_j)P(\text{Model\es{o}}_j)} \overset{\text{\en{if}\es{si} } *}{=} \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_i)}{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_j)}
-\end{equation}
-%
-Esta expresi\'on se conoce como el \emph{Bayes factor}, el cual se suele expresar en escala logar\'itmica para reportar la diferencia en \'ordenes de magnitud.
-%
-En el caso especial en el que no tenemos preferencia a priori sobre ning\'un modelo (
-%
-\begin{equation}
-P(\text{Dat\en{a}os}|\text{Model\es{o}}) = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots P(d_n|d_1,\dots, d_{n-1},\text{Model\es{o}})
-\end{equation}
-%
-donde cada elementos de la productoria es una predicci\'on del siguiente dato en base a los datos previos y el modelo.
-%
-En este trabajo también vamos a reportare la media geométrica debido a que puede interpretarse como la predicci\'on ``característica'' del modelo,%
-%
-\begin{equation}\label{eq:gmean}
-P(\text{Dat\en{a}os}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}))^{|\text{Dat\en{a}\es{os}}|}
-\end{equation}
-%
-donde $|\text{Datos}|$ representa el tamaño del conjunto de datos.
-% Parrafo
 
-Para realizar la comparaci\'on seguiremos la metodología empleada por \cite{Maystre2019} analizando las cuatro base de datos sobre las cuales ellos reportan sus predicciones a priori: ATP (tenis), NBA (baloncesto), FIFA (f\'utbol), y FIDE (ajedrez).
-Usamos el \SI{70}{\percent} inicial de la base de datos para entrenar los hiperparámetros y el \SI{30}{\percent} final para evaluar los modelos.
-%
-Para predecir el resultado de una observaci\'on en el tiempo $t$, ellos utilizan todos los datos (en los conjuntos de entrenamiento y de prueba) hasta el día anterior a $t$.
-%
-La tabla~\ref{Tab:Models} se resumen las comparaciones de los modelos en las cuatro base de datos.
-%
-\begin{table}[ht!] \centering
-  \scriptsize
-  \begin{tabular}{c|cc|cc|cc|cc|c||c}
- \multirow{2}{*}{$\hfrac{\text{\scriptsize Dataset}}{\text{Test size}}$} & \multicolumn{2}{c|}{Constante$^\dagger$}& \multicolumn{2}{c|}{Elo$^\dagger$} & \multicolumn{2}{c|}{TrueSkill} & \multicolumn{2}{c|}{KickScore$^\dagger$} &  \multicolumn{2}{c}{TTT} \\
- & GM & $\log_2$BF & GM & $\log_2$BF & GM & $\log_2$BF & GM & $\log_2$BF & GM & LOOCV \\ \hline
-\multirow{2}{*}{$\hfrac{\text{\scriptsize Ten\en{n}is}}{\num{186361}}$} & \multirow{2}{*}{$0.5593$} & \multirow{2}{*}{\num{7910}} & \multirow{2}{*}{$0.5695$} & \multirow{2}{*}{\num{3051}} & \multirow{2}{*}{$0.5722$} & \multirow{2}{*}{\num{1780}} & \multirow{2}{*}{$0.5758$} & \multirow{2}{*}{\num{93}} & \multirow{2}{*}{$\bm{0.5760}$} & \multirow{2}{*}{${0.5908}$} \\
- & & & & & & & & & & \\
- \multirow{2}{*}{$\hfrac{\text{\scriptsize Basketball}}{\num{20300}}$} & \multirow{2}{*}{$0.5006$} & \multirow{2}{*}{\num{1771}} & \multirow{2}{*}{$0.5305$} & \multirow{2}{*}{\num{72}} & \multirow{2}{*}{$0.5316$} & \multirow{2}{*}{\num{11}} & \multirow{2}{*}{$\bm{0.5328}$} & \multirow{2}{*}{-55} & \multirow{2}{*}{${0.5318}$} & \multirow{2}{*}{${0.5382}$} \\
-  & & & & & & & & & & \\
- \multirow{2}{*}{$\hfrac{\text{\scriptsize Chess}}{\num{92004}}$} & \multirow{2}{*}{$0.3570$} & \multirow{2}{*}{\num{520}} & \multirow{2}{*}{$0.3552$} & \multirow{2}{*}{\num{1190}} & \multirow{2}{*}{$0.3580$} & \multirow{2}{*}{\num{148}} & \multirow{2}{*}{$\bm{0.3584}$} & \multirow{2}{*}{0} & \multirow{2}{*}{$\bm{0.3584}$} & \multirow{2}{*}{${0.3641}$} \\
- & & & & & & & & & \\
- \multirow{2}{*}{$\hfrac{\text{\scriptsize \en{Football}F\'utbol}}{\num{5759}}$} & \multirow{2}{*}{$0.3949$} & \multirow{2}{*}{\num{30}} & \multirow{2}{*}{$0.3867$} & \multirow{2}{*}{\num{204}} & \multirow{2}{*}{$0.3921$} & \multirow{2}{*}{\num{89}} & \multirow{2}{*}{$\bm{0.3961}$} & \multirow{2}{*}{\num{4}} & \multirow{2}{*}{$\bm{0.3963}$} &  \multirow{2}{*}{${0.3974}$} \\
-  & & & & & & & & & & \\ \hline
-  \end{tabular}
-  \caption{
-  Comparaciones de modelos en cuatro base de datos.
-  %
-  Las columnas GM reportan la media geométrica de las predicciones a priori de los modelos (ecuaci\'on \ref{eq:gmean}).
-  %
-  Las columnas $\text{log}_2$BF reportan el Bayes Factor (ecuaci\'on \ref{eq:bayes_factor}) entre TTT y otros modelos en escala logarítmica.
-  %
-  Como referencia, la columna LOOCV reporta la media geométrica de las predicciones usando toda la informaci\'on hist\'orica, $p(d_i| d_1, \dots, d_{i-1}, d_{i+1}, \dots, d_n , M)$.
-  %
-  La media geométrica de los modelos señalados con el símbolo $\dagger$ fue obtenida por \cite{Maystre2019}.
-  }
-  \label{Tab:Models}
-\end{table}
-%
-El modelo TTT supera KickScore en la base de datos de tenis por $93$ \'ordenes de magnitud, mientras que KickScore supera a TTT en la base de ajedrez por $55$ \'ordenes de magnitud.
-%
-Consideramos que los modelos empatan en las bases de datos de ajedrez y de fútbol en tanto la diferencia entre s es menor a 10 \'ordenes de magnitud.
-%
-Unificando las cuatro base de datos en una sola, el modelo TTT supera a KickScore por más de 40 \'ordenes de magnitud.
-% Parrafo
-
-Para computar las predicciones ellos utilizan un cluster para crear en paralelo un modelo diferente por cada día $t$, que requieren cada uno cerca de 100 iteraciones para alcanzar convergencia.
-%
-En cambio, para nosotros fue suficiente usar una computadora de escritorio para crear un \'unico modelo al que le agregamos las datos día a día, realizando una \'unica iteraci\'on en cada paso.
-%
-La selecci\'on de modelo la hemos realizado optimizando los hiperparámetros, pero una selecci\'on de modelo bayesiana completa debería computar las predicciones integrando todo el espacio de hiperparámetros.
-%
-Este procedimiento suele penalizar a los modelos complejos cuando la b\'usqueda en el espacio de hiperparámetros es innecesaria.
-%
-Con no más de tres hiperparámetros intuitivos (incertidumbre a priori, incertidumbre dinámica y probabilidad de empate), el modelo TTT logra resultados similares y hasta mejores que KickScore de forma más eficiente, debido a que el \'ultimo debe optimizar en un espacio de parámetros mucho más grande, que incluye la definci\'on de un \emph{kernel} y luego los hiperparámetros específicos a ese \emph{kernel}.
-% Parrafo
-
-Cuando el objetivo es estimar las curvas de aprendizaje en el tiempo con la mayor precisión posible, en vez de forzar al modelo a hacer la inferencia usando solamente la informaci\'on del pasado (como hicimos para comparar el desempeño de los modelos), conviene hacer la inferencia usando toda la información histórica.
-%
-Esto es útil debido a que los modelos probabilísiticos pueden usar informaci\'on del futuro para inferir eventos del pasado, algo que intuitivamente hacemos cuando sospechamos que los deportistas destacados también eran hábiles un tiempo antes de hacerse conocidos.
-%
-La columna LOOCV de la tabla~\ref{Tab:Models} reporta la media geométrica de las predicciones que usan toda la informaci\'on hist\'orica excepto el evento que se está prediciendo, $p(d_i| d_1, \dots, d_{i-1}, d_{i+1}, \dots, d_n , M)$.
-%
-Si bien no usamos estas predicciones offline para comparar modelos (Bayes Factor), es interesante notar que incorporar toda la información histórica al modelo TTT mejora sus propias estimaciones centenas de órdenes de magnitud.
-% Parrafo
-
-Debido a que la estimación de habilidad es un problema sensible para los individuos, en las siguientes secciones ofrecemos una explicación lo más intuitiva y completa posible.
-%
-Las comunidades que son evaluadas tanto en la industria del video juego como en los sistemas educativos necesitan conocer c\'omo funciona el algoritmo que mide su habilidad.
-%
-Este trabajo, además de ofrecer una herramienta de software, ofrece una reporte científico completo y accesible al p\'ublico en general.
-\subsection{Elo model}
-% Parrafo
-
-A partir de la representaci\'on gr\'afica propuesta en la figura \ref{fig:generative_model}, se puede derivar la predicci\'on del resultado dadas las estimaciones previas, $P(\,r\,|\,s_{i_\text{old}},s_{j_\text{old}}\,)$.
-%
-La soluci\'on metodol\'ogica de Elo es simple y astuta: actualizar las estimaciones puntuales previas, $s_{i_\text{old}}$ y $s_{j_\text{old}}$, en base a la sorpresa, i.e.~el complemento de la predicci\'on del resultado observado.
-%
-\begin{equation} \label{eq:elo_delta}
- \Delta = \underbrace{\left(1-P(\,r\,|\,s_{i_\text{old}},s_{j_\text{old}}\,)\right)}_{\text{Sorpresa}}
-\end{equation}
-%
-Donde la probabilidad surge de instanciar las estimaciones previas en el modelo generativo (detalles en la secci\'on~\ref{sec:2vs2}).
-%
-La idea es que la magnitud de la sorpresa $\Delta$ est\'a relacionada con cuan buenas son las estimaciones previas, y por lo tanto puede usarse para actualizarlas.
-%
-Resultados inesperados indicar\'ian que las estimaciones actuales no son del todo correctas y deber\'ian actualizarse en mayor medida que si hubieran ocurrido como se esperaba.
-%
-\begin{equation}\label{eq:elo_update}
- s_{\text{winner}_\text{new}} = s_{\text{winner}_\text{old}} + \Delta \ \ \ \ \ s_{\text{loser}_\text{new}} = s_{\text{loser}_\text{old}} - \Delta
-\end{equation}
-%
-Donde la sorpresa $\Delta$ act\'ua como factor de correcci\'on para ambas estimaciones previas.
-%
-Esta soluci\'on puede recuperar la escala relativa de los agentes, partiendo de valores iniciales arbitrarios.
-%
-Sin embargo, tiene algunas debilidades importantes.
-%
-La regla de actualizaci\'on (Ec.~\eqref{eq:elo_update}) es sim\'etrica, as\'i que lo que gana un agente el otro lo pierde.
-%
-Debido a que a los agentes nuevos comienzan con estimaciones arbitrarias (el mismo valor inicial para cualquier individuo), ellas tienden a generan alta sorpresa y por lo tanto pueden modificar bruscamente las estimaciones de sus oponentes a pesar de que ya hubieran convergido.
-%
-Esta debilidad ocurre por no tener en cuenta la incertidumbre sobre las estimaciones de los agentes.
-%
-Una soluci\'on ad-hoc fue propuesta para resolver este problema: reducir el impacto de la sorpresa en funci\'on de la cantidad de veces que el agente ha participado previamente.
-%
-%
-% Ese es rol que desempe\~na el K-factor usado por la FIDE, $\Delta_i = \Delta \cdot K_i$.
-% Cambio de parrafo
-\subsection{TrueSkill model}
-Para corregir los problemas del algoritmo Elo es necesario computar la incertidumbre de las estimaciones.
-%
-Este enfoque conocido como inferencia bayesiana ha demostrado ser exitoso en la pr\'actica~\cite{Bishop2006} y garantiza un razonamiento consistente en contextos de incertidumbre~\cite{Jaynes2003,VanHorn2003}.
-%
-Toda la teoría de la probabilidad puede resumirse en dos reglas: la~\ref{eq:sum_rule} y la~\ref{eq:product_rule}.
-%
-La \ref{eq:sum_rule} afirma que cualquier distribuci\'on marginal se puede obtener integrando o sumando la distribuci\'on conjunta.
-%
-\begin{equation} \label{eq:sum_rule}
- \tag{regla de la suma}
- P(x) = \sum_{y} P(x,y) \ \ \ \ \ \text{or} \ \ \ \ \ p(x) = \int p(x,y) \, dy
-\end{equation}
-%
-Donde $P(\cdot)$ y $p(\cdot)$ representan distribuciones de probabilidad discretas y continuas respectivamente.
-%
-Adem\'as, la \ref{eq:product_rule} se\~nala que cualquier distribuci\'on conjunta puede ser expresada como el producto de distribuciones condicionales uni-dimensionles.
-%
-\begin{equation}\label{eq:product_rule}
-\tag{regla del producto}
- p(x,y) = p(x|y) p(y)
-\end{equation}
-%
-De estas reglas obtenemos inmediatamente el~\ref{eq:bayes_theorem},
-%
-\begin{equation}\label{eq:bayes_theorem}
-\tag{Teorema de bayes}
- p(y|x) = \frac{p(x|y)p(y)}{p(x)}
-\end{equation}
-%
-%
-% El uso inferencial del teorema de bayes juega un rol central en las t\'ecnicas modernas de aprendizaje estad\'isitico.
-%
-El \ref{eq:bayes_theorem} actualiza de forma \'optima las creencia sobre las hip\'otesis, maximizando la incertidumbre luego de haber incorporar la informaci\'on provista por el modelo y los datos.
-%
-Para cuantificar la incertidumbre de nuestras hip\'otesis de habilidades utilizando la informaci\'on que nos ofrece el resultado observado y el modelo causal descrito, necesitamos resolver:
-%
-\begin{equation}\label{eq:event_inference}
- \underbrace{p(\overbrace{\text{Habilidad$_i$}}^{\text{\en{Hidden}\es{Oculta}}}|\overbrace{\text{Result\es{ado}}}^{\text{Observ\en{ed}\es{ado}}}, \text{Model\es{o}})}_{\text{Posterior}} = \frac{\overbrace{P(\,\text{Result\es{ado}}\,|\,\text{\en{Skill}\es{Habilidad}$_i$}\,,\text{Model\es{o}})}^{\text{\en{Likelihood}\es{Verosimilitud}}}\overbrace{p(\text{\en{Skill}\es{Habilidad}$_i$})}^{\text{Prior}}}{\underbrace{P(\text{Result\es{ado}}\,|\,\text{Model\es{o}})}_{\text{Evidenc\en{e}\es{ia} o\en{r}\es{ predicci\'on a} prior \en{prediction}}}}
-\end{equation}
-%
-Donde la \'unica variable libre es la hip\'otesis de habilidad del agente $i$.
-%
-El prior cuantifica la incertidumbre sobre la habilidad antes de ver el resultado, y el posterior cuantifica la incertidumbre luego de ver el resultado.
-%
-La verosimilitud y la evidencia son ambas probabilidades del resultado observado, por lo que pueden ser vistas como predicciones.
-%
-Como los resultados son variables discretas, esas probabilidad se escribe con letras may\'usculas.
-%
-Debido a que la evidencia es la misma para todas las hip\'otesis, el \'unico factor que actualiza nuestras creencias es la verosimilitud.
-% Parrafo
-
-A modo de ejemplo, consideremos un caso ganador ($p_i > p_j$) usando priors gaussianos, $\N(\,s\,|\,\mu, \sigma^2)$.
-%
-Nuestra creencia a priori respecto de la diferencia de desempeños, $d=p_i-p_j$, se puede expresar como una gaussiana centrada en la diferencia de las medias de las estimaciones a priori ($\mu_i - \mu_j$), con una varianza que incorpora la incertidumbre de ambas estimaciones ($\sigma$) y la varianza de ambos rendimientos ($\beta$), $\N(\, d \, | \, \mu_i -\mu_j \, ,\ 2\beta^2 + \sigma_i^2 + \sigma_j^2 \,)$.
-%
-Al observar que el agente $i$ gan\'o, sabemos por el modelo causal que la diferencia de desempeños oculta fue en efecto positiva.
-%
-Por lo tanto, la predicci\'on a priori del resultado observado, o evidencia, es la densidad acumulada ($\Phi$) de todos los valores positivos de la gaussiana de diferencia de desempeños (Equation~\ref{eq:evidence}).
-%
-A partir de ahora el rol del modelo se dejar\'a impl\'icito.
-%
-\begin{equation}\label{eq:evidence}
- \overbrace{P(r)}^{\text{Evidencia}} = 1-\Phi(0 \, | \overbrace{\mu_i^{\phantom{2}} - \mu_j}^{\hfrac{\text{\en{Expected}\es{Diferencia}}}{\text{\en{difference}\es{esperada}}}} , \, \overbrace{2\beta^2 + \sigma_i^2+ \sigma_j^2}^{\hfrac{\text{\en{Total}\es{Incertidumbre}}}{\text{\en{uncertainty}\es{total}}}})
-\end{equation}
-%
-La evidencia es una predicci\'on hecha con todas las hip\'otesis a priori.
-%
-Como es constante, la incertidumbre a posteriori de cada hip\'otesis es proporcional al producto de su incertidumbre a priori y su verosimilitud, como se muestra en la ecuaci\'on~\eqref{eq:posterior_win}.
-%
-En la secci\'on~\ref{sec:2vs2} veremos en detalle c\'omo todas estas ecuaciones surge de aplicar las reglas de las suma y el producto sobre el modelo.
-%
-\begin{equation}\label{eq:posterior_win}
-\underbrace{p(\,s_i\, | \, r \, )}_{\text{Posterior}} \propto \underbrace{1-\Phi(0 \, |  s_i - \mu_j , \, 2\beta^2 + \sigma_j^2)}_{\text{Verosimilitud} \ P(r|s_i)} \,  \underbrace{\N(s_i \, | \, \mu_i,\, \sigma_i^2)}_{\text{Prior} \ p(s_i)}
-\end{equation}
-%
-Donde el posterior normalizado se obtiene dividiendo el lado derecho con la evidencia, $P(r)$.
-%
-Es interesante notar las similitudes y diferencias entre la verosimilitud y la evidencia.
-%
-La verosimilitud cuantifica la misma densidad acumulada que la evidencia, pero centrada ahora en la diferencia entre la hip\'otesis que estamos evaluando $s_i$ y la estimaci\'on media del oponente $\mu_j$, con una varianza que incluye todas las incertidumbres salvo la de la propia hip\'otesis $s_i$.
-%
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[page={2},width=.6\linewidth]{figures/posterior_win}
-    \caption{
-    %
-    Actualizaci\'on de creencias para el caso ganador.
-    %
-    El posterior proporcional se obtiene como el producto de la distribuci\'on a priori (distribuci\'on gaussiana) y la verosimilitud (distribuci\'on gaussiana acumulada).
-    %
-    La evidencia es la integral del posterior proporcional.
-    %
-    Las distribuciones no est\'an necesariamente en la misma escala: la distribuci\'on a priori integra 1, mientras que la verosimilitud va de 0 a 1.
-    }
-    \label{fig:posterior_win}
-\end{figure}
-El posterior no es m\'as que la densidad del prior no filtrada por la verosimilitud.
-%
-La sorpresa, definida como el complemento de la verosimilitud, funciona como un filtro para el prior.
-%
-En la regi\'on de hip\'otesis de muy alta habilidad, donde el resultado ganador no nos hubiera generado casi ninguna sorpresa ($\lim_{s_i \to \infty}P(r|s_i) = 1$), el posterior recibe casi toda la densidad del prior.
-%
-En cambio, en la regi\'on de hip\'otesis de muy baja habilidad, donde el resultado habr\'ia generado mucha sorpresa ($\lim_{s_i \to -\infty}P(r|s_i) = 0$), el posterior no recibe casi nada de la densidad del prior.
-% Parrafo
-
-Es importante remarcar que la posterior, aunque se parezca, no es una distribuci\'on gaussiana, lo que nos impedir\'a usar la ecuaci\'on~\eqref{eq:posterior_win} iterativamente.
-%
-Por la forma del posterior exacto, una gaussiana puede ser usada como una buena aproximaci\'on, permiti\'endonos evitar el costo computacional de las metodolog\'ias de sampleo.
-%
-Uno de los principales aportes del sistema Glicko~\cite{Glikman2013} fue el desarroll\'o de un m\'etodo eficiente para aproximar la posterior exacta con una distribuci\'on gaussiana.
-%
-Sin embargo, este m\'etodo no garantiza que la distribuci\'on gaussiana seleccionada sea la que mejor aproxima.
-%
-El \'exito de la soluci\'on TrueSkill~\cite{Herbrich2007} se basa en la aplicaci\'on de m\'etodo eficiente para calcular la gaussiana que mejor aproxima al posterior exacto (secci\'on~\ref{sec:approximate_posterior}),
-%
-\begin{equation} \label{eq:approx}
- \widehat{p}(s_i| r, s_j) = \underset{\mu, \sigma}{\text{ arg min }} \ \ \text{KL}(\, p(s_i| r, s_j) \, || \,  \N(s_i|\mu, \sigma^2) \, )
-\end{equation}
-%
-en términos de minizaci\'on de la divergencia Kullback-Leibler entre la distribuci\'on verdadera y la aproximada.
-%
-Este método nos permite aplicar eficientemente la ecuaci\'on~\eqref{eq:posterior_win} iterativamente sobre una secuencia de observaciones, que de otra manera sería inviable.
-%
 El enfoque adoptado por TrueSkill para tratar el proceso din\'amico, conocido como \emph{filtering}, usa el \'ultimo posterior aproximado como prior del siguiente evento.
 %
 Luego, el posterior aproximado en un determinado momento se define como,
@@ -4803,9 +4662,116 @@ La correcci\'on de los sesgos es un paso fundamental para construir estimadores 
 Con este art\'iculo ponemos a disposici\'on los primeros paquetes de TrueSkill Through Time para \texttt{Julia}, \texttt{Python} y \texttt{R}, junto con su documentaci\'on cient\'ifica completa~\cite{Landfried-repo:ttt}.
 
 
+\subsection{Evaluación de modelos}
+
+El modelo TrueSkill Through Time (TTT)~\cite{Dangauthier2007} propaga la información histórica a través de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio (enfoque \emph{smoothing}).
+%
+Enfoque similares fueron implementados por \cite{Coulom2008} (Whole History Rating) y \cite{Maystre2019} (KickScore), basados en aproximaciones laplacianas y procesos gaussianos respectivamente.
+% Parrafo
+
+En la tabla~\ref{Tab:Models} comparamos nuestra implementaci\'on del algoritmo TTT contra KickScore TrueSkill, Elo, y un modelo ``Constante'' en el que las habilidades no cambian en el tiempo.
+%
+Para evaluar los modelos debemos calcular su probabilidad dados los datos,%
+%
+\begin{equation}
+ P(\text{Modelo}|\text{Datos}) = \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}})P(\text{Model\es{o}})}{P(\text{Dat\en{a}\es{os}})}
+\end{equation}
+%
+Cuando no tenemos acceso a todos los modelos, no podremos calcular la probabilidad $P(\text{Modelo}|\text{Datos})$, pero sí podremos comparar modelos.
+%
+\begin{equation}\label{eq:bayes_factor}
+ \frac{P(\text{Modelo}_i|\text{Dat\en{a}\es{os}})}{P(\text{Model\es{o}}_j|\text{Dat\en{a}\es{os}})} = \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_i)P(\text{Model\es{o}}_i)}{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_j)P(\text{Model\es{o}}_j)} \overset{\text{\en{if}\es{si} } *}{=} \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_i)}{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_j)}
+\end{equation}
+%
+Esta expresi\'on se conoce como el \emph{Bayes factor}, el cual se suele expresar en escala logar\'itmica para reportar la diferencia en \'ordenes de magnitud.
+%
+En el caso especial en el que no tenemos preferencia a priori sobre ning\'un modelo (
+%
+\begin{equation}
+P(\text{Dat\en{a}os}|\text{Model\es{o}}) = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots P(d_n|d_1,\dots, d_{n-1},\text{Model\es{o}})
+\end{equation}
+%
+donde cada elementos de la productoria es una predicci\'on del siguiente dato en base a los datos previos y el modelo.
+%
+En este trabajo también vamos a reportare la media geométrica debido a que puede interpretarse como la predicci\'on ``característica'' del modelo,%
+%
+\begin{equation}\label{eq:gmean}
+P(\text{Dat\en{a}os}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}))^{|\text{Dat\en{a}\es{os}}|}
+\end{equation}
+%
+donde $|\text{Datos}|$ representa el tamaño del conjunto de datos.
+% Parrafo
+
+Para realizar la comparaci\'on seguiremos la metodología empleada por \cite{Maystre2019} analizando las cuatro base de datos sobre las cuales ellos reportan sus predicciones a priori: ATP (tenis), NBA (baloncesto), FIFA (f\'utbol), y FIDE (ajedrez).
+Usamos el \SI{70}{\percent} inicial de la base de datos para entrenar los hiperparámetros y el \SI{30}{\percent} final para evaluar los modelos.
+%
+Para predecir el resultado de una observaci\'on en el tiempo $t$, ellos utilizan todos los datos (en los conjuntos de entrenamiento y de prueba) hasta el día anterior a $t$.
+%
+La tabla~\ref{Tab:Models} se resumen las comparaciones de los modelos en las cuatro base de datos.
+%
+\begin{table}[ht!] \centering
+  \scriptsize
+  \begin{tabular}{c|cc|cc|cc|cc|c||c}
+ \multirow{2}{*}{$\hfrac{\text{\scriptsize Dataset}}{\text{Test size}}$} & \multicolumn{2}{c|}{Constante$^\dagger$}& \multicolumn{2}{c|}{Elo$^\dagger$} & \multicolumn{2}{c|}{TrueSkill} & \multicolumn{2}{c|}{KickScore$^\dagger$} &  \multicolumn{2}{c}{TTT} \\
+ & GM & $\log_2$BF & GM & $\log_2$BF & GM & $\log_2$BF & GM & $\log_2$BF & GM & LOOCV \\ \hline
+\multirow{2}{*}{$\hfrac{\text{\scriptsize Ten\en{n}is}}{\num{186361}}$} & \multirow{2}{*}{$0.5593$} & \multirow{2}{*}{\num{7910}} & \multirow{2}{*}{$0.5695$} & \multirow{2}{*}{\num{3051}} & \multirow{2}{*}{$0.5722$} & \multirow{2}{*}{\num{1780}} & \multirow{2}{*}{$0.5758$} & \multirow{2}{*}{\num{93}} & \multirow{2}{*}{$\bm{0.5760}$} & \multirow{2}{*}{${0.5908}$} \\
+ & & & & & & & & & & \\
+ \multirow{2}{*}{$\hfrac{\text{\scriptsize Basketball}}{\num{20300}}$} & \multirow{2}{*}{$0.5006$} & \multirow{2}{*}{\num{1771}} & \multirow{2}{*}{$0.5305$} & \multirow{2}{*}{\num{72}} & \multirow{2}{*}{$0.5316$} & \multirow{2}{*}{\num{11}} & \multirow{2}{*}{$\bm{0.5328}$} & \multirow{2}{*}{-55} & \multirow{2}{*}{${0.5318}$} & \multirow{2}{*}{${0.5382}$} \\
+  & & & & & & & & & & \\
+ \multirow{2}{*}{$\hfrac{\text{\scriptsize Chess}}{\num{92004}}$} & \multirow{2}{*}{$0.3570$} & \multirow{2}{*}{\num{520}} & \multirow{2}{*}{$0.3552$} & \multirow{2}{*}{\num{1190}} & \multirow{2}{*}{$0.3580$} & \multirow{2}{*}{\num{148}} & \multirow{2}{*}{$\bm{0.3584}$} & \multirow{2}{*}{0} & \multirow{2}{*}{$\bm{0.3584}$} & \multirow{2}{*}{${0.3641}$} \\
+ & & & & & & & & & \\
+ \multirow{2}{*}{$\hfrac{\text{\scriptsize \en{Football}F\'utbol}}{\num{5759}}$} & \multirow{2}{*}{$0.3949$} & \multirow{2}{*}{\num{30}} & \multirow{2}{*}{$0.3867$} & \multirow{2}{*}{\num{204}} & \multirow{2}{*}{$0.3921$} & \multirow{2}{*}{\num{89}} & \multirow{2}{*}{$\bm{0.3961}$} & \multirow{2}{*}{\num{4}} & \multirow{2}{*}{$\bm{0.3963}$} &  \multirow{2}{*}{${0.3974}$} \\
+  & & & & & & & & & & \\ \hline
+  \end{tabular}
+  \caption{
+  Comparaciones de modelos en cuatro base de datos.
+  %
+  Las columnas GM reportan la media geométrica de las predicciones a priori de los modelos (ecuaci\'on \ref{eq:gmean}).
+  %
+  Las columnas $\text{log}_2$BF reportan el Bayes Factor (ecuaci\'on \ref{eq:bayes_factor}) entre TTT y otros modelos en escala logarítmica.
+  %
+  Como referencia, la columna LOOCV reporta la media geométrica de las predicciones usando toda la informaci\'on hist\'orica, $p(d_i| d_1, \dots, d_{i-1}, d_{i+1}, \dots, d_n , M)$.
+  %
+  La media geométrica de los modelos señalados con el símbolo $\dagger$ fue obtenida por \cite{Maystre2019}.
+  }
+  \label{Tab:Models}
+\end{table}
+%
+El modelo TTT supera KickScore en la base de datos de tenis por $93$ \'ordenes de magnitud, mientras que KickScore supera a TTT en la base de ajedrez por $55$ \'ordenes de magnitud.
+%
+Consideramos que los modelos empatan en las bases de datos de ajedrez y de fútbol en tanto la diferencia entre s es menor a 10 \'ordenes de magnitud.
+%
+Unificando las cuatro base de datos en una sola, el modelo TTT supera a KickScore por más de 40 \'ordenes de magnitud.
+% Parrafo
+
+Para computar las predicciones ellos utilizan un cluster para crear en paralelo un modelo diferente por cada día $t$, que requieren cada uno cerca de 100 iteraciones para alcanzar convergencia.
+%
+En cambio, para nosotros fue suficiente usar una computadora de escritorio para crear un \'unico modelo al que le agregamos las datos día a día, realizando una \'unica iteraci\'on en cada paso.
+%
+La selecci\'on de modelo la hemos realizado optimizando los hiperparámetros, pero una selecci\'on de modelo bayesiana completa debería computar las predicciones integrando todo el espacio de hiperparámetros.
+%
+Este procedimiento suele penalizar a los modelos complejos cuando la b\'usqueda en el espacio de hiperparámetros es innecesaria.
+%
+Con no más de tres hiperparámetros intuitivos (incertidumbre a priori, incertidumbre dinámica y probabilidad de empate), el modelo TTT logra resultados similares y hasta mejores que KickScore de forma más eficiente, debido a que el \'ultimo debe optimizar en un espacio de parámetros mucho más grande, que incluye la definci\'on de un \emph{kernel} y luego los hiperparámetros específicos a ese \emph{kernel}.
+% Parrafo
+
+Cuando el objetivo es estimar las curvas de aprendizaje en el tiempo con la mayor precisión posible, en vez de forzar al modelo a hacer la inferencia usando solamente la informaci\'on del pasado (como hicimos para comparar el desempeño de los modelos), conviene hacer la inferencia usando toda la información histórica.
+%
+Esto es útil debido a que los modelos probabilísiticos pueden usar informaci\'on del futuro para inferir eventos del pasado, algo que intuitivamente hacemos cuando sospechamos que los deportistas destacados también eran hábiles un tiempo antes de hacerse conocidos.
+%
+La columna LOOCV de la tabla~\ref{Tab:Models} reporta la media geométrica de las predicciones que usan toda la informaci\'on hist\'orica excepto el evento que se está prediciendo, $p(d_i| d_1, \dots, d_{i-1}, d_{i+1}, \dots, d_n , M)$.
+%
+Si bien no usamos estas predicciones offline para comparar modelos (Bayes Factor), es interesante notar que incorporar toda la información histórica al modelo TTT mejora sus propias estimaciones centenas de órdenes de magnitud.
+% Parrafo
+
+Debido a que la estimación de habilidad es un problema sensible para los individuos, en las siguientes secciones ofrecemos una explicación lo más intuitiva y completa posible.
+%
+Las comunidades que son evaluadas tanto en la industria del video juego como en los sistemas educativos necesitan conocer c\'omo funciona el algoritmo que mide su habilidad.
+%
+Este trabajo, además de ofrecer una herramienta de software, ofrece una reporte científico completo y accesible al p\'ublico en general.
 
 
-\section{Aplicaciones} \label{sec:illustrations}
+\section{Aplicaciones sintéticas} \label{sec:illustrations}
 En esta secci\'on mostramos c\'omo usar los paquetes de \texttt{Julia}, \texttt{Python} y \texttt{R} para resolver un evento, una secuencia de tres eventos, la evoluci\'on de habilidad de un jugador, y la historia de la Asociaci\'on de Tenis Profesional (ATP).
 %
 Presentamos las soluciones de los modelos TrueSkill y TrueSkill Through Time, y los pasos para obtener los posteriors, las curvas de aprendizaje, y la predicci\'on a priori del dato observado (i.e.~evidencia).
@@ -5051,6 +5017,7 @@ El equipo con la mayor puntuaci\'on es el ganador y los equipos con misma puntua
 De este modo podemos especificar cualquier resultado, incluidos empates globales.
 %
 La evidencia y el posterior se obtienen de la misma forma que hemos visto.
+
 \subsection{Secuencia de eventos} \label{sec:sequence_of_events}
 La clase \texttt{History} se usa para computar los posteriors y la evidencia de secuencias de eventos.
 %
@@ -5273,7 +5240,8 @@ En la figura~\ref{fig:logistic_mu} vemos que las medias de las curvas de aprendi
 En la figura~\ref{fig:logistic_sigma} vemos que la curva real esta siempre contenida en el intervalo de incertidumbre de cualquiera de las estimaciones.
 %
 Este ejemplo evidencia que TrueSkill Through Time es capaz de seguir la evoluci\'on de las habilidades de los jugador nuevos.
-\subsection{Historia de la Asociaci\'on de Tenistas Profesionales (ATP)} \label{sec:atp}
+
+\section{Historia de la Asociaci\'on de Tenistas Profesionales (ATP)} \label{sec:atp}
 En este \'ultimo ejemplo utilizamos toda la historia de partidas de la Asociaci\'on de Tenistas Profesionales (ATP).
 %
 La base de datos cuenta con \num{447000} mil partidas que van desde el año 1915 hasta el 2020, en las que participan \num{19000} jugadores.
@@ -5392,6 +5360,8 @@ Cabe destacar que la habilidad de los tenistas no aument\'o bruscamente a lo lar
 % COMPLETAR%
 % Parrafo
 
+\subsection{Habilidades multidimensionales}
+
 En el ejemplo anterior resumimos la habilidad de los jugadores en una \'unica dimensi\'on.
 %
 TrueSkill Through Time permite estimar habilidades multi-dimensionales.
@@ -5465,7 +5435,6 @@ En este escenario, la habilidad de Nadal en polvo de ladrillo es $0.87\beta$ may
 \chapter{Implementación del estimador de habilidad estado-del-arte}
 
 
-\section{Models and software}
 En esta secci\'on ofrecemos la documentaci\'on matemática completa del modelo TrueSkill Through Time.
 %
 La ventaja de este modelo reside en la aplicaci\'on estricta de la teoría de la probabilidad: todos los supuestos se hacen expl\'icitos a trav\'es de un modelo generativo, y la inferencia se resuelve s\'olo con las regla de la probabilidad, nada más que las reglas de la suma y el producto.
@@ -5481,7 +5450,11 @@ En las secciones \ref{sec:2vs2}, \ref{sec:empate}, \ref{sec:approximate_posterio
 En la secci\'on \ref{sec:iterative_posterior} explicamos la soluci\'on general multi-equipos, que requiere la aplicaci\'on de un algoritmo iterativo.
 %
 En la secci\'on~\ref{sec:throughTime} justificamos los pasos matemáticos requeridos para resolver el modelo TrueSkill Through Time completo.
+
+\section{Introducción}
+
 \subsection{Sum-product algorithm} \label{sec:sumProductAlgorithm}
+
 El \emph{sum-product algorithm}~\cite{Kschischang2001} aprovecha la estructura de la distribuci\'on de probabilidad conjunta, impuesta por el modelo causal, para aplicar eficientemente las reglas de la probabilidad.
 %
 Cualquier modelo puede factorizarse en el producto de probabilidades condicionales.
@@ -5577,7 +5550,9 @@ p(v) = \prod_{h \in n(v)} m_{h \rightarrow v}
 \end{equation*}
 %
 Este algoritmo codifica la m\'inima cantidad de pasos que se requieren para calcular cualquier distribuci\'on de probabilidad marginal.
+
 \subsection{Propiedades matem\'aticas y notaci\'on}\label{sec:propiedades}
+
 La eficiencia de TrueSkill Through Time se obtiene gracias que las marginales se pueden computar de forma analítica.
 %
 En esta secci\'on enumeramos las propiedades que necesitamos para derivar los mensajes exactos y aproximados que surgen del \emph{sum-product algorithm}.
@@ -5646,6 +5621,7 @@ La simetría de la distribuci\'on gaussiana acumulada.
 \begin{equation*}\label{eq:phi_simetria} \tag{\text{Simetría de la gaussiana acumulada}}
 \Phi(0|\mu,\sigma^2) = 1-\Phi(0|-\mu,\sigma^2)
 \end{equation*}
+
 \subsection{La clase gaussiana}\label{sec:Gaussian}
 La clase \texttt{Gaussian} realiza la mayor parte del c\'omputo en todos los paquetes.
 %
@@ -5682,7 +5658,9 @@ La clase sobreescribe los operadores suma (\texttt{+}), resta (\texttt{-}), prod
 \end{equation*}
 %
 Aunque estas propiedades son ampliamente conocidas, adjuntamos sus demostraciones completas en el material suplementario.
-\subsection{La soluci\'on exacta para eventos con dos equipos}\label{sec:2vs2}
+
+\section{Soluci\'on exacta para eventos con dos equipos}\label{sec:2vs2}
+
 %
 % TrueSkill permite estimar la habilidad de los individuos incluso cuando estos juegan en equipo.
 %
@@ -5777,7 +5755,7 @@ S\'olo necesitamos el \emph{sum-product algorithm} y las propiedades arriba menc
 %
 Empezaremos primero con los mensajes ``descendentes'', desde los priors al resultado, hasta calcular la evidencia, y seguiremos con los mensajes ``ascendentes'', desde el resultado observado a los priors, hasta calcular el posterior de cada agente.
 
-\textbf{Mensajes descendentes.}%
+\subsection{Mensajes descendentes.}%
 %
 Siguiendo el~\ref{eq:m_f_v} del \emph{sum-product algorithm} y la factorizaci\'on del modelo presentado en la figura~\ref{fig:modelo_trueskill_2vs2}, podemos ver que los mensajes que envían los factores de habilidad $f_{s_i}$ a la variable $s_i$ no son otra cosa m\'as que el prior.
 %
@@ -5887,13 +5865,14 @@ e = 1 - cdf(0,d@mu,d@sigma)
 \end{lstlisting}
 %
 Donde \texttt{e} contiene el valor de la ecuaci\'on \texttt{evidence}.
-\textbf{
+
+\subsection{Mensajes ascendentes.}%
 %
 Examinemos ahora los mensajes ascendentes.
 %
 %
 % Así como los mensajes descendente podíamos interpretarlos como priors, en este caso los mensajes ascendentes van a poder ser interprestados como likelihoods, debido a que transmiten la informaci\'on del resultado observado.
-%
+% %
 El primer mensaje ascendentes lo envía el factor de resultados $f_r$ a la variable de diferencia $d$.
 %
 \begin{equation}%\label{eq:m_fr_d} \tag{\texttt{exact\_lhood\_d}}
@@ -5916,8 +5895,7 @@ En este caso se integra el mensaje ascendente anterior junto con el mensaje desc
 %
 Este mensaje, parametrizado en $t_a$, es la acumulada de la distribuci\'on gaussiana de los rendimientos del equipo contrario desde $t_a$ hasta $\infty$, y codifica la verosimilitud de las hip\'otesis de rendimiento de equipo ganador.
 %
-\en{The message sent by team performance factor $f_{t_a}$ to the variable of the individual performance $p_1$ is:}
-El mensaje enviado por el factor de rendimiento del equipo $f_{t_a}$ a la variable del rendimiento individual $p_1$ es,}
+El mensaje enviado por el factor de rendimiento del equipo $f_{t_a}$ a la variable del rendimiento individual $p_1$ es,
 %
 \begin{equation}%\label{eq:m_fta_p_inicial} \tag{\texttt{exact\_lhood\_p1}}
 \begin{split}
@@ -6016,7 +5994,8 @@ margin = compute_margin(p_draw, sd)
 \end{lstlisting}
 %
 donde los agentes \texttt{a} fueron inicializados en el c\'odigo \ref{lst:player}, y \texttt{beta} en el c\'odigo~\ref{lst:parameters}.
-\subsection{Aproximaci\'on \'optima del posterior exacto} \label{sec:approximate_posterior}
+
+\section{Aproximaci\'on \'optima del posterior exacto} \label{sec:approximate_posterior}
 %
 En la secci\'on~\ref{sec:2vs2} hemos visto como encontrar el posterior exacto.
 %
@@ -6440,7 +6419,8 @@ lhood_tc = lhood_lose_tc
 \end{lstlisting}
 %
 Los siguientes mensajes ascendentes se calculan como se describe en la secci\'on \ref{sec:approximate_posterior}.
-\subsection{Propagaci\'on de la informaci\'on en la clase History} \label{sec:throughTime}
+
+\section{Propagaci\'on de la informaci\'on en la clase History} \label{sec:throughTime}
 En esta secci\'on explicamos c\'omo la informaci\'on provista por los datos se propaga por toda la red bayesiana que contiene la historia de los eventos.
 %
 TrueSkill Through Time crea un modelo causal \'unico en el que todas las actividades hist\'oricas están vinculadas.
@@ -6574,7 +6554,8 @@ En cada pasada hacia adelante guardamos el \'ultimo mensajes que los agentes env
 Los mensajes que no est\'an todav\'ia definidos, como por ejemplo el \emph{backwardPrior}$(s_t)$ en la primer pasada, deben ser remplazados por una forma neutral como la distribuci\'on gaussiana con varianza infinita.
 %
 Este algoritmo requiere s\'olo unas pocas iteraciones lineales sobre los datos para converger y permite escalar a millones de observaciones en pocos minutos.
-\section{Summary and discussion} \label{sec:summary}
+
+\section{Conlusiones y discusión} \label{sec:summary}
 La principal contribuci\'on de este trabajo es la implementaci\'on del modelo de estimaci\'on de habilidades estado-del-arte en la industria de los videojuegos, que a\'un no estaba disponible en los lenguajes de programaci\'on con mayores comunidades, como \texttt{Julia}, \texttt{Python} y \texttt{R}.
 %
 % \en{¿Hablar de la tabla 1 acá?}
@@ -6643,7 +6624,7 @@ Antes de usar este modelo para evaluacar a los individuos que transitan los sist
 % En el sistema educativo, el modelo puede ser alimentado por las evaluaciones de los propios docentes, y el modelo no s\'olo estimará las habilidades de los estudiante, reconocerá también la variabilidad de los docente al evaluarlos.
 % %
 %% -- Optional special unnumbered sections -------------------------------------
-\section*{Computational details}\label{sec:computationDetails}
+\section{Detalles computacionales}\label{sec:computationDetails}
 %
 % \begin{leftbar}
 % If necessary or useful, information about certain computational details
@@ -6809,7 +6790,8 @@ Nuestro paquete de \texttt{Julia} demora menos de lo esperado considerando los t
 % and all packages used are available from the Comprehensive
 % \texttt{R} Archive Network (CRAN) at
 % \url{https://CRAN.R-project.org/}
-\section*{Supplemental material}
+
+\subsection{Material suplementario}
 Los c\'odigos fuentes de los paquetes TrueSkill Through Time se encuentran en:
 \begin{itemize}
 \item \href{github.com/glandfried/TrueSkillThroughTime.jl}{\url{github.com/glandfried/TrueSkillThroughTime.jl}} (\texttt{Julia})
@@ -6843,50 +6825,32 @@ Los c\'odigos fuentes de los paquetes TrueSkill Through Time se encuentran en:
 
 
 
-\chapter{Exploraciones sobre factores sociales en el aprendizaje individual}
+\chapter{Efecto de la posici\'on en el red de intercambios en el aprendizaje.}\label{ch:topo}
 
-\todo[inline]{Escribir una introducci\'on general a Exploraciones}
-
-
-\section{Efecto de la posici\'on en el red de intercambios en el aprendizaje.} \label{ch:topo}
-
-\en{Culture is a population phenomenon that emerges as a consequence of the exchange of information between individuals.}%
-\es{La cultura es una fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos.}%
+La cultura es una fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos.
 %
-\en{For this reason it is assumed that the properties of these networks have an effect on the processes of cultural evolution and accumulation.}%and consequently on individual learning
-\es{Por esta razón se supone que las propiedades de estas redes tienen un afecto sobre los procesos de evolución y acumulación cultural.}% y por consecuencia sobre el aprendizaje de las personas
+Por esta razón se supone que las propiedades de estas redes tienen un afecto sobre los procesos de evolución y acumulación cultural.% y por consecuencia sobre el aprendizaje de las personas
 %
-\en{Some general hypotheses have been evaluated, but testing more specific ones has been hampered by the need for detail data on the behavior of all individuals in a community over time.}%
-\es{Algunas hipótesis generales han podido ser evaluadas, sin embargo poner a prueba otras más específicas se ha visto obstaculizado por la necesidad de datos detallados sobre el comportamiento de todos los individuos de una comunidad en el tiempo.}%
+Algunas hipótesis generales han podido ser evaluadas, sin embargo poner a prueba otras más específicas se ha visto obstaculizado por la necesidad de datos detallados sobre el comportamiento de todos los individuos de una comunidad en el tiempo.
 %
-\en{To explore how the structure of a information exchange network affects human learning, we studied over 8 years the evolution of the Go player network of a major online service platform.}%
-\es{Para explorar cómo la estructura de una rede de intercambios de información afecta el aprendizaje humano, estudiamos a lo largo de 8 años la evolución de la red de jugadores de Go de una de las principales plataformas de servicio en línea.}%
+Para explorar cómo la estructura de una rede de intercambios de información afecta el aprendizaje humano, estudiamos a lo largo de 8 años la evolución de la red de jugadores de Go de una de las principales plataformas de servicio en línea.
 %
-\en{Because drawing causal conclusions from observational data requires specifying a causal model, based on the main findings of the literature on cumulative cultural evolution, we state that human learning depends on at least four factors: environment, individual experience, cultural information and initial ability.}%:
-\es{Debido a que para sacar conclusiones causal de datos observacionales es necesario explicitar un modelo causal, basados en los descubrimientos consensos de la literatura sobre evolución cultural acumulativa, proponemos cuatro factores del aprendizaje humano: el ambiente, la experiencia individual, la información cultural y la habilidad inicial.}%
+Debido a que para sacar conclusiones causal de datos observacionales es necesario explicitar un modelo causal, basados en los descubrimientos consensos de la literatura sobre evolución cultural acumulativa, proponemos cuatro factores del aprendizaje humano: el ambiente, la experiencia individual, la información cultural y la habilidad inicial.
 %
-\en{Knowing the initial skills is fundamental because, in all structural causal models, the learning rate depends on the stage in which the individuals are before starting the process.}%
-\es{Conocer la habilidades iniciales fundamental debido a que, en todos los modelos causales estructurales, la tasa de aprendizaje depende del estadío en el que se encuentra los individuos antes de empezar el proceso.}%
+Conocer la habilidades iniciales fundamental debido a que, en todos los modelos causales estructurales, la tasa de aprendizaje depende del estadío en el que se encuentra los individuos antes de empezar el proceso.
 %
-\en{Thanks to our implementation of the state-of-the-art skill model, we obtained good estimates throughout the entire time series, even at the beginning, allowing us to compare novice, intermediate and expert individuals separately.}%
-\es{Gracias a nuestra implementación del modelo de habilidad estado-del-arte, obtuvimos buenas estimaciones a lo largo de toda la serie temporal, incluso al inicio, permitiéndonos comparar separadamente a las personas novatas, intermedias y expertas.}%
+Gracias a nuestra implementación del modelo de habilidad estado-del-arte, obtuvimos buenas estimaciones a lo largo de toda la serie temporal, incluso al inicio, permitiéndonos comparar separadamente a las personas novatas, intermedias y expertas.
 %
-\en{In addition, the causal model assumes that access to cultural information depends on the information exchange network.}%
-\es{Además, el modelo causal asume que el acceso a la información cultural depende red de intercambio de información.}%
+Además, el modelo causal asume que el acceso a la información cultural depende red de intercambio de información.
 %
-\en{To explore the causal effect that the network has on individual learning, we use classical dynamic graph analysis techniques to determine the topological position that individuals have in the network over time.}%
-\es{Para explorar el efecto causal que la red tiene sobre el aprendizaje individual, utilizamos técnicas clásicas de análisis de grafos dinámicos, determinamos la posición topológica que los individuos tienen en la red a través del tiempo.}%
+Para explorar el efecto causal que la red tiene sobre el aprendizaje individual, utilizamos técnicas clásicas de análisis de grafos dinámicos, determinamos la posición topológica que los individuos tienen en la red a través del tiempo.
 %
-\en{We find that moderate values of centrality have a positive second-order effect only on players who are in the middle of the learning process.}%
-\es{Encontramos que los valores moderados de centralidad tiene un efecto positivo de segundo orden sólo en los jugadores que están en el medio del proceso de aprendizaje.}%
+Encontramos que los valores moderados de centralidad tiene un efecto positivo de segundo orden sólo en los jugadores que están en el medio del proceso de aprendizaje.
 %
-\en{Novice players learn mainly by individual experience, and expert players have nothing more to learn.}%
-\es{Los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada más que aprender.}%
+Los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada más que aprender.
 %
-\en{To the best of our knowledge, this is the first work that explores the effect that position in a dynamic network has on individual learning.}%
-\es{Hasta donde sabemos, este es el primer trabajo que es la explora el efecto que la posición en una red dinámica tiene sobre el aprendizaje individual.}%
-% %
-
+Hasta donde sabemos, este es el primer trabajo que es la explora el efecto que la posición en una red dinámica tiene sobre el aprendizaje individual.
+%.
 
 \section{Introducción}
 La especial integración de los procesos biológicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas se debió a una coevolución genético-cultural desencadenada por el surgimiento previo de la crianza cooperativa~\cite{hrdy2020-emotionallyModern, Koster2020}.
@@ -7124,7 +7088,7 @@ Finalmente, debido que el objetivo de este trabajo es analizar el impacto que la
 Debido a que la cantidad de partidas jugadas por persona sigue una distribución exponencial, este filtro basado en la actividad produce un conjunto de individuos de tamaño cercano a $1000$.
 
 
-\subsection{TrueSkill Through Time}
+\subsection{Estimación de aprendizaje}
 Ninguno de los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) pueden obtener estimaciones iniciales fiables debido a que usan el último posterior como prior del siguiente evento, propagando la información en una sola dirección por el sistema, del pasado al futuro.
 %
 En cambio, el modelo de estimación de habilidad estado del arte, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la información histórica a través de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
@@ -7843,8 +7807,6 @@ En un contexto académico que todavía no tiene la habitud de explicitar sus mod
 %
 La evaluación completa del espacio de posibles modelos causales es una tarea necesariamente colectiva.
 
-
-\section{Conclusiones generales}
 
 \chapter{Conclusiones y trabajo futuro}
 
