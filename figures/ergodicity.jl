@@ -42,7 +42,7 @@ for i in 1:N
     e[:,i] .= cumsum(log.([ f(r()) for i in 1:T]))
 end
 
-fig = plot(e, label=false, thickness_scaling = 1.5, grid=false, xlab="Time", ylab="log(Resources) ")
+fig = plot(e, label=false, thickness_scaling = 1.5, grid=false, xlab="Tiempo", ylab="log(Recursos) ")
 plot!([1,2000],[0,T*log(ensamble_average )], color="black", label=false)
 #plot!([1,2000],[0,T*log(time_average )], color="black", label=false)
 savefig(fig, "pdf/ergodicity_individual_trayectories.pdf")
@@ -92,11 +92,11 @@ run(`pdfcrop --margins '0 0 0 0' pdf/ergodicity_cooperation.pdf pdf/ergodicity_c
 coop0 = game(100,0)
 coop1 = game(100,1)
 coop2 = game(100,2)
-fig = plot(log.(transpose(coop0[end:end,:])), color=3, thickness_scaling = 1.5, grid=false, xlab="Time", ylab="log(Resources) ", label="0 Defectors", legend=(0.15,0.9), foreground_color_legend = nothing)
+fig = plot(log.(transpose(coop0[end:end,:])), color=3, thickness_scaling = 1.5, grid=false, xlab="Tiempo", ylab="log(Recursos) ", label="0 Desertores", legend=(0.15,0.9), foreground_color_legend = nothing)
 plot!(log.(transpose(coop1[end:end,:])), color=1, label=false)
-plot!(log.(transpose(coop1[1:1,:])), color=1, label="1 Defectors")
+plot!(log.(transpose(coop1[1:1,:])), color=1, label="1 Desertores")
 plot!(log.(transpose(coop2[end-1:end,:])), color=2, label=false)
-plot!(log.(transpose(coop2[1:1,:])), color=2, label="2 Defectors")
+plot!(log.(transpose(coop2[1:1,:])), color=2, label="2 Desertores")
 savefig(fig, "pdf/ergodicity_desertion.pdf")
 run(`pdfcrop --margins '0 0 0 0' pdf/ergodicity_desertion.pdf pdf/ergodicity_desertion.pdf`) 
 

@@ -61,6 +61,8 @@ every picture/.append style={
 \definecolor{python}{rgb}{1, 1, 0.5}
 \definecolor{r}{rgb}{0.70, 0.80, 1}
 \definecolor{all}{rgb}{0.85, 0.85, 0.85}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\newcommand{\gray}{\color{black!65}}
 
 
 \usepackage{listings}
@@ -315,14 +317,6 @@ In a third paper, we studied the evolution of a network of games in the game of 
 
 \chapter{Prefacio}
 
-
-\mainmatter
-
-
-
-
-\chapter{Introducci\'on} \label{ch:evo}
-
 % Parrafo: El objetivo subyacente de esta tesis. Interdisciplina entre la computación y las ciencias sociales.
 
 Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las ciencias de la computación y las ciencias sociales.
@@ -457,36 +451,268 @@ Es también un respuesta metodológica concreta, cómo hacerlo.
 %
 Pero es más que una herramienta que me la llevo para el resto de mi vida profesional y personal.
 
-\section{La evolución como sistema natural de procesamiento de información}
 
-En el último tercio de la historia del Universo, en algún momento hace aproximadamente 4000 millones de años, apareció en la tierra una organización de la materia capaz de auto-replicarse.
+\mainmatter
+
+
+
+
+\chapter{Introducci\'on} \label{ch:evo}
+
+\section{Motivación epistémico-evolutiva}
+
+
+Durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema.
 %
-El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de probabilidades de supervivencia y reproducción.
+Sin embargo, los procesos evolutivos de selección de las formas de vida, por secuencia de tasas de supervivencia y reproducción, son como los procesos de selección de las hipótesis en la teoría de la probabilidad, por secuencias de predicciones, de naturaleza multiplicativa.
 %
-Las mutaciones producidas durante la replicación diversificaron las formas de vida, y las tasas de crecimiento de las diferentes estrategias favorecieron a aquellas mejor adaptadas al ambiente.
+Debido a que en ellos los impactos de las pérdidas son más fuertes que los de las ganancias (un cero en la secuencia produce una extinción irreversible), las variantes que florecen son hipótesis o formas de vida que reducen las fluctuaciones por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
 %
-Desde aquel momento hasta ahora la vida adquirió una extraordinaria complejidad, tanto a nivel de cooperación como de especialización.
+No existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
+%
+Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), la emergencia de unidades cooperativas de nivel superior es un fenómeno permanente en la historia de la vida (transiciones evolutivas mayores).
+%
+La evidencia es nuestra propia vida, que depende de al menos cuatro de estos niveles para sobrevivir: la célula con la mitocondria, el organismo multicelular, el sistema social y la comunidad ecológica.
+%
+Además, en probabilidad ocurre algo similar: conjunto de hipótesis individuales forman variables, relaciones entre variables forman modelos causales y varios modelos forman teorías.
+%
+En la historia del ser humano, la transición cultural tuvo efectos positivos evidentes: antes de la cooperación epistémica (trasmisión del conocimiento) estuvimos en grave peligro de extinción; luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre.
+%
+En la historia reciente, ciertas coyunturas produjeron la emergencia del colonialismo, una era de genocidios y masiva pérdida de diversidad cultural.
+%
+A pesar de todos los avances, la ciencia metropolitana no fue capaz de compensar la pérdida de los conocimientos milenarios, y la crisis ecológica actual no deja de profundizarse.
+%
+A largo plazo solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación individual y por especialización heterogénea cooperativa.
+
+\subsection{La función de costo epistémico-evolutiva}
+
+La ciencia es una institución humana que tiene pretensión de verdad: de alcanzar acuerdos intersubjetivos con validez intercultural, universal.
+%
+Las ciencias formales (matemática, lógica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiomáticos cerrados.
+%
+Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas abiertos que contienen siempre algún grado de incertidumbre.
+%
+¿Es posible entonces alcanzar acuerdos intersubjetivos (``verdades'') en las ciencias empíricas si es inevitable decir ``no sé''?
+%
+Sí.
+%
+En pocas palabras, podemos evitar mentir: no decir más de lo que se sabe, incorporando al mismo tiempo toda la información disponible.
 
 % Parrafo
 
+Por ejemplo, supongamos que sabemos que hay un regalo escondido detrás de una caja entre tres.
+%
+¿Dónde está el regalo?
+%
+Si elegimos alguna de las cajas estaríamos afirmando más de lo que sabemos, porque no tenemos información que nos haga preferir ninguna de ellas.
+% Parrafo
 \begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.65\textwidth}
-    \includegraphics[width=\linewidth]{static/biomass.jpg}
-    \end{subfigure}
-    \caption{
-	Distribución de la biomasa en la Tierra estimada por Bar-On et al.~\cite{barOn2018-biomass}.
-    }
-    \label{fig:biomass}
+ \centering
+ \begin{subfigure}[b]{0.48\textwidth}
+ \centering
+  \tikz{ %
+         \node[factor, minimum size=0.8cm] (p1) {} ;
+         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
+         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
+
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$0$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$1$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$0$};
+        }
+    \caption{\En{Full certainty}\Es{Certidumbre total}}
+    \label{fig:preferencia_parcial}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.48\textwidth}
+ \centering
+  \tikz{ %
+         \node[factor, minimum size=0.8cm] (p1) {} ;
+         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
+         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
+
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
+        }
+    \caption{\En{Maximum uncertainty}\Es{Máxima incertidumbre}}
+    \label{fig:preferencia_total}
+ \end{subfigure}
+\caption{
+Dos distribución de creencias. Maximizar incertidumbre permite alcanzar un primer acuerdo intersubjetivo.
+}
+ \label{fig:distribucion_de_creencias}
+\end{figure}
+% Parrafo
+\noindent
+En este caso, vamos a estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
+%
+Maximizando la incertidumbre evitamos decir más de lo que sabemos, permitiéndonos alcanzar un primer acuerdo intersubjetivo en contextos de incertidumbre!
+%
+Bien. ¿Pero ahora, cómo preservamos el acuerdo intersubjetivo en casos más complejos, cuando recibimos nueva información?
+
+% Parrafo
+
+La lógica de la incertidumbre (teoría de la probabilidad) ha sido derivada repetidas veces a partir de diversos principios (axiomas), llegando siempre a las mismas dos simples reglas.
+%
+La \emph{regla de la suma} garantiza no perder creencia cuando la distribuimos entre hipótesis mutuamente contradictorias: al sumar cuánto le hemos asignado a cada hipótesis, recuperamos el 100\% inicial.
+\begin{equation*}
+\overset{\hfrac{\text{\small \En{Sum rule}\Es{Regla de la suma}: }}{\phantom{x}}}{P(A) + P(\text{no\En{t} } A) = 1} \hspace{0.4cm} , \end{equation*}
+Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las creencias con la información disponible: preservamos la creencia previa que sigue siendo compatible con los nuevos datos (y la creencia que sobrevive la consideramos nuestro nuevo 100\%).
+%
+\begin{equation*}
+\overset{\hfrac{\text{\small \En{Poduct rule}\Es{Regla del producto}: }}{\phantom{x}}}{\underbrace{P(\text{\text{\En{Hypothesis}\Es{Hipótesis}}}|\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Conditional belief }\Es{Creencia condicional}\phantom{p}}}{\text{\scriptsize \En{New belief}\Es{Nueva creencia}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\En{Joint prior belief}\Es{Creencia previa conjunta}}}{\text{\scriptsize\En{compatible with the data}\Es{compatible con el dato}}}} \ \ \  \ /  \underbrace{P(\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Prediction of the data}\Es{Predicción del dato}}\phantom{p}}{\text{\scriptsize\En{total compatible belief}\Es{creencia compatible total}}}} }
+\end{equation*}
+
+% Parrafo
+
+Estas son las reglas de la probabilidad para actualizar las creencias en contextos de incertidumbre, no hay más.
+%
+Por ejemplo, supongamos que ahora nos dejan elegir una de las cajas y luego alguien nos da una pista, abriendo una caja distinta a la que elegimos en la que no está el regalo (figura~\ref{fig:monty_hall}).
+%
+Con esta información previa podemos definir un modelo causal sobre la pista (figura~\ref{fig:modelo_causal}).
+%
+Antes de actualizar la creencia sobre la posición del regalo con la información de la pista, necesitamos la creencia inicial que surge de maximizar la incertidumbre, dividiendo la creencia en partes iguales por los caminos alternativos del modelo causal (figura~\ref{fig:caminos_montyhall_compatibles}).
+%
+Y finalmente, la nueva creencia surge de preservar la creencia inicial que sigue siendo compatible con el dato (figura~\ref{fig:f3}).
+%
+\begin{figure}[ht!]
+ \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+  \centering
+  \tikz{
+
+    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
+    \node[const,below=of d] (nd) {\En{Hint}\Es{Pista}: $s \neq r$, $s \neq c$  } ;
+
+    \node[latent, above=of d,yshift=-1.2cm, xshift=-1.3cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
+    \node[const,above=of r] (nr) {\phantom{g}\En{Gift}\Es{Regalo}: $r$\phantom{g}} ;
+
+    \node[latent, fill=black!30, above=of d,yshift=-1.2cm, xshift=1.3cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
+    \node[const,above=of c] (nc) {\phantom{g}\En{Election}\Es{Elección}: $c_1$\phantom{g}} ;
+
+    \edge {r,c} {d};
+
+         \node[factor, minimum size=0.8cm, xshift=-1.3cm, yshift=2.5cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=0.8cm, yshift=2.5cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=0.8cm, xshift=1.3cm, yshift=2.5cm] (p3) {} ;
+         \node[const, above=of p1, yshift=.05cm] (fp1) {$?$};
+         \node[const, above=of p2, yshift=.05cm] (fp2) {$?$};
+         \node[const, above=of p3, yshift=.05cm] (fp3) {$?$};
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+
+  }
+  \caption{}
+  \label{fig:modelo_causal}
+  \end{subfigure}
+ \begin{subfigure}[b]{0.32\textwidth}
+\centering
+\tikz{
+\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
+\node[latent,below=of b0,yshift=0.9cm, xshift=-1.5cm] (r1) {$r_1$};
+{\color{black}\node[latent,draw=black,below=of b0,yshift=0.9cm] (r2) {$r_2$}; }
+\node[latent,below=of b0,yshift=0.9cm, xshift=1.5cm] (r3) {$r_3$};
+\node[latent, below=of r1, draw=white, yshift=0.7cm] (bc11) {$\frac{1}{3}$};
+{\color{black}\node[latent, below=of r2, draw=white, yshift=0.7cm] (bc12) {$\frac{1}{3}$};}
+\node[latent, below=of r3, draw=white, yshift=0.7cm] (bc13) {$\frac{1}{3}$};
+\node[latent,below=of bc11,yshift=0.9cm, xshift=-0.5cm] (r1d2) {$s_2$};
+{\color{black}\node[latent,draw=black,below=of bc11,yshift=0.9cm, xshift=0.5cm] (r1d3) {$s_3$};}
+{\color{black}\node[latent, draw=black,below=of bc12,yshift=0.9cm] (r2d3) {$s_3$};}
+\node[latent,below=of bc13,yshift=0.9cm] (r3d2) {$s_2$};
+
+\node[latent,below=of r1d2,yshift=0.9cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
+{\color{black}\node[latent,below=of r1d3,yshift=0.9cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};}s
+{\color{black}\node[latent,below=of r2d3,yshift=0.9cm,draw=white] (br2d3) {$\frac{1}{3}$};}
+\node[latent,below=of r3d2,yshift=0.9cm,draw=white] (br3d2) {$\frac{1}{3}$};
+\edge[-] {b0} {r1,r3};
+\edge[-,draw=black] {b0} {r2};
+\edge[-] {r1} {bc11};
+\edge[-,draw=black] {r2} {bc12};
+\edge[-] {r3} {bc13};
+\edge[-] {bc11} {r1d2};
+\edge[-,draw=black] {bc11} {r1d3};
+\edge[-,draw=black] {bc12} {r2d3};
+\edge[-] {bc13} {r3d2};
+\edge[-] {r1d2} {br1d2};
+\edge[-,draw=black] {r1d3} {br1d3};
+\edge[-,draw=black] {r2d3} {br2d3};
+\edge[-] {r3d2} {br3d2};
+}
+\caption{}
+\label{fig:caminos_montyhall_compatibles}
+\end{subfigure}
+\
+\begin{subfigure}[b]{0.34\textwidth}
+\phantom{$P(s_j)$\hspace{0.7cm}g}$P(r_i, s_j)$\phantom{g}\hspace{0.9cm}$P(s_j)$
+\centering
+  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm}
+ & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, &  \\ \hline
+  $\gray s_1$ & $\gray0$ & $\gray0$ & $\gray0$ &   $\gray 0$ \\ \hline
+  $\bm{s_2}$ & $\bm{1/6}$ & $\bm{0}$ & $\bm{1/3}$ &  $\bm{1/2}$ \\  \hline
+  $\gray s_3$ & $\gray1/6$ & $\gray1/3$ & $\gray0$ & $\gray1/2$ \\ \hline
+  \end{tabular}
+
+  \phantom{--}\\[0.1cm]
+
+  \tikz{
+
+         \node[factor, minimum size=0.8cm, xshift=-1.3cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=0.8cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=0.8cm, xshift=1.3cm] (p3) {} ;
+         \node[const, below=of p1, yshift=-.025cm] (fp1) {$1/3$};
+         \node[const, below=of p2, yshift=-.025cm] (fp2) {$0$};
+         \node[const, below=of p3, yshift=-.025cm] (fp3) {$2/3$};
+         \node[const, above=of p2, yshift=.045cm] (title) {$P(r_i | s_2)=P(r_i,s_2)/P(s_2)$};
+
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+
+  }
+
+\caption{}
+\label{fig:f3}
+\end{subfigure}
+\caption{
+Acuerdo intersubjetivo dada toda la información disponible (modelo causal y datos).
+%
+(\subref{fig:modelo_causal}) Modelo causal en el cual la pista $s$ no puede señalar la caja elegida $c$ (con la cerradura) ni la caja donde se encuentra el regalo $r$ (la hipótesis oculta): $s\neq c$ y $s\neq r$.
+%
+(\subref{fig:caminos_montyhall_compatibles}) Antes de ver la pista, buscamos la creencia que maximiza la incertidumbre dado el modelo causal (dividiendo la creencia en partes iguales en cada bifurcación de los universos paralelos).
+%
+(\subref{fig:f3}) La nueva creencia no es más que la creencia inicial (tabla) que sigue siendo compatible con el dato $s_2$, expresada como 100\%
+}
+\label{fig:monty_hall}
 \end{figure}
 
 % Parrafo
 
-La complejidad actual de la vida es consecuencia de una serie de transiciones evolutivas en las que entidades capaces de autoreplicación luego de la transición pasan a formar parte de unidades cooperativas de nivel superior~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}.
+A diferencia de los enfoques ad-hoc que seleccionan una única hipótesis (e.g.~por máxima verosimilitud), la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano), considerando al mismo tiempo hipótesis mutuamente contradictorias (A y no A), permite que sea la sorpresa, única fuente de información, el filtro de las creencias previas.
 %
-Algunas de las transiciones paradigmáticas son: de las células procariotas a las eucariotas; de los protozoa a los organismos multicelulares con diferenciación celular; y de los individuos solitarios a las sociedades.
+En general, si tenemos $\text{Datos} = \{ \text{dato}_1, \text{dato}_2, \dots \}$,
+%
+\begin{equation*}
+\underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo intersubjetivo}}}{\text{\footnotesize\En{agreement}\Es{inicial}}}} \underbrace{P(\text{data}_1 |\text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 1}} \, \underbrace{P(\text{data}_2 | \text{data}_1 , \text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 2}} \dots
+\end{equation*}
 
 % Parrafo
+
+\noindent
+Si la predicción del dato observado es 1 (sorpresa nula), entonces preservamos toda nuestra creencia previa en esa hipótesis.
+%
+Si la predicción del dato observado es 0 (sorpresa total), entonces la hipótesis se hace falsa para siempre.
+
+% Parrafo
+
+Así como en probabilidad la evaluación de las hipótesis es por secuencias de predicciones, en evolución la selección de las formas de vida también es de naturaleza multiplicativa, por secuencia de tasas de supervivencia y reproducción.
+%
+De hecho, el modelo estándar de evolución, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, es estructuralmente equivalente al teorema de Bayes, lo que llevó a autores reconocidos en ambas áreas a proponer el isomorfismo entre las teoría de la evolución y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
+%
+\begin{equation*} \footnotesize
+\overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporción}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos},  \Big|  \hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporción}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporción}}{\text{\scriptsize sobreviviente}}}}
+\end{equation*}
+%
+Debido a que los impactos de las pérdidas de adaptabilidad son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) existe una ventaja a favor de las variantes (hipótesis o formas de vida) que reducen las fluctuaciones.
+
+% Parrafo
+
+Esta propiedad de los procesos de selección multiplicativo ha producido a lo largo de la historia de la vida una serie de transiciones evolutivas en las que entidades capaces de autorreplicación, luego de la transición, pasaran a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}.
 
 \begin{figure}[ht!]
     \centering
@@ -524,13 +750,598 @@ Algunas de las transiciones paradigmáticas son: de las células procariotas a l
       \plate {transition} {(t1)(t2)(t3)} {}; %
       }
   }
-  \caption{Transiciones evolutivas mayores}
+  \caption{Esquema de las transiciones evolutivas mayores}
 \end{figure}
 
-¿Cómo se explica esta tendencia permanente de la vida en favor de la cooperación y la especialización?
-%``The transition must be explained in terms of inmmediate selection advantage to individual replicators'' szathmary1995-evolutionaryTransitions
+%
+
+Nuestra propia vida depende de varios niveles de cooperación con especialización heterogénea, sin los cuales no somos capaces de sobrevivir: la unión de nuestras células con las mitocondrias y la emergencia de las organelas; nuestro organismo multicelular y la emergencia de los órganos; nuestra sociedad y la emergencia de los roles y grupos; la coexistencia entre especies y la emergencia de los ecosistemas.
+
+% Parrafo
+
+\begin{figure}[ht!]
+\centering
+ \begin{subfigure}[b]{0.25\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/cloroplastos.jpg}
+  \caption*{\En{Eukaryotic cells}\Es{Células eucariota}}
+  \end{subfigure}
+ \begin{subfigure}[b]{0.23\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/fotosintesis.jpg}
+  \caption*{\En{Organisms}\Es{Organismos}}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.235\textwidth} \centering
+ \includegraphics[width=\linewidth]{static/hormigas2.jpg}
+  \caption*{\En{Societies}\Es{Sociedades}}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.235\textwidth} \centering
+ \includegraphics[width=\linewidth]{static/tsimane2.jpg}
+  \caption*{\En{Ecosystems}\Es{Ecosistemas}}
+ \end{subfigure}
+ \caption{
+Ejemplos de transiciones evolutivas mayores. La emergencia de unidades de nivel superior es un fenómeno permanente en la historia de la vida.
+ }
+ \label{fig:trans}
+ \vspace{-0.3cm}
+ \end{figure}
+
+ % Parrafo
+
+% \begin{figure}[ht!]
+%     \centering
+%     \begin{subfigure}[b]{0.65\textwidth}
+%     \includegraphics[width=\linewidth]{static/biomass.jpg}
+%     \end{subfigure}
+%     \caption{
+% 	Distribución de la biomasa en la Tierra estimada por Bar-On et al.~\cite{barOn2018-biomass}.
+%     }
+%     \label{fig:biomass}
+% \end{figure}
+%
+% % Parrafo
+%
+%
+%
+
+De forma similar, en la teoría de la probabilidad también emergen unidades cooperativas de nivel superior: las hipótesis individuales forman variables, las variables forman modelos causales y los conjuntos de modelos forman teorías.
+%
+Esto ocurre gracias a que las hipótesis de nivel superior reducen las fluctuaciones realizando las predicciones con el aporte de todas las hipótesis de nivel inferior que la componen.
+%
+Por ejemplo, la predicción de un modelo, por la regla de la suma, es el promedio ponderado de las predicciones de todas las hipótesis que la componen.
+%
+\begin{equation*}
+\begin{split}
+P(d_{n+1}|d_1 \dots d_n, \text{Model\Es{o}}) = \sum^{\text{\En{Hypothesis}\Es{Hipótesis}}}_h P(d_{n+1}| d_1 \dots d_n, h, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
+%\\ P(d_{n+1}|d_1 \dots d_n, \text{\En{Theory}\Es{Teoría}}) = \sum^{\text{\En{Models}\Es{Modelos}}}_m P(d_{n+1}| h, d_1 \dots d_n, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
+\end{split}
+\end{equation*}
+%
+De esta forma, al realizar la predicción con la contribución de todas las hipótesis de nivel inferior, los modelos reducen las posibilidades de introducir valores extremos (un cero) en los procesos de selección multiplicativo a los que están sujetos, produciendo mejores resultados que los que se obtendrían con cualquiera de ellas individualmente.
+
+% Parrafo
+
+A diferencia de la teoría de la probabilidad, en la que las hipótesis no intercambian probabilidades (la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa), las formas de vida tienen la capacidad de intercambiar recursos con otras formas de vida, lo que les otorga una grado de libertad mayor para reducir fluctuaciones.
+%
+Esto hace que los humanos tengamos como especie un elemento epistémico no presente en las variantes que produce la teoría de la probabilidad, que será de interés a lo largo de toda esta tesis.
+%, la capacidad de especialización cooperativa que produce la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados a dominios particulares coexisten.
+% %
+% La capacidad de
+%Esto ocurre, como veremos, gracias a que el intercambio de recursos permite a las variantes especialistas cubrirse en los casos para los que no está adaptada (recibir) y le permite a la especie sacar provecho de los beneficios que genera la variante especialista en los casos para los que está adaptada (dar).
+%
+%En el uso que le damos a la teoría de la probabilidad, introducimos esta propiedad como si fuera una regla implícita al seleccionar discrecionalmente el conjunto de modelos que necesitamos para predecir los datos las coyuntura nos presenta, a pesar de que puedan tener un cero e
+% Parrafo
+%El intercambio se vuelve así como uno de los elementos de
 
 
+\subsection{Propiedades de la función de costo epistémico-evolutiva}
+
+Desde su origen, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
+%
+Para ver por qué, veamos qué ocurre con un proceso multiplicativo.
+%
+Por ejemplo, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente, y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporción $b_c = b$ a Cara y $b_s = 1 - b$ a Seca (apostar solo un parte de los recursos puede mostrarse que tiene una solución equivalente).
+%
+Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$, después de una Cara y una Seca, se actualiza como un producto de nuestros resultados (ver ecuación 1).
+%
+\vspace{-0.4cm}
+\begin{figure}[ht!]
+ \centering
+ \begin{subfigure}[b]{0.44\textwidth}
+ \begin{equation*}
+\begin{split}
+\omega_2(b) & = \underbrace{\omega_0 \, \overbrace{b \,  Q_c}^{\text{Cara}}}_{\omega_1(b)} \, \overbrace{(1-b) \, Q_s}^{\text{Seca}}
+\end{split}
+\end{equation*}
+ \end{subfigure}
+ \
+ \begin{subfigure}[b]{0.54\textwidth}
+  \begin{equation}
+\begin{split}
+& \frac{\omega_T(b)}{\omega_T(d)} = \frac{\omega_0 \,  (b \,  \cancel{Q_c})^{n_c}  \,  ((1-b) \, \bcancel{Q_s})^{n_s}}{\omega_0 \,   (d \,  \cancel{Q_c})^{n_c}  \,  ((1-d) \, \bcancel{Q_s})^{n_s}}
+\end{split}
+\end{equation}
+ \end{subfigure}
+%  \
+%  \begin{subfigure}[b]{0.29\textwidth}
+%   \begin{equation*}
+% \begin{split}
+% \underset{b}{\text{arg max}} \ \  b^{\,p}  \,  (1-b)^{1-p} = p
+% \end{split}
+% \end{equation*}
+%  \end{subfigure}
+\end{figure}
+\vspace{-0.1cm}
+
+%
+\noindent
+Y si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
+%
+encontramos que el valor relativo de una apuesta respecto de la otra es independiente de los pagos $Q_c$ y $Q_s$ que ofrece la casa de apuestas!
+%
+Sí, lo que estamos diciendo es que podemos decidir la apuesta sin conocer los pagos.
+%
+En general, queremos la apuesta $b$ que maximiza la tasa de crecimiento $r(b)$,
+%
+\vspace{-0.4cm}
+\begin{figure}[ht!]
+ \centering
+ \begin{subfigure}[b]{0.50\textwidth}
+  \begin{equation*}
+\begin{split}
+  \omega_0 \, r(b)^T &= \omega_0 \, (b \,  Q_c)^{n_c}  \,  ((1-b) \, Q_s)^{n_s}   \\
+  r(b) &=(b \,  Q_c)^{n_c/T}  \,  ((1-b) \, Q_s)^{n_s/T}
+\end{split}
+\end{equation*}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.49\textwidth}
+  \begin{equation}
+\begin{split}
+\overbrace{\underset{b}{\text{arg max}} \phantom{T} r(b)}^{\hfrac{\text{\scriptsize \En{Optimal}\Es{Apuesta}}}{\text{\scriptsize \En{bet}\Es{óptima}}}} \ = \overbrace{n_c/T}^{\hfrac{\text{\scriptsize \En{Observed}\Es{Frecuencia}}}{\text{\scriptsize \En{frequency}\Es{observada}}}}
+\end{split}
+\end{equation}
+ \end{subfigure}
+\end{figure}
+\vspace{-0.1cm}
+
+% Parrafo
+
+\noindent
+
+
+\noindent
+En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta óptima  $b^{*}$ es la que divide los recursos en la misma proporción que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia típica $\lim_{T \rightarrow \infty} n_c/T = p$.
+%
+Ésta es la \emph{propiedad epistémica} que le permite a la teoría de la probabilidad adquirir conocimiento sobre el mundo, pues al evaluar las hipótesis individuales en base al producto de las sorpresas se produce una ventaja a favor de las hipótesis que diversifican la predicción en la misma proporción que la frecuencia observada.
+
+% Parrafo
+
+Del mismo modo, el proceso de selección evolutiva por secuencias de tasas de crecimiento y reproducción, produce la emergencia de formas de vida que reducen las fluctuaciones a través de la diversificación individual.
+%
+Por ejemplo, supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas.
+%
+Si sabemos que la moneda es no sesgada lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
+% bien con estos parámetros el valor esperado es positivo, $( Q_c \, b \, p + Q_s \, (1-b) \, (1-p)) = 1.05$,
+En este caso, sin embargo, no podemos ganar este juego individualmente debido a que las ganancias de 50\% con Caras ($1.5 = Q_c \, b$) no alcanza para compensar las caídas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b)$).
+%
+Incluso con el comportamiento óptimo, individualmente las trayectorias de los recursos caen a una tasa cercana a $5\%$, pues $r(b) \approx 0.95$ (figura~\ref{fig:coop}).
+
+% Parrafo
+
+A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}
+%
+
+\todo[inline]{Introducir ecuación cooperativa.}
+
+Y TEXTO
+
+\begin{figure}[ht!]
+\vspace{-0.1cm}
+\centering
+ \begin{subfigure}[c]{0.50\textwidth}
+ \centering
+  \begin{tabular}{|l|c|c|c|c|c|}
+     \hline
+         & {\small $\omega_0$} & {\small \  $\Delta$}  & {\small \, $\omega_1(b)$ } & {\small \  $\Delta$}  & {\small \,  $\omega_2(b)$ }  \\ \hline \hline
+        A no-coop& $1$ & $1.5$ &  $1.5$ & $0.6$ & $\bm{0.9}$ \\ \hline
+        B no-coop & $1$ & $0.6$ & $0.6$ & $1.5$ & $\bm{0.9}$ \\ \hline\hline
+        A coop & $1$ & $1.5$ & $1.05$ & $0.6$ & $\bm{1.1}$ \\ \hline
+        B coop & $1$ & $0.6$ & $1.05$ & $1.5$ & $\bm{1.1}$\\ \hline
+\end{tabular}
+ \end{subfigure}
+ \begin{subfigure}[c]{0.45\textwidth}
+\begin{flushright}
+ \includegraphics[width=0.9\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
+ \end{flushright}
+ \end{subfigure}
+ \caption{
+ La cooperación le permite a los individuos alcanzar tasas de crecimiento que jamás obtendrían solos.
+ %
+ En la tabla (izquierda) $\Delta$ representa el cambio en los recursos que sufren los individuos de forma aleatoria, con $b=p=0.5$.
+ %
+ En la figura (derecha), las curvas de colores son las trayectoria de los recursos jugando individualmente, y la recta negra es la trayectoria de los recursos individuales jugando en grupos cooperativos grandes.
+ }
+ \label{fig:coop}
+ \vspace{-0.1cm}
+ \end{figure}
+%
+Ésta es la \emph{propiedad evolutiva}.
+%
+En nuestro ejemplo, si en cada paso temporal los individuos redistribuyen los recursos en partes iguales antes de apostar, la tasa de crecimiento de todos los individuos se vuelve positiva.
+% \es{A través de la cooperación podemos reducir aun más las fluctuaciones, aumentando así la tasa de crecimiento de todos sus miembros.}%
+
+
+% Parrafo
+
+Si bien jugando individualmente nos veíamos obligados a apostar ignorando los pagos que ofrece la casa de apuestas, una vez que emerge la cooperación deja de ser necesario reducir las fluctuaciones por diversificación individual y aparece una ventaja a favor de la especialización cooperativa, que permite sacar provecho de la mejor opción disponible, aumentando aún más la tasa de crecimiento de todos los individuos del grupo cooperativo.
+%
+Ésta es la \emph{propiedad de especiación}.
+%
+En un grupo cooperativo de tamaño $N$, en el que los recursos se dividen en partes iguales, la tasa de crecimiento de los individuos pasa a ser el promedio de la recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$ (ver ecuación de la figura~\ref{fig:esp}).
+%
+\begin{figure}[ht!]
+\centering
+ \begin{subfigure}[c]{0.50\textwidth}
+ \vspace{-0.6cm}
+  \begin{equation*}
+\begin{split}
+\omega_{T+1}(N,b) & = \frac{1}{N} \overbrace{\bigg( m_c \, \omega_{T}(N,b) \, Q_c  \, b + m_s \, \omega_{T}(N,b) \, Q_s  \, (1-b)  \bigg)}^{\hfrac{\text{\footnotesize \phantom{g}\En{Sum of all resources}\Es{Suma de todos los recursos}\phantom{g} }}{\text{\scriptsize (\En{with}\Es{con} $m_s$ \En{Heads}\Es{Caras} y $m_s$ \En{Tails}\Es{Secas})}}} \\
+& =\omega_T(N,b) \, \underbrace{\left( \frac{m_c}{N}   Q_c  \, b + \frac{m_s}{N} \, Q_s  \, (1-b)  \right)}_{\hfrac{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Tasa de crecimiento}  \phantom{Tg}} }{\hfrac{\phantom{Tg}}{\text{\footnotesize $\lim_{N \rightarrow \infty}p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)$} }} } \\[0.3cm]
+\end{split}
+\end{equation*}
+  \end{subfigure}
+\hspace{1.3cm}
+  \begin{subfigure}[c]{0.40\textwidth}
+\begin{flushright}
+ \includegraphics[width=1\linewidth]{figures/pdf/tasa-temporal-2.pdf}
+ \end{flushright}
+ \end{subfigure}
+ \caption{
+En la ecuación vemos la tasa de crecimiento en grupos cooperativos. En la figura vemos la tasa de crecimiento para grupos de tamaño 1 a 5 (colores), para todas las posibles apuestas (eje x). A medida que aumenta el tamaño del grupo, la apuesta óptima se va especializando hacia la opción mejor paga por la casa de apuesta. Cuando el tamaño del grupo tiende a infinito, la puesta óptima es apostar todo a la mejor opción
+ }
+ \label{fig:esp}
+ \vspace{-0.1cm}
+ \end{figure}
+%
+A medida que el grupo aumenta de tamaño, la apuesta óptima se va ``especializando'' en la mejor opción disponible (figura~\ref{fig:esp}).
+
+% Parrafo
+
+En este caso, todos los individuos están sujetos a procesos estocásticos que, si bien son independientes, tiene para todos ellos la misma probabilidad que no cambia en el tiempo.
+%
+En la naturaleza, por el contrario, estamos expuestos a variabilidades espacio-temporales, como las estaciones del año.
+%
+Para dar un ejemplo, supongamos que la moneda oscila entre dos probabilidades de que salga Cara, $p_1 = 0.2$ y $p_2 = 0.6$.
+%
+En los pasos temporales impares, la moneda tiene probabilidad $p_1$ en el hemisferio A y $p_2$ en el hemisferio B.
+%
+Y a la inversa en los pasos temporales pares.
+%
+En casos como estos, si bien la especialización sigue siendo valiosa para los grupos cooperativos, la variabilidad del proceso produce una ventaja adicional en favor de los grupos con mayor heterogeneidad interna.
+%
+Ésta es la \emph{propiedad ecológica}.
+%
+Si $h$ es la proporción de individuos que se encuentran en el hemisferio $A$, la tasa de crecimiento de los individuos en una grupo cooperativo especializado grande ($\lim_{N\rightarrow \infty} r(h)$) se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
+%
+\begin{figure}[ht!]
+\vspace{0cm}
+\centering
+ \begin{subfigure}[c]{0.50\textwidth}
+ \vspace{-0.3cm}
+  \begin{equation*}
+\begin{split}
+ r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_1) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_2 \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
+ r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_2 \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_1) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
+ r(h) = & \ \overbrace{r_{1}(h)^{1/2} \ r_2(h)^{1/2}}^{\text{Tasa de crecimiento}}
+\end{split}
+\end{equation*}
+  \end{subfigure}
+\hspace{0.6cm}
+  \begin{subfigure}[c]{0.44\textwidth}
+  \vspace{0.5cm}
+\begin{flushright}
+ \includegraphics[width=1\linewidth]{figures/pdf/diversificacionCooperativa.pdf}
+ \end{flushright}
+ \end{subfigure}
+ \caption{
+ En la ecuación vemos la tasa de crecimiento en función de la proporción en hemisferio A, $h$, de un grupo grande especializado en la mejor opción, en el que los individuos aplican la apuesta óptima correspondiente a la etapa del ciclo que experimentan.
+ En la figura vemos que la tasa de crecimiento de los individuos del grupo se maximiza cuando la heterogeneidad entre individuos es máxima.
+ }
+ \label{fig:divCoop}
+ \vspace{-0.1cm}
+ \end{figure}
+
+% Parrafo
+
+Durante mucho tiempo se creyó que para que la cooperación evolucione debía resolverse primero lo que se conoce como ``dilema del prisionero''.
+%
+En él, cooperar implica un costo $c$ para que el otro individuo reciba un beneficio de valor $v$, con $v > c$, y desertar significa negarse a cooperar y no conlleva ningún costo (ver matriz en figura~\ref{fig:desert}).
+%
+En nuestro ejemplo de las apuestas, habría una tentación por desertar: dejar de aportar al fondo común mientras se sigue recibiendo la cuota del fondo común.
+%
+Si la evolución estuviera sujeta a un dilema del prisionero, entonces desertar en grupos enteramente cooperativos debería ofrecer al individuo una tasa de crecimiento más alta que cooperar.
+%
+Sin embargo, bajo procesos de selección multiplicativa no se puede sacar provecho mediante la deserción porque, al aumentar las fluctuaciones los cooperadores de quienes se depende, aumenta también las propias fluctuaciones afectando negativamente la propia tasa de crecimiento de largo plazo.
+%
+En la figura~\ref{fig:desert} mostramos la tasa de crecimiento de individuos en poblaciones cooperativas con 0, 1 y 2 desertores.
+\begin{figure}[ht!]
+\centering
+\hspace{-1cm}
+ \begin{subfigure}[c]{0.40\textwidth} \centering
+
+ \vspace{-0.3cm}
+
+{\footnotesize \En{Prisoner's dilemma}\Es{Dilema del prisionero}}
+ \begin{equation*}
+  \bordermatrix{ _{\text{\tiny Focal}}{\rotatebox{45}{\text{$\mid$}}}^{\text{\tiny \En{Other}\Es{Otro}}} \hspace{-0.5cm} & C & D \cr
+      \ \ \   C & v-c & -c \cr
+      \ \ \ D & v & 0 }
+\end{equation*}
+
+\vspace{0.05cm}
+
+$\hfrac{\text{\footnotesize \En{Unilateral defection is better}\Es{La deserción unilateral es}}}{\text{\footnotesize \En{than mutual cooperation}\Es{mejor que la mutua cooperación}}}$
+  \end{subfigure}
+  \ \ \ \ \ \
+ \begin{subfigure}[c]{0.40\textwidth} \centering
+  \includegraphics[width=\linewidth]{figures/pdf/ergodicity_desertion.pdf}
+  \end{subfigure}
+ \caption{
+En la ecuación vemos la matriz de pagos del dilema del prisionero. En la figura vemos la tasa de crecimiento de los individuos dentro de grupos cooperativos (colores) con 0, 1 y 2 desertores. Las curvas con mayor variabilidad son los individuos desertores, el resto son los cooperadores. Los desertores tienen una tasa de crecimiento menor que la tenían cuando cooperaban (\emph{propiedad mayor}), a pesar de que inicialmente pudieran obtener un beneficio (\emph{propiedad menor}).
+ }
+ \label{fig:desert}
+ \end{figure}
+
+% Parrafo
+
+
+
+\subsection{Coevolución genético-cultural}
+
+\todo[inline]{Recordar las transiciones mayores en evolución y epistémicas}
+
+\en{Moreover, in the history of human beings, epistemic cooperation (transmission of knowledge between individuals) allowed the emergence of worldviews, such as science and culture, where highly specialized paradigms in particular domains coexist.}%
+\es{Además, en la historia del ser humano la cooperación epistémica (transmisión de conocimiento en entre individuos) permitió la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados en dominios particulares coexisten.}%
+%
+\en{The positive effects are clear.}%
+\es{Los efectos positivos son evidentes.}%
+%
+\en{Before the cultural transition, we were in serious danger of extinction, as evidenced by the low diversity of the human genome, even compared to the closest hominins.}%
+\es{Antes de la transición cultural, estábamos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano, respecto incluso de los homininos más cercanos.}%
+%
+\en{But when knowledge, that previously had to be rediscovered individually, became a common resource passed on from generation to generation, we began to be able to occupy all the ecological niches of the earth as no other terrestrial vertebrate had done before.}%
+\es{Pero cuando el conocimiento, que antes debía ser redescubierto individualmente, pasó a ser un recurso común transmitido de generación en generación, comenzamos a ser capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.}%
+%
+\en{Organized in small nomadic societies, we managed to walk from Africa to South America (arrows in Figure~\ref{fig:poblamiento}).}%
+\es{Organizados en pequeñas sociedades nómadas, logramos llegar caminando de África hasta sud América (flechas de la figura~\ref{fig:poblamiento}).}%
+
+% Parrafo
+
+\begin{figure}[ht!]
+\centering
+ \begin{subfigure}[b]{0.145\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/agriculturaR.pdf}
+  \caption{}
+  \label{fig:poblamiento}
+  \end{subfigure}
+ \begin{subfigure}[b]{0.45\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/polynesia.png}
+  \caption{}
+  \label{fig:pacifico}
+  \end{subfigure}
+ \begin{subfigure}[b]{0.24\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/tonga_barco.jpg}
+  \caption{}
+  \label{fig:tecnologia}
+  \end{subfigure}
+ \caption{
+ \en{}%
+ \es{(\subref{fig:poblamiento}): Poblamiento del mundo (flechas) y desarrollo independiente de la agricultura (puntos) en una proyección del mapamundi que preserva los tamaños relativos de los continentes. (\subref{fig:pacifico}): El aumento de la población hace de los centros agrícolas regiones ricas en innovaciones tecnológicas, y para el año 1300 ya se habían producido intercambios entre el Pacífico y América del sur. (\subref{fig:tecnologia}): Imagen de la extraordinaria tecnología de navegación utilizada en el Pacífico.}%
+ }
+ \label{fig:desert}
+ \end{figure}
+
+% Parrafo
+
+\en{In turn, the ecological reciprocity through prolonged symbiotic interaction with plants and animals led to the independent emergence of agriculture in sub-Saharan Africa, Middle East, China, Oceania, North America and South America (red points in Figure~\ref{fig:poblamiento}).}%
+\es{A su vez, la reciprocidad ecológica por interacción simbiótica prolongada con plantas y animales produjo la aparición independiente de la agricultura en África subsahariana, Oriente medio, China, Oceanía, América del Norte y América del Sur (puntos rojos de la figura~\ref{fig:poblamiento}).}%
+%
+\en{With it came an increase in population that intensified the processes of cumulative cultural evolution, making these regions the main technological centers of humankind.}%
+\es{Con ella se produjo un aumento de la población que intensificó los procesos de evolución cultural acumulativa, haciendo de estas regiones los principales centros tecnológicos de la humanidad.}%
+
+% Parrafo
+
+\en{During the 1400s, prosperous societies flourished all over the world.}%
+\es{Durante el año 1400 florecían sociedades prósperas en todo el mundo.}%
+%
+\en{The Pacific Ocean was fully occupied, and there had already been exchanges between Oceania and South America, which is reflected in the genetics of the current populations (figura~\ref{fig:pacifico}).}%
+\es{El océano Pacífico estaba totalmente ocupado, y ya se habían producido intercambios entre Oceanía y América del Sur, que se refleja en la genética de las poblaciones actuales (figura~\ref{fig:pacifico}).}%
+%
+\en{In the garden of human genetic and cultural diversity, sub-Saharan Africa, the Bantu society developed, among others.}%
+\es{En el jardín de la diversidad genética y cultural humana, África subsahariana, se desarrollaba entre otras, la sociedad Bantu.}%
+%
+\en{But China was the main productive and technological center of the world after 2 millennia.}%
+\es{Pero era China el principal centro productivo y tecnológico del mundo después de 2 milenios.}%
+%
+\en{By 1400, the Arab world traded its products from the Atlantic Ocean in Spain to the Pacific Ocean in the Philippines.}%
+\es{Para el año 1400, el mundo Árabe comerciaba sus productos desde el océano Atlántico en España, hasta el océano Pacífico en las Filipinas.}%
+%
+\en{After conducting the explorations led by Zheng He (1405-1433) around the world, China recognizes that there is nothing interesting beyond its borders.}%
+\es{Luego de realizar las exploraciones dirigidas por Zheng He (1405-1433) alrededor del mundo, China reconoce que no hay nada interesante afuera de sus fronteras.}%
+
+% Parrafo
+
+\en{At the same time, the massive destruction of cultural diversity previously produced by the Roman Empire in its environment had led Western Europe, against the rest of the world, into a long process of cultural involution and internal violence known as the ``Middle Ages''.}%
+\es{Al mismo tiempo, la masiva destrucción de la diversidad cultural producida previamente por el imperio Romano en su entorno, había conducido a Europa occidental, a contramano del resto del mundo, a un largo proceso de involución cultural y de violencia interna conocido como ``Edad media''.}%
+%
+\en{Breaking the cooperative pact had concrete negative consequences for this society.}%
+\es{La ruptura del pacto cooperativo tuvo consecuencias negativas concretas para esta sociedad.}%
+%
+\en{At this stage, the criterion of authority as the foundation of ``authentic knowledge'' became commonplace within feudal society.}%
+\es{En esta etapa, se generalizó al interior de la sociedad feudal el criterio de autoridad como fundamento del ``saber auténtico''.}
+%
+\en{A unbridled penal system was reborn from the so-called \emph{libris terribilis} and the institutions inherited from the Western Roman Empire began to regulate community relations of sexual reproduction in a more detailed way than with private property.}%
+\es{Un sistema penal desenfrenado renació de los llamados \emph{libris terribilis} y las instituciones heredadas del imperio romano de occidente comenzaron a regular las relaciones comunitaria de reproducción sexual de forma más detallada que con la propiedad privada.}%
+%
+\en{The war against women is definitively formalized with the publication of the \emph{Malleus maleficarum} in 1484, which would be the second best seller after the Bible for the next 200 years.}%
+\es{La guerra contra las mujeres se formaliza definitivamente con la publicación del \emph{Malleus maleficarum} en 1484, que será el segundo best seller después de la Biblia durante los siguientes 200 años.}%
+
+% Parrafo
+
+\en{Even there is an evolutionary disadvantage of defection, certain conjunctures can produce its emergence in the short term (\emph{minor property}).}%
+\es{Aunque exista una desventaja evolutiva de la deserción, ciertas coyunturas pueden producir su emergencia en el corto plazo (\emph{propiedad menor}).}%
+% Parrafo
+\en{Thus, the coincidence of a set of events, triggered by the massive feudal migration to America, suddenly put this historically marginal society in a situation of global privilege.}%
+\es{Así es que la coincidencia de un conjunto de eventos, que se desencadenaron por la masiva migración feudal a América, puso de repente a esa sociedad, históricamente marginal, en una situación de privilegio mundial.}%
+%
+\en{The diseases transmitted by the feudal explorers eliminated, at least, 2/3 of the American population.}%
+\es{Las enfermedades transmitidas por los exploradores feudales eliminó, al menos, 2/3 de la población americana.}%
+%
+\en{However, there was no geopolitical shift until explorers discovered the silver mountain of Potosi in 1546, a metal that China had recently incorporated as one of its official currencies.}%
+\es{Sin embargo, no se produce ningún giro geopolítico hasta que los exploradores descubren la montaña de plata de Potosí en 1546, metal que China había incorporado recientemente como una de sus monedas oficiales.}%
+%
+\en{Thanks to it, a quarter of a century later Western Europe finally managed to break its isolation (battle of Lepanto 1571) and begin the long cycle of importing foreign technology, mainly from China.}%
+\es{Gracias a ella, un cuarto de siglo después Europa occidental finalmente logra romper su aislamiento (batalla de Lepanto 1571) y dar inicio a un largo ciclo de importación de tecnología extranjera, principalmente China.}%
+
+% Parrafo
+%
+% \en{It is only after feudal society acquires a privileged position in the world system that a new debate about the sources of validation of knowledge begins within this society.}%
+% \es{Sólo después de que la sociedad feudal adquiere una posición de privilegio en el sistema mundo, comienza al interior de esta sociedad, un nuevo debate sobre las fuentes de validación del conocimiento.}%
+% %
+% \en{At this time, the criterion of personal experience as the foundation of authentic knowledge began to replace the criteria of authority of the Middle Ages.}%
+% \es{En esta época, el criterio de experiencia personal como fundamento del saber auténtico comenzó a reemplazar los criterios de autoridad de la Edad Media.}%
+% %
+% \en{Some understood the concept of experience as ``intellectual evidence'' (rationalists) and others as ``sensible evidence'' (empiricists), two sets of demands that were at first considered incompatible with each other: that of universality and necessity on the one hand, and that of empirical proof on the other.}
+% \es{Algunos entendieron el concepto de experiencia como ``evidencia intelectual'' (racionalistas) y otros como ``evidencia sensible'' (empiristas), dos grupos de exigencias que se consideraron al principio incompatibles entre sí: el de universalidad y necesariedad por un lado, y el de acreditación empírica por otro.}%
+% %
+% \en{However, these new criteria, which allowed the democratization of knowledge within feudal society, were reserved for the exclusive use of its male members.}
+% \es{Sin embargo, estos nuevos criterios, que permitían democratizar el conocimiento al interior de la sociedad feudal, estaban reservados para uso exclusivo de sus miembros varones.}%
+% %
+% % \es{En esta etapa, el sujeto masculino se torna modelo de lo humano y de todo cuanto sea dotado de politicidad, interés general y valor universal, y el espacio de las mujeres se transforma en margen y resto de la política.}%
+%
+%
+% % Parrafo
+%
+% \en{The argument of moral superiority, developed by Ginés de Sepúlveda four years after the discovery of silver in Potosí, will be used throughout modernity up to the present.}
+% \es{El argumento de superioridad moral, que desarrolla Ginés de Sepúlveda cuatro años después del descubrimiento de la plata de Potosí, será utilizado durante toda la modernidad hasta el presente.}%
+% \begin{quotation}
+%  \en{It will always be just [...] that such [barbarian] peoples submit to the rule of more cultured and humane princes and nations [...] And if they reject such rule it can be imposed on them by means of arms, and such a war will be just as natural law declares [...] In short: it is just, convenient, and in accordance with natural law that men of integrity, intelligence, virtue, and humanity should dominate over all those who do not have these qualities.}%
+%  \es{Será siempre justo [...] que tales gentes [bárbaras] se sometan al imperio de príncipes y naciones más cultas y humanas [...] Y si rechazan tal imperio se les puede imponer por medio de las armas, y tal guerra será justa según el derecho natural lo declara [...] En suma: es justo, conveniente y conforme a la ley natural que los varones probos, inteligentes, virtuosos y humanos dominen sobre todos los que no tienen estas cualidades.}%~\cite{GinesdeSepulveda1967p87}.
+% \end{quotation}
+% %
+% \en{This idea continues to be in force even when it is recognized that the universal validity of knowledge would lie in mutual recognition.}
+% \es{Esta idea continúa vigente incluso cuando se propone que la validez universal del conocimiento radicaría en el reconocimiento mutuo.}%
+% %
+% \begin{quotation}
+% Obra de tal modo que la máxima de tu voluntad pueda valer siempre al mismo tiempo como principio de una legislación universal.% \cite{Kant2003:28}.
+% \end{quotation}
+% %
+% \en{However, Kant himself, who proposes this principle, does not perceive a contradiction when he later states that the American races are incapable of all culture and that the black races can be educated but only as servants and slaves.}%
+% \es{Sin embargo, el mismo Kant, quien propone este principio, no percibe una contradicción cuando afirma luego que las razas americanas son incapaces de toda cultura y que las razas negras pueden ser educadas pero sólo como sirvientes y esclavos.}%
+% %
+% \en{There is no contradiction because the feudal-colonial-modern concept of ``universality'' is born limited.}%
+% \es{No hay contradicción porque el concepto feudal-colonial-moderno de ``universalidad'' nace limitado.}%
+% %
+% \en{Women, foreigners, animals and entire ecological systems participate only as objects of white males, the latter being the only ones endowed with universal value.}%
+% \es{Mujeres, extranjeros, animales y sistemas ecológicos completos participan sólo como objetos de los varones blancos, siendo estos últimos los únicos dotados con valor universal.}%
+% %
+% \en{Colonial-modern society, and its science, repeats the verticalist and punitivist structure of feudal society, now with a global scope.}%
+% \es{La sociedad colonial-moderna, y su ciencia, repite la estructura verticalista y punitivista de la sociedad feudal, ahora con un alcance global.}%
+% % Todos los conocimientos que la sociedad colonial va incorporando del resto de comunidades del mundo se les borra su verdadero origen histórico y se las enaltecen como surgimientos espontáneos internos.
+%
+% % Parrafo
+
+\en{Until the early 1800s Western Europe continued to face a trade deficit with China, which was financed since the mid-1700s by the opium drug trade despite China's prohibition.}%
+\es{Hasta comienzos del 1800 Europa occidental seguía teniendo déficit comercial con China, que desde mediados de 1700 financiaba mediante el narcotráfico de opio a pesar de la prohibición China.}%
+%
+\en{The consequences were more severe when a cheaper and more potent opium mixture was developed in 1818.}%
+\es{Las consecuencias fueron más graves cuando, después de las independiencias americanas, en 1818, los británicos comienzan a comercializar una mezcla de opio más barata y potente.}%
+%
+\en{The number of addicts became alarming, and in 1839 China made the mistake of declaring war against the British narco-state in its own territory.}%
+\es{El número de adictos llegó a ser lo suficientemente alarmante, y en 1839 China comete el error de declarar la guerra al Narco-Estado británico en su propio territorio.}%
+%
+\begin{figure}[ht!]
+\centering
+ \begin{subfigure}[b]{0.45\textwidth} \centering
+  \includegraphics[width=\linewidth]{figures/china.pdf}
+  \caption{}
+  \label{fig:china}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.27\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/africa.png}
+  \caption{}
+  \label{fig:africa}
+  \end{subfigure}
+ \caption{
+ \en{(\subref{fig:china}): China's defeat against the British narco-state on its own territory had terrible consequences. (\subref{fig:africa}): It was not until 1850 that the colonization of continental Africa and the vast territories of the still autonomous Americas began.}%
+ \es{(\subref{fig:china}): La derrota de China contra el narco-estado británico en su propio territorio tuvo consecuencias terribles. (\subref{fig:africa}): Recién a partir de 1850 comienza la colonización de África continental y los extensos territorios de América todavía autónomos.}%
+ }
+ \label{fig:eraDeGenocidios}
+ \end{figure}
+ %
+\en{The results were terrible: China lost 1/5 of its population and was mired for a century by foreign invasions.}%
+\es{Los resultados fueron terribles: China pierde 1/5 de su población y queda sumida durante un siglo por invasiones extranjeras.}%
+
+% Parrafo
+
+\en{When Western Europe finally establishes itself as the global geopolitical center, after the defeat of China, the era of genocides and massive loss of global cultural diversity begins: the violent occupation of continental Africa and the still autonomous territories of the Americas, among the main ones.}%
+\es{Cuando Europa occidental finalmente se establece como el centro geopolítico global, luego de la derrota China, comienza la era de genocidios y masiva pérdida de diversidad cultural global: la ocupación violenta de África continental y de los territorios de América todavía autónomos, entre los principales.}%
+%
+\en{The criterion of authority globalized during colonial-modernity as a criterion of universality limited to white men opened the door to cultural and ecological arbitrariness.}%
+\es{El criterio de autoridad globalizado durante la colonial-modernidad como criterio de universalidad limitado a los varones blancos abrió la puerta a la arbitrariedad cultural y ecológica.}%
+%
+% \en{It is a new era of scientific and technological advances, but on the other hand it is the era of massive loss of global cultural diversity.}%
+% \es{Es una nueva era de avances científicos y tecnológicos, pero por otro es la era de pérdida masiva de diversidad cultural global.}%
+%
+\en{In a world of weakened communities, the individualistic and instrumental worldview of our time expands: life and people as commodities.}%
+\es{En un mundo de comunidades debilitadas, se expande la cosmovisión individualista e instrumental de nuestro tiempo: la naturaleza como cosa, las personas como cosas.}%
+%
+\en{Despite all the advances, metropolitan science was not able to compensate for the loss of millenarian knowledge caused by colonial-modernity and as a consequence of the massive loss of global cultural diversity, we are currently experiencing a serious and deepening ecological crisis.}%
+\es{A pesar de todos los avances, la ciencia metropolitana no fue capaz de compensar la pérdida de conocimientos milenarios provocada por la colonial-modernidad, y como consecuencia de la masiva pérdida de la diversidad cultural global vivimos en la actualidad una grave crisis ecológica que no deja de profundizarse.}%
+%
+% \begin{figure}[ht!]
+% \centering
+%  \begin{subfigure}[b]{0.35\textwidth} \centering
+%   \includegraphics[width=\linewidth]{static/brasil1986.jpg}
+%   %\caption{}
+%   \end{subfigure}
+%   \begin{subfigure}[b]{0.35\textwidth} \centering
+%   \includegraphics[width=\linewidth]{static/brasil2020.jpg}
+%   %\caption{}
+%   \end{subfigure}
+%  \caption{
+%  \en{The current massive loss of biodiversity has been preceded by a massive loss of global cultural diversity.}%
+%  \es{La masiva pérdida de biodiversidad actual ha estado precedida por una masiva pérdida de la diversidad cultural global.}%
+%  }
+%  \label{fig:eraDeGenocidios}
+%  \end{figure}
+%
+% % Parrafo
+
+\en{The advantage in favor of diversification and cooperation is not only theoretical, its breakdown has consequences for life and knowledge.}%
+\es{La ventaja a favor de la diversificación y la cooperación no es solo teórica, su ruptura tiene consecuencia para la vida y el conocimiento.}%
+%
+\en{Just as selecting a single hypothesis has known negative consequences in probability (overfitting), the imposition of a single type of society is having increasingly obvious ecological consequences for life.}%
+\es{Del mismo modo que seleccionar una única hipótesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposición de un único tipo de sociedad está teniendo consecuencia ecológicas cada vez más evidentes para la vida.}%
+%
+\en{Ultimately, in the long term, only the variants capable of reducing fluctuations through diversification and cooperation survive.}%
+\es{En definitiva, a largo plazo, solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación y cooperación.}%
+
+% Parrafo
+
+\en{Thus, the experience accumulated by the most diverse communities in the world has led, independently, to a universal obligation to give and receive, and to the development of technologies of reciprocity that maintain cohesion by re-activating community bonds through (festive or coercive) exchange rites.}%
+\es{Así es que la experiencia acumulada por las más diversas comunidades del mundo condujo, de forma independiente, a una obligación universal de dar y de recibir, y al desarrollo de tecnologías de reciprocidad que mantienen la cohesión mediante la re-activación de los vínculos comunitarios mediante ritos (festivos o coercitivos) de intercambios.}%
+%
+\en{The right to cultural diversity is based on the practical fact that ecologically adapted cultural knowledge evolves only through the experience accumulated by autonomous peoples in the course of their own history.}%
+\es{El derecho a la diversidad cultural se sustenta en el hecho práctico de que el conocimiento cultural ecológicamente adaptado evoluciona sólo a través de la experiencia que acumulan los pueblos autónomos en el transcurso de su propia historia.}%
+% \es{Los estudios comparados muestran que las instituciones adaptadas ecológicamente evolucionan en comunidades locales que sobreviven a largo plazo gracias al desarrollo de tecnologías de sociabilidad que garantizan el arraigo social y la salud del tejido social.}%
+\en{Just as the Bayesian approach adapts knowledge by believing at the same time in A and non-A, a Plurinational society adapts to life through reciprocal coexistence between autonomous communities.}%
+\es{Así como el enfoque bayesiano adapta el conocimiento creyendo al mismo tiempo en A y no A, una sociedad plurinacional se adapta a la vida a través de la convivencia recíproca entre comunidades autónomas.}%
+
+
+\section{Objetivos}
+
+\section{Antecedentes}
+
+\section{La evolución como sistema natural de procesamiento de información}
 
 % Parrafo
 
@@ -716,42 +1527,6 @@ g = (1.5 \cdot 0.6)^{1/2} \approx 0.95
 
 \subsection{La ventaja de la cooperación}
 
-Como consecuencia de la no-ergodicidad de los procesos multiplicativos, las fluctuaciones tienen un efecto negativo en las tasas de crecimiento individuales.
-%
-%Parafraseando a Den Boer~\cite{denBoer1968-spreadingRisk}, la  supervivencia de una población depende de la distribución del riesgo dentro de la población y entre las poblaciones de diferentes especies.
-Yaari-Solomon~\cite{yaari2010-cooperationEvolution} y Peters-Adamou~\cite{peters-cooperation2019.03.04} (de aquí en adelante Yaari y Peters) estudian las consecuencias que la siguiente estrategia cooperativa tiene sobre la tasa de crecimiento de los agentes.
-%
-\begin{figure}[H]
-\centering
-\scalebox{0.75}{
-\tikz{
-
-    \node[latent, minimum size=2cm ] (x1_0) {$\omega_1(t)$} ;
-    \node[latent, below=of x1_0, minimum size=2cm ] (x2_0) {$\omega_2(t)$} ;
-
-    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega_1(t)\cdot f(\Aa_1(t))$} ;
-    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=left] (x2_0g) {$\omega_2(t)\cdot$\\$f(\Aa_2(t))$} ;
-
-    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=right] (x_0) {$\omega_1(t)\cdot f(\Aa_1(t))$\\$+\omega_2(t)\cdot f(\Aa_2(t))$ } ;
-
-    \node[const, above=of x_0] (nx_0) {$\overbrace{\text{Pool}\hspace{2.5cm}\text{Share}}^{\text{\normalsize Coopera\en{tion}\es{ci\'on}}}$} ;
-
-    \node[latent, right=of x1_0g, minimum size=2.5cm,  xshift=4.5cm] (x1_1) {$\omega_1(t+1)$ } ;
-    \node[latent, below=of x1_1, minimum size=2.5cm, yshift=0.7cm] (x2_1) {$\omega_2(t+1)$ } ;
-
-    \edge {x1_0} {x1_0g};
-    \edge {x2_0} {x2_0g};
-    \edge {x1_0g,x2_0g} {x_0};
-    \edge {x_0} {x1_1,x2_1};
-
-}
-}
-\caption{
-Los agentes comienzan con los mismos recursos iniciales, los actualizan independientemente de acuerdo con la ecuación \ref{eq:estrategia_base}, y finalmente lo redistribuyen en partes iguales.
-}
-\label{fig:protocolo}
-\end{figure}
-%
 En la figura \ref{fig:ergodicity_cooperation} mostramos la trayectoria de un agente en un grupo cooperador de tamaño 33.
 %
 \begin{figure}[ht!]
@@ -7806,7 +8581,7 @@ La evaluación completa del espacio de posibles modelos causales es una tarea ne
 \frontmatter
 \chapter{Referencias}
 
-\bibliographystyle{plos2015.bst}
+\bibliographystyle{plos2015}
 \bibliography{../../bibliografia/journalsAbbr,../../bibliografia/Gaming/gaming}
 
 
