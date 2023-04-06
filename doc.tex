@@ -821,7 +821,7 @@ De esta forma, al realizar la predicción con la contribución de todas las hip�
 
 A diferencia de la teoría de la probabilidad, en la que las hipótesis no intercambian probabilidades (la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa), las formas de vida tienen la capacidad de intercambiar recursos con otras formas de vida, lo que les otorga una grado de libertad mayor para reducir fluctuaciones.
 %
-Esto hace que los humanos tengamos como especie un elemento epistémico no presente en las variantes que produce la teoría de la probabilidad, que será de interés a lo largo de toda esta tesis.
+Esto hace que los humanos tengamos en nuestra cultura y nuestra ciencia un elemento epistémico que no está presente en las variantes que produce la teoría de la probabilidad, lo que será de interés a lo largo de toda esta tesis.
 %, la capacidad de especialización cooperativa que produce la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados a dominios particulares coexisten.
 % %
 % La capacidad de
@@ -911,11 +911,11 @@ En general, queremos la apuesta $b$ que maximiza la tasa de crecimiento $r(b)$,
 En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta óptima  $b^{*}$ es la que divide los recursos en la misma proporción que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia típica $\lim_{T \rightarrow \infty} n_c/T = p$.
 %
 Ésta es la \emph{propiedad epistémica} que le permite a la teoría de la probabilidad adquirir conocimiento sobre el mundo, pues al evaluar las hipótesis individuales en base al producto de las sorpresas se produce una ventaja a favor de las hipótesis que diversifican la predicción en la misma proporción que la frecuencia observada.
+%
+Del mismo modo, el proceso de selección evolutiva por secuencias de tasas de crecimiento y reproducción, produce la emergencia de formas de vida que reducen las fluctuaciones a través de la diversificación individual.
 
 % Parrafo
 
-Del mismo modo, el proceso de selección evolutiva por secuencias de tasas de crecimiento y reproducción, produce la emergencia de formas de vida que reducen las fluctuaciones a través de la diversificación individual.
-%
 Por ejemplo, supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas.
 %
 Si sabemos que la moneda es no sesgada lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
@@ -926,13 +926,26 @@ Incluso con el comportamiento óptimo, individualmente las trayectorias de los r
 
 % Parrafo
 
-A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}
+A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
 %
+Por ejemplo, si en cada paso temporal luego de apostar los individuos de un grupo de tamaño $N$ redistribuyen los recursos en partes iguales, la riqueza de los individuos pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
 
-\todo[inline]{Introducir ecuación cooperativa.}
-
-Y TEXTO
-
+%
+\begin{equation}
+\begin{split}
+\omega_{T+1}(N,b) & = \frac{1}{N} \overbrace{\bigg( m_c \, \omega_{T}(N,b) \, Q_c  \, b + m_s \, \omega_{T}(N,b) \, Q_s  \, (1-b)  \bigg)}^{\hfrac{\text{\footnotesize \phantom{g}\En{Sum of all resources}\Es{Suma de todos los recursos}\phantom{g} }}{\text{\scriptsize (\En{with}\Es{con} $m_s$ \En{Heads}\Es{Caras} y $m_s$ \En{Tails}\Es{Secas})}}} \\
+& =\omega_T(N,b) \, \underbrace{\left( \frac{m_c}{N}   Q_c  \, b + \frac{m_s}{N} \, Q_s  \, (1-b)  \right)}_{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Tasa de crecimiento}  \phantom{Tg}}} \\[0.3cm]
+\end{split}
+\end{equation}
+%
+Y la tasa de crecimiento de los individuos pasa a ser el promedio de todos los resultados del grupo.
+%
+La reducción de fluctuaciones que genera este simple acto de intercambio de recursos, hace que la tasa de crecimiento de todos los individuos se vuelve positiva.
+%
+Ésta es la \emph{propiedad evolutiva}.
+%
+A través de la cooperación podemos reducir aun más las fluctuaciones, aumentando así la tasa de crecimiento de todos sus miembros.
+%
 \begin{figure}[ht!]
 \vspace{-0.1cm}
 \centering
@@ -962,12 +975,6 @@ Y TEXTO
  \label{fig:coop}
  \vspace{-0.1cm}
  \end{figure}
-%
-Ésta es la \emph{propiedad evolutiva}.
-%
-En nuestro ejemplo, si en cada paso temporal los individuos redistribuyen los recursos en partes iguales antes de apostar, la tasa de crecimiento de todos los individuos se vuelve positiva.
-% \es{A través de la cooperación podemos reducir aun más las fluctuaciones, aumentando así la tasa de crecimiento de todos sus miembros.}%
-
 
 % Parrafo
 
@@ -975,33 +982,31 @@ Si bien jugando individualmente nos veíamos obligados a apostar ignorando los p
 %
 Ésta es la \emph{propiedad de especiación}.
 %
-En un grupo cooperativo de tamaño $N$, en el que los recursos se dividen en partes iguales, la tasa de crecimiento de los individuos pasa a ser el promedio de la recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$ (ver ecuación de la figura~\ref{fig:esp}).
+Cuando el tamaño del grupo tiende a infinito, la puesta óptima es apostar todo a la mejor opción, $b^* =1$.
 %
+\begin{equation}
+\lim_{N \rightarrow \infty} r(N,b) = p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)
+\end{equation}
+%
+Sin embargo, la especialización emerge incluso en grupos pequeños.
+%
+A medida que el grupo aumenta de tamaño, la apuesta óptima se va ``especializando'' en la mejor opción disponible (figura~\ref{fig:esp}).
+
+% Parrafo
+
 \begin{figure}[ht!]
 \centering
- \begin{subfigure}[c]{0.50\textwidth}
- \vspace{-0.6cm}
-  \begin{equation*}
-\begin{split}
-\omega_{T+1}(N,b) & = \frac{1}{N} \overbrace{\bigg( m_c \, \omega_{T}(N,b) \, Q_c  \, b + m_s \, \omega_{T}(N,b) \, Q_s  \, (1-b)  \bigg)}^{\hfrac{\text{\footnotesize \phantom{g}\En{Sum of all resources}\Es{Suma de todos los recursos}\phantom{g} }}{\text{\scriptsize (\En{with}\Es{con} $m_s$ \En{Heads}\Es{Caras} y $m_s$ \En{Tails}\Es{Secas})}}} \\
-& =\omega_T(N,b) \, \underbrace{\left( \frac{m_c}{N}   Q_c  \, b + \frac{m_s}{N} \, Q_s  \, (1-b)  \right)}_{\hfrac{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Tasa de crecimiento}  \phantom{Tg}} }{\hfrac{\phantom{Tg}}{\text{\footnotesize $\lim_{N \rightarrow \infty}p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)$} }} } \\[0.3cm]
-\end{split}
-\end{equation*}
-  \end{subfigure}
-\hspace{1.3cm}
   \begin{subfigure}[c]{0.40\textwidth}
 \begin{flushright}
  \includegraphics[width=1\linewidth]{figures/pdf/tasa-temporal-2.pdf}
  \end{flushright}
  \end{subfigure}
  \caption{
-En la ecuación vemos la tasa de crecimiento en grupos cooperativos. En la figura vemos la tasa de crecimiento para grupos de tamaño 1 a 5 (colores), para todas las posibles apuestas (eje x). A medida que aumenta el tamaño del grupo, la apuesta óptima se va especializando hacia la opción mejor paga por la casa de apuesta. Cuando el tamaño del grupo tiende a infinito, la puesta óptima es apostar todo a la mejor opción
+Tasa de crecimiento para grupos de tamaño 1 a 5 (colores), para todas las posibles apuestas (eje x). A medida que aumenta el tamaño del grupo, la apuesta óptima se va especializando hacia la opción mejor paga por la casa de apuesta.
  }
  \label{fig:esp}
  \vspace{-0.1cm}
  \end{figure}
-%
-A medida que el grupo aumenta de tamaño, la apuesta óptima se va ``especializando'' en la mejor opción disponible (figura~\ref{fig:esp}).
 
 % Parrafo
 
@@ -1015,26 +1020,27 @@ En los pasos temporales impares, la moneda tiene probabilidad $p_1$ en el hemisf
 %
 Y a la inversa en los pasos temporales pares.
 %
-En casos como estos, si bien la especialización sigue siendo valiosa para los grupos cooperativos, la variabilidad del proceso produce una ventaja adicional en favor de los grupos con mayor heterogeneidad interna.
+En casos como estos la variabilidad del proceso produce una ventaja adicional en favor de los grupos con mayor heterogeneidad interna.
 %
 Ésta es la \emph{propiedad ecológica}.
 %
-Si $h$ es la proporción de individuos que se encuentran en el hemisferio $A$, la tasa de crecimiento de los individuos en una grupo cooperativo especializado grande ($\lim_{N\rightarrow \infty} r(h)$) se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
+Sea $h$ la proporción de individuos en el hemisferio A.
 %
-\begin{figure}[ht!]
-\vspace{0cm}
-\centering
- \begin{subfigure}[c]{0.50\textwidth}
- \vspace{-0.3cm}
-  \begin{equation*}
+La tasa de crecimiento en un ejemplo simple, en el que el tamaño del grupo es infinito y en el que los individuos se especializan la apuesta correspondiente a la etapa del ciclo que experimentan, es
+%
+\begin{equation*}
 \begin{split}
  r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_1) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_2 \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
  r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_2 \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_1) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
  r(h) = & \ \overbrace{r_{1}(h)^{1/2} \ r_2(h)^{1/2}}^{\text{Tasa de crecimiento}}
 \end{split}
 \end{equation*}
-  \end{subfigure}
-\hspace{0.6cm}
+%
+Esta tasa de crecimiento se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
+%
+\begin{figure}[ht!]
+\vspace{0cm}
+\centering
   \begin{subfigure}[c]{0.44\textwidth}
   \vspace{0.5cm}
 \begin{flushright}
@@ -1042,12 +1048,12 @@ Si $h$ es la proporción de individuos que se encuentran en el hemisferio $A$, l
  \end{flushright}
  \end{subfigure}
  \caption{
- En la ecuación vemos la tasa de crecimiento en función de la proporción en hemisferio A, $h$, de un grupo grande especializado en la mejor opción, en el que los individuos aplican la apuesta óptima correspondiente a la etapa del ciclo que experimentan.
- En la figura vemos que la tasa de crecimiento de los individuos del grupo se maximiza cuando la heterogeneidad entre individuos es máxima.
+ En la figura vemos la tasa de crecimiento de los individuos en función de la proporción de individuos en el hemisferio A. La tasa de crecimiento se maximiza cuando la heterogeneidad entre individuos es máxima.
  }
  \label{fig:divCoop}
  \vspace{-0.1cm}
  \end{figure}
+
 
 % Parrafo
 
@@ -1092,28 +1098,74 @@ En la ecuación vemos la matriz de pagos del dilema del prisionero. En la figura
 
 % Parrafo
 
+\subsection{La transición cultural mayor}
 
-
-\subsection{Coevolución genético-cultural}
-
-\todo[inline]{Recordar las transiciones mayores en evolución y epistémicas}
-
-\en{Moreover, in the history of human beings, epistemic cooperation (transmission of knowledge between individuals) allowed the emergence of worldviews, such as science and culture, where highly specialized paradigms in particular domains coexist.}%
-\es{Además, en la historia del ser humano la cooperación epistémica (transmisión de conocimiento en entre individuos) permitió la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados en dominios particulares coexisten.}%
+Las propiedad de los procesos de selección multiplicativo produce una tendencia permanente hacia la emergencia de agregaciones cooperativas de nivel superior tanto en probabilidad, mediante la cooperación predictiva de hipótesis de nivel inferior, como de evolución, mediante la cooperación de recursos entre los individuos de un grupo.
 %
-\en{The positive effects are clear.}%
-\es{Los efectos positivos son evidentes.}%
+Esta fuerza que lleva a las entidades capaces de autorreplicación a formar parte de unidades cooperativas superiores se conoce en evolución como transiciones evolutivas mayores y podría ser llamada en probabilidad como \emph{transiciones epistémicas mayores}.
 %
-\en{Before the cultural transition, we were in serious danger of extinction, as evidenced by the low diversity of the human genome, even compared to the closest hominins.}%
-\es{Antes de la transición cultural, estábamos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano, respecto incluso de los homininos más cercanos.}%
+En probabilidad, las transiciones epistémicas se realizan sin el intercambio de recursos entre hipótesis, la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa.
 %
-\en{But when knowledge, that previously had to be rediscovered individually, became a common resource passed on from generation to generation, we began to be able to occupy all the ecological niches of the earth as no other terrestrial vertebrate had done before.}%
-\es{Pero cuando el conocimiento, que antes debía ser redescubierto individualmente, pasó a ser un recurso común transmitido de generación en generación, comenzamos a ser capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.}%
-%
-\en{Organized in small nomadic societies, we managed to walk from Africa to South America (arrows in Figure~\ref{fig:poblamiento}).}%
-\es{Organizados en pequeñas sociedades nómadas, logramos llegar caminando de África hasta sud América (flechas de la figura~\ref{fig:poblamiento}).}%
+Sin embargo, la emergencia de la cultural en evolución puede ser vista como una transición epistémica mayor que tiene además la capacidad de explorar todas aquellas propiedades de los procesos de selección multiplicativos que requieren el intercambio de recursos para aumentan la tasa de crecimiento.
+%permitiendo la emergencia de cosmovisiones, como la ciencia, donde disciplinas altamente especializadas a dominios particulares cooperan mutuamente para la reproducción de la vida.
+% %
+% En el uso discrecional que le damos a la teoría de la probabilidad, introducimos esta propiedad como si fuera una regla implícita, que es en realidad la capacidad de resolver el problema intercambiar en cada caso el modelos que usamos.
 
 % Parrafo
+
+En la historia del ser humano la cooperación epistémica (transmisión de conocimiento en entre individuos) permitió la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados en dominios particulares coexisten.
+%
+Los efectos positivos son evidentes.
+%
+Antes de la transición cultural, estábamos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano, respecto incluso de los homininos más cercanos.
+%
+Pero cuando el conocimiento, que antes debía ser redescubierto individualmente, pasó a ser un recurso común transmitido de generación en generación, comenzamos a ser capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.
+%
+Organizados en pequeñas sociedades nómadas, logramos llegar caminando de África hasta sud América (flechas de la figura~\ref{fig:poblamiento}).
+
+% Parrafo
+
+\todo[inline]{Poblamiento}
+
+% Parrafo
+
+Si bien varias especies animales son capaces de desarrollar tradiciones simples, y en algunas (como las ballenas, delfines, primates y aves) las tradiciones llegan a ser bastante complejas, todas ellas son manifiestamente más simples que la cultura humanas.
+%
+Ciertamente existen muchas adaptaciones raras, que son particulares a ciertas especies, pero los elementos que son realmente buenos, como el ojo, han evolucionado repetidamente entre las millones de especies animales del mundo.
+%
+Dado que la cultura ha hecho a los humanos extraordinariamente exitosos, ¿Por qué las otras especies no han adquirido esas capacidades?
+%
+¿Por qué solo los humanos?
+
+% Parrafo: Co-evolución.
+
+Entre los hominoides, los humanos se distinguen por una serie de rasgos que incluyen prolongados períodos juveniles, intervalos cortos entre nacimientos y una prolongada vida posreproductiva~\cite{Jones2011}.
+%
+Para explicar la integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas ha sido necesario un proceso extenso de coevoluci\'on gen\'etico-cultural.
+%
+Es un error creer que primero evolucionó la naturaleza humana y luego desarrollamos la cultura.
+%
+La evolución del lenguaje es un ejemplo claro.
+%
+Las características genética que nos permiten escuchar, hablar y aprender el lenguaje serían inútiles sin lenguajes complejos para aprender.
+%
+Por el contrario, para que evolucionen estas características innatas es necesario la presencia previa de alguna lenguas primitiva que proporcionara una entorno cultural que presionara a favor de la selección de mejores habilidades lingüísticas innatas.
+%
+A través de rondas repetidas de coevolución, surgieron lenguajes complejos y el costoso aparato necesario para operarlos.
+
+% Parrafo: Origen de las caracterisitcas
+
+Antes del surgimiento de los humanos anat\'omicamente modernos (masa cerebral actual) y de los humanos conductualmente modernos (lenguaje), surgi\'o en África una linaje emocionalmente moderno, con capacidades para el entendimiento mutuo~\cite{hrdy2020-emotionallyModern}.
+%
+A diferencia de nuestros parientes m\'as cercanos (chimpanc\'es, bonobos, gorilas y orangutanes), en los que la crianza está bajo survisión estricta de la madre, hace aproximadamente 3.5 millones de años, nuestros ancestros comenzaron a desarrollar un tipo de crianza cooperativa.
+%
+Esta forma de crianza cooperativa produjo un ambiente que favoreci\'o la selecci\'on de j\'ovenes capaces de monitorear y comprender las intenciones de los dem\'as, y de trasmitir a sus cuidadadores sus propias necesidades, dando inicio a un largo proceso de coevoluci\'on gen\'etico-cultural~\cite{hrdy2020-emotionallyModern}.
+%
+La capacidades para desarrollar culturas complejas son parte de nuestra biología.
+%
+Lo que aprendemos, lo que sentimos, cómo pensamos y cómo recordamos están moldeados por la arquitectura de las mentes y los cuerpos humanos formados durante milenios por la acción continua de la evolución orgánica.
+
+
 
 \begin{figure}[ht!]
 \centering
