@@ -42,6 +42,8 @@
 \usepackage[binary-units]{siunitx} % \num{} \SI{}
 \usepackage{multirow}
 \input{tikzlibrarybayesnet.code.tex}
+\allowdisplaybreaks %break equations
+
 
 \tikzset{
 every picture/.append style={
@@ -403,16 +405,16 @@ Imitar a la mayoría, imitar a la persona más prestigiosa, son diferentes estra
 
 Si bien el tema de la tesis está motivado por preguntas específicas acerca del del aprendizaje individual en comunidades de video juegos, esta tesis estuvo enfocada principalmente en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
 %
-La ciencia es una institución humana que tiene pretensión de verdad, esto es de alcanzar acuerdos intersubjetivos ``universalmente'', que valgan para todas las personas.
-%
-Las ciencias formales (matemática, lógica, computabilidad) validan sus proposiciones mediante teoremas derivados de aplicar las reglas internas a un sistema axiomático cerrado.
-%
-Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones dentro de sistemas abiertos que contienen siempre algún grado de incertidumbre.
-%
-¿Es posible alcanzar acuerdos intersubjetivos (verdades) en contextos de incertidumbre?
-%
-Sí, evitando mentir: no decir más de lo que se sabe incorporando toda la información disponible.
-%
+% La ciencia es una institución humana que tiene pretensión de verdad, esto es de alcanzar acuerdos intersubjetivos ``universalmente'', que valgan para todas las personas.
+% %
+% Las ciencias formales (matemática, lógica, computabilidad) validan sus proposiciones mediante teoremas derivados de aplicar las reglas internas a un sistema axiomático cerrado.
+% %
+% Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones dentro de sistemas abiertos que contienen siempre algún grado de incertidumbre.
+% %
+% ¿Es posible alcanzar acuerdos intersubjetivos (verdades) en contextos de incertidumbre?
+% %
+% Sí, evitando mentir: no decir más de lo que se sabe incorporando toda la información disponible.
+% %
 A diferencia de los enfoques que seleccionan una única hipótesis, el enfoque bayesiano, mediante la aplicación estricta de las reglas de la probabilidad, evalúa todas y cada una de las hipótesis de acuerdo a la evidencia empírica y formal (datos y modelos causales), garantiza los acuerdos intersubjetivos en contextos de incertidumbre.
 %
 Creer en hipótesis mutuamente contradictorias (A y no A) permite que la sorpresa, única fuente de información, actúe como filtro de las creencias previas.
@@ -554,8 +556,11 @@ Bien. ¿Pero ahora, cómo preservamos el acuerdo intersubjetivo en casos más co
 La lógica de la incertidumbre (teoría de la probabilidad) ha sido derivada repetidas veces a partir de diversos principios (axiomas), llegando siempre a las mismas dos simples reglas.
 %
 La \emph{regla de la suma} garantiza no perder creencia cuando la distribuimos entre hipótesis mutuamente contradictorias: al sumar cuánto le hemos asignado a cada hipótesis, recuperamos el 100\% inicial.
+%
 \begin{equation*}
-\overset{\hfrac{\text{\small \En{Sum rule}\Es{Regla de la suma}: }}{\phantom{x}}}{P(A) + P(\text{no\En{t} } A) = 1} \hspace{0.4cm} , \end{equation*}
+\overset{\hfrac{\text{\small \En{Sum rule}\Es{Regla de la suma}: }}{\phantom{x}}}{P(A) + P(\text{no\En{t} } A) = 1}
+\end{equation*}
+%
 Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las creencias con la información disponible: preservamos la creencia previa que sigue siendo compatible con los nuevos datos (y la creencia que sobrevive la consideramos nuestro nuevo 100\%).
 %
 \begin{equation*}
@@ -564,7 +569,9 @@ Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las c
 
 % Parrafo
 
-Estas son las reglas de la probabilidad para actualizar las creencias en contextos de incertidumbre, no hay más.
+Estas son las reglas de la probabilidad para actualizar las creencias en contextos de incertidumbre.
+%
+No hay más.
 %
 Por ejemplo, supongamos que ahora nos dejan elegir una de las cajas y luego alguien nos da una pista, abriendo una caja distinta a la que elegimos en la que no está el regalo (figura~\ref{fig:monty_hall}).
 %
@@ -672,11 +679,11 @@ Y finalmente, la nueva creencia surge de preservar la creencia inicial que sigue
 \caption{
 Acuerdo intersubjetivo dada toda la información disponible (modelo causal y datos).
 %
-(\subref{fig:modelo_causal}) Modelo causal en el cual la pista $s$ no puede señalar la caja elegida $c$ (con la cerradura) ni la caja donde se encuentra el regalo $r$ (la hipótesis oculta): $s\neq c$ y $s\neq r$.
+(\subref{fig:modelo_causal}) El modelo causal asegura que la pista $s$ no puede señalar la caja elegida $c$ (con la cerradura) ni la caja donde se encuentra el regalo $r$ (la hipótesis oculta): $s\neq c$ y $s\neq r$.
 %
-(\subref{fig:caminos_montyhall_compatibles}) Antes de ver la pista, buscamos la creencia que maximiza la incertidumbre dado el modelo causal (dividiendo la creencia en partes iguales en cada bifurcación de los universos paralelos).
+(\subref{fig:caminos_montyhall_compatibles}) Calculamos la creencia que maximiza la incertidumbre dado el modelo causal dividiendo la creencia en partes iguales en cada bifurcación de los universos paralelos.
 %
-(\subref{fig:f3}) La nueva creencia no es más que la creencia inicial (tabla) que sigue siendo compatible con el dato $s_2$, expresada como 100\%
+(\subref{fig:f3}) La nueva creencia no es más que la creencia inicial (tabla) que sigue siendo compatible con el dato $s_2$ (renglón oscuro), expresada como 100\%
 }
 \label{fig:monty_hall}
 \end{figure}
@@ -709,9 +716,7 @@ De hecho, el modelo estándar de evolución, conocido como \emph{replicator dyna
 \end{equation*}
 %
 Debido a que los impactos de las pérdidas de adaptabilidad son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) existe una ventaja a favor de las variantes (hipótesis o formas de vida) que reducen las fluctuaciones.
-
 % Parrafo
-
 Esta propiedad de los procesos de selección multiplicativo ha producido a lo largo de la historia de la vida una serie de transiciones evolutivas en las que entidades capaces de autorreplicación, luego de la transición, pasaran a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}.
 
 \begin{figure}[ht!]
@@ -840,7 +845,7 @@ Para ver por qué, veamos qué ocurre con un proceso multiplicativo.
 %
 Por ejemplo, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente, y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporción $b_c = b$ a Cara y $b_s = 1 - b$ a Seca (apostar solo un parte de los recursos puede mostrarse que tiene una solución equivalente).
 %
-Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$, después de una Cara y una Seca, se actualiza como un producto de nuestros resultados (ver ecuación 1).
+Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$ después de una Cara y una Seca es el producto de nuestros resultados (ver ecuación izquierda).
 %
 \vspace{-0.4cm}
 \begin{figure}[ht!]
@@ -918,7 +923,7 @@ Del mismo modo, el proceso de selección evolutiva por secuencias de tasas de cr
 
 Por ejemplo, supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas.
 %
-Si sabemos que la moneda es no sesgada lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
+Si sabemos que la moneda es no sesgada, lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
 % bien con estos parámetros el valor esperado es positivo, $( Q_c \, b \, p + Q_s \, (1-b) \, (1-p)) = 1.05$,
 En este caso, sin embargo, no podemos ganar este juego individualmente debido a que las ganancias de 50\% con Caras ($1.5 = Q_c \, b$) no alcanza para compensar las caídas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b)$).
 %
@@ -928,8 +933,7 @@ Incluso con el comportamiento óptimo, individualmente las trayectorias de los r
 
 A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
 %
-Por ejemplo, si en cada paso temporal luego de apostar los individuos de un grupo de tamaño $N$ redistribuyen los recursos en partes iguales, la riqueza de los individuos pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
-
+Por ejemplo, si los individuos de un grupo de tamaño $N$ redistribuyen los recursos en partes iguales luego de apostar, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
 %
 \begin{equation}
 \begin{split}
@@ -996,7 +1000,7 @@ A medida que el grupo aumenta de tamaño, la apuesta óptima se va ``especializa
 
 \begin{figure}[ht!]
 \centering
-  \begin{subfigure}[c]{0.40\textwidth}
+  \begin{subfigure}[c]{0.45\textwidth}
 \begin{flushright}
  \includegraphics[width=1\linewidth]{figures/pdf/tasa-temporal-2.pdf}
  \end{flushright}
@@ -1028,13 +1032,11 @@ Sea $h$ la proporción de individuos en el hemisferio A.
 %
 La tasa de crecimiento en un ejemplo simple, en el que el tamaño del grupo es infinito y en el que los individuos se especializan la apuesta correspondiente a la etapa del ciclo que experimentan, es
 %
-\begin{equation*}
-\begin{split}
+\begin{align*}
  r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_1) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_2 \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
  r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_2 \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_1) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
  r(h) = & \ \overbrace{r_{1}(h)^{1/2} \ r_2(h)^{1/2}}^{\text{Tasa de crecimiento}}
-\end{split}
-\end{equation*}
+\end{align*}
 %
 Esta tasa de crecimiento se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
 %
@@ -1061,59 +1063,56 @@ Durante mucho tiempo se creyó que para que la cooperación evolucione debía re
 %
 En él, cooperar implica un costo $c$ para que el otro individuo reciba un beneficio de valor $v$, con $v > c$, y desertar significa negarse a cooperar y no conlleva ningún costo (ver matriz en figura~\ref{fig:desert}).
 %
-En nuestro ejemplo de las apuestas, habría una tentación por desertar: dejar de aportar al fondo común mientras se sigue recibiendo la cuota del fondo común.
-%
-Si la evolución estuviera sujeta a un dilema del prisionero, entonces desertar en grupos enteramente cooperativos debería ofrecer al individuo una tasa de crecimiento más alta que cooperar.
-%
-Sin embargo, bajo procesos de selección multiplicativa no se puede sacar provecho mediante la deserción porque, al aumentar las fluctuaciones los cooperadores de quienes se depende, aumenta también las propias fluctuaciones afectando negativamente la propia tasa de crecimiento de largo plazo.
-%
-En la figura~\ref{fig:desert} mostramos la tasa de crecimiento de individuos en poblaciones cooperativas con 0, 1 y 2 desertores.
-\begin{figure}[ht!]
-\centering
-\hspace{-1cm}
- \begin{subfigure}[c]{0.40\textwidth} \centering
-
- \vspace{-0.3cm}
-
-{\footnotesize \En{Prisoner's dilemma}\Es{Dilema del prisionero}}
  \begin{equation*}
   \bordermatrix{ _{\text{\tiny Focal}}{\rotatebox{45}{\text{$\mid$}}}^{\text{\tiny \En{Other}\Es{Otro}}} \hspace{-0.5cm} & C & D \cr
       \ \ \   C & v-c & -c \cr
       \ \ \ D & v & 0 }
 \end{equation*}
-
-\vspace{0.05cm}
-
-$\hfrac{\text{\footnotesize \En{Unilateral defection is better}\Es{La deserción unilateral es}}}{\text{\footnotesize \En{than mutual cooperation}\Es{mejor que la mutua cooperación}}}$
-  \end{subfigure}
-  \ \ \ \ \ \
- \begin{subfigure}[c]{0.40\textwidth} \centering
-  \includegraphics[width=\linewidth]{figures/pdf/ergodicity_desertion.pdf}
-  \end{subfigure}
- \caption{
-En la ecuación vemos la matriz de pagos del dilema del prisionero. En la figura vemos la tasa de crecimiento de los individuos dentro de grupos cooperativos (colores) con 0, 1 y 2 desertores. Las curvas con mayor variabilidad son los individuos desertores, el resto son los cooperadores. Los desertores tienen una tasa de crecimiento menor que la tenían cuando cooperaban (\emph{propiedad mayor}), a pesar de que inicialmente pudieran obtener un beneficio (\emph{propiedad menor}).
- }
- \label{fig:desert}
- \end{figure}
+%
+Este ejemplo es una dilema debido a que individualmente desertar siempre es mejor que cooperar, a pesar de que la mutua cooperación sea mejor que la mutua deserción.
 
 % Parrafo
 
-\subsection{La transición cultural mayor}
+En nuestro ejemplo de las apuestas, habría una tentación por desertar: dejar de aportar al fondo común mientras se sigue recibiendo la cuota del fondo común.
+%
+Si la evolución estuviera sujeta a un dilema del prisionero, entonces desertar en grupos enteramente cooperativos debería ofrecer al individuo una tasa de crecimiento más alta que cooperar.
+%
+En la figura~\ref{fig:desert} mostramos la tasa de crecimiento de individuos en poblaciones cooperativas con 0, 1 y 2 desertores.
+%
+\begin{figure}[ht!]
+\centering
+ \begin{subfigure}[c]{0.45\textwidth} \centering
+  \includegraphics[width=\linewidth]{figures/pdf/ergodicity_desertion.pdf}
+  \end{subfigure}
+ \caption{
+En la ecuación vemos la matriz de pagos del dilema del prisionero. En la figura vemos la tasa de crecimiento de los individuos dentro de grupos cooperativos (colores) con 0, 1 y 2 desertores. Las curvas con mayor variabilidad son los individuos desertores, el resto son los cooperadores.}
+ \label{fig:desert}
+ \end{figure}
+ %
+Allí se puede observar que los desertores tienen una tasa de crecimiento menor que la tenían cuando cooperaban (\emph{propiedad mayor}), a pesar de que inicialmente obtienen un beneficio circunstancial (\emph{propiedad menor}).
+%
+En contra de lo que se creía, bajo procesos de selección multiplicativa no se puede sacar provecho mediante la deserción porque, al aumentar las fluctuaciones los cooperadores de quienes se depende, aumenta también las propias fluctuaciones afectando negativamente la propia tasa de crecimiento de largo plazo.
 
-Las propiedad de los procesos de selección multiplicativo produce una tendencia permanente hacia la emergencia de agregaciones cooperativas de nivel superior tanto en probabilidad, mediante la cooperación predictiva de hipótesis de nivel inferior, como de evolución, mediante la cooperación de recursos entre los individuos de un grupo.
+% Parrafo
+
+Le llamamos propiedad mayor a la primera porque ella explica la emergencia de las transiciones mayores: la emergencia de agregaciones cooperativas de nivel superior tanto en probabilidad, mediante la cooperación predictiva de hipótesis de nivel inferior, como en evolución, mediante la cooperación de recursos entre los individuos de un grupo.
 %
-Esta fuerza que lleva a las entidades capaces de autorreplicación a formar parte de unidades cooperativas superiores se conoce en evolución como transiciones evolutivas mayores y podría ser llamada en probabilidad como \emph{transiciones epistémicas mayores}.
+Y le llamamos propiedad menor a la segunda por ser un beneficio circunstancial, relevante solo en el corto plazo.
+
+\subsection{La coevolución genético-cultual y la transición cultural mayor}
+
+%Esta fuerza que lleva a las entidades capaces de autorreplicación a formar unidades cooperativas superiores se conoce en evolución como transiciones evolutivas mayores y podría ser llamada en probabilidad como \emph{transiciones epistémicas mayores}.
 %
-En probabilidad, las transiciones epistémicas se realizan sin el intercambio de recursos entre hipótesis, la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa.
+%En probabilidad, las transiciones epistémicas se realizan sin el intercambio de recursos entre hipótesis, la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa.
 %
-Sin embargo, la emergencia de la cultural en evolución puede ser vista como una transición epistémica mayor que tiene además la capacidad de explorar todas aquellas propiedades de los procesos de selección multiplicativos que requieren el intercambio de recursos para aumentan la tasa de crecimiento.
+%Sin embargo, la emergencia de la cultural en evolución puede ser vista como una transición epistémica mayor que tiene además la capacidad de explorar todas aquellas propiedades de los procesos de selección multiplicativos que requieren el intercambio de recursos para aumentan la tasa de crecimiento.
 %permitiendo la emergencia de cosmovisiones, como la ciencia, donde disciplinas altamente especializadas a dominios particulares cooperan mutuamente para la reproducción de la vida.
 % %
 % En el uso discrecional que le damos a la teoría de la probabilidad, introducimos esta propiedad como si fuera una regla implícita, que es en realidad la capacidad de resolver el problema intercambiar en cada caso el modelos que usamos.
 
 % Parrafo
 
-En la historia del ser humano la cooperación epistémica (transmisión de conocimiento en entre individuos) permitió la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados en dominios particulares coexisten.
+En la historia del ser humano, la cooperación epistémica (transmisión de conocimiento en entre individuos) permitió la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados en dominios particulares coexisten.
 %
 Los efectos positivos son evidentes.
 %
@@ -1125,7 +1124,28 @@ Organizados en pequeñas sociedades nómadas, logramos llegar caminando de Áfri
 
 % Parrafo
 
-\todo[inline]{Poblamiento}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+     \includegraphics[width=\textwidth]{figures/agricultura.pdf}
+     \label{fig:agricultura}
+    \end{subfigure}
+%     \begin{subfigure}[b]{0.40\textwidth}
+%     \includegraphics[width=\textwidth]{static/polynesia.png}
+%     \caption{Poblamiento del oc\'eano Pac\'ifico}
+%     \label{fig:polynesia}
+%     \end{subfigure}
+    \caption{
+    Poblamiento humano (flechas) y surgimientos independientes de la agricultura (puntos).
+    Proyecci\'on poli\'edrica de la tierra que conserva los tama\~nos relativos de los continentes.
+    %Las felchas indican el poblamiento, desde África a Asia, y de Asia hacia Ocean\'ia y Am\'erica.
+    %Los puntos rojos indican surgimiento independiente de agricultura.
+    %El mapa de la figura~\ref{fig:polynesia}, desarrollado por Thorsby~\cite{thorsby2016-polynesiaAmerica}, muestra el poblamiento de la Polynesia y los contactos con Ámerica evidenciados en el material gen\'eticos.
+    }%
+    \label{fig:poblamiento}
+\end{figure}
+
 
 % Parrafo
 
