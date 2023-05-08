@@ -316,144 +316,6 @@ In a third paper, we studied the evolution of a network of games in the game of 
 \chapter{Agradecimientos}
 
 
-
-\chapter{Prefacio}
-
-% Parrafo: El objetivo subyacente de esta tesis. Interdisciplina entre la computación y las ciencias sociales.
-
-Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las ciencias de la computación y las ciencias sociales.
-%
-Durante el transcurso del doctorado emergió con fuerza una área conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
-%
-Bajo esta categoría quedaron enmarcadas una gran variedad de actividades, a veces bastante diferentes entre sí, desde aquellas que usan la computación como una herramienta para analizar datos de origen sociales, hasta aquellas que usan problemas de ciencias sociales para motivar desarrollos en la frontera del conocimiento en las ciencias de la computación~\cite{lazer2020-computationalSocialScience}.
-%
-Pero la emergencia de la interdisciplina es un fenómeno más general.
-%
-En la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas, impulsadas por los avances en el área de la inteligencia artificial y la masificación datos y métodos de aprendizaje automático.
-%
-Una de sus consecuencias más contundentes es la emergencia e institucionalización de la Ciencia de Datos, un área científica que ha nacido interdisciplinaria por definición.
-
-% Parrafo: interdisciplina sin datos (el ejemplo de la evolución cultural y la física)
-
-Otras formas de interdisciplina, basada en modelos matemáticos en vez de en datos, es posible y tiene una larga tradición entre las ciencias físicas y las ciencias sociales.
-%
-Por ejemplo, mediante la aplicación de la teoría de juegos al problema de la cooperación se ha producido uno de los cuerpos teóricos más influyentes  para explicar cómo cambia la información cultural a través del tiempo.
-%
-La teoría de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory, boyd1985-evolutionaryProcess} modela los equilibrios evolutivos que se producen entre estrategias en competencia, en el que la adaptabilidad de cada variante depende de las frecuencias de las otras variantes en la población.
-%
-Estos trabajos son, esencialmente, modelos teóricos destinados a comprender las consecuecias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
-%
-Este es un abordaje útil para ganar intuición de procesos que son demasiado complejos, como son las propiedades que emergen en los sistemas a partir de la interacción de sus partes.
-%
-Sin embargo, suelen ser modelos simples que no están destinados a realizar predicciones, y por lo tanto poseen poca o nula corroboración empírica.
-
-% Parrafo: Motivación (evolución cultural / aprendizaje)
-
-Al momento de desarrollar el plan, había sido el enfoque interdisciplinario basado en modelos el que había logrado introducir respuestas que todavía en la actualidad tienen una gran influencia en la antropología.
-%
-%En un plan orientado a datos, esos conceptos ayudan a guiar la intuición, pero su incorporación en sistema predictivo está lejos de ser obvia.
-%
-Algunos de esos conceptos, que aparecerán tangencialmente durante las tesis, motivaron el diseño del plan original.
-%
-Sin embargo, con el objetivo de poner a prueba los métodos computacionales que fuéramos a desarrollar durante el transcurso del doctorado, diseñamos un plan tesis en ciencias de la computación basado en datos.
-%
-El objeto de estudio que motivó el plan, entender el sistema de información cultural, puede ser visto como un sistemas natural de procesamiento de información distribuido.
-%
-Entender cómo cambia la cultura en el tiempo no solo es uno de los problemas fundamentales de la antropología, es también uno de los problemas que las ciencias de la computación responderá en los próximos años.
-%
-En efecto, al comenzar la tesis pude verificar, consultando personalmente a expertos del área, que todavía no había madurado lo suficiente la inteligencia artificial multi-agente.
-%
-Sin embargo, los desarrollos en esta área ocurren con gran velocidad.
-%
-En los últimos años las empresas Deep Mind y Meta abrieron nuevas líneas de investigación en lo que se ha dado a llamar \emph{cooperative AI}~\cite{dafoe2020-coopAI, dafoe2021-coopAIcomment}.
-%
-Solo recién durante la escritura de esta tesis, han comenzado a surgir los primeros resultados de nivel humano en un juego de estrategia ``Diplomacy'', que involucra negociación entre varios jugadores~\cite{kramar2022-deepMindDiplomacy, meta2022-diplomacy}
-
-% % Parrafo: Datos. (La dificultad)
-%
-% Como suele ocurrir con todas las ciencias empíricas, la recolección de datos es quizás una de las actividades que mayor cantidad y calidad de recursos demanda.
-% %
-% Como en ocurre en cualquier proceso judicial, llegar a un acuerdo respecto de qué debe ser considerado datos, base empírica donde evaluar las hipótesis, es en sí mismo un problema.
-% %
-% En esa cosa concreta se juega la suerte de teorías enteras, y con ellas, del trabajo de generaciones de investigadores.
-% %
-% Esto hace que la recolección de datos, en ciencias empíricas, sea una tarea en si misma.
-% %
-% En particular la antropología, que se ocupa de estudiar todo los tipos de sociedades en el tiempo y el espacio (desde las sociedades cazadoras-recolectoras actuales hasta del surgimiento hace varios milenios de las primeras sociedades estatales), los proyectos importantes de recolección de datos involucra la coordinación de varios grupos de investigación que trabajan de forma independiente en diferentes sitios alrededor del mundo.
-
-% Parrafo: Video juego.
-
-%En nuestro contexto, elegimos una estrategia de recolección de datos basada en la enorme cantidad de información sobre el comportamiento humano disponible en la Internet.
-%
-En nuestro contexto, decidimos enfocarnos en el análisis del comportamiento de los individuos en comunidades de video juegos en línea.
-%
-De esta forma, pudimos cumplir dos objetivos.
-%
-Por un lado, evitamos sobrecargar el doctorado en computación de tareas de recolección de datos (una tarea en si misma en ciencias empíricas), que pudimos resolver creando sistemas computaciones para extraer, transformar y cargar los información disponible en servidores públicos, alimentando las bases de datos sobre las que trabajamos a lo largo de esta tesis.
-%
-Y por otro, los video juegos aparecen como un lugar privilegiado para estudiar la pregunta antropológica que nos habíamos propuesto: analizar cómo cambian las estrategias en el tiempo en un escenario social relativamente simplificado, donde las reglas se mantienen estables.
-%
-En el transcurso de la tesis esta pregunta fue mutando hacia estudiar los factores sociales que afectan el aprendizaje individual esperado por el simple experiencia individual.
-%
-Como se discutirá más adelante, los mecanismos fundamentales que gobiernan el cambio cultural, según los modelos matemáticos, están relacionados a estrategias de aprendizaje social.
-%
-Imitar a la mayoría, imitar a la persona más prestigiosa, son diferentes estrategias de aprendizaje social, que afectan el comportamiento del sistema de información cultural.
-
-% del aprendizaje individual en comunidades de video juegos, esta tesis estuvo enfocada principalmente en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
-
-% Parrafo: Inferencia Bayesiana
-
-Si bien el tema de la tesis está motivado por preguntas específicas acerca del del aprendizaje individual en comunidades de video juegos, esta tesis estuvo enfocada principalmente en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
-%
-% La ciencia es una institución humana que tiene pretensión de verdad, esto es de alcanzar acuerdos intersubjetivos ``universalmente'', que valgan para todas las personas.
-% %
-% Las ciencias formales (matemática, lógica, computabilidad) validan sus proposiciones mediante teoremas derivados de aplicar las reglas internas a un sistema axiomático cerrado.
-% %
-% Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones dentro de sistemas abiertos que contienen siempre algún grado de incertidumbre.
-% %
-% ¿Es posible alcanzar acuerdos intersubjetivos (verdades) en contextos de incertidumbre?
-% %
-% Sí, evitando mentir: no decir más de lo que se sabe incorporando toda la información disponible.
-% %
-A diferencia de los enfoques que seleccionan una única hipótesis, el enfoque bayesiano, mediante la aplicación estricta de las reglas de la probabilidad, evalúa todas y cada una de las hipótesis de acuerdo a la evidencia empírica y formal (datos y modelos causales), garantiza los acuerdos intersubjetivos en contextos de incertidumbre.
-%
-Creer en hipótesis mutuamente contradictorias (A y no A) permite que la sorpresa, única fuente de información, actúe como filtro de las creencias previas.
-%
-Si bien hubieron algunas partes de la tesis que por algún motivo, sea técnico o teórico, no se pudo evaluar todo el espacio de hipótesis, hemos hecho un esfuerzo general por aplicación estricta de la probabilidad es lo ideal en contextos de incertidumbre,
-
-% Parrafo: Resultados y estructura de la tesis.
-
-Los resultados de esta tesis están ordenados siguiendo el recorrido temporal.
-%
-En la continuación de este capítulo se presenta la motivación y los objetivos de esta tesis.
-%
-En el capítulo \ref{} se presenta la metodología bayesiana y el estimador de habilidad bayesiano más utilizado en la industria del video juego al inicio de esta tésis.
-%
-En el capítulo \ref{} reportamos el primer resultado, donde usamos ese estimador bayesiano de habilidad para estudiar una comunidad en el que las personas podían jugar individualmente o en equipos.
-%
-Allí encontramos que jugar en equipo está asociado a mayor aprendizaje a largo plazo, y que mantener un equipo estable está asociado a mayor velocidad de aprendizaje.
-%
-En el capítulo \ref{} reportamos el segundo resultado, donde implementamos el modelo de habilidad estado del arte (disponible hoy en Julia, Python y R) que, al propagar correctamente la información histórica en una única red causal, es capaz de proporcionar estimaciones con baja incertidumbre en todo momento, asegurando la comparabilidad en el tiempo y el espacio.
-%
-En el capítulo \ref{} reportamos el tercer resultado, donde estudiamos la evolución de una red de partidas en el juego de Go durante un periodo de ocho años.
-%
-Allí encontramos, con el nuevo estimador, que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje en los personas que están en el medio del proceso de aprendizaje, ausente entre novatas y expertas.
-
-% Parrafo: Objetivo
-
-Y el resultado, en términos profesionales y personales, ha sido mejor de lo esperado.
-%
-En definitiva, el razonamiento causal, basado en el enfoque bayesiano de la probabilidad, respondió las preguntas que tenía en antropología: cómo validar verdades en las ciencias empíricas.
-%
-Y para colmo resultó ser ideal para las ciencias sociales porque permite expresar los modelos causales mediante métodos gráficos intuitivos.
-%
-La respuesta que me llevo de esta doctorado no sólo es epistemológica.
-%
-Es también un respuesta metodológica concreta, cómo hacerlo.
-%
-Pero es más que una herramienta que me la llevo para el resto de mi vida profesional y personal.
-
-
 \mainmatter
 
 
@@ -1447,18 +1309,186 @@ El derecho a la diversidad cultural se sustenta en el hecho práctico de que el 
 
 \section{Objetivos}
 
-% \subsection{Evolución cultual y aprendizaje social}
+% Parrafo: El objetivo subyacente de esta tesis. Interdisciplina entre la computación y las ciencias sociales.
+
+Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las ciencias de la computación y las ciencias sociales.
 %
-% Basada en los principios de la teor\'ia de la evoluci\'on (descendencia, modificaci\'on y selecci\'on), se ha desarrollado un marco te\'orico de \emph{evoluci\'on cultural} que intenta explicar c\'omo cambia la cultura en el tiempo.
-% %
-% La descendencia, mutaci\'on y selecci\'on de la informaci\'on cultural se produce cuando una persona adopta el comportamiento de otras, sea porque es el comportamiento de la mayor\'ia, sea porque la otra persona es particularmente exitosa o prestigiosa o por otros motivos.
-% %
-% Todos los procesos de aprendizaje social modifican en alg\'un grado la variante cultural adoptada.
-% %
-% Y algunas de esas variantes culturales se propagan m\'as r\'apido o son m\'as estables que otras, predominando en el tiempo.
+Durante el transcurso del doctorado emergió con fuerza una área conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
+%
+Bajo esta categoría quedaron enmarcadas una gran variedad de actividades, a veces bastante diferentes entre sí, desde aquellas que usan la computación como una herramienta para analizar datos de origen sociales, hasta aquellas que usan problemas de ciencias sociales para motivar desarrollos en la frontera del conocimiento en las ciencias de la computación~\cite{lazer2020-computationalSocialScience}.
+%
+Pero la emergencia de la interdisciplina es un fenómeno más general.
+%
+En la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas, impulsadas por los avances en el área de la inteligencia artificial y la masificación datos y métodos de aprendizaje automático.
+%
+Una de sus consecuencias más contundentes es la emergencia e institucionalización de la Ciencia de Datos, un área científica que ha nacido interdisciplinaria por definición.
+
+% Parrafo: interdisciplina sin datos (el ejemplo de la evolución cultural y la física)
+
+Otras formas de interdisciplina, basada en modelos matemáticos en vez de en datos, es posible y tiene una larga tradición entre las ciencias físicas y las ciencias sociales.
+%
+Por ejemplo, mediante la aplicación de la teoría de juegos al problema de la cooperación se ha producido uno de los cuerpos teóricos más influyentes  para explicar cómo cambia la información cultural a través del tiempo.
+%
+La teoría de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory} modela los equilibrios evolutivos que se producen entre estrategias en competencia, en el que la adaptabilidad de cada variante depende de las frecuencias de las otras variantes en la población.
+%
+Basada en los principios de la teor\'ia de la evoluci\'on (descendencia, modificaci\'on y selecci\'on), se ha desarrollado un marco te\'orico de \emph{evoluci\'on cultural} que intenta explicar c\'omo cambia la cultura en el tiempo~\cite{boyd1985-evolutionaryProcess, boyd2005-origin}.
+%
+Estos trabajos son, esencialmente, modelos teóricos destinados a comprender las consecuecias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
+%
+Este es un abordaje útil para ganar intuición de procesos que son demasiado complejos, como son las propiedades que emergen en los sistemas a partir de la interacción de sus partes.
+%
+Sin embargo, suelen ser modelos simples que no están destinados a realizar predicciones, y por lo tanto poseen poca o nula corroboración empírica.
+
+% Parrafo: Motivación (evolución cultural / aprendizaje)
+
+Al momento de desarrollar el plan, había sido el enfoque interdisciplinario basado en modelos el que había logrado introducir respuestas que todavía en la actualidad tienen una gran influencia en la antropología.
+%
+%En un plan orientado a datos, esos conceptos ayudan a guiar la intuición, pero su incorporación en sistema predictivo está lejos de ser obvia.
+%
+Algunos de esos conceptos, que aparecerán tangencialmente durante las tesis, motivaron el diseño del plan original.
+%
+Sin embargo, con el objetivo de poner a prueba los métodos computacionales que fuéramos a desarrollar durante el transcurso del doctorado, diseñamos un plan tesis en ciencias de la computación basado en datos.
+%
+Por ello, buena parte de esta tesis estuvo enfocada en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
+%
+¿Es posible alcanzar acuerdos intersubjetivos (verdades) en contextos de incertidumbre?
+%
+Sí.
+%
+Para ello es necesario aplicar estrictamente las reglas de la probabilidad (enfoque bayesiano), lo que nos obliga a evaluar todas y cada una de las hipótesis de acuerdo a la evidencia empírica y formal (datos y modelos causales).
+
+% Parrafo (Costo computacional)
+
+Evaluar todas y cada una de las hipótesis es un problema computacionalmente costoso, que ha sido el principal obstáculo para la aplicación estricta de las reglas de la probabilidad.
+%
+Por ello, a lo largo de la historia se fueron desarrollando técnicas para resolver este problema.
+%
+El primer ciclo de soluciones llega de la mano de física estadística, en la segunda mitad del siglo 19.
+%
+En esta época se desarrollan métodos analíticos para estimar la probabilidad de los microestados dada la información macro (e.g.~algún promedio).
+%
+Conceptualmente se ha mostrado que las soluciones de la física estadísitica es equivalente a la solución que ofrece el enfoque bayesiano basado en el principio de indiferencia: maximizar incertidumbre dadas las restricciones, el modelo físico y el dato~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, jaynes2003-bookProbabilityTheory}.
+
+
+
+
+A diferencia de la estad\'istica cl\'asica que \textbf{optimiza} alguna funci\'on de costo \emph{ad-hoc} para seleccionar una \'unica hip\'otesis del espacio, la aplicación estricta de las reglas de la probabilidad (e.g.~enfoque bayesiano) nos obliga a \textbf{integrar} la distribuci\'on de probabilidad conjunta para cuantificar la incertidumbre asociada a una hip\'otesis a partir de su modelo multidimensional.
+%
+Integrar, en vez de optimizar, fue el cuello de botella hist\'orico del enfoque bayesiano debido a que modelos modestamente complejos no tienen, generalmente, soluci\'on anal\'itica.
+
+
+
+
+Si bien hubieron algunas partes de la tesis que por algún motivo, sea técnico o teórico, no se pudo evaluar todo el espacio de hipótesis, hemos hecho un esfuerzo general por aplicación estricta de la probabilidad es lo ideal en contextos de incertidumbre,
+
+
+
+
+
 %
 
-En esta tesis nos proponemos estudiar el efecto que algunos factores sociales tienen sobre el aprendizaje individual.
+El objeto de estudio que motivó el plan, entender el sistema de información cultural, puede ser visto como un sistemas natural de procesamiento de información distribuido.
+%
+Entender cómo cambia la cultura en el tiempo no solo es uno de los problemas fundamentales de la antropología, es también uno de los problemas que las ciencias de la computación responderá en los próximos años.
+%
+En efecto, al comenzar la tesis pude verificar, consultando personalmente a expertos del área, que todavía no había madurado lo suficiente la inteligencia artificial multi-agente.
+%
+Sin embargo, los desarrollos en esta área ocurren con gran velocidad.
+%
+En los últimos años las empresas Deep Mind y Meta abrieron nuevas líneas de investigación en lo que se ha dado a llamar \emph{cooperative AI}~\cite{dafoe2020-coopAI, dafoe2021-coopAIcomment}.
+%
+Solo recién durante la escritura de esta tesis, han comenzado a surgir los primeros resultados de nivel humano en un juego de estrategia ``Diplomacy'', que involucra negociación entre varios jugadores~\cite{kramar2022-deepMindDiplomacy, meta2022-diplomacy}
+
+% % Parrafo: Datos. (La dificultad)
+%
+% Como suele ocurrir con todas las ciencias empíricas, la recolección de datos es quizás una de las actividades que mayor cantidad y calidad de recursos demanda.
+% %
+% Como en ocurre en cualquier proceso judicial, llegar a un acuerdo respecto de qué debe ser considerado datos, base empírica donde evaluar las hipótesis, es en sí mismo un problema.
+% %
+% En esa cosa concreta se juega la suerte de teorías enteras, y con ellas, del trabajo de generaciones de investigadores.
+% %
+% Esto hace que la recolección de datos, en ciencias empíricas, sea una tarea en si misma.
+% %
+% En particular la antropología, que se ocupa de estudiar todo los tipos de sociedades en el tiempo y el espacio (desde las sociedades cazadoras-recolectoras actuales hasta del surgimiento hace varios milenios de las primeras sociedades estatales), los proyectos importantes de recolección de datos involucra la coordinación de varios grupos de investigación que trabajan de forma independiente en diferentes sitios alrededor del mundo.
+
+% Parrafo: Video juego.
+
+%En nuestro contexto, elegimos una estrategia de recolección de datos basada en la enorme cantidad de información sobre el comportamiento humano disponible en la Internet.
+%
+
+
+La descendencia, mutaci\'on y selecci\'on de la informaci\'on cultural se produce cuando una persona adopta el comportamiento de otras, sea porque es el comportamiento de la mayor\'ia, sea porque la otra persona es particularmente exitosa o prestigiosa o por otros motivos~\cite{laland2004-socialLearningStrategies, rendell2010-socialLearningTournament, Boyd2011, heyes2016-whoKnows}.
+% %
+Todos los procesos de aprendizaje social modifican en alg\'un grado la variante cultural adoptada, y algunas de esas ellas se propagan m\'as r\'apido o son m\'as estables que otras, predominando en el tiempo.
+
+
+
+
+
+En nuestro contexto, decidimos enfocarnos en el análisis del comportamiento de los individuos en comunidades de video juegos en línea.
+%
+De esta forma, pudimos cumplir dos objetivos.
+%
+Por un lado, evitamos sobrecargar el doctorado en computación de tareas de recolección de datos (una tarea en si misma en ciencias empíricas), que pudimos resolver creando sistemas computaciones para extraer, transformar y cargar los información disponible en servidores públicos, alimentando las bases de datos sobre las que trabajamos a lo largo de esta tesis.
+%
+Y por otro, los video juegos aparecen como un lugar privilegiado para estudiar la pregunta antropológica que nos habíamos propuesto: analizar cómo cambian las estrategias en el tiempo en un escenario social relativamente simplificado, donde las reglas se mantienen estables.
+%
+En el transcurso de la tesis esta pregunta fue mutando hacia estudiar los factores sociales que afectan el aprendizaje individual esperado por el simple experiencia individual.
+%
+Como se discutirá más adelante, los mecanismos fundamentales que gobiernan el cambio cultural, según los modelos matemáticos, están relacionados a estrategias de aprendizaje social.
+%
+Imitar a la mayoría, imitar a la persona más prestigiosa, son diferentes estrategias de aprendizaje social, que afectan el comportamiento del sistema de información cultural.
+
+
+% Parrafo: Resultados y estructura de la tesis.
+
+Los resultados de esta tesis están ordenados siguiendo el recorrido temporal.
+%
+En la continuación de este capítulo se presenta la motivación y los objetivos de esta tesis.
+%
+En el capítulo \ref{} se presenta la metodología bayesiana y el estimador de habilidad bayesiano más utilizado en la industria del video juego al inicio de esta tésis.
+%
+En el capítulo \ref{} reportamos el primer resultado, donde usamos ese estimador bayesiano de habilidad para estudiar una comunidad en el que las personas podían jugar individualmente o en equipos.
+%
+Allí encontramos que jugar en equipo está asociado a mayor aprendizaje a largo plazo, y que mantener un equipo estable está asociado a mayor velocidad de aprendizaje.
+%
+En el capítulo \ref{} reportamos el segundo resultado, donde implementamos el modelo de habilidad estado del arte (disponible hoy en Julia, Python y R) que, al propagar correctamente la información histórica en una única red causal, es capaz de proporcionar estimaciones con baja incertidumbre en todo momento, asegurando la comparabilidad en el tiempo y el espacio.
+%
+En el capítulo \ref{} reportamos el tercer resultado, donde estudiamos la evolución de una red de partidas en el juego de Go durante un periodo de ocho años.
+%
+Allí encontramos, con el nuevo estimador, que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje en los personas que están en el medio del proceso de aprendizaje, ausente entre novatas y expertas.
+
+% Parrafo: Objetivo
+
+Y el resultado, en términos profesionales y personales, ha sido mejor de lo esperado.
+%
+En definitiva, el razonamiento causal, basado en el enfoque bayesiano de la probabilidad, respondió las preguntas que tenía en antropología: cómo validar verdades en las ciencias empíricas.
+%
+Y para colmo resultó ser ideal para las ciencias sociales porque permite expresar los modelos causales mediante métodos gráficos intuitivos.
+%
+La respuesta que me llevo de esta doctorado no sólo es epistemológica.
+%
+Es también un respuesta metodológica concreta, cómo hacerlo.
+%
+Pero es más que una herramienta que me la llevo para el resto de mi vida profesional y personal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+En esta tesis nos proponemos estudiar el efecto que la interacción social tienen sobre el aprendizaje individual.
 %
 Debido a que la cultura es un fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos, el contexto social, la estabilidad o volatilidad de los v\'inculos, la estructura de la red de intercambios o el tama\~no de la poblaci\'on pueden afectar directa o indirectamente los procesos de aprendizaje social y acumulaci\'on cultural de los que dependen los individuos.
 %
@@ -1470,13 +1500,51 @@ Si bien los resultados de estos modelos sirven para ganar intuición de procesos
 
 % Parrafo
 
-La masificaci\'on del poder de c\'omputo y la posterior expansi\'on de Internet produjo una explosi\'on en la cantidad y calidad de datos generados por personas en todo el mundo.
+El objetivo fundamental de este tesis consiste en utilizar datos masivos para analizar el comportamiento cooperativo en sociedades de seres humanos que interact\'uan en contextos virtuales competitivos como juegos en l\'inea.
 %
-Esta tesis se enmarca en esta nueva forma de interdisciplina, que pone a prueba los métodos computacionales en base al desempeño que tienen sobre datos reales.
+La masificaci\'on de las computadores personales y la posterior expansi\'on de Internet produjo una explosi\'on en la cantidad y calidad de datos generados por personas en todo el mundo.
 %
-Las comunidades virtuales ofrecen un marco ideal para estudiar los comportamientos sociales pues permite estudiar poblaciones grandes con un alto grado de detalle.
+La enorme cantidad de informaci\'on abre nuevas posibilidades y desaf\'ios tanto para las ciencias de la computaci\'on como para las ciencias sociales.
 %
-En esta tesis decidimos centrarnos en las comunidades de videojuegos en línea debido a que ellas son un lugar privilegiado para estudiar diversos factores de aprendizaje social.
+En la intersecci\'on de ambas, ha surgido una nueva sub-disciplina, las \emph{ciencias sociales computacionales}~\cite{Lazer2009, Lazer2020}.
+%
+%Esta tesis se enmarca en esta nueva forma de interdisciplina, que pone a prueba los modelos en base al desempeño que tienen sobre datos reales.
+%
+Las comunidades virtuales ofrecen nuevos horizontes en la investigaci\'on cient\'ifica sobre comportamientos sociales pues re\'unen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
+%
+Ninguna de las metodolog\'ias cl\'asicas de las ciencias sociales (censo, encuesta, etnograf\'ia) ofrecen simult\'aneamente ambos niveles de análisis.
+
+% Parrafo
+
+Es importante reconocer las particularidades que suponen el estudio de comunidades virtuales en oposici\'on a las comunidades reales.
+%
+Las primeras se desarrollan en un medio virtual que determina el contexto de los actos y limitan el conjunto de acciones y se\~nales que las personas pueden ejecutar.
+%
+Sin dejar de tener en cuenta estas y otras caracter\'isticas propias a las comunidades virtuales, es necesario reconocer que ellas son manifestaciones propias de los humanos.
+%
+Y como tales, su estudio es un medio para analizar como el comportamiento social emergente de los seres humanos.
+%
+Dada la calidad de los datos que ofrecen las comunidades virtuales en oposici\'on a otros contextos de investigaci\'on social, creemos que ellas son especialmente ricas para estudiar una serie de problemas que requieren todav\'ia soluci\'on, como son los procesos de formaci\'on de alianzas \cite{pena2012-secondaryMechanismsEvolutionCooperation, yaari2010-cooperationEvolution}, la din\'amica de las estructuras de red social~\cite{mason2012-experiment,salali2016-knowledgeSharing}, la difusi\'on de ideas y aprendizaje social~\cite{mcelreath2008-outsideLaboratorySocialLearningStrategies, mesoudi2016-individualAndCulturalVariationSocialLearning}, la evoluci\'on de los comportamientos~\cite{muthukrishna2014-experiment,migliano2020-model} entre otras.
+
+% Parrafo
+
+Uno de los cuerpos de hip\'otesis te\'oricas mejor establecidos para explicar las clases de soluciones que pueden aplicar las sociedades al problema de la cooperaci\'on provienen del campo conocido como \textit{evoluci\'on de la cooperaci\'on}.
+%
+Es b\'asicamente una teor\'ia de juegos evolucionaria~\cite{maynardsmith82} que modela las interacciones sociales como juegos, partir del cual las diferentes estrategias se replican en la sociedad en diferente proporciones y mutan con distintas velocidades.
+%
+Una corriente importante de estos trabajos, utilizan modelos matem\'aticos y simulaciones para explicar y predecir la evoluci\'on de la estrategias humanas de interacci\'on social, poniendo especial \'enfasis en las condiciones que requieren las estrategias cooperativas para emerger y sostenerse en el tiempo.
+%
+Estos trabajos son, esencialmente, modelos formales te\'oricos que poseen poca o nula corroboraci\'on emp\'irica.
+%
+Se plantea, entonces, una fuerte necesidad de avanzar en este sentido.
+
+% Parrafo
+
+Este plan de tesis propone poner a prueba algunas de estas hip\'otesis bas\'andose en la disponibilidad de una masiva cantidad de datos generados d\'ia a d\'ia en comunidades virtuales competitivas y en particular en los juegos en l\'inea multijugador de tipo estrat\'egico de mediana y larga duraci\'on.
+%
+El plan de tesis tiene como objetivo particular poner a prueba algunas de estos desarrollos te\'oricos bas\'andose en la disponibilidad de una masiva cantidad de datos generados en comunidades virtuales competitivas y en particular en los juegos en l\'inea multijugador de tipo estrat\'egico de mediana y larga duraci\'on.
+%
+El plan se enfoca en temas de computaci\'on y, en particular, en las t\'ecnicas de an\'alisis de datos, con el objetivo de resolver temas profundamente antropol\'ogicos, en particular el problema de la evoluci\'on de los comportamientos cooperativos en contextos de competencia en comunidades de seres humanos.
 
 % Parrafo
 
@@ -1509,10 +1577,34 @@ Aunque a lo largo de la tesis no siempre pudimos computar las distribuciones de 
 
 
 
+\subsubsection{Antecedentes}
 
 
+En los \'ultimos $10$ a\~nos, se comenzaron a estudiar los juegos en l\'inea multiusuario como fuente de datos.
+Uno de los aspectos estudiados corresponde con el an\'alisis de las propiedades estructurales de las redes de jugadores~\cite{szell,Szell12a,thurner,son,Grabowski2007,Grabowski2009}.
+En los trabajos de Szell et al.~\cite{szell,Szell12a} se analizan la estructura de redes de amistad, enemistad y comunicaci\'on con las que eval\'uan una serie de hip\'otesis sociol\'ogicas.
+En Thurner et al.~\cite{thurner} se estudia la correlaci\'on de ocho tipos de acciones de intercambio, las de comunicaci\'on, comercio, establecimiento de amistad y enemistad, ataques y castigo.
+En Son et al.~\cite{son} se presenta un an\'alisis de redes que considera los aspectos contextuales que afectan la interacci\'on.
+En Grabowski y Kruszewska~\cite{Grabowski2007} se compara la estructura de la red de los juegos con las redes sociales interpersonales reales.
+En Grabowski~\cite{Grabowski2009} se calcula como el tiempo invertido en la interacci\'on con otros jugadores afecta la formaci\'on de opiniones.
 
+Otro conjunto de art\'iculos investiga el rol de la confianza en la estructura de la red y en otros aspectos del sistema social~\cite{roy,subbian,ahmadThesis}.
+En Roy y Srivastava~\cite{roy} se proponen dos modelos predictivos, uno sobre colaboraci\'on, comercio y agrupamiento, y otro sobre formaci\'on de confianza calculada en funci\'on de la topolog\'ia de la red.
+En Subbian et al.~\cite{subbian} se estudia la reciprocidad en cuatro clases de redes, de confianza, de conversaciones, de comercio, y de colaboraci\'on. En Ahmad et al.~\cite{ahmadThesis} se analiza el efecto del medio social en las relaciones amistosas y conflictivas y en la formaci\'on de lazos.
 
+Una serie de publicaciones analizan formaci\'on de grupos \cite{chen,huang09b,huang09a}. En Chen et al.~\cite{chen} se investiga como los jugadores se incorporan y abandonan alianzas para descubrir los factores del juego que incentivan su formaci\'on y desarrollo. En Huang et al.~\cite{huang09b} se examinan combates grupales para identificar roles de los jugadores. En Huang et al.~\cite{huang09a} se estudia el impacto de la homofilia y de la proximidad offline en las interacciones entre jugadores.
+
+Otra l\'inea de trabajos busca comprender las variables que determinan el desempe\~no de los usuarios \cite{delong,shim,shim11b,orkin} En DeLong et al.~\cite{delong} se eval\'uan m\'etricas de rendimiento y se propone un modelo para estimar la habilidad de equipos de jugadores.
+En Shim et al.~\cite{shim} se presentan modelos de predicci\'on de rendimiento de los jugadores y estudian los efectos de los tutores sobre el rendimiento de juego.
+En Orkin y Roy \cite{orkin} se introduce un modelo de aprendizaje de patrones contextuales sensibles para el comportamiento y el lenguaje natural.
+
+Algunos art\'iculos buscan entender los motivos por los cuales los jugadores abandonan o ingresan a los juegos~\cite{wei,Mahmassani,teng,borbora}.
+En Wei et al.~\cite{wei} se examina el rol de los jugadores individuales y colectivos en la difusi\'on de dos juegos muy populares.
+En Mahmassani et al.~\cite{Mahmassani} se estudia la frecuencia de las sesiones, las momentos de inicio y fin y su duraci\'on.
+En Teng y Adamic~\cite{teng} se analiza una serie de variables como la red social, la afiliaci\'on, las conversaciones y transacciones con el objetivo de predecir los jugadores que abandonan el juego y los que contin\'uan.
+En Borbora y Srivastava~\cite{borbora} se estudia el comportamiento de los jugadores que abandonan los juegos semanas antes de retirarse definitivamente y la comparan con la actividad de jugadores normales.
+
+Finalmente en Ahmad y Srivastava~\cite{ahmad14} se revisan algunas de las t\'ecnicas m\'as apropiadas para el estudio de los juegos en l\'inea multiusuario y para el desarrollo de modelos predictivos y generativos.
 
 
 
