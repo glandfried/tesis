@@ -348,7 +348,7 @@ A pesar de todos los avances, la ciencia metropolitana no fue capaz de compensar
 %
 A largo plazo solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación individual y por especialización heterogénea cooperativa.
 
-\subsection{La función de costo epistémico-evolutiva}
+\section{La función de costo epistémico-evolutiva}
 
 La ciencia es una institución humana que tiene pretensión de verdad: de alcanzar acuerdos intersubjetivos con validez intercultural, universal.
 %
@@ -699,48 +699,33 @@ Esto hace que los humanos tengamos en nuestra cultura y nuestra ciencia un eleme
 %El intercambio se vuelve así como uno de los elementos de
 
 
-\subsection{Propiedades de la función de costo epistémico-evolutiva}
-
+\section{Propiedades de la función de costo epistémico-evolutiva}
 Desde su origen, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
 %
 Para ver por qué, veamos qué ocurre con un proceso multiplicativo.
 %
-Por ejemplo, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente, y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporción $b_c = b$ a Cara y $b_s = 1 - b$ a Seca (apostar solo un parte de los recursos puede mostrarse que tiene una solución equivalente).
+Por ejemplo, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporción $b_c = b$ a Cara y $b_s = 1 - b$ a Seca (apostar solo un parte de los recursos puede mostrarse que tiene una solución equivalente).
 %
-Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$ después de una Cara y una Seca es el producto de nuestros resultados (ver ecuación izquierda).
+Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$ después de una Cara y una Seca es el producto de nuestros resultados.
 %
-\vspace{-0.4cm}
-\begin{figure}[ht!]
- \centering
- \begin{subfigure}[b]{0.44\textwidth}
  \begin{equation*}
 \begin{split}
 \omega_2(b) & = \underbrace{\omega_0 \, \overbrace{b \,  Q_c}^{\text{Cara}}}_{\omega_1(b)} \, \overbrace{(1-b) \, Q_s}^{\text{Seca}}
 \end{split}
 \end{equation*}
- \end{subfigure}
- \
- \begin{subfigure}[b]{0.54\textwidth}
+%
+Las apuestas son entonces procesos multiplicativos.
+%
+Vamos a buscar las estrategias que maximizan la tasa de crecimiento de los recursos.
+
+\paragraph{Propiedad epistémica.}
+Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
+%
   \begin{equation}
 \begin{split}
 & \frac{\omega_T(b)}{\omega_T(d)} = \frac{\omega_0 \,  (b \,  \cancel{Q_c})^{n_c}  \,  ((1-b) \, \bcancel{Q_s})^{n_s}}{\omega_0 \,   (d \,  \cancel{Q_c})^{n_c}  \,  ((1-d) \, \bcancel{Q_s})^{n_s}}
 \end{split}
 \end{equation}
- \end{subfigure}
-%  \
-%  \begin{subfigure}[b]{0.29\textwidth}
-%   \begin{equation*}
-% \begin{split}
-% \underset{b}{\text{arg max}} \ \  b^{\,p}  \,  (1-b)^{1-p} = p
-% \end{split}
-% \end{equation*}
-%  \end{subfigure}
-\end{figure}
-\vspace{-0.1cm}
-
-%
-\noindent
-Y si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
 %
 encontramos que el valor relativo de una apuesta respecto de la otra es independiente de los pagos $Q_c$ y $Q_s$ que ofrece la casa de apuestas!
 %
@@ -748,7 +733,6 @@ Sí, lo que estamos diciendo es que podemos decidir la apuesta sin conocer los p
 %
 En general, queremos la apuesta $b$ que maximiza la tasa de crecimiento $r(b)$,
 %
-\vspace{-0.4cm}
 \begin{figure}[ht!]
  \centering
  \begin{subfigure}[b]{0.50\textwidth}
@@ -767,12 +751,8 @@ En general, queremos la apuesta $b$ que maximiza la tasa de crecimiento $r(b)$,
 \end{equation}
  \end{subfigure}
 \end{figure}
-\vspace{-0.1cm}
 
 % Parrafo
-
-\noindent
-
 
 \noindent
 En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta óptima  $b^{*}$ es la que divide los recursos en la misma proporción que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia típica $\lim_{T \rightarrow \infty} n_c/T = p$.
@@ -793,6 +773,7 @@ Incluso con el comportamiento óptimo, individualmente las trayectorias de los r
 
 % Parrafo
 
+\paragraph{Propiedad evolutiva.}
 A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
 %
 Por ejemplo, si los individuos de un grupo de tamaño $N$ redistribuyen los recursos en partes iguales luego de apostar, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
@@ -844,22 +825,9 @@ A través de la cooperación podemos reducir aun más las fluctuaciones, aumenta
 
 % Parrafo
 
+\paragraph{Propiedad de especiación.}
 Si bien jugando individualmente nos veíamos obligados a apostar ignorando los pagos que ofrece la casa de apuestas, una vez que emerge la cooperación deja de ser necesario reducir las fluctuaciones por diversificación individual y aparece una ventaja a favor de la especialización cooperativa, que permite sacar provecho de la mejor opción disponible, aumentando aún más la tasa de crecimiento de todos los individuos del grupo cooperativo.
 %
-Ésta es la \emph{propiedad de especiación}.
-%
-Cuando el tamaño del grupo tiende a infinito, la puesta óptima es apostar todo a la mejor opción, $b^* =1$.
-%
-\begin{equation}
-\lim_{N \rightarrow \infty} r(N,b) = p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)
-\end{equation}
-%
-Sin embargo, la especialización emerge incluso en grupos pequeños.
-%
-A medida que el grupo aumenta de tamaño, la apuesta óptima se va ``especializando'' en la mejor opción disponible (figura~\ref{fig:esp}).
-
-% Parrafo
-
 \begin{figure}[ht!]
 \centering
   \begin{subfigure}[c]{0.45\textwidth}
@@ -873,9 +841,22 @@ Tasa de crecimiento para grupos de tamaño 1 a 5 (colores), para todas las posib
  \label{fig:esp}
  \vspace{-0.1cm}
  \end{figure}
+%
+A medida que el tamaño del grupo cooperativo crece, la apuesta óptima se va especializando hacia la mejor opción disponible (figura~\ref{fig:esp}).
+%
+Ésta es la \emph{propiedad de especiación}.
+%
+Cuando el tamaño del grupo tiende a infinito, la tasa de crecimiento pasa a ser la media aritmética de los posibles resultados de las apuestas.
+%
+\begin{equation}
+\lim_{N \rightarrow \infty} r(N,b) = p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)
+\end{equation}
+%
+Y la puesta óptima es apostar todo a la mejor opción, $b^* =1$.
 
 % Parrafo
 
+\paragraph{Propiedad ecológica.}
 En este caso, todos los individuos están sujetos a procesos estocásticos que, si bien son independientes, tiene para todos ellos la misma probabilidad que no cambia en el tiempo.
 %
 En la naturaleza, por el contrario, estamos expuestos a variabilidades espacio-temporales, como las estaciones del año.
@@ -894,19 +875,18 @@ Sea $h$ la proporción de individuos en el hemisferio A.
 %
 La tasa de crecimiento en un ejemplo simple, en el que el tamaño del grupo es infinito y en el que los individuos se especializan la apuesta correspondiente a la etapa del ciclo que experimentan, es
 %
-\begin{align*}
+\begin{figure}[ht!]
+\vspace{0cm}
+\centering
+ \begin{subfigure}[c]{0.44\textwidth}
+ \begin{align*}
  r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_1) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_2 \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
  r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_2 \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_1) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
  r(h) = & \ \overbrace{r_{1}(h)^{1/2} \ r_2(h)^{1/2}}^{\text{Tasa de crecimiento}}
 \end{align*}
-%
-Esta tasa de crecimiento se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
-%
-\begin{figure}[ht!]
-\vspace{0cm}
-\centering
+ \end{subfigure}
+ \hspace{0.2cm}
   \begin{subfigure}[c]{0.44\textwidth}
-  \vspace{0.5cm}
 \begin{flushright}
  \includegraphics[width=1\linewidth]{figures/pdf/diversificacionCooperativa.pdf}
  \end{flushright}
@@ -919,8 +899,10 @@ Esta tasa de crecimiento se maximiza cuando la distribución entre hemisferios e
  \end{figure}
 
 
-% Parrafo
+Esta tasa de crecimiento se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
+%
 
+\paragraph{Propiedad mayor y menor.}
 Durante mucho tiempo se creyó que para que la cooperación evolucione debía resolverse primero lo que se conoce como ``dilema del prisionero''.
 %
 En él, cooperar implica un costo $c$ para que el otro individuo reciba un beneficio de valor $v$, con $v > c$, y desertar significa negarse a cooperar y no conlleva ningún costo (ver matriz en figura~\ref{fig:desert}).
@@ -963,13 +945,16 @@ Bajo procesos de selección multiplicativa no se puede sacar provecho mediante l
 %
 En todos los casos, la tasa de crecimiento se maximiza mediante mutua cooperación.
 
-% Parrafo
 
-La propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las transiciones evolutivas mayores en la historia de la vida, en las que entidades individuales formar unidades cooperativas superiores a través del intercambio de recursos, pero también permite explicar la emergencia de transiciones epistémicas mayores en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
+\section{Consecuencias de las propiedades epistémico-evolutivas}
+
+Las propiedades de la función de costo epistémico-evolutiva no son solo teóricas, tiene consecuencia concretas para la vida y el conocimiento.
 %
-La propiedad menor, que solo es relevante en el corto plazo, nos ofrece por su parte un argumento para explicar la ventaja circunstancial que las variantes desertoras logran obtener recurrentemente.
-
-
+La propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones evolutivas mayores} en la historia de la vida (mencionada en la primera sección) en las que entidades individuales pasan a formar parte de unidades cooperativas superiores a través del intercambio de recursos (célula eucariota, organismo multicelular, sociedad, ecología).
+%
+Pero también permite explicar la emergencia de \emph{transiciones epistémicas mayores} en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
+%
+Por otro lado, la propiedad menor nos ofrece un argumento para explicar la ventaja circunstancial que las variantes desertoras pueden obtener individualmente en el corto plazo y las crisis que su emergencia produce a nivel global en el largo plazo.
 
 \subsection{Coevolución genético-cultual y transición epistémica mayor}
 
@@ -1153,7 +1138,7 @@ Luego de 60 a\~nos de investigaciones, Needham se ve obligado inviertir la pregu
 Why, between the -1th century and the 15th century, was Chinese civilisation much \emph{more} efficient than occidental in gaining natural knowledge and in applying it to practical human needs?~\cite{needham2004-generalConclusionsAndReflections}
 \end{quotation}
 
-% Parrafo
+\subsection{Coyuntura colonial-moderna}
 
 Desde Hegel hasta la fecha, las explicaciones euroc\'entricas intentan explicar la prosperidad actual de occidente a trav\'es de una causa interna: la ``\'etica protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de Jos\'e Luis Romero~\cite{romero1967-revolucionBurguesa}, o m\'as recientemente el ``sistema de parentesco'' de Joseph Henrich~\cite{henrich2020-weirdest}.
 %
@@ -1239,15 +1224,15 @@ Todos los conocimientos que la nueva sociedad colonial-moderna va incorporando d
 
 % Parrafo
 
-La plata de Am\'erica fluy\'o en todas las direcciones, principalmente en direcci\'on a China.
+La plata de Am\'erica fluy\'o en todas las direcciones, principalmente hacia China.
 % %
-Más de dos siglos después del acceso a la plata Americana, Europa occidental segu\'ia consumiendo más productos asi\'aticos de los que pod\'ia exportar a Asia.
+Más de dos siglos después del acceso a la plata americana, Europa occidental segu\'ia consumiendo más productos asi\'aticos de los que pod\'ia exportar a Asia.
 % %
 % El comercio internacional de opio comenz\'o como respuesta a una crisis del comercio internacional europeo, especialmente brit\'anico.
 % %
 Todavía a comienzos del 1800 Europa occidental seguía teniendo déficit comercial con China, que desde mediados de 1700 financiaba mediante el narcotráfico de opio a pesar de la prohibición China.
 %
-El opio, un producto lujoso utilizado en China como medicina (raramente como estupefaciente), fue prohibida por los emperadores chinos en 1729 debido a que su abundancia hac\'ia crecer lentamente la cantidad de adictos~\cite{Kennet}.
+El opio, un producto lujoso utilizado en China como medicina (raramente como estupefaciente), fue prohibido por los emperadores chinos en 1729 debido a que su abundancia hac\'ia crecer lentamente la cantidad de adictos~\cite{pomeranz2018-tradeCreated}.
 %
 Las consecuencias fueron más graves cuando, después de las independiencias americanas, en 1818, los británicos comienzan a comercializar una mezcla de opio más barata y potente.
 %
@@ -1294,18 +1279,105 @@ En un mundo de comunidades debilitadas, se expande la cosmovisión individualist
 La ventaja a favor de la diversificación y la cooperación no es solo teórica, su ruptura tiene consecuencia para la vida y el conocimiento.
 %
 A pesar de todos los avances, la ciencia metropolitana no fue capaz de compensar la pérdida de conocimientos milenarios provocada por la colonial-modernidad, y como consecuencia de la masiva pérdida de la diversidad cultural global vivimos en la actualidad una grave crisis ecológica que no deja de profundizarse.
+
+
+\section{Tecnologías de reciprocidad epistémico-evolutivas}
+
+Debido a que, en los procesos de selección epistémico-evolutivos, los impactos de las pérdidas son más fuertes que los de las ganancias, existe una ventaja a favor de las variantes (hipótesis o formas de vida) que reducen las fluctuaciones por diversificación y cooperación.
 %
-Del mismo modo que seleccionar una única hipótesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposición de un único tipo de sociedad está teniendo consecuencia ecológicas cada vez más evidentes para la vida.
+La simbiosis entre entre plantas y hongos micorrícicos arbusculares (MA) es el mutualismo más extendido del mundo.
 %
-En definitiva, a largo plazo, solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación y cooperación.
+La gran mayoría de las plantas terrestres forman interacciones AM, en las que las plantas suministran a los hongos AM asociados carbohidratos, esenciales para la supervivencia y el crecimiento de los hongos \cite{parniske2008-arbuscularMycorrhiza}.
+%
+A cambio, los hongos MA proporcionan a sus plantas hospedadoras nutrientes minerales, como fósforo o nitrógeno, y otros beneficios como protección contra el estrés biótico (patógenos y herbívoros) y abiótico (por ejemplo, sequía)~\cite{smith2010-arbuscularMycorrhizas}.
+%
+A esta asociación, que evolucionó mucho antes que los mutualismos entre insectos o vertebrados, se le atribuye el mérito de haber impulsado la colonización de las plantas en la tierra, permitiendo la transferencia masiva de nutrientes a escala mundial.
+%
+En esta relación, ambas partes interactúan con múltiples socios y la cooperación se estabiliza en ambas direcciones a través de recompensas mutuas por los servicios de mayor calidad~\cite{kiers2011-reciprocalRewards}.
+
+\todo[inline]{seguir}
+
+% Ocultas a nuestros ojos, las raíces de las plantas están colonizadas por un hongo llamado micorriza arbuscular. Las raíces y los hongos forman complejas redes subterráneas para intercambiar recursos esenciales. A diferencia de las economías humanas, que dependen de la cognición para tomar decisiones, los comerciantes de este mercado subterráneo regatean, piden prestado y hacen trampas, todo ello sin pensar. (Toby Kiers)
+
+% Outside humans, true agriculture was previously thought to be restricted to social insects farming fungus. \cite{mueller2005-insectsAgriculture, campbell2022-antsPlantCultivation}
+
+
+
+
+forman parte de una de las asociaciones simbióticas más importantes y ampliamente
+distribuidas de las plantas
+
+
+%
+
+Así es que la experiencia acumulada por las comunidades humanas alrededor del mundo condujo a una obligación universal de dar y de recibir~\cite{mauss1923-leDon}, y al desarrollo de tecnologías de reciprocidad que tienen la función de re-activar los vínculos comunitarios mediante ritos (festivos o coercitivos) de intercambios~\cite{zaffaroni2013-cuestionCriminal, segato2016-guerraContraLasMujeres}.
+%
+Estas tecnologías de reciprocidad han emergido de forma independiente a través de las generaciones debido a que favorecen la supervivencia de las comunidades en el tiempo, gracias a que reducen las fluctuaciones individuales que ponen en peligro la estabilidad del grupo.
 
 % Parrafo
 
-Así es que la experiencia acumulada por las más diversas comunidades del mundo condujo, de forma independiente, a una obligación universal de dar y de recibir, y al desarrollo de tecnologías de reciprocidad que mantienen la cohesión mediante la re-activación de los vínculos comunitarios mediante ritos (festivos o coercitivos) de intercambios.
+La teor\'ia de la probabilidad nace en 1648 justamente como respuesta a la pregunta de cu\'al es el \emph{precio justo} en contextos de incertidumbre.
 %
-Los estudios comparados muestran que las instituciones adaptadas ecológicamente evolucionan en comunidades locales que sobreviven a largo plazo gracias al desarrollo de tecnologías de sociabilidad que garantizan el arraigo social y la salud del tejido social.
+El problema que analizaban Pascal y Fermat en sus cartas es equivalente al siguiente.
 %
-El derecho a la diversidad cultural se sustenta en el hecho práctico de que el conocimiento cultural ecológicamente adaptado evoluciona sólo a través de la experiencia que acumulan los pueblos autónomos en el transcurso de su propia historia.
+Tiramos dos veces la moneda.
+%
+Si sale seca $S$ en la primera y en la segunda, una persona (en rojo) le hace un favor a la otra (en azul).
+%
+En caso contrario, el favor se invierte.
+%
+¿Cu\'al es el valor justo de la reciprocidad en este contexto de incertidumbre?
+
+\begin{figure}[ht!]
+    \centering
+    \tikz{
+    \node[latent, draw=white, yshift=0.7cm, minimum size=0.1cm] (b0) {};
+    \node[latent,below=of b0,yshift=0.7cm, xshift=-1cm] (r1) {$S$};
+    \node[latent,below=of b0,yshift=0.7cm, xshift=1cm] (r2) {$C$};
+
+    \node[latent, below=of r1, draw=white, yshift=0.8cm, minimum size=0.1cm] (bc11) {};
+    \node[accion, below=of r2, draw=white, yshift=0cm, color=blue!70] (bc12) {};
+    \node[latent,below=of bc11,yshift=0.8cm, xshift=-0.5cm] (r1d2) {$S$};
+    \node[latent,below=of bc11,yshift=0.8cm, xshift=0.5cm] (r1d3) {$C$};
+
+    \node[accion,below=of r1d2,yshift=0cm, color=red!70] (br1d2) {};
+    \node[accion,below=of r1d3,yshift=0cm, color=blue!70] (br1d3) {};
+    \edge[-] {b0} {r1,r2};
+    \edge[-] {r1} {bc11};
+    \edge[-] {r2} {bc12};
+    \edge[-] {bc11} {r1d2,r1d3};
+    \edge[-] {r1d2} {br1d2};
+    \edge[-] {r1d3} {br1d3};
+    }
+    \caption{El problema del \emph{valor justo} que da inicio a la teor\'ia de la probabilidad}
+    \label{fig:pascal-fermat}
+\end{figure}
+
+La respuesta a la que arribaron Pascal y Fermat es que el valor de los favores tiene que ser inversamente proporcional a la probabilidad de hacer el favor.
+%
+Si la moneda es no sesgada, hay 1/4 de probabilidad de que salgan dos secas (terminal roja), 1/4 de que salga seca en la primera y cara en la segunda (terminal azul) y 1/2 de que salga cara en la primera (terminal azul).
+%
+Concluyeron que, como la probabilidad de que la persona azul haga un favor es 3/4, entonces la relación de favores debe ser de 3 a 1 para que el intercambio sea justo (si la persona roja hace favores por un valor equivalente a 3, la azul tiene que devolver los favores con un valor de 1).
+%
+Por un lado, calcular la probabilidad de eventos mutuamente excluyentes como suma de sus probabilidades elementales constituye el axioma fundamental de Kolmogorov a partir del cual se suele montar toda la teoría de la probabilidad.
+%
+Por otro lado, ofrecer pagos inversos a la probabilidad ($Q^*_{\text{rojo}} = p_{\text{rojo}}^{-1} $, $Q^*_{\text{azul}} = (1-p_{\text{rojo}})^{-1}$) garantiza a la coexistencia entre una casa de apuestas y un conjunto infinito de individuos cooperativos.
+%
+\begin{equation}
+\cancel{p_{\text{rojo}}} \,  \cancel{Q^*_{\text{rojo}}} \, b + \bcancel{(1- p_{\text{rojo}})} \, \bcancel{Q^*_{\text{azul}}}  \, (1-b) = b + (1-b)  = 1
+\end{equation}
+%
+Sin importa la apuesta $b$ que se elija, la tasa de crecimiento de un grupo cooperativo de tamaño infinito es siempre 1.
+
+% Parrafo
+
+Las tecnologías de reciprocidad reales, capaces de administrar la vida común, siempre han emergido de la coexistencia estable con los sistemas ecológicos locales, lo que garantiza la supervivencia de ese pueblo y esa cultura en el tiempo.
+%
+Los pueblos que practican la coexistencia intercultural y ecológica exhiben lógicas ``plurales y condicionales'' cualitativamente similares a la de la aplicación estricta de la probabilidad, que fomentan la convivencia con otras formas de vida, otros pueblos y otros conocimientos~\cite{segato2018-manifesto}.
+%
+El remplazo repentino de estos sistemas culturales locales por instituciones externas, tanto privadas como públicas, que exhiben lógicas ``singulares y definitvas'' cualitativamente similar al lenguaje tradicional de la ciencia colonial-moderna, ha producido devastadoras consecuencias ecológicas~\cite{segato2013-colonialidad, ostrom2010}.
+%
+Del mismo modo que seleccionar una única hipótesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposición de un único tipo de sociedad ha mostrado tener consecuencia ecológicas cada vez más negativas.
 
 \section{Objetivos}
 
