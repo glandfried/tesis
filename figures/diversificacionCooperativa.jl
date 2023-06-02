@@ -21,10 +21,11 @@ end
 rs = []
 h = 0.0
 hs = []
-while h <= 1.0+0.0001
+
+while (h <= (1.0+0.0001))
     push!(rs,r_caso_general_con_nInf(h))
     push!(hs,h)
-    h = h + 0.01
+    global h = h + 0.01
 end
 
 fig= plot(hs,rs, xlab="h: Proporción en hemisferio A", ylab="r: tasa de crecimiento", legend=(0.15,1.0), thickness_scaling = 1.5, label=false, grid=false, foreground_color_legend = nothing)
