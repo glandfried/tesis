@@ -1667,7 +1667,7 @@ El ``principio de indiferencia'' garantiza un primer acuerdo intersubjetivo en c
 %
 Finalmente, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservaci\'on de la creencia que que sigue siendo compatible con los datos de base emp\'irica.
 
-\subsection{Principio de raz\'on suficiente}
+\subsection{Incertidumbre}
 
 La idea de que todo lo que ocurre en la naturaleza tiene una causa previa que lo genera se conoce en la historia de la filosof\'ia como el principio de \emph{raz\'on suficiente}.
 %
@@ -1791,25 +1791,28 @@ Por m\'as que la naturaleza sea determinista y conozcamos el mecanismo subyacent
 %
 La imposibilidad de determinar si estamos en presencia de \emph{exactamente} las mismas condiciones iniciales constituye ya una fuente de incertidumbre para las ciencias emp\'iricas.
 
-\subsection{Principio de integridad}\label{sec:principio_integridad}
+% Parrafo
 
-Las verdades emp\'iricas siempre contienen incertidumbre.
+Entonces, un posible origen de la incertidumbre puede ser la sensibilidad a las condiciones iniciales de una naturaleza puramente causal.
 %
-Hemos visto que un posible origen puede ser la sensibilidad a las condiciones iniciales de una naturaleza puramente causal.
+Sin embargo, desde las ciencias sociales y la f\'isica cu\'antica se suele afirmar que el mundo no tiene forma de funci\'on: que incluso conociendo las condiciones iniciales con precisi\'on infinita el mundo no puede describirse mediante una funci\'on precisa.
 %
-Sin embargo, desde las ciencias sociales y la f\'isica cu\'antica se suele afirmar que el mundo no tiene forma de funci\'on: que incluso conociendo las condiciones iniciales con precisi\'on infinita no existe una funci\'on que permita determinar el estado del mundo en un tiempo posterior.
-%
-El concepto de libre albedr\'io de las ciencias sociales afirma que una persona expuesta ante un estado del universo determinado, bajo exactamente las mismas condiciones iniciales, tiene todav\'ia la capacidad de elegir una acci\'on.
-%
+Por ejemplo, el concepto de libre albedr\'io de las ciencias sociales afirma que una persona expuesta ante un estado del universo determinado, bajo exactamente las mismas condiciones iniciales, tiene todav\'ia la capacidad de elegir una acci\'on.
+
+% Parrafo
+
 Sea porque el mundo natural admite la posibilidad de que un efecto surja sin su propia causa, sea por nuestra incapacidad de conocer los modelos causales correctos o de conocer las condiciones iniciales con infinita precisi\'on, nuestro conocimiento sobre el mundo natural contiene siempre un grado de incertidumbre.
 
 % Parrafo
 
-Supongamos que sabemos que una persona esconder un regalo detr\'as de una caja entre tres.
+\subsection{Principio de integridad}\label{sec:principio_integridad}
+
+La incertidumbre nos impide describir el mundo usando función deterministas.
 %
-En este casos, ya no es posible definir una funci\'on que dado el estados inicial del universo $s$ devuelva la acci\'on $a$ que tomar\'a el sujeto, $f(s) = a$.
+Cuando una persona esconde decide esconder un regalo detrás de una caja
+el estados previo del universo no nos permite determinar la caja que la persona finalmente elije.
 %
-Se abren as\'i tres ``universos paralelos'' posibles, uno por cada una de las acciones (figura~\ref{fig:libre_albedrio}).
+En el caso de las tres cajas, se abren tres ``universos paralelos'' posibles, uno por cada una de las elecciones (figura~\ref{fig:libre_albedrio}).
 %
 \begin{figure}[ht!]
 \centering
@@ -1848,17 +1851,19 @@ Se abren as\'i tres ``universos paralelos'' posibles, uno por cada una de las ac
     \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
     \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
 
-    \node[const, above=of p1, yshift=.15cm] (fp1) {$P(a_1)$};
-    \node[const, above=of p2, yshift=.15cm] (fp2) {$P(a_2)$};
-    \node[const, above=of p3, yshift=.15cm] (fp3) {$P(a_1)$};
+    \node[const, above=of p1, yshift=.15cm] (fp1) {$P(r_1)$};
+    \node[const, above=of p2, yshift=.15cm] (fp2) {$P(r_2)$};
+    \node[const, above=of p3, yshift=.15cm] (fp3) {$P(r_1)$};
     }
    \caption{Espacio de hip\'otesis}
    \label{fig:espacio_de_hipotesis}
 \end{subfigure}
-    \caption{(a) El concepto te\'orico libre albedr\'io afirma que una persona, ante un estados $s$ del universo, es capaz de elegir entre m\'as de una acci\'on $a_i$.
-    (b) Espacio de hip\'otesis: sabemos que hay un regalo detr\'as de s\'olo una de las tres cajas. }
+    \caption{(a) El concepto te\'orico de libre albedr\'io afirma que una persona, ante un estados $s$ del universo, es capaz de elegir acciones $a$ mutuamente excluyentes, como por ejemplo el lugar donde esconder el regalo $a \in \{r_1, r_2, r_3\}$. Por definición, no es posible describir el mundo mediante funciones porque las condiciones iniciales no determinan un único universo posible.
+    (b) Las funciones de probabilidad sobre los universos paralelos (e.g.~espacio de hip\'otesis) nos permiten expresar nuestra incertidumbre respecto de la posición del regalo.}
 \end{figure}
-%
+
+% Parrafo
+
 Cuando la incertidumbre nos impide conocer la funci\'on que gobierna el mundo, podemos todav\'ia expresar nuestra incertidumbre utilizando funciones de probabilidad, que para cada hip\'otesis $a$ asigne una proporci\'on $p$ de nuestra creencia total, $P(a_i) = p_i$.
 %
 En este caso, el conjunto de acciones posibles (esconder el regalo detr\'as de una de las tres cajas) representan nuestro \emph{espacio de hip\'otesis} (figura~\ref{fig:espacio_de_hipotesis}).
@@ -1867,9 +1872,9 @@ Y las diferentes formas de dividir la creencia le vamos a llamar \emph{distribuc
 
 % Parrafo
 
-El ``principio de integridad'' establece la conservaci\'on de la creencia total, garantizando que no haya perdidas ni generaci\'on espont\'anea de creencias.
+El ``principio de integridad'' establece la conservaci\'on de la creencia, de modo que no haya ni perdidas ni generaci\'on espont\'anea de creencia.
 %
-Esto es, que la suma de las proporciones asignadas a cada una de las hip\'otesis sea $1$.
+Esto es, que la suma de las proporciones de creencias asignadas a cada una de los universos paralelos (o hip\'otesis) sea siempre $1$.
 %
 \begin{equation}
 \sum_{i} P(\text{hip\'otesis}_i) = 1
@@ -1879,11 +1884,9 @@ Bajo este principio hay infinitas distribuciones de creencias posibles.
 %
 Por ejemplo, podemos tener el presentimiento de que est\'a en la caja del medio.
 %
-En la figura \ref{fig:distribucion_de_creencias} mostramos dos posibles distribuciones de creencias que tienen preferencia por esa caja.
-%
-La distribuci\'on de creencias de la figura~\ref{fig:preferencia_total} representa la certeza de que el regalo est\'a en la caja del medio, mientras que la figura~\ref{fig:preferencia_parcial} representa una preferencia parcial que mantiene todav\'ia cierta duda.
+Podemos expresar la certeza asignado toda la creencia a la caja del medio (figura~\ref{fig:preferencia_total}) o podemos representar una preferencia parcial que mantiene todav\'ia cierta duda asignando mayor proporción a la del medio que a la de los costados (figura~\ref{fig:preferencia_parcial}).
 
-% PArrafo
+% Parrafo
 
 \begin{figure}[ht!]
  \centering
@@ -1925,15 +1928,15 @@ La distribuci\'on de creencias de la figura~\ref{fig:preferencia_total} represen
 
 \subsection{Principio de no mentir}\label{sec:principio_indiferencia}
 
-El ``principio de no mentir'' permite alcanzar acuerdos intersubjetivos en contextos de incertidumbre con validez intercultural.
+El ``principio de no mentir'' es el fundamento intercultural de los acuerdos intersubjetivos en contextos de incertidumbre.
 %
 Para no mentir en contextos de incertidumbre debemos no afirmar más de lo que sabemos (maximizar incertidumbre) sin dejar de decir todo lo que sí sabemos (dada la información disponible).
 %
-Este principio se lo conoce como ``máxima entropía dadas restricciones'' o MaxEnt, y se ha mostrado que todas las distribuciones de probabilidad de la familia exponencial cumplen ese criterio (veremos esto más adelante).
+Este principio se lo conoce como ``máxima entropía dadas restricciones'' o MaxEnt (veremos esto en detalle más adelante).
 
-%
+% Parrafo
 
-El caso que estamos analizado, donde s\'olo conocemos el espacio de hip\'otesis (posibles posiciones del regalo) y no tenemos m\'as informaci\'on que nos permita tener preferencia por ninguna de las opciones, vamos a estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
+El caso que estamos analizado, donde sólo conocemos el espacio de hip\'otesis (las posibles posiciones del regalo) y no tenemos m\'as informaci\'on que nos permita tener preferencia por ninguna de las opciones, vamos a estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
 %
 \begin{figure}[ht!]
 \begin{subfigure}[b]{0.2\textwidth}
@@ -1984,7 +1987,7 @@ El caso que estamos analizado, donde s\'olo conocemos el espacio de hip\'otesis 
 \label{fig:principio_de_indiferencia}
 \end{figure}
 %
-Esta distribución de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales), dada la información disponibles (no se asigna creencia por fuera de las tres cajas).
+Esta distribución de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales), incorporando la información disponibles (no asignar creencia por fuera de las tres cajas).
 %
 A las distribuciones de creencias que permiten alcanzar acuerdos intersubjetivos las vamos a llamar \emph{creencia honesta}.
 
@@ -1992,23 +1995,15 @@ A las distribuciones de creencias que permiten alcanzar acuerdos intersubjetivos
 
 El principio de no mentir puede generalizarse a modelos causales multidimensionales.
 %
-Para ejemplificar, supongamos que nos permiten elegir una caja $c$ y que despu\'es alguien nos señala una caja $s$ y nos muestra que en su interior no está el regalo.
+Para ejemplificar, supongamos que nos permiten elegir una caja $c$ y que despu\'es alguien nos da una pista, señala una caja $s$ y nos muestra que en su interior no está el regalo.
 %
-En este caso tenemos tres variables y al menos una dependencia causal, la pista $s$ no puede señalar la caja donde está el regalo $r$.
+En este caso tenemos tres variables y al menos una dependencia causal, la pista $s$ no puede señalar la caja donde está el regalo $r$, $s \neq r$.
 %
 ¿Pero ser\'a que nuestra elecci\'on $c$ tambi\'en afecta la pista $s$?
 %
-Es decir, una opci\'on es que la pista solo dependa de la posici\'on del regalo, señale cualquier otra caja.
+Es decir, otra opci\'on es que la pista adem\'as de no se\~nalar la caja donde est\'a el regalo, $s \neq r$, tampoco se\~nale la caja elegida, $s \neq c$, para dejarnos siempre con la duda.
 %
-Otra opci\'on es que la pista adem\'as de no se\~nalar la caja donde est\'a el regalo, tampoco se\~nale la caja elegida.
-
-% Parrafo
-
-En este contexto podemos proponer al menos dos modelos causales multidimensionales alternativos.
-%
-En el primero hay s\'olo una dependencia causal, la pista no se\~nala la posici\'on del regalo, que podemos representar con el modelo causal de la figura~\ref{fig:modelo_causal_1}.
-%
-En el segundo hay dos dependencias causales, la pista no se\~nala ni la posici\'on del regalo ni la caja elegida, que podemos representar con el modelo causal de la figura~\ref{fig:modelo_causal_2}.
+Estos son dos modelos causales multidimensionales alternativos: en el primero hay s\'olo una dependencia causal (figura~\ref{fig:modelo_causal_1}) y en el segundo hay dos dependencias causales (figura \ref{fig:modelo_causal_2}).
 %
 Para simplificar el problema, consideraremos que la caja elegida es $c=1$.
 
@@ -2049,7 +2044,7 @@ Para simplificar el problema, consideraremos que la caja elegida es $c=1$.
   \caption{Modelo B: $s \neq r$ y $s \neq c$}
   \label{fig:modelo_causal_2}
   \end{subfigure}
-  \caption{Modelos causales alternativos. Figura~\ref{fig:modelo_causal_1}: la pista s\'olo depende de la posici\'on del regalo. Figura~\ref{fig:modelo_causal_2}: la pista depende de la posici\'on del regalo y la la caja elegida previamente.
+  \caption{Modelos causales alternativos. Figura~\ref{fig:modelo_causal_1}: la pista s\'olo depende de la posici\'on del regalo. Figura~\ref{fig:modelo_causal_2}: la pista depende de la posici\'on del regalo y la caja elegida previamente.
   Los c\'irculos representan las variables y la flecha representa la relaci\'on causa $\rightarrow$ efecto.
   %A su vez, $r=i$ representa la proposici\'on ``el regalo se encuentra en la posici\'on $i$'', y $s=i$ representa la proposici\'on ``la pista se\~nala la posici\'on $i$''.
   }
@@ -2067,9 +2062,9 @@ Para simplificar el problema, consideraremos que la caja elegida es $c=1$.
 
 Cada uno de los modelos causales alternativos tiene su propio conjunto finito de universos paralelos.
 %
-Siguiendo con el principio de indiferencia dividimos la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.
+Siguiendo con el principio de maximizar incertidumbre dada la información disponible, definimos la distribución de creencia honesta dividiendo la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.
 %
-En la figura~\ref{fig:caminos} mostramos c\'omo se dividen las creencias en partes iguales por los caminos paralelos de ambos modelos causales.
+En la figura~\ref{fig:caminos} mostramos los caminos paralelos que generan ambos modelos causales sobre los cuales se divide la creencia.
 
 % Parrafo
 
@@ -2176,13 +2171,11 @@ En cambio, en el modelo B, la pista genera dos universos s\'olo cuando el regalo
 \caption{Modelo B}
 \label{fig:caminos_montyhall}
 \end{subfigure}
-\caption{Los caminos paralelos que se generan a partir de los modelos causales alternativos. El principio de m\'axima incertidumbre (o de indiferencia) divide la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal. }
+\caption{Los caminos paralelos que se generan a partir de los modelos causales alternativos. El principio de m\'axima incertidumbre dada la información disponible divide la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.}
 \label{fig:caminos}
 \end{figure}
 %
-Esto nos permite definir creencias honestas respecto de los universos paralelos.
-%
-El conjunto de creencias asignadas a los caminos paralelos del modelo causal representa nuestra \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$ (todas las posibles combinaciones de hip\'otesis).
+La creencia al final de cada universo paralelo del modelo causal representa la \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$, $P(r=i, s=j|\text{Modelo})$.
 %
 \begin{table}[ht!]
 \centering
@@ -2200,43 +2193,17 @@ $P(r=i, s=j | \text{Modelo A})$ \hspace{1.8cm} $P(r=i, s=j | \text{Modelo B})$ \
   $s_2$ & $1/6$ & $0$ & $1/3$ \\ \hline
   $s_3$ & $1/6$ & $1/3$ & $0$  \\ \hline
   \end{tabular}
-  \caption{Creencia conjunta para cada uno de los modelos causales. El valor de las celdas representa la creencia honesta sobre cada uno de los universos paralelos. }
+  \caption{Creencia conjunta para cada uno de los modelos causales. Las celdas representan universos paralelos y el valor la creencia asignada a cada uno de ellos.}
   \label{tab:creencia_conjunta}
 \end{table}
-% Por ejemplo, la creencia conjunta de que el regalo est\'e en la caja $2$ y la pista se\~nale la caja $3$ es
-% \begin{equation}
-% \text{Creencia}(r=2 \wedge s=3 | \text{Modelo A} ) = \frac{1}{3} \frac{1}{2} = \frac{1}{6} \ \ \ \ \ \ \text{Creencia}(r=2 \wedge s=3 | \text{Modelo B} ) = \frac{1}{3}
-% \end{equation}
-% %
-% Donde $\wedge$ representa el conjunci\'on l\'ogica.
-% %
-% De aqu\'i en adelante remplazaremos este s\'imbolo por una simple coma ($,$).
-% %
-% Colocamos el modelo detr\'as del condicional ($\cdot|\cdot$) debido a que esta creencia conjunta es honesta cuando el modelo propuesto es cierto.
-% %
-% De aqu\'i en adelante s\'olo haremos expl\'icita la dependencia del modelo cuando haya alg\'un tipo de ambigüedad, que en general ocurre cuando hay m\'as de un modelo en disputa.
-% %
-% De la misma forma podemos calcular el resto de las creencias conjuntas a priori dado el modelo causal.
 %
 La conjunci\'on l\'ogica la expresamos con una simple coma ($,$), y colocamos del lado derecho del condicional ($\cdot|\cdot$) las proposiciones que momentáneamente consideramos ciertas.
 %
-Cada una de las celdas de la tabla representa una terminal de los caminos del modelo causal representados en la figura \ref{fig:caminos}.
-%
-Tenemos entonces un principio para alcanzar acuerdos sobre las creencias conjuntas cuando la \'unica informaci\'on previa es el modelo causal multidimensional.
+Cada una de las celdas de la tabla representa una de las terminales de los universos paralelos representados en la figura \ref{fig:caminos}.
 
 % Parrafo
 
-%Los caminos paralelos del modelo causal son hip\'otesis mutuamente excluytentes.
-%
-%Si ocurre uno de los caminos, no puede ocurrir el resto.
-%
-% En ambos modelos, la pista se\~nala la caja $3$ cuando el regalo est\'a en la caja $1$ o en la caja $2$.
-% Pero la creencia conjunta de esos caminos paralalelos es distinta.
-% En el modelo A ambos caminos le asignamos una creencia de $1/6$, que sumadas representan $1/3$ de la creencia total.
-% En el modelo B, en cambio, le asignamos una creencia de $1/6$ cuando el regalo est\'a en la caja $1$ y $1/3$ cuando el regalo est\'a en la caja $2$, que sumados represnetan $1/2$ del la creencia total.
-%
-% % Parrafo
-Habiendo definido la creencia conjunta sobre hip\'otesis mutuamente excluyentes (universos paralelos), por el principio de integridad podemos calcular la creencia correspondiente a cada una de las variables individuales mediante una suma.
+Habiendo dividido la creencia sobre universos paralelos mutuamente excluyentes (si ocurre uno de los caminos, no puede ocurrir el resto), podemos recuperar la creencia asignada a una variable individual (creencia marginal) siguiendo el principio de integridad, sumando todos los caminos paralelos en los que esa variable est\'a presente.
 %
 \begin{equation}
 \begin{split}
@@ -2247,8 +2214,6 @@ P(s_j|\text{Modelo A}) = \sum_i P(r_i, s_j|\text{Modelo A}) = 1/3 \\  P(s_j|\tex
 % Parrafo
 
 Lo mismo ocurre con cualquiera de las variables de un modelo multidimensional.
-%
-Para calcular la creencia sobre una variable, calculamos la suma de todos los caminos paralelos en los que esa variable est\'a presente.
 
 \begin{table}[H]
 \centering
@@ -2268,11 +2233,11 @@ Modelo A  \hspace{4.5cm}  Modelo B \\[0.1cm]
   $s_3$ & $1/6$ & $1/3$ & $0$ & $1/2$ \\ \hline \hline
    & $1/3$ & $1/3$ & $1/3$ & $1$  \\ \hline
   \end{tabular}
-  \caption{Creencia marginal obtenida como la suma de las creencia conjuntas honesta de cada uno de los caminos paralelos de los modelos causales. }
+  \caption{Creencia marginal honesta obtenida como la suma de todos los caminos paralelos en los que esa variable est\'a presente.}
   \label{tab:creencia_marginal}
 \end{table}
 
-En ambos modelos la creencia honesta sobre el regalos, sin importar el valor que toma pista, es $1/3$
+En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$
 %
 \begin{figure}[H]
 \centering
