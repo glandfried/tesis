@@ -234,7 +234,7 @@ En este contexto nos propusimos responder las siguientes preguntas.
 
 Si bien el aprendizaje automático funciona muy bien en ciertos contextos, puede colapsar si los datos se desvían un poco de lo que el modelo está acostumbrado.
 Las ciencias, sin embargo, buscan verdades con validez universal.
-Para no mentir en contextos de incertidumbre debemos no afirmar más de lo que sabemos, sin decir menos.
+Para no mentir en contextos de incertidumbre debemos no afirmar más de lo que sabemos, sin dejar de decir todo lo que sí sabemos.
 Por ello, la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano) es el método con el que se fundamentan las verdades en contextos de incertidumbre.
 Al evaluar hipótesis mutuamente contradictorias (A y no A) la sorpresa, única fuente de información, actúa como filtro de las creencias previas, permitiendo no decir más de lo que se sabe incorporando toda la información disponible (maximiza incertidumbre compatible con los datos).
 Si bien hubieron algunas partes de la tesis que no pudimos evaluar todo el espacio de hipótesis, hicimos un esfuerzo por ajustarnos a este ideal.
@@ -7874,10 +7874,9 @@ La evaluación completa del espacio de posibles modelos causales es una tarea ne
 
 \chapter{Conclusiones y trabajo futuro}
 
-
-Y el resultado, en términos profesionales y personales, ha sido mejor de lo esperado.
+Al ingresar al doctorado en Ciencias de la Computación tenía más dudas que respuestas.
 %
-En definitiva, el razonamiento causal, basado en el enfoque bayesiano de la probabilidad, respondió las preguntas que tenía en antropología: cómo validar verdades en las ciencias empíricas.
+En el trasncurso de la tesis el enfoque bayesiano de la probabilidad fue respondiendo las preguntas antropológicas más profundas: cómo alcanzar acuerdos intersubjetivos en contextos de incertidumbre.
 %
 Y para colmo resultó ser ideal para las ciencias sociales porque permite expresar los modelos causales mediante métodos gráficos intuitivos.
 %
@@ -7885,12 +7884,13 @@ La respuesta que me llevo de esta doctorado no sólo es epistemológica.
 %
 Es también un respuesta metodológica concreta, cómo hacerlo.
 %
-Pero es más que una herramienta que me la llevo para el resto de mi vida profesional y personal.
+Entonces, el resultado de esta tesis en términos profesionales y personales, ha sido mejor de lo esperado.
 
+% Parrafo
 
-%% 
+\section{Interdisciplina, ciencia de datos e incertidumbre}
 
-Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las ciencias de la computación y las ciencias sociales.
+Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las Ciencias de la Computación y las Ciencias Sociales.
 %
 Durante el transcurso del doctorado emergió con fuerza una área conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
 %
@@ -7924,65 +7924,63 @@ Al momento de desarrollar el plan, había sido el enfoque interdisciplinario bas
 %
 %En un plan orientado a datos, esos conceptos ayudan a guiar la intuición, pero su incorporación en sistema predictivo está lejos de ser obvia.
 %
-Algunos de esos conceptos, que aparecerán tangencialmente durante las tesis, motivaron el diseño del plan original.
+Algunos de esos conceptos, que aparecieron tangencialmente durante las tesis, motivaron el diseño del plan original.
 %
-Sin embargo, con el objetivo de poner a prueba los métodos computacionales que fuéramos a desarrollar durante el transcurso del doctorado, diseñamos un plan tesis en ciencias de la computación basado en datos.
+Sin embargo, con el objetivo de poner a prueba los métodos computacionales, diseñamos un plan tesis en ciencias de la computación basado en datos.
 %
 Por ello, buena parte de esta tesis estuvo enfocada en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
 %
-¿Es posible alcanzar acuerdos intersubjetivos (verdades) en contextos de incertidumbre?
+Lentamente el enfoque bayesiano de la probabilidad fue adquiriendo una importancia creciente para el desarrolo de esta tesis.
+
+% Parrafo
+
+En el primer trabajo (capítulo 3) el enfoque bayesiano nos lo impuso la realidad misma a través del estimador de habilidad estado-del-arte en ese momento, TrueSkill.
 %
-Sí.
+El estimador de habilidad clásico, usado todavía hoy por la federación internacional de ajedrez, tiene una serie de desventajas que habían sido resueltas en las vísperas y al inicio del siglo 21 (por Glicko y TrueSkill respectivamente) a través de la aplicación estrictamente las reglas de la probabilidad (o su mejor aproximación).
 %
-Para ello es necesario aplicar estrictamente las reglas de la probabilidad (enfoque bayesiano), lo que nos obliga a evaluar todas y cada una de las hipótesis de acuerdo a la evidencia empírica y formal (datos y modelos causales).
-
-% Parrafo (Costo computacional)
-
-Evaluar todas y cada una de las hipótesis es un problema computacionalmente costoso, que ha sido el principal obstáculo para la aplicación estricta de las reglas de la probabilidad.
+Pudimos llevar adelante ese primer trabajo sin conocer todos los detalles de implementación del modelo gracias a que estaba disponible como paquetes en varios lenguajes de programación.
 %
-Por ello, a lo largo de la historia se fueron desarrollando técnicas para resolver este problema.
+De esta forma pudimos estimar las habilidades de las personas en el tiempo.
 %
-El primer ciclo de soluciones llega de la mano de física estadística, en la segunda mitad del siglo 19.
+Sin embargo, para analizar los efectos que la formación de equipos tiene sobre el aprendizaje usamos métodos frecuentistas, con lo que mostramos el efecto positivo de jugar en equipo, especialmente de tener compañeros estables.
+
+% Parrafo
+
+Para el segundo trabajo me propuse el objetivo de extender el modelo TrueSkill de estimación de habilidad de modo tal que permitiera distinguir el aprendizaje individual de la sinergia que se produce cuando dos personas aprenden a jugar juntas.
 %
-En esta época se desarrollan métodos analíticos para estimar la probabilidad de los microestados dada la información macro (e.g.~algún promedio).
+Una de las hipótesis que se había desprendido del primer trabajo fue la idea de que el efecto positivo estuviera producido por una ``sinergia'' entre los jugadores.
 %
-Conceptualmente se ha mostrado que las soluciones de la física estadísitica es equivalente a la solución que ofrece el enfoque bayesiano basado en el principio de indiferencia: maximizar incertidumbre dadas las restricciones, el modelo físico y el dato~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, jaynes2003-bookProbabilityTheory}.
+
+
+
+% Parrafo
+
+Sin embargo, cuando descubrimos que existía una mejora significativa
 
 
 
 
-A diferencia de la estad\'istica cl\'asica que \textbf{optimiza} alguna funci\'on de costo \emph{ad-hoc} para seleccionar una \'unica hip\'otesis del espacio, la aplicación estricta de las reglas de la probabilidad (e.g.~enfoque bayesiano) nos obliga a \textbf{integrar} la distribuci\'on de probabilidad conjunta para cuantificar la incertidumbre asociada a una hip\'otesis a partir de su modelo multidimensional.
-%
-Integrar, en vez de optimizar, fue el cuello de botella hist\'orico del enfoque bayesiano debido a que modelos modestamente complejos no tienen, generalmente, soluci\'on anal\'itica.
-
-
-
-
-Si bien hubieron algunas partes de la tesis que por algún motivo, sea técnico o teórico, no se pudo evaluar todo el espacio de hipótesis, hemos hecho un esfuerzo general por aplicación estricta de la probabilidad es lo ideal en contextos de incertidumbre,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\chapter{Conclusiones y trabajo futuro}
-
-Al ingresar al doctorado en Ciencias de la Computación tenía más dudas que respuestas.
-En el trasncurso de la tesis, el enfoque bayesiano de la probabilidad respondió las preguntas antropológicas más profundas: cómo alcanzar acuerdos intersubjetivos en contextos de incertidumbre.
-
-
-
- 
 \section{El enfoque bayesiano en América Latina}
+%
+% % Parrafo
+%
+% ¿Es posible alcanzar acuerdos intersubjetivos (verdades) en contextos de incertidumbre?
+% %
+% Sí.
+% %
+% Sin embargo, maximizar incertidumbre dada la información disponible nos obliga a evaluar todas y cada una de las hipótesis.
+% %
+% Este es un problema computacionalmente costoso, que ha sido el principal obstáculo para la aplicación estricta de las reglas de la probabilidad.
+% %
+% Por ello, a lo largo de la historia se fueron desarrollando técnicas para resolver este problema.
+% %
+% El primer ciclo de soluciones llega de la mano de física estadística, en la segunda mitad del siglo 19.
+% %
+% En esta época se desarrollan métodos analíticos para estimar la probabilidad de los microestados dada la información macro (e.g.~algún promedio).
+% %
+% Conceptualmente se ha mostrado que las soluciones de la física estadísitica es equivalente a la solución que ofrece el enfoque bayesiano basado en el principio de indiferencia: maximizar incertidumbre dadas las restricciones, el modelo físico y el dato~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, jaynes2003-bookProbabilityTheory}.
+
+
 
 \subsection{El estado actual}
 
@@ -7991,6 +7989,32 @@ En el trasncurso de la tesis, el enfoque bayesiano de la probabilidad respondió
 \subsection{Los objetivo}
 
 \section{El enfoque bayesiano en las Ciencias Sociales}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%
+%
+% %
+%
+%
+%
+% A diferencia de la estad\'istica cl\'asica que \textbf{optimiza} alguna funci\'on de costo \emph{ad-hoc} para seleccionar una \'unica hip\'otesis del espacio, la aplicación estricta de las reglas de la probabilidad (e.g.~enfoque bayesiano) nos obliga a \textbf{integrar} la distribuci\'on de probabilidad conjunta para cuantificar la incertidumbre asociada a una hip\'otesis a partir de su modelo multidimensional.
+% %
+% Integrar, en vez de optimizar, fue el cuello de botella hist\'orico del enfoque bayesiano debido a que modelos modestamente complejos no tienen, generalmente, soluci\'on anal\'itica.
+%
+%
+%
+%
+% Si bien hubieron algunas partes de la tesis que por algún motivo, sea técnico o teórico, no se pudo evaluar todo el espacio de hipótesis, hemos hecho un esfuerzo general por aplicación estricta de la probabilidad es lo ideal en contextos de incertidumbre,
+%
+%
+%
+%
+%
+%
+
+
 
 
 
