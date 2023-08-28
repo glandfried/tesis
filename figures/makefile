@@ -1,4 +1,4 @@
-all: agricultura.pdf tasa-temporal2.pdf pdf/ergodicity_individual_trayectories_longrun.pdf trueskillDimorphismMaxMin_ProbWin.pdf
+all: agricultura.pdf pdf/ergodicity_individual_trayectories_longrun.pdf trueskillDimorphismMaxMin_ProbWin.pdf
 
 agricultura.pdf:
 	pdflatex agricultura.tex

@@ -8,6 +8,7 @@ pdf(paste0(nombre,".pdf"), width = 8, height = 5  )
 setwd(this.dir)
 ###############################
 
+
 par(mar=c(3.75,3.75,0.25,0.25))
 
 data = read.csv("data/same_strength_two_groups.csv", stringsAsFactors=FALSE)
