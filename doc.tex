@@ -1599,7 +1599,7 @@ Podemos evitar mentir: maximizando incertidumbre (no afirmar más de lo que se s
 
 Las reglas de la probabilidad se conocen desde finales del siglo 18 y desde entonces se las ha adoptado como sistema de razonamiento en todas las ciencias empíricas.
 %
-Estas reglas son conceptualmente intuitivas: preservar la creencia previa que sigue siendo compatible con los datos (regla del producto) y predecir con la contribución de todas las hipótesis (regla de la suma).
+Estas reglas son conceptualmente intuitivas: preservar la creencia previa que sigue siendo compatible con los datos (regla del producto) y conservar la creencia durante su distribución y recuperación (regla de la suma).
 %
 A lo largo de todos estos siglos, las reglas de la probabilidad han sido derivadas repetidas veces a partir de sistemas axiom\'aticos muy distintos entre sí~\cite{halpern2017}.
 %
@@ -7260,7 +7260,7 @@ Esta metodología analiza cada subgrafo mediante indicadores diseñados para gra
 Para determinar el tamaño de la ventana, Kossinets y Watts~\cite{Kossinets2006} estudian cómo cambia el comportamiento de un conjunto de indicadores estáticos a través del tiempo.
 %
 \begin{figure}[ht!]
-	\includegraphics[width=0.8\textwidth]{img/resultados/dw/duncan-watts-metrics.pdf}
+	\includegraphics[width=0.8\textwidth]{static/duncan-watts-metrics.pdf}
 	\caption{
 	Grado medio, tamaño de la componente más grande,  largo promedio de los caminos mínimos y el coeficiente de clustering para ventanas de una semana, dos semanas y un mes.
 	}
@@ -7525,7 +7525,7 @@ Con la idea de evaluar los distintos efectos causales que se producen en los dif
 %
 \begin{figure}[ht!]
  	\centering
-	\includegraphics[width=0.5\linewidth]{img/resultados/general/hist-ttt-inicial-min-150-partidas}
+	\includegraphics[width=0.5\linewidth]{static/hist-ttt-inicial-min-150-partidas}
 	\caption{
 	Distribución de habilidad inicial para individuos con al menos 150 partidas jugadas. En color señalamos los estadíos iniciales de las curvas de aprendizaje individuales que analizamos en este trabajo: novatos, intermedio y experto.
 	}
@@ -7874,24 +7874,58 @@ La evaluación completa del espacio de posibles modelos causales es una tarea ne
 
 \chapter{Conclusiones y trabajo futuro}
 
+Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las Ciencias de la Computación y las Ciencias Sociales.
+%
 Al ingresar al doctorado en Ciencias de la Computación tenía más dudas que respuestas.
 %
-En el trasncurso de la tesis el enfoque bayesiano de la probabilidad fue respondiendo las preguntas antropológicas más profundas: cómo alcanzar acuerdos intersubjetivos en contextos de incertidumbre.
+En el transcurso de la tesis el enfoque bayesiano de la probabilidad fue respondiendo las preguntas antropológicas más profundas: cómo alcanzar acuerdos intersubjetivos en contextos de incertidumbre.
 %
-Y para colmo resultó ser ideal para las ciencias sociales porque permite expresar los modelos causales mediante métodos gráficos intuitivos.
+La respuesta no sólo es relevante para las ciencias sociales, es igualmente relevante para toda ciencia empírica (con datos) que debe validar sus proposiciones en sistemas naturales abiertos.
 %
-La respuesta que me llevo de esta doctorado no sólo es epistemológica.
+El hecho de que las reglas de la probabilidad garanticen actualizar las creencias preservando el principio intercultural de no mentir (de maximizar incertidumbre dada la información disponible) hace que este sea el sistema de razonamiento para todas las actividades humanas, incluso afuera de la academia, especialmente en aquellas áreas donde la verdad tiene un valor vital (salud, forense, apuestas).
 %
-Es también un respuesta metodológica concreta, cómo hacerlo.
+Lo interesante es que esta respuesta además de ser epistemológica es también metodológica, pues ofrece un procedimiento concreto: la regla del producto se induce del principio de coherencia, de preservar la creencia previa que sigue siendo compatible con los datos; y la regla de la suma se induce del principio de integridad, de conservar la creencia durante su distribución y recuperación.
+
+% Parrafo
+
+A pesar de que las reglas de la probabilidad se conocen desde finales del siglo 18, de que hayan sido adoptadas desde entonces como sistema de razonamiento en todas las ciencias empíricas y que hasta ahora no se haya propuesto nada mejor en lo práctico, el costo computacional asociados a la evaluación de todo el espacio de hipótesis ha limitado en los hechos su campo de aplicación hasta las vísperas del siglo 21, cuando comienza el enorme crecimiento en la capacidad de cómputo.
 %
-Entonces, el resultado de esta tesis en términos profesionales y personales, ha sido mejor de lo esperado.
+Si bien la superación de estos obstáculos hace que en la actualidad el crecimiento del enfoque bayesiano es un fenómeno mundial que se está acelerando, una pesada inercia histórica hace que su desarrollo sigue siendo incipiente, especialmente en los países periféricos como el nuestro.
+%
+La relevancia de la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano), tanto en lo que respecta al valor de la verdad como al valor práctico del conocimiento, contrasta con la realidad actual en la que el enfoque bayesiano sigue siendo marginal incluso en la facultad de ciencias exactas y naturales más importante de nuestro país.
+%
+En este contexto, la adopción del enfoque bayesiano en zonas periféricas de nuestro país y de nuestro continente, y en ciencias con menor formación en matemática y programación como las ciencias sociales, es en la inmensa mayoría de los casos inexistente.
+
+% Parrafo
+
+Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computación y encontrar allí las respuestas más simples y concretas a las reflexiones epistemológicas y metodológicas más trascendentales que había desarrollado durante mi formación en ciencias antropológicas, hace que ella sea la principal herramienta que me llevo para el resto de mi vida profesional y personal.
+%
+Para impulsar el enfoque bayesiano en las ciencias sociales y otras áreas es necesario ofrecer un flujo de trabajo intuitivo y flexible, que permita poner en valor el conocimiento experto existente.
+%
+Varias décadas de investigación en el campo del aprendizaje automático han dado lugar a una multitud de algoritmos genéricos a los cuales luego se mapean nuestros problema particulares.
+%
+Si bien este flujo de trabajo ha sido exitoso en el desarrollo de modelos predictivos, al ser inflexible en el desarrollo de modelos a medida de los problemas específicos impide realizar inferencia causal.
+
+% Parrafo
+
+Por este motivo la inferencia causal ha sido un área de creciente interés en las últimas décadas dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
+%
+En las últimas décadas se fueron desarrollando técnicas que permiten aprovechar toda la potencia del aprendizaje automático de forma dinámica e intuitiva, permitiendo crear modelos personalizados a la medida de cada problema específico.
+%
+A esta se la conoce como ``aprendizaje automático basado en modelos''~\cite{Bishop2013}.
+%
+En ella se desarrollaron los métodos gráficos~\cite{pearl1986-beliefNetworks, kschischang2001-factorGraphsAndTheSumProductAlgorithm, koller2009-PGM} que permiten: (1) especificar los argumentos causales a través de redes causales intuitivas para personas sin formación matemática , que codifican las consecuencias que las eventuales intervenciones sobre la naturaleza produce sobre la estructura causal; (2) realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal, en los casos que podemos resolver la matemática; (3) delegar la inferencia a los lenguajes de programación probabilística a través de una sintaxis que nos permite traducir directamente la especificación gráfica del modelo que hicimos en (1).
+
+% Parrafo
+
+% (1) La primera es la especificación de todas las hipótesis usando modelos causales gráficos. En ellos se dibuja una red, en el cual las variables quedan vinculadas por flechas que representan relaciones causales probabilísticas entre variables. Este método tiene varias ventajas. No sólo es intuitivo, es al mismo tiempo la especificación matemática de la distribución conjunta de todas nuestras hipótesis, el modelo. Pero además, está estrechamente relacionado con los dos métodos para resolver la inferencia.
+% (2) La segunda es el algoritmo de pasaje de mensajes en modelos gráficos (factor graph). Este algoritmo, conocido como belief propagation o sum-product algorithm, simplemente descompone las dos reglas de la probabilidad en pasos elementales: los mensajes que envían las variables (product step), y los mensajes que envían las funciones (sum step). Es el algoritmo más eficiente posible para aplicar las reglas de la probabilidad cuando podemos resolver la matemática. Además se puede ejecutar de forma paralela.
+% (3) La tercera son los lenguajes de programación probabilística. Cuando no podemos resolver la matemática, hoy contamos con algoritmos que nos pueden ayudar a aproximar la inferencia. La programación probabilística nos permite abstraernos de la mayor parte de los detalles detrás de esos algoritmos. Como usuarios, tenemos una sintaxis que nos permite traducir directamente la especificación gráfica del modelo que hicimos en (1). Y se requiere algunos conocimientos mínimos para asegurarse que el resultado que devuelve tenga sentido, porque a veces los algoritmos tienen limitaciones.
 
 % Parrafo
 
 \section{Interdisciplina, ciencia de datos e incertidumbre}
 
-Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las Ciencias de la Computación y las Ciencias Sociales.
-%
 Durante el transcurso del doctorado emergió con fuerza una área conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
 %
 Bajo esta categoría quedaron enmarcadas una gran variedad de actividades, a veces bastante diferentes entre sí, desde aquellas que usan la computación como una herramienta para analizar datos de origen sociales, hasta aquellas que usan problemas de ciencias sociales para motivar desarrollos en la frontera del conocimiento en las ciencias de la computación~\cite{lazer2020-computationalSocialScience}.
