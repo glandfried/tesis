@@ -1,4 +1,4 @@
-all: logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png
+all: logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png betweenness-centrality-150-partidas-hist.pdf
 
 logo.png:
 	wget https://raw.githubusercontent.com/glandfried/images/master/logos/pEQb.png -O logo.png
@@ -56,3 +56,8 @@ Qulla_Suyu.svg:
 
 whipala.png: Qulla_Suyu.svg
 	convert -density 1200 -resize 1200x1200 Qulla_Suyu.svg whipala.png
+	rm Qulla_Suyu.svg
+
+betweenness-centrality-150-partidas-hist.pdf:
+	wget https://github.com/glandfried/cultural-centrality/releases/download/doc.1.0.1/static.zip
+	unzip static.zip -d ..
