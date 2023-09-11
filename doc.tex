@@ -336,7 +336,7 @@ Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\
 %
 La evidencia es nuestra propia vida, que depende de al menos cuatro de estos niveles para sobrevivir: la célula con la mitocondria, el organismo multicelular, el sistema social y la comunidad ecológica.
 %
-Además, en probabilidad ocurre algo similar: conjunto de hipótesis individuales forman variables, relaciones entre variables forman modelos causales y varios modelos forman teorías.
+Además, la evaluación de hipótesis en probabilidad también favorece la agregación: conjunto de hipótesis individuales forman variables, relaciones entre variables forman modelos causales y sistemas de modelos causales forman teorías.
 %
 En la historia del ser humano, la transición cultural tuvo efectos positivos evidentes: antes de la cooperación epistémica (trasmisión del conocimiento) estuvimos en grave peligro de extinción; luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre.
 %
@@ -360,7 +360,7 @@ La ciencia es una institución humana que tiene pretensión de verdad: de alcanz
 %
 Las ciencias formales (matemática, lógica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiomáticos cerrados.
 %
-Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas abiertos que contienen siempre algún grado de incertidumbre.
+Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos que contienen siempre algún grado de incertidumbre.
 %
 ¿Es posible entonces alcanzar acuerdos intersubjetivos (``verdades'') en las ciencias empíricas si es inevitable decir ``no sé''?
 %
@@ -374,7 +374,7 @@ Por ejemplo, supongamos que sabemos que hay un regalo escondido detrás de una c
 %
 ¿Dónde está el regalo?
 %
-Si elegimos alguna de las cajas estaríamos afirmando más de lo que sabemos, porque no tenemos información que nos haga preferir ninguna de ellas.
+Si elegimos alguna de las cajas estaríamos afirmando más de lo que sabemos porque en los hechos no tenemos información que nos haga preferir ninguna de ellas.
 % Parrafo
 \begin{figure}[ht!]
  \centering
@@ -413,9 +413,12 @@ Dos distribución de creencias. Maximizar incertidumbre permite alcanzar un prim
 \end{figure}
 % Parrafo
 \noindent
-En este caso, vamos a estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
 %
-Maximizando la incertidumbre evitamos decir más de lo que sabemos, permitiéndonos alcanzar un primer acuerdo intersubjetivo en contextos de incertidumbre!
+Si nos permitimos dividir la creencia vamos a estar de acuerdo en la necesidad de distriburla en partes iguales, justamente porque no tenemos preferencia por ninguna caja.
+%
+En este ejemplo maximizamos incertidumbre (al dividir la creencia en partes iguales) incorporando la información disponible (al no asignar creencia afuera de las tres cajas).
+%
+Evitar mentir (maximizando incertidumbre dada la información disponible) nos permitió alcanzar un primer acuerdo intersubjetivo en contextos de incertidumbre!
 %
 Bien. ¿Pero ahora, cómo preservamos el acuerdo intersubjetivo en casos más complejos, cuando recibimos nueva información?
 
@@ -429,10 +432,10 @@ La \emph{regla de la suma} garantiza no perder creencia cuando la distribuimos e
 \overset{\hfrac{\text{\small \En{Sum rule}\Es{Regla de la suma}: }}{\phantom{x}}}{P(A) + P(\text{no\En{t} } A) = 1}
 \end{equation*}
 %
-Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las creencias con la información disponible: preservamos la creencia previa que sigue siendo compatible con los nuevos datos (y la creencia que sobrevive la consideramos nuestro nuevo 100\%).
+Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las creencias con la información disponible: preservamos la creencia previa que sigue siendo compatible con los nuevos datos (y la porción de creencia que sobrevive la volvemos a consider como nuestra creencia total 100\%).
 %
 \begin{equation*}
-\overset{\hfrac{\text{\small \En{Poduct rule}\Es{Regla del producto}: }}{\phantom{x}}}{\underbrace{P(\text{\text{\En{Hypothesis}\Es{Hipótesis}}}|\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Conditional belief }\Es{Creencia condicional}\phantom{p}}}{\text{\scriptsize \En{New belief}\Es{Nueva creencia}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\En{Joint prior belief}\Es{Creencia previa conjunta}}}{\text{\scriptsize\En{compatible with the data}\Es{compatible con el dato}}}} \ \ \  \ /  \underbrace{P(\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Prediction of the data}\Es{Predicción del dato}}\phantom{p}}{\text{\scriptsize\En{total compatible belief}\Es{creencia compatible total}}}} }
+\overset{\hfrac{\text{\small \En{Poduct rule}\Es{Regla del producto}: }}{\phantom{x}}}{\underbrace{P(\text{\text{\En{Hypothesis}\Es{Hipótesis}}}|\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Conditional belief }\Es{Creencia condicional}\phantom{p}}}{\text{\scriptsize \En{New belief}\Es{Nueva creencia}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\En{Joint prior belief}\Es{Creencia previa conjunta}}}{\text{\scriptsize\En{compatible with the data}\Es{compatible con el dato}}}} \ \ \  \ /  \underbrace{P(\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Prediction of the data}\Es{Predicción del dato}}\phantom{p}}{\text{\scriptsize\En{total compatible belief}\Es{creencia total que sobrevive}}}} }
 \end{equation*}
 
 % Parrafo
@@ -440,14 +443,22 @@ Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las c
 Estas son las reglas de la probabilidad para actualizar las creencias en contextos de incertidumbre.
 %
 No hay más.
+
+% Parrafo
+
+Veamos un ejemplo.
 %
-Por ejemplo, supongamos que ahora nos dejan elegir una de las cajas y luego alguien nos da una pista, abriendo una caja distinta a la que elegimos en la que no está el regalo (figura~\ref{fig:monty_hall}).
+Supongamos que ahora nos dejan elegir una de las cajas y luego alguien nos dará una pista abriendo una caja distinta a la que elegimos en la que no está el regalo (figura~\ref{fig:monty_hall}).
 %
 Con esta información previa podemos definir un modelo causal sobre la pista (figura~\ref{fig:modelo_causal}).
 %
-Antes de actualizar la creencia sobre la posición del regalo con la información de la pista, necesitamos la creencia inicial que surge de maximizar la incertidumbre, dividiendo la creencia en partes iguales por los caminos alternativos del modelo causal (figura~\ref{fig:caminos_montyhall_compatibles}).
+Antes de recibir la información de la pista tenemos una creencia previa que surge de maximizar incertidumbre incorporando la información del modelo causal: dividiendo la creencia en partes iguales por los universos paralelos que induce el modelo causal (figura~\ref{fig:caminos_montyhall_compatibles}).
 %
-Y finalmente, la nueva creencia surge de preservar la creencia inicial que sigue siendo compatible con el dato (figura~\ref{fig:f3}).
+Las hojas del árbol las podemos ordenar en forma de matriz (tabla de la figura~\ref{fig:f3}) y representan nuestra creencia conjunta inicial de que ocurra tanto $r_i$ y $s_j$, $P(r_i,s_j)$.
+%
+Para actualizar nuestra creencia simplemente preservamos la creencia conjunta inicial que sigue siendo compatible con el dato (el renglón $s_2$ en la figura~\ref{fig:f3}).
+%
+Finalmente, la creencia que sobrevive la expresamos como nueva creencia total (para que sume $1$).
 %
 \begin{figure}[ht!]
  \centering
@@ -572,10 +583,13 @@ En general, si tenemos $\text{Datos} = \{ \text{dato}_1, \text{dato}_2, \dots \}
 Si la predicción del dato observado es 1 (sorpresa nula), entonces preservamos toda nuestra creencia previa en esa hipótesis.
 %
 Si la predicción del dato observado es 0 (sorpresa total), entonces la hipótesis se hace falsa para siempre.
+%
+Le ocurre lo mismo que a las especies, de la extinción no se vuelve.
+
 
 % Parrafo
 
-Así como en probabilidad la evaluación de las hipótesis es por secuencias de predicciones, en evolución la selección de las formas de vida también es de naturaleza multiplicativa, por secuencia de tasas de supervivencia y reproducción.
+Así como la evaluación de las hipótesis en probabilidad se hace a través de la secuencias de predicciones, la selección de las formas de vida en evolución también sigue un proceso de naturaleza multiplicativa, por secuencia de tasas de supervivencia y reproducción.
 %
 De hecho, el modelo estándar de evolución, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, es estructuralmente equivalente al teorema de Bayes, lo que llevó a autores reconocidos en ambas áreas a proponer el isomorfismo entre las teoría de la evolución y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
 %
@@ -583,11 +597,24 @@ De hecho, el modelo estándar de evolución, conocido como \emph{replicator dyna
 \overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporción}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos},  \Big|  \hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporción}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporción}}{\text{\scriptsize sobreviviente}}}}
 \end{equation*}
 %
-Debido a que los impactos de las pérdidas de adaptabilidad son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) existe una ventaja a favor de las variantes (hipótesis o formas de vida) que reducen las fluctuaciones.
+Debido a que en los procesos multiplicativos los impactos de las pérdidas son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) existe una ventaja a favor de las variantes que reducen las fluctuaciones (ver sección ``\nameref{sec:propiedades_funcion_costo}''): por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
+%
+Durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema.
+%
+En este capítulo veremos que no existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
+
 % Parrafo
-Esta propiedad de los procesos de selección multiplicativo ha producido a lo largo de la historia de la vida una serie de transiciones evolutivas en las que entidades capaces de autorreplicación, luego de la transición, pasaran a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}.
+
+Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), la emergencia de unidades cooperativas de nivel superior es un fenómeno permanente en la historia de la vida (transiciones evolutivas mayores).
+%
+La propiedad mayor de los procesos de selección multiplicativo sería la responsable de haber producido, a lo largo de la historia de la vida, las transiciones evolutivas mayores en las que entidades capaces de autorreplicación, luego de la transición, pasan a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}.
+%
+De hecho, nuestra propia vida depende de varios niveles de cooperación con especialización heterogénea, sin los cuales no somos capaces de sobrevivir: la unión de nuestras células con las mitocondrias y la emergencia de la diferenciación celular; nuestro organismo multicelular y la emergencia de los órganos; nuestra sociedad y la emergencia de los roles y grupos; la coexistencia entre especies y la emergencia de los ecosistemas.
+
+% Parrafo
 
 \begin{figure}[ht!]
+\centering
     \centering
   \scalebox{1.2}{
   \tikz{
@@ -596,9 +623,9 @@ Esta propiedad de los procesos de selección multiplicativo ha producido a lo la
       \node[accion, yshift=0.6cm, xshift=-0.4cm] (i3) {} ;
       \node[const, yshift=0.3cm, xshift=0.4cm] (i) {};
 
-      \node[const, yshift=-0.8cm] (ni) {$\hfrac{\text{Individuos}}{\text{solitarios}}$};
+      \node[const, yshift=-0.65cm] (ni) {$\hfrac{\text{Individuos}}{\text{solitarios}}$};
 
-      \node[const, yshift=1.2cm, xshift=1.5cm] (m1) {$\hfrac{\text{Formación}}{\text{de grupos}}$};
+      \node[const, yshift=0.65cm, xshift=1.5cm] (m1) {$\hfrac{\text{Formación}}{\text{de grupos}}$};
 
       \node[const, right=of i, xshift=2cm] (c) {};
       \node[accion, below=of c, yshift=0.35cm, xshift=0.4cm] (c1) {} ;
@@ -623,17 +650,9 @@ Esta propiedad de los procesos de selección multiplicativo ha producido a lo la
       \plate {transition} {(t1)(t2)(t3)} {}; %
       }
   }
-  \caption{Esquema de las transiciones evolutivas mayores}
-\end{figure}
 
-%
+  \vspace{0.2cm}
 
-Nuestra propia vida depende de varios niveles de cooperación con especialización heterogénea, sin los cuales no somos capaces de sobrevivir: la unión de nuestras células con las mitocondrias y la emergencia de las organelas; nuestro organismo multicelular y la emergencia de los órganos; nuestra sociedad y la emergencia de los roles y grupos; la coexistencia entre especies y la emergencia de los ecosistemas.
-
-% Parrafo
-
-\begin{figure}[ht!]
-\centering
  \begin{subfigure}[b]{0.25\textwidth} \centering
   \includegraphics[width=\linewidth]{static/cloroplastos.jpg}
   \caption*{\En{Eukaryotic cells}\Es{Células eucariota}}
@@ -651,7 +670,7 @@ Nuestra propia vida depende de varios niveles de cooperación con especializaci�
   \caption*{\En{Ecosystems}\Es{Ecosistemas}}
  \end{subfigure}
  \caption{
-Ejemplos de transiciones evolutivas mayores. La emergencia de unidades de nivel superior es un fenómeno permanente en la historia de la vida.
+Esquema de las transiciones evolutivas mayores (arriba) y ejemplos de transiciones evolutivas mayores (abajo). La emergencia de unidades de nivel superior es un fenómeno permanente en la historia de la vida.
  }
  \label{fig:trans}
  \vspace{-0.3cm}
@@ -675,7 +694,14 @@ Ejemplos de transiciones evolutivas mayores. La emergencia de unidades de nivel 
 %
 %
 
-De forma similar, en la teoría de la probabilidad también emergen unidades cooperativas de nivel superior: las hipótesis individuales forman variables, las variables forman modelos causales y los conjuntos de modelos forman teorías.
+% La propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones evolutivas mayores} en la historia de la vida (mencionada en la primera sección) en las que entidades individuales pasan a formar parte de unidades cooperativas superiores a través del intercambio de recursos (célula eucariota, organismo multicelular, sociedad, ecología).
+% %
+% Pero también permite explicar la emergencia de \emph{transiciones epistémicas mayores} en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
+% %
+
+De forma similar, la propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones epistémicas mayores} en la historia del conocimiento.
+%
+De hecho, en la teoría de la probabilidad también emergen unidades cooperativas de nivel superior: las hipótesis individuales forman variables, las variables forman modelos causales y los sistemas de modelos causales forman teorías.
 %
 Esto ocurre gracias a que las hipótesis de nivel superior reducen las fluctuaciones realizando las predicciones con el aporte de todas las hipótesis de nivel inferior que la componen.
 %
@@ -688,13 +714,32 @@ P(d_{n+1}|d_1 \dots d_n, \text{Model\Es{o}}) = \sum^{\text{\En{Hypothesis}\Es{Hi
 \end{split}
 \end{equation*}
 %
-De esta forma, al realizar la predicción con la contribución de todas las hipótesis de nivel inferior, los modelos reducen las posibilidades de introducir valores extremos (un cero) en los procesos de selección multiplicativo a los que están sujetos, produciendo mejores resultados que los que se obtendrían con cualquiera de ellas individualmente.
+Al realizar la predicción con la contribución de todas las hipótesis de nivel inferior, los modelos reducen las posibilidades de introducir valores extremos (un cero) en los procesos de selección multiplicativo a los que están sujetos, produciendo mejores resultados que los que se obtendrían con una de ellas individualmente.
 
 % Parrafo
 
-A diferencia de la teoría de la probabilidad, en la que las hipótesis no intercambian probabilidades (la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa), las formas de vida tienen la capacidad de intercambiar recursos con otras formas de vida, lo que les otorga una grado de libertad mayor para reducir fluctuaciones.
+La teor\'ia de la probabilidad nace en 1648 justamente de un debate respecto del \emph{precio justo} en contextos de incertidumbre.
 %
-Esto hace que los humanos tengamos en nuestra cultura y nuestra ciencia un elemento epistémico que no está presente en las variantes que produce la teoría de la probabilidad, lo que será de interés a lo largo de toda esta tesis.
+Sin embargo, a diferencia de la teoría de la probabilidad, en la que las hipótesis no intercambian probabilidades (la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa), las formas de vida tienen la capacidad de intercambiar recursos, lo que les otorga una grado de libertad mayor para reducir fluctuaciones.
+%
+De hecho, en la historia del ser humano la transición cultural tuvo efectos positivos evidentes: antes de la cooperación epistémica (trasmisión del conocimiento) estuvimos en grave peligro de extinción; luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre.
+
+% Parrafo
+
+En la historia reciente, ciertas coyunturas produjeron la emergencia del colonialismo, una era de genocidios y masiva pérdida de diversidad cultural.
+%
+La ventaja a favor de la cooperación no solo teórica, es fundamentalmente práctica.
+%
+A pesar de todos los avances, la ciencia metropolitana sigue siendo incapaz de compensar la pérdida de los conocimientos milenarios, y la crisis ecológica actual no deja de profundizarse.
+%
+El valor de la diversidad cultural y la coexistencia no es principista, sino pragmática, es fundamentalmente un valor prágmático, evolutivo.
+%
+A largo plazo solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación individual o por especialización heterogénea cooperativa.
+
+% Parrafo
+
+
+
 %, la capacidad de especialización cooperativa que produce la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados a dominios particulares coexisten.
 % %
 % La capacidad de
@@ -705,7 +750,7 @@ Esto hace que los humanos tengamos en nuestra cultura y nuestra ciencia un eleme
 %El intercambio se vuelve así como uno de los elementos de
 
 
-\section{Propiedades de la función de costo epistémico-evolutiva}
+\section{Propiedades de la función de costo epistémico-evolutiva} \label{sec:propiedades_funcion_costo}
 Desde su origen, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
 %
 Para ver por qué, veamos qué ocurre con un proceso multiplicativo.
