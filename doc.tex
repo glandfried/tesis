@@ -573,9 +573,9 @@ A diferencia de los enfoques ad-hoc que seleccionan una única hipótesis (e.g.~
 %
 En general, si tenemos $\text{Datos} = \{ \text{dato}_1, \text{dato}_2, \dots \}$,
 %
-\begin{equation*}
-\underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo intersubjetivo}}}{\text{\footnotesize\En{agreement}\Es{inicial}}}} \underbrace{P(\text{data}_1 |\text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 1}} \, \underbrace{P(\text{data}_2 | \text{data}_1 , \text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 2}} \dots
-\end{equation*}
+\begin{equation} \label{eq:funcion_de_costo}
+\underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo inter-}}}{\text{\footnotesize\En{agreement}\Es{subjetivo inicial}}}} \underbrace{P(\text{dato}_1 |\text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 1}} \, \underbrace{P(\text{dato}_2 | \text{dato}_1 , \text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 2}} \dots
+\end{equation}
 
 % Parrafo
 
@@ -597,158 +597,13 @@ De hecho, el modelo estándar de evolución, conocido como \emph{replicator dyna
 \overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporción}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos},  \Big|  \hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporción}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporción}}{\text{\scriptsize sobreviviente}}}}
 \end{equation*}
 %
-Debido a que en los procesos multiplicativos los impactos de las pérdidas son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) existe una ventaja a favor de las variantes que reducen las fluctuaciones (ver sección ``\nameref{sec:propiedades_funcion_costo}''): por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
+Debido a que en los procesos multiplicativos los impactos de las pérdidas son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) veremos que existe una ventaja a favor de las variantes que reducen las fluctuaciones (sección ``\nameref{sec:propiedades_funcion_costo}''): por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
 %
 Durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema.
 %
-En este capítulo veremos que no existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
+En la siguiente sección veremos que no existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
 
 % Parrafo
-
-Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), la emergencia de unidades cooperativas de nivel superior es un fenómeno permanente en la historia de la vida (transiciones evolutivas mayores).
-%
-La propiedad mayor de los procesos de selección multiplicativo sería la responsable de haber producido, a lo largo de la historia de la vida, las transiciones evolutivas mayores en las que entidades capaces de autorreplicación, luego de la transición, pasan a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions}.
-%
-De hecho, nuestra propia vida depende de varios niveles de cooperación con especialización heterogénea, sin los cuales no somos capaces de sobrevivir: la unión de nuestras células con las mitocondrias y la emergencia de la diferenciación celular; nuestro organismo multicelular y la emergencia de los órganos; nuestra sociedad y la emergencia de los roles y grupos; la coexistencia entre especies y la emergencia de los ecosistemas.
-
-% Parrafo
-
-\begin{figure}[ht!]
-\centering
-    \centering
-  \scalebox{1.2}{
-  \tikz{
-      \node[accion] (i1) {} ;
-      \node[accion, yshift=0.6cm, xshift=0.4cm] (i2) {} ;
-      \node[accion, yshift=0.6cm, xshift=-0.4cm] (i3) {} ;
-      \node[const, yshift=0.3cm, xshift=0.4cm] (i) {};
-
-      \node[const, yshift=-0.65cm] (ni) {$\hfrac{\text{Individuos}}{\text{solitarios}}$};
-
-      \node[const, yshift=0.65cm, xshift=1.5cm] (m1) {$\hfrac{\text{Formación}}{\text{de grupos}}$};
-
-      \node[const, right=of i, xshift=2cm] (c) {};
-      \node[accion, below=of c, yshift=0.35cm, xshift=0.4cm] (c1) {} ;
-      \node[accion, above=of c, yshift=-0.35cm, xshift=0.6cm] (c2) {} ;
-      \node[accion, above=of c, yshift=-0.35cm, xshift=0.2cm] (c3) {} ;
-      \node[const, right=of c, xshift=0.6cm] (cc) {};
-
-      \node[const, right=of ni, xshift=1.3cm] (nc) {$\hfrac{\text{Grupos}}{\text{cooperativos}}$};
-
-      \node[const, right=of m1, xshift=1.2cm] (m2) {$\hfrac{\text{Transición}}{\text{mayor}}$};
-
-      \node[const, right=of cc, xshift=2cm] (t) {};
-      \node[accion, below=of t, yshift=0.35cm, xshift=0.4cm] (t1) {} ;
-      \node[accion, above=of t, yshift=-0.35cm, xshift=0.6cm] (t2) {} ;
-      \node[accion, above=of t, yshift=-0.35cm, xshift=0.2cm] (t3) {} ;
-
-      \node[const, right=of nc, xshift=1.1cm] (nt) {$\hfrac{\text{Unidad de}}{\text{nivel superior}}$};
-
-      \edge {i} {c};
-      \edge {cc} {t};
-
-      \plate {transition} {(t1)(t2)(t3)} {}; %
-      }
-  }
-
-  \vspace{0.2cm}
-
- \begin{subfigure}[b]{0.25\textwidth} \centering
-  \includegraphics[width=\linewidth]{static/cloroplastos.jpg}
-  \caption*{\En{Eukaryotic cells}\Es{Células eucariota}}
-  \end{subfigure}
- \begin{subfigure}[b]{0.23\textwidth} \centering
-  \includegraphics[width=\linewidth]{static/fotosintesis.jpg}
-  \caption*{\En{Organisms}\Es{Organismos}}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.235\textwidth} \centering
- \includegraphics[width=\linewidth]{static/hormigas2.jpg}
-  \caption*{\En{Societies}\Es{Sociedades}}
- \end{subfigure}
- \begin{subfigure}[b]{0.235\textwidth} \centering
- \includegraphics[width=\linewidth]{static/tsimane2.jpg}
-  \caption*{\En{Ecosystems}\Es{Ecosistemas}}
- \end{subfigure}
- \caption{
-Esquema de las transiciones evolutivas mayores (arriba) y ejemplos de transiciones evolutivas mayores (abajo). La emergencia de unidades de nivel superior es un fenómeno permanente en la historia de la vida.
- }
- \label{fig:trans}
- \vspace{-0.3cm}
- \end{figure}
-
- % Parrafo
-
-% \begin{figure}[ht!]
-%     \centering
-%     \begin{subfigure}[b]{0.65\textwidth}
-%     \includegraphics[width=\linewidth]{static/biomass.jpg}
-%     \end{subfigure}
-%     \caption{
-% 	Distribución de la biomasa en la Tierra estimada por Bar-On et al.~\cite{barOn2018-biomass}.
-%     }
-%     \label{fig:biomass}
-% \end{figure}
-%
-% % Parrafo
-%
-%
-%
-
-% La propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones evolutivas mayores} en la historia de la vida (mencionada en la primera sección) en las que entidades individuales pasan a formar parte de unidades cooperativas superiores a través del intercambio de recursos (célula eucariota, organismo multicelular, sociedad, ecología).
-% %
-% Pero también permite explicar la emergencia de \emph{transiciones epistémicas mayores} en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
-% %
-
-De forma similar, la propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones epistémicas mayores} en la historia del conocimiento.
-%
-De hecho, en la teoría de la probabilidad también emergen unidades cooperativas de nivel superior: las hipótesis individuales forman variables, las variables forman modelos causales y los sistemas de modelos causales forman teorías.
-%
-Esto ocurre gracias a que las hipótesis de nivel superior reducen las fluctuaciones realizando las predicciones con el aporte de todas las hipótesis de nivel inferior que la componen.
-%
-Por la regla de la suma, la predicción que hace un modelo del próximo dato es
-%
-\begin{equation*}
-\begin{split}
-P(d_{n+1}|d_1 \dots d_n, \text{Model\Es{o}}) = \sum^{\text{\En{Hypothesis}\Es{Hipótesis}}}_h P(d_{n+1}| d_1 \dots d_n, h, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
-%\\ P(d_{n+1}|d_1 \dots d_n, \text{\En{Theory}\Es{Teoría}}) = \sum^{\text{\En{Models}\Es{Modelos}}}_m P(d_{n+1}| h, d_1 \dots d_n, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
-\end{split}
-\end{equation*}
-%
-Al realizar la predicción con la contribución de todas las hipótesis de nivel inferior, los modelos reducen las posibilidades de introducir valores extremos (un cero) en los procesos de selección multiplicativo a los que están sujetos, produciendo mejores resultados que los que se obtendrían con una de ellas individualmente.
-
-% Parrafo
-
-La teor\'ia de la probabilidad nace en 1648 justamente de un debate respecto del \emph{precio justo} en contextos de incertidumbre.
-%
-Sin embargo, a diferencia de la teoría de la probabilidad, en la que las hipótesis no intercambian probabilidades (la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa), las formas de vida tienen la capacidad de intercambiar recursos, lo que les otorga una grado de libertad mayor para reducir fluctuaciones.
-%
-De hecho, en la historia del ser humano la transición cultural tuvo efectos positivos evidentes: antes de la cooperación epistémica (trasmisión del conocimiento) estuvimos en grave peligro de extinción; luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre.
-
-% Parrafo
-
-En la historia reciente, ciertas coyunturas produjeron la emergencia del colonialismo, una era de genocidios y masiva pérdida de diversidad cultural.
-%
-La ventaja a favor de la cooperación no solo teórica, es fundamentalmente práctica.
-%
-A pesar de todos los avances, la ciencia metropolitana sigue siendo incapaz de compensar la pérdida de los conocimientos milenarios, y la crisis ecológica actual no deja de profundizarse.
-%
-El valor de la diversidad cultural y la coexistencia no es principista, sino pragmática, es fundamentalmente un valor prágmático, evolutivo.
-%
-A largo plazo solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación individual o por especialización heterogénea cooperativa.
-
-% Parrafo
-
-
-
-%, la capacidad de especialización cooperativa que produce la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados a dominios particulares coexisten.
-% %
-% La capacidad de
-%Esto ocurre, como veremos, gracias a que el intercambio de recursos permite a las variantes especialistas cubrirse en los casos para los que no está adaptada (recibir) y le permite a la especie sacar provecho de los beneficios que genera la variante especialista en los casos para los que está adaptada (dar).
-%
-%En el uso que le damos a la teoría de la probabilidad, introducimos esta propiedad como si fuera una regla implícita al seleccionar discrecionalmente el conjunto de modelos que necesitamos para predecir los datos las coyuntura nos presenta, a pesar de que puedan tener un cero e
-% Parrafo
-%El intercambio se vuelve así como uno de los elementos de
-
 
 \section{Propiedades de la función de costo epistémico-evolutiva} \label{sec:propiedades_funcion_costo}
 Desde su origen, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
@@ -1001,29 +856,160 @@ En todos los casos, la tasa de crecimiento se maximiza mediante mutua cooperaci�
 
 Las propiedades de la función de costo epistémico-evolutiva no son solo teóricas, tiene consecuencia concretas para la vida y el conocimiento.
 %
-La propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones evolutivas mayores} en la historia de la vida (mencionada en la primera sección) en las que entidades individuales pasan a formar parte de unidades cooperativas superiores a través del intercambio de recursos (célula eucariota, organismo multicelular, sociedad, ecología).
+En el último tercio de la historia del Universo, hace aproximadamente 4000 millones de años, apareció en la tierra una organización de la materia capaz de auto-replicarse.
 %
-Pero también permite explicar la emergencia de \emph{transiciones epistémicas mayores} en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
+El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de tasas de supervivencia y reproducción.
 %
-Por otro lado, la propiedad menor nos ofrece un argumento para explicar la ventaja circunstancial que las variantes desertoras pueden obtener individualmente en el corto plazo y las crisis que su emergencia produce a nivel global en el largo plazo.
+Las mutaciones producidas durante la replicación diversificaron las formas de vida, y las tasas de crecimiento de las diferentes estrategias favorecieron a aquellas mejor adaptadas al ambiente.
+%
+Desde aquel momento hasta ahora la vida adquirió una extraordinaria complejidad.
 
-\subsection{Coevolución genético-cultual y transición epistémica mayor}
+%
 
-%Esta fuerza que lleva a las entidades capaces de autorreplicación a formar unidades cooperativas superiores se conoce en evolución como transiciones evolutivas mayores y podría ser llamada en probabilidad como \emph{transiciones epistémicas mayores}.
-%
-%En probabilidad, las transiciones epistémicas se realizan sin el intercambio de recursos entre hipótesis, la creencia a posteriori de cada hipótesis no es más que la creencia a priori no filtrada por la sorpresa.
-%
-%Sin embargo, la emergencia de la cultural en evolución puede ser vista como una transición epistémica mayor que tiene además la capacidad de explorar todas aquellas propiedades de los procesos de selección multiplicativos que requieren el intercambio de recursos para aumentan la tasa de crecimiento.
-%permitiendo la emergencia de cosmovisiones, como la ciencia, donde disciplinas altamente especializadas a dominios particulares cooperan mutuamente para la reproducción de la vida.
-% %
-% En el uso discrecional que le damos a la teoría de la probabilidad, introducimos esta propiedad como si fuera una regla implícita, que es en realidad la capacidad de resolver el problema intercambiar en cada caso el modelos que usamos.
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.65\textwidth}
+    \includegraphics[width=\linewidth]{static/biomassBarOn.png}
+    \end{subfigure}
+    \caption{
+	Distribución de la biomasa en la Tierra estimada por Bar-On et al.~\cite{barOn2018-biomass}.
+    }
+    \label{fig:biomass}
+\end{figure}
 
 % Parrafo
 
-
-En la historia del ser humano, la cooperación epistémica por transmisión de conocimiento entre individuos, tuvo un efecto positivo radical para nuestra especie.
-%permitió la emergencia de cosmovisiones, como la ciencia y la cultura, donde paradigmas altamente especializados en dominios particulares coexisten.
+La complejidad actual de la vida es consecuencia de una serie de \emph{transiciones evolutivas mayores} en las que entidades capaces de autorreplicación luego de la transición pasan a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions} (figura \ref{fig:trans}).
 %
+De hecho, nuestra propia vida depende de varios niveles de cooperación con especialización heterogénea, sin los cuales no somos capaces de sobrevivir: la unión de nuestras células con las mitocondrias y la emergencia de la diferenciación celular; nuestro organismo multicelular y la emergencia de los órganos; nuestra sociedad y la emergencia de los roles y grupos; la coexistencia entre especies y la emergencia de los ecosistemas.
+%
+%La simbiosis entre entre plantas y hongos micorrízicos arbusculares (AM) es el mutualismo (cooperación entre especies) más extendida del mundo.
+% %
+% La gran mayoría de las plantas terrestres forman estas interacciones.
+% %
+% Las plantas suministran carbohidratos esenciales para la supervivencia y el crecimiento de los hongos AM \cite{parniske2008-arbuscularMycorrhiza}.
+% %
+% Y los hongos AM proporcionan a sus plantas hospedadoras nutrientes minerales, como fósforo o nitrógeno, y otros beneficios como protección contra el estrés biótico (patógenos y herbívoros) y abiótico (por ejemplo, sequía)~\cite{smith2010-arbuscularMycorrhizas}.
+% %
+% % Parrafo
+% Esta asociación evolucionó mucho antes que los mutualismos animales, y habría sido una pieza clave para el poblamiento de las plantas en la tierra.
+% %
+% A diferencia de las economías humanas, que dependen de la cognición para tomar decisiones, los comerciantes de este mercado subterráneo regatean, piden prestado y hacen trampas, todo ello sin pensar.
+% %
+% En esta relación, ambas partes interactúan con múltiples socios y la cooperación se estabiliza en ambas direcciones a través de recompensas mutuas por servicios de mayor calidad~\cite{kiers2011-reciprocalRewards}.
+%
+\begin{figure}[ht!]
+\centering
+    \centering
+  \scalebox{1}{
+  \tikz{
+      \node[accion] (i1) {} ;
+      \node[accion, yshift=0.6cm, xshift=0.4cm] (i2) {} ;
+      \node[accion, yshift=0.6cm, xshift=-0.4cm] (i3) {} ;
+      \node[const, yshift=0.3cm, xshift=0.4cm] (i) {};
+
+      \node[const, yshift=-0.65cm] (ni) {$\hfrac{\text{Individuos}}{\text{solitarios}}$};
+
+      \node[const, yshift=0.65cm, xshift=1.5cm] (m1) {$\hfrac{\text{Formación}}{\text{de grupos}}$};
+
+      \node[const, right=of i, xshift=2cm] (c) {};
+      \node[accion, below=of c, yshift=0.35cm, xshift=0.4cm] (c1) {} ;
+      \node[accion, above=of c, yshift=-0.35cm, xshift=0.6cm] (c2) {} ;
+      \node[accion, above=of c, yshift=-0.35cm, xshift=0.2cm] (c3) {} ;
+      \node[const, right=of c, xshift=0.6cm] (cc) {};
+
+      \node[const, right=of ni, xshift=1.3cm] (nc) {$\hfrac{\text{Grupos}}{\text{cooperativos}}$};
+
+      \node[const, right=of m1, xshift=1.2cm] (m2) {$\hfrac{\text{Transición}}{\text{mayor}}$};
+
+      \node[const, right=of cc, xshift=2cm] (t) {};
+      \node[accion, below=of t, yshift=0.35cm, xshift=0.4cm] (t1) {} ;
+      \node[accion, above=of t, yshift=-0.35cm, xshift=0.6cm] (t2) {} ;
+      \node[accion, above=of t, yshift=-0.35cm, xshift=0.2cm] (t3) {} ;
+
+      \node[const, right=of nc, xshift=1.1cm] (nt) {$\hfrac{\text{Unidad de}}{\text{nivel superior}}$};
+
+      \edge {i} {c};
+      \edge {cc} {t};
+
+      \plate {transition} {(t1)(t2)(t3)} {}; %
+      }
+  }
+
+  \vspace{0.2cm}
+
+ \begin{subfigure}[b]{0.25\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/cloroplastos.jpg}
+  \caption*{\En{Eukaryotic cells}\Es{Células eucariota}}
+  \end{subfigure}
+ \begin{subfigure}[b]{0.23\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/fotosintesis.jpg}
+  \caption*{\En{Organisms}\Es{Organismos}}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.235\textwidth} \centering
+ \includegraphics[width=\linewidth]{static/hormigas2.jpg}
+  \caption*{\En{Societies}\Es{Sociedades}}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.235\textwidth} \centering
+ \includegraphics[width=\linewidth]{static/tsimane2.jpg}
+  \caption*{\En{Ecosystems}\Es{Ecosistemas}}
+ \end{subfigure}
+ \caption{
+Esquema de las transiciones evolutivas mayores (arriba) y ejemplos de transiciones evolutivas mayores (abajo).
+ }
+ \label{fig:trans}
+ \vspace{-0.3cm}
+ \end{figure}
+¿Cómo se explica esta tendencia de la vida a favor de la diversificación y la especialización heterogénea cooperativa?
+
+% Parrafo
+
+La \emph{propiedad mayor} nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones evolutivas mayores} a lo largo de la historia de la vida.
+%
+En la sección anterior hemos visto que en los procesos de selección epistémico-evolutivos existe una ventaja a favor de las variantes que reducen las fluctuaciones por diversificación o por especialización heterogénea cooperativa.
+%
+Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), a largo plazo afectan negativamente su propia tasa de crecimiento debido a que su propio comportamiento aumenta las fluctuaciones de los cooperadores de quienes dependen, aumentando al así sus propias fluctuaciones (\emph{propiedad mayor}).
+
+% Parrafo
+
+% Pero también permite explicar la emergencia de \emph{transiciones epistémicas mayores} en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
+% %
+% Por otro lado, la propiedad menor nos ofrece un argumento para explicar la ventaja circunstancial que las variantes desertoras pueden obtener individualmente en el corto plazo y las crisis que su emergencia produce a nivel global en el largo plazo.
+%
+%
+% De forma similar, la propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones epistémicas mayores} en la historia del conocimiento.
+%
+
+De forma similar, la evaluación de hipótesis en la teoría de la probabilidad también produce la emergencia de unidades cooperativas de nivel superior: las hipótesis individuales forman variables, las variables forman modelos causales y los sistemas de modelos causales forman teorías.
+%
+Esto ocurre gracias a que las hipótesis de nivel superior reducen las fluctuaciones realizando las predicciones con el aporte de todas las hipótesis de nivel inferior que la componen.
+%
+Por la regla de la suma, la predicción que hace un modelo del próximo dato es
+%
+\begin{equation*}
+\begin{split}
+P(d_{n+1}|d_1 \dots d_n, \text{Model\Es{o}}) = \sum^{\text{\En{Hypothesis}\Es{Hipótesis}}}_h P(d_{n+1}| d_1 \dots d_n, h, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
+%\\ P(d_{n+1}|d_1 \dots d_n, \text{\En{Theory}\Es{Teoría}}) = \sum^{\text{\En{Models}\Es{Modelos}}}_m P(d_{n+1}| h, d_1 \dots d_n, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
+\end{split}
+\end{equation*}
+%
+Al realizar la predicción con la contribución de todas las hipótesis de nivel inferior, los modelos reducen las posibilidades de introducir valores extremos (un cero) en los procesos de selección multiplicativo a los que están sujetos (ecuación \ref{eq:funcion_de_costo}), produciendo mejores resultados que los que se obtendrían con una de ellas individualmente.
+
+% Parrafo
+
+La emergencia de la cultural en evolución puede ser vista como una \emph{transición epistémica mayor}.
+%
+En la historia del ser humano la cooperación epistémica, por transmisión de conocimiento entre individuos, tuvo un efecto positivo radical para nuestra especie: antes estuvimos en grave peligro de extinción, luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra.
+%
+Veremos que los eventos históricos en los que se produjeron pérdidas masivas de diversidad cultural estuvieron seguidos por graves crisis socio-ecológicas.
+%
+Actualmente, a pesar de todos los avances, la ciencia metropolitana sigue siendo incapaz de compensar la masiva pérdida de los conocimientos milenarios producida durante la colonial-modernidad, y la crisis ecológica actual no deja de profundizarse.
+%
+En definitiva, la ventaja a favor de la diversidad y la cooperación no es solo teórica, es fundamentalmente práctica.
+
+
+\subsection{Coevolución genético-cultual y transición epistémica mayor}
+
 Antes de la transición cultural, estábamos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano, respecto incluso de los homininos más cercanos~\cite{hrdy2009-mothers}.
 %
 Pero cuando el conocimiento, que antes debía ser redescubierto individualmente, pasó a ser un recurso común transmitido de generación en generación, comenzamos a ser capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.
@@ -1058,11 +1044,11 @@ Organizados en pequeñas sociedades nómadas, logramos llegar caminando de Áfri
 
 La cultura es información no-genética que se transmite por vía social, de un individuo a otro.
 %
-Estos sistemas de procesamiento de información distribuida no son exclusivo de los seres humanos.
+Estos sistemas de procesamiento de información distribuida no son exclusivos de los seres humanos.
 % %
 Muchos animales son capaces de transmitir información por vía social, lo que produce la emergencia de tradiciones simples.
 % %
-En algunas como las ballenas, delfines, primates y aves las tradiciones pueden ser bastante complejas, llegando a desarrollar un conjunto amplio de conocimientos que se adquieren primero por experiencia individual y luego son imitados por el resto~\cite{aplin2022-birdsCulture}.
+En algunas como las ballenas, delfines, primates y aves, las tradiciones pueden ser bastante complejas, llegando a desarrollar un conjunto amplio de conocimientos que se adquieren primero por experiencia individual y luego son imitados por el resto~\cite{aplin2022-birdsCulture}.
 %
 Todas ellas, sin embargo, son manifiestamente más simples que la cultura humana.
 
@@ -1082,7 +1068,7 @@ Entonces, dado que la cultura ha hecho a los humanos extraordinariamente exitoso
 
 Entre los hominoides, los humanos se distinguen por una serie de rasgos que incluyen prolongados períodos juveniles, intervalos cortos entre nacimientos y una prolongada vida posreproductiva~\cite{Jones2011}.
 %
-Para explicar la integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas ha sido necesario un proceso extenso de coevoluci\'on gen\'etico-cultural.
+Para explicar la integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas ha sido necesario un proceso extenso de \emph{coevoluci\'on gen\'etico-cultural}.
 %
 %Es un error creer que primero evolucionó la naturaleza humana y luego desarrollamos la cultura.
 %
@@ -1116,19 +1102,49 @@ En las culturas humanas, la acumulación de innovaciones produce un repertorio t
 
 % Parrafo
 
+En la breve historia del ser humano, la experiencia acumulada por comunidades alrededor del mundo condujo, de forma independiente, a una obligación universal de dar y de recibir~\cite{mauss1923-leDon}.
+%
+La ``obligación de reciprocidad'' se refiere a un fenómeno antropológico observado en todas las culturas alrededor del mundo mediante el cual las personas produce una necesidad de devolver favores, servicios o regalos recibidos.
+%
+Esta práctica es esencial para el sostenimiento de todos los sistemas económicos, desde las sociedades cazadoras recolectoras hasta las sociedades capitalistas.
+
+% Parrafo
+
+La teor\'ia de la probabilidad nace en 1648 justamente de un debate respecto del \emph{precio justo} en contextos de incertidumbre.
+%
+Pascal y Fermat concluyeron que para que el intercambio sea justo el valor de los favores debe ser inversamente proporcional a la probabilidad de hacer el favor.
+%
+Ofrecer pagos inversos a la probabilidad ($Q_x = p_x^{-1}$) tiene la propiedad de garantizar la coexistencia entre una casa de apuestas y un conjunto infinito de individuos cooperativos.
+%
+Sin importar la apuesta $b$ que se elija, la tasa de crecimiento de un grupo cooperativo de tamaño infinito es siempre 1.
+%
+En caso de que existan dos opciones $A$ y $B$, la tasa de crecimiento cooperativa es
+\begin{equation}
+\cancel{p_{\text{A}}} \,  \cancel{Q^*_{\text{A}}} \, b + \bcancel{p_{\text{B}}} \, \bcancel{Q^*_{\text{B}}}  \, (1-b) = b + (1-b)  = 1
+\end{equation}
+
+% Parrafo
+
 Las tecnolog\'ias de reciprocidad ecol\'ogica produjeron la aparici\'on independiente de la domesticaci\'on de especies animales y vegetales, el desarrollo de caracteres gen\'eticos que surgen como resultado de una interacci\'on simbi\'otica prolongada entre las especies.
 %
-La agricultura surgi\'o de forma paralela en los seis grandes sistemas geogr\'aficos de la tierra en África subsahariana, Oriente medio, China, Oceanía, América del Norte y América del Sur (puntos rojos de la figura~\ref{fig:poblamiento}).
+Así es cómo la agricultura surgi\'o de forma paralela e independiente en los seis grandes sistemas geogr\'aficos de la tierra: en África subsahariana, Oriente medio, China, Oceanía, América del Norte y América del Sur (puntos rojos de la figura~\ref{fig:poblamiento}).
 %
 All\'i se desarrollaron los principales centros poblacionales de la humanidad.
 % %
 El aumento de la poblaci\'on intensificó aun más los procesos de evolución cultural acumulativa, haciendo de estas regiones los principales centros tecnológicos de la humanidad.
 
+% Parrafo
+
+Los estudios comparados muestran que las instituciones capaces de administrar exitosamente los bienes comunes y establecer relaciones de largo plazo con los sistemas ecológicos emergen en comunidades autónomas con fuerte arraigo local.
+%
+Se han detectado una serie de características comunes a todas ellas tales como: la mayoría de los individuos involucrados en el sistema ecológico están autorizados a participar en la elaboración y modificación de sus normas; la supervisión de los comportamientos está a cargo de sus miembros; las sanciones son graduales y bajas~\cite{ ostrom2010}.
+%
+El elementos que garantiza la supervivencia de estas sociedades en el tiempo es justamente el desarrollo de tecnologías de reciprocidad que tienen la función de re-activar los vínculos comunitarios mediante ritos (festivos o coercitivos) de intercambios~\cite{zaffaroni2013-cuestionCriminal, segato2016-guerraContraLasMujeres}.
 
 \begin{figure}[ht!]
 \centering
  \begin{subfigure}[b]{0.145\textwidth} \centering
-  \includegraphics[width=\linewidth]{figures/agricultura.pdf}
+  \includegraphics[angle=90,origin=c,width=\linewidth]{figures/agricultura.pdf}
   \caption{}
   \label{fig:poblamiento}
   \end{subfigure}
@@ -1189,27 +1205,21 @@ Luego de 60 a\~nos de investigaciones, Needham se ve obligado inviertir la pregu
 Why, between the -1th century and the 15th century, was Chinese civilisation much \emph{more} efficient than occidental in gaining natural knowledge and in applying it to practical human needs?~\cite{needham2004-generalConclusionsAndReflections}
 \end{quotation}
 
-\subsection{Coyuntura colonial-moderna}
+% Parrafo
 
 Desde Hegel hasta la fecha, las explicaciones euroc\'entricas intentan explicar la prosperidad actual de occidente a trav\'es de una causa interna: la ``\'etica protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de Jos\'e Luis Romero~\cite{romero1967-revolucionBurguesa}, o m\'as recientemente el ``sistema de parentesco'' de Joseph Henrich~\cite{henrich2020-weirdest}.
 %
 La paradoja que no puede responder es c\'omo una sociedad sumida en un proceso de involuci\'on cultural \'unico, como la sociedad feudal de la ``edad media'', pudo generar de repente el extraordinario proceso de desarrollo cient\'ifico y t\'ecnico de la modernidad.
 
-% Parrafo
+\subsection{Coyuntura colonial-moderna}
 
 As\'i como la cooperación favorece los proceso de innovaci\'on y acumulaci\'on cultural, el aislamiento está asociado a p\'erdidas masivas de informaci\'on cultural.
 %
 El ejemplo más paradigm\'atico es el aislamiento total que ocurrió con la separaci\'on de Tasmania del continente Australiano por la subida del nivel del mar a comienzos del Holonceno.
 %
-La evidencia indica que las sociedades que permanecieron en la isla de Tasmania perdieron gran parte de su cultura tecnol\'ogica.
-%
-La principal hip\'otesis sugiere que la reducci\'on del tama\~no efectivo de la poblaci\'on fue la causa de la p\'erdida cultural~\cite{Henrich2004}.
-%
-La capacidad de almacenamiento (e innovaci\'on) de tecnolog\'ias complejas requerir\'ia un tama\~no m\'inimo de la poblaci\'on, incluso en sociedades cazadoras-recolectoras.
-
 \begin{figure}[ht!]
   \centering
-  \begin{subfigure}[c]{0.45\textwidth}
+  \begin{subfigure}[c]{0.42\textwidth}
     \includegraphics[width=\textwidth]{static/tasmania.png}
     \caption{Tasmania}
     \label{fig:tasmania}
@@ -1219,10 +1229,16 @@ La capacidad de almacenamiento (e innovaci\'on) de tecnolog\'ias complejas reque
 %     \caption{Edad media}
 %     \label{fig:cisma}
 %   \end{subfigure}
-  \caption{Aislamiento}
+  \caption{Ejemplo paradigmático de aislamiento e involución cultural}
   \label{fig:aislamiento}
 \end{figure}
+La evidencia indica que las sociedades que permanecieron en la isla de Tasmania perdieron gran parte de su cultura tecnol\'ogica.
+%
+La principal hip\'otesis sugiere que la reducci\'on del tama\~no efectivo de la poblaci\'on fue la causa de la p\'erdida cultural~\cite{Henrich2004}.
+%
+La capacidad de almacenamiento (e innovaci\'on) de tecnolog\'ias complejas requerir\'ia un tama\~no m\'inimo de la poblaci\'on, incluso en sociedades cazadoras-recolectoras.
 
+% Parrafo
 
 De forma similar, la masiva destrucción de la diversidad cultural al interior del imperio Romano y el conflicto permanente con las sociedades vecinas, generó el aislamiento parcial de Europa occidental del sistema mundo, conduciéndola a contramano del resto del mundo a un largo proceso de involución cultural y de violencia interna conocido como ``Edad media''.
 %
@@ -1330,121 +1346,15 @@ En un mundo de comunidades debilitadas, se expande la cosmovisión individualist
 La ventaja a favor de la diversificación y la cooperación no es solo teórica, su ruptura tiene consecuencia para la vida y el conocimiento.
 %
 A pesar de todos los avances, la ciencia metropolitana no fue capaz de compensar la pérdida de conocimientos milenarios provocada por la colonial-modernidad, y como consecuencia de la masiva pérdida de la diversidad cultural global vivimos en la actualidad una grave crisis ecológica que no deja de profundizarse.
-
-
-\subsection{La obligación de reciprocidad como fenómeno universal}
-
-% Debido a que, en los procesos de selección epistémico-evolutivos, los impactos de las pérdidas son más fuertes que los de las ganancias, existe una ventaja a favor de las variantes (hipótesis o formas de vida) que reducen las fluctuaciones por diversificación y cooperación.
-% %
-% Si bien la deserción puede producir un beneficio individual a corto plazo (\emph{propiedad menor}), a largo plazo afecta negativamente su tasa de crecimiento debido a que su propio comportamiento aumenta las fluctuaciones de los cooperadores de quienes dependen, aumentando al así sus propias fluctuaciones (\emph{propiedad mayor}).
-%
-% % Parrafo
-%
-% De esta forma emergen y se estabilizan las relaciones de reciprocidad entre unidades vivas independientes primero, formando eventualmente unidades cooperativas indisolubles de nivel superior (transiciones evolutivas mayores).
-% %
-% Las unidades cooperativas se van agregando una sobre otra, siendo aparentemente más estable la dependencia mutua en los niveles inferiores (células, organismo multicelular) que en los niveles superiores (sociedades, ecosistemas).
-% %
-% Sin embargo, los mecanismos de reciprocidad son esenciales en todos los niveles de la vida.
-%
-% % Parrafo
-%
-% La simbiosis entre entre plantas y hongos micorrízicos arbusculares (AM) es el mutualismo (cooperación entre especies) más extendida del mundo.
-% %
-% La gran mayoría de las plantas terrestres forman estas interacciones.
-% %
-% Las plantas suministran carbohidratos esenciales para la supervivencia y el crecimiento de los hongos AM \cite{parniske2008-arbuscularMycorrhiza}.
-% %
-% Y los hongos AM proporcionan a sus plantas hospedadoras nutrientes minerales, como fósforo o nitrógeno, y otros beneficios como protección contra el estrés biótico (patógenos y herbívoros) y abiótico (por ejemplo, sequía)~\cite{smith2010-arbuscularMycorrhizas}.
-%
-% % Parrafo
-%
-% Esta asociación evolucionó mucho antes que los mutualismos entre insectos o vertebrados, y habría sido una pieza clave para el poblamiento de las plantas en la tierra, permitiendo la transferencia masiva de nutrientes a escala mundial.
-% %
-% A diferencia de las economías humanas, que dependen de la cognición para tomar decisiones, los comerciantes de este mercado subterráneo regatean, piden prestado y hacen trampas, todo ello sin pensar.
-% %
-% En esta relación, ambas partes interactúan con múltiples socios y la cooperación se estabiliza en ambas direcciones a través de recompensas mutuas por servicios de mayor calidad~\cite{kiers2011-reciprocalRewards}.
-%
-% % Parrafo
-
-En la breve historia del ser humano, la experiencia acumulada por comunidades alrededor del mundo condujo, de forma independiente, a una obligación universal de dar y de recibir~\cite{mauss1923-leDon}.
-%
-La ``obligación de reciprocidad'' se refiere a un fenómeno antropológico observado en todas las culturas alrededor del mundo mediante el cual las personas sienten la necesidad de devolver favores, servicios o regalos recibidos.
-%
-Esta práctica es esencial para mantener relaciones sociales y comunitarias equitativas y funcionales.
-
-% Parrafo
-
-La teor\'ia de la probabilidad nace en 1648 justamente de un debate respecto del \emph{precio justo} en contextos de incertidumbre.
-%
-El problema que analizaban Pascal y Fermat en sus cartas es equivalente al siguiente.
-%
-Tiramos dos veces la moneda.
-%
-Si sale seca $S$ en la primera y en la segunda, una persona (en rojo) le hace un favor a la otra (en azul).
-%
-En caso contrario, el favor se invierte.
-%
-¿Cu\'al es el valor justo de la reciprocidad en este contexto de incertidumbre?
-
-\begin{figure}[ht!]
-    \centering
-    \tikz{
-    \node[latent, draw=white, yshift=0.7cm, minimum size=0.1cm] (b0) {};
-    \node[latent,below=of b0,yshift=0.7cm, xshift=-1cm] (r1) {$S$};
-    \node[latent,below=of b0,yshift=0.7cm, xshift=1cm] (r2) {$C$};
-
-    \node[latent, below=of r1, draw=white, yshift=0.8cm, minimum size=0.1cm] (bc11) {};
-    \node[accion, below=of r2, draw=white, yshift=0cm, color=blue!70] (bc12) {};
-    \node[latent,below=of bc11,yshift=0.8cm, xshift=-0.5cm] (r1d2) {$S$};
-    \node[latent,below=of bc11,yshift=0.8cm, xshift=0.5cm] (r1d3) {$C$};
-
-    \node[accion,below=of r1d2,yshift=0cm, color=red!70] (br1d2) {};
-    \node[accion,below=of r1d3,yshift=0cm, color=blue!70] (br1d3) {};
-    \edge[-] {b0} {r1,r2};
-    \edge[-] {r1} {bc11};
-    \edge[-] {r2} {bc12};
-    \edge[-] {bc11} {r1d2,r1d3};
-    \edge[-] {r1d2} {br1d2};
-    \edge[-] {r1d3} {br1d3};
-    }
-    \caption{El problema del \emph{valor justo} que da inicio a la teor\'ia de la probabilidad}
-    \label{fig:pascal-fermat}
-\end{figure}
-
-La respuesta a la que arribaron Pascal y Fermat es que el valor de los favores tiene que ser inversamente proporcional a la probabilidad de hacer el favor.
-%
-Si la moneda es no sesgada, hay 1/4 de probabilidad de que salgan dos secas (terminal roja), 1/4 de que salga seca en la primera y cara en la segunda (terminal azul) y 1/2 de que salga cara en la primera (terminal azul).
-%
-Concluyeron que, como la probabilidad de que la persona azul haga un favor es 3/4, entonces la relación de favores debe ser de 3 a 1 para que el intercambio sea justo (si la persona roja hace favores por un valor equivalente a 3, la azul tiene que devolver los favores con un valor de 1).
-
-% Parrafo
-
-Por un lado, calcular la probabilidad de eventos mutuamente excluyentes como suma de sus probabilidades elementales constituye el axioma fundamental de Kolmogorov a partir del cual se suele montar toda la teoría de la probabilidad.
-%
-Por otro lado, ofrecer pagos inversos a la probabilidad ($Q^*_{\text{rojo}} = p_{\text{rojo}}^{-1} $, $Q^*_{\text{azul}} = (1-p_{\text{rojo}})^{-1}$) garantiza la coexistencia entre una casa de apuestas y un conjunto infinito de individuos cooperativos.
-%
-Sin importa $b$ que se elija, la tasa de crecimiento de un grupo cooperativo de tamaño infinito es siempre 1.
-\begin{equation}
-\cancel{p_{\text{rojo}}} \,  \cancel{Q^*_{\text{rojo}}} \, b + \bcancel{(1- p_{\text{rojo}})} \, \bcancel{Q^*_{\text{azul}}}  \, (1-b) = b + (1-b)  = 1
-\end{equation}
+% El remplazo repentino de estos sistemas culturales locales por instituciones externas, estatales o de mercado, que exhiben lógicas ``singulares y definitvas'', ha producido devastadoras consecuencias culturales y ecológicas~\cite{segato2013-colonialidad}.
+% % %
+Del mismo modo que seleccionar una única hipótesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposición de un único tipo de sociedad ha mostrado tener consecuencia ecológicas cada vez más negativas.
 
 % Parrafo
 
 Los estudios comparados muestran que las instituciones humanas capaces de administrar exitosamente los bienes comunes y establecer relaciones de largo plazo con los sistemas ecológicos emergen en comunidades autónomas con fuerte arraigo local.
 %
-Se han detectado una serie de características comunes a todas estas instituciones tales como que: la mayoría de los individuos involucrados en el sistema ecológico están autorizados a participar en la elaboración y modificación de sus normas; la supervisión de los comportamientos está a cargo de sus miembros; las sanciones son graduales y bajas~\cite{ ostrom2010}.
-%
-% Estos pueblos exhiben lógicas ``plurales y condicionales'' que fomentan la coexistencia con otras formas de vida, otros pueblos y otros conocimientos~\cite{segato2018-manifesto}.
-% %
-El elementos que garantiza su supervivencia en el tiempo es el desarrollo de tecnologías de reciprocidad que tienen la función de re-activar los vínculos comunitarios mediante ritos (festivos o coercitivos) de intercambios~\cite{zaffaroni2013-cuestionCriminal, segato2016-guerraContraLasMujeres}.
-% %
-En todos los casos, es indispensable una coexistencia intercomunitaria que reconozca las autonomías jurisdiccionales locales, para que se cada pueblo pueda desarrollar, a lo largo de su historia, su propio ordenamiento normativo, cultural y político.
-
-% Parrafo
-
-El remplazo repentino de estos sistemas culturales locales por instituciones externas, estatales o de mercado, que exhiben lógicas ``singulares y definitvas'', ha producido devastadoras consecuencias culturales y ecológicas~\cite{segato2013-colonialidad}.
-% %
-Del mismo modo que seleccionar una única hipótesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposición de un único tipo de sociedad ha mostrado tener consecuencia ecológicas cada vez más negativas.
+Por ello es indispensable una coexistencia intercomunitaria que reconozca las autonomías jurisdiccionales locales, para que se cada pueblo pueda desarrollar, a lo largo de su historia, su propio ordenamiento normativo, cultural y político.
 
 \section{Objetivos}
 
@@ -1630,25 +1540,25 @@ Allí encontramos, con el nuevo estimador, que la posici\'on de los individuos e
 \chapter{Metodología: incertidumbre e información.}
 
 
-La ciencia es una institución que tiene pretensión de verdad: alcanzar acuerdos intersubjetivos con validez universal.
-%
-Las ciencias formales (matemática, lógica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiomáticos cerrados.
-%
-Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas abiertos que contienen siempre algún grado de incertidumbre.
-%
-¿Es posible entonces alcanzar acuerdos intersubjetivos ("verdades") en las ciencias empíricas en las que es inevitable decir "no sé"? Sí.
-%
-Podemos evitar mentir: maximizando incertidumbre (no afirmar más de lo que se sabe) dada la información disponible (sin ocultar lo que sí se sabe)~\cite{Jaynes2003}.
+% La ciencia es una institución que tiene pretensión de verdad: alcanzar acuerdos intersubjetivos con validez universal.
+% %
+% Las ciencias formales (matemática, lógica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiomáticos cerrados.
+% %
+% Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas abiertos que contienen siempre algún grado de incertidumbre.
+% %
+% ¿Es posible entonces alcanzar acuerdos intersubjetivos ("verdades") en las ciencias empíricas en las que es inevitable decir "no sé"? Sí.
+% %
+% Podemos evitar mentir: maximizando incertidumbre (no afirmar más de lo que se sabe) dada la información disponible (sin ocultar lo que sí se sabe)~\cite{Jaynes2003}.
 
 % Parrafo
 
 Las reglas de la probabilidad se conocen desde finales del siglo 18 y desde entonces se las ha adoptado como sistema de razonamiento en todas las ciencias empíricas.
 %
-Estas reglas son conceptualmente intuitivas: preservar la creencia previa que sigue siendo compatible con los datos (regla del producto) y conservar la creencia durante su distribución y recuperación (regla de la suma).
+Estas reglas son conceptualmente intuitivas: preservar la creencia previa que sigue siendo compatible con los datos (regla del producto) y predecir con la contribución de todas las hipótesis (regla de la suma).
 %
-A lo largo de todos estos siglos, las reglas de la probabilidad han sido derivadas repetidas veces a partir de sistemas axiom\'aticos muy distintos entre sí~\cite{halpern2017}.
+A lo largo de todos estos siglos, las reglas de la probabilidad han sido derivadas repetidas veces a partir de sistemas axiom\'aticos distintos entre sí~\cite{halpern2017}.
 %
-Si bien en todo este tiempo no se ha propuesto tampoco nada mejor en términos prácticos, el costo computacional asociados a la evaluación de todo el espacio de hipótesis ha limitado en los hechos su campo de aplicación.
+Si bien en todo este tiempo no se ha propuesto nada mejor en términos prácticos, el costo computacional asociados a la evaluación de todo el espacio de hipótesis ha limitado en los hechos su campo de aplicación.
 %
 Por ello, a lo largo de la historia se fueron desarrollando técnicas para resolver este problema.
 
@@ -1658,11 +1568,11 @@ El primer ciclo de soluciones llega de la mano de física estadística, en la se
 %
 En esta época se desarrollan métodos analíticos para estimar la probabilidad de los microestados dada alguna información macro, como la energía, la temperatura, o algún promedio.
 %
-Conceptualmente se ha mostrado que las soluciones que ofrece la física estadísitica es equivalente a la solución que ofrece el enfoque bayesiano basado en el principio de indiferencia: maximizar incertidumbre dadas las restricciones, el modelo físico y el dato~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, jaynes2003-bookProbabilityTheory}.
+Conceptualmente se ha mostrado que las soluciones que ofrece la física estadística es equivalente a la solución que ofrece el enfoque bayesiano basado en el principio de indiferencia: maximizar incertidumbre dadas las restricciones, el modelo físico y el dato~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, jaynes2003-bookProbabilityTheory}.
 
 % Parrafo
 
-Durante el siglo 20, se desarrollan que seleccionan una única hipótesis mediante funciones de costo ad-hoc (e.g~como máxima verosimilutd).
+Durante el siglo 20, se desarrollan soluciones que seleccionan una única hipótesis mediante alguna función de costo ad-hoc (e.g~como máxima verosimilitud).
 %
 Estas aproximaciones puntuales, al evitar evaluar todo el espacio de hipótesis, permitieron en los hechos extender el campo de aplicaciones de la teoría de la probabilidad~\cite{friedman2001-elementsOfStatisticalLearning}.
 %
@@ -1688,7 +1598,7 @@ Por ello, antes de presentar los modelos básicos de estimación de habilidad, i
 
 La evaluación de modelos causales alternativos y la construcción de datos son dos tareas centrales a resolver en ciencias emp\'iricas.
 %
-Los métodos frecuentista no ofrecen soluciones a estos dos problemas.
+Los métodos frecuentistas no ofrecen soluciones a estos dos problemas.
 %
 Por ello, mostraremos cómo la aplicación estricta de las reglas de la probabilidad permiten: evaluar naturalmente modelos causales alternativos (secci\'on \ref{sec:modelos_alternativos}); y construir sistemas de información óptimos (datos) que sirvan como base emp\'irica para evaluar nuevas hip\'otesis (secci\'on \ref{sec:base_empirica_metodo}).
 % Parrafo
@@ -1704,22 +1614,20 @@ Las reglas de la probabilidad constituyen el principal sistema de razonamiento b
 %
 Estas reglas puede derivarse de principios filos\'oficos con validez intercultural.
 %
-En primer lugar, ``el principio de raz\'on suficiente'' es la base para el desarrollo de modelos causales.
-%
 El ``principio de integridad'' garantiza que no exista ni p\'erdida ni creaci\'on espontánea de creencias cuando la distribuimos entre las hip\'otesis alternativas.
 %
-El ``principio de indiferencia'' garantiza un primer acuerdo intersubjetivo en contextos de incertidumbre (máxima entrop\'ia dada informaci\'on disponible).
+El ``principio de no mentir'' garantiza un primer acuerdo intersubjetivo en contextos de incertidumbre (máxima incertidumbre dada informaci\'on disponible).
 %
-Finalmente, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservaci\'on de la creencia que que sigue siendo compatible con los datos de base emp\'irica.
+Finalmente, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservaci\'on de la creencia que sigue siendo compatible con los datos de base emp\'irica.
 
 \subsection{Incertidumbre}
 
-La idea de que todo lo que ocurre en la naturaleza tiene una causa previa que lo genera se conoce en la historia de la filosof\'ia como el principio de \emph{raz\'on suficiente}.
+La idea de que \emph{todo} lo que ocurre en la naturaleza tiene una causa previa que lo genera se conoce en la historia de la filosof\'ia como el principio de \emph{raz\'on suficiente} y ha estado presente en los debates que anteceden el desarrollo de la teoría de la probabilidad.
 %
 %Leibniz (1646-1716),  \cite{Leibniz and China: A Commerce of Light}
 %La Monadolog\'ia (escrita en franc\'es en 1714 y publicada en alem\'an en 1720)  \cite{leibniz1714-monadologie}.
 %
-Esta idea parece estar justificada en la imposibilidad de crear azar, de encontrar un ``método efectivo'' que genere a veces un resultado y a veces otro dadas exactamente las mismas condiciones iniciales.
+Esta idea parece está relacionada con la imposibilidad de crear azar, de crear un ``método efectivo'' capaz de generar a veces un resultado y a veces otro dadas exactamente las mismas condiciones iniciales.
 %
 Antes del desarrollo de las ciencias de la computación existía una intuición respecto de su imposibilidad.
 
@@ -1727,9 +1635,9 @@ Antes del desarrollo de las ciencias de la computación existía una intuición 
 
 En teor\'ia de la computabilidad, la tesis de Church-Turing afirma que toda funci\'on sobre los n\'umeros naturales puede ser calculada por un ``m\'etodo efectivo'' si y s\'olo si es computable por una m\'aquina de Turing.
 %
-Debido a que todos las definiciones alternativas del concepto  de ``m\'etodo efectivo'' resultaron ser equivalentes a una maquina de Turing, actualmente se supone que la hip\'otesis Church-Turing es cierta.
+Debido a que todos las definiciones alternativas del concepto de ``m\'etodo efectivo'' resultaron ser equivalentes a una maquina de Turing, actualmente se supone que la hip\'otesis Church-Turing es cierta.
 %
-La imposibilidad de crear números aleatorios está determinada por la definición misma de función, $f(x) = y$, pues las mismas condiciones inciailes $x$, luego de aplicado un ``método efectivo'' $f$, debe producir siempre el mismo resultado $y$.
+La imposibilidad de crear números aleatorios está determinada por la definición misma de función, $f(x) = y$, pues las mismas condiciones iniciales $x$, luego de aplicado un ``método efectivo'' $f$, debe producir siempre el mismo resultado $y$.
 
 % Parrafo
 
@@ -1838,9 +1746,7 @@ La imposibilidad de determinar si estamos en presencia de \emph{exactamente} las
 
 % Parrafo
 
-Entonces, un posible origen de la incertidumbre puede ser la sensibilidad a las condiciones iniciales de una naturaleza puramente causal.
-%
-Sin embargo, desde las ciencias sociales y la f\'isica cu\'antica se suele afirmar que el mundo no tiene forma de funci\'on: que incluso conociendo las condiciones iniciales con precisi\'on infinita el mundo no puede describirse mediante una funci\'on precisa.
+Si bien un posible origen de la incertidumbre puede ser la sensibilidad a las condiciones iniciales de una naturaleza puramente causal, desde las ciencias sociales y la f\'isica cu\'antica se suele afirmar que el mundo no tiene forma de funci\'on: que incluso conociendo las condiciones iniciales con precisi\'on infinita el mundo no puede describirse mediante una funci\'on precisa.
 %
 Por ejemplo, el concepto de libre albedr\'io de las ciencias sociales afirma que una persona expuesta ante un estado del universo determinado, bajo exactamente las mismas condiciones iniciales, tiene todav\'ia la capacidad de elegir una acci\'on.
 

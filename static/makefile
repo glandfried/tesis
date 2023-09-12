@@ -1,4 +1,7 @@
-all: logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png betweenness-centrality-150-partidas-hist.pdf
+all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf
+
+biomassBarOn.png:
+	wget https://raw.githubusercontent.com/glandfried/images/master/biomassBarOn.png
 
 logo.png:
 	wget https://raw.githubusercontent.com/glandfried/images/master/logos/pEQb.png -O logo.png
@@ -51,12 +54,13 @@ bali-offerings.jpg:
 verdadesEmpiricas.png:
 	wget https://raw.githubusercontent.com/glandfried/images/master/verdadesEmpiricas.png
 
-Qulla_Suyu.svg:
+whipala.png:
 	wget https://raw.githubusercontent.com/glandfried/images/master/Qulla_Suyu.svg
-
-whipala.png: Qulla_Suyu.svg
 	convert -density 1200 -resize 1200x1200 Qulla_Suyu.svg whipala.png
 	rm Qulla_Suyu.svg
+
+madre-chimpance.jpg:
+	wget https://raw.githubusercontent.com/glandfried/images/master/madre-chimpance.jpg
 
 betweenness-centrality-150-partidas-hist.pdf:
 	wget https://github.com/glandfried/cultural-centrality/releases/download/doc.1.0.1/static.zip
