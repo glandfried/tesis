@@ -2509,13 +2509,13 @@ En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes de
 % \underbrace{P(\text{Hip\'otesis }|\text{ Datos})}_{\text{\scriptsize Posteriori}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis})}^{\text{\scriptsize Priori}} }{\underbrace{P(\text{Datos})}_{\text{\scriptsize Evidencia}}}
 % \end{equation*}
 %
-\begin{equation*}
+\begin{equation}\label{eq:teorema_bayes}
 \underbrace{P(\text{Hip\'otesis }|\text{ Datos, Modelo})}_{\text{\scriptsize Posterior}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis, Modelo})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis }|\text{ Modelo})}^{\text{\scriptsize Prior}} }{\underbrace{P(\text{Datos }|\text{ Modelo})}_{\text{\scriptsize Evidencia}}}
-\end{equation*}
+\end{equation}
 %
 Los diferentes factores del teorema de Bayes han recibido nombres a lo largo de la historia, que revisemos a continuaci\'on.
 
-\subsection{Prior}
+\subsubsection{Prior}
 
 El \emph{prior} es la distribuci\'on de creencia inicial de las hip\'otesis dado el modelo causal antes de ver los datos.
 %
@@ -2525,7 +2525,7 @@ El enfoque ``frecuentista'' de la teor\'ia de la probabilidad, al rechazar todo 
 %
 Como consecuencia, en vez de ofrecer distribuciones de probabilidad sobre todo el espacio de hip\'otesis, este enfoque suele seleccionar una \'unica hip\'otesis (estimaci\'on puntual) en base a funciones de costo ad-hoc, siendo las m\'as com\'un la maximizaci\'on de la verosimilitud.
 
-\subsection{Verosimilitud}
+\subsubsection{Verosimilitud}
 
 La \emph{verosimilitud} es la predicci\'on del dato observado cuando suponemos que la hip\'otesis que estamos evaluando es cierta.
 %
@@ -2591,7 +2591,7 @@ Si el regalo est\'a en la caja $r=2$, la creencia a priori de que la caja se\~na
 %
 Y si el regalo est\'a en la caja $r=3$, la creencia a priori de que la caja se\~nalada sea la $s=2$ es $1$.
 
-\subsection{Posterior}
+\subsubsection{Posterior}
 
 En la secci\'on \emph{\nameref{sec:principio_choerencia}} vimos que la nueva creencia no es m\'as que la creencia previa que sigue siendo compatible con el dato.
 %
@@ -2628,7 +2628,7 @@ En ese caso, como la predicci\'on del dato observado es $1$, toda la creencia pr
 
 En inferencia Bayesiana entonces, el complemento de la verosimilitud (la sorpresa) funciona como el filtro de las creencias previas.
 
-\subsection{Evidencia}
+\subsubsection{Evidencia}
 
 De forma similar a la verosimilitud, la evidencia es una predicci\'on a priori del dato observado, pero que est\'a hecha con la contribuci\'on de todas las hip\'otesis.
 %
@@ -2654,7 +2654,290 @@ Lo que ya hab\'ia sido calculado previamente en las marginales de la tabla \ref{
 
 % Parrafo
 
-La evidencia ser\'a de inter\'es cuando queramos evaluar modelos causales alternativos (ver secci\'on \ref{sec:modelos_alternativos}).
+La evidencia ser\'a de inter\'es cuando queramos evaluar modelos causales alternativos.
+
+
+\subsection{Evaluaci\'on de modelos alternativos}\label{sec:modelos_alternativos}
+
+Los modelos causales tambi\'en son hip\'otesis, y por lo tanto, pueden ser evaluadas calculando la  distribución de creencias honesta dados los datos.
+%
+Usando el teorema de Bayes, la probabilidad de un modelo es
+%
+\begin{equation}\label{eq:p_modelo_|_datos}
+ P(\text{Model\es{o}}|\text{Dat\en{a}\es{os}}) = \frac{\overbrace{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}})}^{\text{Evidencia}}P(\text{Model\es{o}})}{P(\text{Dat\en{a}\es{os}})}
+\end{equation}
+%
+La verosimilitud de los modelos es lo que antes vimos como la evidencia, el denominador del posterior de las hip\'otesis de un modelo (ecuación \ref{eq:teorema_bayes}).
+%
+Recién hemos visto que, por la regla de la suma, la evidencia es la predicci\'on a priori del dato observado con la contribuci\'on de todas las hip\'otesis.
+%
+Pero además, por la regla del producto, podemos expresar la evidencia conjunta de muchos datos como una productoria de las predicciones a priori
+%
+\begin{equation}
+\begin{split}
+P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots
+\end{split}
+\end{equation}
+%
+La probabilidad conjunta de todos los datos dado el modelo es igual a la probabilidad del primer dato $d_1$ dado el modelo, por la probabilidad del segundo dato $d_2|d_1$ dado el primero y el modelo, y as\'i sucesivamente.
+%
+Notar que si alguna de las predicciones es $0$, toda la productoria se anula.
+
+% Parrafo
+
+El denominador de la ecuaci\'on \ref{eq:p_modelo_|_datos} es la predicci\'on a priori del dato observado con la contribuci\'on de todos los modelos (y todas sus hip\'otesis).
+%
+Cuando no conocemos el espacio completo de modelos alternativos, no vamos a poder computarla, pero al menos vamos a poder comparar la probabilidad relativa entre modelos.
+%
+ \begin{equation}
+\begin{split}
+ \frac{P(\text{Modelo A}|\text{Datos})}{P(\text{Modelo B}|\text{Datos})} = \frac{P(\text{Data}|\text{Modelo A})\cancel{P(\text{Modelo A})}}{P(\text{Data}|\text{Modelo B})\cancel{P(\text{Modelo B })}}
+\end{split}
+\end{equation}
+%
+Cuando el prior de ambos modelos es igual, la probabilidad relativa entre modelos depende de sus predicciones a priori (la evidencia).
+%
+A esta expresi\'on se la conoce como Bayes Factor.
+%
+Expresada en escala logar\'itmica, esta expresi\'on se vuelva sim\'etrica (dar vuelta el numerador y en el denominador solo modifica el signo) y representa la diferencia en entre modelos en \'ordenes de magnitud.
+
+% Parrafo
+
+En el siguiente ejemplo haremos evaluación de los modelos vistos durante este cap\'itulo.
+%
+Para ello generaremos datos a partir del modelo B (Monty Hall), eligiendo repetidas veces la posición del regalo $r$ al azar y luego la pista $s$ de modo tal que $s\neq r$ y $s\neq c = 1$.
+%
+Luego, le mostremos los datos a los modelos de a uno, primero la pista y despu\'es la posici\'on real del regalo, reptidas veces.
+
+% Parrafo
+
+Las predicción que hace el modelo A de los datos va a ser siempre la misma sin importar qué veamos, debido a que siempre predice la pista con $P(s|M_A) = 1/3$ y el regalo con $P(r|s,M_A) = 1/2$.
+%
+El modelo B también predice la pista con la misma probabilidad $P(s|M_B)=1/2$, pues no habrá en los datos generados $s=1$.
+%
+En cambio, las predicciones que hace el modelo B sobre la posición del regalo es distinta según si el reaglo está en la caja elegida o no (lo que ocurre una de cada tres veces).
+%
+\begin{lstlisting}[backgroundcolor=\color{all}]
+regaloEn1 = [ rand(1:3) == 1 ? 1 : 0 for _ in 1:16]
+evidencia_A = cumprod([(1/3)*(1/2) for _ in regaloEn1])
+evidencia_B = cumprod([(1/2)*( (1/3)^(r1)*(2/3)^(1-r1) ) for r1 in regaloEn1])
+\end{lstlisting}
+%
+Tomamos la productoria acumulada para mostrar gr\'aficamente c\'omo se actualizan las probabilidades a medida que observamos datos nuevos (Figura~\ref{fig:monty_hall_selection}).
+%
+Considerando priors iguales, la probabilidad de los modelos es,
+%
+\begin{lstlisting}[backgroundcolor=\color{all}]
+prior = 1/2
+p_datos = (evidencia_A .* prior) .+ (evidencia_B .* prior)
+p_modelo_A = evidencia_A .* prior ./ p_datos
+p_modelo_B = evidencia_B .* prior ./ p_datos
+\end{lstlisting}
+%
+R\'apidamente, con menos de 16 observaciones, es casi seguro que el modelo causal B es el que representa el que mejor captura el comportamiento de la naturaleza.
+%
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{figures/monty_hall_selection.pdf}
+    \end{subfigure}
+    \caption{
+    Selecci\'on de modelos alternativos
+    }
+    \label{fig:monty_hall_selection}
+\end{figure}
+%
+Este mismo m\'etodo ser\'a usado en para evaluar el modelo de estimaci\'on de habilidad que utilizaremos para analizar datos de comunidades virtuales.
+
+\subsection{El costo computacional de las reglas de la probabilidad}
+
+El problema histórico para la aplicación estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluación completa de todo el espacio de hipótesis.
+%
+En modelos discretros, por ejemplo, el tamaño de la distribución conjunta crece de forma exponencial en función de la cantidad de variable $n$ y la cantidad de estados $e$ que pueden adquirir las variables $e^n-1$.
+%
+En modelos continuos, la imposibilidad de resolver las integrales ha sido un serio obstáculo trambién.
+%
+Incluso en los casos donde se pueden resolver las integrales, como en el caso de los modelos lineales con priors conjugados, la necesidad de invertir matrices ha impedido la evaluación completa del espacio de hipótesis hasta las vísperas del siglo 21.
+
+% Parrafo
+
+Ante esta dificultad, durante el siglo 20 se propusieron una serie de técnicas que buscaban evitar el costo computacional de la aplicación estricta de las reglas de la probabilidad.
+%
+Veamos por ejemplo qué ocurre con el modelo lineal (figura~\ref{fig:modelo_lineal}).
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[c]{0.45\textwidth}
+      \begin{equation*}
+      \begin{split}
+      p(y | x, \bm{w}, \beta ) &= \N(y \,|\, w_0 + w_1 x + w_2 x^2, \beta^2) \\[0cm]
+      p(w_i) &= \N(w_i \,|\, 0, \sigma_{i}^2) \\[0cm]
+      \end{split}
+      \end{equation*}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.45\textwidth}
+    \centering
+    \tikz{
+
+    \node[latent, fill=black!100, minimum size=2pt] (x) {} ; %
+    \node[const, right=of x] (c_x) {$x_i$};
+    \node[latent, fill=black!20, yshift=-1.5cm] (t) {$y_i$} ; %
+    \node[latent, fill=black!100, yshift=-1.5cm , xshift=-2cm,minimum size=2pt] (beta)
+    {} ; %
+    \node[const, above=of beta] (c_beta) {$\beta$};
+    \node[latent, fill=black!0, yshift=-1.5cm, xshift=2cm] (w) {$\bm{w}$};
+    \node[latent, fill=black!100, xshift=2cm, minimum size=2pt] (alpha) {} ; %
+    \node[const, right=of alpha] (c_alpha) {$\sigma$};
+
+    \edge {x,beta,w} {t};
+    \edge {alpha} {w};
+
+    \node[invisible, fill=black!0, minimum size=0pt, xshift=0.52cm] (data_inv) {} ; %
+
+    \plate {no} {(x)(t)(data_inv)} {$i: $ Datos}; %
+    }
+    \end{subfigure}
+    \caption{Modelo lineal con priors conjugados. La placa con subíndice ``$i:\text{ Datos}$'' representa el plegamiento de muchas variable $y_i$.}
+    \label{fig:modelo_lineal}
+\end{figure}
+%
+En el modelo linea, las dimensiones del espacio de hipótesis está determinado por la cantidad de parámetros $w$.
+
+% Parrafo
+
+Una de las técnicas más extendidas para evitar el costo computacional asociado a la evaluación completa del espacio de hipótesis consiste en seleccionar una única hipótesis en base a algún criterio ad-hoc, como por ejemplo maximizar la verosimilitud.
+%
+\begin{equation*}
+ \underset{\bm{w}}{\text{ max }} P(\bm{t} | \bm{x}, \bm{w}, \beta) = \underset{\bm{w}}{\text{ min }} \sum_{i=1}^{n}  (t_i - \bm{w}^T\bm{\phi}(\bm{x}_i))^2
+\end{equation*}
+
+% Parrafo
+
+Si bien esto permitió durante el siglo 20 ajustar funciones lineas a los datos, este enfoque introduce una serie de problemas.
+%
+Supongamos que tenemos un conjunto de datos generados a partir de una función objetivo sinoidal que desconocemos, y queremos elegir el modelo lineal que mejor la ajusta.
+%
+
+
+\begin{figure}[ht!]
+  \begin{subfigure}[t]{0.42\textwidth}
+  \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_OLS.pdf}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.42\textwidth}
+  \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_maxLikelihood.pdf}
+  \end{subfigure}
+  \caption{$\N(y \,| \, \text{sen}(x), \beta^2) \ \ x \in [-\pi,\pi]$ }
+\end{figure}
+
+
+
+
+
+
+% % Parrafo
+%
+% Para explicar el comportamiento del modelo lineal basado en la aplicación estricta de las reglas de la probabilidad vamos a ver cómo se actualizan las distribcuiones de creencias a medida que vamos observando datos en un modelo que tiene solo dos parámetros, $y = w_0 + w_1 x$ (figura~\ref{fig:modelo_lineal_actualizaciones}).
+% %
+% Antes de observar el primer dato (ver la primera fila de la figura~\ref{fig:modelo_lineal_actualizaciones}) tenemos una distribución de creencias sobre los parámetros centrada en $0$ y con mucha incertidumbre (el eje $x$ e $y$ representa la ordenada al origen y la pendiente, y el punto rojo reprersenta el verdadero valor que queremos estimar).
+% %
+% Si usamos esa distribución a priori para muestrar valores del espacio de hipótesis, vamos a obtener combinaciones de ordenada al origen y pendiente que nos genera las rectas que se observan en la tercer columna.
+%
+% % Parrafo
+%
+%  \begin{figure}[ht!]
+% \begin{subfigure}[t]{0.32\textwidth}
+% \caption*{Verosimilitud}
+% \end{subfigure}
+% \begin{subfigure}[t]{0.32\textwidth}
+% \caption*{Priori/Posteriori}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_posterior_0.pdf}
+% \end{subfigure}
+% \begin{subfigure}[t]{0.32\textwidth}
+% \caption*{Espacio de datos}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_dataSpace_0.pdf}
+% \end{subfigure}
+%
+%
+% \begin{subfigure}[c]{0.32\textwidth}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_likelihood_1.pdf}
+% \end{subfigure}
+% \begin{subfigure}[c]{0.32\textwidth}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_posterior_1.pdf}
+% \end{subfigure}
+% \begin{subfigure}[c]{0.32\textwidth}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_dataSpace_1.pdf}
+% \end{subfigure}
+%
+% \begin{subfigure}[c]{0.32\textwidth}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_likelihood_2.pdf}
+% \end{subfigure}
+% \begin{subfigure}[c]{0.32\textwidth}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_posterior_2.pdf}
+% \end{subfigure}
+% \begin{subfigure}[c]{0.32\textwidth}
+% \includegraphics[width=\textwidth]{figures/pdf/linearRegression_dataSpace_2.pdf}
+% \end{subfigure}
+% \caption{Actualización de la distribución de creencias en un modelo lineal con ordenada al origen y pendiente. En las primeras dos columnas, los ejes $x$ e $y$ representan la ordenada al origen $w_0$ y la pendiente $w_1$ respectivamente. En la tercer columna los ejes $x$ e $y$ representan los datos $x$ e $y$ respectivamente.´}
+% \label{fig:modelo_lineal_actualizaciones}
+% \end{figure}
+%
+% % Parrafo
+%
+% La verosimilitud del primer dato (segunda fila de la figura~\ref{fig:modelo_lineal_actualizaciones}) asigna valores altos (región amarilla) a la combinación de ordenadas al origen y pendientes que pasan cerca del punto negro (en la tercera columna).
+% %
+% Al multiplicar la verosimilitud por el creencia previa, obtenemos el primer poterior (gráfico central).
+% %
+% Luego de observar un segundo dato (tercera fila) y repetir la operación, obtenemos un posterior muy cercano al verdadero valor.
+%
+% % Parrafo
+
+
+\subsection{El balance natural de las reglas de la probabilidad}
+
+
+\begin{equation}
+\begin{split}
+P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots
+\end{split}
+\end{equation}
+%
+La probabilidad conjunta de todos los datos dado el modelo es igual a la probabilidad del primer dato $d_1$ dado el modelo, por la probabilidad del segundo dato $d_2|d_1$ dado el primero y el modelo, y as\'i sucesivamente.
+%
+Notar que si alguna de las predicciones es $0$, toda la productoria se anula.
+
+% Parrafo
+
+Esta naturaleza multiplicativa de los procesos de selecci\'on de los modelos hace que sea importante la reducci\'on de fluctuaciones.
+%
+Los modelos causales reducen fluctuaciones realizando las predicciones con la contribuci\'on de todas las hip\'otesis.
+%
+Por la regla de la suma, podemos expresar la evidencia como una suma de las predicciones conjuntas realizadas individualmente por cada una de sus hip\'otesis.
+%
+\begin{equation}
+\begin{split}
+P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = \sum^{\text{Hip\'otesis}}_h P(\text{Dat\en{a}\es{os}}|h,\text{Model\es{o}}) P(h|\text{Model\es{o}}) \\
+& = \text{arithmetic mean}_h(P(\text{Dat\en{a}\es{os}}|\text{Hip\'otesis},\text{Model\es{o}}))
+\end{split}
+\end{equation}
+%
+Notar que la media geom\'etica de la evidencia es igual a la media aritm\'etica de la contribuci\'on de todas las hip\'otesis.
+%
+Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la evidencia tambi\'en ser\'a mayor a $0$, evitando as\'i el peor caso.
+%
+De esta forma, las hip\'otesis de un mismo modelo cooperan en la predicci\'on a priori de los datos observados, evitando los problemas de sobreajuste asociados a los enfoque frecuentista que seleccionan una \'unica hip\'otesis del espacio.
+%
+Combinando la regla del producto y de la suma podemos expresar la evidencia como una productoria de sumatorias.
+%
+ \begin{equation}
+\begin{split}
+P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots \\
+& = \left( \sum^{\text{Hipo}}_h P(d_1|h,\text{M}) P(h|\text{M}) \right) \left( \sum^{\text{Hipo}}_h P(d_2|d_1,h,\text{M}) P(h|d_1,\text{M}) \right)  \dots \\\end{split}
+\end{equation}
+%
+Cada predicci\'on individual de la productoria es una en el fondo una media aritm\'etica.
+%
+As\'i, el modelo reduce fluctuaciones en cada una de las predicciones individuales a trav\'es de la contribuci\'on que realiza el conjunto de sus hip\'otesis.
+
 
 %
 % \subsection{Las interpretaciones de la contradicci\'on en la teor\'ia probabilidad}
@@ -2697,108 +2980,6 @@ La evidencia ser\'a de inter\'es cuando queramos evaluar modelos causales altern
 % %
 % La escuela frecuentista, para evitar la contradicci\'on en sus sistema l\'ogico, se ve obligada a afirmar la naturaleza aleatoria del mundo, lo que representa una la soluci\'on ont\'ol\'ogica de la contracci\'on.
 
-% \subsection{La propiedad epistémica}
-%
-% % Lo que veremos en esta secci\'on es que la natrualeza multiplicativa de los procesos de selecci\'on evolutiva y probabilistica tiene una serie de propiedades que garantizan la adquisici\'on de conocimiento emp\'irico.
-% %
-% % % Parrafo
-% Todas las axiomatizaciones alternativas de la teor\'ia de la probabilidad llegan a la conclusi\'on de que la forma natural de evaluar las hip\'otesis es a trav\'es de un proceso multiplicativo, la ``regla del producto''.
-% %
-% Por el teorema de Bayes, la probabilidad de una hip\'otesis $h$ dado un conjunto de observables $\{d_1, \dots, d_n \}$ y un modelo causal $M$ es,
-% %
-% \begin{equation}
-% P(h|d_1, \dots, d_n, M) = \frac{P(d_1, \dots, d_n|h, M) P(h|M)}{P(d_1, \dots, d_n| M)} \propto \overbrace{P(d_1, \dots, d_n|h, M)}^{\text{Verosimilitud conjunta}} \overbrace{P(h|M)}^{\text{Prior}}
-% \end{equation}
-% %
-% La proporcionalidad vale debido a que el denominador es constante para las diferentes hip\'otesis.
-% %
-% Además, por la regla del producto la verosimilitud conjunta puede ser expresada como el producto de las predicciones a priori.
-% %
-% Luego, la probabilidad de una hip\'otesis a posteriori es proporcional a la probabilidad a priori multiplicada por las predicciones a priori de los datos observados.
-% %
-% \begin{equation}
-% P(h|d_1, \dots, d_n, M) \propto P(h|M) \overbrace{P(d_1|h,M) P(d_2|h,M,d_1) \dots }^{\text{Predicciones a priori}}
-% \end{equation}
-% %
-% A diferencia de otras funciones de costo ad-hoc, los procesos multiplicativos garantizan que la hip\'otesis que apuestan (predicen a priori) en la misma proporci\'on que la frecuencia t\'ipica, se quedar\'a a largo plazo con todos los recursos.
-% %
-% Por ello, los procesos multiplicativos actúan como la funci\'on de costo epistémica universal.
-%
-% % Parrafo
-%
-% Para ejemplificar, veamos lo que ocurre en un juego de apuestas, en el que una casa de apuestas ofrece pagos $Q_c$ y $Q_s$ por Cara y Seca sobre una moneda con frecuencia $p$ e individualmente nos vemos obligados a apostar todos los recursos asignando una propoci\'on $b$ a Caras y el resto a Seca $(1-b)$.
-% %
-% No es dif\'icil demostrar que la soluci\'on \'optima en ambas es equivalente.
-% %
-% Por ello, de aqu\'i en adelante analizaremos \'unicamente la forma de apostar que utiliza todos los recursos en cada vuelta.
-% %
-% En este caso la riqueza se actualiza como,
-% %
-% \begin{equation} \label{eq:kelly_paraconsistente}
-% \omega_T = \underbrace{\overbrace{(\omega_0 \, b \, Q_c)}^{\omega_1} \,  (1-b) \, Q_s}_{\omega_2} \dots = \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s}
-% \end{equation}
-% %
-% En general, la casa de apuestas puede ofrecer cualquier tipo de pago.
-% %
-% La tasa de crecimiento individual para cualquier pago no negativo, $Q_c > 0$ y $Q_s > 0$ es
-% %
-% \begin{equation}
-% \begin{split}
-% \lim_{T \rightarrow \infty } \omega_0 \, r^T &= \lim_{T \rightarrow \infty } \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s} \\
-% r &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^{\frac{n_s}{T}} = (b \, Q_c)^{p} ((1-b) \, Q_s )^{1-p}
-% \end{split}
-% \end{equation}
-% %
-% Donde $p = \lim_{T \rightarrow \infty} \frac{n_s}{T}$ es la frecuencia.
-% %
-% ¿Cuál es la apuesta $b$ \'optima?
-% %
-% Para responder esta pregunta, necesitamos maximizar la tasa de crecimiento $r$.
-% %
-% En primer lugar podemos ver que la relaci\'on entre las tasa de crecimiento de dos apuestas $b_1$ y $b_2$,
-% %
-% \begin{equation}
-% \frac{r_1}{r_2} = \frac{(b_1 \  Q_c)^{p}  \,  ((1-b_1) \, Q_s \, )^{1-p} }{(b_2 \  Q_c)^{p}  \,  ((1-b_2) \, Q_s \, )^{1-p}  } = \frac{b_1^{p}  \,  (1-b_1)^{1-p} }{b_2^{p}  \,  (1-b_2)^{1-p} }
-% \end{equation}
-% %
-% no depende de los pagos que ofrece la casa de apuesta!
-% %
-% Como el proceso es multiplicativo y los pagos son los mismos en el denominador y el numerador (no dependen de la apuesta que se elija), los pagos se cancelan y la relaci\'on entre las distintas apuestas queda determinada \'unicamente por la asignaci\'on de recursos $b$ de cada una de las apuestas.
-% %
-% Si graficamos c\'omo cambia el proporcional de la tasa de crecimiento, $r\propto b^p (1-b)^{1-p}$ vemos que se maximiza con
-% %
-% \begin{figure}[ht!]
-%     \centering
-%     \begin{subfigure}[b]{0.49\textwidth}
-%     \includegraphics[width=\linewidth,page=6]{figures/tasa-temporal2.pdf}
-%     \end{subfigure}
-%     \caption{Tasa de crecimiento proporcional de diferentes apuestas $b$. Sin importar el pago que ofrezca la casa de apuestas, la apuesta que maximiza la tasa de crecimiento siempre es la que divide los recursos en la misma proporci\'on que la frecuencia observada $p$. }
-% \end{figure}
-% %
-% la apuesta que divide los recursos en la misma proporci\'on que los frecuencia t\'ipica $p$, $b = p$.
-% %
-% Para maximizar la tasa de crecimiento $r$ tomamos el logaritmo de ambos lados, y buscamos el punto cr\'itico de esta funci\'on c\'oncava,
-% %
-% \begin{equation}
-% \begin{split}
-% 0 &= \frac{d}{db} p \log (b \, Q_c) + (1-p) \log ((1-b) \, Q_s) \\
-% 0 &= \frac{p}{b} + \frac{1-p}{1-b} \\
-% p &= b
-% \end{split}
-% \end{equation}
-% %
-% Los procesos multiplicativos, jugados individualmente, se maximiza dividiendo los recursos en la misma proporci\'on que la frecuencia t\'ipica $p$.
-% %
-% \begin{equation}
-% \underset{b}{\text{arg max}} b^p (1-b)^{1-p} = p
-% \end{equation}
-% %
-% Es decir, a trav\'es de los resultados obtenidos en un juegos de apuestas podemos realizar ``inferencia'', descubrir la verdadera probabilidad a partir de la ignorancia, sin necesidad de que nadie conozca la probabilidad real.
-% %
-% De hecho, la probabilidad puede ser vista como los recursos que cada una de las hip\'otesis tiene como el resultado de un juego de apuestas: el prior representa los recursos iniciales; las predicciones a priori son las apuestas $b$, la asignaci\'on de recursos que hace cada una de las hip\'otesis antes de observar el dato; y el pago de la casa de apuestas es nulo, $Q_{d_i} = 1$.
-% %
-% Gracias a la propiedad de los procesos multiplicativos, un juego de apuestas de este tipo garantiza que la hip\'otesis que asigna los recursos en la misma proporci\'on que la frecuencia t\'ipica $p$ tiene la mayor tasa de crecimiento y por lo tanto se quedará con todos los recursos (probabilidad) a largo plazo.
-%
 % % % Parrafo
 % %
 % % La interpretaci\'on ontol\'ogica de la teor\'ia de la probabilidad, al rechazar la contradicci\'on epist\'emica, se ve impedida de definir probabilidades iniciales (prior), y por lo tanto de utilizar el teorema de Bayes y resolver la inferencia usando el proceso multiplicativo como un juego de apuestas.
@@ -3119,143 +3300,8 @@ Y el mensaje recibido es la \textbf{inferencia causal}, $P(\text{Indicador}|h, \
 }
 \end{figure}
 
+\subsection{Tasa de información}
 
-\subsection{Evaluaci\'on de modelos causales alternativos}\label{sec:modelos_alternativos}
-
-Los modelos causales tambi\'en son hip\'otesis, y por lo tanto, pueden ser evaluadas calculando su probabilidad dados los datos.
-%
-Usando el teorema de Bayes, la probabilidad de un modelo es
-%
-\begin{equation}\label{eq:p_modelo_|_datos}
- P(\text{Model\es{o}}|\text{Dat\en{a}\es{os}}) = \frac{\overbrace{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}})}^{\text{Evidencia}}P(\text{Model\es{o}})}{P(\text{Dat\en{a}\es{os}})}
-\end{equation}
-%
-La verosimilitud de los modelos es lo que antes vimos como la evidencia, el denominador del posterior de las hip\'otesis de un modelo.
-%
-La evidencia es la predicci\'on a priori del dato observado con la contribuci\'on de todas las hip\'otesis.
-%
-Por la regla del producto, podemos expresar la evidencia como una productoria de predicciones a priori
-%
-\begin{equation}
-\begin{split}
-P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots \\
-& = \text{geometric mean}(P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}))^{|\text{Dat\en{a}\es{os}}|}
-\end{split}
-\end{equation}
-%
-La probabilidad conjunta de todos los datos dado el modelo es igual a la probabilidad del primer dato $d_1$ dado el modelo, por la probabilidad del segundo dato $d_2|d_1$ dado el primero y el modelo, y as\'i sucesivamente.
-%
-La media geom\'etrica representa la predicci\'on ``t\'ipica''.
-%
-Notar que si alguna de las predicciones es $0$, toda la productoria se anula y la predicci\'on t\'ipica ser\'ia $0$.
-
-% Parrafo
-
-Esta naturaleza multiplicativa de los procesos de selecci\'on de los modelos hace que sea importante la reducci\'on de fluctuaciones.
-%
-Los modelos causales reducen fluctuaciones realizando las predicciones con la contribuci\'on de todas las hip\'otesis.
-%
-Por la regla de la suma, podemos expresar la evidencia como una suma de las predicciones conjuntas realizadas individualmente por cada una de sus hip\'otesis.
-%
-\begin{equation}
-\begin{split}
-P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = \sum^{\text{Hip\'otesis}}_h P(\text{Dat\en{a}\es{os}}|h,\text{Model\es{o}}) P(h|\text{Model\es{o}}) \\
-& = \text{arithmetic mean}_h(P(\text{Dat\en{a}\es{os}}|\text{Hip\'otesis},\text{Model\es{o}}))
-\end{split}
-\end{equation}
-%
-Notar que la media geom\'etica de la evidencia es igual a la media aritm\'etica de la contribuci\'on de todas las hip\'otesis.
-%
-Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la evidencia tambi\'en ser\'a mayor a $0$, evitando as\'i el peor caso.
-%
-De esta forma, las hip\'otesis de un mismo modelo cooperan en la predicci\'on a priori de los datos observados, evitando los problemas de sobreajuste asociados a los enfoque frecuentista que seleccionan una \'unica hip\'otesis del espacio.
-%
-Combinando la regla del producto y de la suma podemos expresar la evidencia como una productoria de sumatorias.
-%
- \begin{equation}
-\begin{split}
-P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots \\
-& = \left( \sum^{\text{Hipo}}_h P(d_1|h,\text{M}) P(h|\text{M}) \right) \left( \sum^{\text{Hipo}}_h P(d_2|d_1,h,\text{M}) P(h|d_1,\text{M}) \right)  \dots \\\end{split}
-\end{equation}
-%
-Cada predicci\'on individual de la productoria es una en el fondo una media aritm\'etica.
-%
-As\'i, el modelo reduce fluctuaciones en cada una de las predicciones individuales a trav\'es de la contribuci\'on que realiza el conjunto de sus hip\'otesis.
-
-% Parrafo
-
-El denominador de la ecuaci\'on \ref{eq:p_modelo_|_datos} es la predicci\'on a priori del dato observado con la contribuci\'on de todos los modelos (y todas sus hip\'otesis).
-%
-Cuando no conocemos el espacio completo de modelos alternativos, no vamos a poder computar la probabilidad de ning\'un modelo.
-%
-Pero al menos, vamos a poder comparar la probabilidad relativa entre modelos.
-%
- \begin{equation}
-\begin{split}
- \frac{P(\text{Modelo A}|\text{Datos})}{P(\text{Modelo B}|\text{Datos})} = \frac{P(\text{Data}|\text{Modelo A})\cancel{P(\text{Modelo A})}}{P(\text{Data}|\text{Modelo B})\cancel{P(\text{Modelo B })}}
-\end{split}
-\end{equation}
-%
-Cuando el prior de ambos modelos es igual, la probabilidad relativa entre modelos depende de sus predicciones a priori.
-%
-A esta expresi\'on se la conoce como Bayes Factor.
-%
-Para preferir un modelo sobre otro es importante que la diferencia relativa sea de varios \'ordenes de magnitud.
-%
-En general es preferible expresarla en escala logar\'itmica porque hace que esta expresi\'on se vuelva sim\'etrica (qui\'en est\'a en el numerador y en el denominador solo modifica el signo) y porque expresa la diferencia en \'ordenes de magnitud.
-
-% Parrafo
-
-En el siguiente ejemplo haremos selecci\'on de los modelos vistos al inicio de este cap\'itulo.
-%
-Supongamos que los datos se generan siguiendo el modelo causal Monty Hall, 32 veces.
-%
-Alrededor de una de cada tres veces el regalo estar\'a escondido detr\'as de la caja 1, $r=1$.
-%
-\begin{lstlisting}[backgroundcolor=\color{all}]
-regaloEn1 = [ rand(1:3) == 1 ? 1 : 0 for _ in 1:32]
-\end{lstlisting}
-%
-Supongamos que siempre elegimos la caja 1, $c=1$.
-%
-Seg\'un el modelo Monty Hall la pista s\'olo se\~nalara a la caja 2 o la caja 3, $s \in \{2,3\}$.
-%
-Los datos que vamos a mostrarle a los modelos son primero la pista, y despu\'es la posici\'on real del regalo.
-%
-La evidencia (predicci\'on a priori) de cada una de las pistas individuales va a ser $1/3$ para el modelo A y $1/2$ para el modelo B.
-%
-Y evidencia (predicci\'on a priori) de cada una de las posiciones de individuales de los regalos va a ser $1/2$ para el modelo A y para el modelo B va a ser $1/3$ cuando el regalo est\'e en la caja 1 y $2/3$ cuando est\'e en otra.
-%
-\begin{lstlisting}[backgroundcolor=\color{all}]
-evidencia_A = cumprod([(1/3)*(1/2) for _ in regaloEn1])
-evidencia_B = cumprod([(1/2)*( (1/3)^(r1)*(2/3)^(1-r1) ) for r1 in regaloEn1])
-\end{lstlisting}
-%
-Tomamos la productoria acumulada para mostrar gr\'aficamente c\'omo se actualizan las probabilidades a medida que observamos datos nuevos (Figura~\ref{fig:modelos_alternativos}).
-%
-Considerando priors iguales, la probabilidad de los modelos es,
-%
-\begin{lstlisting}[backgroundcolor=\color{all}]
-prior = 1/2
-p_datos = (evidencia_A .* prior) .+ (evidencia_B .* prior)
-p_modelo_A = evidencia_A .* prior ./ p_datos
-p_modelo_B = evidencia_B .* prior ./ p_datos
-\end{lstlisting}
-%
-R\'apidamente, con menos de 32 observaciones, es casi seguro que el modelo causal B es el que representa el que mejor captura el comportamiento de la naturaleza.
-%
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.5\textwidth}
-    \includegraphics[width=\linewidth]{figures/monty_hall_selection.pdf}
-    \end{subfigure}
-    \caption{
-    Selecci\'on de modelos alternativos
-    }
-    \label{fig:estrategias_individuales}
-\end{figure}
-%
-Este mismo m\'etodo ser\'a usado en para evaluar el modelo de estimaci\'on de habilidad que utilizaremos para analizar datos de comunidades virtuales.
 
 \section{Estimadores de habilidad en la industria del videojuego} \label{sec:base_empirica_metodo}
 
