@@ -109,7 +109,10 @@ for i in range(0,10):
     pred = model.params["X0"]*X_grilla[:,0]**0
     for j in range(1,i+1):
         pred += model.params["X"+str(j)]*X_grilla[:,0]**j
-    plt.plot(X_grilla[:,0], pred)
+    if i == 3 or i == 9:
+        plt.plot(X_grilla[:,0], pred, linewidth=3.0)
+    else:
+        plt.plot(X_grilla[:,0], pred, alpha=0.3)
     if i == 3:
         pred3 = copy.deepcopy(pred)
 

@@ -2673,7 +2673,7 @@ Recién hemos visto que, por la regla de la suma, la evidencia es la predicci\'o
 %
 Pero además, por la regla del producto, podemos expresar la evidencia conjunta de muchos datos como una productoria de las predicciones a priori
 %
-\begin{equation}
+\begin{equation} \label{eq:p<datos|modelo>}
 \begin{split}
 P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots
 \end{split}
@@ -2805,34 +2805,94 @@ En el modelo linea, las dimensiones del espacio de hipótesis está determinado 
 
 % Parrafo
 
-Una de las técnicas más extendidas para evitar el costo computacional asociado a la evaluación completa del espacio de hipótesis consiste en seleccionar una única hipótesis en base a algún criterio ad-hoc, como por ejemplo maximizar la verosimilitud.
+Una de las técnicas más sencillas para evitar el costo computacional asociado a la evaluación completa del espacio de hipótesis consiste naturalmente en seleccionar una única hipótesis en base a algún criterio ad-hoc, como por ejemplo maximizar la verosimilitud.
 %
 \begin{equation*}
  \underset{\bm{w}}{\text{ max }} P(\bm{t} | \bm{x}, \bm{w}, \beta) = \underset{\bm{w}}{\text{ min }} \sum_{i=1}^{n}  (t_i - \bm{w}^T\bm{\phi}(\bm{x}_i))^2
 \end{equation*}
+%
+donde $\bm{\phi}$ es una transformación de los datos.
+%
+Si bien este enfoque permitió durante el siglo 20 ``ajustar'' funciones lineales a los datos, introdujo al mismo una serie de problemas que siguen presente en muchos de los algoritmos de inteligencia artificial modernos.
 
 % Parrafo
 
-Si bien esto permitió durante el siglo 20 ajustar funciones lineas a los datos, este enfoque introduce una serie de problemas.
+Supongamos que tenemos un conjunto de datos generados a partir de una función objetivo que decidimos modelar con polinomios de distinto grado $n \in \{0, 1, \dots, 9\}$.
 %
-Supongamos que tenemos un conjunto de datos generados a partir de una función objetivo sinoidal que desconocemos, y queremos elegir el modelo lineal que mejor la ajusta.
+\begin{equation*}
+y = \sum_{i=0}^n w_i \, x^i
+\end{equation*}
 %
+Una incógnita muy básica que quisiéramos resolver en general es determinar cuál es el mejor modelo.
+%
+El problema de los enfoques que seleccionan una única hipótesis es precisamente el uso de criterios ad-hoc.
+%
+Sin poder recurrir a las reglas de la probabilidad para evaluar modelos, ¿qué significaría que un modelo es mejor que otro?
 
+% Parrafo
 
-\begin{figure}[ht!]
-  \begin{subfigure}[t]{0.42\textwidth}
+La función objetivo es una sinoidal $\N(y \,| \, \text{sen}(x), \beta^2)$ en el rango $x \in [-\pi,\pi]$ (línea punteada en figura~\ref{fig:model_selection_OLS}).
+%
+En este caso, si bien ningún modelo es cierto, el modelo de grado 3 (línea roja en figura~\ref{fig:model_selection_OLS}) debería ser suficiente para ajustar la función objetivo.
+%
+Sin embargo, al evaluando por máxima la versoimilutd nos encontramos con el hecho de que la verosimilutd crece indefinidamente a medida que le agregamos complejidad (grados) a los modelos.
+%
+El problema es que el modelo de grado 9 (línea celeste en figura~\ref{fig:model_selection_OLS}), a pesar de ser el que más cerca pasa por los todos puntos observados, no es el que más cerca pasa por la función objetivo oculta, y por lo tanto no será el que mejor desempeño tenga sobre los datos nuevos.
+
+% Parrafo
+
+\begin{figure}[ht!] \centering
+  \begin{subfigure}[t]{0.32\textwidth}
+  \centering
   \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_OLS.pdf}
+  \caption{Ajuste de modelos}
+  \label{fig:model_selection_OLS}
   \end{subfigure}
-  \begin{subfigure}[t]{0.42\textwidth}
+  \begin{subfigure}[t]{0.32\textwidth}
+  \centering
   \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_maxLikelihood.pdf}
+  \caption{Verosimilitud de modelos}
+  \label{fig:model_selection_maxLikelihood}
   \end{subfigure}
-  \caption{$\N(y \,| \, \text{sen}(x), \beta^2) \ \ x \in [-\pi,\pi]$ }
+  \begin{subfigure}[t]{0.32\textwidth}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_maxApriori_online.pdf}
+  \caption{Validación en línea}
+  \label{fig:model_selection_maxApriori_online}
+  \end{subfigure}
+  \caption{Modelos polinomiales de grado 0 a 9 ajustados por máxima versoimilutd a datos generados con una sinodal, $\N(y \,| \, \text{sen}(x), \beta^2) \ \ x \in [-\pi,\pi]$. Los modelo de grado 3 y 9 se muestran en rojo y celeste respectivamente.}
+  \label{fig:overfitting}
 \end{figure}
 
+% Parrafo
 
+Este problema se lo conoce con el nombre de \emph{overfitting} y en parte surge debido a que la predicción de los modelos que estamos evaluando no ``pre-dice'' en sentido estricto, debido a que antes seleccionamos los parámetros que mejor ajustaban los datos.
+%
+\begin{align*}
+\widehat{P}(\text{dato}|\text{Modelo}) & = P(\text{dato} \, | \, \overbrace{\underset{h}{\text{arg max}} \ P(\text{dato}|h, \text{Modelo})}^{\text{Hipótesis que mejor predice}},  \, \text{Modelo} )
+\end{align*}
+%
+Sería más honesto decir que el modelo ``post-dice'', dice después de haber visto los datos.
+%
+Para evitar esta ``trampa'', los enfoques que usan criterios ad-hoc para seleccionar hipótesis se ven obligados a evaluar modelos separando los datos en al menos dos partes: una para ``entrenar'', para seleccionar la hipótesis al interior del modelo; y otra para ``evaluar'', para seleccionar el modelo que mejor predice.
+%
+\begin{align*}
+\widehat{P}(\text{dato}_{\textbf{Evaluar}}|\text{Modelo}) & = P(\text{dato}_{\textbf{Evaluar}} \, | \, \underset{h}{\text{arg max}} \ P(\text{dato}_{\textbf{Entrenar}}|h, \text{Modelo}),  \, \text{Modelo} )
+\end{align*}
+%
+Si revisamos la definición exacta que dan las reglas de la probabilidad de $P(\text{Datos}|\text{Modelo})$ (ecuación~\ref{eq:p<datos|modelo>}), observamos que se trata de una secuencia de predicciones del siguiente dato, con la información de todos los datos anteriores.
+%
+Las reglas de la probabilidad nos resuelven este problema de forma  automática.
+%
+Si emulamos este procedimiento ``online'' que se observa en la descomposición (\ref{eq:p<datos|modelo>}), entrenando el modelo en cada iteración y prediciendo el sieguiente dato, encontramos que el modelo que mejor predice es el modelo de grado 3 (figura~\ref{fig:model_selection_maxApriori_online}).
 
+% Parrafo
 
-
+Si bien parece que hemos resuelto el problema principal, sigue sobreajustando los datos.
+%
+Pues si comenzamos a observar puntos por fuera del rango $[-\pi, \pi]$, el modelo de grado 3 va a tener un pésimo desempeño.
+%
+Con los criterios ad-hoc aparce siempre, por algún lado, el problema.
 
 % % Parrafo
 %
@@ -2894,37 +2954,88 @@ Supongamos que tenemos un conjunto de datos generados a partir de una función o
 
 \subsection{El balance natural de las reglas de la probabilidad}
 
-
-\begin{equation}
-\begin{split}
-P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots
-\end{split}
-\end{equation}
+¿La aplicación estricta de las reglas de la probabilidad produce sobreajuste?
 %
-La probabilidad conjunta de todos los datos dado el modelo es igual a la probabilidad del primer dato $d_1$ dado el modelo, por la probabilidad del segundo dato $d_2|d_1$ dado el primero y el modelo, y as\'i sucesivamente.
+Los modelos polinomiales que estamos implementando tienen solución analítica, por lo que hoy en día podemos pedirle a la computadora que calcule la predicción exacta que hace cada uno de elos, $P(\text{Datos}|\text{Modelo})$, y calcular entonces el posterior exacto $P(\text{Modelo}|\text{Datos})$ .
 %
-Notar que si alguna de las predicciones es $0$, toda la productoria se anula.
+Aplicando las reglas de la probabilidad obtenemos un resultado interesante.
+%
+\begin{figure}[ht!] \centering
+  \begin{subfigure}[t]{0.32\textwidth}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_MAP_non-informative.pdf}
+  \caption{Ajuste bayesiano}
+  \label{fig:model_selection_MAP_non-informative}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.32\textwidth}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_evidence.pdf}
+  \caption{Posterior de modelos}
+  \label{fig:model_selection_evidence}
+  \end{subfigure}
+  \caption{Modelos polinomiales de grado 0 a 9 ajustados mediante las reglas de la probabilidad a datos generados con una sinodal, $\N(y \,| \, \text{sen}(x), \beta^2) \ \ x \in [-\pi,\pi]$.}
+  \label{fig:evaluacion_de_modelo}
+\end{figure}
 
 % Parrafo
 
-Esta naturaleza multiplicativa de los procesos de selecci\'on de los modelos hace que sea importante la reducci\'on de fluctuaciones.
+La alicación estricta de las reglas de la probabilidad no produce ninguno de los sobreajustes que vimos en la sección anterior quye emergen de los enfoques con criterios ad-hoc.
 %
-Los modelos causales reducen fluctuaciones realizando las predicciones con la contribuci\'on de todas las hip\'otesis.
+En primer lugar, el modelo que tiene la complejidad mínima necesaria (el de grado 3), es el que recibe mayor probabilidad a posteriori.
+%
+Al mismo tiempo, los modelos con complejidad mayor a la necesaria no son rechazados.
+%
+Todos ellos reciben una probabilidad visiblemente mayor a 0.
+%
+Si empezamos a ver datos por fuera del rango $[-\pi, \pi]$, estos modelos complejos iran a nuestro rescate, podrán explicar los nuevos datos.
+%
+Los únicos modelos rechazados son los que tienen menor complejidad de la necesaria (grado 0 a 2).
+
+% Parrafo
+
+Este balance surge naturalemente de las reglas de la probabilidad.
+%
+Por definición, toda distribución de creencias debe sumar o integrar 1.
+%
+Los modelos que más complejos, al ser más flexibles, distribuyen la predicción en un espacio más amplio que los modelos más simples.
+%
+Esto hace que siempre haya una región donde los modelos más simples ganan, y otra donde los modelos más complejos ganan.
+%
+Supongamos que recibimos un datos $x = 0.2$.
+%
+En la figura~\ref{fig:balance_natural} vemos la predicción que hacen los distintos modelos de la variable $y$.
+%
+\begin{figure}[ht!] \centering
+ \includegraphics[page=2,width=0.45\textwidth]{figures/pdf/evidencia_de_modelos_alternativos}
+  \caption{Representa la predicción que los diversos tipos de modelos polinomiales (clasificados por su complejidad) hacen de la variable $y$ para $x=0.2$.}
+  \label{fig:balance_natural}
+\end{figure}
+
+% Parrafo
+
+Los modelos rígidos (grado 0 a 2) colocan toda su creencia en una región lejana al verdadero valor, por lo que siempre tienen un mal desempeño predictivo.
+%
+Los modelos simples (grado 3), la mayor parte de su creencia sobre el verdadero valor.
+%
+Y los modelos complejos (grado 4 a 9) también ponen la mayor parte de su creencia sobre el verdadero valor, pero distribuyen también algo de creencia hacia los costados.
+%
+Dependiendo de dónde caiga el siguiente dato, hay una región en la que gana el modelo más simple, y hay otra región donde gana el modelo más complejo.
+
+% Parrafo
+
+A diferencia de los enfoque basados en criterios ad-hoc, la aplicación estricta de las reglas de la probabilidad realiza las predicciones con la contribuci\'on de todas las hip\'otesis.
 %
 Por la regla de la suma, podemos expresar la evidencia como una suma de las predicciones conjuntas realizadas individualmente por cada una de sus hip\'otesis.
 %
 \begin{equation}
 \begin{split}
-P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = \sum^{\text{Hip\'otesis}}_h P(\text{Dat\en{a}\es{os}}|h,\text{Model\es{o}}) P(h|\text{Model\es{o}}) \\
-& = \text{arithmetic mean}_h(P(\text{Dat\en{a}\es{os}}|\text{Hip\'otesis},\text{Model\es{o}}))
+P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = \sum^{\text{Hip\'otesis}}_h P(\text{Dat\en{a}\es{os}}|h,\text{Model\es{o}}) P(h|\text{Model\es{o}})
 \end{split}
 \end{equation}
 %
-Notar que la media geom\'etica de la evidencia es igual a la media aritm\'etica de la contribuci\'on de todas las hip\'otesis.
-%
 Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la evidencia tambi\'en ser\'a mayor a $0$, evitando as\'i el peor caso.
 %
-De esta forma, las hip\'otesis de un mismo modelo cooperan en la predicci\'on a priori de los datos observados, evitando los problemas de sobreajuste asociados a los enfoque frecuentista que seleccionan una \'unica hip\'otesis del espacio.
+De esta forma, las hip\'otesis de un mismo modelo cooperan en la predicci\'on a priori de los datos observados, evitando los problemas de sobreajuste asociados a los enfoque que seleccionan una \'unica hip\'otesis del espacio.
 %
 Combinando la regla del producto y de la suma podemos expresar la evidencia como una productoria de sumatorias.
 %
