@@ -2953,7 +2953,6 @@ Con los criterios ad-hoc aparce siempre, por algún lado, el problema.
 
 
 \subsection{El balance natural de las reglas de la probabilidad}
-
 ¿La aplicación estricta de las reglas de la probabilidad produce sobreajuste?
 %
 Los modelos polinomiales que estamos implementando tienen solución analítica, por lo que hoy en día podemos pedirle a la computadora que calcule la predicción exacta que hace cada uno de elos, $P(\text{Datos}|\text{Modelo})$, y calcular entonces el posterior exacto $P(\text{Modelo}|\text{Datos})$ .
@@ -3411,7 +3410,132 @@ Y el mensaje recibido es la \textbf{inferencia causal}, $P(\text{Indicador}|h, \
 }
 \end{figure}
 
-\subsection{Tasa de información}
+\subsection{Entropía o tasa de información}
+
+En la sección~\ref{sec:modelos_alternativos} evaluamos los dos modelos causales alternativos que usamos para introducir las reglas de la probabilidad.
+%
+Allí generamos datos a partir de uno de los modelos, que luego los usamos para evaluar el desempeño predictivo.
+%
+En esta sección compararemos el desempeño de los modelos, esta vez analizando de forma analítica el desempeño de los modelos en el tiempo.
+
+% Parrafo
+
+\begin{figure}[ht!]
+\centering \small
+\begin{subfigure}[c]{0.49\textwidth}
+\centering
+ \tikz{
+    \node[latent,] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
+    \node[const,left=of r] (nr) {\Large $r$} ;
+
+
+    \node[latent, below=of r] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
+    \node[const, left=of d] (nd) {\Large $s$} ;
+
+    \edge {r} {d};
+}
+\caption{Modelo causal incorrecto}
+\end{subfigure}
+\begin{subfigure}[c]{0.49\textwidth}
+\centering
+\tikz{
+
+    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
+    \node[const,left=of d] (nd) {\Large $s$} ;
+
+    \node[latent, above=of d, xshift=-1.5cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
+    \node[const,left=of r] (nr) {\Large $r$} ;
+
+
+    \node[latent, fill=black!30, above=of d, xshift=1.5cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
+    \node[const,left=of c] (nc) {\Large $c$} ;
+
+    \edge {r,c} {d};
+}
+\caption{Modelo causal correcto}
+\end{subfigure}
+\caption{Dos modelos causales, uno correcto y otro incorrecto.}
+\end{figure}
+
+Para simplificar el análisis consideraremos que la caja elegida es siempre la 1, $c=1$.
+%
+Luego, en $T$ iteraciones del juego observaremos $n_{s2}$ pistas en caja 2 y $n_{s3}$ pistas en caja 3 (con $T=n_{s2} + n_{s3}$) y $n_{r1}$ regalos en caja elegida (1) y $n_{r0}$ regalos en otro caja (no 1), (con $T=n_{r1} + n_{r0}$).
+%
+La predicción conjunta de los datos es,
+\begin{align*}
+P(\text{D}_{_T} = \{\overbrace{n_{s2}, n_{s3}}^{T}, \overbrace{n_{r1}, n_{r0}}^{T} \} \, | \, \text{M}) = P(s2|M)^{n_{s2}\phantom{/T}}  P(s3|M)^{n_{s3}\phantom{/T}} \, P(r1|M)^{n_{r1}\phantom{/T}} \, P(r0|M)^{n_{r0}\phantom{/T}}
+\end{align*}
+%
+Debido a que todas las predicciones son valores entre 0 y 1, el producto de $2T$ predicciones rápidamente tiende a 0.
+%
+Para tener una intuición del desempeño, podemos calcular la media geométrica de la predicción conjunta.
+%
+\begin{align*}
+\underbrace{P(\text{D}_{_T} = \{n_{s2}, n_{s3}, n_{r1}, n_{r0}\} \, | \, \text{M})^{1/T}}_{\text{Media geométrica}} = P(s2|M)^{n_{s2}/T}  P(s3|M)^{n_{s3}/T} \, P(r1|M)^{n_{r1}/T} \, P(r0|M)^{n_{r0}/T}
+\end{align*}
+%
+La media geométrica puede interpretarse como la tasa de predicción de los modelos, en el sentido de que si reemplazamos cada una de las las predicciones con ese mismo valor recuperaremos la predicción conjunta original.
+%
+Este valor varía a medida que vamos observando nuevos datos, por la aleatoridad misma del proceso.
+%
+En el límite, $T\rightarrow\infty$ las frecuencias observadas $n_{*}/T = p_*$, y el valor tiende así a una constante que representa efectivamente la tasa de predicción del modelo en el tiempo.
+%
+\begin{align*}
+\overbrace{\lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}^{\text{Tasa de predicción}} &= P(s2|M)^{p_{s2}} \, P(s3|M)^{p_{s3}} \, P(r1|M)^{p_{r1}} \, P(r0|M)^{p_{r0}} \\
+\underbrace{\log \lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}_{\hfrac{\text{\scriptsize Tasa de predicción en}}{\text{\scriptsize órdenes de magnitud}}} &= p_{s2} \log P(s2|M) + p_{s3} \log P(s3|M) + p_{r1} \log P(r1|M) + p_{r0} \log P(r0|M)
+\end{align*}
+%
+En escala logarítmica tenemos la tasa de predicción expresada en órdenes de magnitud.
+
+% Parrafo
+
+Si el modelo que estamos analizando es el correcto, el que se corresponde con la realidad, entonces las predicciones son iguales a la probabilidad de observar los datos.
+%
+\begin{align*}
+\log \, \lim_{T \rightarrow \infty} P(\text{Datos}|\text{Modelo correcto})^{1/T} &= \sum_x p_x \log p_x = - \overbrace{\text{Entropía}}^{\hfrac{\text{\scriptsize Tasa de información en}}{\text{\scriptsize órdenes de magnitud}}} \\
+\log \, \lim_{T \rightarrow \infty} P(\text{Datos}|\text{Modelo incorrecto})^{1/T} &= \sum_x p_x \log p_{x|M} = - \underbrace{\text{Entropía cruzada}}_{\hfrac{\text{\scriptsize Entropía +}}{\text{\scriptsize divergencia}}}
+\end{align*}
+%
+La tasa de predicción no es más que el negativo de la tasa de información.
+%
+Es decir, a medida que mejoramos la predicción disminuimos la cantidad de información que obtenemos.
+%
+\begin{equation*}
+\underset{\text{M}}{\text{arg \textbf{max}}}
+\hspace{0.3cm}  \text{Predicción}(\text{D}_{_T} \, | \, \text{M}) = \ \underset{\text{M}}{\text{arg \textbf{min}}} \hspace{0.3cm} \text{Información} (\text{D}_{_T}\,|\,\text{M})
+\end{equation*}
+
+% Parrafo
+
+La información de Shannon (en órdenes de magnitud) se define como el negativo del logaritmo de la predicción.
+%
+Si la predicción es 0, tenemos información infinita.
+%
+Si la predicción es 1, tenemos información nula.
+%
+Luego, la entropía se define como la esperanza.
+%
+\begin{equation*}
+\overbrace{h(x) = - \log_2 P(x)}^{\text{Información de Shannon}}  \hspace{2cm} \overbrace{H(X) = \sum_{x\in X} P(x) h(x)}^{\text{Entropía}}
+\end{equation*}
+
+
+
+
+% \only<10->{\underbrace{\log \ \ \lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}_{\hfrac{\text{\footnotesize Tasa de predicción}}{\text{\footnotesize en orden de magnitud}}} & = }
+% \only<7-9>{\underbrace{\lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}_{\text{\footnotesize Tasa de predicción}} & = }
+% \only<7>{\ \ P(s2|M)^{p_{s2}} \ \ \  P(s3|M)^{p_{s3}} \ \ \ P(r1|M)^{p_{r1}} \ \ \ P(r0|M)^{p_{r0}}}
+% \only<8>{\ \ P(s2|M)^{p_{s2}} \ \ \  P(s3|M)^{p_{s3}} \ \ \ P(r1|M)^{p_{r1}} \hspace{0.9cm} p_{_{r0}}^{ \ \ p_{r0}}}
+% \only<9>{ \hspace{0.8cm} p_{_{s2}}^{ \ \ p_{s2}} \hspace{1.4cm}  p_{_{s3}}^{ \ \ p_{s3}} \hspace{1.4cm}  p_{_{r1}}^{ \ \ p_{r1}} \hspace{1.4cm}  p_{_{r0}}^{ \ \ p_{r0}}}
+% \only<10>{\ \ \ ?}
+% \only<11>{\ \ p_{_{s2}} \log p_{_{s2}} \ + \ p_{_{s3}} \log   p_{_{s3}} \ + \ p_{_{r1}} \log p_{_{r1}} \ + \ p_{_{r0}} \log p_{_{r0}}  }
+% \only<12-14>{\ \  \sum_x \, p_{_{x}} \, \log p_{_{x}}  }
+% \only<13>{ = - \hspace{0.85cm} \text{Entopía} \ }
+% \only<14>{= -\underbrace{\textbf{Entropía}}_{\hfrac{\text{\footnotesize \phantom{p}Tasa de información}\phantom{p}}{\text{\footnotesize orden de magnitud}}} \ !!!!!!!!!!!!!!!}
+% \only<15>{\ \  \sum_x \, p_{_{x}} \, \log p_{_{x|M}}  }
+% \only<15>{= - \hspace{0.3cm} \underbrace{ \textbf{Entopía cruzada}}_{\hfrac{\text{\footnotesize Entropía}}{\text{\footnotesize + divergencia}} } \ !}
+% \phantom{\sum_x P(r0|M)^{p_{r0}}}
+% &&
 
 
 \section{Estimadores de habilidad en la industria del videojuego} \label{sec:base_empirica_metodo}
