@@ -3292,7 +3292,7 @@ En definitiva, este esquema también busca representar la estructura invariante 
 %
 Además, la teoría de la información adhiere a la aplicación estricta de las reglas de la probabilidad como hipótesis indicadora universal~\cite{mackay}.
 %
-En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de comunicación está compuesto por,
+En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de comunicación tiene la siguiente estructura (figura~\ref{fig:esquema_emisor_receptor}).
 %
 \begin{figure}[H]
     \centering
@@ -3338,6 +3338,7 @@ En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de
 \edge {receptor} {destino};
 }
 \caption{Esquema de sistema de comunicación propuesto por Shannon.}
+\label{fig:esquema_emisor_receptor}
  \end{figure}
 
 % Parrafo
@@ -3356,11 +3357,20 @@ $P$(\textit{habilidad}(Messi) $= h|$I, M) \\
 
 % Parrafo
 
-Por último, el mensaje enviado, la señal enviada y la señal recibida son producidas por la \textbf{realidad causal}.
+Por su parte, el mensaje enviado, la señal enviada y la señal recibida son producidas por la \textbf{realidad causal}:
 %
-Y el mensaje recibido es la \textbf{inferencia causal}, $P(\text{Indicador}|h, \text{M})$ \\
+entre la fuente de información y la dimensión existe una realidad causal que las víncula;
+%
+la señal observable que producen las dimensiones y la capacidad de los procedimientos de detectarla también está determinado por la realidad causal;
+%
+y la percepción efectiva que producen los procedimientos hasta su registro en la base de datos, como indicador, sigue estando determinado por la realidad causal.
+%
+Una vez que recibimos el indicador (de base empírica epistemológica), podemos usar nuestras hipótesis causales para realizar la \textbf{inferencia causal}, $P(\text{Indicador}|h, \text{M})$ \\
 
+% Parrafo
 
+Cada uno de los pasos de la estructura del dato empírico forma parte de un camino que nos lleva de lo abstracto a lo concreto y de lo concreto a los abstracto.
+%
 \begin{figure}[H]
     \centering
 \tikz{
@@ -3382,11 +3392,11 @@ Y el mensaje recibido es la \textbf{inferencia causal}, $P(\text{Indicador}|h, \
 
 \node[const, below=of dimension, yshift=-0.6cm] (realidad2) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
 \node[det, right=of realidad2, xshift=-0.3cm] (procedimiento) {P};
-\node[const, right=of procedimiento, xshift=0.6cm] (observacion) {$\phantom{\bigg|}\hfrac{\text{\footnotesize El indicador}}{\text{\footnotesize lo observado}}\phantom{\bigg|}$};
+\node[const, right=of procedimiento, xshift=0.6cm] (observacion) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
 
-\node[det, above=of observacion, yshift=-0.3cm] (hipotesisI) {HI};
+\node[det, above=of observacion, yshift=-0.3cm] (hipotesisI) {I};
 \node[const, above=of hipotesisI, yshift=0.35cm] (inferencia) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Inferencia}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
-\node[det, above=of inferencia, yshift=-0.4cm] (resultado) {R};
+\node[det, above=of inferencia, yshift=-0.27cm] (resultado) {R};
 
 
 \draw[dashed] (-2.1,-5.4) -- (5.3,-5.4);
@@ -3402,13 +3412,18 @@ Y el mensaje recibido es la \textbf{inferencia causal}, $P(\text{Indicador}|h, \
 \node[const, right=of fuente] (n_fuente) {\small Fuente};
 \node[const, right=of dimension] (n_dimension) {\small Dimensiones};
 \node[const, below=of procedimiento] (n_procedimiento) {\small Procedimiento};
-\node[const, right=of hipotesisI] (n_hipotesis) {\small Hipótesis Indicadora};
+\node[const, right=of hipotesisI] (n_hipotesis) {\small $\hfrac{\text{\small Indicador +}}{\text{\small Hipótesis causal}}$};
 
 
 \node[invisible, left=of fx, xshift=-4cm] (il) {};
 \node[invisible, right=of v, xshift=4cm] (ir) {};
 }
+\caption{Los niveles de abstracción de la estructura invariante del dato empírico (o el sistema de comunicación con la realidad).}
 \end{figure}
+
+% Parrafo
+
+Todo dato de base empírica metodológica se construye proponiendo una vínculo causal que ponga en de los conceptos abstractos no observables con la realidad concreta observable, y una interpretación de la realidad efectivamente observada, inferencial, de los conceptos abstractos no observados.
 
 \subsection{Entropía o tasa de información}
 
