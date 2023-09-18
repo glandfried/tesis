@@ -3867,33 +3867,28 @@ Debido a que las habilidades cambian en el tiempo, es importante agregar alguna 
 
 Otra de las novedades de TrueSkill fue incorporar la formación de equipos al modelo de estimación de habilidad.
 %
-El modelo supone que el desempeño de un equipo es la suma de los desempeños de sus miembros,
+Sea $A_e$ el conjunto de jugadores que forman parte del equipo $e$.
+%
+El modelo supone que el desempeño de un equipo es la suma de los desempeños de sus miembros.
 %
 \begin{equation}
 t_e = \sum_{j\in A_e } p_j
 \end{equation}
 %
 El resto del modelo se preserva igual.
-
 %
-
-Este modelo establece que un equipo vence a otro cuando el rendimiento de su equipo es mayor que el rendimiento del equipo contrario.
+Un equipo vence a otro cuando su desempeño es mayor al del equipo contrario.
 %
-Con $A$ la partición de jugadores (la asignación de equipos),
-
-% Parrafo
-
-
-
-
-\noindent{}In summary, the TrueSkill model can be represented by a graphical network (Fig.~\ref{modelo_trueskill}).
-
+El resultado de una partida con varios equipos se modela con una desigualdad de los desempeños de los equipos, tal que $t_{o_1}< \dots < t_{o_{|A|}}$, donde $o_i$ representa el equipo que quedó en la $i$-ésima posición.
+%
+En resumen, el modelo TrueSkill puede representarse mediante el siguiente modelo causal (figura~\ref{fig:modelo_trueskill_equipos}).
+%
 \begin{figure}[ht!]
 \centering
 \tikz{ %
 
         \node[det, fill=black!10] (r) {$r_j$} ; %
-        \node[const, below=of r, yshift=-0.8cm,xshift=-0.8cm] (c_1a) {\scriptsize  with $o:=$ outcome};
+        \node[const, below=of r, yshift=-0.3cm,xshift=-0.8cm] (c_1a) {\scriptsize  $o:=$ ordenamiento};
         \node[latent, left=of r] (d) {$d_j$} ; %
         \node[latent, left=of d] (t) {$t_e$} ; %
         \node[latent, left=of t] (p) {$p_i$} ; %
@@ -3915,7 +3910,7 @@ Con $A$ la partición de jugadores (la asignación de equipos),
 
 
         \plate {personas} {(p)(s)} {$i \in A_e$}; %
-        \plate {equipos} {(personas) (t)} { {\scriptsize $A$:= partition of players} ,   $ 0 < e \leq |A|$}; %
+        \plate {equipos} {(personas) (t)} { {\scriptsize $A$:= partición de jugadores}, $ 0 < e \leq |A|$}; %
 	\node[invisible, below=of d, yshift=-0.5cm,xshift=-0.5cm] (inv_below) {};
 	\node[invisible, above=of r, yshift=0.2cm] (inv_above) {};
 	\plate {comparaciones} {(d) (r) (inv_below) (inv_above)} {$0 < j < |A|$}
@@ -3929,47 +3924,19 @@ Con $A$ la partición de jugadores (la asignación de equipos),
         }
 
 \caption{Bayes network of TrueSkill method.}
-\label{modelo_trueskill}
+\label{fig:modelo_trueskill_equipos}
 \end{figure}
-
 
 
 % Parrafo
 
-Entonces, la probabilidad del desempeño de un equipo dado se define como
-\begin{equation}
- P(t_e|A_e) = \int \dots \int \mathbb{I}(t_e = \sum_{j\in A_e } p_j ) \left(\prod_{i \in A_e} \N(p_i;\mu_i,\beta^2 + \sigma^2) \right) d\vec{p}
-\end{equation}
+Entonces, la probabilidad del desempeño de un equipo integrando los desempeños individuales es,
+\begin{align}
+ P(t_e|A_e) &= \int \dots \int \mathbb{I}(t_e = \sum_{j\in A_e } p_j ) \left(\prod_{i \in A_e} \N(p_i;\mu_i,\beta^2 + \sigma^2) \right) d\vec{p} \\
+ & = \N\left(t\,|\,\sum_{i\in A_e} \mu_i,\sum_{i\in A_e} \beta^2 + \sigma_i^2\right)
+\end{align}
 %
-El rendimiento de un equipo con dos jugadores lo podemos ver gráficamente en la Fig.~\ref{paso_3_suma_normales_image}.
-%
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=.49\linewidth]{figures/Fig9}
-\caption{Probabilidad conjunta del desempeño de dos compañeros de equipo.
-Las líneas paralelas a la diagonal $ t_e = c $ representan isobaras de rendimiento del equipo.}
-\label{paso_3_suma_normales_image}
-\end{figure}
-%
-Para calcular la probabilidad del desempeño de un equipo dado $c$ debemos integrar el área debajo de la isobara correspondiente, $ t_e = c $ (Ver Fig.~\ref{paso_3_suma_normales_image}).
-%
-En el anexo de demuestra que integral tiene la siguiente solución.
-%
-\begin{equation}
-\begin{split}
- P(t_e|A_e=\{i,j\}) & = \int \N(p_i\, |\,\mu_{*},\sigma_{*}^2) \overbrace{\N(t_e\,|\,\mu_i+\mu_j,2\beta^2 + \sigma_i^2 + \sigma_j^2)}^{\text{Scalar independent of $p_i$}} dp_i \\[0.3cm]
-& = \N(t_e \,|\, \mu_i+\mu_j,2\beta^2 + \sigma_i^2 + \sigma_j^2)
-\end{split}
-\end{equation}
-%
-Y en general, la distribución de probabilidad de desempeño de un equipo es,
-\begin{equation}
-P(t_e|A_e) = \N\left(t\,|\,\sum_{i\in A_e} \mu_i,\sum_{i\in A_e} \beta^2 + \sigma_i^2\right)
-\end{equation}
-
-El resultado observado de un juego se modela con un vector ordenado de equipos $o$, tal que $t_{o_1}< \dots < t_{o_{|A|}}$.
-%
-Con dos equipos, la función exacta de actualización posterior es (ver \ref{}),
+Con dos equipos, la función exacta de actualización posterior es (ver \ref{ch:ttt}),
 %
 \begin{equation}
  P(s_i \mid r, A) \propto
@@ -3981,26 +3948,7 @@ Con dos equipos, la función exacta de actualización posterior es (ver \ref{}),
 %
 donde $\delta(s_i) = \delta - \mu_i + s_i$, la diferencia esperada entre equipos reemplazando la habilidad estimada ($\mu$) por su verdadera habilidad $s_i$.
 %
-La solución multiequipos no tiene una forma cerreda, requiere una iteración para alcanzar convergencia que será explicada en detalle en el capítulo \ref{}.
-
-% \begin{figure}[ht!]
-% \centering
-% \includegraphics[width=.49\linewidth]{figures/Fig12}
-% \caption{TrueSkill update procedure for the winning case, where $\delta$ is the expected difference between teams.}
-% \label{posterior_ganador}
-% \label{fig_posterior}
-% \end{figure}
-%
-% \begin{figure}[ht!]
-% \centering
-% \includegraphics[width=.49\linewidth]{figures/Fig13}
-% \caption{TrueSkill update procedure for losing case, where $\delta$ is the expected difference between teams.}
-% \label{posterior_perdedor}
-% \end{figure}
-%
-% Finally, TrueSkill takes as the posterior of the model the Gaussian that minimizes the KL divergence with the exact posterior.
-
-
+La solución multiequipos no tiene una forma cerrada, requiere una iteración para alcanzar convergencia que será explicada en detalle en el capítulo \ref{ch:ttt}.
 
 
 \subsection{Base empírica metodológica \emph{habilidad}.}
@@ -4013,21 +3961,21 @@ El sistema Glicko~\cite{Glikman2013} es un desarroll\'o bayesiano previo, que a 
 
 % Pararfo
 
-Ambos modelos bayesianos de habilidad, TrueSkill y Glicko, son los elegidos por la industria del video juego, condierados como los estándares para estimar la habilidad de los usarios en el tiempo.
+Ambos modelos bayesianos de habilidad, TrueSkill y Glicko, son los elegidos por la industria del video juego, considerados como los estándares para estimar la habilidad de los usuarios en el tiempo.
 %
 Al ser los modelos más ampliamente adoptados por la comunidad de los video juegos, las estimaciones de habilidad pueden ser considerada base empírica metodológica sobre la cual evaluar modelos de aprendizaje.
 % Parrafo
 \begin{figure}[ht!]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
     \end{subfigure}
-    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio. }
+    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio.}
 \end{figure}
 %
 En cualquier caso, los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
 %
-Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo del próximo capítulo para estudiar los facotres de aprendizaje social.
+Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo del próximo capítulo para estudiar los factores de aprendizaje social.
 
 
 
@@ -4824,39 +4772,30 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 
 \chapter{Resultado 2. Implementación del estimador de habilidad estado del arte} \label{ch:ttt}
 
-\en{Humans develop complex skills through time. }%
-\es{Los humanos desarrollamos habilidades complejas a través del tiempo. }%
+Los estimadores de habilidad m\'as utilizados en la industria del video juego (como Elo y TrueSkill) no pueden obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio.
 %
-\en{Knowing how individual abilities change is essential in a wide range of activities. }%
-\es{Saber c\'omo cambian las capacidades individuales es esencial en varias actividades. }%
+El modelo TrueSkill Through Time (TTT) propaga toda la informaci\'on hist\'orica a través del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica.
 %
-\en{The most commonly used skill estimators in the video game industry (such as Elo and TrueSkill) cannot obtain reliable initial estimates or guarantee comparability between estimates distant in time and space. }%because they do not propagate historical information properly through the system. }%
-\es{Los estimadores de habilidad m\'as utilizados en la industria del video juego (como Elo y TrueSkill) no pueden obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio. }%debido a que no propagan la informaci\'on hist\'orica apropiadamente a través del sistema. }%
+La mejora se hace evidente a partir de las predicciones a priori, que son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados.
 %
-\en{The model TrueSkill Through Time (TTT) propagates all historical information throughout the system, enabling reliable initial skill estimates and guaranteeing historical comparability. }%
-\es{El modelo TrueSkill Through Time (TTT) propaga toda la informaci\'on hist\'orica a través del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica. }%
+Con no m\'as de tres hiperpar\'ametros intuitivos, el modelo TTT logra resultados similares y hasta mejores que modelos m\'as complejos como KickScore, de forma m\'as eficiente.
 %
-\en{The improvement is evident from the prior predictions, which are several orders of magnitude more accurate than those obtained with the aforementioned models. }%
-\es{La mejora se hace evidente a partir de las predicciones a priori, que son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados. }%
+Si bien el modelo TTT fue publicado hace m\'as una década, no se encontraba disponible hasta ahora en los lenguajes de programaci\'on con mayores comunidades.
 %
-\en{With no more than three intuitive hyperparameters, the TTT model achieves similar and even better results than more complex models such as KickScore, in a more efficient way. }%
-\es{Con no m\'as de tres hiperpar\'ametros intuitivos, el modelo TTT logra resultados similares y hasta mejores que modelos m\'as complejos como KickScore, de forma m\'as eficiente. }%
+Aqu\'i ofrecemos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicaci\'on intuitiva comprensible para el p\'ublico general, y otra explicaci\'on en profundidad espec\'ifica para las persona con conocimientos b\'asicos en probabilidad.
 %
-\en{Although the TTT model was published more than a decade ago, it was not available until now in the programming languages with the largest communities. }%
-\es{Si bien el modelo TTT fue publicado hace m\'as una década, no se encontraba disponible hasta ahora en los lenguajes de programaci\'on con mayores comunidades. }%
+Luego de ilustrar su modo de uso b\'asico, mostramos c\'omo estimar la curvas de aprendizaje de los jugadores hist\'oricas de la Asociaci\'on de Tenistas Profesionales (ATP).
 %
-\en{Here we offer the first software for \texttt{Julia}, \texttt{Python} and \texttt{R}, accompanied by an intuitive explanation for the general public and an in-depth explanation to people with basic knowledge in probability. }%
-\es{Aqu\'i ofrecemos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicaci\'on intuitiva comprensible para el p\'ublico general, y otra explicaci\'on en profundidad espec\'ifica para las persona con conocimientos b\'asicos en probabilidad. }%
-%%
-\en{After illustrating its basic mode of use, we show how to estimate the learning curves of historical players of the Association of Tennis Professionals (ATP). }%
-\es{Luego de ilustrar su modo de uso b\'asico, mostramos c\'omo estimar la curvas de aprendizaje de los jugadores hist\'oricas de la Asociaci\'on de Tenistas Profesionales (ATP). }%
-%
-\en{This algorithm requires few iterations to converge, allowing millions of observations to be analyzed using any low-end computer. }%
-\es{Este algoritmo requiere pocas iteraciones para converger, permitiendo analizar millones de observaciones usando cualquier ordenador de gama baja. }%
-
+Este algoritmo requiere pocas iteraciones para converger, permitiendo analizar millones de observaciones usando cualquier ordenador de gama baja.
 
 \section{Introducci\'on} \label{sec:intro}
 
+% \en{Humans develop complex skills through time. }%
+% \es{Los humanos desarrollamos habilidades complejas a través del tiempo. }%
+% %
+% \en{Knowing how individual abilities change is essential in a wide range of activities. }%
+% \es{Saber c\'omo cambian las capacidades individuales es esencial en varias actividades. }%
+% %
 
 Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo probabil\'istico propuesto por Elo~\cite{Glickman1999, Herbrich2007, VanDerLinden2016}.
 %
