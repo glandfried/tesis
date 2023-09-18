@@ -3534,7 +3534,7 @@ Para construir un sistema de información con la realidad (un dato de base empí
 %
 En la siguiente sección veremos cómo se ha construido el dato de base empírica \emph{habilidad} durante el siglo 20 hasta princpios del siglo 21.
 
-\section{Construcción del dato de base empírica metodológica \emph{Habilidad}.} \label{sec:base_empirica_metodo}
+\section{Estimadores de habilidad en la industria del deporte y el videojuego.} \label{sec:base_empirica_metodo}
 
 Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
 %
@@ -3550,11 +3550,9 @@ Desde los primeros modelos generativos, propuestos hace casi un siglo por~\cite{
 %
 El campo sigui\'o progresando con los trabajos de Bradley y Terry \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}Mosteller, que condujeron al gran avance que tuvo lugar cuando Arpad Elo~\cite{Elo2008} desarroll\'o una metodología para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
 
-\subsection{El estimadores de habilidad Elo}
+\subsection{El estimadores de habilidad Elo: hipótesis indicadora ad-hoc.}
 
-El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas profesionales es conceptualmente simple.
-%
-La figura~\ref{fig:generative_model} vemos una versión ``Gaussiana'' del modelo causal en el que las habilidades ocultas generan el resultado observable a través de desempeños aleatorios.
+El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas profesionales supone que las habilidades ocultas generan el resultado observable a través de desempeños aleatorios.
 %
 \begin{figure}[ht!]
   \centering
@@ -3601,37 +3599,39 @@ La figura~\ref{fig:generative_model} vemos una versión ``Gaussiana'' del modelo
     %
     (\subref{fig:probaOfWin_2D}) La probabilidad conjunta de los desempeños.
     %
-    El área bajo de un lado y del otro de la diagonal es la predicción del resultado.
+    El volumen de un lado y del otro de la diagonal representa la predicción del resultado.
     }
 \end{figure}
 %
-Los agentes exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
+En su versión ``Gaussiana'' (la figura~\ref{fig:generative_model}, las persona exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
 %
-El modelo supone que gana el agente con mayor rendimiento, $r = (p_i > p_j)$.
+El modelo supone que gana el agente con mayor desempeño, $r = (p_i > p_j)$.
 %
 El parámetro $\beta^2$, al ser el mismo para todos los agentes, act\'ua como la escala de las estimaciones: habilidades a una distancia de un $\beta$ implica 76\% probabilidad de ganar, independiente del valor absoluto de las estimaciones%
-
-% Parrafo
-
+%
 A partir de este modelo causal podemos derivar la predicción a priori del resultado, $P(r|s_i^{\text{old}},s_j^{\text{old}})$.
 %
 En términos gráficos, podemos representar esa probabilidad como el volumen indicado en la figura \ref{fig:probaOfWin_2D}.
+
+% Parrafo
+
+Arpad Elo propone a mediados del siglo 20 un procedimiento ad-hoc de selección de hipótesis sobre el valor de la variable (habilidad de los ajedrecistas) a través del indicador observado (el resultado de la partida) y el modelo causal descrito.
 %
-El complemento de la predicci\'on lo vamos a llamar sorpresa.
-%
-\begin{equation*}
- \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{Sorpresa}}{\text{del resultado}}}
-\end{equation*}
-%
-La idea es que la magnitud de la sorpresa $\Delta$ est\'a relacionada con cuan buenas son las estimaciones previas, y por lo tanto puede usarse para actualizarlas.
+La idea es que la magnitud de la sorpresa est\'a relacionada con cuan buenas son las estimaciones previas, y por lo tanto podría usarse para actualizarlas.
 %
 Resultados inesperados indicar\'ian que las estimaciones actuales no son del todo correctas y deber\'ian actualizarse en mayor medida que si hubieran ocurrido como se esperaba.
 %
-La propuesta de Elo fue entonces utilizar la sorpresa como factor de correcci\'on de las estimaciones previas.
+La propuesta de Elo fue entonces utilizar la sorpresa $\Delta$ como factor de correcci\'on de las estimaciones previas.
 %
 \begin{equation}\label{eq:elo_update}
  s_{\text{winner}_\text{new}} = s_{\text{winner}_\text{old}} + \Delta \ \ \ \ \ s_{\text{loser}_\text{new}} = s_{\text{loser}_\text{old}} - \Delta
 \end{equation}
+%
+Donde $\Delta$ se define como el complemento de la predicci\'on.
+%
+\begin{equation*}
+ \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{\footnotesize Sorpresa}}{\text{\footnotesize del resultado}}}
+\end{equation*}
 %
 Esta es la hip\'otesis indicadora de Elo.
 %
@@ -3669,23 +3669,15 @@ A medida que la persona tiene más cantidad de partidas jugadas, el valor de K e
 De esa forma se rompe la simetr\'ia y se preserva las estimaciones de las personas que se consideran conocidas.
 
 
-\subsection{TrueSkill, estimación mediante la hipótesis indicadora universal} \label{sec:trueskill}
+\subsection{TrueSkill, estimación mediante la hipótesis indicadora universal.} \label{sec:trueskill}
 
-
-%El teorema de Bayes, que se deriva de las reglas de la probabilidad, es en este sentido la hip\'otesis indicadora general, la que permite actualizar la distribuci\'on de creencia a priori de forma \'optima.
-
-
-Los problemas asociados al algoritmo Elo se generan debido a que la hip\'otesis indicadora utilizada no esta justificada correctamente.
+Los problemas asociados al algoritmo Elo se generan debido al uso de una hip\'otesis indicadora ad-hoc.
 %
-%En este cap\'itulo hemos introducido los principios interculturales de acuerdos intersubjetivos a partir de los que derivamos las reglas de la probabilidad.
-%
-Por ello, para corregir los problemas del algoritmo Elo, en vez de seleccionar una \'unica hip\'otesis de habilidad (estimaci\'on puntual) a través de un método ad-hoc, debemos aplicar estrictamente las reglas de la probabilidad y calcular la distribuci\'on de creencia sobre todo el espacio de hip\'otesis.
-
-
+Por ello, para corregir los problemas del algoritmo Elo, en vez de seleccionar una \'unica hip\'otesis de habilidad (estimaci\'on puntual) debemos aplicar estrictamente las reglas de la probabilidad y calcular la distribuci\'on de creencia sobre todo el espacio de hip\'otesis.
 
 % Parrafo
 
-El método TrueSkill~\cite{herbrich2006-trueskill} fue presentado en 2006 por Ralf Herbrich y tiene dos patentes~\cite{trueskill_patent_06, trueskill_patent_09}.
+El método TrueSkill~\cite{Herbrich2007} fue presentado en 2006 por Ralf Herbrich y tiene dos patentes~\cite{trueskill_patent_06, trueskill_patent_09}.
 %
 TrueSkill comparte el modelo de dependencia del sistema de calificación Elo entre habilidad, desempeño y probabilidad de ganar.
 %
@@ -3693,11 +3685,9 @@ Lo extiende a través de un modelo bayesiano que incorpora una distribución de 
 
 % Parrafo
 
-
 Además, se extiende el modelo causal, permitiendo estimar la habilidad de los jugadores cuando participan en equipo, algo que no estaba incluido en el modelo causal original.
 
-
-\subsection{Predicción bayesiana (verosimilitud marginal)}
+\subsubsection{Evidencia}
 
 Una de las novedades de TrueSkill es la noción de incertidumbre de la estimación de la habilidad.
 %
@@ -3707,9 +3697,11 @@ La estimación de habilidad $s_i$, anteriormente representada por un escalar, ah
 p(s_i) = \N(s_i | \mu_i, \sigma_i^2)
 \end{equation}
 %
-para definir el valor a priori de la media, $\mu$, hay que recordar que lo que importa no es su valor absoluto sino la diferencia con otros jugadores (un $\beta$ de diferencia equivale a 76\% de probabilidad de ganar).
+Para definir el valor a priori de la media, $\mu$, hay que recordar que el valor absoluto de habilidad no tiene ningún significado.
 %
-la incertidumbre a priori, $\sigma$, tiene ue ser lo suficientemente grande para asegurarnos de cubrir todas las posibles valores de habilidad que la persona puede tener.
+Lo que importa no es su valor absoluto sino la diferencia con otros jugadores: un $\beta$ de diferencia equivale a 76\% de probabilidad de ganar.
+%
+La incertidumbre a priori, $\sigma$, tiene ue ser lo suficientemente grande para asegurarnos de cubrir todas las posibles valores de habilidad que la persona puede tener.
 %
 Este valor depende del contexto.
 %
@@ -3717,7 +3709,7 @@ En general se usa una incertidumbre que es 3 veces el desvío estandar del desem
 
 % Parrafo
 
-Al igual que en el sistema Elo, se supone que el resultado final del juego depende del rendimiento $p_i$ de los jugadores.
+Al igual que en el sistema Elo, se supone que el resultado final del juego depende del desempeño $p_i$ de los jugadores.
 %
 Sin embargo, en el modelo TrueSkill tenemos la definición del desempeño condicional.
 %
@@ -3725,67 +3717,42 @@ Sin embargo, en el modelo TrueSkill tenemos la definición del desempeño condic
 p(p_i|s_i) = \N(p_i | s_i, \beta^2)
 \end{equation}
 %
-Para calcular el desempeño tenemos que integrar todos los posibles valores de habilidad,
+Para calcular el desempeño tenemos que integrar todos los posibles valores de habilidad.
 %
-\begin{equation}\label{p.p_i}
-p(p_i) = \int \N(p_i | s_i, \beta^2) \N(s_i | \mu_i,\sigma_i^2) ds_i
-\end{equation}
-%
-Entonces, para calcular la probabilidad de un desempeño, $p_i$, debemos integrar el área debajo de la línea sólida en la Fig.~\ref{paso_1_multiplicacion_normales}.
+En términos gráficos esto es equivalente al área debajo de la línea sólida en la Fig.~\ref{paso_1_multiplicacion_normales}.
 %
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=.4\linewidth]{figures/Fig8}
+\begin{subfigure}[c]{0.4\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{figures/Fig8}
+\end{subfigure}
+\begin{subfigure}[c]{0.5\textwidth}
+\begin{align*}\label{p.p_i}
+p(p_i) & = \int \N(p_i | s_i, \beta^2) \N(s_i | \mu_i,\sigma_i^2) ds_i  \\
+&= \N(p_i|\mu_i, \beta^2 + \sigma^2)
+\end{align*}
+\end{subfigure}
 \caption{Distribución conjunta de habilidades y desempeños, calculada como el producto de la distribución de priori de las habilidad, $\N(s_i \, | \, \mu_i, \sigma_i^2)$, por la distribución condicional del desempeño, $\N(p_i \, | \, s_i, \beta^2)$.
 %
-El área debajo de la línea sólida representa representa la probabilidad marginal de un cierto desempeño $p_i$.
+El área debajo de la línea sólida representa la probabilidad marginal de un cierto desempeño $p_i$.
 %
 La línea punteada representa el valor máximo.
 }
 \label{paso_1_multiplicacion_normales}
 \end{figure}
 %
-Por las propiedades de la distribución gaussiana, esta integral se puede parametrizar usando otra gaussiana, centrada en la distribución de creencias a priori de la habilidad, $\mu$, y con la suma de incertidumbres del priori y del desempeño, $\N(s_i | \mu_i, \beta^2 +\sigma_i^2)$.
+Por las propiedades de la distribución gaussiana (ver anexo), esta integral se puede parametrizar usando otra gaussiana, centrada en la distribución de creencias a priori de la habilidad, $\mu$, y con la suma de incertidumbres del priori y del desempeño, $\N(p_i | \mu_i, \beta^2 +\sigma_i^2)$.
+%
+En la secci\'on~\ref{sec:2vs2} veremos en detalle c\'omo todas estas ecuaciones surgen de aplicar las reglas de las suma y el producto sobre el modelo.
+%
+Aqu\'i presentamos las conclusiones finales.
 
 % Parrafo
 
-
-\noindent{}The difference teams' performances are what determines the outcome of the game.
-\begin{equation}
-d_{ab}=t_a - t_b
-\end{equation}
+Al igual que en el caso anterior, los desempeños se expresan usando gaussianas y la probabilidad de ganar se corresponde con el volumen de un lado y del otro de la isolínea $p_i = p_j$ (figura~\ref{fig:probaOfWin_2D}).
 %
-% In the same way, as in the Fig.~\ref{probaOfWin_2D}, the difference of performance isobars are the lines parallel to the diagonal of zero difference.
-% To compute the probability of a given difference of performance $d_ {ab}$ is:
-% \begin{align}
-%  P(d_{ab}|A_a,A_b) = \iint & \mathbb{I}(d_{ab}=t_a -t_b)\cdot N(t_a;\sum_{i\in A_a} \mu_i,\sum_{i\in A_a} \beta^2 + \sigma_i^2) \cdot \nonumber \\
-%  & N(t_b;\sum_{i\in A_b} \mu_i,\sum_{i\in A_b} \beta^2 + \sigma_i^2) \, dt_a dt_b
-% \end{align}
-%
-% It can be shown (S2 File) that them probability of a given difference of performance $d_ {ab} $ is:
-% \begin{equation}
-% P(d_{ab}|A_a,A_b) = N\Bigg(d_{ab} \ ; \  \underbrace{\sum_{i\in A_a} \mu_i - \sum_{i\in A_b} \mu_i}_{\text{Expected difference }(\delta)},\underbrace{\sum_{i\in A_a\cup A_b} \beta^2 + \sigma_i^2}_{\text{Total variance }(\vartheta)}\Bigg) = N(d_{ab} \ ; \  \delta, \vartheta )
-% \end{equation}
-%
-% \noindent{}A win of a team $ a $ over another team $ b $ is modeled as:
-% \begin{equation}
-% r_{ab} = d_{ab} > 0
-% \end{equation}
-%
-% Then, the probability of victory of a team over another is computed as:
-% \begin{equation}
-%  P(r_{ab}=\text{True}|A_a,A_b) = P(d_{ab} > 0 | A_a,A_b) = \Phi\left( \frac{\delta}{\sqrt{\vartheta} } \right)
-% \end{equation}
-
-
-
-A modo de ejemplo, consideremos un caso ganador ($p_i > p_j$) usando priors gaussianos, $\N(\,s\,|\,\mu, \sigma^2)$.
-%
-En la secci\'on~\ref{sec:2vs2} veremos en detalle c\'omo todas estas ecuaciones surge de aplicar las reglas de las suma y el producto sobre el modelo.
-%
-Aqu\'i las presentamos las conclusiones finales.
-%
-Nuestra creencia a priori respecto de la diferencia de desempe\~nos, $d=p_i-p_j$, se puede expresar como una gaussiana centrada en la diferencia de las medias de las estimaciones a priori ($\mu_i - \mu_j$), con una varianza que incorpora la incertidumbre de ambas estimaciones ($\sigma$) y la varianza de ambos rendimientos ($\beta$), $\N(\, d \, | \, \mu_i -\mu_j \, ,\ 2\beta^2 + \sigma_i^2 + \sigma_j^2 \,)$.
+En términos analíticos, nuestra creencia a priori respecto de la diferencia de desempe\~nos, $d=p_i-p_j$, se puede expresar como una gaussiana centrada en la diferencia de las medias de las estimaciones a priori ($\mu_i - \mu_j$), con una varianza que incorpora la incertidumbre de ambas estimaciones ($\sigma$) y la varianza de ambos rendimientos ($\beta$), $\N(\, d \, | \, \mu_i -\mu_j \, ,\ 2\beta^2 + \sigma_i^2 + \sigma_j^2 \,)$.
 %
 Al observar que el agente $i$ gan\'o, sabemos por el modelo causal que la diferencia de desempe\~nos oculta fue en efecto positiva.
 %
@@ -3799,15 +3766,15 @@ A partir de ahora el rol del modelo se dejar\'a impl\'icito.
 %
 La evidencia es una predicci\'on hecha con todas las hip\'otesis a priori.
 %
-Como es constante, la incertidumbre a posteriori de cada hip\'otesis es proporcional al producto de su incertidumbre a priori y su verosimilitud, como se muestra en la ecuaci\'on~\eqref{eq:posterior_win}.
+% Como es constante, la incertidumbre a posteriori de cada hip\'otesis es proporcional al producto de su incertidumbre a priori y su verosimilitud, como se muestra en la ecuaci\'on~\eqref{eq:posterior_win}.
 
-\subsection{Posterior}
+\subsubsection{Verosimilutd}
 
-La evidencia es la verosimilitud marginal.
+La evidencia es la verosimilitud marginal $p(r)$.
 %
-Para calcular el posterior $p(s_i|r)$ necesitamos la verosimilitud condicional, $p(r|s_i)$.
+Para calcular el posterior sobre la habilidad $p(s_i|r)$ necesitamos la verosimilitud condicional, $p(r|s_i)$.
 %
-En el capítulo~\ref{} mostramos todos los detalles que se requieren para llegar a la siguiente expresión análítica exacta.
+En el capítulo~\ref{ch:ttt} mostramos todos los detalles que se requieren para llegar a la siguiente expresión análítica exacta.
 %
 \begin{equation}\label{eq:posterior_win}
 \underbrace{p(\,s_i\, | \, r \, )}_{\text{Posterior}} \propto \underbrace{1-\Phi(0 \, |  s_i - \mu_j , \, 2\beta^2 + \sigma_j^2)}_{\text{\en{Likelihood}\es{Verosimilitud}} \ P(r|s_i)} \,  \underbrace{\N(s_i \, | \, \mu_i,\, \sigma_i^2)}_{\text{Prior} \ p(s_i)}
@@ -3853,7 +3820,7 @@ En cambio, en la regi\'on de hip\'otesis de muy baja habilidad, donde el resulta
 
 Esta es la estimaci\'on de habilidad correcta dado el modelo causal Elo.
 
-\subsubsection{La mejor aproximación del posterior}
+\subsubsection{Posterior aproximado}
 
 Es importante remarcar que la posterior, aunque se parezca, no es una distribuci\'on gaussiana, lo que nos impedir\'a usar la ecuaci\'on~\eqref{eq:posterior_win} iterativamente.
 %
@@ -3873,10 +3840,8 @@ en términos de minizaci\'on de la divergencia Kullback-Leibler entre la distrib
 %
 Este método nos permite aplicar eficientemente la ecuaci\'on~\eqref{eq:posterior_win} iterativamente sobre una secuencia de observaciones, que de otra manera sería inviable.
 
+% Parrafo
 
-\subsubsection{El posterior en el tiempo}
-
-%
 El enfoque adoptado por TrueSkill para tratar el proceso din\'amico, conocido como \emph{filtering}, usa el \'ultimo posterior aproximado como prior del siguiente evento.
 %
 Luego, el posterior aproximado en un determinado momento se define como,
@@ -3898,17 +3863,23 @@ Debido a que las habilidades cambian en el tiempo, es importante agregar alguna 
  \end{equation}
  %
 
+\subsubsection{Modelo con equipos}
 
-
-
-\subsection{Equipos}
-
-\noindent{}The second novelty of TrueSkill enables to update the players' skill when they play team games.
-TrueSkill model states that one team beats another when their team's performance is greater than the opponent team's performance.
-With $A$ the partition of players (the team assignment), the performance of a team is defined as the sum of the performances of its members,
+Otra de las novedades de TrueSkill fue incorporar la formación de equipos al modelo de estimación de habilidad.
+%
+El modelo supone que el desempeño de un equipo es la suma de los desempeños de sus miembros,
+%
 \begin{equation}
 t_e = \sum_{j\in A_e } p_j
 \end{equation}
+%
+El resto del modelo se preserva igual.
+
+%
+
+Este modelo establece que un equipo vence a otro cuando el rendimiento de su equipo es mayor que el rendimiento del equipo contrario.
+%
+Con $A$ la partición de jugadores (la asignación de equipos),
 
 % Parrafo
 
@@ -4032,7 +4003,7 @@ La solución multiequipos no tiene una forma cerreda, requiere una iteración pa
 
 
 
-\section{Conclusiones}
+\subsection{Base empírica metodológica \emph{habilidad}.}
 
 El modelo de habilidad TrueSkill corrije los errores del modelo Elo a través del la evaluación bayesiana de todo el espacio de hipótesis.
 %
