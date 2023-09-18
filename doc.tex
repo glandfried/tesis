@@ -3425,7 +3425,7 @@ Cada uno de los pasos de la estructura del dato empírico forma parte de un cami
 
 Todo dato de base empírica metodológica se construye proponiendo una vínculo causal que ponga en de los conceptos abstractos no observables con la realidad concreta observable, y una interpretación de la realidad efectivamente observada, inferencial, de los conceptos abstractos no observados.
 
-\subsection{Entropía o tasa de información}
+\subsection{Tasa de información de los sistemas de comunicación}
 
 En la sección~\ref{sec:modelos_alternativos} evaluamos los dos modelos causales alternativos que usamos para introducir las reglas de la probabilidad.
 %
@@ -3511,6 +3511,14 @@ Si el modelo que estamos analizando es el correcto, el que se corresponde con la
 \log \, \lim_{T \rightarrow \infty} P(\text{Datos}|\text{Modelo incorrecto})^{1/T} &= \sum_x p_x \log p_{x|M} = - \underbrace{\text{Entropía cruzada}}_{\hfrac{\text{\scriptsize Entropía +}}{\text{\scriptsize divergencia}}}
 \end{align*}
 %
+Donde la información de Shannon (en órdenes de magnitud) se define como el negativo del logaritmo de la predicción (si la predicción es 0, tenemos información infinita, si la predicción es 1, tenemos información nula) y la entropía se define como su esperanza.
+%
+\begin{equation*}
+\overbrace{h(x) = - \log_2 P(x)}^{\text{Información de Shannon}}  \hspace{2cm} \overbrace{H(X) = \sum_{x\in X} P(x) h(x)}^{\text{Entropía}}
+\end{equation*}
+
+% Parrafo
+
 La tasa de predicción no es más que el negativo de la tasa de información.
 %
 Es decir, a medida que mejoramos la predicción disminuimos la cantidad de información que obtenemos.
@@ -3522,47 +3530,36 @@ Es decir, a medida que mejoramos la predicción disminuimos la cantidad de infor
 
 % Parrafo
 
-La información de Shannon (en órdenes de magnitud) se define como el negativo del logaritmo de la predicción.
+Para construir un sistema de información con la realidad (un dato de base empírica metodológica) necesitamos minimizar la tasa de información que recibimos de la realidad, maximizando la predicción conjunta que hacemos de los datos (la evidencia).
 %
-Si la predicción es 0, tenemos información infinita.
+En la siguiente sección veremos cómo se ha construido el dato de base empírica \emph{habilidad} durante el siglo 20 hasta princpios del siglo 21.
+
+\section{Construcción del dato de base empírica metodológica \emph{Habilidad}.} \label{sec:base_empirica_metodo}
+
+Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
 %
-Si la predicción es 1, tenemos información nula.
+Dado que son variables ocultas, lo mejor que podemos hacer es estimarlas a partir de sus consecuencias observables directas: el producto de la resoluci\'on de problemas y competencias.
 %
-Luego, la entropía se define como la esperanza.
+Sin embargo la estimaci\'on de curvas de aprendiaje es tema sensible, especialmente cuando se las pretende utilizar para tomar decisiones que pueden impactar a las personas.
 %
-\begin{equation*}
-\overbrace{h(x) = - \log_2 P(x)}^{\text{Información de Shannon}}  \hspace{2cm} \overbrace{H(X) = \sum_{x\in X} P(x) h(x)}^{\text{Entropía}}
-\end{equation*}
-
-
-
-
-% \only<10->{\underbrace{\log \ \ \lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}_{\hfrac{\text{\footnotesize Tasa de predicción}}{\text{\footnotesize en orden de magnitud}}} & = }
-% \only<7-9>{\underbrace{\lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}_{\text{\footnotesize Tasa de predicción}} & = }
-% \only<7>{\ \ P(s2|M)^{p_{s2}} \ \ \  P(s3|M)^{p_{s3}} \ \ \ P(r1|M)^{p_{r1}} \ \ \ P(r0|M)^{p_{r0}}}
-% \only<8>{\ \ P(s2|M)^{p_{s2}} \ \ \  P(s3|M)^{p_{s3}} \ \ \ P(r1|M)^{p_{r1}} \hspace{0.9cm} p_{_{r0}}^{ \ \ p_{r0}}}
-% \only<9>{ \hspace{0.8cm} p_{_{s2}}^{ \ \ p_{s2}} \hspace{1.4cm}  p_{_{s3}}^{ \ \ p_{s3}} \hspace{1.4cm}  p_{_{r1}}^{ \ \ p_{r1}} \hspace{1.4cm}  p_{_{r0}}^{ \ \ p_{r0}}}
-% \only<10>{\ \ \ ?}
-% \only<11>{\ \ p_{_{s2}} \log p_{_{s2}} \ + \ p_{_{s3}} \log   p_{_{s3}} \ + \ p_{_{r1}} \log p_{_{r1}} \ + \ p_{_{r0}} \log p_{_{r0}}  }
-% \only<12-14>{\ \  \sum_x \, p_{_{x}} \, \log p_{_{x}}  }
-% \only<13>{ = - \hspace{0.85cm} \text{Entopía} \ }
-% \only<14>{= -\underbrace{\textbf{Entropía}}_{\hfrac{\text{\footnotesize \phantom{p}Tasa de información}\phantom{p}}{\text{\footnotesize orden de magnitud}}} \ !!!!!!!!!!!!!!!}
-% \only<15>{\ \  \sum_x \, p_{_{x}} \, \log p_{_{x|M}}  }
-% \only<15>{= - \hspace{0.3cm} \underbrace{ \textbf{Entopía cruzada}}_{\hfrac{\text{\footnotesize Entropía}}{\text{\footnotesize + divergencia}} } \ !}
-% \phantom{\sum_x P(r0|M)^{p_{r0}}}
-% &&
-
-
-\section{Estimadores de habilidad en la industria del videojuego} \label{sec:base_empirica_metodo}
-
-La ciencia, como proyecto de construcci\'on de conocimiento universalizable, nos obliga a poner en correspondencia un\'ivoca los fen\'omenos percibidos por nuestras conciencias con alg\'un esquema de operaci\'on que sea p\'ublicamente inteligible y reproducible.
+Considerar s\'olo la frecuencia de resultados positivos como indicador de la habilidad de los individuos puede conducir a aproximaciones erroneas, fundamentalmente porque su valor depende tambi\'en de la dificultad de los desaf\'ios.
+%
+Por esta raz\'on, todos los estimadores de habilidad ampliamente usados se basan en comparaciones por pares.
+%
+Desde los primeros modelos generativos, propuestos hace casi un siglo por~\cite{Thurstone1927} y~\cite{Zermelo1929}, se supone que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ del agente $i$ y de su oponente $j$, expresada como $P(\, r \,|\, p_i, \, p_j \,)$.
+%
+El campo sigui\'o progresando con los trabajos de Bradley y Terry \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}Mosteller, que condujeron al gran avance que tuvo lugar cuando Arpad Elo~\cite{Elo2008} desarroll\'o una metodología para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
 
 \subsection{El estimadores de habilidad Elo}
 
-El modelo probabil\'istico propuesto por Elo.
+El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas profesionales es conceptualmente simple.
+%
+La figura~\ref{fig:generative_model} vemos una versión ``Gaussiana'' del modelo causal en el que las habilidades ocultas generan el resultado observable a través de desempeños aleatorios.
 %
 \begin{figure}[ht!]
-\centering \small
+  \centering
+  \begin{subfigure}[b]{0.5\textwidth}
+  \centering \small
     \tikz{
     \node[det, fill=black!10] (r) {$r$} ;
     \node[const, left=of r, xshift=-1.35cm] (r_name) {\small Resultado:};
@@ -3583,18 +3580,30 @@ El modelo probabil\'istico propuesto por Elo.
     \edge {p1,p2} {d};
     \edge {s1} {p1};
     \edge {s2} {p2};
-}
+
+    \node[invisible, below=of r, yshift=-0.7cm] (inv) {};
+  }
+  \caption{}
+  \label{fig:generative_model}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.375\textwidth}
+      \centering
+       \includegraphics[width=1\textwidth]{figures/probaOfWin_2D.pdf}
+       \caption{}
+     \label{fig:probaOfWin_2D}
+    \end{subfigure}
      \caption{
-    Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
+    (\subref{fig:generative_model}) Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
     %
     Quien haya obtenido mayor rendimiento gana, $r = (d > 0)$.
     %
     Las variables observables se pintan de gris, las ocultas en blanco, y las constantes se muestran como puntos negros.
+    %
+    (\subref{fig:probaOfWin_2D}) La probabilidad conjunta de los desempeños.
+    %
+    El área bajo de un lado y del otro de la diagonal es la predicción del resultado.
     }
-    \label{fig:generative_model}
 \end{figure}
-%
-La figura~\ref{fig:generative_model} ofrece un modelo causal en el que las habilidades generan el resultado observable.
 %
 Los agentes exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
 %
@@ -3604,19 +3613,9 @@ El parámetro $\beta^2$, al ser el mismo para todos los agentes, act\'ua como la
 
 % Parrafo
 
-A partir de este modelo causal podemos derivar la probabilidad de ganar a priori, $P(r|s_i^{\text{old}},s_j^{\text{old}})$.
+A partir de este modelo causal podemos derivar la predicción a priori del resultado, $P(r|s_i^{\text{old}},s_j^{\text{old}})$.
 %
 En términos gráficos, podemos representar esa probabilidad como el volumen indicado en la figura \ref{fig:probaOfWin_2D}.
-%
-\begin{figure}[ht!]
-\centering \small
-\begin{subfigure}[c]{0.49\textwidth}
-       \includegraphics[width=1\textwidth]{figures/probaOfWin_2D.pdf}
-     \label{fig:probaOfWin_2D}
-    \end{subfigure}
-\caption{}
-\label{fig:elo}
-\end{figure}
 %
 El complemento de la predicci\'on lo vamos a llamar sorpresa.
 %
@@ -4887,29 +4886,6 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 
 \section{Introducci\'on} \label{sec:intro}
 
-Los humanos desarrollamos habilidades complejas gracias a una integraci\'on especial de los procesos biol\'ogicos, cognitivos y sociales~\cite{Koster2020}.
-%
-Nuestra extraordinaria capacidad para imitar, combinada con los largos per\'iodos de aprendizaje juvenil y vida posreproductiva, permite a los humanos aprender de los dem\'as y transmitir las innovaci\'on a trav\'es de la generaciones~\cite{Richerson2020}.
-%
-Al ser un proceso poblacional, la adaptaci\'on humana tambi\'en se ve afectada por caracter\'isticas demogr\'aficas, como el tama\~no y estructura de las poblaciones~\cite{Derex2020}.
-
-% Parrafo
-
-Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
-%
-Dado que son variables ocultas, lo mejor que podemos hacer es estimarlas a partir de sus consecuencias observables directas: el producto de la resoluci\'on de problemas y competencias.
-%
-Sin embargo la estimaci\'on de curvas de aprendiaje es tema sensible, especialmente cuando se las pretende utilizar para tomar decisiones que pueden impactar a las personas.
-%
-Considerar s\'olo la frecuencia de resultados positivos como indicador de la habilidad de los individuos puede conducir a aproximaciones erroneas, fundamentalmente porque su valor depende tambi\'en de la dificultad de los desaf\'ios.
-%
-Por esta raz\'on, todos los estimadores de habilidad ampliamente usados se basan en comparaciones por pares.
-%
-Desde los primeros modelos generativos, propuestos hace casi un siglo por~\cite{Thurstone1927} y~\cite{Zermelo1929}, se supone que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ del agente $i$ y de su oponente $j$, expresada como $P(\, r \,|\, p_i, \, p_j \,)$.
-%
-El campo sigui\'o progresando con los trabajos de \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}, que condujeron al gran avance que tuvo lugar cuando~\cite{Elo2008} desarroll\'o una metodología para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
-
-% Parrafo
 
 Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo probabil\'istico propuesto por Elo~\cite{Glickman1999, Herbrich2007, VanDerLinden2016}.
 %
