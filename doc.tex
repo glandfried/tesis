@@ -3997,7 +3997,6 @@ Estas estimaciones de habilidad serán la base empírica metodológica que utili
 
 \chapter{Resultado 1. Efecto de la formación de equipos sobre el aprendizaje}\label{ch:team}
 
-
 El problema de la adquisición de habilidades es ubicuo y fundamental para la vida.
 %
 La mayoría de las tareas humanas se realizan en sociedad, lo que  la cooperación con otros sujetos.
@@ -4018,19 +4017,19 @@ La tendencia a jugar en equipos se asocia con una mejora de las habilidades a la
 
 La habilidad se adquiere principalmente a partir de la experiencia individual.
 %
-El ser humano, por su característica social, también incorpora conocimientos aprendiendo de los demás.
+Sin embargo, el ser humano por sus capacidades sociales incorpora muchos de los conocimientos aprendiendo de los demás.
 %
-El aprendizaje social puede afectar el proceso de adquisición de habilidades esperado por la experiencia individual produciendo alteraciones en las habilidades del sujeto que pueden ser tanto beneficiosas como riesgosas~\cite{Boyd2011}.
+El aprendizaje social puede afectar el proceso de adquisición de habilidades esperado por la experiencia individual, que pueden ser tanto beneficiosas como riesgosas~\cite{Boyd2011}.
 %
-En este artículo, explotamos el repositorio virtualmente infinito del comportamiento humano disponible en Internet para estudiar un tema relevante en la ciencia antropológica: cómo las estrategias de agrupación pueden afectar la adquisición de habilidades.
+En este artículo, aprovechamos el repositorio virtualmente infinito del comportamiento humano disponible en Internet para estudiar un tema relevante en la ciencia antropológica: cómo las estrategias de agrupación pueden afectar la adquisición de habilidades.
 
 % Parrafo
 
-El área de investigación sobre toma de decisiones expertas comenzó estudiando el comportamiento de los ajedrecistas profesionales~\cite{deGroot1978-thoughtAndChoiceInChess,chase1973-perceptionInChess,simon1974-howBigIsAChunk}.
+Las investigaciones sobre toma de decisiones expertas se iniciaron con el estudio del comportamiento de los ajedrecistas profesionales~\cite{deGroot1978-thoughtAndChoiceInChess,chase1973-perceptionInChess,simon1974-howBigIsAChunk}.
 %
-La experiencia individual ha sido durante mucho tiempo un tema importante, estudiado como el factor principal en la mejora del desempeño.
+La experiencia individual ha sido durante mucho tiempo estudiado como el factor principal en la mejora del desempeño.
 %
-Newell señaló en 1981 que la ley de potencia describía todos los datos sobre aprendizaje analizados en función del grado de práctica adquirida~\cite{Newell1981}.
+Newell señaló en 1981 que la ley de potencia, en función del grado de práctica adquirida, describía todos los datos sobre aprendizaje analizados hasta el momento~\cite{Newell1981}.
 %
 En los últimos años, algunos autores señalaron que la ley de potencia explica solamente las curvas de aprendizaje poblacionales y afirman la necesidad de proponer otras funciones para aproximar las curvas de aprendizaje individuales~\cite{heathcote2000-powerLawRepealedExponentialLawOfPractice}.
 %
@@ -4042,17 +4041,17 @@ Se deben tener en cuenta otros componentes esenciales para comprender mejor los 
 
 % Parrafo
 
-Uno de los factores que provocan una alteración en las curvas de aprendizaje esperadas es, para los animales prosociales, la capacidad de aprendizaje social.
+En los animales pro-sociales, la capacidad de aprendizaje social es un factor que modifica las curvas de aprendizaje esperadas por aprendizaje individual.
 %
 El aprendizaje social se define como cambios a largo plazo en el comportamiento causados por estímulos derivados de la observación o la interacción con otros individuos~\cite{hoppitt2013-socialLearningAnIntroductionBook,bandura1977-socialLearning}.
 %
 Nuestra especie estuvo involucrada en una coevolución genética-cultura única que provocó el surgimiento de nuestras habilidades especiales de aprendizaje social: una maquinaria cognitiva costosa que permite la adquisición eficiente de tradiciones complejas~\cite{Richerson2010}.
 %
-Los seres humanos aprenden cosas de los demás, las mejoran y las transmiten a la siguiente generación, lo que lleva a una acumulación cultural que no puede ser desarrollada por un solo individuo durante su vida~\cite{boyd1985-evolutionaryProcess}.
+Los seres humanos aprendemos conocimientos de los demás, los modificamos y los transmitimos a la siguiente generación, lo que lleva a una acumulación cultural que no puede ser desarrollada por un solo individuo durante su vida~\cite{boyd1985-evolutionaryProcess}.
 %
 La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que construirla por ensayo y error conduce a una evolución cultural acumulativa, lo que permite que las poblaciones humanas se adapten rápidamente a los cambios y nuevos entornos~\cite{Boyd2011}.
 %
-Se requiere un grado de credulidad para que este proceso funcione y, por lo tanto, los aprendicez pueden adquirir información inapropiada incluso en entornos uniformes y estables.~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
+Se requiere un grado de credulidad para que este proceso funcione y, por lo tanto, los aprendices pueden adquirir información inapropiada incluso en entornos uniformes y estables.~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
 %
 Descifrar cómo aprovechar la información social mientras se manejan los inconvenientes que se derivan de su uso se ha convertido en el tema principal en la investigación sobre estrategias de aprendizaje social~\cite{henrich2003-evolutionOfCulturalEvolution,rendell2011-cognitiveCulture}.
 
@@ -4118,11 +4117,11 @@ Los investigadores que estudian aprendizaje en ajedrez se basan en Elo, un estim
 %
 Nosotros nos basamos en \emph{TrueSkill}~\cite{Herbrich2007}, una extensión Bayesiana del sistema de clasificación Elo.
 %
-En primer lugar, TrueSkill utiliza una distribución de creencias anterior, en lugar de un escalar, para representar las estimaciones de habilidades.
+En primer lugar, TrueSkill utiliza una distribución de creencias a priori, en lugar de un escalar, para representar las estimaciones de habilidades.
 %
 En segundo lugar, TrueSkill modela el desempeño de los equipos, lo que le permite estimar la habilidad de las personas individuales a pesar de que el resultado sea el mismo para todos sus miembros.
 %
-Finalmente, TrueSkill utiliza una función de actualización no arbitraria, la posterior del modelo bayesiano que podría calcularse realizando una marginalización sobre el gráfico de factores~\cite{Kschischang2001}.
+Finalmente, TrueSkill utiliza una función de actualización no arbitraria, el posterior del modelo bayesiano, que se calcula marginalizando la distribución conjunta~\cite{Kschischang2001}.
 %
 Como resultado, TrueSkill puede identificar con precisión la habilidad de los jugadores con la menor cantidad de partidas posibles.
 
@@ -4186,13 +4185,13 @@ Este aprendizaje básico puede verse alterado por muchos factores.
 %
 Por ejemplo, el compromiso de terminar los juegos es sin duda un factor relevante en el proceso de adquisición de habilidades.
 %
-De hecho, los jugadores que siempre terminan sus juegos tienen una curva de aprendizaje más alta que el resto de la población, alrededor de $0.5$~tsp (Fig.~C Anexo).
+De hecho, los jugadores que siempre terminan sus juegos tienen una curva de aprendizaje más alta que el resto de la población, alrededor de $0.5$~tsp (Fig.~\ref{learningskill_comprometidos} Anexo).
 
 \subsection{Aprendizaje social}
 
 El aprendizaje social es esencial para los animales prosociales.
 %
-Nuestra hipótesis es que la curva de aprendizaje esperada por la experiencia podría verse alterada por diferentes comportamientos de agrupación.
+Nuestra hipótesis es que la curva de aprendizaje esperada por la experiencia individual podría verse alterada por diferentes comportamientos de agrupación.
 %
 Para estudiarlo, analizamos el comportamiento de los jugadores en la selección de equipos.
 
@@ -4214,8 +4213,7 @@ En adelante, excluimos a los jugadores con menos de cuatro partidas en equipo.
 
 En el largo plazo, entre $200$ y $500$ juegos de experiencia, las curvas de aprendizaje se ordenan según su nivel de TOB, exhibiendo un mayor nivel de habilidad para las poblaciones con mayor TOB (Figura~\ref{learningskill_team_hasta4team}).
 %
-The strong team-oriented players evince after $250$ games played, a significantly higher final skill compared to medium and weak TOB (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
-Los jugadores TOB altos muestran, después de juegos de $250$, una habilidad final significativamente más alta en comparación con TOB medio y débil (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
+Los jugadores TOB altos muestran, después de $250$ partidas, una habilidad final significativamente más alta en comparación con TOB medio y débil (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
 
 % Parrafo
 
@@ -4230,8 +4228,6 @@ Un comportamiento TOB alto adquiere, a largo plazo, un mayor valor de habilidad 
 Ley de la práctica.
 %
 Curva de aprendizaje log-log de la subpoblaciones de jugadores según su nivel actividad total.
-%
-Each learning curve shows the skill of the first $2^n$ games played of the subpopulation with at least $2^n$ games played and less than $2^{n+1}$.
 %
 Cada curva de aprendizaje muestra la habilidad de los primeros $2^n$ partidas jugadas de la subpoblación con al menos $2^n$ partidas jugadas y menos de $2^{n+1}$.
 %
@@ -4284,9 +4280,9 @@ Si comparamos las curvas de aprendizaje de jugadores leales y casuales, obtenemo
 %
 Los jugadores leales muestran un incremento en la habilidad media de aproximadamente $4$~tsp sobre los jugadores casuales (Fig.~\ref{learningskill_pteam89_ployal}).
 %
-La distribución de habilidades en cada punto de la curva de aprendizaje es significativamente diferente hasta $386$ juegos jugados (Wilcoxon rank-sum test $p<0.01$).
+La distribución de habilidades en cada punto de la curva de aprendizaje es significativamente diferente hasta $386$ partidas jugadas (Wilcoxon rank-sum test $p<0.01$).
 %
-Un comportamiento análogo entre las subclases leales y casuales se encuentra para los TOB medios y débiles, menos intensos ya que están menos orientados a equipos (Fig.~E en Anexo).
+Un comportamiento análogo entre las subclases leales y casuales ocurre también para los TOB medios y débiles(Fig.~\ref{learning_curve_ployal_hasta4team_longRun} en Anexo), aunque menos intensos ya que están menos orientados a equipos.
 
 % Parrafo
 
@@ -4337,7 +4333,7 @@ Las parcelas vacías tienen menos de cinco jugadores.
 La interacción entre loyalty y TOB se puede resumir como $ \text{\emph{Loyalty}} \cdot \text{\emph{TOB}} = \text{\emph{faithfulness}}$, lo que queda definido como,
 %
 \begin{equation}
-\text{\emph{Faithfulness}} = \frac{\text{\emph{Máximo de partidas juegadas con un mismo compañero}}}{\text{\emph{Partidas jugadas}}}
+\text{\emph{Faithfulness}} = \frac{\text{\emph{Máximo de partidas jugadas con un mismo compañero}}}{\text{\emph{Partidas jugadas}}}
 \end{equation}
 %
 que es simplemente la proporción de veces jugadas con el compañero de equipo más leal sobre todos las partidas jugadas.
@@ -4376,7 +4372,7 @@ Influencia sobre el aprendizaje de las variables de loyalty, TOB and faithfulnes
 \label{model}
 \end{table}
 
-Repetimos este procedimiento para jugadores con la misma experiencia, a partir de $100$ a $1300$ partidas jugadas (Fig.~F en Anexo).
+Repetimos este procedimiento para jugadores con la misma experiencia, a partir de $100$ a $1300$ partidas jugadas (Fig.~\ref{skillModels_loyaltyTeamOriented_parameterGifFitted} en Anexo).
 %
 El \emph{faithfulness-boost effect} sigue siendo significativo hasta $400$ partidas jugadas, siempre por encima de $3$~tsp.
 %
@@ -4426,9 +4422,9 @@ Group Var     		&  0.002  &          &           &        &       \\
 \caption{
 Modelo mixto lineal para ajustado para todos los datos entre 10 y 500 partidas jugadas de experiencia individual.
 %
-En la columnn Norm.Est. transformamos los estimadores, en escala logarítmica, a su valor normalizado (e.g. $\text{Intercept} = 10^{1.415}$, $\text{exp} = 10^{1.415+0.016} - 10^{1.415}$).
+En la columna Norm.Est. transformamos los estimadores, en escala logarítmica, a su valor normalizado (e.g. $\text{Intercept} = 10^{1.415}$, $\text{exp} = 10^{1.415+0.016} - 10^{1.415}$).
 %
-Metodo: REML converged. Número de grupos: $65335$. Tamaño máximo de grupo: $491$. Tamañop medio de grupos: $99.5$}
+Método: REML converged. Número de grupos: $65335$. Tamaño máximo de grupo: $491$. Tamaño medio de grupos: $99.5$}
 \label{lmm}
 \end{table}
 
@@ -4446,7 +4442,7 @@ Sin embargo a medida que se gana mayor experiencia, y el efecto de la interacci�
 %
 Debido a esta dinámica el valor máximo de habilidad se alcanza siempre cuando se maximizan ambas variables TOB y loyalty, es decir maximizando el faithfulness.
 
-\section{Discussion}
+\section{Discusión}
 
 Tradicionalmente el aprendizaje ha sido modelado en función de la experiencia.
 %
@@ -4518,9 +4514,9 @@ Sin embargo encontramos lo opuesto.
 
 Primero, verificamos la ley de la práctica en nuestro conjunto de datos.
 %
-Encontramos la forma empírica de lo que llamamos la "curva de aprendizaje esperada por la experiencia".
+% Encontramos la forma empírica de lo que llamamos la ``curva de aprendizaje esperada por la experiencia''.
 %
-Tomándolo como línea de base, cuantificamos en qué medida los diferentes comportamientos de agrupamiento alteran la adquisición de habilidades esperadas por la experiencia.
+Tomándolo como \emph{baseline}, cuantificamos en qué medida los diferentes comportamientos de agrupamiento alteran la adquisición de habilidades esperadas por la experiencia.
 %
 Encontramos que un comportamiento orientado a equipo está relacionado con una mejora significativa del nivel de habilidad a largo plazo.
 %
@@ -4536,7 +4532,7 @@ Afirmamos que la habilidad actual del compañero de equipo puede ser ignorada.
 %
 No se observan efectos secundarios derivados de la heterogeneidad de habilidades entre los compañeros de equipo.
 %
-La probabilidad de victoria de un equipo es independiente de la diferencia entre compañeros (Fig.~G en Anexo).
+La probabilidad de victoria de un equipo es independiente de la diferencia entre compañeros (Fig.~\ref{fig:trueskillDimorphismMaxMin_ProbWin} en Anexo).
 %
 También es importante señalar que ser parte de un equipo con pocas probabilidades de ganar no significa perder la habilidad.
 %
@@ -8029,7 +8025,7 @@ Estudiando la red de partidas de una de las comuinidad virtuales más importante
 
 A diferencia de las ciencias formales, que validan sus proposiciones dentro de sistemas axiomáticos cerrados, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas abiertos que por definición contienen siempre algún grado de incertidumbre.
 %
-¿Es posible alcanzar "verdades" si es inevitable decir "no sé"? Sí.
+¿Es posible alcanzar ``verdades'' si es inevitable decir ``no sé''? Sí.
 %
 La aplicación estricta de las reglas de la probabilidad (enfoque bayesiano) garantiza los acuerdos intersubjetivos en contextos de incertidumbre, fundamento de las verdades empíricas.
 %
