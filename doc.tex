@@ -3895,47 +3895,44 @@ El resultado de una partida con varios equipos se modela con una desigualdad de 
 %
 En resumen, el modelo TrueSkill puede representarse mediante el siguiente modelo causal (figura~\ref{fig:modelo_trueskill_equipos}).
 %
+
+
 \begin{figure}[ht!]
 \centering
-\tikz{ %
-
-        \node[det, fill=black!10] (r) {$r_j$} ; %
-        \node[const, below=of r, yshift=-0.3cm,xshift=-0.8cm] (c_1a) {\scriptsize  $o:=$ ordenamiento};
-        \node[latent, left=of r] (d) {$d_j$} ; %
-        \node[latent, left=of d] (t) {$t_e$} ; %
-        \node[latent, left=of t] (p) {$p_i$} ; %
-        \node[latent, left=of p] (s) {$s_i$} ; %
-        %\node[obs, left=of s] (mu) {$\widehat{\mu}_i$} ; %
-        %\node[obs, left=of s, yshift=1.2cm] (sigma) {$\widehat{\sigma}_i$} ; %
-
+  \scalebox{.9}{
+  \tikz{ %
+        \node[latent] (r) {$r_j$} ; %
+        \node[const, above=of r] (dfr) {\large $\mathbb{I}(d_j>0)$}; %
+        \node[latent, left=of r, xshift=-1cm] (d) {$d_j$} ; %
+        \node[const, above=of d] (dfd) {\large $\delta(d_j=t_{o_j} - t_{o_{j+1}})$}; %
+        \node[latent, left=of d,xshift=-2cm] (t) {$t_{o_j}$} ; %
+        \node[const, above=of t,xshift=0.5cm] (dft) {\large $\delta(t_{o_j} = \sum_{i} p_i)$}; %
+        \node[latent, left=of t, xshift=-0.5cm] (p) {$p_i$} ; %
+        \node[const, above=of p] (dfp) {\large $\N(p_i|s_i,\beta^2)$}; %
+        \node[latent, left=of p, xshift=-1cm] (s) {$s_i$} ; %
+        \node[const, above=of s] (dfs) {\large $\N(s_i|\mu_i,\sigma^2)$}; %
 
         \edge {d} {r};
         \edge {t} {d};
-        \edge {p} {t};
+	    \edge {p} {t};
         \edge {s} {p};
-%
-%
-%         {(p)(s)(fs)(nfs)(dfp)(dfs)} {Miembros del equipo $o_j$ \hspace{0.5cm} $i \in \text{\en{Team}\es{Equipo}}_{o_j}$}; %
-%         \node[invisible, below=of ft, yshift=-0.6cm] (inv_below_e) {};
-% 	\node[invisible, above=of ft, yshift=1.1cm] (inv_above_e) {};
-% 	\plate {equipos} {(personas) (t)(ft)(dft) (inv_above_e) (inv_below_e)} {$o\equiv$ lista de equipos ordenados de acuerdo al resultado  \hspace{0.3cm} $1 \leq j \leq |o|$}; %
-
-
-        \plate {personas} {(p)(s)} {$i \in A_e$}; %
-        \plate {equipos} {(personas) (t)} { {\scriptsize $A$:= partición de jugadores}, $ 0 < e \leq |A|$}; %
-	\node[invisible, below=of d, yshift=-0.5cm,xshift=-0.5cm] (inv_below) {};
-	\node[invisible, above=of r, yshift=0.2cm] (inv_above) {};
-	\plate {comparaciones} {(d) (r) (inv_below) (inv_above)} {$0 < j < |A|$}
-
-	\node[const, right= of r, xshift=1.2cm ,yshift=-2.1cm] (result-dist) {$r_j = d_j > 0$} ; %
-	\node[const, above=of result-dist,yshift=0.3cm] (d-dist) {$d_j = t_{o_j} - t_{o_{j+1}}$};  %
-	\node[const, above=of d-dist,yshift=0.3cm] (t-dist) {$t_e = \sum_{i\in A_e} p_i $} ; %
-	\node[const, above=of t-dist,yshift=0.3cm] (p-dist) {$p_i \sim N(s_i,\beta^2)$} ; %
-	\node[const, above=of p-dist,yshift=0.3cm] (s-dist) {$s_i \sim N(\mu_i,\sigma_i^2)$} ; %
-
-        }
-
-\caption{Bayes network of TrueSkill method.}
+        \plate {personas} {(p)(s)(dfp)(dfs)} {Miembros del equipo $o_j$ \hspace{0.5cm} $i \in \text{\en{Team}\es{Equipo}}_{o_j}$}; %
+        \node[invisible, below=of t, yshift=-0cm] (inv_below_e) {};
+	\node[invisible, above=of t, yshift=0cm] (inv_above_e) {};
+	\plate {equipos} {(personas) (t)(dft) (inv_above_e) (inv_below_e)} {$o\equiv$ lista de equipos ordenados de acuerdo al resultado  \hspace{0.3cm} $1 \leq j \leq |o|$}; %
+	\node[invisible, below=of r, yshift=-0.57cm] (inv_below) {};
+	\node[invisible, above=of r, yshift=0.57cm] (inv_above) {};
+	\plate {comparaciones} {(dfd) (d) (dfr) (inv_below) (inv_above)} {$1 \leq j < |o|$};
+    }
+    }
+\caption{Modelo general con equipos.
+  %
+  Los subíndices que aparecen abajo a la derecha en las placas, indican replicaci\'on.
+  %
+  El subíndice $j$ de la placa izquierda abre los $k$ desempeños de equipos, y el subíndice $i$ de la placa interna despliega sus jugadores.
+  %
+  El subíndice $j$ de la placa derecha abre los $k-1$ comparaciones entre equipos consecutivos.
+}
 \label{fig:modelo_trueskill_equipos}
 \end{figure}
 
@@ -4780,17 +4777,18 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 
 \chapter{Resultado 2. Implementación del estimador de habilidad estado del arte} \label{ch:ttt}
 
-Los estimadores de habilidad más utilizados en la industria del video juego (como Elo y TrueSkill) no pueden obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio.
+A pesar de que en los estimadores de habilidad Elo y TrueSkill son los más utilizados en la industria del video juego, ellos no permiten obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio debido a que propagan la información
+en una sola dirección a través del sistema, utilizando el último posterior como prior del siguiente evento.
 %
-El modelo TrueSkill Through Time (TTT) propaga toda la información histórica a través del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad histórica.
+Durante el doctorado descubrimos la especificación de un modelo conocido como TrueSkill Through Time (TTT), que propaga toda la información histórica a través del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad histórica.
 %
-La mejora se hace evidente a partir de las predicciones a priori, que son varios órdenes de magnitud más precisas que las obtenidas con los modelos mencionados.
+Si bien el modelo TTT fue publicado hace más una década, no se encontraba disponible hasta entonces en ningún lenguajes de programación.
+%
+Por ello, decidimos realizar nuestra propia implementación con la que ofrecimos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicación intuitiva comprensible para el público general, y otra explicación en profundidad específica para las persona con conocimientos básicos en probabilidad.
+%
+La mejora de este modelo se hace evidente a partir de las predicciones a priori, que son varios órdenes de magnitud más precisas que las obtenidas con los modelos mencionados.
 %
 Con no más de tres hiperparámetros intuitivos, el modelo TTT logra resultados similares y hasta mejores que modelos más complejos como KickScore, de forma más eficiente.
-%
-Si bien el modelo TTT fue publicado hace más una década, no se encontraba disponible hasta ahora en los lenguajes de programación con mayores comunidades.
-%
-Aquí ofrecemos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicación intuitiva comprensible para el público general, y otra explicación en profundidad específica para las persona con conocimientos básicos en probabilidad.
 %
 Luego de ilustrar su modo de uso básico, mostramos cómo estimar la curvas de aprendizaje de los jugadores históricas de la Asociación de Tenistas Profesionales (ATP).
 %
@@ -4805,7 +4803,9 @@ Este algoritmo requiere pocas iteraciones para converger, permitiendo analizar m
 % \es{Saber cómo cambian las capacidades individuales es esencial en varias actividades. }%
 % %
 
-Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo probabilístico propuesto por Elo~\cite{Glickman1999, Herbrich2007, VanDerLinden2016}.
+Todos los estimadores de habilidad ampliamente utilizados en la actualidad comparten alguna variante del modelo causal propuesto por Elo~\cite{Glickman1999, Herbrich2007, VanDerLinden2016}.
+%
+La figura~\ref{fig:generative_model} ofrece un modelo causal en el que las habilidades generan el resultado observable.
 %
 \begin{figure}[ht!]
 \centering \small
@@ -4839,8 +4839,6 @@ Todos los estimadores de habilidad ampliamente utilizados en la actualidad compa
     }
     \label{fig:generative_model}
 \end{figure}
-%
-La figura~\ref{fig:generative_model} ofrece un modelo causal en el que las habilidades generan el resultado observable.
 %
 Los agentes exhiben distintos desempe\~nos en cada evento, que varían alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
 %
@@ -7073,43 +7071,42 @@ Nuestro paquete de \texttt{Julia} demora menos de lo esperado considerando los t
 
 
 \section{Conlusiones y discusión} \label{sec:summary}
-La principal contribución de este trabajo es la implementación del modelo de estimación de habilidades estado-del-arte en la industria de los videojuegos, que aún no estaba disponible en los lenguajes de programación con mayores comunidades, como \texttt{Julia}, \texttt{Python} y \texttt{R}.
+
+
+La principal contribuci\'on de este trabajo es la implementaci\'on de uno de los modelos más importantes de la industria de los videojuegos, que a\'un no estaba disponible en los lenguajes de programaci\'on con mayores comunidades, como \texttt{Julia}, \texttt{Python} y \texttt{R}.
 %
 % \en{¿Hablar de la tabla 1 acá?}
 % ¿Hablar de la tabla 1 acá?}
 % %
-Que un algoritmo tan importante como éste haya estado ausente hasta ahora en estos lenguajes de programación sólo se explica por la falta de documentación que permitiera a los desarrolladores de software entender todos los aspectos teóricos que se requieren para su implementación.
+Que un algoritmo tan importante como éste haya estado ausente hasta ahora en estos lenguajes de programaci\'on creemos que ha sido la consecuencia de la falta de documentaci\'on que permitiera a los desarrolladores de software entender todos los aspectos te\'oricos que se requieren para su implementaci\'on.
 %
-Esta información no está presente ni en los artículos originales \cite{Herbrich2007, Dangauthier2007} ni en reportes técnicos informales famosos como el desarrollado por \cite{Mosser2011}.
+Esta informaci\'on no está presente ni en los artículos originales \cite{Herbrich2007, Dangauthier2007} ni en reportes técnicos informales famosos como el desarrollado por \cite{Mosser2011}.
 %
-Por este motivo, hemos dedicado la sección metodología para documentar todos los argumentos teóricos paso a paso, de modo que sea comprensible para cualquier persona con conocimientos básicos de probabilidad.
+Por este motivo, hemos dedicado la secci\'on metodología para documentar todos los argumentos te\'oricos paso a paso, de modo que sea comprensible para cualquier persona con conocimientos básicos de probabilidad.
 %
-Pero además, como la estimación de habilidades es un tema muy sensible para muchas personas, hemos dedicado la sección introductoria a explicar de la forma más accesible posible al público en general los detalles de los modelos de estimación de habilidades más utilizados en la actualidad, contextualizando la importancia y las ventajas del modelo de habilidades que proponemos.
+Pero además, como la estimación de habilidades es un tema muy sensible para muchas personas, hemos dedicado la sección introductoria a explicar de la forma más accesible posible al público en general los detalles de este modelo de estimación de habilidades, contextualizando la importancia y las ventajas del modelo de habilidades que proponemos.
 % Parrafo
 
-La inmensa mayoría de los servidores de juegos en línea y los artículos científicos siguen utilizando alguno de los modelos Elo, Glicko, TrueSkill o IRT para realizar las estimaciones de habilidad.
+La mayoría de los servidores de juegos en línea y artículos científicos siguen utilizando algunas estimaciones de habilidad basadas en un enfoque de filtrado.
 %
-Comenzamos ofreciendo una explicación intuitiva del modelo Elo, utilizado desde mediados del siglo 20 hasta hoy por la federación internacional de ajedrez.
-%
-Identificamos las deficiencias del modelo Elo y explicamos de forma gráfica cómo el modelo TrueSkill las resuelve (desarrollado por Microsoft en el año 2006 y quizás el estimador más utilizado en la actualidad).
+%Identificamos las deficiencias del modelo Elo y explicamos de forma gráfica c\'omo el modelo TrueSkill las resuelve (desarrollado por Microsoft en el año 2006 y quizás el estimador más utilizado en la actualidad).
 %
 %
 % Decidimos no explicar en detalle los otros modelos ampliamente utilizado en la industria del video juego y la academia, como Glicko e IRT, debido a que utilizan el mismo enfoque de TrueSkill.
 %
-Estos cuatro modelos comparten la estrategia de usar el último posterior como prior del siguiente evento, propagando la información histórica en una sola dirección a través del sistema, del pasado al futuro.
+Estos modelos comparten un problema común: ellos propagan la información histórica en una sola dirección a través del sistema, del pasado al futuro.
 %
-Si bien esta estrategia se suele enseñar en los cursos de inferencia bayesiana, al no surgir de la aplicación estricta de las reglas de la probabilidad, tiene asociada una serie de desventajas.
-%
-Además de producir malas estimaciones iniciales de habilidad, impide comparar estimaciones que están alejadas en el tiempo y el espacio.
+Esta estrategia, además de producir malas estimaciones iniciales de habilidad, impide comparar estimaciones que están alejadas en el tiempo y el espacio.
 % Parrafo
 
 La aplicación estricta de las reglas de la probabilidad nos obliga a realizar la inferencia usando toda la información disponible, incluso la que se encuentra en el el futuro, algo que intuitivamente hacemos cuando concluimos que los deportistas famosos también eran hábiles también un tiempo antes de hacerse famosos.
 %
-Por este motivo el modelo TTT, propagando toda la información histórica a través de una única red causal, proporciona estimaciones con baja incertidumbre en todo la serie temporal, permitiendo estimaciones iniciales de habilidad fiables y asegurando su comparabilidad histórica.
+Por este motivo el modelo TTT, propagando toda la informaci\'on hist\'orica a través de una única red causal, proporciona estimaciones con baja incertidumbre en todo la serie temporal, permitiendo estimaciones iniciales de habilidad fiables y asegurando su comparabilidad hist\'orica.
 %
-De esta forma, sus predicciones a priori son varios órdenes de magnitud más precisas que las obtenidas con los modelos mencionados (Tabla~\ref{Tab:Models}).
+De esta forma, sus predicciones a priori son varios \'ordenes de magnitud más precisas que las obtenidas con los modelos mencionados (Tabla~\ref{Tab:Models}).
 %
-Con no más de tres hiperparámetros intuitivos (incertidumbre a priori, incertidumbre dinámica y probabilidad de empate), el modelo TTT logra resultados similares y hasta mejores que KickScore de forma más eficiente, debido a que el último debe optimizar en un espacio de parámetros mucho más grande, que incluye la definción de un \emph{kernel} y luego los hiperparámetros específicos a ese \emph{kernel}.
+Con no más de tres hiperparámetros intuitivos (incertidumbre a priori, incertidumbre dinámica y probabilidad de empate), el modelo TTT logra resultados similares y hasta mejores que modelos más complejos como KickScore.
+%de forma más eficiente, debido a que el \'ultimo debe optimizar en un espacio de parámetros mucho más grande, que incluye la definci\'on de un \emph{kernel} y luego los hiperparámetros específicos a ese \emph{kernel}.
 % Parrafo
 
 Propagar la información histórica correctamente por toda la red causal de eventos produce una mutua dependencia entre las estimaciones que obliga a implementar un algoritmo iterativo.
@@ -7127,15 +7124,19 @@ A su vez, nuestro paquete de \texttt{Julia} resuelve las secuencias de eventos d
 Por el contrario, nuestro paquete de \texttt{R} es varias veces más lento que que el paquete básico \texttt{trueskill}~$0.4.5$.
 % Parrafo
 
-Ofrecer la primera implementación abierta del modelo de estimación de habilidad estado-del-arte, en \texttt{Julia}, \texttt{Python} y \texttt{R} , acompañado por una explicación científica en profundidad, tiene por objetivo establece las condiciones que den inicio a una proceso colectivo continuo de mejora del modelo.
+Esperamos que esta primera implementaci\'on abierta en \texttt{Julia}, \texttt{Python} y \texttt{R}, de uno de los modelos de estimaci\'on de habilidad más importantes, acompañada por una explicaci\'on científica en profundidad, ofrezca las condiciones para generar una proceso colectivo continuo de mejora.
 %
-Por ejemplo, el modelo ya podría ser mejorando si se incorpora la propuesta relizada~\cite{Guo2012}, en el que los datos observables ya no son los valores ordinales de los resultados (perder/empatar/ganar), sino la cantidad de puntos que obtuvo cada equipo.
+Por ejemplo, la implementación actual no cuenta todavía con la extensión realizada por~\cite{Guo2012}, en el que los datos observables ya no son los valores ordinales de los resultados (perder/empatar/ganar), sino la cantidad de puntos que obtuvo cada equipo.
 %
-Una de las dificultades más grandes que tiene el modelo es distinguir la habilidad de los individuos de un mismo equipo usando los resultados de los eventos como único observable.
+Una de las dificultades más grandes del modelo actual es distinguir la habilidad de los individuos de un mismo equipo usando los resultados del equipo como único observable.
 %
-Cuando se entiende la matemática utilizada en la sección metodología, no se hace difícil mejorar aún más la inferencia modificando el modelo causal para que se incorporen otras variables como observables, como púeden ser otro tipo de acciones que son realizadas correcta o incorrectamente, o como serían las opiniones que tienen las personas sobre quién se desempeño mejor que quién.
+Esto podría resolverse incorporando otras variables como observables, específicas a los individuos.
 %
-Antes de usar este modelo para evaluacar a los individuos que transitan los sistemas educativos es importante incluir los factores socio-culturales, pues sabemos que ellos son fundamentales en el desarrollo de nuestras habilidades~\cite{VanDerLinden2016}.
+Esta es la estrategia utilizada por el modelo TrueSkill 2~\cite{minka2018-trueskill2}, que desarrolla un modelo particular para los llamados ``shooters'' en línea el número de logros individuales, su tendencia a abandonar y su habilidad en otros modos de juego.
+%
+De hecho, TrueSkill 2 ha sido desarrollado como una extensión del modelo TrueSkill Through Time, que mejora significativa su rendimiento predictivo.
+%
+Ahora que ofrecemos la primera implementación de TrueSkill Through Time en \texttt{Julia}, \texttt{Python}, \texttt{R}, el desafío es extenderlo, desarrollando un software con la mayor flexibilidad posible, que permita adaptarse a la mayor variedad de situaciones posibles.
 %
 %
 % En el sistema educativo, el modelo puede ser alimentado por las evaluaciones de los propios docentes, y el modelo no sólo estimará las habilidades de los estudiante, reconocerá también la variabilidad de los docente al evaluarlos.
