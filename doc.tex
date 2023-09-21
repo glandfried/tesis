@@ -4329,7 +4329,7 @@ Para analizar la ley de la práctica, dividimos a los jugadores según su activi
 %
 Por lo tanto, ajustamos los parámetros de la ley de la práctica a cada uno de los conjuntos de jugadores según su nivel de actividad.
 %
-De acuerdo con la ley de la práctica, observamos una dependencia lineal en las curvas de aprendizaje log-log en todos los segmentos poblacionales~(Figura~\ref{learningskill_curve}).
+De acuerdo con la ley de la práctica, observamos una dependencia lineal en las curvas de aprendizaje en escala logarítmica en todos los segmentos poblacionales~(Figura~\ref{learningskill_curve}).
 
 % Parrafo
 
@@ -8309,9 +8309,172 @@ La evaluación completa del espacio de posibles modelos causales es una tarea ne
 
 \chapter{Conclusiones y trabajo futuro}
 
-Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las Ciencias de la Computación y las Ciencias Sociales.
+% Parrafo
+
+En la sección~\ref{sec:doctorado} vamos revisar el trayecto del doctorado, desde las ilusiones iniciales hasta la respuesta final: bayes.
 %
-Al ingresar al doctorado en Ciencias de la Computación tenía más dudas que respuestas.
+En las secciones~\ref{sec:bayesplurinacional} vamos a revisar los resultados de la organización de la comunidad Bayes Plurinacional.
+%
+En la sección~\ref{sec:volverAlFuturo} vamos a conversar sobre el trabajo futuro, la vuelta a las ciencias sociales con el enfoque bayesiano.
+
+
+\section{Interdisciplina: datos e incertidumbre} \label{sec:doctorado}
+
+
+Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las Ciencias de la Computación y las Ciencias Sociales.
+
+%
+
+\subsection{Antropología, datos y sistemas complejos}
+
+Mi formación de base es la licenciatura en Ciencias Antropológicas.
+%
+La antropología no es una ciencia social más.
+%
+Cuando se establece finalmente la hegemonía Europea a nivel global, hace menos de 200 años, se re-fundan las ciencias sociales.
+%
+La sociología se destinó al estudio de las sociedades hegemónicas, las ciencias políticas, la economía y la criminología se dedicaron al estudio de ciertos aspectos de las sociedades hegemónicas, y el resto quedó a cargo de la antropología.
+%
+De esta forma, la antropolgía fue la única ciencia social que nació con su objeto de estudio completo: todas las sociedades desde el origen de la humanidad hasta el presente en todos los rincones del planeta, desde sociedades nómadas cazadoras-recolectoras actuales hasta las sociedades agricultoras estatales antiguas.
+
+% Parrafo
+
+En el secundario había conocido un antropólogo, y tenía la idea que estudiando otras culturas, otras formas de interpretar la realidad, de organización social, iba a poder abrirme la cabeza, desnaturalizar todos esos hábitos que ni siquiera percibimos por tan fuertemente establecidos están en nuestra sociedad.
+%
+Y efectivamente algo de eso encontré.
+%
+Sin embargo, en ese entonces la antropología estaba dominada por la corriente filosófica prima hermana del neoliberalismo que es el ``posmodernismo'' y que hoy se conoce comunmente como ``posverdad''.
+%
+El posmodernismo fundamentalmente pone en duda la existencia de verdad universal.
+%
+Si la verdad fuera solo una expresión de las relaciones de poder, y naufragara la posibilidad de alcanzar acuerdos intersubjetivos validos universalmente, naufragarían también la posibilidad de juzgar los crímines más atroces de la humanidad
+%
+Esta idea queda bien resumida en la siguiente tira cómica~\cite{fig:sidewalk_bubblegum_1997}.
+
+% Parrafo
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=.6\linewidth]{static/sidewalk_bubblegum_1997.png}
+\caption{}
+\label{fig:sidewalk_bubblegum_1997}
+\end{figure}
+
+% Parrafo
+
+Al mismo tiempo, el profesor a cargo de la materia Teorías Antropológicas Contemporánea desde el inicio de la democracia, quien tenía formación en ingeniaría y había trabajado para Microsoft, formó a un grupo de estudiantes en programación durante los años 90.
+%
+Cuando yo cursaba los últimos años de la carrera, este grupo ofrecía seminarios sobre Modelos Basados en Agentes aplicados a poblemas antropológicos.
+%
+Ellos me enseñaron a pensar el problema social como un sistema complejo, en el que las propiedades son emergente de la interacción entre las partes.
+
+%
+
+En mi tesis de licenciatura implementé un modelo de predicción de alianzas y lo intenté extender.
+%
+Era basicamente un modelo de Ising con propensiones positivas y negativas al que se le debía buscar los mínimos locales.
+%
+Con ese modelo empecé a programar.
+%
+Pero si quería profundizar por el camino que ellos me proponían, necesitaba una buena formación en matemática y programación.
+%
+Por eso, inmediatemente después de que terminé la carrera, ingresé al Cíclo Básico Común (CBC) en computación.
+
+% Parrafo
+
+Con paciencia y constancia, trabajando unos semestres y estudiando otros, fui haciendo materias de la carrera de computación hasta que mi actual director me ofreció hacer el doctorado.
+%
+Esto le dio nuevo impulso al estudio, y me permitió hacer realidad un proyecto que ni yo imaginaba.
+
+%En el Instituto de Cálculo de exactas-UBA me dijeron una vez ``la antropología es la única ciencia social''.
+
+\subsection{Computación, datos y modelos estadísticos}
+
+Antes de ingresar al doctorado en Ciencias de la Computación yo seguía con la idea de los sistemas complejos y los modelos de simulación.
+%
+De hecho, la aplicación de la teoría de juegos al problema de la cooperación había producido uno de los cuerpos teóricos más influyentes  para explicar cómo cambia la información cultural a través del tiempo.
+%
+La teoría de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory} modela los equilibrios evolutivos que se producen entre estrategias en competencia, en el que la adaptabilidad de cada variante depende de las frecuencias de las otras variantes en la población.
+%
+Basada en los principios de la teoría de la evolución (descendencia, modificación y selección), se desarrolló un marco teórico de \emph{evolución cultural} para explicar cómo cambia la cultura en el tiempo~\cite{boyd1985-evolutionaryProcess, boyd2005-origin}.
+
+% Parrafo
+
+Cuando conversé con quien iba a ser mi director, Esteban, le llevé uno de esos libros, llenos de integrales y ecuaciones diferenciales.
+%
+Su respuesta fue: ``Hacé lo que quieras, pero con datos''.
+%
+Efectivamente, esos trabajos son modelos formales destinados a comprender las consecuecias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
+%
+Este es un abordaje útil para ganar intuición de procesos que son demasiado complejos, como son las propiedades que emergen en los sistemas a partir de la interacción de sus partes.
+%
+Sin embargo, suelen ser modelos simples que no están destinados a realizar predicciones, y por lo tanto poseen poca o nula corroboración empírica.
+%Algunos de las ideas detrás de esos modelos, que aparecieron tangencialmente durante las tesis, motivaron el diseño del plan original.
+
+
+% Parrafo
+
+Cuando comenzamos a armar el plan de tesis descubrimos que estaba creciendo con fuerza una área denominada como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience}, que en la actualidad ya alcanzó reconocimiento en los gigantes tecnológicos relacionados a la industria del software.
+%
+Bajo esta categoría quedaron enmarcadas una gran variedad de actividades, a veces bastante diferentes entre sí, desde aquellas que usan la computación como una herramienta para analizar datos de origen sociales, hasta aquellas que usan problemas de ciencias sociales para motivar desarrollos en la frontera del conocimiento en las ciencias de la computación~\cite{lazer2020-computationalSocialScience}.
+
+%
+
+Además, en la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas, impulsadas por los avances en el área de la inteligencia artificial y la masificación datos y métodos de aprendizaje automático.
+%
+Una de sus consecuencias más contundentes es la emergencia e institucionalización de la Ciencia de Datos, un área científica que ha nacido interdisciplinaria por definición.
+
+% Parrafo
+
+Sin embargo, con el objetivo de poner a prueba los métodos computacionales, diseñamos un plan tesis en ciencias de la computación basado en datos.
+%
+Por ello, buena parte de esta tesis estuvo enfocada en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
+%
+Lentamente el enfoque bayesiano de la probabilidad fue adquiriendo una importancia creciente para el desarrolo de esta tesis.
+
+
+%En un plan orientado a datos, esos conceptos ayudan a guiar la intuición, pero su incorporación en sistema predictivo está lejos de ser obvia.
+%
+
+\subsubsection{Paso 1. El primer modelo bayesiano.}
+% Parrafo
+
+En el primer trabajo (capítulo 3) el enfoque bayesiano nos lo impuso la realidad misma a través del estimador de habilidad estado-del-arte en ese momento, TrueSkill.
+%
+Pudimos llevar adelante ese primer trabajo, sin conocer todos los detalles de implementación del modelo, gracias a que estaba disponible como paquetes en varios lenguajes de programación.
+% %
+De esta forma pudimos estimar las habilidades de las personas en el tiempo.
+% %
+Sin embargo, para analizar los efectos que la formación de equipos tiene sobre el aprendizaje usamos métodos frecuentistas que usamos para mostramos el efecto positivo de jugar en equipo, especialmente de tener compañeros estables.
+
+% Parrafo
+
+Una de las hipótesis que se había desprendido del primer trabajo era la idea de que el efecto positivo de tener compañeros estables estuviera producido por una especie de ``sinergia'' que se produce cuando dos personas aprenden a jugar juntas.
+%
+Entonces, para el segundo trabajo (no publicado en esta tesis) me propuse el objetivo de extender el modelo TrueSkill de modo tal que permitiera distinguir la componente que correpondía al aprendizaje individual de la que corrspondía a la ``sinergia''.
+%
+
+\subsubsection{Paso 2. La primera evaluación de modelos alternativos}
+
+Este trabajo fue el segundo paso hacia el enfoque bayesinao.
+%
+Se podía realizar  implementación del algoritmo, y este ofrecía estimaciones que podría haber analizado en detalle y eventualmente publicado, apareció
+
+apareció por primera vez la pregunta respecto de cómo evaluar correctamente modelos alternativos
+
+
+Debido a que la matemática detrás del algoritmo no estaba disponible en el artículo original ni en otras fuentes, comencé
+
+
+y quizás hubiera sido interesante revisar los resultados parciales que quedaron sin
+
+\subsubsection{Paso 3. La solución exacta al modelo aproximado}
+
+\subsubsection{Paso 4. La implementación del modelo estado del arte}
+
+\subsubsection{Paso 5. Las respuestas epistemológicas y metodológicas}
+
+
 %
 En el transcurso de la tesis el enfoque bayesiano de la probabilidad fue respondiendo las preguntas antropológicas más profundas: cómo alcanzar acuerdos intersubjetivos en contextos de incertidumbre.
 %
@@ -8336,42 +8499,15 @@ En este contexto, la adopción del enfoque bayesiano en zonas periféricas de nu
 Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computación y encontrar allí las respuestas más simples y concretas a las reflexiones epistemológicas y metodológicas más trascendentales desarrolladas durante mi formación en ciencias antropológicas, no solo explica por qué que ella es la principal herramienta qué encontré en el doctorado en computación.
 %
 También me pone en la responsabilidad de impulsar el enfoque bayesiano en las ciencias empíricas (con datos) en general y en las ciencias sociales en particular.
-%
-No se trata de remplazar la herencia científica en ningún área.
-%
-Por el contrario.
-%
-Las ciencias sociales, por ejemplo, tiene un conocimiento experto relevante capaz de expresar argumentos causales en lenguaje natural que permiten explican problemas naturales sumamente complejos.
-%
-Por el otro lado, las áreas de investigación en aprendizaje automático y ciencia de datos siguen desarrollando una multitud de algoritmos genéricos sin interpretación causal, que si bien permiten usar las correlaciones para predecir, no permiten realizar inferencia causal.
-%
-Por este motivo la inferencia causal es un área de creciente interés dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
 
 % Parrafo
 
-En las últimas décadas se fueron desarrollando técnicas que permiten aprovechar toda la potencia del aprendizaje automático probabilístico~\cite{murphy-pmlBook1,murphy-pmlBook2} de forma flexible e intuitiva, para crear modelos personalizados a la medida de cada problema específico.
-%
-A este enfoque también se lo conoce como ``aprendizaje automático basado en modelos''~\cite{Bishop2013, bishop2006}.
-%
-En ella se desarrollaron los métodos gráficos~\cite{pearl1986-beliefNetworks, kschischang2001-factorGraphsAndTheSumProductAlgorithm, koller2009-PGM} que permiten: (1) especificar los argumentos causales a través de redes causales intuitivas para personas sin formación matemática , que codifican las consecuencias que las eventuales intervenciones sobre la naturaleza produce sobre la estructura causal; (2) realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal, en los casos que podemos resolver la matemática; (3) y delegar la inferencia a los lenguajes de programación probabilística a través de una sintaxis que nos permite traducir directamente la especificación gráfica del modelo que hicimos en (1).
+Sin embargo, cuando descubrimos que existía una mejora significativa
 
-% Parrafo
+\section{El enfoque bayesiano en América Latina} \label{sec:bayesplurinacional}
 
-Especificar modelos causales probabilísticos a partir de los argumentos causales expresados en lenguaje natural es necesario tanto en las ciencias sociales como en las áreas de aprendizaje automático y ciencia de datos que trabajan problemas sociales.
-%
-El desarrollo de los métodos gráficos ofrece hoy la capacidad de desarrollar flujos de trabajo interdisciplinarios, basados en un lenguaje intuitivo común (las redes bayesianas causales).
-%
-El desarrollo de la programación probabilística por su parte, permite resolver eficientemente las consecuencias lógicas de los modelos causales.
-%
-Se produce así un beneficio mutuo.
-%
-Los argumentos causales provenientes de las ciencias sociales le va a permitir a la ciencia de datos sacar conclusiones causales.
-%
-Y la especificación probabilística de los argumentos causales  le va a permitir a la ciencias sociales evaluar correctamente sus hipótesis, poniendo en valor el conocimiento experto actual.
 
-% Parrafo
-
-Si bien ya existen las herramientas para realizar finalmente la transición científica probabilística, no existe todavía una condiciones materiales previa: una comunidad bayesiana lo suficientemente densa que la impulse.
+Si bien ya existen las herramientas para realizar finalmente la transición científica probabilística, no existe todavía una condición material previa: una comunidad bayesiana lo suficientemente densa que la impulse.
 %
 Este diagnóstico fue emergiendo durante la segunda mitad del doctorado.
 %
@@ -8397,11 +8533,11 @@ Gracias a esta actividad inaugural, actualmente existe una activa comunidad baye
 
 Fueron tres los elementos claves para el éxito del congreso.
 %
-El primero ya fue mencionado, y tiene que ver con la importancia del enfoque bayesiano para toda las ciencias empíricas y el contexto actual de crecimiento incipiente a nivel mundial.
+El primero ya fue mencionado, y tiene que ver con la importancia del enfoque bayesiano para todas las ciencias empíricas y el contexto actual de crecimiento incipiente a nivel mundial.
 %
 El segundo ha sido el apoyo logístico que recibimos de la Secretaría de Ciencia y Tecnología de la provincia de Santiago del Estero.
 %
-Y el tercero, fue una exploración integral de la comunidad bayesiana actual en la que se incluye el desarrollo de un software que realicé para la organización, que permitió: 1. crear la red de co-autorías bayesianas de latino América (artículos científicos que tuvieran al menos una afiliación en latino America y alguna palabra claves en el título o abstract vinculada al enfoque bayesiano); 2. contactar personalmente a la mitad de los investigadores de la comunidad.
+Y el tercero, fue una exploración integral de la comunidad bayesiana actual en la que se incluye el desarrollo de un software que realicé para la organización, que permitió: 1. crear la red de co-autorías bayesianas de Latinoamérica (artículos científicos que tuvieran al menos una afiliación en Latinoamérica y alguna palabra claves en el título o abstract vinculada al enfoque bayesiano); 2. contactar personalmente a la mitad de los investigadores de la comunidad.
 %
 De esta forma pudimos verificar que la comunidad es más grande de lo que creíamos (cantidad de autores en los principales países: Brasil 9501, Mexico 3276, Argentina 1640, Chile 1295, Colombia 1069).
 %
@@ -8409,7 +8545,7 @@ Al mismo tiempo, pudimos verificar a través del contacto directo que la comunid
 
 % Parrafo
 
-El principal objetivo a largo plazo es contribuir en la transición bayesiana a nivel en América Latina y el caribe.
+El principal objetivo a largo plazo es contribuir en la transición bayesiana en Latinoamérica y el Caribe.
 %
 Nos proponemos entonces alcanzar dos objetivos particulares: fortalecer a los investigadores bayesianos activos actualmente en nuestros países; y promover la emergencia de la generación bayesiana.
 %
@@ -8420,98 +8556,6 @@ Para expandir la comunidad actual, nos proponemos impulsar cursos y formaciones 
 El impacto de estas tares podrá ser medido en los próximos años, por ejemplo, en la estructura de la red de co-autorías bayesianas de América latina.
 
 % Parrafo
-
-En la sección~\ref{sec:doctorado} vamos revisar el trayecto del doctorado, desde las ilusiones iniciales hasta la respuesta final: bayes.
-%
-En las secciones~\ref{sec:bayesplurinacional} vamos a revisar los resultados de la organización de la comunidad Bayes Plurinacional.
-%
-En la sección~\ref{sec:volverAlFuturo} vamos a conversar sobre el trabajo futuro, la vuelta a las ciencias sociales con el enfoque bayesiano.
-
-
-\section{Interdisciplina: datos e incertidumbre} \label{sec:doctorado}
-
-\subsection{La única ciencia social}
-
-En el Instituto de Cálculo de exactas-UBA me dijeron una vez ``la antropología es la única ciencia social''.
-%
-
-
-
-\subsection{Doctorado}
-
-Durante el transcurso del doctorado emergió con fuerza una área conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
-%
-Bajo esta categoría quedaron enmarcadas una gran variedad de actividades, a veces bastante diferentes entre sí, desde aquellas que usan la computación como una herramienta para analizar datos de origen sociales, hasta aquellas que usan problemas de ciencias sociales para motivar desarrollos en la frontera del conocimiento en las ciencias de la computación~\cite{lazer2020-computationalSocialScience}.
-%
-Pero la emergencia de la interdisciplina es un fenómeno más general.
-%
-En la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas, impulsadas por los avances en el área de la inteligencia artificial y la masificación datos y métodos de aprendizaje automático.
-%
-Una de sus consecuencias más contundentes es la emergencia e institucionalización de la Ciencia de Datos, un área científica que ha nacido interdisciplinaria por definición.
-
-% Parrafo: interdisciplina sin datos (el ejemplo de la evolución cultural y la física)
-
-Otras formas de interdisciplina, basada en modelos matemáticos en vez de en datos, es posible y tiene una larga tradición entre las ciencias físicas y las ciencias sociales.
-%
-Por ejemplo, mediante la aplicación de la teoría de juegos al problema de la cooperación se ha producido uno de los cuerpos teóricos más influyentes  para explicar cómo cambia la información cultural a través del tiempo.
-%
-La teoría de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory} modela los equilibrios evolutivos que se producen entre estrategias en competencia, en el que la adaptabilidad de cada variante depende de las frecuencias de las otras variantes en la población.
-%
-Basada en los principios de la teoría de la evolución (descendencia, modificación y selección), se ha desarrollado un marco teórico de \emph{evolución cultural} que intenta explicar cómo cambia la cultura en el tiempo~\cite{boyd1985-evolutionaryProcess, boyd2005-origin}.
-%
-Estos trabajos son, esencialmente, modelos teóricos destinados a comprender las consecuecias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
-%
-Este es un abordaje útil para ganar intuición de procesos que son demasiado complejos, como son las propiedades que emergen en los sistemas a partir de la interacción de sus partes.
-%
-Sin embargo, suelen ser modelos simples que no están destinados a realizar predicciones, y por lo tanto poseen poca o nula corroboración empírica.
-
-% Parrafo: Motivación (evolución cultural / aprendizaje)
-
-Al momento de desarrollar el plan, había sido el enfoque interdisciplinario basado en modelos el que había logrado introducir respuestas que todavía en la actualidad tienen una gran influencia en la antropología.
-%
-%En un plan orientado a datos, esos conceptos ayudan a guiar la intuición, pero su incorporación en sistema predictivo está lejos de ser obvia.
-%
-Algunos de esos conceptos, que aparecieron tangencialmente durante las tesis, motivaron el diseño del plan original.
-%
-Sin embargo, con el objetivo de poner a prueba los métodos computacionales, diseñamos un plan tesis en ciencias de la computación basado en datos.
-%
-Por ello, buena parte de esta tesis estuvo enfocada en los aspectos computacionales requeridos para hacer un correcto análisis de la evidencia empírica.
-%
-Lentamente el enfoque bayesiano de la probabilidad fue adquiriendo una importancia creciente para el desarrolo de esta tesis.
-
-% Parrafo
-
-En el primer trabajo (capítulo 3) el enfoque bayesiano nos lo impuso la realidad misma a través del estimador de habilidad estado-del-arte en ese momento, TrueSkill.
-%
-El estimador de habilidad clásico, usado todavía hoy por la federación internacional de ajedrez, tiene una serie de desventajas que habían sido resueltas en las vísperas y al inicio del siglo 21 (por Glicko y TrueSkill respectivamente) a través de la aplicación estrictamente las reglas de la probabilidad (o su mejor aproximación).
-%
-Pudimos llevar adelante ese primer trabajo sin conocer todos los detalles de implementación del modelo gracias a que estaba disponible como paquetes en varios lenguajes de programación.
-%
-De esta forma pudimos estimar las habilidades de las personas en el tiempo.
-%
-Sin embargo, para analizar los efectos que la formación de equipos tiene sobre el aprendizaje usamos métodos frecuentistas, con lo que mostramos el efecto positivo de jugar en equipo, especialmente de tener compañeros estables.
-
-% Parrafo
-
-Para el segundo trabajo me propuse el objetivo de extender el modelo TrueSkill de estimación de habilidad de modo tal que permitiera distinguir el aprendizaje individual de la sinergia que se produce cuando dos personas aprenden a jugar juntas.
-%
-Una de las hipótesis que se había desprendido del primer trabajo fue la idea de que el efecto positivo estuviera producido por una ``sinergia'' entre los jugadores.
-%
-
-
-
-% Parrafo
-
-Sin embargo, cuando descubrimos que existía una mejora significativa
-
-\section{El enfoque bayesiano en América Latina} \label{sec:bayesplurinacional}
-
-
-\subsection{El estado actual}
-
-
-
-\subsection{Bayes Plurinacional}
 
 
 \subsubsection{Cronograma}
@@ -8671,6 +8715,39 @@ En los próximos años podremos medir el impacto de la organización de la comun
 
 \section{El enfoque bayesiano en las Ciencias Sociales} \label{sec:volverAlFuturo}
 
+
+%
+No se trata de remplazar la herencia científica en ningún área.
+%
+Por el contrario.
+%
+Las ciencias sociales, por ejemplo, tiene un conocimiento experto relevante capaz de expresar argumentos causales en lenguaje natural que permiten explicar problemas naturales sumamente complejos.
+%
+Por otro lado, las áreas de investigación en aprendizaje automático y ciencia de datos siguen desarrollando una multitud de algoritmos genéricos sin interpretación causal, que si bien permiten usar las correlaciones para predecir, no permiten sacar conclusiones causal y por lo tanto tampoco recomemdaciones para la intervención en los sistemas.
+%
+Por este motivo la inferencia causal es un área de creciente interés dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
+
+% Parrafo
+
+En las últimas décadas se fueron desarrollando técnicas que permiten aprovechar toda la potencia del aprendizaje automático probabilístico~\cite{murphy-pmlBook1,murphy-pmlBook2} de forma flexible e intuitiva, para crear modelos personalizados a la medida de cada problema específico.
+%
+A este enfoque también se lo conoce como ``aprendizaje automático basado en modelos''~\cite{Bishop2013, bishop2006}.
+%
+En ella se desarrollaron los métodos gráficos~\cite{pearl1986-beliefNetworks, kschischang2001-factorGraphsAndTheSumProductAlgorithm, koller2009-PGM} que permiten: (1) especificar los argumentos causales a través de redes causales intuitivas para personas sin formación matemática , que codifican las consecuencias que las eventuales intervenciones sobre la naturaleza produce sobre la estructura causal; (2) realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal, en los casos que podemos resolver la matemática; (3) y delegar la inferencia a los lenguajes de programación probabilística a través de una sintaxis que nos permite traducir directamente la especificación gráfica del modelo que hicimos en (1).
+
+% Parrafo
+
+Especificar modelos causales probabilísticos a partir de los argumentos causales expresados en lenguaje natural es necesario tanto en las ciencias sociales como en las áreas de aprendizaje automático y ciencia de datos que trabajan problemas sociales.
+%
+El desarrollo de los métodos gráficos ofrece hoy la capacidad de desarrollar flujos de trabajo interdisciplinarios, basados en un lenguaje intuitivo común (las redes bayesianas causales).
+%
+El desarrollo de la programación probabilística por su parte, permite resolver eficientemente las consecuencias lógicas de los modelos causales.
+%
+Se produce así un beneficio mutuo.
+%
+Los argumentos causales provenientes de las ciencias sociales le va a permitir a la ciencia de datos sacar conclusiones causales.
+%
+Y la especificación probabilística de los argumentos causales  le va a permitir a la ciencias sociales evaluar correctamente sus hipótesis, poniendo en valor el conocimiento experto actual.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

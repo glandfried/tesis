@@ -1,4 +1,4 @@
-all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf
+all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf sidewalk_bubblegum_1997.png
 
 biomassBarOn.png:
 	wget https://raw.githubusercontent.com/glandfried/images/master/biomassBarOn.png
@@ -65,3 +65,6 @@ madre-chimpance.jpg:
 betweenness-centrality-150-partidas-hist.pdf:
 	wget https://github.com/glandfried/cultural-centrality/releases/download/doc.1.0.1/static.zip
 	unzip static.zip -d ..
+
+sidewalk_bubblegum_1997.png:
+	wget https://raw.githubusercontent.com/glandfried/images/master/sidewalk_bubblegum_1997.png
