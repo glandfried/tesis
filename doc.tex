@@ -3350,7 +3350,7 @@ Los datos T-no teóricos son la base empírica de control para una teoría T pue
 
 
 
-\subsection{La estructura invariante del dato empírico}
+\subsection{La estructura invariante del dato empírico} \label{sec:estructura_invariante}
 
 Los datos científicos son funciones proposicionales, $f(x)=y$, donde la $x$ representa la unidad de análisis, $f$ la variable, y la $y$ el valor de la variable.
 %
@@ -3584,7 +3584,7 @@ Cada uno de los pasos de la estructura del dato empírico forma parte de un cami
 
 Todo dato de base empírica metodológica se construye proponiendo una vínculo causal que ponga en de los conceptos abstractos no observables con la realidad concreta observable, y una interpretación de la realidad efectivamente observada, inferencial, de los conceptos abstractos no observados.
 
-\subsection{Tasa de información de los sistemas de comunicación}
+\subsection{Tasa de información de los sistemas de comunicación} \label{sec:tasa_de_informacion}
 
 En la sección~\ref{sec:modelos_alternativos} evaluamos los dos modelos causales alternativos que usamos para introducir las reglas de la probabilidad.
 %
@@ -8589,14 +8589,16 @@ Pero fue mi formación epistemológica previa la que me permitió dar algunos sa
 
 Antes de adherir al enfoque bayesiano de la probabilidad, me había formado como la mayoría en los métodos clásicos de machine learning.
 %
-En aquel momento comencé leyendo el excelente libro frecuntista ``An Introduction to Statistical Learning'' de Gareth James, Daniela Witten, Trevor Hastie y Robert Tibshirani~\cite{james2013-introductionToStatisticalLearning}.
+En aquel momento comencé leyendo el excelente libro frecuentista ``An Introduction to Statistical Learning'' de Gareth James, Daniela Witten, Trevor Hastie y Robert Tibshirani~\cite{james2013-introductionToStatisticalLearning}.
 %
-Además de interesarme por los detalles técnicos relativos a cada algoritmo, me atraían las conclusiones epistemológicas que emergían por si solas de la actividad de apendizaje automático.
+Además de interesarme por los detalles técnicos relativos a cada algoritmo, me atraían las conclusiones epistemológicas que emergían por si solas de la actividad de aprendizaje automático.
 %
 En particular, el concepto de overfitting es un problema epistemológico fundamental que nace sin que alguien se hubiera propuesto desarrollarlo, sino que se impuso en los hechos como un límite concreto de los métodos estadísticos.
 
 % Parrafo
 
+¿Es posible mejorar el sistema de razonamiento que no tenga el problema de overfitting?
+%
 Si bien yo también me había formado en métodos bayesianos, las lecturas bayesianas las comienzo después de resolver la matemática detrás de TrueSkill.
 %
 El primero de los clásicos que leí fue el libro ``Pattern Recognition and Machine Leraning'' de Christopher Bishop~\cite{Bishop2006}.
@@ -8617,13 +8619,47 @@ Los problemas de overfitting son consecuencia de la ruptura de las reglas de la 
 
 % Parrafo
 
-¿Pero qué tienen de especial las reglas de la probabilidad?
+Bajo la regla del producto, las creencias se actualizan por secuencias de predicciones por lo que es la sorpresa el filtro de la creencia previa, única fuente de información.
 %
-El segundo libro bayesiano que tuvo una enorme incluencia en términos conceptuales fue ``Probability Theory: The Logic of Science'' de Edwin Jaynes~\cite{Jaynes2003}.
+El segundo libro que tuvo una gran influencia en términos conceptuales fue ``Information theory, inference and learning algorithms'' de David MacKay~\cite{mackay2003-informationInferenceLearning}.
 %
-En primer lugar, este libro comienza con el teorema de Cox, en el que las reglas de la probabilidad se derivan de una axiomatización básica del sentido común.
+Este libro me permitió interpretar varios aspectos de la teoría de la información.
 %
-Pero más allá de eso, Jaynes generaliza el antiguo principio de indiferencia, usando por Bernoulli y Laplace, por el principio de máxima entropía.
+En palabras de Claude Shannon~\cite{shannon1948-theoryOfCommunication},
+%
+\begin{quotation}
+The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point.
+(\dots).
+The significant aspect is that the actual message is one selected from a set of possible messages.
+The system must be designed to operate for each each possible selection, not just the one which will actually be chosen since this is unknown at the time of design.
+\end{quotation}
+%
+El problema de la comunicación con la realidad es el problema fundamental de toda ciencia empírica.
+%
+Al no tener acceso directo a la realidad, debemos inferirla a partir de los mensajes distorsionados e indirectos que percibimos.
+%
+En el medio de la Era frecuentista, Shannon se vio obligado a aplicar el teorema de Bayes para decodificar de forma óptima los mensajes, calculando el posterior de las hipótesis dadas las señales.
+%
+Pero además, nos ofreció el esquema emisor-receptor de los sistemas comunicación, que no es otra cosa que \emph{\nameref{sec:estructura_invariante}} que hemos visto en el capítulo metodológico.
+%
+De hecho, en la sección \emph{\nameref{sec:tasa_de_informacion}} evaluamos dos sistemas de comunicación alternativos (o dos estructuras de datos alternativas), uno que utiliza el modelo causal correcto para decodificar los mensajes y otro un modelo causal incorrecto.
+%
+Allí encontramos que la tasa de predicción temporal del sistema de comunicación correcto, medida en órdenes de magnitud, es equivalente a lo que se conoce como entropía de Shannon.
+%
+La entropía de Shannon no es un elemento adicional a la teoría de la probabilidad.
+% %
+Se desprende de ella y mide la tasa de información en órdenes de magnitud.
+%
+Y aunque parezca contra intuitivo, preferimos los sistemas de comunicación (o estructura de datos) que tienen menor tasa de información.
+%
+Justamente porque queremos tener la menor sorpresa posible, reducir al máximo nuestra incertidumbre.
+%Lo interesante es que, no solo nos recuerda que la sorpresa es la única fuente de información (pues bajo la regla del producto las predicciones funcionan como el filtro de la creencia previa), sino que nos ha mostrado en los hechos que el logaritmo de la predicción mide la información en bits.
+
+% Parrafo
+
+El tercer libro bayesiano que tuvo una enorme influencia en términos conceptuales fue ``Probability Theory: The Logic of Science'' de Edwin Jaynes~\cite{Jaynes2003}.
+%
+Si bien este libro reproduce el teorema de Cox, en el que las reglas de la probabilidad se derivan de una axiomatización básica del sentido común, Jaynes nos ofrece una definición fundamental que nos permite definir distribuciones de creencias honestas.
 %
 \begin{quotation}
 We interpret Shannon's theorem as indicating that, out of all distributions $p_i$ that agree with the constraints, the one that maximizes the Shannon entropy, represents the ``most honest'' description of our state of knowledge, in the following sense: it expresses the enumeration of the possibilities and the evidence E; but is careful to assume nothing beyond that. If we subsequently acquire more information B that can be interpreted as an event in $H_0$, then we can update this distribution by Bayes' theorem. \cite{jaynes1984-bayesianBackground}
@@ -8633,17 +8669,16 @@ Maximizar incertidumbre dada la información disponible es precisamente la defin
 %
 En esta tesis simplemente lo renombramos como ``principio de no mentir'' y lo proponemos como fundamento intercultural de los acuerdos intersubjetivos en contextos de incertidumbre.
 %
-Y a esas distribuciones de creencias que cumplen las podemos llamar ``verdades empíricas'', debido a que al no afirmar más de lo que saben sin dejar decir todo lo que sí saben son proposiciones válidas universalmente.
+Las distribuciones de creencias honestas son las ``verdades empíricas'', debido a que son proposiciones válidas universalmente.
 %
 Estas es la respuesta epistemológica fundamental que encontré durante el doctorado en computación.
 %
-Lo interesante es que es al mismo tiempo una respuesta metodológica.
-%
-Los principios de integridad (no perder ni crear creencias espontáneamente) y de coherencia (preservar la creencia previa compatible con la nueva información) inducen las reglas de la probabilidad que nos permiten preservar los acuerdos intersubjetivos a medida que se incorpora nueva información.
+Lo interesante es que es las reglas de la probabilidad tienen la propiedad de preservar la maximización de la incertidumbre dada la información disponible, por lo que tenemos un sistema de razonamiento que preserva los acuerdos intersubjetivos a medida que incorporamos nueva información.
 
 % Parrafo
 
-La aplicación estricta de las reglas de la probabilidad responde cómo se construyen las verdades en ciencias empíricas, o cómo no mentir en contextos de incertidumbre.
+
+En en la sección \emph{\nameref{sec:principios_interculturales}} mostramos que los principios de integridad (no perder ni crear creencias espontáneamente) y de coherencia (preservar la creencia previa compatible con la nueva información) inducen las reglas de la probabilidad que nos permiten preservar los acuerdos intersubjetivos a medida que se incorpora nueva información.
 %
 ¿Pero qué es la inteligencia?
 %
@@ -8702,34 +8737,21 @@ La evidencia es nuestra propia vida, que depende de al menos cuatro de estos niv
 
 % Parrafo
 
-Pero esta tendencia hacia la agregación de unidades ocurre también con el conocimiento científico o cultural.
+Pero esta tendencia hacia la agregación de unidades no ocurre solo con la información genética, también ocurre con la información cultural o científica.
 %
-La evaluación de hipótesis en probabilidad también está sujeta al mismo proceso multiplicativo, lo que favorece que conjunto de hipótesis individuales formen variables, relaciones entre variables forman modelos causales y sistemas de modelos causales forman teorías.
+Debido a que la evaluación de hipótesis en probabilidad está sujeta al mismo proceso multiplicativo que favorece la agregación, observamos que conjunto de hipótesis individuales forman variables, relaciones entre variables forman modelos causales y sistemas de modelos causales forman teorías causales.
 %
-Los sistemas de modelos causales emergen justamente porque son capaces de adaptarse a los diversos contextos, como las intervenciones, y por lo tanto tienen mejor capacidad predictiva que modelos causales simples.
+Las teorías son sistemas de modelos causales que se prenden y se apagan en función del contexto.
 %
-El concepto de teorías causales.
-
-PEARL - WINN
-
-
-% Parrafo
-
-Las últimas lecturas clave de mi etapa doctoral fueron sobre teoría de la información: el libro ``Information theory, inference and learning algorithms'' de David MacKay~\cite{mackay2003-informationInferenceLearning}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-Allí pudimos ver que aplicando estrictamente las reglas de
+La característica principal de las teorías causales es su adaptabilidad al contexto y justamente una buena teoría causal es el que predice bien en todos los contextos.
+%
+En el área de inferencia causal se suele considerar que los contextos cambian solamente por las intervenciones humanas solamente, representado con el do-operator~\cite{pearl2009-causality}.
+%
+Sin embargo podría haber otros contextos que modifican las relaciones causales entre variables.
+%
+Y justamente las teorías causales son las agregaciones de modelos causales que, al adaptarse a los diversos contextos, tienen mejor capacidad predictiva que modelos causales individuales.
+%
+Y esta agregación de hipótesis causales emerge naturalmente de la aplicación estricta de las reglas de la probabilidad~\cite{winn2012-causality,minka2008-gates}, en particular del proceso multiplicativo de evaluación de las variantes epistémicas.
 
 
 \section{El enfoque bayesiano en América Latina} \label{sec:bayesplurinacional}
