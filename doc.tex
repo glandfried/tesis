@@ -782,7 +782,7 @@ Las apuestas son entonces procesos multiplicativos.
 %
 Vamos a buscar las estrategias que maximizan la tasa de crecimiento de los recursos.
 
-\subsection{Propiedad epistémica.}
+\subsection{Propiedad epistémica.} \label{sec:propiedad_epistemica}
 Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
 %
   \begin{equation}
@@ -837,7 +837,7 @@ Incluso con el comportamiento óptimo, individualmente las trayectorias de los r
 
 % Parrafo
 
-\subsection{Propiedad evolutiva.}
+\subsection{Propiedad evolutiva.} \label{sec:propiedad_evolutiva}
 A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
 %
 Por ejemplo, si los individuos de un grupo de tamaño $N$ redistribuyen los recursos en partes iguales luego de apostar, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
@@ -8583,7 +8583,7 @@ Y aproveché esta ocación para documentar no solo toda la matemática detrás d
 
 Los modelos TrueSkill y TrueSkill Through Time fueron la mejor escuela para aprender los aspectos técnicos del enfoque bayesiano.
 %
-Pero fue mi formación epistemológica previa la que me permitió dar algunos saltos conceptuales claves a través de la lectura de algunos autores fundamentales.
+Pero fue la lectura de algunos autores fundamentales, junto con mi formación epistemológica previa, la que me permitió dar algunos saltos conceptuales claves.
 
 % Parrafo
 
@@ -8597,7 +8597,7 @@ En particular, el concepto de overfitting es un problema epistemológico fundame
 
 % Parrafo
 
-¿Es posible mejorar el sistema de razonamiento que no tenga el problema de overfitting?
+¿Es posible mejorar el sistema de razonamiento del aprendizaje estadístico de modo que no se produzca overfitting?
 %
 Si bien yo también me había formado en métodos bayesianos, las lecturas bayesianas las comienzo después de resolver la matemática detrás de TrueSkill.
 %
@@ -8619,7 +8619,13 @@ Los problemas de overfitting son consecuencia de la ruptura de las reglas de la 
 
 % Parrafo
 
-Bajo la regla del producto, las creencias se actualizan por secuencias de predicciones por lo que es la sorpresa el filtro de la creencia previa, única fuente de información.
+Bajo la regla del producto, las creencias se actualizan mediante una secuencia de predicciones.
+%
+Si introducimos predicciones perfectas en la productoria, iguales a 1 (uno), la creencia previa se mantiene intecta.
+%
+Entonces solo cuando tenemos algún grado de sorpresa, cuando la predicción no fue 1 (uno), se produce un filtro de la creencia previa.
+%
+En este sentido podemos decir, intuitivamente, que la sorpresa es la única fuente de información.
 %
 El segundo libro que tuvo una gran influencia en términos conceptuales fue ``Information theory, inference and learning algorithms'' de David MacKay~\cite{mackay2003-informationInferenceLearning}.
 %
@@ -8641,25 +8647,50 @@ Al no tener acceso directo a la realidad, debemos inferirla a partir de los mens
 En el medio de la Era frecuentista, Shannon se vio obligado a aplicar el teorema de Bayes para decodificar de forma óptima los mensajes, calculando el posterior de las hipótesis dadas las señales.
 %
 Pero además, nos ofreció el esquema emisor-receptor de los sistemas comunicación, que no es otra cosa que \emph{\nameref{sec:estructura_invariante}} que hemos visto en el capítulo metodológico.
+
+% Parrafo
+
+La estructura de todo dato empírico se constituye de una serie de elementos.
+%
+Y hay 3 elementos sobre los cuales podemos intervenir y modificar para mejorar la calidad de los datos: las dimensiones observbales, los procedimientos de observaciones y las hipótesis con las que realizamos la inferencia~\cite{samaja1999-epistemologiaYMetodologia}.
 %
 De hecho, en la sección \emph{\nameref{sec:tasa_de_informacion}} evaluamos dos sistemas de comunicación alternativos (o dos estructuras de datos alternativas), uno que utiliza el modelo causal correcto para decodificar los mensajes y otro un modelo causal incorrecto.
 %
-Allí encontramos que la tasa de predicción temporal del sistema de comunicación correcto, medida en órdenes de magnitud, es equivalente a lo que se conoce como entropía de Shannon.
+Allí encontramos que la tasa de predicción temporal del sistema de comunicación correcto, medida en órdenes de magnitud.
 %
-La entropía de Shannon no es un elemento adicional a la teoría de la probabilidad.
-% %
-Se desprende de ella y mide la tasa de información en órdenes de magnitud.
+De la misma manera podríamos haber evaluados la calidad del sistema de comunicación si tuviéramos procedimiento alternativos.
+%
+Incluso las mejoras ``físicas'' de los sistemas de información (acercarse para escuchar mejor) termina siendo un problema de inferecia.
+
+% Parrafo
+
+La tasa de predicción de los sistemas de información (o de las estrcuturas de datos alternativas), medida en órdenes de magnitud, no es más que el negativo de la entropía de Shannon.
+%
+Es decir, Shannon no introduce un elemento adicional a la teoría de la probabilidad.
+%
+La entropía se desprende de ella, del hecho de que la única fuente de información es el sorpresa, y de que la información crece de forma exponencial.
+%
+\begin{equation*}
+- \hfrac{\text{\small Tasa de predicción temporal}}{\text{\small en órdenes de magnitud}} = \underbrace{\sum_{x\in X} P(x) \cdot \overbrace{(\ - \log_2 P(x) \ )}^{\hfrac{\text{\footnotesize \phantom{p}Información en\phantom{p}}}{\text{\footnotesize órdenes de magnitud}}}}_{\text{\footnotesize (Entropía)}} = \hfrac{\text{\small Tasa de información temporal}}{\text{\small en órdenes de magnitud}}
+\end{equation*}
+%
+Justamemte como la sorpresa es la única fuente de información, el negativo del logaritmo de la predicción mide la información en órdenes de magnitud: cuando la sorpresa es nula ($P(x)=1$) la información es nula ($-\log(1) = 0$); y cuando la sorpresa es total ($P(x)=0$) la información es total ($-\log(0) = \infty$).
+%
+Lo interesante es que su esperanza mide efectivamente la tasa de información en órdenes de magnitud.
+%
+Son órdenes de magnitud porque cada bit que agregamos multiplica por 2 la cantidad de información que podemos trasmitir.
 %
 Y aunque parezca contra intuitivo, preferimos los sistemas de comunicación (o estructura de datos) que tienen menor tasa de información.
 %
 Justamente porque queremos tener la menor sorpresa posible, reducir al máximo nuestra incertidumbre.
-%Lo interesante es que, no solo nos recuerda que la sorpresa es la única fuente de información (pues bajo la regla del producto las predicciones funcionan como el filtro de la creencia previa), sino que nos ha mostrado en los hechos que el logaritmo de la predicción mide la información en bits.
 
 % Parrafo
 
+Sin embargo, en la sección \emph{\nameref{sec:principio_indiferencia}} estuvimos de acuerdo en maximizar nuestra incertidumbre dividiendo la creencia en partes iguales.
+%
 El tercer libro bayesiano que tuvo una enorme influencia en términos conceptuales fue ``Probability Theory: The Logic of Science'' de Edwin Jaynes~\cite{Jaynes2003}.
 %
-Si bien este libro reproduce el teorema de Cox, en el que las reglas de la probabilidad se derivan de una axiomatización básica del sentido común, Jaynes nos ofrece una definición fundamental que nos permite definir distribuciones de creencias honestas.
+Si bien este libro reproduce el teorema de Cox, en el que las reglas de la probabilidad se derivan de una axiomatización intuitiva del ``sentido común'', Jaynes nos ofrece un princpio aún más fundamental sobre el cual definir nuestras distribuciones de creencias.
 %
 \begin{quotation}
 We interpret Shannon's theorem as indicating that, out of all distributions $p_i$ that agree with the constraints, the one that maximizes the Shannon entropy, represents the ``most honest'' description of our state of knowledge, in the following sense: it expresses the enumeration of the possibilities and the evidence E; but is careful to assume nothing beyond that. If we subsequently acquire more information B that can be interpreted as an event in $H_0$, then we can update this distribution by Bayes' theorem. \cite{jaynes1984-bayesianBackground}
@@ -8672,16 +8703,17 @@ En esta tesis simplemente lo renombramos como ``principio de no mentir'' y lo pr
 Las distribuciones de creencias honestas son las ``verdades empíricas'', debido a que son proposiciones válidas universalmente.
 %
 Estas es la respuesta epistemológica fundamental que encontré durante el doctorado en computación.
-%
-Lo interesante es que es las reglas de la probabilidad tienen la propiedad de preservar la maximización de la incertidumbre dada la información disponible, por lo que tenemos un sistema de razonamiento que preserva los acuerdos intersubjetivos a medida que incorporamos nueva información.
 
 % Parrafo
 
-
 En en la sección \emph{\nameref{sec:principios_interculturales}} mostramos que los principios de integridad (no perder ni crear creencias espontáneamente) y de coherencia (preservar la creencia previa compatible con la nueva información) inducen las reglas de la probabilidad que nos permiten preservar los acuerdos intersubjetivos a medida que se incorpora nueva información.
 %
-¿Pero qué es la inteligencia?
+Lo interesante es que es las reglas de la probabilidad tienen la propiedad de preservar la maximización de la incertidumbre dada la información disponible, por lo que tenemos un sistema de razonamiento que preserva los acuerdos intersubjetivos a medida que incorporamos nueva información.
 %
+¿Pero qué es la inteligencia?
+
+% Parrafo
+
 La mayoría de los modelos de la mal denominada ``inteligencia artificial'' ni siquiera intentan maximizar la incertidumbre dada la información disponible.
 %
 Pero aunque lo hicieran, la inteligencia no se reduce a la verdad, pues no todas las verdades son igualmente relevantes.
@@ -8710,9 +8742,15 @@ De hecho, el modelo estándar de evolución, conocido como \emph{replicator dyna
 
 En el capítulo 1 (sección \ref{sec:propiedades_funcion_costo}) hemos visto que debido a que en los procesos multiplicativos los impactos de las pérdidas son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) existe una ventaja a favor de las variantes que reducen las fluctuaciones: por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
 %
-Debido a que la teoría de toma de decisiones de Von Neumann está mal fundada, pues se base en funciones de costo ad-hoc (la utilidad esperada), durante mucho tiempo se postuló en la teoría de juegos que la evolución de la cooperación estaba condicionada por un dilema (el dilema del prisionero).
+Por un lado, la \emph{propiedad epistémica} (vista en la sección~\ref{sec:propiedad_epistemica}) nos muestra qué la regla del producto de la teoría de la probabilidad es capaz de adquirir conocimiento del mundo gracias a que al evaluar las hipótesis individuales en base al producto de las sorpresas se produce una ventaja a favor de las hipótesis que diversifican la predicción en la misma proporción que la frecuencia observada.
 %
-Sin embargo, ya en el artículo ``A new interpretation of information rate'', el colega de Shannon John L Kelly~\cite{kelly1956} se ve obligado a apartarse de la teoría de Von Neumann para resolver cuál es la apuesta óptima en proceso multiplicativos.
+Pero además, la \emph{propiedad evolutiva} (vista en la sección~\ref{sec:propiedad_evolutiva}) nos explica por qué en la historia de la vida hay tendencia a favor de las transiciones evolutivas mayores en las que entidades capaces de autorreplicación luego de la transición pasan a formar parte de unidades cooperativas indisolubles.
+
+% Parrafo
+
+Debido a que la teoría de toma de decisiones de Von Neumann está mal fundada, pues se basa en funciones de costo ad-hoc (la utilidad esperada), durante mucho tiempo se postuló desde la teoría de juegos que la evolución de la cooperación estaba condicionada por un dilema (el dilema del prisionero).
+%
+Sin embargo, ya en el artículo ``A new interpretation of information rate''~\cite{kelly1956}, el colega de Shannon, John L Kelly, se ve obligado a apartarse de la teoría de Von Neumann para resolver cuál es la apuesta óptima en proceso multiplicativos.
 %
 \begin{quotation}
 The cost function approach [..] can actually be used to analyze nearly any branch of human endeavor.
@@ -8721,15 +8759,17 @@ The point here is that an arbitrary combination of a statistical transducer (i.e
 What can be done, however, is to take some real-life situation which seems to possess the essential features of a communication problem, and to analyze it without the introduction of an arbitrary cost function.
 \end{quotation}
 %
-Recientemente, el físico Ole Peters finalmente reformula de forma general la teoría de decisiones, incorporando el concepto de ergodicidad~\cite{peters2019-ergodicityEconomics, peters2021-interpretation}.
+Recientemente, el físico Ole Peters reformula de manera general la teoría de decisiones, al incorporar el concepto de ergodicidad como princpio de selección de las funciones de costo (o utilidad)~\cite{peters2019-ergodicityEconomics, peters2021-interpretation}.
 %
 El punto es que para evaluar lo que nos va a ocurrir en el tiempo es necesario que la función de utilidad elegida sea ergódica, esto es, que su esperanza efectivamente represente la tasa de crecimiento temporal.
 %
-Decimos que lo resuelve en términos generales porque permite elegir la función costo correcta en función de la naturaleza del proceso real que queremos evaluar, más allá de los clásicos procesos multiplicativos o aditivos estudiados por la literatura.
+En probabilidad, la tasa de crecimiento está bien representada por la esperanza de logirtmos (la entropía o entropía cruzada) justamente porque el proceso de evaluación de la hipótesis sigue un proceso multiplicativo.
+%
+Decimos que Ole Peters reformula la teoría de decisiones en términos generales porque permite elegir la función costo correcta respecto de la naturalez del proceso que queremos evaluar, más allá de los clásicos procesos multiplicativos o aditivos estudiados por la literatura.
 
 % Parrafo
 
-En el capítulo 1, mostramos que la evolución de la cooperación no está condicionada por un dilema justamente debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
+Bajo este principio, en el capítulo 1 mostramos que la evolución de la cooperación no está condicionada por un dilema justamente debido a que en los procesos de multiplicativos de selección de las formas de vida, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
 %
 Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), la emergencia de unidades cooperativas de nivel superior es un fenómeno permanente en la historia de la vida (transiciones evolutivas mayores).
 %
@@ -8739,22 +8779,24 @@ La evidencia es nuestra propia vida, que depende de al menos cuatro de estos niv
 
 Pero esta tendencia hacia la agregación de unidades no ocurre solo con la información genética, también ocurre con la información cultural o científica.
 %
-Debido a que la evaluación de hipótesis en probabilidad está sujeta al mismo proceso multiplicativo que favorece la agregación, observamos que conjunto de hipótesis individuales forman variables, relaciones entre variables forman modelos causales y sistemas de modelos causales forman teorías causales.
+Debido a que la evaluación de hipótesis en probabilidad también está sujeta al mismo proceso multiplicativo, también observamos que los conjuntos de hipótesis individuales se agregan para formar variables, que las variables se relacionan entre sí para formar modelos causales, y los modelos causales individuales se ensamblan para formar teorías causales.
 %
 Las teorías son sistemas de modelos causales que se prenden y se apagan en función del contexto.
 %
-La característica principal de las teorías causales es su adaptabilidad al contexto y justamente una buena teoría causal es el que predice bien en todos los contextos.
-%
 En el área de inferencia causal se suele considerar que los contextos cambian solamente por las intervenciones humanas solamente, representado con el do-operator~\cite{pearl2009-causality}.
 %
-Sin embargo podría haber otros contextos que modifican las relaciones causales entre variables.
-%
-Y justamente las teorías causales son las agregaciones de modelos causales que, al adaptarse a los diversos contextos, tienen mejor capacidad predictiva que modelos causales individuales.
-%
-Y esta agregación de hipótesis causales emerge naturalmente de la aplicación estricta de las reglas de la probabilidad~\cite{winn2012-causality,minka2008-gates}, en particular del proceso multiplicativo de evaluación de las variantes epistémicas.
+Sin embargo, existen otros contextos que modifican las relaciones causales entre variables.
 
+% Parrafo
+
+Las teorías causales, o sistemas de modelos causales, emergen naturalemente de la regla del producto de la teoría de la probabilidad justamente porque al ser agregaciones de modelos causales que se adaptan a los diversos contextos, tienen mejor capacidad predictiva que los modelos causales individuales~\cite{winn2012-causality,minka2008-gates}.
+%
+La característica principal de las teorías causales es esta adaptabilidad al contexto y justamente una buena teoría causal es el que predice bien en todos los contextos.
+%
+En definitiva, es la naturaleza multiplictiva de la función de costo epistémico-evolutiva la que produce la emergencia de las complejas formas de vida y las complejas teorías causales.
 
 \section{El enfoque bayesiano en América Latina} \label{sec:bayesplurinacional}
+s
 
 \subsection{La brecha entre el potencial y lo real}
 
