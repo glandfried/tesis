@@ -1,4 +1,4 @@
-all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf sidewalk_bubblegum_1997.png Venezuela.png
+all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf sidewalk_bubblegum_1997.png Venezuela.png Gerardo.jpeg fotoGeneral.jpg
 
 biomassBarOn.png:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/biomassBarOn.png
@@ -81,3 +81,9 @@ Venezuela.png:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/bayes/redes/Uruguay.png
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/bayes/redes/Venezuela.png
 
+Gerardo.jpeg:
+	curl -O https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/Gerardo.jpeg
+
+fotoGeneral.jpg:
+	curl -O  https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/fotoGeneral.jpg
+	convert fotoGeneral.jpg -crop 7024x348+0+240 fotoGeneral.jpg
