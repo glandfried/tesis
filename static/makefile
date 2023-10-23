@@ -1,4 +1,4 @@
-all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf sidewalk_bubblegum_1997.png Venezuela.png Gerardo.jpeg fotoGeneral.jpg
+all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf sidewalk_bubblegum_1997.png Venezuela.png Gerardo.jpeg fotoGeneral.jpg 6-hackaton.jpg papers.csv
 
 biomassBarOn.png:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/biomassBarOn.png
@@ -87,3 +87,16 @@ Gerardo.jpeg:
 fotoGeneral.jpg:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/fotoGeneral.jpg
 	convert fotoGeneral.jpg -crop 7024x348+0+240 fotoGeneral.jpg
+
+6-hackaton.jpg:
+	curl -O https://raw.githubusercontent.com/BayesDeLasProvinciasUnidasDelSur/curso/master/programa/2023.2/1-intro.jpg
+	curl -O https://raw.githubusercontent.com/BayesDeLasProvinciasUnidasDelSur/curso/master/programa/2023.2/2-causa.jpg
+	curl -O https://raw.githubusercontent.com/BayesDeLasProvinciasUnidasDelSur/curso/master/programa/2023.2/3-dato.jpg
+	curl -O https://raw.githubusercontent.com/BayesDeLasProvinciasUnidasDelSur/curso/master/programa/2023.2/4-tiempo.jpg
+	curl -O https://raw.githubusercontent.com/BayesDeLasProvinciasUnidasDelSur/curso/master/programa/2023.2/5-decision.jpg
+	curl -O https://raw.githubusercontent.com/BayesDeLasProvinciasUnidasDelSur/curso/master/programa/2023.2/6-hackaton.jpg
+
+papers.csv:
+	wget https://github.com/BayesDeLasProvinciasUnidasDelSur/congreso/releases/download/comunidad/papers.zip
+	unzip papers.zip
+	rm papers.zip
