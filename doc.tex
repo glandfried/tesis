@@ -48,6 +48,8 @@
 \input{tikzlibrarybayesnet.code.tex}
 \allowdisplaybreaks %break equations
 
+
+
 \newcommand\Wider[2][3em]{%
 \makebox[\linewidth][c]{%
   \begin{minipage}{\dimexpr\textwidth+#1\relax}
@@ -56,6 +58,12 @@
   }%
 }
 
+%
+
+% \usepackage[rawfloats]{floatrow}
+% \DeclareMarginSet{hangboth}{\setfloatmargins*{\hskip-4cm}{\hskip-4cm}}
+
+%
 
 \tikzset{
 every picture/.append style={
@@ -8855,18 +8863,19 @@ Para ello, desarrollé otra pieza de software mediante la cual exploramos la red
 
 % Parrafo
 
-Descargamos 16500 papers.
-%
-Su distribución tiene un crecimiento exponencial.
-%
 \begin{figure}[ht!]
 \centering
   \begin{subfigure}[b]{0.60\textwidth}
   \includegraphics[page=2,width=\textwidth]{figures/papers.pdf}
   \end{subfigure}
+  \caption{Cantidad de artículos científicos que fueron detectados con al menos una afiliación en Latinoamérica y alguna palabra claves en el título o abstract vinculada al enfoque bayesiano. Dejamos en blanco el último punto que representa al año 2022 (año en que se realizó la búsqueda), para el cual tenemos datos parciales.}
 \end{figure}
+
+% Parrafo
+
+Descargamos 16500 papers de 1975 en adelante.
 %
-En el año 1975 se publican simultaneamente 3 artículos ``Optimal Policies for Identification of Stochastic Linear Systems'' de Alejandro Antonio Lopez-Toledo, ``Unfolding of physical spectra by sequential bayes methods Part I: Linear spline models'' y ``Part II. Estimation of parameters in non-linear models'' de Manuel Mendès.
+En el año 1975 se publican simultaneamente 3 artículos ``Optimal Policies for Identification of Stochastic Linear Systems'' de Alejandro Antonio Lopez-Toledo, ``Unfolding of physical spectra by sequential bayes methods, Part I: Linear spline models'' y ``Part II. Estimation of parameters in non-linear models'' de Manuel Mendès.
 %
 En el año 1976 se publica el artículo ``Bayesian full information analysis of simultaneous equations'' de Juan Antonio Morales Anaya.
 %
@@ -8876,56 +8885,44 @@ Entre el año 1980 y 1990 se publican entre 2 y 9 artículos por año.
 
 % Parrafo
 
-Seguramente existen artículos previos que no fueron identificados.
-%
-En todo caso, no se registra un crecimiento exponencial previo al año 1990, cuando comienza el período de masificación de las computadoras personales.
+El crecimiento exponencial comienza en 1990, acompañando el período de masificación de las computadoras personales.
 %
 En 1991 se rompe por primera vez la frontera de los 10 artículos por año, y comienza la primera etapa del crecimiento exponencial de las publicaciones bayesianas con co-autores de latinoamérica y el caribe.
 %
-En el año 1998, al mismo tiempo que la Internet comienza a hacerse popular, se produce un aumento de 66\% en la cantidad de publicaciones respecto del año anterior y el inicio de la segunda etapa de crecimiento exponencial del enfoque bayesiano, que perdura hasta el año 2012.
+En el año 1998, se produce un aumento del 66\% en la cantidad de publicaciones respecto del año anterior y el inicio de la segunda etapa de crecimiento exponencial del enfoque bayesiano, que perdura hasta el año 2012.
 %
-En este período la inferencia bayesiana estaba en el centro de los aplicaciones de última generación de la inteligencia artificial, hasta que en el año 2012 se produce el inicio de la revolución de las redes neuronales.
+En este período la inferencia bayesiana estaba en el centro de atención en el área de la inteligencia artificial, hasta que en el año 2012, se presenta una red neuronal convolucional profunda entrenada sobre GPU que mejora significativamente el desempeño de los modelos previos~\cite{Krizhevsky2012}.
+%
+A partir del año 2013 el crecimiento exponencial de las publicaciones bayesianas con afiliación en Latinoamérica continúa, alcanzando los 1611 arículos en el año 2021, pero su tasa de crecimiento se ve reducida significativamente respecto de la etapa anterior.
 
 % Parrafo
 
-ImageNet es una base de datos en línea con millones de imágenes etiquetadas a mano. El concurso anual ImageNet anima a los profesionales del sector a competir y medir sus progresos para conseguir que los ordenadores reconozcan y etiqueten imágenes automáticamente. En un taller de seguimiento, los ganadores comparten y debaten sus técnicas. En 2010, el sistema ganador pudo etiquetar correctamente una imagen el 72\% de las veces (para los humanos, la media es del 95\%). En 2012, un equipo dirigido por Geoff Hinton, de la Universidad de Toronto, logró un aumento de la precisión hasta el 85\%, gracias a una novedosa técnica conocida como "aprendizaje profundo". Esto trajo consigo mejoras aún más rápidas, produciendo una precisión del 96\% en el Desafío ImageNet en 2015 y superando a los humanos por primera vez.
-
-
-desde entonces el crecimiento exponencial en la cantidad de artículos publicados nos llevó a los 1611 artículos del año 2021 (último año con registros completos).
-
-
-
-
-
-Recién en el año
-
-
-
-
-
-
-Con la ayuda de Ariel Salgado
-
-
-De esta forma pudimos verificar que la comunidad es más grande de lo que creíamos (cantidad de autores en los principales países: Brasil 9501, Mexico 3276, Argentina 1640, Chile 1295, Colombia 1069).
+Con el surgimiento de las redes neuronales profundas, nuevamente la complejidad computacional de la aplicación estricta de las reglas de la probabilidad actúa como un límite al enfoque bayesiano.
 %
-
-
-contactar personalmente a la mitad de los investigadores de la comunidad.
-
-
-Al mismo tiempo, pudimos verificar a través del contacto directo que la comunidad está muy desconectada, sus protagonistas no se conocen todavía.
+Desde entonces, la atención del área de la inteligencia artificial pasa a enfocarse nuevamente en métodos que seleccionan una única hipótesis en vez de integrar todo el espacio de hipótesis.
+%
+Sin embargo, esto no significa que se haya propuesto un sistema de razonamiento bajo incertidumbre nuevo, con mejor desempeño que el de las reglas de la probabilidad.
+%
+En este contexto, NeurlIPS realiza una competencia en el año 2021 denominada ``Approximate inference in Bayesian Deep Learning''.
+%
+En ese año se publica el artículo ``What Are Bayesian Neural Network Posteriors Really Like?''~\cite{Izmailov2021} en el que aproximan las distribuciones de probabilidad de redes neuronales mediante full-batrch Hamiltonian Monte Carlo (HMC).
+%
+Allí se confirma la observación previa~\cite{Wilson2020}, en la que se muestra que los métodos de \emph{deep ensambles}, que en vez de quedarse con una única hipótesis se quedan con un conjunto, proporcionan un mecanismo eficaz de aproximación de la aplicación estricta de las reglas de la probabilidad.
 
 % Parrafo
 
+Haber obtenido la red de co-autorías de artículos bayesianos con afiliación en Latinoamérica y el Caribe nos permitió verificar que la comunidad es más grande de lo que creíamos inicialmente.
+%
+Por ejemplo, la cantidad de autores individuales en los principales países son: Brasil 9501, Mexico 3276, Argentina 1640, Chile 1295, Colombia 1069.
+%
+Para explorar la estructura de la comunidad bayesiana, realizamos con la colaboración de Ariel Salgado visualizaciones a través de redes bipartitas (figura~\ref{fig:redes_co_autorias}), con nodos ``artículos'' (en rojo), nodos ``autores'' (en azul), y ejes entre los autores y sus artículos.
+%
+La versión interactiva subida a la web (\texttt{http://bayesdelsur.com.ar/comunidad.html}) permite mover nodos, y desplegar los datos de los autores (nombre y afiliaciones) y de los artículos (título, abstract, journal y año).
 
+% Parrafo
 
-
-
-
-\noindent \Wider[2cm]{
- \begin{figure}[H]
-\centering
+\begin{figure}[!ht]
+\noindent \centering \Wider[1.3cm]{
   \begin{subfigure}[b]{0.32\textwidth}
   \caption{Argentina}
   \includegraphics[page=1,width=\textwidth]{static/Argentina.png}
@@ -8937,13 +8934,10 @@ Al mismo tiempo, pudimos verificar a través del contacto directo que la comunid
     \begin{subfigure}[b]{0.32\textwidth}
       \caption{Chile}
   \includegraphics[page=1,width=\textwidth]{static/Chile.png}
-  \end{subfigure}
-
+  \end{subfigure}}
 \end{figure}
-}
-
-  \noindent \Wider[2cm]{
- \begin{figure}[H]
+  \begin{figure}[!ht]
+  \noindent \centering \Wider[1.3cm]{
     \begin{subfigure}[b]{0.32\textwidth}
       \caption{Colombia}
   \includegraphics[page=1,width=\textwidth]{static/Colombia.png}
@@ -8955,13 +8949,10 @@ Al mismo tiempo, pudimos verificar a través del contacto directo que la comunid
     \begin{subfigure}[b]{0.32\textwidth}
     \caption{México}
   \includegraphics[page=1,width=\textwidth]{static/Mexico.png}
-  \end{subfigure}
-
+  \end{subfigure}}
 \end{figure}
-}
-
-\noindent \Wider[2cm]{
- \begin{figure}[H]
+\begin{figure}[!ht]
+\noindent \centering  \Wider[1.3cm]{
     \begin{subfigure}[b]{0.32\textwidth}
       \caption{Peru}
   \includegraphics[page=1,width=\textwidth]{static/Peru.png}
@@ -8974,27 +8965,43 @@ Al mismo tiempo, pudimos verificar a través del contacto directo que la comunid
       \caption{Venezuela}
   \includegraphics[page=1,width=\textwidth]{static/Venezuela.png}
   \end{subfigure}
-
   \caption{Red de co-autorias bayesianas. Fuente Scopus. }
+  \label{fig:redes_co_autorias}}
 \end{figure}
-}
-
-
-El principal objetivo a largo plazo es contribuir en la transición bayesiana en Latinoamérica y el Caribe.
 %
-Nos proponemos entonces alcanzar dos objetivos particulares: fortalecer a los investigadores bayesianos activos actualmente en nuestros países; y promover la emergencia de la generación bayesiana.
+Gracias a que la mitad de los autores proveen en sus artículos científicos algún medio de contacto, antes del cierre de las inscripciones al congreso pudimos invitar personalmente a la mayoría.
+%
+Para ello tuve que desarrollar otra pieza de software que nos permitiera enviar de forma automática correos electrónicos a través de nuestra cuenta \texttt{bayesdelsur@gmail.com}.
+%
+De esta forma, en pocas semanas, superamos el número de inscripciones que nos habíamos propuesto inicialmente, por lo que decidimos cerrar el período de inscripción al final del primer y único llamado.
+
+% Parrafo
+
+Además de las inscripciones, en este breve lapso de tiempo (3 semanas marzo del año 2023) recibimos una enorme cantidad de respuestas.
+%
+Si bien respondimos a todas, y con una cantidad importante establecimos intercambios extensos por correo e incluso por video conferencia, no fuimos capaces profundizar los intercambios con cada una de ellas.
+%
+Si bien la comunidad bayesiana era más grande de lo que creíamos inicialmente, ella no es todavía suficientemente grande, y a través del contacto directo pudimos verificar que aún así la comunidad está muy desconectada, pues sus protagonistas no se suelen conocen todavía.
+
+% Parrafo
+
+Esto ratificó nuestro objetivo principal a largo plazo, de contribuir en la transición bayesiana en Latinoamérica y el Caribe.
+%
+En particular Nos proponemos entonces alcanzar dos objetivos particulares: fortalecer a los investigadores bayesianos activos actualmente en nuestros países; y promover la emergencia de la generación bayesiana.
 %
 Para potenciar el trabajo de quienes ya trabajan con el enfoque bayesiano nos proponemos llevar adelante encuentros presenciales y virtuales periódicos que fortalezcan lo vínculos al interior de la comunidad bayesiana plurinacional.
 %
 Para expandir la comunidad actual, nos proponemos impulsar cursos y formaciones abiertas para los diversos niveles (introductorio, intermedio y avanzado) con reconocimiento de las principales universidades públicas y privadas de nuestros países.
-%
-El impacto de estas tares podrá ser medido en los próximos años, por ejemplo, en la estructura de la red de co-autorías bayesianas de América latina.
 
+% Parrafo
 
+El impacto de estas tares podrá ser medido en los próximos años, por ejemplo, en la estructura de la red de co-autorías bayesianas de América latina (figura~\ref{fig:redes_co_autorias}).
 
 % Parrafo
 
 \subsection{El Congreso Bayesiano Plurinacional 2023}
+
+\todo[inline]{Desde la evaluación de las propuestas, la renuncia del grupo de modelado, los financiamientos perdidos, el llamado telefónico a cada una de las personas que vino, hasta la fiesta en Santiago}
 
 Al haber verificado la debilidad de la comunidad bayesiana en Argentina, al final del doctorado comencé a impulsar, junto con algunos de sus protagonistas, el primer Congreso Bayesiano Plurinacional.
 %
