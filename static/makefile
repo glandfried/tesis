@@ -1,4 +1,4 @@
-all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf sidewalk_bubblegum_1997.png Venezuela.png Gerardo.jpeg fotoGeneral.jpg 6-hackaton.jpg papers.csv
+all: biomassBarOn.png logo.png dedo.png regalo.png cerradura.png cloroplastos.jpg fotosintesis.jpg hormigas2.jpg tsimane2.jpg polynesia.png tonga_barco.jpg hereroNamaPrisoners.jpg africa.png brasil1986.jpg brasil2020.jpg bali-offerings.jpg pachamama.jpg verdadesEmpiricas.png whipala.png madre-chimpance.jpg betweenness-centrality-150-partidas-hist.pdf sidewalk_bubblegum_1997.png Venezuela.png Gerardo.jpeg fotoGeneral.jpg 6-hackaton.jpg papers.csv nota7.jpeg
 
 biomassBarOn.png:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/biomassBarOn.png
@@ -100,3 +100,10 @@ papers.csv:
 	wget https://github.com/BayesDeLasProvinciasUnidasDelSur/congreso/releases/download/comunidad/papers.zip
 	unzip papers.zip
 	rm papers.zip
+
+nota7.jpeg:
+	curl -O https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/nota3.jpeg
+	curl -O https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/nota4.jpeg
+	curl -O https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/nota5.jpeg
+	curl -O https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/nota6.jpeg
+	curl -O https://raw.githubusercontent.com/glandfried/images/master/bayes/congreso2023/nota7.jpeg
