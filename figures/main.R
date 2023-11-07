@@ -11,6 +11,7 @@ if (length(args)>0){
 }
 
 for (f in files){
+  print(paste("Abre Archivo", f))
   source(f)
 } 
 
