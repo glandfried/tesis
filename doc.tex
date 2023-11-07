@@ -422,1033 +422,155 @@ A Cristina, por haber puesto la vida por un país mejor, y en particular por hab
 \chapter{Introducción} \label{ch:evo}
 
 
-\section{Motivación epistémico-evolutiva}
+\section{Aprendizaje humano}
 
-Los procesos evolutivos de selección de las formas de vida, por secuencia de tasas de supervivencia y reproducción, son como los procesos de selección de las hipótesis en la teoría de la probabilidad, por secuencias de predicciones, de naturaleza multiplicativa.
+En la historia del ser humano la transición cultural tuvo un efecto positivo radical para nuestra especie.
 %
-Debido a que en ellos los impactos de las pérdidas son más fuertes que los de las ganancias (un cero en la secuencia produce una extinción irreversible), las variantes que florecen son hipótesis o formas de vida que reducen las fluctuaciones por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
-%
-Durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema.
-%
-No existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
-%
-Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), la emergencia de unidades cooperativas de nivel superior es un fenómeno permanente en la historia de la vida (transiciones evolutivas mayores).
-%
-La evidencia es nuestra propia vida, que depende de al menos cuatro de estos niveles para sobrevivir: la célula con la mitocondria, el organismo multicelular, el sistema social y la comunidad ecológica.
-%
-Además, la evaluación de hipótesis en probabilidad también favorece la agregación: conjunto de hipótesis individuales forman variables, relaciones entre variables forman modelos causales y sistemas de modelos causales forman teorías.
-%
-En la historia del ser humano, la transición cultural tuvo efectos positivos evidentes: antes de la cooperación epistémica (trasmisión del conocimiento) estuvimos en grave peligro de extinción; luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre.
-%
-En la historia reciente, ciertas coyunturas produjeron la emergencia del colonialismo, una era de genocidios y masiva pérdida de diversidad cultural.
-%
-A pesar de todos los avances, la ciencia metropolitana no fue capaz de compensar la pérdida de los conocimientos milenarios, y la crisis ecológica actual no deja de profundizarse.
-%
-A largo plazo solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación individual y por especialización heterogénea cooperativa.
-
-\section{La función de costo epistémico-evolutiva}
-
-\begin{quotation}
-The cost function approach [..] can actually be used to analyze nearly any branch of human endeavor.
-The utility theory of Von Neumann shows us one way to obtain such a cost function.
-The point here is that an arbitrary combination of a statistical transducer (i.e., a channel) and a cost function does not necessarily constitute a communication system.
-What can be done, however, is to take some real-life situation which seems to possess the essential features of a communication problem, and to analyze it without the introduction of an arbitrary cost function.
-The situation which will be chosen here is one in which a gambler uses knowledge of the received symbols of a communication channel in order to make profitable bets on the transmitted symbols. (Kelly 1956 \emph{A New Interpretation of Information Rate} Bell Labs)
-\end{quotation}
-
-La ciencia es una institución humana que tiene pretensión de verdad: de alcanzar acuerdos intersubjetivos con validez intercultural, universal.
-%
-Las ciencias formales (matemática, lógica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiomáticos cerrados.
-%
-Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos que contienen siempre algún grado de incertidumbre.
-%
-¿Es posible entonces alcanzar acuerdos intersubjetivos (``verdades'') en las ciencias empíricas si es inevitable decir ``no sé''?
-%
-Sí.
-%
-En pocas palabras, podemos evitar mentir: no decir más de lo que se sabe, incorporando al mismo tiempo toda la información disponible.
-
-% Parrafo
-
-Por ejemplo, supongamos que sabemos que hay un regalo escondido detrás de una caja entre tres.
-%
-¿Dónde está el regalo?
-%
-Si elegimos alguna de las cajas estaríamos afirmando más de lo que sabemos porque en los hechos no tenemos información que nos haga preferir ninguna de ellas.
-% Parrafo
-\begin{figure}[ht!]
- \centering
- \begin{subfigure}[b]{0.48\textwidth}
- \centering
-  \tikz{ %
-         \node[factor, minimum size=0.8cm] (p1) {} ;
-         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
-         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
-
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$0$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$1$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$0$};
-        }
-    \caption{\En{Full certainty}\Es{Certidumbre total}}
-    \label{fig:preferencia_parcial}
- \end{subfigure}
- \begin{subfigure}[b]{0.48\textwidth}
- \centering
-  \tikz{ %
-         \node[factor, minimum size=0.8cm] (p1) {} ;
-         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
-         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
-
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
-        }
-    \caption{\En{Maximum uncertainty}\Es{Máxima incertidumbre}}
-    \label{fig:preferencia_total}
- \end{subfigure}
-\caption{
-Dos distribución de creencias. Maximizar incertidumbre permite alcanzar un primer acuerdo intersubjetivo.
-}
- \label{fig:distribucion_de_creencias}
-\end{figure}
-% Parrafo
-\noindent
-%
-Si nos permitimos dividir la creencia vamos a estar de acuerdo en la necesidad de distriburla en partes iguales, justamente porque no tenemos preferencia por ninguna caja.
-%
-En este ejemplo maximizamos incertidumbre (al dividir la creencia en partes iguales) incorporando la información disponible (al no asignar creencia afuera de las tres cajas).
-%
-Evitar mentir (maximizando incertidumbre dada la información disponible) nos permitió alcanzar un primer acuerdo intersubjetivo en contextos de incertidumbre!
-%
-Bien. ¿Pero ahora, cómo preservamos el acuerdo intersubjetivo en casos más complejos, cuando recibimos nueva información?
-
-% Parrafo
-
-La lógica de la incertidumbre (teoría de la probabilidad) ha sido derivada repetidas veces a partir de diversos principios (axiomas), llegando siempre a las mismas dos simples reglas.
-%
-La \emph{regla de la suma} garantiza no perder creencia cuando la distribuimos entre hipótesis mutuamente contradictorias: al sumar cuánto le hemos asignado a cada hipótesis, recuperamos el 100\% inicial.
-%
-\begin{equation*}
-\overset{\hfrac{\text{\small \En{Sum rule}\Es{Regla de la suma}: }}{\phantom{x}}}{P(A) + P(\text{no\En{t} } A) = 1}
-\end{equation*}
-%
-Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las creencias con la información disponible: preservamos la creencia previa que sigue siendo compatible con los nuevos datos (y la porción de creencia que sobrevive la volvemos a consider como nuestra creencia total 100\%).
-%
-\begin{equation*}
-\overset{\hfrac{\text{\small \En{Poduct rule}\Es{Regla del producto}: }}{\phantom{x}}}{\underbrace{P(\text{\text{\En{Hypothesis}\Es{Hipótesis}}}|\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Conditional belief }\Es{Creencia condicional}\phantom{p}}}{\text{\scriptsize \En{New belief}\Es{Nueva creencia}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\En{Joint prior belief}\Es{Creencia previa conjunta}}}{\text{\scriptsize\En{compatible with the data}\Es{compatible con el dato}}}} \ \ \  \ /  \underbrace{P(\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Prediction of the data}\Es{Predicción del dato}}\phantom{p}}{\text{\scriptsize\En{total compatible belief}\Es{creencia total que sobrevive}}}} }
-\end{equation*}
-
-% Parrafo
-
-Estas son las reglas de la probabilidad para actualizar las creencias en contextos de incertidumbre.
-%
-No hay más.
-
-% Parrafo
-
-Veamos un ejemplo.
-%
-Supongamos que ahora nos dejan elegir una de las cajas y luego alguien nos dará una pista abriendo una caja distinta a la que elegimos en la que no está el regalo (figura~\ref{fig:monty_hall}).
-%
-Con esta información previa podemos definir un modelo causal sobre la pista (figura~\ref{fig:modelo_causal}).
-%
-Antes de recibir la información de la pista tenemos una creencia previa que surge de maximizar incertidumbre incorporando la información del modelo causal: dividiendo la creencia en partes iguales por los universos paralelos que induce el modelo causal (figura~\ref{fig:caminos_montyhall_compatibles}).
-%
-Las hojas del árbol las podemos ordenar en forma de matriz (tabla de la figura~\ref{fig:f3}) y representan nuestra creencia conjunta inicial de que ocurra tanto $r_i$ y $s_j$, $P(r_i,s_j)$.
-%
-Para actualizar nuestra creencia simplemente preservamos la creencia conjunta inicial que sigue siendo compatible con el dato (el renglón $s_2$ en la figura~\ref{fig:f3}).
-%
-Finalmente, la creencia que sobrevive la expresamos como nueva creencia total (para que sume $1$).
-%
-\begin{figure}[ht!]
- \centering
-  \begin{subfigure}[b]{0.3\textwidth}
-  \centering
-  \tikz{
-
-    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const,below=of d] (nd) {\En{Hint}\Es{Pista}: $s \neq r$, $s \neq c$  } ;
-
-    \node[latent, above=of d,yshift=-1.2cm, xshift=-1.3cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,above=of r] (nr) {\phantom{g}\En{Gift}\Es{Regalo}: $r$\phantom{g}} ;
-
-    \node[latent, fill=black!30, above=of d,yshift=-1.2cm, xshift=1.3cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
-    \node[const,above=of c] (nc) {\phantom{g}\En{Election}\Es{Elección}: $c_1$\phantom{g}} ;
-
-    \edge {r,c} {d};
-
-         \node[factor, minimum size=0.8cm, xshift=-1.3cm, yshift=2.5cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
-         \node[det, minimum size=0.8cm, yshift=2.5cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=0.8cm, xshift=1.3cm, yshift=2.5cm] (p3) {} ;
-         \node[const, above=of p1, yshift=.05cm] (fp1) {$?$};
-         \node[const, above=of p2, yshift=.05cm] (fp2) {$?$};
-         \node[const, above=of p3, yshift=.05cm] (fp3) {$?$};
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-
-  }
-  \caption{}
-  \label{fig:modelo_causal}
-  \end{subfigure}
- \begin{subfigure}[b]{0.32\textwidth}
-\centering
-\tikz{
-\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
-\node[latent,below=of b0,yshift=0.9cm, xshift=-1.5cm] (r1) {$r_1$};
-{\color{black}\node[latent,draw=black,below=of b0,yshift=0.9cm] (r2) {$r_2$}; }
-\node[latent,below=of b0,yshift=0.9cm, xshift=1.5cm] (r3) {$r_3$};
-\node[latent, below=of r1, draw=white, yshift=0.7cm] (bc11) {$\frac{1}{3}$};
-{\color{black}\node[latent, below=of r2, draw=white, yshift=0.7cm] (bc12) {$\frac{1}{3}$};}
-\node[latent, below=of r3, draw=white, yshift=0.7cm] (bc13) {$\frac{1}{3}$};
-\node[latent,below=of bc11,yshift=0.9cm, xshift=-0.5cm] (r1d2) {$s_2$};
-{\color{black}\node[latent,draw=black,below=of bc11,yshift=0.9cm, xshift=0.5cm] (r1d3) {$s_3$};}
-{\color{black}\node[latent, draw=black,below=of bc12,yshift=0.9cm] (r2d3) {$s_3$};}
-\node[latent,below=of bc13,yshift=0.9cm] (r3d2) {$s_2$};
-
-\node[latent,below=of r1d2,yshift=0.9cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
-{\color{black}\node[latent,below=of r1d3,yshift=0.9cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};}s
-{\color{black}\node[latent,below=of r2d3,yshift=0.9cm,draw=white] (br2d3) {$\frac{1}{3}$};}
-\node[latent,below=of r3d2,yshift=0.9cm,draw=white] (br3d2) {$\frac{1}{3}$};
-\edge[-] {b0} {r1,r3};
-\edge[-,draw=black] {b0} {r2};
-\edge[-] {r1} {bc11};
-\edge[-,draw=black] {r2} {bc12};
-\edge[-] {r3} {bc13};
-\edge[-] {bc11} {r1d2};
-\edge[-,draw=black] {bc11} {r1d3};
-\edge[-,draw=black] {bc12} {r2d3};
-\edge[-] {bc13} {r3d2};
-\edge[-] {r1d2} {br1d2};
-\edge[-,draw=black] {r1d3} {br1d3};
-\edge[-,draw=black] {r2d3} {br2d3};
-\edge[-] {r3d2} {br3d2};
-}
-\caption{}
-\label{fig:caminos_montyhall_compatibles}
-\end{subfigure}
-\
-\begin{subfigure}[b]{0.34\textwidth}
-\phantom{$P(s_j)$\hspace{0.7cm}g}$P(r_i, s_j)$\phantom{g}\hspace{0.9cm}$P(s_j)$
-\centering
-  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm}
- & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, &  \\ \hline
-  $\gray s_1$ & $\gray0$ & $\gray0$ & $\gray0$ &   $\gray 0$ \\ \hline
-  $\bm{s_2}$ & $\bm{1/6}$ & $\bm{0}$ & $\bm{1/3}$ &  $\bm{1/2}$ \\  \hline
-  $\gray s_3$ & $\gray1/6$ & $\gray1/3$ & $\gray0$ & $\gray1/2$ \\ \hline
-  \end{tabular}
-
-  \phantom{--}\\[0.1cm]
-
-  \tikz{
-
-         \node[factor, minimum size=0.8cm, xshift=-1.3cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
-         \node[det, minimum size=0.8cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=0.8cm, xshift=1.3cm] (p3) {} ;
-         \node[const, below=of p1, yshift=-.025cm] (fp1) {$1/3$};
-         \node[const, below=of p2, yshift=-.025cm] (fp2) {$0$};
-         \node[const, below=of p3, yshift=-.025cm] (fp3) {$2/3$};
-         \node[const, above=of p2, yshift=.045cm] (title) {$P(r_i | s_2)=P(r_i,s_2)/P(s_2)$};
-
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-
-  }
-
-\caption{}
-\label{fig:f3}
-\end{subfigure}
-\caption{
-Acuerdo intersubjetivo dada toda la información disponible (modelo causal y datos).
-%
-(\subref{fig:modelo_causal}) El modelo causal asegura que la pista $s$ no puede señalar la caja elegida $c$ (con la cerradura) ni la caja donde se encuentra el regalo $r$ (la hipótesis oculta): $s\neq c$ y $s\neq r$.
-%
-(\subref{fig:caminos_montyhall_compatibles}) Calculamos la creencia que maximiza la incertidumbre dado el modelo causal dividiendo la creencia en partes iguales en cada bifurcación de los universos paralelos.
-%
-(\subref{fig:f3}) La nueva creencia no es más que la creencia inicial (tabla) que sigue siendo compatible con el dato $s_2$ (renglón oscuro), expresada como 100\%
-}
-\label{fig:monty_hall}
-\end{figure}
-
-% Parrafo
-
-A diferencia de los enfoques ad-hoc que seleccionan una única hipótesis (e.g.~por máxima verosimilitud), la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano), considerando al mismo tiempo hipótesis mutuamente contradictorias (A y no A), permite que sea la sorpresa, única fuente de información, el filtro de las creencias previas.
-%
-En general, si tenemos $\text{Datos} = \{ \text{dato}_1, \text{dato}_2, \dots \}$,
-%
-\begin{equation} \label{eq:funcion_de_costo}
-\underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo inter-}}}{\text{\footnotesize\En{agreement}\Es{subjetivo inicial}}}} \underbrace{P(\text{dato}_1 |\text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 1}} \, \underbrace{P(\text{dato}_2 | \text{dato}_1 , \text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 2}} \dots
-\end{equation}
-
-% Parrafo
-
-\noindent
-Si la predicción del dato observado es 1 (sorpresa nula), entonces preservamos toda nuestra creencia previa en esa hipótesis.
-%
-Si la predicción del dato observado es 0 (sorpresa total), entonces la hipótesis se hace falsa para siempre.
-%
-Le ocurre lo mismo que a las especies, de la extinción no se vuelve.
-
-
-% Parrafo
-
-Así como la evaluación de las hipótesis en probabilidad se hace a través de la secuencias de predicciones, la selección de las formas de vida en evolución también sigue un proceso de naturaleza multiplicativa, por secuencia de tasas de supervivencia y reproducción.
-%
-De hecho, el modelo estándar de evolución, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, es estructuralmente equivalente al teorema de Bayes, lo que llevó a autores reconocidos en ambas áreas a proponer el isomorfismo entre las teoría de la evolución y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
-%
-\begin{equation*} \footnotesize
-\overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporción}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos},  \Big|  \hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporción}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporción}}{\text{\scriptsize sobreviviente}}}}
-\end{equation*}
-%
-Debido a que en los procesos multiplicativos los impactos de las pérdidas son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) veremos que existe una ventaja a favor de las variantes que reducen las fluctuaciones (sección ``\nameref{sec:propiedades_funcion_costo}''): por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
-%
-Durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema.
-%
-En la siguiente sección veremos que no existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
-
-% Parrafo
-
-\section{Propiedades de la función de costo epistémico-evolutiva} \label{sec:propiedades_funcion_costo}
-Desde su origen, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
-%
-Para ver por qué, veamos qué ocurre con un proceso multiplicativo.
-%
-Por ejemplo, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporción $b_c = b$ a Cara y $b_s = 1 - b$ a Seca (apostar solo un parte de los recursos puede mostrarse que tiene una solución equivalente).
-%
-Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$ después de una Cara y una Seca es el producto de nuestros resultados.
-%
- \begin{equation*}
-\begin{split}
-\omega_2(b) & = \underbrace{\omega_0 \, \overbrace{b \,  Q_c}^{\text{Cara}}}_{\omega_1(b)} \, \overbrace{(1-b) \, Q_s}^{\text{Seca}}
-\end{split}
-\end{equation*}
-%
-Las apuestas son entonces procesos multiplicativos.
-%
-Vamos a buscar las estrategias que maximizan la tasa de crecimiento de los recursos.
-
-\subsection{Propiedad epistémica.} \label{sec:propiedad_epistemica}
-Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
-%
-  \begin{equation}
-\begin{split}
-& \frac{\omega_T(b)}{\omega_T(d)} = \frac{\omega_0 \,  (b \,  \cancel{Q_c})^{n_c}  \,  ((1-b) \, \bcancel{Q_s})^{n_s}}{\omega_0 \,   (d \,  \cancel{Q_c})^{n_c}  \,  ((1-d) \, \bcancel{Q_s})^{n_s}}
-\end{split}
-\end{equation}
-%
-encontramos que el valor relativo de una apuesta respecto de la otra es independiente de los pagos $Q_c$ y $Q_s$ que ofrece la casa de apuestas!
-%
-Sí, lo que estamos diciendo es que podemos decidir la apuesta sin conocer los pagos.
-%
-En general, queremos la apuesta $b$ que maximiza la tasa de crecimiento $r(b)$,
-%
-\begin{figure}[ht!]
- \centering
- \begin{subfigure}[b]{0.50\textwidth}
-  \begin{equation*}
-\begin{split}
-  \omega_0 \, r(b)^T &= \omega_0 \, (b \,  Q_c)^{n_c}  \,  ((1-b) \, Q_s)^{n_s}   \\
-  r(b) &=(b \,  Q_c)^{n_c/T}  \,  ((1-b) \, Q_s)^{n_s/T}
-\end{split}
-\end{equation*}
- \end{subfigure}
- \begin{subfigure}[b]{0.49\textwidth}
-  \begin{equation}
-\begin{split}
-\overbrace{\underset{b}{\text{arg max}} \phantom{T} r(b)}^{\hfrac{\text{\scriptsize \En{Optimal}\Es{Apuesta}}}{\text{\scriptsize \En{bet}\Es{óptima}}}} \ = \overbrace{n_c/T}^{\hfrac{\text{\scriptsize \En{Observed}\Es{Frecuencia}}}{\text{\scriptsize \En{frequency}\Es{observada}}}}
-\end{split}
-\end{equation}
- \end{subfigure}
-\end{figure}
-
-% Parrafo
-
-\noindent
-En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta óptima  $b^{*}$ es la que divide los recursos en la misma proporción que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia típica $\lim_{T \rightarrow \infty} n_c/T = p$.
-%
-Ésta es la \emph{propiedad epistémica} que le permite a la teoría de la probabilidad adquirir conocimiento sobre el mundo, pues al evaluar las hipótesis individuales en base al producto de las sorpresas se produce una ventaja a favor de las hipótesis que diversifican la predicción en la misma proporción que la frecuencia observada.
-%
-Del mismo modo, el proceso de selección evolutiva por secuencias de tasas de crecimiento y reproducción, produce la emergencia de formas de vida que reducen las fluctuaciones a través de la diversificación individual.
-
-% Parrafo
-
-Por ejemplo, supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas.
-%
-Si sabemos que la moneda es no sesgada, lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
-% bien con estos parámetros el valor esperado es positivo, $( Q_c \, b \, p + Q_s \, (1-b) \, (1-p)) = 1.05$,
-En este caso, sin embargo, no podemos ganar este juego individualmente debido a que las ganancias de 50\% con Caras ($1.5 = Q_c \, b$) no alcanza para compensar las caídas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b)$).
-%
-Incluso con el comportamiento óptimo, individualmente las trayectorias de los recursos caen a una tasa cercana a $5\%$, pues $r(b) \approx 0.95$ (figura~\ref{fig:coop}).
-
-% Parrafo
-
-\subsection{Propiedad evolutiva.} \label{sec:propiedad_evolutiva}
-A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
-%
-Por ejemplo, si los individuos de un grupo de tamaño $N$ redistribuyen los recursos en partes iguales luego de apostar, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
-%
-\begin{equation}
-\begin{split}
-\omega_{T+1}(N,b) & = \frac{1}{N} \overbrace{\bigg( m_c \, \omega_{T}(N,b) \, Q_c  \, b + m_s \, \omega_{T}(N,b) \, Q_s  \, (1-b)  \bigg)}^{\hfrac{\text{\footnotesize \phantom{g}\En{Sum of all resources}\Es{Suma de todos los recursos}\phantom{g} }}{\text{\scriptsize (\En{with}\Es{con} $m_s$ \En{Heads}\Es{Caras} y $m_s$ \En{Tails}\Es{Secas})}}} \\
-& =\omega_T(N,b) \, \underbrace{\left( \frac{m_c}{N}   Q_c  \, b + \frac{m_s}{N} \, Q_s  \, (1-b)  \right)}_{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Tasa de crecimiento}  \phantom{Tg}}} \\[0.3cm]
-\end{split}
-\end{equation}
-%
-Y la tasa de crecimiento de los individuos pasa a ser el promedio de todos los resultados del grupo.
-%
-La reducción de fluctuaciones que genera este simple acto de intercambio de recursos, hace que la tasa de crecimiento de todos los individuos se vuelve positiva.
-%
-Ésta es la \emph{propiedad evolutiva}.
-%
-A través de la cooperación podemos reducir aun más las fluctuaciones, aumentando así la tasa de crecimiento de todos sus miembros.
-%
-\begin{figure}[ht!]
-\vspace{-0.1cm}
-\centering
- \begin{subfigure}[c]{0.50\textwidth}
- \centering
-  \begin{tabular}{|l|c|c|c|c|c|}
-     \hline
-         & {\small $\omega_0$} & {\small \  $\Delta$}  & {\small \, $\omega_1(b)$ } & {\small \  $\Delta$}  & {\small \,  $\omega_2(b)$ }  \\ \hline \hline
-        A no-coop& $1$ & $1.5$ &  $1.5$ & $0.6$ & $\bm{0.9}$ \\ \hline
-        B no-coop & $1$ & $0.6$ & $0.6$ & $1.5$ & $\bm{0.9}$ \\ \hline\hline
-        A coop & $1$ & $1.5$ & $1.05$ & $0.6$ & $\bm{1.1}$ \\ \hline
-        B coop & $1$ & $0.6$ & $1.05$ & $1.5$ & $\bm{1.1}$\\ \hline
-\end{tabular}
- \end{subfigure}
- \begin{subfigure}[c]{0.45\textwidth}
-\begin{flushright}
- \includegraphics[width=0.9\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
- \end{flushright}
- \end{subfigure}
- \caption{
- La cooperación le permite a los individuos alcanzar tasas de crecimiento que jamás obtendrían solos.
- %
- En la tabla (izquierda) $\Delta$ representa el cambio en los recursos que sufren los individuos de forma aleatoria, con $b=p=0.5$.
- %
- En la figura (derecha), las curvas de colores son las trayectoria de los recursos jugando individualmente, y la recta negra es la trayectoria de los recursos individuales jugando en grupos cooperativos grandes.
- }
- \label{fig:coop}
- \vspace{-0.1cm}
- \end{figure}
-
-% Parrafo
-
-\subsection{Propiedad de especiación.}
-Si bien jugando individualmente nos veíamos obligados a apostar ignorando los pagos que ofrece la casa de apuestas, una vez que emerge la cooperación deja de ser necesario reducir las fluctuaciones por diversificación individual y aparece una ventaja a favor de la especialización cooperativa, que permite sacar provecho de la mejor opción disponible, aumentando aún más la tasa de crecimiento de todos los individuos del grupo cooperativo.
-%
-\begin{figure}[ht!]
-\centering
-  \begin{subfigure}[c]{0.45\textwidth}
-\begin{flushright}
- \includegraphics[width=1\linewidth]{figures/tasa-temporal2.pdf}
- \end{flushright}
- \end{subfigure}
- \caption{
-Tasa de crecimiento para grupos de tamaño 1 a 5 (colores), para todas las posibles apuestas (eje x). A medida que aumenta el tamaño del grupo, la apuesta óptima se va especializando hacia la opción mejor paga por la casa de apuesta.
- }
- \label{fig:esp}
- \vspace{-0.1cm}
- \end{figure}
-%
-A medida que el tamaño del grupo cooperativo crece, la apuesta óptima se va especializando hacia la mejor opción disponible (figura~\ref{fig:esp}).
-%
-Ésta es la \emph{propiedad de especiación}.
-%
-Cuando el tamaño del grupo tiende a infinito, la tasa de crecimiento pasa a ser la media aritmética de los posibles resultados de las apuestas.
-%
-\begin{equation}
-\lim_{N \rightarrow \infty} r(N,b) = p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)
-\end{equation}
-%
-Y la puesta óptima es apostar todo a la mejor opción, $b^* =1$.
-
-% Parrafo
-
-\subsection{Propiedad ecológica.}
-En este caso, todos los individuos están sujetos a procesos estocásticos que, si bien son independientes, tiene para todos ellos la misma probabilidad que no cambia en el tiempo.
-%
-En la naturaleza, por el contrario, estamos expuestos a variabilidades espacio-temporales, como las estaciones del año.
-%
-Para dar un ejemplo, supongamos que la moneda oscila entre dos probabilidades de que salga Cara, $p_1 = 0.2$ y $p_2 = 0.6$.
-%
-En los pasos temporales impares, la moneda tiene probabilidad $p_1$ en el hemisferio A y $p_2$ en el hemisferio B.
-%
-Y a la inversa en los pasos temporales pares.
-%
-En casos como estos la variabilidad del proceso produce una ventaja adicional en favor de los grupos con mayor heterogeneidad interna.
-%
-Ésta es la \emph{propiedad ecológica}.
-%
-Sea $h$ la proporción de individuos en el hemisferio A.
-%
-La tasa de crecimiento en un ejemplo simple, en el que el tamaño del grupo es infinito y en el que los individuos se especializan la apuesta correspondiente a la etapa del ciclo que experimentan, es
-%
-\begin{figure}[ht!]
-\vspace{0cm}
-\centering
- \begin{subfigure}[c]{0.44\textwidth}
- \begin{align*}
- r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_1) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_2 \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
- r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_2 \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_1) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
- r(h) = & \ \overbrace{r_{1}(h)^{1/2} \ r_2(h)^{1/2}}^{\text{Tasa de crecimiento}}
-\end{align*}
- \end{subfigure}
- \hspace{0.2cm}
-  \begin{subfigure}[c]{0.44\textwidth}
-\begin{flushright}
- \includegraphics[width=1\linewidth]{figures/pdf/diversificacionCooperativa.pdf}
- \end{flushright}
- \end{subfigure}
- \caption{
- En la figura vemos la tasa de crecimiento de los individuos en función de la proporción de individuos en el hemisferio A. La tasa de crecimiento se maximiza cuando la heterogeneidad entre individuos es máxima.
- }
- \label{fig:divCoop}
- \vspace{-0.1cm}
- \end{figure}
-
-
-Esta tasa de crecimiento se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
-%
-
-\subsection{Propiedad mayor y menor.}
-Durante mucho tiempo se creyó que para que la cooperación evolucione debía resolverse primero lo que se conoce como ``dilema del prisionero''.
-%
-En él, cooperar implica un costo $c$ para que el otro individuo reciba un beneficio de valor $v$, con $v > c$, y desertar significa negarse a cooperar y no conlleva ningún costo (ver matriz en figura~\ref{fig:desert}).
-%
- \begin{equation*}
-  \bordermatrix{ _{\text{\tiny Focal}}{\rotatebox{45}{\text{$\mid$}}}^{\text{\tiny \En{Other}\Es{Otro}}} \hspace{-0.5cm} & C & D \cr
-      \ \ \   C & v-c & -c \cr
-      \ \ \ D & v & 0 }
-\end{equation*}
-%
-Este ejemplo es una dilema debido a que individualmente desertar siempre es mejor que cooperar, a pesar de que la mutua cooperación sea mejor que la mutua deserción.
-
-% Parrafo
-
-En nuestro ejemplo de las apuestas, habría una tentación por desertar: dejar de aportar al fondo común mientras se sigue recibiendo la cuota del fondo común.
-%
-Si la evolución estuviera sujeta a un dilema del prisionero, entonces desertar en grupos enteramente cooperativos debería ofrecer al individuo una tasa de crecimiento más alta que cooperar.
-%
-En la figura~\ref{fig:desert} mostramos la tasa de crecimiento de individuos en grupos cooperativos de tamaño 100 con 0, 1 y 2 desertores.
-%
-\begin{figure}[ht!]
-\centering
- \begin{subfigure}[c]{0.45\textwidth} \centering
-  \includegraphics[width=\linewidth]{figures/pdf/ergodicity_desertion.pdf}
-  \end{subfigure}
- \caption{
-Tasa de crecimiento de los individuos dentro de grupos cooperativos (colores) con 0, 1 y 2 desertores. Las curvas con mayor variabilidad son los individuos desertores, el resto son los cooperadores.}
- \label{fig:desert}
- \end{figure}
- %
-Allí se puede observar que los desertores tienen una tasa de crecimiento menor que la tenían cuando cooperaban (\emph{propiedad mayor}), a pesar de que inicialmente obtienen un beneficio circunstancial (\emph{propiedad menor}).
-%
-El primer agente que decide desertar unilateralmente (grupo azul con 1 desertor) reduce su tasa de crecimiento y sus recursos están por debajo de los recursos que tenía previamente dentro del grupo enteramente cooperador (grupo verde con 0 desertores).
-%
-La reducción de recursos le ocurre incluso al segundo individuo que cambia de comportamiento cooperador a desertor.
-%
-Es decir, los bienes comunes no tiene la estructura del dilema del prisionero como habitualmente se afirma en la literatura.
-%
-Bajo procesos de selección multiplicativa no se puede sacar provecho mediante la deserción porque, al aumentar las fluctuaciones los cooperadores de quienes se depende, aumenta también las propias fluctuaciones afectando negativamente la propia tasa de crecimiento de largo plazo.
-%
-En todos los casos, la tasa de crecimiento se maximiza mediante mutua cooperación.
-
-
-\section{Consecuencias de las propiedades epistémico-evolutivas}
-
-Las propiedades de la función de costo epistémico-evolutiva no son solo teóricas, tiene consecuencia concretas para la vida y el conocimiento.
-
-\subsection{Transiciones evolutivas mayores}
-
-En el último tercio de la historia del Universo, hace aproximadamente 4000 millones de años, apareció en la tierra una organización de la materia capaz de auto-replicarse.
-%
-El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de tasas de supervivencia y reproducción.
-%
-Las mutaciones producidas durante la replicación diversificaron las formas de vida, y las tasas de crecimiento de las diferentes estrategias favorecieron a aquellas mejor adaptadas al ambiente.
-%
-Desde aquel momento hasta ahora la vida adquirió una extraordinaria complejidad.
-
-%
-
-\begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.65\textwidth}
-    \includegraphics[width=\linewidth]{static/biomassBarOn.png}
-    \end{subfigure}
-    \caption{
-	Distribución de la biomasa en la Tierra estimada por Bar-On et al.~\cite{barOn2018-biomass}.
-    }
-    \label{fig:biomass}
-\end{figure}
-
-% Parrafo
-
-La complejidad actual de la vida es consecuencia de una serie de \emph{transiciones evolutivas mayores} en las que entidades capaces de autorreplicación luego de la transición pasan a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions} (figura \ref{fig:trans}).
-%
-De hecho, nuestra propia vida depende de varios niveles de cooperación con especialización heterogénea, sin los cuales no somos capaces de sobrevivir: la unión de nuestras células con las mitocondrias y la emergencia de la diferenciación celular; nuestro organismo multicelular y la emergencia de los órganos; nuestra sociedad y la emergencia de los roles y grupos; la coexistencia entre especies y la emergencia de los ecosistemas.
-%
-%La simbiosis entre entre plantas y hongos micorrízicos arbusculares (AM) es el mutualismo (cooperación entre especies) más extendida del mundo.
-% %
-% La gran mayoría de las plantas terrestres forman estas interacciones.
-% %
-% Las plantas suministran carbohidratos esenciales para la supervivencia y el crecimiento de los hongos AM \cite{parniske2008-arbuscularMycorrhiza}.
-% %
-% Y los hongos AM proporcionan a sus plantas hospedadoras nutrientes minerales, como fósforo o nitrógeno, y otros beneficios como protección contra el estrés biótico (patógenos y herbívoros) y abiótico (por ejemplo, sequía)~\cite{smith2010-arbuscularMycorrhizas}.
-% %
-% % Parrafo
-% Esta asociación evolucionó mucho antes que los mutualismos animales, y habría sido una pieza clave para el poblamiento de las plantas en la tierra.
-% %
-% A diferencia de las economías humanas, que dependen de la cognición para tomar decisiones, los comerciantes de este mercado subterráneo regatean, piden prestado y hacen trampas, todo ello sin pensar.
-% %
-% En esta relación, ambas partes interactúan con múltiples socios y la cooperación se estabiliza en ambas direcciones a través de recompensas mutuas por servicios de mayor calidad~\cite{kiers2011-reciprocalRewards}.
-%
-\begin{figure}[ht!]
-\centering
-    \centering
-  \scalebox{1}{
-  \tikz{
-      \node[accion] (i1) {} ;
-      \node[accion, yshift=0.6cm, xshift=0.4cm] (i2) {} ;
-      \node[accion, yshift=0.6cm, xshift=-0.4cm] (i3) {} ;
-      \node[const, yshift=0.3cm, xshift=0.4cm] (i) {};
-
-      \node[const, yshift=-0.65cm] (ni) {$\hfrac{\text{Individuos}}{\text{solitarios}}$};
-
-      \node[const, yshift=0.65cm, xshift=1.5cm] (m1) {$\hfrac{\text{Formación}}{\text{de grupos}}$};
-
-      \node[const, right=of i, xshift=2cm] (c) {};
-      \node[accion, below=of c, yshift=0.35cm, xshift=0.4cm] (c1) {} ;
-      \node[accion, above=of c, yshift=-0.35cm, xshift=0.6cm] (c2) {} ;
-      \node[accion, above=of c, yshift=-0.35cm, xshift=0.2cm] (c3) {} ;
-      \node[const, right=of c, xshift=0.6cm] (cc) {};
-
-      \node[const, right=of ni, xshift=1.3cm] (nc) {$\hfrac{\text{Grupos}}{\text{cooperativos}}$};
-
-      \node[const, right=of m1, xshift=1.2cm] (m2) {$\hfrac{\text{Transición}}{\text{mayor}}$};
-
-      \node[const, right=of cc, xshift=2cm] (t) {};
-      \node[accion, below=of t, yshift=0.35cm, xshift=0.4cm] (t1) {} ;
-      \node[accion, above=of t, yshift=-0.35cm, xshift=0.6cm] (t2) {} ;
-      \node[accion, above=of t, yshift=-0.35cm, xshift=0.2cm] (t3) {} ;
-
-      \node[const, right=of nc, xshift=1.1cm] (nt) {$\hfrac{\text{Unidad de}}{\text{nivel superior}}$};
-
-      \edge {i} {c};
-      \edge {cc} {t};
-
-      \plate {transition} {(t1)(t2)(t3)} {}; %
-      }
-  }
-
-  \vspace{0.2cm}
-
- \begin{subfigure}[b]{0.25\textwidth} \centering
-  \includegraphics[width=\linewidth]{static/cloroplastos.jpg}
-  \caption*{\En{Eukaryotic cells}\Es{Células eucariota}}
-  \end{subfigure}
- \begin{subfigure}[b]{0.23\textwidth} \centering
-  \includegraphics[width=\linewidth]{static/fotosintesis.jpg}
-  \caption*{\En{Organisms}\Es{Organismos}}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.235\textwidth} \centering
- \includegraphics[width=\linewidth]{static/hormigas2.jpg}
-  \caption*{\En{Societies}\Es{Sociedades}}
- \end{subfigure}
- \begin{subfigure}[b]{0.235\textwidth} \centering
- \includegraphics[width=\linewidth]{static/tsimane2.jpg}
-  \caption*{\En{Ecosystems}\Es{Ecosistemas}}
- \end{subfigure}
- \caption{
-Esquema de las transiciones evolutivas mayores (arriba) y ejemplos de transiciones evolutivas mayores (abajo).
- }
- \label{fig:trans}
- \vspace{-0.3cm}
- \end{figure}
-¿Cómo se explica esta tendencia de la vida a favor de la diversificación y la especialización heterogénea cooperativa?
-
-% Parrafo
-
-La \emph{propiedad mayor} nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones evolutivas mayores} a lo largo de la historia de la vida.
-%
-En la sección anterior hemos visto que en los procesos de selección epistémico-evolutivos existe una ventaja a favor de las variantes que reducen las fluctuaciones por diversificación o por especialización heterogénea cooperativa.
-%
-Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), a largo plazo afectan negativamente su propia tasa de crecimiento debido a que su propio comportamiento aumenta las fluctuaciones de los cooperadores de quienes dependen, aumentando al así sus propias fluctuaciones (\emph{propiedad mayor}).
-
-% Parrafo
-
-% Pero también permite explicar la emergencia de \emph{transiciones epistémicas mayores} en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
-% %
-% Por otro lado, la propiedad menor nos ofrece un argumento para explicar la ventaja circunstancial que las variantes desertoras pueden obtener individualmente en el corto plazo y las crisis que su emergencia produce a nivel global en el largo plazo.
-%
-%
-% De forma similar, la propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones epistémicas mayores} en la historia del conocimiento.
-%
-
-De forma similar, la evaluación de hipótesis en la teoría de la probabilidad también produce la emergencia de unidades cooperativas de nivel superior: las hipótesis individuales forman variables, las variables forman modelos causales y los sistemas de modelos causales forman teorías.
-%
-Esto ocurre gracias a que las hipótesis de nivel superior reducen las fluctuaciones realizando las predicciones con el aporte de todas las hipótesis de nivel inferior que la componen.
-%
-Por la regla de la suma, la predicción que hace un modelo del próximo dato es
-%
-\begin{equation*}
-\begin{split}
-P(d_{n+1}|d_1 \dots d_n, \text{Model\Es{o}}) = \sum^{\text{\En{Hypothesis}\Es{Hipótesis}}}_h P(d_{n+1}| d_1 \dots d_n, h, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
-%\\ P(d_{n+1}|d_1 \dots d_n, \text{\En{Theory}\Es{Teoría}}) = \sum^{\text{\En{Models}\Es{Modelos}}}_m P(d_{n+1}| h, d_1 \dots d_n, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
-\end{split}
-\end{equation*}
-%
-Al realizar la predicción con la contribución de todas las hipótesis de nivel inferior, los modelos reducen las posibilidades de introducir valores extremos (un cero) en los procesos de selección multiplicativo a los que están sujetos (ecuación \ref{eq:funcion_de_costo}), produciendo mejores resultados que los que se obtendrían con una de ellas individualmente.
-
-% Parrafo
-
-La emergencia de la cultural en evolución puede ser vista como una \emph{transición epistémica mayor}.
-%
-En la historia del ser humano la cooperación epistémica, por transmisión de conocimiento entre individuos, tuvo un efecto positivo radical para nuestra especie: antes estuvimos en grave peligro de extinción, luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra.
-%
-Veremos que los eventos históricos en los que se produjeron pérdidas masivas de diversidad cultural estuvieron seguidos por graves crisis socio-ecológicas.
-%
-Actualmente, a pesar de todos los avances, la ciencia metropolitana sigue siendo incapaz de compensar la masiva pérdida de los conocimientos milenarios producida durante la colonial-modernidad, y la crisis ecológica actual no deja de profundizarse.
-%
-En definitiva, la ventaja a favor de la diversidad y la cooperación no es solo teórica, es fundamentalmente práctica.
-
-
-\subsection{Coevolución genético-cultual y transición epistémica mayor}
-
-Antes de la transición cultural, estábamos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano, respecto incluso de los homininos más cercanos~\cite{hrdy2009-mothers}.
+Antes estábamos en grave peligro de extinción, lo que se evidencia en la baja diversidad del genoma humano respecto incluso de los homininos más cercanos~\cite{hrdy2009-mothers}.
 %
 Pero cuando el conocimiento, que antes debía ser redescubierto individualmente, pasó a ser un recurso común transmitido de generación en generación, comenzamos a ser capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes.
 %
-Organizados en pequeñas sociedades nómadas, logramos llegar caminando de África hasta sud América (flechas de la figura~\ref{fig:poblamiento}).
+Organizados en pequeñas sociedades nómadas, logramos llegar caminando de África hasta sud América y ocupar todas las islas del Pacífico.
 
-% % Parrafo
-%
-% \begin{figure}[ht!]
-%     \centering
-%     \begin{subfigure}[b]{0.6\textwidth}
-%      \includegraphics[width=\textwidth]{figures/agricultura.pdf}
-%      \label{fig:agricultura}
-%     \end{subfigure}
-% %     \begin{subfigure}[b]{0.40\textwidth}
-% %     \includegraphics[width=\textwidth]{static/polynesia.png}
-% %     \caption{Poblamiento del océano Pacífico}
-% %     \label{fig:polynesia}
-% %     \end{subfigure}
-%     \caption{
-%     Poblamiento humano (flechas) y surgimientos independientes de la agricultura (puntos).
-%     Proyección poliédrica de la tierra que conserva los tama\~nos relativos de los continentes.
-%     %Las felchas indican el poblamiento, desde África a Asia, y de Asia hacia Oceanía y América.
-%     %Los puntos rojos indican surgimiento independiente de agricultura.
-%     %El mapa de la figura~\ref{fig:polynesia}, desarrollado por Thorsby~\cite{thorsby2016-polynesiaAmerica}, muestra el poblamiento de la Polynesia y los contactos con Ámerica evidenciados en el material genéticos.
-%     }%
-%     \label{fig:poblamiento}
-% \end{figure}
-%
+% Parafo
 
-% Parrafo
-
-La cultura es información no-genética que se transmite por vía social, de un individuo a otro.
+La cultura es información no-genética que se transmite de un individuo a otro por vía comportamental.
 %
-Estos sistemas de procesamiento de información distribuida no son exclusivos de los seres humanos.
-% %
-Muchos animales son capaces de transmitir información por vía social, lo que produce la emergencia de tradiciones simples.
-% %
+Muchos animales son capaces de transmitir no-genética, lo que produce la emergencia de tradiciones simples.
+%
 En algunas como las ballenas, delfines, primates y aves, las tradiciones pueden ser bastante complejas, llegando a desarrollar un conjunto amplio de conocimientos que se adquieren primero por experiencia individual y luego son imitados por el resto~\cite{aplin2022-birdsCulture}.
 %
 Todas ellas, sin embargo, son manifiestamente más simples que la cultura humana.
 
 % Parrafo
 
-A diferencia de otros animales, los humanos acumulamos adaptaciones culturales, modificaciones sucesivas persistentes en el tiempo, produciendo sistemas culturales cada vez más complejos.
+Lo singular de nuestra especie es esta capacidad acumular adaptaciones culturales en el tiempo, modificaciones persistentes y sucesivas que terminan por producir sistemas culturales inimaginablemente complejos.
 %
-Ciertamente existen muchas adaptaciones raras, que son particulares a ciertas especies.
+El proceso de aprendizaje humano se convierte así en un fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos.
 %
-Pero los elementos que son realmente buenos, como el ojo, han evolucionado repetidamente entre las millones de especies animales del mundo.
-%
-Entonces, dado que la cultura ha hecho a los humanos extraordinariamente exitosos, ¿Por qué las otras especies no han adquirido esas capacidades?
-%
-¿Por qué solo los humanos?
-
-% Parrafo: Co-evolución.
-
-Entre los hominoides, los humanos se distinguen por una serie de rasgos que incluyen prolongados períodos juveniles, intervalos cortos entre nacimientos y una prolongada vida posreproductiva~\cite{Jones2011}.
-%
-Para explicar la integración de los procesos biológicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas ha sido necesario un proceso extenso de \emph{coevolución genético-cultural}.
-%
-%Es un error creer que primero evolucionó la naturaleza humana y luego desarrollamos la cultura.
-%
-La evolución del lenguaje es un ejemplo claro.
-%
-Las características genética que nos permiten escuchar, hablar y aprender el lenguaje serían inútiles sin lenguajes complejos para aprender.
-%
-Y a la inversa, para que evolucionen estas características innatas es necesario la presencia previa de alguna lengua primitiva que proporcionara una entorno cultural que presionara a favor de la selección de mejores habilidades lingüísticas innatas.
-%
-A través de rondas repetidas de coevolución, surgieron lenguajes complejos y el costoso aparato necesario para operarlos.
-
-% Parrafo: Origen de las caracterisitcas
-
-Antes del surgimiento de los humanos anatómicamente modernos (masa cerebral actual) y de los humanos conductualmente modernos (lenguaje), surgió en África una linaje emocionalmente moderno, con capacidades para el entendimiento mutuo~\cite{hrdy2020-emotionallyModern}.
-%
-A diferencia de nuestros parientes más cercanos (chimpancés, bonobos, gorilas y orangutanes), en los que la crianza está bajo supervisión estricta de la madre, hace aproximadamente 3.5 millones de años, nuestros ancestros comenzaron a desarrollar un tipo de crianza cooperativa.
-%
-Esta forma de crianza cooperativa produjo un ambiente que favoreció la selección de jóvenes capaces de monitorear y comprender las intenciones de los demás, y de trasmitir a sus cuidadadores sus propias necesidades, dando inicio a un largo proceso de coevolución genético-cultural~\cite{hrdy2020-emotionallyModern}.
-%
-Hoy la capacidades para desarrollar culturas complejas son parte de nuestra biología.
+Por lo tanto, los diversos sistemas de comunicación que fueron surgiendo a largo de la evolución humana fueron impactando directamente sobre la tasa de aprendizaje de nuestra especie y el repertorio cultural actual.
 
 % Parrafo
 
-La comprensión mutua, la imitación y el lenguaje permitieron la transmisión de conocimientos basados en la experiencia de otros (\emph{aprendizaje social}), dando inicio a un proceso inter-generacional de acumulación de innovaciones que permitió a las poblaciones humanas adaptarse rápidamente a los cambiantes contextos ambientales.
+En primer lugar, antes del surgimiento de los humanos anatómicamente modernos (masa cerebral actual) y de los humanos conductualmente modernos (lenguaje), surgió en África una linaje emocionalmente moderno, con capacidades para el entendimiento mutuo~\cite{hrdy2020-emotionallyModern}.
+%
+A diferencia de nuestros parientes más cercanos, nuestros ancestros comenzaron a desarrollar un tipo de crianza cooperativa que favoreció la selección de jóvenes con capacidades para comunicar y comprender las intenciones de los demás~\cite{hrdy2020-emotionallyModern}.
+%
+A través de rondas repetidas de coevolución genético-cultural, se fueron desarrollando las características biológicas, cognitivas y sociales que permitieron el desarrollo culturas complejas~\cite{Jones2011}.
+%
+Por ejemplo, las características genética que nos permiten escuchar, hablar y aprender el lenguaje serían inútiles sin lenguajes complejos para aprender.
+%
+Y a la inversa, para que evolucionen estas características innatas es necesario la presencia previa de alguna lengua primitiva que presionara a favor de la selección de mejores habilidades lingüísticas innatas.
+
+%
+
+En términos evolutivos, nuestra capacidad biológica para la comprensión mutua y la imitación (\emph{aprendizaje social}) dio inicio a un proceso inter-generacional de acumulación de innovaciones que permitió a las poblaciones humanas adaptarse rápidamente a los cambiantes contextos ambientales.
 %
 Lo que antes debía ser redescubierto una y otra vez mediante costosa experiencia individual, ahora podía ser transmitido a la siguiente generación.
 %
-%$La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que re-construirlos cada vez por prueba y error conduce un proceso de evolución y acumulativa cultural que permite a las poblaciones humanas adaptarse rápidamente ante cambios bruscos en el ambiente o migraciones a nuevos entornos.
-% Parrafo
-En las culturas humanas, la acumulación de innovaciones produce un repertorio tecnológico que nadie es capaz de redescubrir individualmente en un período de vida, incluso en las sociedades cazadoras recolectoras aparentemente simples.
+Nadie individualmente es capaz de redescubrir en un período de vida ni siquiera los repertorios culturales de las sociedades cazadoras recolectoras consideradas más simples.
 
 % Parrafo
 
-En la breve historia del ser humano, la experiencia acumulada por comunidades alrededor del mundo condujo, de forma independiente, a una obligación universal de dar y de recibir~\cite{mauss1923-leDon}, mecanismo fundamental en todo sistema economico humano.
+En los últimos 10 mil años, con el surgimiento independiente de la agricultura en seis regiones distintas del mundo (África subsahariana, Oriente medio, China, Oceanía, América del Norte y América del Sur), se produce una modificación en el sistema de información cultural debido al aumento progresivo de la población y el surgimiento de la escritura, que intensificaron los procesos de acumulación cultural.
 %
-Las tecnologías de reciprocidad ecológica, por su parte, produjeron la aparición independiente de la domesticación de especies animales y vegetales, el desarrollo de caracteres genéticos que surgen como resultado de una interacción simbiótica prolongada entre las especies.
+Este cambio en el sistema de información cultural modificó la tasa de aprendizaje colectivo, haciendo de estas regiones los principales centros tecnológicos de la humanidad.
 %
-Así es cómo la agricultura surgió de forma paralela e independiente en los seis grandes sistemas geográficos de la tierra: en África subsahariana, Oriente medio, China, Oceanía, América del Norte y América del Sur (puntos rojos de la figura~\ref{fig:poblamiento}) donde se desarrollaron los principales centros poblacionales de la humanidad.
-%
-El aumento de la población intensificó aun más los procesos de evolución cultural acumulativa, haciendo de estas regiones los principales centros tecnológicos de la humanidad.
+Para el año 1400 el mundo florecían de sociedades prósperas: china llevaba 2 milenios siendo el principal centro productivo y tecnológico del mundo; en el mundo Árabe se comerciaban estos productos desde el océano Atlántico en España, hasta el océano Pacífico en las Filipinas; el océano Pacífico estaba totalmente ocupado, y ya se habían producido intercambios entre Oceanía y América del Sur~\cite{ioannidis2020-polynesiaAmerica}; y en el jardín de la diversidad genética y cultural humana, África subsahariana, se desarrollaba entre otras, la sociedad Bantu.
 
 % Parrafo
 
-\begin{figure}[ht!]
-\centering
- \begin{subfigure}[b]{0.145\textwidth} \centering
-  \includegraphics[angle=90,origin=c,width=\linewidth]{figures/agricultura.pdf}
-  \caption{}
-  \label{fig:poblamiento}
-  \end{subfigure}
- \begin{subfigure}[b]{0.45\textwidth} \centering
-  \includegraphics[width=\linewidth]{static/polynesia.png}
-  \caption{}
-  \label{fig:pacifico}
-  \end{subfigure}
- \begin{subfigure}[b]{0.24\textwidth} \centering
-  \includegraphics[width=\linewidth]{static/tonga_barco.jpg}
-  \caption{}
-  \label{fig:tecnologia}
-  \end{subfigure}
- \caption{
-(\subref{fig:poblamiento}): Poblamiento del mundo (flechas) y desarrollo independiente de la agricultura (puntos) en una proyección del mapamundi que preserva los tamaños relativos de los continentes. (\subref{fig:pacifico}): El aumento de la población hace de los centros agrícolas regiones ricas en innovaciones tecnológicas, y para el año 1300 ya se habían producido intercambios entre el Pacífico y América del sur. (\subref{fig:tecnologia}): Imagen de la extraordinaria tecnología de navegación utilizada en el Pacífico.
- }
- \label{fig:desert}
- \end{figure}
-
+Los seres humanos crecemos y nos desarrollamos en entornos culturales, por lo que la dinámica de los sistemas de intercambio de información cultural afectan directamente nuestros procesos de aprendizaje individual.
+%
+La intensificación de la interconexión global a partir del uso de energías fósiles en el siglo 19 y el desarrollo de las comunicaciones electrónicas durante el siglo 20 tuvo enormes consecuencia para el desarrollo de la ciencia moderna.
+%
+La adopción de los smartphones a principios de este siglo, con dispositivos de comunicación instantánea, está teniendo efectos profundos sobre nuestra capacidad de aprendizaje colectivo e individual pero que todavía desconocemos sus todas sus consecuencias.
 
 % Parrafo
 
-
-% Durante el a\~no 1400 el mundo florecía de sociedades ``prósperas''~\cite{dussel2004-sistemaMundo}.
-% %
-% %El desarrollo tecnológico de todas estas sociedades fue extraordinario.
-% %
-% % El imperio de Tonga ocupaba hace siglos todo el océano Pacífico (figura~\ref{fig:polynesia}) con tecnologías de navegación que le habían permitido tener intercambios con América de Sur~\cite{thorsby2016-polynesiaAmerica, ioannidis2020-polynesiaAmerica}.
-% % %
-% % En América del Sur se había desarrollado un sistema de intercambios basado en la reciprocidad de trabajo (minka, ayni y mita) que le permitía a las comunidades administrar eficientemente el uso de los bienes comunes y al Estado desarrollar la infrastructura en el vasto territorio monta\~noso~\cite{murra1978-organizacion}.
-% % %
-% % En la región Azteca se había desarrollado un extenso mercado regional con ciudades de hasta 300.000 habitantes, tres veces la ciudad de Venecia en esa misma época.%~\cite{www7.uc.cl}. %http://www7.uc.cl/sw_educ/historia/conquista/parte1/html/h54.html
-% % %
-% % El mundo \'Arabe comerciaba productos desde el Océano Pacífico, en las Filipinas, hasta el Océano Atlántico, en Marruecos, conectando las innovaciones culturales de distintos hemisferios del planeta~\cite{dussel2004-sistemaMundo}.
-% % %
-% África siempre fue el continente más diverso cultural y genéticamente, pero quizás el centro más innovador en términos científicos y tecnologías haya sido la región de China~\cite{needham2004-generalConclusionsAndReflections}.
-
-Para el año 1400 el mundo florecían de sociedades prósperas.
+Así como los sistemas de comunicación favorecen los proceso de aprendizaje social y acumulación cultural, el aislamiento está asociado a pérdidas masivas de información cultural.
 %
-En el mundo Árabe se comerciaban productos desde el océano Atlántico en España, hasta el océano Pacífico en las Filipinas.
+El ejemplo paradigmático es el aislamiento total que ocurrió con la separación de Tasmania del continente Australiano por la subida del nivel del mar a comienzos del Holonceno.
 %
-El océano Pacífico estaba totalmente ocupado, y ya se habían producido intercambios entre Oceanía y América del Sur, que se refleja en la genética de las poblaciones actuales \cite{ioannidis2020-polynesiaAmerica} (figura~\ref{fig:pacifico}).
-%
-Y en el jardín de la diversidad genética y cultural humana, África subsahariana, se desarrollaba entre otras, la sociedad Bantu.
-%
-Pero China era para ese entonces el principal centro productivo y tecnológico del mundo después de 2 milenios.
-
-% Parrafo
-
-John Needham, el británico que dedicó su vida a recopilar la monumental historia científica y técnica de China, reconoce que comenzó a estudiar el tema motivado por responder la pregunta de por qué sólo Europa occidental había logrado el avance científico.
-%
-\begin{quotation}
-When I first formed the idea, about 1938, (...) I regarded the essential problem as that of why modern science had not developed in Chinese civilisation (or Indian or Islamic) but only in that of Europe~\cite{needham2004-generalConclusionsAndReflections}.%
-\end{quotation}
-Luego de 60 a\~nos de investigaciones, Needham se ve obligado inviertir la pregunta.
-\begin{quotation}
-Why, between the -1th century and the 15th century, was Chinese civilisation much \emph{more} efficient than occidental in gaining natural knowledge and in applying it to practical human needs?~\cite{needham2004-generalConclusionsAndReflections}
-\end{quotation}
-
-% Parrafo
-
-Desde Hegel hasta la fecha, las explicaciones eurocéntricas intentan explicar la prosperidad actual de occidente a través de una causa interna: la ``ética protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de José Luis Romero~\cite{romero1967-revolucionBurguesa}, o más recientemente el ``sistema de parentesco'' de Joseph Henrich~\cite{henrich2020-weirdest}.
-%
-La paradoja que no puede responder es cómo una sociedad sumida en un proceso de involución cultural único, como la sociedad feudal de la ``edad media'', pudo generar de repente el extraordinario proceso de desarrollo científico y técnico de la modernidad.
-
-% Parrafo
-
-Así como la cooperación favorece los proceso de innovación y acumulación cultural, el aislamiento está asociado a pérdidas masivas de información cultural.
-%
-El ejemplo más paradigmático es el aislamiento total que ocurrió con la separación de Tasmania del continente Australiano por la subida del nivel del mar a comienzos del Holonceno.
-%
-\begin{figure}[ht!]
-  \centering
-  \begin{subfigure}[c]{0.42\textwidth}
-    \includegraphics[width=\textwidth]{static/tasmania.png}
-    \caption{Tasmania}
-    \label{fig:tasmania}
-  \end{subfigure}
-%   \begin{subfigure}[c]{0.45\textwidth}
-%     \includegraphics[width=\textwidth]{static/cisma.png}
-%     \caption{Edad media}
-%     \label{fig:cisma}
-%   \end{subfigure}
-  \caption{Ejemplo paradigmático de aislamiento e involución cultural}
-  \label{fig:aislamiento}
-\end{figure}
 La evidencia indica que las sociedades que permanecieron en la isla de Tasmania perdieron gran parte de su cultura tecnológica.
 %
-La principal hipótesis sugiere que la reducción del tama\~no efectivo de la población fue la causa de la pérdida cultural~\cite{Henrich2004}.
+La principal hipótesis sugiere la capacidad de almacenamiento (e innovación) de tecnologías complejas requiere un tama\~no mínimo de la población, incluso en sociedades cazadoras-recolectoras~\cite{Henrich2004}.
 %
-La capacidad de almacenamiento (e innovación) de tecnologías complejas requeriría un tama\~no mínimo de la población, incluso en sociedades cazadoras-recolectoras.
-%
-De forma similar, la masiva destrucción de la diversidad cultural al interior del imperio Romano y el conflicto permanente con las sociedades vecinas, generó el aislamiento parcial de Europa occidental del sistema mundo, conduciéndola a contramano del resto del mundo a un largo proceso de involución cultural y de violencia interna conocido como ``Edad media''~\cite{dussel2004}.
+De forma similar, la masiva destrucción de la diversidad cultural al interior del imperio Romano y el conflicto permanente con las sociedades vecinas, generó el aislamiento parcial de Europa occidental del sistema mundo, conduciéndola a contramano del resto del mundo a un largo proceso de involución cultural y de violencia interna conocido como Edad Media~\cite{dussel2004}.
 
 % Parrafo
 
-Aunque exista una desventaja evolutiva de la deserción, ciertas coyunturas pueden producir su emergencia en el corto plazo (\emph{propiedad menor}).
+Se han propuesto muchas causas internas para explicar la prosperidad actual de Europa occidental\footnote{La ``ética protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de José Luis Romero~\cite{romero1967-revolucionBurguesa}, o más recientemente el ``sistema de parentesco'' de Joseph Henrich~\cite{henrich2020-weirdest}}.
 %
-Así es que la coincidencia de un conjunto de eventos, que se desencadenaron por la masiva migración feudal a América, puso de repente a esa sociedad, históricamente marginal, en una situación de privilegio mundial.
+La paradoja que no puede responder es cómo una sociedad sumida en un proceso de involución cultural único, como la feudal, pudo generar de repente el extraordinario desarrollo científico y técnico de la modernidad.
 %
-Las enfermedades transmitidas por los exploradores feudales eliminó, al menos, a 2/3 de la población americana.
+Sin embargo, nada de esto resulta extraño cuando se consideran las cambios que ocurrieron en los sistemas de información cultural: las enfermedades transmitidas por los exploradores feudales eliminó, al menos, a 2/3 de la población americana; y el giro geopolítico que se produce a partir de que en 1546 los exploradores feudales descubren la montaña de plata de Potosí, metal que China había incorporado recientemente como una de sus monedas oficiales.
 %
-Sin embargo, no se produce ningún giro geopolítico hasta que en 1546 los exploradores feudales descubren la montaña de plata de Potosí, metal que China había incorporado recientemente como una de sus monedas oficiales.
+Y a pesar de todo, más de dos siglos después del acceso a la plata americana, Europa occidental seguía consumiendo más productos asiáticos de los que podía exportar a Asia.
 
 % Parrafo
 
-La plata de América fluyó en todas las direcciones, principalmente hacia China.
-% %
-Más de dos siglos después del acceso a la plata americana, Europa occidental seguía consumiendo más productos asiáticos de los que podía exportar a Asia.
+Sin embargo, no todo aumento de la interconcexión es positivo.
 %
-Luego de la derrota de China por parte del narco-estado británico, comienza la era de genocidios.
+Luego de la derrota de China por parte del narco-estado británico en el siglo 19, en la que pierde 1/5 de su población, comienza la ocupación de África y de otros territorios no colonizados.
 %
-En todas las partes del globo, los exploradores y etnógrafos fueron documentando la perdida completa de culturas debida al avance del frente colonial-moderno, estatal o privado, sobre las autonomías locales.
-% %
-Es una época de avances científicos y tecnológicos por un lado, pero es al mismo tiempo la era masiva pérdida de diversidad cultural global.
+Si bien es una época de avances científicos y tecnológicos por un lado, es al mismo tiempo la era de genocidios y masiva pérdida de diversidad cultural global.
+%
+A pesar de todos los avances, la ciencia metropolitana no es capaz de compensar la pérdida de una innumerable cantidad de sistemas milenarios de administración de los bienes comunes, y la crisis ecológica que no deja de profundizarse.
 
 % Parrafo
 
-Del mismo modo que seleccionar una única hipótesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposición de un único tipo de sociedad ha mostrado tener consecuencia ecológicas cada vez más negativas.
+El aprendizaje individual también se ve afectado por la dinámica de las ``redes culturales''.
 %
-Los estudios comparados han mostrado que las instituciones humanas capaces de administrar exitosamente los bienes comunes y establecer relaciones de largo plazo con los sistemas ecológicos emergen en comunidades autónomas con fuerte arraigo local~\cite{ostrom2010}.
+Estudios recientes han cuestionado la hipótesis de que todo lo que maximice el flujo de información cultural debería repercutir positivamente~\cite{Derex2020}.
 %
-A pesar de todos los avances, la ciencia metropolitana no fue capaz de compensar la pérdida de conocimientos milenarios provocada por la colonial-modernidad, y como consecuencia de la masiva pérdida de la diversidad cultural global vivimos en la actualidad una grave crisis ecológica que no deja de profundizarse.
+La hipótesis afirma que las redes totalmente conectadas producen una homogeneización cultural que reduce las posibilidades de innovación, mientras que las redes fragmentadas tienden a perder variantes culturales complejas con el tiempo~\cite{padilla2022-interconnectivity,derex2018-divideAndConquer,Creanza2017}.
+%
+La razón por la que es difícil evaluar estas hipótesis en datos del mundo real es que debemos registrar los contactos
+a nivel individual, lo que suele ser difícil~\cite{Derex2020}.
+%
+Sin embargo, algunos estudios demuestran que las sociedades humanas suelen desarrollar redes parcialmente conectadas que maximizan la adaptabilidad al garantizar tanto contactos regulares con grupos externos como el mantenimiento de la diferenciación local~\cite{migliano2017-hunterGathererNetwork}.
 
 % Parrafo
 
-En resumen, la crianza cooperativa produjo la emergencia de nuestas capacidades de aprendizaje sociales, que se desarrollaron en un largo proceso de co-evolución genético cultural.
-%
-La cooperación epistémica por transmisión de conocimientos, produjo en nuestra especie la transición cultural, que fue la clave de nuestro éxito como especie.
-%
-La cooperación ecológica por interacción simbiótica prolongada con otras especies produjo la emergencia de la agricultura, el aumento de la población y la intensificó de los procesos de evolución cultural acumulativa.
-
-% Parrafo
-
-La cooperación es fundamental no solo para el crecimiento de la información genética, también parece indiuspensable para el crecimiento de la información cultural.
-%
-La ruptura de los cooperación epistémica, por aislamiento natural (tasmania) o social (feudalismo), ha producido pérdidas másivas de información cultural.
-%
-Y la intensificación de la cooperación epistémica, por aumento de la población (por surgimiento de la agricultura) o por aumento de las conexiones (durante la modernidad), ha producido crecimientos significativos de la información cultural.
-
-% Parrafo
-
-Si bien estos procesos crecimiento y caída de la información cultural son observables en grandes escala temporal y especial, los procesos de aprendizaje en los seres humanos, al estar basados en gran medida en el aprendizaje social, también se ven afectados por ello.
-%
-En esta tesis, entonces, vamos a estar interesados en estudiar los factores sociales que afectan el aprendizaje humano.
+Debido a que la cultura es un fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos, en esta tesis nos propusimos estudiar el efecto que las interacciones sociales (su contexto, dinámica y estructura) tiene sobre el aprendizaje individual.
 
 \section{Objetivos}
 
-% Parrafo: El objetivo subyacente de esta tesis. Interdisciplina entre la computación y las ciencias sociales.
 
-Los problemas de conocimiento científico están, directamente o indirectamente, vinculados a un conjunto de problemas reales, y de ellos obtiene su relevancia y jerarquía.
+Para responder cómo la dinámica de intercambios afecta los procesos de aprendizaje individual, decidimos estudiar en el tiempo la evolución de la habilidad al interior de comunidades de jugados en línea.
 %
-El concepto mismo de ``problema'' sólo adquiere sentido en relación a algún sistema vivo.
+Si bien el estudio de las comunidades virtuales impone alguna limitaciones, ellas ofrecen nuevos horizontes en la investigación científica sobre comportamientos sociales pues reúnen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto nivel de detalle.
 %
-Los problemas de la física y la química existen en tanto se subsumen como relevantes para los procesos de la vida.
+Ninguna de las metodologías clásicas de las ciencias sociales (censo, encuesta, etnografía) ofrecen simultáneamente ambos niveles de análisis.
 %
-El objeto de estudio que motivó este plan fue entender el comportamiento del la cultura humana: el sistemas natural de procesamiento distribuido de información que nos permitió adaptarnos a los diferentes nichos ecológicos de la tierra.
-%
-Debido a que la cultura es un fenómeno poblacional que emerge como consecuencia del intercambio de información entre individuos, en esta tesis nos propusimos estudiar el efecto que las interacciones sociales (su contexto, dinámica y estructura) tiene sobre el aprendizaje individual.
+En particular, los videojuegos aparecen como un lugar privilegiado para estudiar cómo las personas aprenden en diversos contextos culturales.
 
 % Parrafo
 
-Entender cómo cambia la cultura en el tiempo no solo es uno de los problemas fundamentales de la antropología, es también uno de los problemas que las ciencias de la computación deberá responder en los próximos años.
+En la última década se han desarrollado investigaciones sobre el comportamientos humanos basadas en datos obtenidos de comunidades virtuales.
+%
+Durante el transcurso del doctorado emergió con fuerza una área conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience, lazer2020-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
+%
+En antropología se han llevado adelante estudios sobre la dinámica de copia y modificación de código en competencias de programación en línea~\cite{miu2018-cumulativeCultureOnlineProgrammingContests}.
+%
+En computación se ha estudiado el efecto del miedo sobre la habilidad en una base de datos de ajedrez rápido~\cite{slezak2012-doNotFearYourOpponent}.
+
+% Parrafo
+
+Entender cómo los agentes aprenden rasgos culturales en el tiempo no es un problemas de la antropología, es también uno de los problemas que las ciencias de la computación deberá responder en los próximos años.
 %
 En los últimos años las empresas Deep Mind y Meta abrieron nuevas líneas de investigación en lo que se ha dado a llamar \emph{cooperative AI}~\cite{dafoe2020-coopAI, dafoe2021-coopAIcomment}.
 %
 Solo recién durante la escritura de esta tesis, han comenzado a surgir los primeros resultados de nivel humano en un juego de estrategia ``Diplomacy'', que involucra negociación entre varios jugadores~\cite{kramar2022-deepMindDiplomacy, meta2022-diplomacy}
 %
-Sin embargo, todavía no ha madurado lo suficiente la inteligencia artificial multi-agente, que permitiría comprender el comportamiento de los sistemas de culturales.
+Sin embargo, mediante discusiones personales con investigadores formados en el campo podemos decir que todavía no ha madurado lo suficiente este tipo de inteligencia artificial multi-agente.
 
 % Parrafo
 
-Hasta ahora, las respuestas con mayor influencia se han propuesto a través de modelos matemáticos de evolución cultural.
-%
-Basada en los principios de la teoría de la evolución (descendencia, modificación y selección), se ha desarrollado un marco teórico de \emph{evolución cultural} que intenta explicar cómo cambia la cultura en el tiempo~\cite{boyd1985-evolutionaryProcess, boyd2005-origin}.
-%
-Ella no es más que una aplicación de la teoría de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory}, que modela los equilibrios evolutivos que se producen entre estrategias en competencia, en el que la adaptabilidad de cada variante depende de las frecuencias de las otras variantes en la población.
-%
-%Estos trabajos son, esencialmente, modelos teóricos destinados a comprender las consecuencias que ciertas relaciones causales podrían tener en fenómenos naturales en caso de que sus estructuras sean análogas.
-%
-%Este es un abordaje útil para ganar intuición de procesos complejos, como son las propiedades que emergen en los sistemas a partir de la interacción de sus partes.
-%
-Si bien estos modelos sirven para ganar intuición de procesos complejos, sus resultados son analogías que no están destinadas a realizar predicciones y por lo tanto poseen una débil corroboración empírica.
-
-% Parrafo
-
-Esta es una tesis interdisciplinaria que, desde su concepción, ha tenido como objetivo sacar provecho de la relación entre las ciencias de la computación y las ciencias sociales.
-%
-Durante el transcurso del doctorado emergió con fuerza una área conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience, lazer2020-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computación como en los gigantes tecnológicos relacionados a la industria del software.
-%
-%Bajo esta categoría quedaron enmarcadas una gran variedad de actividades, a veces bastante diferentes entre sí, desde aquellas que usan la computación como una herramienta para analizar datos de origen sociales, hasta aquellas que usan problemas de ciencias sociales para motivar desarrollos en la frontera del conocimiento en las ciencias de la computación~\cite{lazer2020-computationalSocialScience}.
-%
-%Pero la emergencia de la interdisciplina es un fenómeno más general.
-%
-En la última década, las ciencias de la computación han tenido un impacto profundo en casi todas las disciplinas científicas.%, impulsadas por los avances en el área de la inteligencia artificial y la masificación datos y métodos de aprendizaje automático.
-%
-Una de sus consecuencias más contundentes es la emergencia e institucionalización de la Ciencia de Datos, un área científica que ha nacido interdisciplinaria por definición.
-
-% Parrafo
-
-En nuestro contexto, decidimos enfocarnos en el análisis del comportamiento de los individuos en comunidades de video juegos en línea.
-%
-Si bien las comunidades virtuales determina el contexto de los actos y limitan el conjunto de acciones y se\~nales que las personas pueden ejecutar, ellas ofrecen nuevos horizontes en la investigación científica sobre comportamientos sociales pues reúnen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle.
-%
-En particular, los videojuegos aparecen como un lugar privilegiado para estudiar cómo cambian las estrategias en el tiempo en un escenario social relativamente simplificado, donde las reglas se mantienen estables.
-%
-Ninguna de las metodologías clásicas de las ciencias sociales (censo, encuesta, etnografía) ofrecen simultáneamente ambos niveles de análisis.
-
-% Parrafo
-
-En la última década se a producido una enorme cantidad de investigaciones sobre comportamientos humanos basados en comunidades virtuales.
-%
-En particular, esta ha sido una línea de investigación exitosa de mi co-director Diego Fernández Slezak~\cite{slezak2012-doNotFearYourOpponent} quien estudió el efecto del miedo en una base de datos de ajedrez rápido.
-%
-Además, la comunidad de evolución cultural ha estado especialmente interesada en este campo.
-%
-Por ejemplo, Bret Beheim~\cite{Beheim2014} pone a prueba las predicciones sobre los tipos de estrategias de aprendizaje social, así como la poblacional, analizando los movimientos de apertura de los jugadores profesionales del juego de Go.
-%
-Otro ejemplo, Elena Miu~\cite{miu2018-cumulativeCultureOnlineProgrammingContests} estudió la dinámica de acumulación cultural en competencias de programación en línea.
-%
-Otros trabajos estudian aspectos relacionales a la evolución cultural en las letras de canciones pop \cite{brand2019-songLyrics} y las estrategias del football~\cite{mesoudi2020-footballTactics}.
-
-% Parrafo
-
-El plan de tesis tiene como objetivo particular poner a prueba algunas de las hipótesis propuestas por los modelos teóricos, evaluándolas en los datos generados por comunidades virtuales de juegos en línea multijugador de tipo estratégico de mediana y larga duración.
+Nuestro plan de tesis tiene como objetivo particular explorar los factores sociales que afectan el aprendizaje individual.
 %
 Conocer cómo las personas aprendemos es un problema importante para muchos ámbitos de la vida, como la educación, el trabajo y el deporte.
-%
-En general las investigaciones se han enfocado principalmente en los factores cognitivos individuales del aprendizaje.
-%
-Esta tesis estudia el impacto que ciertos factores sociales que afectan el aprendizaje individual esperado por el simple experiencia individual.
 %
 ¿Cuál es la relación entre la formación de equipos y el aprendizaje individual a largo plazo?
 %
@@ -1458,24 +580,13 @@ Esta tesis estudia el impacto que ciertos factores sociales que afectan el apren
 
 % Parrafo
 
-El plan utiliza metodologías computacionales e informáticas para evaluar estas y otras hipótesis en base a los datos.
-%
-Las reglas de la probabilidad se conocen desde finales del siglo 18 y desde entonces se las ha adoptado como sistema de razonamiento en todas las ciencias con datos.
-%
-Sin embargo, la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano) ha estado históricamente limitada debido al costo computacional asociado a la evaluación de todo el espacio de hipótesis.
-%
-Solo recientemente, luego de que se produce el enorme crecimiento en la capacidad de cómputo, comienza por primera vez a ser posible computar la incertidumbre óptima dada la información disponible en todos los campos de la ciencia.
 
 \subsection{Estructura de la tesis}
 
-En esta tesis nos interesamos por el aprendizaje social y la cultura.
+El plan utiliza metodologías computacionales e informáticas para evaluar estas y otras hipótesis en base a los datos.
 %
-En el capítulo 1 veremos propiedades y consecuencias de los procesos de selección de las formas de vida, por secuencias de tasas de reproducción y supervivencia, y de los proceso de evaluación de las hipótesis en probabilidad, por secuencia de predicciones: ambos de naturaleza multiplicativa (un único cero en la secuencia produce una extinción irreversible).
+En el capítulo 2 nos enfocaremos específicamente en los principios que fundamentan las reglas de la probabilidad como razonamiento común de las ciencias empíricas, veremos cómo se construyen sistemas de comunicación con la realidad que minimizan la tasa de sorpresa, y estudiaremos en detalle los modelos de estimación de habilidad que eran estado del arte al inicio de esta tesis.
 %
-En el capítulo 2 nos enfocaremos específicamente en los principios que fundamentan las reglas de la probabilidad como razonamiento intercultual de acuerdos intersubjetivos, veremos cómo se construyen sistemas de comunicación con la realidad que minimicen la tasa de sorpresa, y estudiaremos en detalle los modelos de estimación de habilidad que eran estado del arte al inicio de esta tesis.
-
-% Parrafo
-
 En los capítulos 3, 4 y 5 reproducimos los artículos científico del doctorado.
 %
 En el capítulo 3 estudiamos las curvas de aprendizaje en un videojuego por turnos en la que los jugadores pueden participar individualmente o en equipos y exploramos cómo las estrategias de formación de equipos pueden afectar la habilidad esperada por aprendizaje individual.
@@ -1483,18 +594,10 @@ En el capítulo 3 estudiamos las curvas de aprendizaje en un videojuego por turn
 En el capítulo 4 implementamos una modelo de estimación de habilidad que no estaba disponible hasta entonces en ninguno de los principales lenguaje de programación que, a diferencia de los estimadores de habilidad considerados estado del arte hasta el momento, propagando la información histórica por toda la historia de eventos ofrece estimaciones iniciales fiables y garantiza comparabilidad de las estimaciones en el tiempo y el espacio.
 %
 En el capítulo 5 usamos el nuevo estimador de habilidad para estudiar las curvas de aprendizaje en una comunidad virtual de juegos de Go y evaluar cómo la posición de los individuos en la red de partidas efecta el aprendizaje de las personas en el tiempo.
-
-% Parrafo
-
-En el capítulo 6 propongo algunas conclusiones.
 %
-Reflexiono sobre la interdisciplina, la emergencia de la ciencia de datos y la relación entre las ciencias sociales y las ciencias de la computación.
+En el capítulo 6 discutimos en términos teóricos el isomorfismo entre la teoría de la probabilidad y de la evolución y discutimos las consecuencias que tiene para el aprendizaje cultural y biológico.
 %
-Comparto mi experiencia en el doctorado, un proceso de aprendizaje que me llevó al encuentro del enfoque bayesiano de la probabilidad que respondió todas las preguntas fundamentales que traía de mi formación en antropología.
-%
-Finalizo contando sobre la organización de la comunidad Bayes Plurinacional y el Congreso Bayesino, y sobre la relevenacia del enfoque bayesiano causal para las ciencias sociales.
-
-
+En el capítulo 7 propongo reflexiono sobre la interdisciplina y la emergencia de la ciencia de datos, comparto mi proceso de aprendizaje doctoral que me llevó al encuentro del enfoque bayesiano, y finalizo contando sobre la organización de la comunidad Bayes Plurinacional y el Congreso Bayesino.
 
 
 
