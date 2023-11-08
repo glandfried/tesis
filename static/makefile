@@ -4,7 +4,8 @@ biomassBarOn.png:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/biomassBarOn.png
 
 logo.png:
-	curl -O  https://raw.githubusercontent.com/glandfried/images/master/logos/pEQb.png -O logo.png
+	curl -O  https://raw.githubusercontent.com/glandfried/images/master/logos/pEQb.png
+	mv pEQb.png logo.png
 
 cloroplastos.jpg:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/cloroplastos.jpg
@@ -34,7 +35,8 @@ cerradura.png:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/cerradura.png
 
 africa.png:
-	curl -O  https://raw.githubusercontent.com/glandfried/images/master/Colonial_Africa_1913_map.svg.png -O africa.png
+	curl -O  https://raw.githubusercontent.com/glandfried/images/master/Colonial_Africa_1913_map.svg.png
+	mv Colonial_Africa_1913_map.svg.png africa.png
 
 hereroNamaPrisoners.jpg:
 	curl -O  https://raw.githubusercontent.com/glandfried/images/master/hereroNamaPrisoners.jpg
