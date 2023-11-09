@@ -1,7 +1,10 @@
 \documentclass[a4paper,11pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+\usepackage{siunitx,letltxmacro} % \num{} \SI{}
+\LetLtxMacro{\svqty}{\qty}
 \usepackage{physics}
+\LetLtxMacro{\qty}{\svqty}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \usepackage{fullpage}
 \usepackage{cite}
@@ -10,6 +13,7 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{lmodern} % \fontsize{15}{18}\selectfont
 
 \usepackage{ragged2e} %\justifying
 
@@ -43,7 +47,6 @@
 \usepackage{mathtools}
 \usepackage{tikz}
 \usepackage{paracol}
-\usepackage[binary-units]{siunitx} % \num{} \SI{}
 \usepackage{multirow}
 \input{tikzlibrarybayesnet.code.tex}
 \allowdisplaybreaks %break equations
@@ -540,7 +543,7 @@ En particular, los videojuegos aparecen como un lugar privilegiado para estudiar
 
 En la \'ultima d\'ecada se han desarrollado investigaciones sobre el comportamientos humanos basadas en datos obtenidos de comunidades virtuales.
 %
-Durante el transcurso del doctorado emergi\'o con fuerza una \'area conocida como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience, lazer2020-computationalSocialScience}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computaci\'on como en los gigantes tecnol\'ogicos relacionados a la industria del software.
+Durante el transcurso del doctorado emergi\'o con fuerza una \'area conocida como Ciencias Sociales Computacionales~\cite{Lazer2009, Lazer2020}, que tiene en la actualidad reconocimiento tanto en institutos de primer nivel de ciencias de la computaci\'on como en los gigantes tecnol\'ogicos relacionados a la industria del software.
 %
 En antropolog\'ia se han llevado adelante estudios sobre la din\'amica de copia y modificaci\'on de c\'odigo en competencias de programaci\'on en l\'inea~\cite{miu2018-cumulativeCultureOnlineProgrammingContests}.
 %
@@ -668,7 +671,7 @@ El primer ciclo de soluciones llega de la mano de f\'isica estad\'istica, en la 
 %
 En esta \'epoca se desarrollan m\'etodos anal\'iticos para estimar la probabilidad de los microestados dada alguna informaci\'on macro, como la energ\'ia, la temperatura, o alg\'un promedio.
 %
-Conceptualmente se ha mostrado que las soluciones que ofrece la f\'isica estad\'istica son equivalentes a las que se obtiene con el enfoque bayesiano a trav\'es del principio de ``no mentir'' (maximizar entrop\'ia dada la informaci\'on disponible)~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, jaynes2003-bookProbabilityTheory}.
+Conceptualmente se ha mostrado que las soluciones que ofrece la f\'isica estad\'istica son equivalentes a las que se obtiene con el enfoque bayesiano a trav\'es del principio de ``no mentir'' (maximizar entrop\'ia dada la informaci\'on disponible)~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, Jaynes2003}.
 
 % Parrafo
 
@@ -682,7 +685,7 @@ Sin embargo, debido a que las t\'ecnicas de selecci\'on de hip\'otesis puntuales
 
 En las v\'isperas del siglo 21, el crecimiento en la capacidad de c\'omputo levant\'o finalmente el principal obst\'aculo que pesaba sobre la aplicabilidad de las reglas de la probabilidad.
 %
-En esta \'epoca se desarrollan los m\'etodos num\'ericos de aproximaci\'on por muestreo (basados en Cadenas de Markov) y los m\'etodos anal\'iticos basados en minimizaci\'on de divergencias entre distribuciones de probabilidad~\cite{bishop2006-PRML}.
+En esta \'epoca se desarrollan los m\'etodos num\'ericos de aproximaci\'on por muestreo (basados en Cadenas de Markov) y los m\'etodos anal\'iticos basados en minimizaci\'on de divergencias entre distribuciones de probabilidad~\cite{Bishop2006}.
 %
 Por primera vez desde el descubrimiento de la teor\'ia de la probabilidad, comienza a ser posible en todos los campos de las ciencia resolver la inferencia de los modelos probabil\'isticos aplicando estrictamente las reglas de la probabilidad, evaluando todo el espacio de hip\'otesis (aka~enfoque bayesiano).
 
@@ -1252,7 +1255,7 @@ Cada una de las celdas de la tabla representa una de las terminales de los unive
 
 Por el ``principio de integridad'', la creencia asignada a una variable individual (creencia marginal) es la suma de todos los caminos paralelos (creencia conjunta) en los que esa variable est\'a presente.
 %
-\begin{equation}
+\begin{equation} \label{eq:creencia_marginal}
 \begin{split}
 P(s_j|\text{Modelo A}) = \sum_i P(r_i, s_j|\text{Modelo A}) = 1/3 \\  P(s_j|\text{Modelo B}) = \sum_i P(r_i, s_j|\text{Modelo B}) = 1/2
 \end{split}
@@ -1261,27 +1264,7 @@ P(s_j|\text{Modelo A}) = \sum_i P(r_i, s_j|\text{Modelo A}) = 1/3 \\  P(s_j|\tex
 % Parrafo
 
 Lo mismo ocurre con cualquiera de las variables de un modelo multidimensional.
-% \begin{table}[H]
-% \centering
-% Modelo A  \hspace{4.5cm}  Modelo B \\[0.1cm]
-%  \begin{tabular}{|c|c|c|c||c|} \hline \setlength\tabcolsep{0.4cm}
-%        & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline
-%   $s_1$ & $0$ & $1/6$ & $1/6$ & $1/3$ \\ \hline
-%   $s_2$ & $1/6$ & $0$ & $1/6$ & $1/3$ \\ \hline
-%   $s_3$ & $1/6$ & $1/6$ & $0$ & $1/3$ \\ \hline \hline
-%    & $1/3$ & $1/3$ & $1/3$ & $1$ \\ \hline
-%   \end{tabular}
-%   \hspace{1.5cm}
-%   \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm}
-%  & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline
-%   $s_1$ & $0$ & $0$ & $0$ & $0$\\ \hline
-%   $s_2$ & $1/6$ & $0$ & $1/3$ & $1/2$ \\ \hline
-%   $s_3$ & $1/6$ & $1/3$ & $0$ & $1/2$ \\ \hline \hline
-%    & $1/3$ & $1/3$ & $1/3$ & $1$  \\ \hline
-%   \end{tabular}
-%   \caption{Creencia marginal honesta obtenida mediante el principio de integridad, como la suma de la creencia asignada a todos los universos en los que esa variable est\'a presente.}
-%   \label{tab:creencia_marginal}
-% \end{table}
+%
 En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$
 %
 \begin{figure}[H]
@@ -1547,11 +1530,11 @@ P(s_j)P(r_i|s_j) = P(r_i, s_j)
 
 Las reglas de la probabilidad han sido derivadas formalmente a partir de varios sistemas axiom\'aticos conceptualmente distintos e independientes entre si, lo cual es uno de los puntos fuertes a su favor~\cite{halpern2017}.
 %
-El sistema axiom\'atico de Cox~\cite{cox} las deriva a partir de axiomas del ``sentido com\'un''.
+El sistema axiom\'atico de Cox~\cite{Cox1946} las deriva a partir de axiomas del ``sentido com\'un''.
 %
-El sistema axiom\'atico de Ramsey~\cite{ramsey} las deriva haciendo una analog\'ia con los pagos que aceptar\'iamos en una apuesta.
+El sistema axiom\'atico de Ramsey~\cite{Ramsey1926} las deriva haciendo una analog\'ia con los pagos que aceptar\'iamos en una apuesta.
 %
-El sistema axiom\'atico de Kolmogorov~\cite{kolmogorov} la regla de la suma forma parte de los axiomas y la regla del producto de una definici\'on complementaria.
+El sistema axiom\'atico de Kolmogorov~\cite{Kolmogorov1950} la regla de la suma forma parte de los axiomas y la regla del producto de una definici\'on complementaria.
 %
 Este sistema axiom\'atico es el m\'as utilizado y en su versi\'on original dice,
 \begin{quotation}
@@ -1748,7 +1731,7 @@ Mientras que en el modelo A la predicci\'on a priori de que la caja se\~nalada s
 P(s_2|M_A) = \sum_i P(s_2,r_i| M_A) = 1/3
 \end{equation}
 %
-Lo que ya hab\'ia sido calculado previamente en las marginales de la tabla \ref{tab:creencia_marginal}.
+Lo que ya hab\'ia sido calculado previamente en las marginales de la tabla \ref{eq:creencia_marginal}.
 
 % Parrafo
 
@@ -2322,7 +2305,7 @@ Estos elementos de la praxis, que son los que determinan en los hechos el valor 
 
 %Debemos esta propuesta al epistem\'ologo Argentino, contempor\'aneo de Gregorio Klimovsky y Rolando Garc\'ia, el profesor Juan Samaja.
 
-El epistem\'ologo Juan Samaja~\cite{samaja} propone una hip\'otesis falsable (que \'el desaf\'ia a que encuentren un contra-ejemplo), de que todo dato emp\'irico se compone de dimensiones (D), que son especificaciones de la variable (V), y de procedimientos o protocolos (P), acciones que efectuadas sobre cierta fuente de datos (F) producen se\~nales o indicadores (I), objetos perceptibles desde el sentido com\'un, que interpretados con alguna hip\'otesis indicadora definen los resultados (R).
+El epistem\'ologo Juan Samaja~\cite{Samaja1999} propone una hip\'otesis falsable (que \'el desaf\'ia a que encuentren un contra-ejemplo), de que todo dato emp\'irico se compone de dimensiones (D), que son especificaciones de la variable (V), y de procedimientos o protocolos (P), acciones que efectuadas sobre cierta fuente de datos (F) producen se\~nales o indicadores (I), objetos perceptibles desde el sentido com\'un, que interpretados con alguna hip\'otesis indicadora definen los resultados (R).
 %
 Samaja representa la estructura invariante del dato emp\'irico mediante el siguiente esquema (cuadro~\ref{tab:matriz_datos}).
 %
@@ -2388,7 +2371,7 @@ La estructura invariante del dato emp\'irico, propuesta por Samaja, puede mapear
 %
 En definitiva, este esquema tambi\'en busca representar la estructura invariante del dato emp\'irico.
 %
-Adem\'as, la teor\'ia de la informaci\'on adhiere a la aplicaci\'on estricta de las reglas de la probabilidad como hip\'otesis indicadora universal~\cite{mackay}.
+Adem\'as, la teor\'ia de la informaci\'on adhiere a la aplicaci\'on estricta de las reglas de la probabilidad como hip\'otesis indicadora universal~\cite{Mackay2003}.
 %
 En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de comunicaci\'on tiene la siguiente estructura (figura~\ref{fig:esquema_emisor_receptor}).
 %
@@ -2680,7 +2663,7 @@ El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas
     \node[invisible, below=of r, yshift=-0.7cm] (inv) {};
   }
   \caption{}
-  \label{fig:generative_model}
+  \label{fig:generative_model_elo}
   \end{subfigure}
   \begin{subfigure}[b]{0.375\textwidth}
       \centering
@@ -2689,7 +2672,7 @@ El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas
      \label{fig:probaOfWin_2D}
     \end{subfigure}
      \caption{
-    (\subref{fig:generative_model}) Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
+    (\subref{fig:generative_model_elo}) Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
     %
     Quien haya obtenido mayor rendimiento gana, $r = (d > 0)$.
     %
@@ -2701,7 +2684,7 @@ El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas
     }
 \end{figure}
 %
-En su versi\'on ``Gaussiana'' (la figura~\ref{fig:generative_model}, las persona exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
+En su versi\'on ``Gaussiana'' (la figura~\ref{fig:generative_model_elo}, las persona exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
 %
 El modelo supone que gana el agente con mayor desempe\~no, $r = (p_i > p_j)$.
 %
@@ -2944,7 +2927,7 @@ El enfoque adoptado por TrueSkill para tratar el proceso din\'amico, conocido co
 %
 Luego, el posterior aproximado en un determinado momento se define como,
 %
-\begin{equation}\label{eq:filter} %\tag{\text{filtering}}
+\begin{equation}
  \widehat{\text{Posterior}}_t \propto \widehat{\text{Likelihood}}_t  \overbrace{\widehat{\text{Likelihood}}_{t-1} \dots \underbrace{\widehat{\text{Likelihood}}_{1} \text{Prior}_1}_{\widehat{\text{Posterior}}_{1} \text{ como } \text{Prior}_{2}} }^{\widehat{\text{Posterior}}_{t-1} \text{ \en{as}\es{como} } \text{Prior}_{t}} %= \text{Prior}_1 \prod_{i=1}^t \text{Likelihood}_i
 \end{equation}
 %
@@ -2956,7 +2939,7 @@ De esta forma, la informaci\'on propaga del estimaciones pasadas hacia futuras.
 %
 Debido a que las habilidades cambian en el tiempo, es importante agregar alguna incertidumbre $\gamma$ luego de cada paso.
 %
-\begin{equation}\label{eq:dynamic_factor}
+\begin{equation}
  \widehat{p}(s_{i_t}) = \N(s_{i_t} | \mu_{i_{t-1}}, \sigma_{i_{t-1}}^2 + \gamma^2 )
  \end{equation}
  %
@@ -3377,6 +3360,7 @@ Por el contrario, el aumento de los valores de TOB muestra una disminuci\'on de 
 %
 La diferencia de habilidad del m\'inimo al m\'aximo es mayor a $4.5$~tsp.
 
+\clearpage
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.49\linewidth]{figures/Fig3}
@@ -3543,7 +3527,7 @@ A diferencia de las tareas en las que se puede determinar la cantidad absoluta d
 %
 Las curvas de aprendizaje derivadas de tareas en las que la habilidad se mide en t\'erminos relativos son m\'as vol\'atiles que las medidas en t\'erminos absolutos.
 %
-Por lo tanto, las curvas de aprendizaje individuales de los jugadores que compiten a veces son dif\'iciles de ajustar~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,gaschler2014-playingOffThePredictedLearningCurve}.
+Por lo tanto, las curvas de aprendizaje individuales de los jugadores que compiten a veces son dif\'iciles de ajustar~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,Gaschler2014}.
 
 % Parrafo
 
@@ -5523,7 +5507,7 @@ Todos estos mensajes aproximados pueden ser interpretados como verosimilitudes  
 %
 El mensaje aproximado que el factor diferencia $f_d$ env\'ia a la variables de desempe\~no del equipo ganador $t_a$ es,
 %
-\begin{equation}%\label{eq:^m_fd_ta} \tag{\texttt{approx\_lhood\_ta}}
+\begin{equation}
 \begin{split}
 \widehat{m}_{f_{d} \rightarrow t_a}(t_a) & =  \iint \delta(d = t_a - t_b) \N(d_1 | \psi_{\div}, \vartheta_{\div}^2) \N(t_b | \mu_b , \sigma_b^2 )  \, d{d} \,dt_b \\
 & = \int  \N( t_a-t_b | \psi_{\div}, \vartheta_{\div}^2) \N(t_b | \mu_b , \sigma_b^2 )  \,  d_{t_b} = \N(t_a \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \\
@@ -5532,7 +5516,7 @@ El mensaje aproximado que el factor diferencia $f_d$ env\'ia a la variables de d
 %
 El mensaje aproximado que el factor desempe\~no de equipo $f_{t_a}$ env\'ia a la variables de desempe\~no individual $p_1$ es,
 %
-\begin{equation}%\label{eq:^m_fta_p} \tag{\texttt{lhood\_p1\_approx}}
+\begin{equation}
 \begin{split}
 \widehat{m}_{f_{t_a} \rightarrow p_1}(p_1) &= \iint \delta(t_a = p_1 + p_2) \N(t_a \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \N(p_2 | \mu_2 , \sigma_2^2 + \beta^2)  \, d{t_a} d_{p_2} \\
 & = \int \N(p_1 + p_2 \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \N(p_2 | \mu_2 , \sigma_2^2+ \beta^2 )   \, d_{p_2} \\
@@ -5542,7 +5526,7 @@ El mensaje aproximado que el factor desempe\~no de equipo $f_{t_a}$ env\'ia a la
 %
 El mensaje aproximado que el factor de desempe\~no individual $f_{p_1}$ env\'ia a la variables de habilidad $s_1$ es,
 %
-\begin{equation}%\label{eq:^m_fp_s} \tag{\texttt{lhood\_s1\_approx}}
+\begin{equation}
 \begin{split}
 \widehat{m}_{f_{p_1} \rightarrow s_1}(s_1) & = \int \N(p_1|s_1,\beta^2) \N(p_1| \mu_1 - \psi + \psi_{\div}, \vartheta_{\div}^2 + \vartheta^2 - \sigma_1^2 - \beta^2)dp_1 \\
 & = \N(s_1| \mu_1 - \psi + \psi_{\div}, \vartheta_{\div}^2 + \vartheta^2 - \sigma_1^2)
@@ -6508,7 +6492,7 @@ Ninguno de los estimadores de habilidad habitualmente utilizados en la industria
 En cambio, el modelo de estimaci\'on de habilidad estado del arte, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
 % Parrafo
 
-El modelo causal com\'un a todos los estimadores supone que los resultados observados de las partidas son una consecuencia directa de las habilidades ocultas (figura~\ref{fig:generative_model} izquierda).
+El modelo causal com\'un a todos los estimadores supone que los resultados observados de las partidas son una consecuencia directa de las habilidades ocultas (figura~\ref{fig:generative_model_elo_3} izquierda).
 %
 \begin{figure}[ht!]
 \centering
@@ -6541,13 +6525,11 @@ El modelo causal com\'un a todos los estimadores supone que los resultados obser
     \end{subfigure}
      \caption{
     (Izquierda) Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos.
-   .
     Las variables observables se pintan de gris, las ocultas en blanco, y las constantes se muestran como puntos negros.
     (Derecha) Actualizaci\'on de creencias para el caso ganador.
-   .
     El posterior proporcional se obtiene como el producto de la distribuci\'on a priori y la verosimilitud.
   }
-    \label{fig:generative_model}
+    \label{fig:generative_model_elo_3}
 \end{figure}
 %
 Seg\'un este modelo, gana la persona con mayor desempe\~no, $r = (p_i > p_j)$, siendo los desempe\~nos variables aleatorias centradas en las verdaderas habilidades, $\N(p\,|\,s,\beta^2)$.
@@ -6560,7 +6542,7 @@ Aqu\'i usamos $\beta=1$.
 %
 % En cualquier proceso de inferencia, la sorpresa definida como el complemento de la verosimilitud funciona como un filtro para el prior.
 %
-En la figura~\ref{fig:generative_model} derecha mostramos c\'omo se actualiza un prior gaussiano luego de que observamos a un jugador ganar una partida.
+En la figura~\ref{fig:generative_model_elo_3} derecha mostramos c\'omo se actualiza un prior gaussiano luego de que observamos a un jugador ganar una partida.
 %
 En la regi\'on de hip\'otesis de muy alta habilidad, donde el resultado ganador no nos hubiera generado casi ninguna sorpresa ($\lim_{s_i \to \infty}P(r|s_i) = 1$), el posterior recibe casi toda la densidad del prior.
 %
@@ -6654,7 +6636,7 @@ Conocer \emph{directamente} a muchas otras puede ser un indicador de su populari
 Bajo esta idea, la centralidad conocida como \emph{grado} define la popularidad como la fracci\'on de contactos que tiene cada nodo $p$ sobre todos los contactos posibles.
 %
 \begin{equation}
-\emph{degree}(p) = \footnotesize \frac{\text{Contactos efectivos de $p$}}{\text{Contactos potenciales}}
+\emph{degree}(p) = \frac{\text{Contactos efectivos de $p$}}{\text{Contactos potenciales}}
 \end{equation}
 %
 Esta definici\'on de grado no tiene en cuenta el peso de los ejes.
@@ -6696,7 +6678,7 @@ La medida de cercan\'ia paradigm\'atica es \emph{closeness}, definida como el re
 Cuando hay m\'as de un componente, s\'olo se calcula el camino m\'as corto entre nodos del mismo componente, ponderando por la proporci\'on del componente para no asignar valores de centralidad elevados a nodos pertenecientes a componentes perif\'ericos.
 %
 \begin{equation}
-	\emph{closeness}(p) = {\footnotesize \text{\En{Component's proportion}\Es{Proporci\'on de la componente}}  \cdot   \text{\En{Reciprocal of the average shortest path }\Es{promedio invertido}} }
+	\emph{closeness}(p) = {\text{\En{Component's proportion}\Es{Proporci\'on de la componente}}  \cdot   \text{\En{Reciprocal of the average shortest path }\Es{promedio invertido}} }
 \end{equation}
 %
 Esta soluci\'on es conocida como Wasserman y Faust closeness.
@@ -6704,7 +6686,7 @@ Esta soluci\'on es conocida como Wasserman y Faust closeness.
 Otra forma de resolver el problema es calcular la \emph{harmonic centrality} (la suma de los rec\'iprocos de las distancias m\'inimas).
 %
 \begin{equation} \label{eq:harmonic}
-    \emph{harmonic}(p)=\footnotesize \sum_r (\text{\En{Length of shortest path between $p$ and $r$}\Es{Distancia m\'inima entre $p$ y $r$}})^{-1}
+    \emph{harmonic}(p)= \sum_r (\text{\En{Length of shortest path between $p$ and $r$}\Es{Distancia m\'inima entre $p$ y $r$}})^{-1}
 \end{equation}
 %
 Esta medida maneja apropiadamente $\infty$, asumiendo $\infty^{-1} = 0$.
@@ -6748,7 +6730,7 @@ Llamamos indicadores de intermediaci\'on a aquellos que est\'an basados en la in
 La medida de intermediaci\'on paradigm\'atica es \emph{betweenness}, definida como la suma de las proporciones de caminos m\'inimos entre todos los pares $q$ y $r$ que pasan por $p$.
 %
 \begin{equation}
-	\emph{betweenness}(p) = {\footnotesize \sum_{q,r}\frac{\text{Caminos m\'inimos entre $q$ y $r$ que pasan por $p$}}{\text{Caminos m\'inimos entre $q$ y $r$}}}
+	\emph{betweenness}(p) = { \sum_{q,r}\frac{\text{Caminos m\'inimos entre $q$ y $r$ que pasan por $p$}}{\text{Caminos m\'inimos entre $q$ y $r$}}}
 \end{equation}
 %
 Es una medida que beneficia a los nodos ``puente''.
@@ -6759,7 +6741,7 @@ Es una medida que beneficia a los nodos ``puente''.
 El flujo que env\'ia un nodo $q$ hacia una nodo $r$ se transmite por los caminos m\'inimos, dividiendo el flujo en partes iguales cada vez que aparece m\'as de una alterativa disponible.
 %
 \begin{equation}
-	\emph{load}(p)= {\footnotesize \sum_{q,r} \text{Cantidad de flujo enviada por el nodo $q$ al $r$ que pasa por $p$} }
+	\emph{load}(p)= { \sum_{q,r} \text{Cantidad de flujo enviada por el nodo $q$ al $r$ que pasa por $p$} }
 \end{equation}
 %
 Si hay un solo camino con distancia m\'inima, todo el flujo ir\'a por ah\'i.
@@ -6954,7 +6936,8 @@ De esa forma, los jugadores clasificados en las cohortes de baja y alta centrali
 %
 % Debido a la estructura del modelo causal, para evaluar el efecto de los factores individuales y sociales sobre el aprendizaje necesitamos observar c\'omo cambia la habilidad dada la experiencia individual y la posici\'on de los jugadores en el red.
 \subsection{\en{The effect that the position in the network has on individual learning.}El efecto que la posici\'on en la red tiene sobre el aprendizaje individual.}}
-\todo{En la frase inicial extender el t\'itulo: To explore de causal effect that the topological position in the network has on individual learning... }
+
+
 Para evaluar el efecto causal es necesario, en el modelo causal propuesto, comparar las curvas de aprendizaje que producen las diferentes posiciones de los individuos en la red (definidas en la secci\'on~\ref{sec:results_centralities} como cohortes de centralidades baja o alta), para mismos valores de habilidad inicial y experiencia individual.
 %
 Observar el comportamiento de las distintas curvas de aprendizaje dado un valor de habilidad inicial, nos permite comparar tasas de aprendizaje que seg\'un la experiencia individual deber\'ian ser iguales.
@@ -7222,6 +7205,717 @@ En un contexto acad\'emico que todav\'ia no tiene la habitud de explicitar sus m
 La evaluaci\'on completa del espacio de posibles modelos causales es una tarea necesariamente colectiva.
 
 
+
+
+
+
+
+
+\chapter{Teorías de los aprendizajes epistémicos y evolutivos}
+
+
+\begin{quotation}
+The cost function approach [..] can actually be used to analyze nearly any branch of human endeavor.
+The utility theory of Von Neumann shows us one way to obtain such a cost function.
+The point here is that an arbitrary combination of a statistical transducer (i.e., a channel) and a cost function does not necessarily constitute a communication system.
+What can be done, however, is to take some real-life situation which seems to possess the essential features of a communication problem, and to analyze it without the introduction of an arbitrary cost function.
+The situation which will be chosen here is one in which a gambler uses knowledge of the received symbols of a communication channel in order to make profitable bets on the transmitted symbols. (Kelly 1956 \emph{A New Interpretation of Information Rate} Bell Labs)
+\end{quotation}
+
+
+\section{La función de costo epistémico-evolutiva}
+
+La ciencia es una institución humana que tiene pretensión de verdad: de alcanzar acuerdos intersubjetivos con validez intercultural, universal.
+%
+Las ciencias formales (matemática, lógica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiomáticos cerrados.
+%
+Sin embargo, las ciencias empíricas (desde la física hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos que contienen siempre algún grado de incertidumbre.
+%
+¿Es posible entonces alcanzar acuerdos intersubjetivos (``verdades'') en las ciencias empíricas si es inevitable decir ``no sé''?
+%
+Sí.
+%
+En pocas palabras, podemos evitar mentir: no decir más de lo que se sabe, incorporando al mismo tiempo toda la información disponible.
+
+% Parrafo
+
+Por ejemplo, supongamos que sabemos que hay un regalo escondido detrás de una caja entre tres.
+%
+¿Dónde está el regalo?
+%
+Si elegimos alguna de las cajas estaríamos afirmando más de lo que sabemos porque en los hechos no tenemos información que nos haga preferir ninguna de ellas.
+% Parrafo
+\begin{figure}[ht!]
+ \centering
+ \begin{subfigure}[b]{0.48\textwidth}
+ \centering
+  \tikz{ %
+         \node[factor, minimum size=0.8cm] (p1) {} ;
+         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
+         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
+
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$0$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$1$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$0$};
+        }
+    \caption{\En{Full certainty}\Es{Certidumbre total}}
+    \label{fig:preferencia_parcial_2}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.48\textwidth}
+ \centering
+  \tikz{ %
+         \node[factor, minimum size=0.8cm] (p1) {} ;
+         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
+         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
+
+         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
+         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
+        }
+    \caption{\En{Maximum uncertainty}\Es{Máxima incertidumbre}}
+    \label{fig:preferencia_total_2}
+ \end{subfigure}
+\caption{
+Dos distribución de creencias. Maximizar incertidumbre permite alcanzar un primer acuerdo intersubjetivo.
+}
+ \label{fig:distribucion_de_creencias_2}
+\end{figure}
+% Parrafo
+\noindent
+%
+Si nos permitimos dividir la creencia vamos a estar de acuerdo en la necesidad de distriburla en partes iguales, justamente porque no tenemos preferencia por ninguna caja.
+%
+En este ejemplo maximizamos incertidumbre (al dividir la creencia en partes iguales) incorporando la información disponible (al no asignar creencia afuera de las tres cajas).
+%
+Evitar mentir (maximizando incertidumbre dada la información disponible) nos permitió alcanzar un primer acuerdo intersubjetivo en contextos de incertidumbre!
+%
+Bien. ¿Pero ahora, cómo preservamos el acuerdo intersubjetivo en casos más complejos, cuando recibimos nueva información?
+
+% Parrafo
+
+La lógica de la incertidumbre (teoría de la probabilidad) ha sido derivada repetidas veces a partir de diversos principios (axiomas), llegando siempre a las mismas dos simples reglas.
+%
+La \emph{regla de la suma} garantiza no perder creencia cuando la distribuimos entre hipótesis mutuamente contradictorias: al sumar cuánto le hemos asignado a cada hipótesis, recuperamos el 100\% inicial.
+%
+\begin{equation*}
+\overset{\hfrac{\text{\small \En{Sum rule}\Es{Regla de la suma}: }}{\phantom{x}}}{P(A) + P(\text{no\En{t} } A) = 1}
+\end{equation*}
+%
+Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las creencias con la información disponible: preservamos la creencia previa que sigue siendo compatible con los nuevos datos (y la porción de creencia que sobrevive la volvemos a consider como nuestra creencia total 100\%).
+%
+\begin{equation*}
+\overset{\hfrac{\text{\small \En{Poduct rule}\Es{Regla del producto}: }}{\phantom{x}}}{\underbrace{P(\text{\text{\En{Hypothesis}\Es{Hipótesis}}}|\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Conditional belief }\Es{Creencia condicional}\phantom{p}}}{\text{\scriptsize \En{New belief}\Es{Nueva creencia}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\En{Joint prior belief}\Es{Creencia previa conjunta}}}{\text{\scriptsize\En{compatible with the data}\Es{compatible con el dato}}}} \ \ \  \ /  \underbrace{P(\text{\En{Data}\Es{Dato}})}_{\hfrac{\textbf{\footnotesize\phantom{p}\En{Prediction of the data}\Es{Predicción del dato}}\phantom{p}}{\text{\scriptsize\En{total compatible belief}\Es{creencia total que sobrevive}}}} }
+\end{equation*}
+
+% Parrafo
+
+Estas son las reglas de la probabilidad para actualizar las creencias en contextos de incertidumbre.
+%
+No hay más.
+
+% Parrafo
+
+Veamos un ejemplo.
+%
+Supongamos que ahora nos dejan elegir una de las cajas y luego alguien nos dará una pista abriendo una caja distinta a la que elegimos en la que no está el regalo (figura~\ref{fig:monty_hall}).
+%
+Con esta información previa podemos definir un modelo causal sobre la pista (figura~\ref{fig:modelo_causal}).
+%
+Antes de recibir la información de la pista tenemos una creencia previa que surge de maximizar incertidumbre incorporando la información del modelo causal: dividiendo la creencia en partes iguales por los universos paralelos que induce el modelo causal (figura~\ref{fig:caminos_montyhall_compatibles_2}).
+%
+Las hojas del árbol las podemos ordenar en forma de matriz (tabla de la figura~\ref{fig:f3}) y representan nuestra creencia conjunta inicial de que ocurra tanto $r_i$ y $s_j$, $P(r_i,s_j)$.
+%
+Para actualizar nuestra creencia simplemente preservamos la creencia conjunta inicial que sigue siendo compatible con el dato (el renglón $s_2$ en la figura~\ref{fig:f3}).
+%
+Finalmente, la creencia que sobrevive la expresamos como nueva creencia total (para que sume $1$).
+%
+\begin{figure}[ht!]
+ \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+  \centering
+  \tikz{
+
+    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
+    \node[const,below=of d] (nd) {\En{Hint}\Es{Pista}: $s \neq r$, $s \neq c$  } ;
+
+    \node[latent, above=of d,yshift=-1.2cm, xshift=-1.3cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
+    \node[const,above=of r] (nr) {\phantom{g}\En{Gift}\Es{Regalo}: $r$\phantom{g}} ;
+
+    \node[latent, fill=black!30, above=of d,yshift=-1.2cm, xshift=1.3cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
+    \node[const,above=of c] (nc) {\phantom{g}\En{Election}\Es{Elección}: $c_1$\phantom{g}} ;
+
+    \edge {r,c} {d};
+
+         \node[factor, minimum size=0.8cm, xshift=-1.3cm, yshift=2.5cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=0.8cm, yshift=2.5cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=0.8cm, xshift=1.3cm, yshift=2.5cm] (p3) {} ;
+         \node[const, above=of p1, yshift=.05cm] (fp1) {$?$};
+         \node[const, above=of p2, yshift=.05cm] (fp2) {$?$};
+         \node[const, above=of p3, yshift=.05cm] (fp3) {$?$};
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+
+  }
+  \caption{}
+  \label{fig:modelo_causal}
+  \end{subfigure}
+ \begin{subfigure}[b]{0.32\textwidth}
+\centering
+\tikz{
+\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
+\node[latent,below=of b0,yshift=0.9cm, xshift=-1.5cm] (r1) {$r_1$};
+{\color{black}\node[latent,draw=black,below=of b0,yshift=0.9cm] (r2) {$r_2$}; }
+\node[latent,below=of b0,yshift=0.9cm, xshift=1.5cm] (r3) {$r_3$};
+\node[latent, below=of r1, draw=white, yshift=0.7cm] (bc11) {$\frac{1}{3}$};
+{\color{black}\node[latent, below=of r2, draw=white, yshift=0.7cm] (bc12) {$\frac{1}{3}$};}
+\node[latent, below=of r3, draw=white, yshift=0.7cm] (bc13) {$\frac{1}{3}$};
+\node[latent,below=of bc11,yshift=0.9cm, xshift=-0.5cm] (r1d2) {$s_2$};
+{\color{black}\node[latent,draw=black,below=of bc11,yshift=0.9cm, xshift=0.5cm] (r1d3) {$s_3$};}
+{\color{black}\node[latent, draw=black,below=of bc12,yshift=0.9cm] (r2d3) {$s_3$};}
+\node[latent,below=of bc13,yshift=0.9cm] (r3d2) {$s_2$};
+
+\node[latent,below=of r1d2,yshift=0.9cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
+{\color{black}\node[latent,below=of r1d3,yshift=0.9cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};}s
+{\color{black}\node[latent,below=of r2d3,yshift=0.9cm,draw=white] (br2d3) {$\frac{1}{3}$};}
+\node[latent,below=of r3d2,yshift=0.9cm,draw=white] (br3d2) {$\frac{1}{3}$};
+\edge[-] {b0} {r1,r3};
+\edge[-,draw=black] {b0} {r2};
+\edge[-] {r1} {bc11};
+\edge[-,draw=black] {r2} {bc12};
+\edge[-] {r3} {bc13};
+\edge[-] {bc11} {r1d2};
+\edge[-,draw=black] {bc11} {r1d3};
+\edge[-,draw=black] {bc12} {r2d3};
+\edge[-] {bc13} {r3d2};
+\edge[-] {r1d2} {br1d2};
+\edge[-,draw=black] {r1d3} {br1d3};
+\edge[-,draw=black] {r2d3} {br2d3};
+\edge[-] {r3d2} {br3d2};
+}
+\caption{}
+\label{fig:caminos_montyhall_compatibles_2}
+\end{subfigure}
+\
+\begin{subfigure}[b]{0.34\textwidth}
+\phantom{$P(s_j)$\hspace{0.7cm}g}$P(r_i, s_j)$\phantom{g}\hspace{0.9cm}$P(s_j)$
+\centering
+  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm}
+ & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, &  \\ \hline
+  $\gray s_1$ & $\gray0$ & $\gray0$ & $\gray0$ &   $\gray 0$ \\ \hline
+  $\bm{s_2}$ & $\bm{1/6}$ & $\bm{0}$ & $\bm{1/3}$ &  $\bm{1/2}$ \\  \hline
+  $\gray s_3$ & $\gray1/6$ & $\gray1/3$ & $\gray0$ & $\gray1/2$ \\ \hline
+  \end{tabular}
+
+  \phantom{--}\\[0.1cm]
+
+  \tikz{
+
+         \node[factor, minimum size=0.8cm, xshift=-1.3cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
+         \node[det, minimum size=0.8cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
+         \node[factor, minimum size=0.8cm, xshift=1.3cm] (p3) {} ;
+         \node[const, below=of p1, yshift=-.025cm] (fp1) {$1/3$};
+         \node[const, below=of p2, yshift=-.025cm] (fp2) {$0$};
+         \node[const, below=of p3, yshift=-.025cm] (fp3) {$2/3$};
+         \node[const, above=of p2, yshift=.045cm] (title) {$P(r_i | s_2)=P(r_i,s_2)/P(s_2)$};
+
+         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
+
+  }
+
+\caption{}
+\label{fig:f3}
+\end{subfigure}
+\caption{
+Acuerdo intersubjetivo dada toda la información disponible (modelo causal y datos).
+%
+(\subref{fig:modelo_causal}) El modelo causal asegura que la pista $s$ no puede señalar la caja elegida $c$ (con la cerradura) ni la caja donde se encuentra el regalo $r$ (la hipótesis oculta): $s\neq c$ y $s\neq r$.
+%
+(\subref{fig:caminos_montyhall_compatibles_2}) Calculamos la creencia que maximiza la incertidumbre dado el modelo causal dividiendo la creencia en partes iguales en cada bifurcación de los universos paralelos.
+%
+(\subref{fig:f3}) La nueva creencia no es más que la creencia inicial (tabla) que sigue siendo compatible con el dato $s_2$ (renglón oscuro), expresada como 100\%
+}
+\label{fig:monty_hall}
+\end{figure}
+
+% Parrafo
+
+A diferencia de los enfoques ad-hoc que seleccionan una única hipótesis (e.g.~por máxima verosimilitud), la aplicación estricta de las reglas de la probabilidad (enfoque bayesiano), considerando al mismo tiempo hipótesis mutuamente contradictorias (A y no A), permite que sea la sorpresa, única fuente de información, el filtro de las creencias previas.
+%
+En general, si tenemos $\text{Datos} = \{ \text{dato}_1, \text{dato}_2, \dots \}$,
+%
+\begin{equation} \label{eq:funcion_de_costo}
+\underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hipótesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo inter-}}}{\text{\footnotesize\En{agreement}\Es{subjetivo inicial}}}} \underbrace{P(\text{dato}_1 |\text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 1}} \, \underbrace{P(\text{dato}_2 | \text{dato}_1 , \text{\En{Hypothesis}\Es{Hipótesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ción} 2}} \dots
+\end{equation}
+
+% Parrafo
+
+\noindent
+Si la predicción del dato observado es 1 (sorpresa nula), entonces preservamos toda nuestra creencia previa en esa hipótesis.
+%
+Si la predicción del dato observado es 0 (sorpresa total), entonces la hipótesis se hace falsa para siempre.
+%
+Le ocurre lo mismo que a las especies, de la extinción no se vuelve.
+
+
+% Parrafo
+
+Así como la evaluación de las hipótesis en probabilidad se hace a través de la secuencias de predicciones, la selección de las formas de vida en evolución también sigue un proceso de naturaleza multiplicativa, por secuencia de tasas de supervivencia y reproducción.
+%
+De hecho, el modelo estándar de evolución, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, es estructuralmente equivalente al teorema de Bayes, lo que llevó a autores reconocidos en ambas áreas a proponer el isomorfismo entre las teoría de la evolución y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
+%
+\begin{equation*}
+\overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporción}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos},  \Big|  \hfrac{\text{Hipótesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hipótesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporción}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporción}}{\text{\scriptsize sobreviviente}}}}
+\end{equation*}
+%
+Debido a que en los procesos multiplicativos los impactos de las pérdidas son más fuertes que los de las ganancias (por ejemplo, un único cero en la secuencia produce una extinción irreversible) veremos que existe una ventaja a favor de las variantes que reducen las fluctuaciones (sección ``\nameref{sec:propiedades_funcion_costo}''): por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
+%
+Durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema.
+%
+En la siguiente sección veremos que no existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
+
+% Parrafo
+
+\section{Propiedades de la función de costo epistémico-evolutiva} \label{sec:propiedades_funcion_costo}
+Desde su origen, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
+%
+Para ver por qué, veamos qué ocurre con un proceso multiplicativo.
+%
+Por ejemplo, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporción $b_c = b$ a Cara y $b_s = 1 - b$ a Seca (apostar solo un parte de los recursos puede mostrarse que tiene una solución equivalente).
+%
+Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$ después de una Cara y una Seca es el producto de nuestros resultados.
+%
+ \begin{equation*}
+\begin{split}
+\omega_2(b) & = \underbrace{\omega_0 \, \overbrace{b \,  Q_c}^{\text{Cara}}}_{\omega_1(b)} \, \overbrace{(1-b) \, Q_s}^{\text{Seca}}
+\end{split}
+\end{equation*}
+%
+Las apuestas son entonces procesos multiplicativos.
+%
+Vamos a buscar las estrategias que maximizan la tasa de crecimiento de los recursos.
+
+\subsection{Propiedad epistémica.} \label{sec:propiedad_epistemica}
+Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
+%
+  \begin{equation}
+\begin{split}
+& \frac{\omega_T(b)}{\omega_T(d)} = \frac{\omega_0 \,  (b \,  \cancel{Q_c})^{n_c}  \,  ((1-b) \, \bcancel{Q_s})^{n_s}}{\omega_0 \,   (d \,  \cancel{Q_c})^{n_c}  \,  ((1-d) \, \bcancel{Q_s})^{n_s}}
+\end{split}
+\end{equation}
+%
+encontramos que el valor relativo de una apuesta respecto de la otra es independiente de los pagos $Q_c$ y $Q_s$ que ofrece la casa de apuestas!
+%
+Sí, lo que estamos diciendo es que podemos decidir la apuesta sin conocer los pagos.
+%
+En general, queremos la apuesta $b$ que maximiza la tasa de crecimiento $r(b)$,
+%
+\begin{figure}[ht!]
+ \centering
+ \begin{subfigure}[b]{0.50\textwidth}
+  \begin{equation*}
+\begin{split}
+  \omega_0 \, r(b)^T &= \omega_0 \, (b \,  Q_c)^{n_c}  \,  ((1-b) \, Q_s)^{n_s}   \\
+  r(b) &=(b \,  Q_c)^{n_c/T}  \,  ((1-b) \, Q_s)^{n_s/T}
+\end{split}
+\end{equation*}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.49\textwidth}
+  \begin{equation}
+\begin{split}
+\overbrace{\underset{b}{\text{arg max}} \phantom{T} r(b)}^{\hfrac{\text{\scriptsize \En{Optimal}\Es{Apuesta}}}{\text{\scriptsize \En{bet}\Es{óptima}}}} \ = \overbrace{n_c/T}^{\hfrac{\text{\scriptsize \En{Observed}\Es{Frecuencia}}}{\text{\scriptsize \En{frequency}\Es{observada}}}}
+\end{split}
+\end{equation}
+ \end{subfigure}
+\end{figure}
+
+% Parrafo
+
+\noindent
+En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta óptima  $b^{*}$ es la que divide los recursos en la misma proporción que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia típica $\lim_{T \rightarrow \infty} n_c/T = p$.
+%
+Ésta es la \emph{propiedad epistémica} que le permite a la teoría de la probabilidad adquirir conocimiento sobre el mundo, pues al evaluar las hipótesis individuales en base al producto de las sorpresas se produce una ventaja a favor de las hipótesis que diversifican la predicción en la misma proporción que la frecuencia observada.
+%
+Del mismo modo, el proceso de selección evolutiva por secuencias de tasas de crecimiento y reproducción, produce la emergencia de formas de vida que reducen las fluctuaciones a través de la diversificación individual.
+
+% Parrafo
+
+Por ejemplo, supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas.
+%
+Si sabemos que la moneda es no sesgada, lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
+% bien con estos parámetros el valor esperado es positivo, $( Q_c \, b \, p + Q_s \, (1-b) \, (1-p)) = 1.05$,
+En este caso, sin embargo, no podemos ganar este juego individualmente debido a que las ganancias de 50\% con Caras ($1.5 = Q_c \, b$) no alcanza para compensar las caídas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b)$).
+%
+Incluso con el comportamiento óptimo, individualmente las trayectorias de los recursos caen a una tasa cercana a $5\%$, pues $r(b) \approx 0.95$ (figura~\ref{fig:coop}).
+
+% Parrafo
+
+\subsection{Propiedad evolutiva.} \label{sec:propiedad_evolutiva}
+A pesar de que la diversificación individual no es suficiente para ganar este juego, la vida encontró estrategias para florecer en casos como estos, reduciendo aun más las fluctuaciones individuales mediante cooperación~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
+%
+Por ejemplo, si los individuos de un grupo de tamaño $N$ redistribuyen los recursos en partes iguales luego de apostar, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
+%
+\begin{equation}
+\begin{split}
+\omega_{T+1}(N,b) & = \frac{1}{N} \overbrace{\bigg( m_c \, \omega_{T}(N,b) \, Q_c  \, b + m_s \, \omega_{T}(N,b) \, Q_s  \, (1-b)  \bigg)}^{\hfrac{\text{\footnotesize \phantom{g}\En{Sum of all resources}\Es{Suma de todos los recursos}\phantom{g} }}{\text{\scriptsize (\En{with}\Es{con} $m_s$ \En{Heads}\Es{Caras} y $m_s$ \En{Tails}\Es{Secas})}}} \\
+& =\omega_T(N,b) \, \underbrace{\left( \frac{m_c}{N}   Q_c  \, b + \frac{m_s}{N} \, Q_s  \, (1-b)  \right)}_{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Tasa de crecimiento}  \phantom{Tg}}} \\[0.3cm]
+\end{split}
+\end{equation}
+%
+Y la tasa de crecimiento de los individuos pasa a ser el promedio de todos los resultados del grupo.
+%
+La reducción de fluctuaciones que genera este simple acto de intercambio de recursos, hace que la tasa de crecimiento de todos los individuos se vuelve positiva.
+%
+Ésta es la \emph{propiedad evolutiva}.
+%
+A través de la cooperación podemos reducir aun más las fluctuaciones, aumentando así la tasa de crecimiento de todos sus miembros.
+%
+\begin{figure}[ht!]
+\vspace{-0.1cm}
+\centering
+ \begin{subfigure}[c]{0.50\textwidth}
+ \centering
+  \begin{tabular}{|l|c|c|c|c|c|}
+     \hline
+         & {\small $\omega_0$} & {\small \  $\Delta$}  & {\small \, $\omega_1(b)$ } & {\small \  $\Delta$}  & {\small \,  $\omega_2(b)$ }  \\ \hline \hline
+        A no-coop& $1$ & $1.5$ &  $1.5$ & $0.6$ & $\bm{0.9}$ \\ \hline
+        B no-coop & $1$ & $0.6$ & $0.6$ & $1.5$ & $\bm{0.9}$ \\ \hline\hline
+        A coop & $1$ & $1.5$ & $1.05$ & $0.6$ & $\bm{1.1}$ \\ \hline
+        B coop & $1$ & $0.6$ & $1.05$ & $1.5$ & $\bm{1.1}$\\ \hline
+\end{tabular}
+ \end{subfigure}
+ \begin{subfigure}[c]{0.45\textwidth}
+\begin{flushright}
+ \includegraphics[width=0.9\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
+ \end{flushright}
+ \end{subfigure}
+ \caption{
+ La cooperación le permite a los individuos alcanzar tasas de crecimiento que jamás obtendrían solos.
+ %
+ En la tabla (izquierda) $\Delta$ representa el cambio en los recursos que sufren los individuos de forma aleatoria, con $b=p=0.5$.
+ %
+ En la figura (derecha), las curvas de colores son las trayectoria de los recursos jugando individualmente, y la recta negra es la trayectoria de los recursos individuales jugando en grupos cooperativos grandes.
+ }
+ \label{fig:coop}
+ \vspace{-0.1cm}
+ \end{figure}
+
+% Parrafo
+
+\subsection{Propiedad de especiación.}
+Si bien jugando individualmente nos veíamos obligados a apostar ignorando los pagos que ofrece la casa de apuestas, una vez que emerge la cooperación deja de ser necesario reducir las fluctuaciones por diversificación individual y aparece una ventaja a favor de la especialización cooperativa, que permite sacar provecho de la mejor opción disponible, aumentando aún más la tasa de crecimiento de todos los individuos del grupo cooperativo.
+%
+\begin{figure}[ht!]
+\centering
+  \begin{subfigure}[c]{0.45\textwidth}
+\begin{flushright}
+ \includegraphics[width=1\linewidth]{figures/tasa-temporal2.pdf}
+ \end{flushright}
+ \end{subfigure}
+ \caption{
+Tasa de crecimiento para grupos de tamaño 1 a 5 (colores), para todas las posibles apuestas (eje x). A medida que aumenta el tamaño del grupo, la apuesta óptima se va especializando hacia la opción mejor paga por la casa de apuesta.
+ }
+ \label{fig:esp}
+ \vspace{-0.1cm}
+ \end{figure}
+%
+A medida que el tamaño del grupo cooperativo crece, la apuesta óptima se va especializando hacia la mejor opción disponible (figura~\ref{fig:esp}).
+%
+Ésta es la \emph{propiedad de especiación}.
+%
+Cuando el tamaño del grupo tiende a infinito, la tasa de crecimiento pasa a ser la media aritmética de los posibles resultados de las apuestas.
+%
+\begin{equation}
+\lim_{N \rightarrow \infty} r(N,b) = p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)
+\end{equation}
+%
+Y la puesta óptima es apostar todo a la mejor opción, $b^* =1$.
+
+% Parrafo
+
+\subsection{Propiedad ecológica.}
+En este caso, todos los individuos están sujetos a procesos estocásticos que, si bien son independientes, tiene para todos ellos la misma probabilidad que no cambia en el tiempo.
+%
+En la naturaleza, por el contrario, estamos expuestos a variabilidades espacio-temporales, como las estaciones del año.
+%
+Para dar un ejemplo, supongamos que la moneda oscila entre dos probabilidades de que salga Cara, $p_1 = 0.2$ y $p_2 = 0.6$.
+%
+En los pasos temporales impares, la moneda tiene probabilidad $p_1$ en el hemisferio A y $p_2$ en el hemisferio B.
+%
+Y a la inversa en los pasos temporales pares.
+%
+En casos como estos la variabilidad del proceso produce una ventaja adicional en favor de los grupos con mayor heterogeneidad interna.
+%
+Ésta es la \emph{propiedad ecológica}.
+%
+Sea $h$ la proporción de individuos en el hemisferio A.
+%
+La tasa de crecimiento en un ejemplo simple, en el que el tamaño del grupo es infinito y en el que los individuos se especializan la apuesta correspondiente a la etapa del ciclo que experimentan, es
+%
+\begin{figure}[ht!]
+\vspace{0cm}
+\centering
+ \begin{subfigure}[c]{0.44\textwidth}
+ \begin{align*}
+ r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_1) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_2 \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
+ r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_2 \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_1) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
+ r(h) = & \ \overbrace{r_{1}(h)^{1/2} \ r_2(h)^{1/2}}^{\text{Tasa de crecimiento}}
+\end{align*}
+ \end{subfigure}
+ \hspace{0.2cm}
+  \begin{subfigure}[c]{0.44\textwidth}
+\begin{flushright}
+ \includegraphics[width=1\linewidth]{figures/pdf/diversificacionCooperativa.pdf}
+ \end{flushright}
+ \end{subfigure}
+ \caption{
+ En la figura vemos la tasa de crecimiento de los individuos en función de la proporción de individuos en el hemisferio A. La tasa de crecimiento se maximiza cuando la heterogeneidad entre individuos es máxima.
+ }
+ \label{fig:divCoop}
+ \vspace{-0.1cm}
+ \end{figure}
+
+
+Esta tasa de crecimiento se maximiza cuando la distribución entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
+%
+
+\subsection{Propiedad mayor y menor.}
+Durante mucho tiempo se creyó que para que la cooperación evolucione debía resolverse primero lo que se conoce como ``dilema del prisionero''.
+%
+En él, cooperar implica un costo $c$ para que el otro individuo reciba un beneficio de valor $v$, con $v > c$, y desertar significa negarse a cooperar y no conlleva ningún costo (ver matriz en figura~\ref{fig:desert}).
+%
+ \begin{equation*}
+  \bordermatrix{ _{\text{\tiny Focal}}{\rotatebox{45}{\text{$\mid$}}}^{\text{\tiny \En{Other}\Es{Otro}}} \hspace{-0.5cm} & C & D \cr
+      \ \ \   C & v-c & -c \cr
+      \ \ \ D & v & 0 }
+\end{equation*}
+%
+Este ejemplo es una dilema debido a que individualmente desertar siempre es mejor que cooperar, a pesar de que la mutua cooperación sea mejor que la mutua deserción.
+
+% Parrafo
+
+En nuestro ejemplo de las apuestas, habría una tentación por desertar: dejar de aportar al fondo común mientras se sigue recibiendo la cuota del fondo común.
+%
+Si la evolución estuviera sujeta a un dilema del prisionero, entonces desertar en grupos enteramente cooperativos debería ofrecer al individuo una tasa de crecimiento más alta que cooperar.
+%
+En la figura~\ref{fig:desert} mostramos la tasa de crecimiento de individuos en grupos cooperativos de tamaño 100 con 0, 1 y 2 desertores.
+%
+\begin{figure}[ht!]
+\centering
+ \begin{subfigure}[c]{0.45\textwidth} \centering
+  \includegraphics[width=\linewidth]{figures/pdf/ergodicity_desertion.pdf}
+  \end{subfigure}
+ \caption{
+Tasa de crecimiento de los individuos dentro de grupos cooperativos (colores) con 0, 1 y 2 desertores. Las curvas con mayor variabilidad son los individuos desertores, el resto son los cooperadores.}
+ \label{fig:desert}
+ \end{figure}
+ %
+Allí se puede observar que los desertores tienen una tasa de crecimiento menor que la tenían cuando cooperaban (\emph{propiedad mayor}), a pesar de que inicialmente obtienen un beneficio circunstancial (\emph{propiedad menor}).
+%
+El primer agente que decide desertar unilateralmente (grupo azul con 1 desertor) reduce su tasa de crecimiento y sus recursos están por debajo de los recursos que tenía previamente dentro del grupo enteramente cooperador (grupo verde con 0 desertores).
+%
+La reducción de recursos le ocurre incluso al segundo individuo que cambia de comportamiento cooperador a desertor.
+%
+Es decir, los bienes comunes no tiene la estructura del dilema del prisionero como habitualmente se afirma en la literatura.
+%
+Bajo procesos de selección multiplicativa no se puede sacar provecho mediante la deserción porque, al aumentar las fluctuaciones los cooperadores de quienes se depende, aumenta también las propias fluctuaciones afectando negativamente la propia tasa de crecimiento de largo plazo.
+%
+En todos los casos, la tasa de crecimiento se maximiza mediante mutua cooperación.
+
+
+\section{Consecuencias de las propiedades epistémico-evolutivas}
+
+Las propiedades de la función de costo epistémico-evolutiva no son solo teóricas, tiene consecuencia concretas para la vida y el conocimiento.
+
+\subsection{Transiciones evolutivas mayores}
+
+En el último tercio de la historia del Universo, hace aproximadamente 4000 millones de años, apareció en la tierra una organización de la materia capaz de auto-replicarse.
+%
+El crecimiento de estos linajes siguieron procesos multiplicativos y ruidosos: secuencias de tasas de supervivencia y reproducción.
+%
+Las mutaciones producidas durante la replicación diversificaron las formas de vida, y las tasas de crecimiento de las diferentes estrategias favorecieron a aquellas mejor adaptadas al ambiente.
+%
+Desde aquel momento hasta ahora la vida adquirió una extraordinaria complejidad.
+
+%
+
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.65\textwidth}
+    \includegraphics[width=\linewidth]{static/biomassBarOn.png}
+    \end{subfigure}
+    \caption{
+	Distribución de la biomasa en la Tierra estimada por Bar-On et al.~\cite{barOn2018-biomass}.
+    }
+    \label{fig:biomass}
+\end{figure}
+
+% Parrafo
+
+La complejidad actual de la vida es consecuencia de una serie de \emph{transiciones evolutivas mayores} en las que entidades capaces de autorreplicación luego de la transición pasan a formar parte de unidades cooperativas indisolubles~\cite{maynardSmith1995-majorTransitions, szathmary1995-evolutionaryTransitions, szathmary2015-evolutionaryTransitions} (figura \ref{fig:trans}).
+%
+De hecho, nuestra propia vida depende de varios niveles de cooperación con especialización heterogénea, sin los cuales no somos capaces de sobrevivir: la unión de nuestras células con las mitocondrias y la emergencia de la diferenciación celular; nuestro organismo multicelular y la emergencia de los órganos; nuestra sociedad y la emergencia de los roles y grupos; la coexistencia entre especies y la emergencia de los ecosistemas.
+%
+%La simbiosis entre entre plantas y hongos micorrízicos arbusculares (AM) es el mutualismo (cooperación entre especies) más extendida del mundo.
+% %
+% La gran mayoría de las plantas terrestres forman estas interacciones.
+% %
+% Las plantas suministran carbohidratos esenciales para la supervivencia y el crecimiento de los hongos AM \cite{parniske2008-arbuscularMycorrhiza}.
+% %
+% Y los hongos AM proporcionan a sus plantas hospedadoras nutrientes minerales, como fósforo o nitrógeno, y otros beneficios como protección contra el estrés biótico (patógenos y herbívoros) y abiótico (por ejemplo, sequía)~\cite{smith2010-arbuscularMycorrhizas}.
+% %
+% % Parrafo
+% Esta asociación evolucionó mucho antes que los mutualismos animales, y habría sido una pieza clave para el poblamiento de las plantas en la tierra.
+% %
+% A diferencia de las economías humanas, que dependen de la cognición para tomar decisiones, los comerciantes de este mercado subterráneo regatean, piden prestado y hacen trampas, todo ello sin pensar.
+% %
+% En esta relación, ambas partes interactúan con múltiples socios y la cooperación se estabiliza en ambas direcciones a través de recompensas mutuas por servicios de mayor calidad~\cite{kiers2011-reciprocalRewards}.
+%
+\begin{figure}[ht!]
+\centering
+    \centering
+  \scalebox{1}{
+  \tikz{
+      \node[accion] (i1) {} ;
+      \node[accion, yshift=0.6cm, xshift=0.4cm] (i2) {} ;
+      \node[accion, yshift=0.6cm, xshift=-0.4cm] (i3) {} ;
+      \node[const, yshift=0.3cm, xshift=0.4cm] (i) {};
+
+      \node[const, yshift=-0.65cm] (ni) {$\hfrac{\text{Individuos}}{\text{solitarios}}$};
+
+      \node[const, yshift=0.65cm, xshift=1.5cm] (m1) {$\hfrac{\text{Formación}}{\text{de grupos}}$};
+
+      \node[const, right=of i, xshift=2cm] (c) {};
+      \node[accion, below=of c, yshift=0.35cm, xshift=0.4cm] (c1) {} ;
+      \node[accion, above=of c, yshift=-0.35cm, xshift=0.6cm] (c2) {} ;
+      \node[accion, above=of c, yshift=-0.35cm, xshift=0.2cm] (c3) {} ;
+      \node[const, right=of c, xshift=0.6cm] (cc) {};
+
+      \node[const, right=of ni, xshift=1.3cm] (nc) {$\hfrac{\text{Grupos}}{\text{cooperativos}}$};
+
+      \node[const, right=of m1, xshift=1.2cm] (m2) {$\hfrac{\text{Transición}}{\text{mayor}}$};
+
+      \node[const, right=of cc, xshift=2cm] (t) {};
+      \node[accion, below=of t, yshift=0.35cm, xshift=0.4cm] (t1) {} ;
+      \node[accion, above=of t, yshift=-0.35cm, xshift=0.6cm] (t2) {} ;
+      \node[accion, above=of t, yshift=-0.35cm, xshift=0.2cm] (t3) {} ;
+
+      \node[const, right=of nc, xshift=1.1cm] (nt) {$\hfrac{\text{Unidad de}}{\text{nivel superior}}$};
+
+      \edge {i} {c};
+      \edge {cc} {t};
+
+      \plate {transition} {(t1)(t2)(t3)} {}; %
+      }
+  }
+
+  \vspace{0.2cm}
+
+ \begin{subfigure}[b]{0.25\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/cloroplastos.jpg}
+  \caption*{\En{Eukaryotic cells}\Es{Células eucariota}}
+  \end{subfigure}
+ \begin{subfigure}[b]{0.23\textwidth} \centering
+  \includegraphics[width=\linewidth]{static/fotosintesis.jpg}
+  \caption*{\En{Organisms}\Es{Organismos}}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.235\textwidth} \centering
+ \includegraphics[width=\linewidth]{static/hormigas2.jpg}
+  \caption*{\En{Societies}\Es{Sociedades}}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.235\textwidth} \centering
+ \includegraphics[width=\linewidth]{static/tsimane2.jpg}
+  \caption*{\En{Ecosystems}\Es{Ecosistemas}}
+ \end{subfigure}
+ \caption{
+Esquema de las transiciones evolutivas mayores (arriba) y ejemplos de transiciones evolutivas mayores (abajo).
+ }
+ \label{fig:trans}
+ \vspace{-0.3cm}
+ \end{figure}
+¿Cómo se explica esta tendencia de la vida a favor de la diversificación y la especialización heterogénea cooperativa?
+
+% Parrafo
+
+La \emph{propiedad mayor} nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones evolutivas mayores} a lo largo de la historia de la vida.
+%
+En la sección anterior hemos visto que en los procesos de selección epistémico-evolutivos existe una ventaja a favor de las variantes que reducen las fluctuaciones por diversificación o por especialización heterogénea cooperativa.
+%
+Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), a largo plazo afectan negativamente su propia tasa de crecimiento debido a que su propio comportamiento aumenta las fluctuaciones de los cooperadores de quienes dependen, aumentando al así sus propias fluctuaciones (\emph{propiedad mayor}).
+
+% Parrafo
+
+\subsection{Transiciones epistémicas mayores}
+
+% Pero también permite explicar la emergencia de \emph{transiciones epistémicas mayores} en la historia del conocimiento, en las que hipótesis individuales se agregan para formar hipótesis de nivel superior a través del intercambio de conocimientos.
+% %
+% Por otro lado, la propiedad menor nos ofrece un argumento para explicar la ventaja circunstancial que las variantes desertoras pueden obtener individualmente en el corto plazo y las crisis que su emergencia produce a nivel global en el largo plazo.
+%
+%
+% De forma similar, la propiedad mayor nos ofrece un argumento para explicar la emergencia permanente de las \emph{transiciones epistémicas mayores} en la historia del conocimiento.
+%
+
+De forma similar, la evaluación de hipótesis en la teoría de la probabilidad también produce la emergencia de unidades cooperativas de nivel superior: las hipótesis individuales forman variables, las variables forman modelos causales y los sistemas de modelos causales forman teorías.
+%
+Esto ocurre gracias a que las hipótesis de nivel superior reducen las fluctuaciones realizando las predicciones con el aporte de todas las hipótesis de nivel inferior que la componen.
+%
+Por la regla de la suma, la predicción que hace un modelo del próximo dato es
+%
+\begin{equation*}
+\begin{split}
+P(d_{n+1}|d_1 \dots d_n, \text{Model\Es{o}}) = \sum^{\text{\En{Hypothesis}\Es{Hipótesis}}}_h P(d_{n+1}| d_1 \dots d_n, h, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
+%\\ P(d_{n+1}|d_1 \dots d_n, \text{\En{Theory}\Es{Teoría}}) = \sum^{\text{\En{Models}\Es{Modelos}}}_m P(d_{n+1}| h, d_1 \dots d_n, \text{Model\Es{o}}) P(h|d_1 \dots d_n, \text{Model\Es{o}})
+\end{split}
+\end{equation*}
+%
+Al realizar la predicción con la contribución de todas las hipótesis de nivel inferior, los modelos reducen las posibilidades de introducir valores extremos (un cero) en los procesos de selección multiplicativo a los que están sujetos (ecuación \ref{eq:funcion_de_costo}), produciendo mejores resultados que los que se obtendrían con una de ellas individualmente.
+
+% Parrafo
+
+La emergencia de la cultural en evolución puede ser vista como una \emph{transición epistémica mayor}.
+%
+En la historia del ser humano la cooperación epistémica, por transmisión de conocimiento entre individuos, tuvo un efecto positivo radical para nuestra especie: antes estuvimos en grave peligro de extinción, luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra.
+%
+Veremos que los eventos históricos en los que se produjeron pérdidas masivas de diversidad cultural estuvieron seguidos por graves crisis socio-ecológicas.
+%
+Actualmente, a pesar de todos los avances, la ciencia metropolitana sigue siendo incapaz de compensar la masiva pérdida de los conocimientos milenarios producida durante la colonial-modernidad, y la crisis ecológica actual no deja de profundizarse.
+%
+En definitiva, la ventaja a favor de la diversidad y la cooperación no es solo teórica, es fundamentalmente práctica.
+
+
+\section{Conclusiones}
+
+Los procesos evolutivos de selección de las formas de vida, por secuencia de tasas de supervivencia y reproducción, son como los procesos de selección de las hipótesis en la teoría de la probabilidad, por secuencias de predicciones, de naturaleza multiplicativa.
+%
+Debido a que en ellos los impactos de las pérdidas son más fuertes que los de las ganancias (un cero en la secuencia produce una extinción irreversible), las variantes que florecen son hipótesis o formas de vida que reducen las fluctuaciones por diversificación individual (\emph{propiedad epistémica}), por cooperación (\emph{propiedad evolutiva}), por especialización cooperativa (\emph{propiedad de especiación}), y por heterogeneidad cooperativa (\emph{propiedad ecológica}).
+%
+Durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema.
+%
+No existe tal dilema debido a que en los procesos de selección multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
+%
+Si bien ciertas coyunturas pueden favorecer a la deserción en el corto plazo (\emph{propiedad menor}), la emergencia de unidades cooperativas de nivel superior es un fenómeno permanente en la historia de la vida (transiciones evolutivas mayores).
+%
+La evidencia es nuestra propia vida, que depende de al menos cuatro de estos niveles para sobrevivir: la célula con la mitocondria, el organismo multicelular, el sistema social y la comunidad ecológica.
+%
+Además, la evaluación de hipótesis en probabilidad también favorece la agregación: conjunto de hipótesis individuales forman variables, relaciones entre variables forman modelos causales y sistemas de modelos causales forman teorías.
+%
+En la historia del ser humano, la transición cultural tuvo efectos positivos evidentes: antes de la cooperación epistémica (trasmisión del conocimiento) estuvimos en grave peligro de extinción; luego fuimos capaces de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre.
+%
+A largo plazo solo sobreviven las variantes capaces de reducir las fluctuaciones por diversificación individual y por especialización heterogénea cooperativa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Conclusiones y trabajo futuro}
 
 % Parrafo
@@ -7276,7 +7970,7 @@ Criticar los universalimos parece ser pol\'iticamente correcto en un contexto do
 %
 El problema es que si naufragara la posibilidad de alcanzar acuerdos intersubjetivos v\'alidos universalmente, naufragar\'ian incluso la posibilidad de juzgar los cr\'imenes m\'as atroces de la humanidad, incluyendo la Era de genocidios de la colonial-modernidad.
 %
-Esta idea queda bien resumida en la siguiente tira c\'omica~\cite{fig:sidewalk_bubblegum_1997}.
+Esta idea queda bien resumida en la siguiente tira c\'omica~\ref{fig:sidewalk_bubblegum_1997}.
 
 % Parrafo
 
@@ -7350,7 +8044,7 @@ Sin dejar de tener en cuenta las particularidades que suponen el estudio de comu
 
 % Parrafo
 
-Este plann qued\'o enmarcdo inicialmente dentro del \'area denominada como Ciencias Sociales Computacionales~\cite{lazer2009-computationalSocialScience}, que en la actualidad ya alcanz\'o reconocimiento en los gigantes tecnol\'ogicos relacionados a la industria del software.
+Este plann qued\'o enmarcdo inicialmente dentro del \'area denominada como Ciencias Sociales Computacionales~\cite{Lazer2009}, que en la actualidad ya alcanz\'o reconocimiento en los gigantes tecnol\'ogicos relacionados a la industria del software.
 %
 Sin embargo, a medida que fue avanzando su desarrollo, el enfoque bayesiano de la probabilidad fue adquiriendo cada vez m\'as protagon\'ismo
 
@@ -7591,7 +8285,7 @@ Pero adem\'as, nos ofreci\'o el esquema emisor-receptor de los sistemas comunica
 
 La estructura de todo dato emp\'irico se constituye de una serie de elementos.
 %
-Y hay 3 elementos sobre los cuales podemos intervenir y modificar para mejorar la calidad de los datos: las dimensiones observbales, los procedimientos de observaciones y las hip\'otesis con las que realizamos la inferencia~\cite{samaja1999-epistemologiaYMetodologia}.
+Y hay 3 elementos sobre los cuales podemos intervenir y modificar para mejorar la calidad de los datos: las dimensiones observbales, los procedimientos de observaciones y las hip\'otesis con las que realizamos la inferencia~\cite{Samaja1999}.
 %
 De hecho, en la secci\'on \emph{\nameref{sec:tasa_de_informacion}} evaluamos dos sistemas de comunicaci\'on alternativos (o dos estructuras de datos alternativas), uno que utiliza el modelo causal correcto para decodificar los mensajes y otro un modelo causal incorrecto.
 %
@@ -7679,7 +8373,7 @@ De hecho, el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dy
 
 % Parrafo
 
-En el cap\'itulo 1 (secci\'on \ref{sec:propiedades_funcion_costo}) hemos visto que debido a que en los procesos multiplicativos los impactos de las p\'erdidas son m\'as fuertes que los de las ganancias (por ejemplo, un \'unico cero en la secuencia produce una extinci\'on irreversible) existe una ventaja a favor de las variantes que reducen las fluctuaciones: por diversificaci\'on individual (\emph{propiedad epist\'emica}), por cooperaci\'on (\emph{propiedad evolutiva}), por especializaci\'on cooperativa (\emph{propiedad de especiaci\'on}), y por heterogeneidad cooperativa (\emph{propiedad ecol\'ogica}).
+En el cap\'itulo 6 (secci\'on \ref{sec:propiedades_funcion_costo}) hemos visto que debido a que en los procesos multiplicativos los impactos de las p\'erdidas son m\'as fuertes que los de las ganancias (por ejemplo, un \'unico cero en la secuencia produce una extinci\'on irreversible) existe una ventaja a favor de las variantes que reducen las fluctuaciones: por diversificaci\'on individual (\emph{propiedad epist\'emica}), por cooperaci\'on (\emph{propiedad evolutiva}), por especializaci\'on cooperativa (\emph{propiedad de especiaci\'on}), y por heterogeneidad cooperativa (\emph{propiedad ecol\'ogica}).
 %
 Por un lado, la \emph{propiedad epist\'emica} (vista en la secci\'on~\ref{sec:propiedad_epistemica}) nos muestra qu\'e la regla del producto de la teor\'ia de la probabilidad es capaz de adquirir conocimiento del mundo gracias a que al evaluar las hip\'otesis individuales en base al producto de las sorpresas se produce una ventaja a favor de las hip\'otesis que diversifican la predicci\'on en la misma proporci\'on que la frecuencia observada.
 %
@@ -7738,7 +8432,7 @@ Por eso decimos que el conocimiento emerge como la vida.
 
 % Parrafo
 
-Si consideramos la biomasa como indicador del grado de inteligencia que tienen las formas de vida, el $82.5$\% se lo llevan las plantas, el $12.8$\% las bacterias y el $2,2$\% los hongos (fuente~\ref{barOn2018}).
+Si consideramos la biomasa como indicador del grado de inteligencia que tienen las formas de vida, el $82.5$\% se lo llevan las plantas, el $12.8$\% las bacterias y el $2,2$\% los hongos (fuente~\cite{barOn2018-biomass}).
 %
 Si bien el crecimiento poblacional del ser humano suele clasificarse de extraordinario, nuestra biomasa representa actualmente tan solo el $0.01$\% de la biomasa total y el $2.5$\% de la biomasa animal, y las proyecciones indican que estamos a menos de un siglo del estancamiento.
 %
@@ -7917,7 +8611,7 @@ Para explorar la estructura de la comunidad bayesiana, realizamos con la colabor
 La versi\'on interactiva subida a la web (\texttt{http://bayesdelsur.com.ar/comunidad.html}) permite mover nodos, y desplegar los datos de los autores (nombre y afiliaciones) y de los art\'iculos (t\'itulo, abstract, journal y a\~no).
 
 % Parrafo
-
+\clearpage
 \begin{figure}[!ht]
 \noindent \centering \Wider[1.3cm]{
   \begin{subfigure}[b]{0.32\textwidth}
@@ -7998,7 +8692,7 @@ El impacto de estas tares podr\'a ser medido en los pr\'oximos a\~nos, por ejemp
 
 \subsection{El Congreso Bayesiano Plurinacional 2023}
 
-\todo[inline]{Desde la evaluaci\'on de las propuestas, la renuncia del grupo de modelado, los financiamientos perdidos, el llamado telef\'onico a cada una de las personas que vino, hasta la fiesta en Santiago}
+%\todo[inline]{Desde la evaluaci\'on de las propuestas, la renuncia del grupo de modelado, los financiamientos perdidos, el llamado telef\'onico a cada una de las personas que vino, hasta la fiesta en Santiago}
 
 El congreso se realiz\'o en colaboraci\'on con la Secretar\'ia de Ciencia y Tecnolog\'ia de Santiago del Estero los d\'ias 4, 5 y 6 de agosto del 2023.
 %
@@ -8008,7 +8702,7 @@ La diversidad de regiones tambi\'en: Chile, Paraguay, Uruguay, Colombia, Hondura
 
 % Parrafo
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
   \begin{subfigure}[b]{1\textwidth}
   \includegraphics[page=1,width=\textwidth]{static/fotoGeneral.jpg}
@@ -8233,7 +8927,7 @@ Durante el congreso nos visit\'o el gobernador de la provincia de Santiago del E
 %
 En la foto~\ref{fig:gerardo} vemos, de izquierda a derecha, a Edmundo Vizgarra, Sergio Michael Davis Irarr\'azabal, el gobernador Gerardo Zamora, Gustavo Landfried, Adri\'an Suarez, Ricardo Montenegro, Gimena Serrano, Mar\'ia Della Aringa.
 %
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
   \begin{subfigure}[b]{0.8\textwidth}
   \includegraphics[page=1,width=\textwidth]{static/Gerardo.jpeg}
@@ -8320,7 +9014,7 @@ En las \'ultimas d\'ecadas se fueron desarrollando t\'ecnicas que permiten aprov
 %
 A este enfoque tambi\'en se lo conoce como ``aprendizaje autom\'atico basado en modelos''~\cite{Bishop2013, Bishop2006}.
 %
-En ella se desarrollaron los m\'etodos gr\'aficos~\cite{pearl1986-beliefNetworks, kschischang2001-factorGraphsAndTheSumProductAlgorithm, koller2009-PGM} que permiten: (1) especificar los argumentos causales a trav\'es de redes causales intuitivas para personas sin formaci\'on matem\'atica , que codifican las consecuencias que las eventuales intervenciones sobre la naturaleza produce sobre la estructura causal; (2) realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal, en los casos que podemos resolver la matem\'atica; (3) y delegar la inferencia a los lenguajes de programaci\'on probabil\'istica a trav\'es de una sintaxis que nos permite traducir directamente la especificaci\'on gr\'afica del modelo que hicimos en (1).
+En ella se desarrollaron los m\'etodos gr\'aficos~\cite{Pearl1986, Kschischang2001, koller2009-PGM} que permiten: (1) especificar los argumentos causales a trav\'es de redes causales intuitivas para personas sin formaci\'on matem\'atica , que codifican las consecuencias que las eventuales intervenciones sobre la naturaleza produce sobre la estructura causal; (2) realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal, en los casos que podemos resolver la matem\'atica; (3) y delegar la inferencia a los lenguajes de programaci\'on probabil\'istica a trav\'es de una sintaxis que nos permite traducir directamente la especificaci\'on gr\'afica del modelo que hicimos en (1).
 
 % Parrafo
 
@@ -8393,7 +9087,7 @@ Y la especificaci\'on probabil\'istica de los argumentos causales  le va a permi
 
 
 
-\subsection{Hacia la Escuela Bayesiana Plurinacional}
+\subsection{Hacia la Escuela Bayesiana Plurinacional} \label{sec:volverAlFuturo}
 
 
 
@@ -8408,7 +9102,7 @@ Y la especificaci\'on probabil\'istica de los argumentos causales  le va a permi
 
 
 
-% \section{Verdades relevantes} \label{sec:volverAlFuturo}
+% \section{Verdades relevantes}
 %
 % Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computaci\'on y encontrar all\'i las respuestas m\'as simples y concretas a las reflexiones epistemol\'ogicas y metodol\'ogicas m\'as trascendentales desarrolladas durante mi formaci\'on en ciencias antropol\'ogicas, no solo explica por qu\'e que ella es la principal herramienta qu\'e encontr\'e en el doctorado en computaci\'on.
 %
@@ -8922,7 +9616,7 @@ Con 75\% de las partidas individuales, la estimaci\'on de habilidad (Fig.~\ref{H
 A medida que contamos con menos informaci\'on del jugador fuera de su equipo (50\% y 25\% de partidas individuales), la convergencia de habilidad y de sinergia se vuelve m\'as lenta.
 En el l\'imite, cuando el jugador juega el 100\% de las partidas dentro del mismo equipo, es imposible distinguir los componentes de sinergia del de habilidad.
 Esto no es un problema nuevo.
-Al igual que el modelo \texttt{TrueSkill}, si dos jugadores juegan siempre juntos, no es posible distinguir el componente de habilidad de cada jugador (Fig.~\ref{fig:trueskill_jugador_en_equipo}).
+Al igual que el modelo \texttt{TrueSkill}, si dos jugadores juegan siempre juntos, no es posible distinguir el componente de habilidad de cada jugador.
 
 \begin{figure}[H]
 \centering
