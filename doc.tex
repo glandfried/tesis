@@ -237,7 +237,7 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 
 \vspace{6cm}
 
-\hfill  \scalebox{1.6}{Constancia, reciprocidad y paciencia.}
+\hfill  \scalebox{1.6}{El conocimiento emerge como la vida}
 
 \newpage
 
@@ -424,40 +424,106 @@ A Cristina, por haber puesto la vida por un pa\'is mejor, y en particular por ha
 
 \chapter{Introducci\'on} \label{ch:evo}
 
-En la historia del ser humano la transici\'on cultural tuvo un efecto positivo radical para nuestra especie.
-%
-Antes est\'abamos en grave peligro de extinci\'on, lo que se evidencia en la baja diversidad del genoma humano respecto incluso de los homininos m\'as cercanos~\cite{Hrdy2009}.
-%
-Pero cuando el conocimiento, que antes deb\'ia ser redescubierto individualmente, pas\'o a ser un recurso com\'un transmitido de generaci\'on en generaci\'on, comenzamos a ser capaces de ocupar todos los nichos ecol\'ogicos de la tierra como ning\'un otro vertebrado terrestre lo hab\'ia logrado antes.
-% Comentado, no me gusta y no aporta.
-% Organizados en peque\~nas sociedades n\'omadas, logramos llegar caminando de \'Africa hasta sud Am\'erica y ocupar todas las islas del Pac\'ifico.
-
-% Parafo
-
 La cultura es informaci\'on no-gen\'etica que se transmite de un individuo a otro por v\'ia comportamental.
 %
 Muchos animales son capaces de transmitir informaci\'on no-gen\'etica y producir tradiciones simples persistentes en el tiempo.
 %
-En algunas como las ballenas, delfines, primates y aves, las tradiciones pueden ser incluso bastante complejas~\cite{aplin2022-birdsCulture}.
+En algunos casos, como las ballenas, delfines, primates y aves, las tradiciones pueden ser incluso bastante complejas (ver por ejemplo \cite{aplin2022-birdsCulture}.
 %
 Sin embargo, todas ellas son manifiestamente m\'as simples que la cultura humana.
 
+% Parrafo
+
+Lo singular de nuestra especie es esta capacidad de acumular adaptaciones culturales en el tiempo, modificaciones sucesivas que van produciendo el sistema de información cultural humano, inimaginablemente complejo.
+%
+Si bien el aprendizaje humano ocurre en nuestros cuerpos, es parte de un fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
+%
+La cultura humana es la información transmitida por vía comportamental, y la sociedad humana el sistema distribuido de almacenamiento y procesamiento.
 
 % Parrafo
 
-Lo singular de nuestra especie es esta capacidad de acumular adaptaciones culturales en el tiempo, modificaciones persistentes y sucesivas que terminan por producir sistemas culturales inimaginablemente complejos.
+Comprender algunas de las relaciones que vínculan el nivel poblacional (como la dinámica y estructura de la red de intercambios de información cultural) con el nivel individual (el aprendizaje efectivo que se produce en nuestros cuerpos), ha sido la pregunta general que intentamos explorar en esta tesis.
 %
-El proceso de aprendizaje humano se convierte as\'i en un fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
+Surgen rápidamente muchos conceptos y muchas definiciones a distinguir.
 %
-Por lo tanto, los diversos sistemas de comunicaci\'on que fueron surgiendo a largo de la evoluci\'on humana impactaron directamente sobre la tasa de aprendizaje de nuestra especie y el repertorio cultural actual.
+Por ejemplo, ¿Hay una forma óptima de aprender en contextos de incertidumbre?
+%
+Este problema lo tratamos en el capítulo 2, donde discutimos: las reglas de razonamiento de las ciencias empíricas, el método de evaluación de sistemas de comunicación con la realidad, y una aplicación de interés para la tesis (los modelos de estimación de habilidad en el tiempo).
 
 % Parrafo
 
-En primer lugar, antes del surgimiento de los humanos anat\'omicamente modernos (masa cerebral actual) y de los humanos conductualmente modernos (lenguaje), surgi\'o en \'Africa una linaje emocionalmente moderno, con capacidades para el entendimiento mutuo~\cite{hrdy2020-emotionallyModern}.
+El concepto de aprendizaje tiene diferentes acepciones.
+%
+Los modelos de estimación de habilidad que se utilizan para medir el desempeño de los individuos en la industria del video juego difiere del concepto de aprendizaje que esperaríamos encontrar desde un punto de vista biológico, cognitivo o social.
+%
+En pocas palabras, los modelos utilizados en la industria del video juego (al igual que gran parte de las evaluaciones internacionales de los sistemas educativos) son instrumentos que predicen la probabilidad de éxito o fracaso.
+%
+Ya veremos, en los capítulos 2 y 4, que el modelo causal sobre el que se basan las estimaciones es una simplificación extrema de la realidad causal que cualquiera de nosotros puede imaginar de un proceso real de aprendizaje humano.
+
+% Parrafo
+
+Cuando hablamos de modelos causales nos referimos a modelos que se resuelven aplicando las reglas de la probabilidad y que cumplen con la definición probabilística de causalidad (ver definición precisa en la sección~\ref{}).
+%
+Idealmente quisiéramos tener teorías causales, o sistemas de modelos causales, que incluyan todos los elementos relevantes de la realidad causal estudiada.
+%
+Y quisiéramos además que el efecto causal se derive de la correcta evaluación de las teorías causales alternativos.
+%
+Sin embargo, en la actualidad no existe tal cosa.
+
+% Parrafo
+
+Esta tesis se destaca en particular por haber realizado la primera implementación del modelo de estimación de habilidad estado del arte en la industria del video juego, que si bien ya estaba especificado matemáticamente, no se encontraba todavía disponible como paquete en ninguno de los lenguaje de programación.
+%
+La novedad no es tanto el modelo causal de base (que se ve en detalle en el capítulo 2 y 4), el cual es tan simple que los anteriores.
+%
+La mejora que introduce proviene de integrar todos los modelos causales de base (los eventos donde ocurren los éxitos o los fracasos) en una única red causal histórica (la habilidad del pasado es una causa de la habilidad del presente).
+%
+Esto permite propagar la información por toda la red, obteniendo así estimaciones con menor incertidumbre en todas las series temporales.
+
+% Parrafo
+
+Esto da cuenta de la dificultad que existe en el campo de los estudios del aprendizaje para proponer y evaluar modelos causales capaces de integrar los diversos elementos de interés que forman parte de nuestros objetos reales de estudio.
+%
+Por ese motivo, cuando en los capítulos 3 y 5 exploramos el efecto que algunos factores sociales tienen sobre el aprendizaje de los individuos, nos vimos obligados a recurrir a diversas heurísticas estadísticas que no garantizan conclusiones definitivas.
+%
+Solo recientemente, en el trascurso del doctorado apareció quizás el primer modelo causal capaz de integrar elementos que son específicos al problema de estudio~\cite{trueskill2}.
+%
+Este modelo es una extensión de nuestra implementación, y todavía no se encuentra disponible como paquete en ningún lenguaje de programación.
+
+% Parrafo
+
+Luego de haber extendido la frontera de los modelos de estimación de habilidad disponibles en los lenguajes de programación, y haberlo utilizado para explorar casos reales, finalizamos la tesis con un análisis teórico de las propiedades de los aprendizajes epistémicos y evolutivos.
+%
+Por aprendizaje epistémico nos referimos a la actualización de creencias que se produce aplicando estrictamente las reglas de la probabilidad, y por aprendiaje evolutivo nos referimos a la selección de las formas de vida que se produce en evolución.
+%
+Durante el transcurso del doctorado, investigadores que han sido protagonistas del desarrollo de la teoría de la evolución moderna han comenzado a señalar el isomorfismo que existe entre las teor\'ia de la evoluci\'on y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin} (el modelo est\'andar de evoluci\'on conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic} es estructuralmente equivalente al teorema de Bayes~\cite{harper2009-replicatorAsInference,shalizi2009-replicatorAsInference}).
+
+% Parrafo
+
+En el capítulo 6 veremos que debido a que los procesos evolutivos de selección de las formas de vida (por secuencia de tasas de supervivencia y reproducción) son como los procesos de selección de las hipótesis en la teoría de la probabilidad (por secuencias de predicciones) ambos de naturaleza multiplicativa, se produce una ventaja a favor de las hipótesis o formas de vida que reducen las fluctuaciones por diversificación individual, por cooperación, por especialización cooperativa, y por heterogeneidad cooperativa.
+%
+Si bien durante mucho tiempo se creyó que la evolución de la cooperación estaba condicionada por un dilema (el del prisionero), en los procesos de selección multiplicativos tal dilema no existe debido a que los individuos desertores, al aumentar las fluctuaciones de los cooperadores de quienes dependen, aumentan sus propias fluctuaciones afectando negativamente su propia tasa de crecimiento de largo plazo.
+%
+Estas propiedades que se derivan de la función de costo compartida por las teorias de la probabilidad y de la evolución, nos permiten finalizar la tesis con una reflexión general respecto de la naturaleza de los aprendizajes epistémicos (de las hipótesis) y evolutivos (de la vida).
+
+
+\section{La cultura}
+
+En la historia del ser humano la transici\'on cultural tuvo un efecto positivo radical para nuestra especie.
+%
+Antes estuv\'imos en grave peligro de extinci\'on, lo que se evidencia en la baja diversidad del genoma humano respecto incluso de los homininos m\'as cercanos~\cite{Hrdy2009}.
+%
+Pero cuando el conocimiento, que antes deb\'ia ser redescubierto individualmente, pas\'o a ser un recurso com\'un transmitido de generaci\'on en generaci\'on, comenzamos a ser capaces de ocupar todos los nichos ecol\'ogicos de la tierra como ning\'un otro vertebrado terrestre lo hab\'ia logrado antes.
+%
+Debido a que la cultura es un sistema de información, a largo de la evoluci\'on humana fueron emergiendo naturalmente diversos mecanismos de comunicaci\'on, cada uno de los cuales impactaron directamente sobre la tasa de aprendizaje de nuestra especie y sobre nuestras tasas individuales de aprendizaje.
+
+% Parafo
+
+Antes del surgimiento de los humanos anat\'omicamente modernos (masa cerebral actual) y de los humanos conductualmente modernos (lenguaje), surgi\'o en \'Africa una linaje emocionalmente moderno, con capacidades para el entendimiento mutuo~\cite{hrdy2020-emotionallyModern}.
 %
 A diferencia de nuestros parientes m\'as cercanos, nuestros ancestros comenzaron a desarrollar un tipo de crianza cooperativa que favoreci\'o la selecci\'on de j\'ovenes con capacidades para comunicar y comprender las intenciones de los dem\'as~\cite{hrdy2020-emotionallyModern}.
 %
-A trav\'es de rondas repetidas de coevoluci\'on gen\'etico-cultural, se fueron desarrollando las caracter\'isticas biol\'ogicas, cognitivas y sociales que nos permitieron transmitir rasgos culturas complejos~\cite{Jones2011}.
+A trav\'es de rondas repetidas de coevoluci\'on gen\'etico-cultural, se fueron desarrollando las caracter\'isticas biol\'ogicas, cognitivas y sociales que nos permitien hoy aprender y transmitir rasgos culturas complejos a través de las generaciones~\cite{Jones2011}.
 
 %
 
@@ -465,23 +531,16 @@ Nuestra capacidad biol\'ogica para la comprensi\'on mutua y la imitaci\'on (\emp
 %
 Lo que antes deb\'ia ser redescubierto una y otra vez mediante costosa experiencia individual, ahora pod\'ia ser transmitido a la siguiente generaci\'on.
 %
-Nadie individualmente es capaz de redescubrir en un per\'iodo de vida ni siquiera los repertorios culturales de las sociedades cazadoras recolectoras consideradas m\'as simples.
+Como consecuencia, nadie individualmente es capaz de redescubrir en un per\'iodo de vida ni siquiera los repertorios culturales de las sociedades cazadoras recolectoras actuales consideradas m\'as simples.
 
 % Parrafo
 
-Una importante modificaci\'on en el sistema de intercambio de informaci\'on cultural comenz\'o a hace 10 mil a\~nos con el surgimiento independiente de la agricultura en seis regiones distintas del mundo (\'Africa subsahariana, Oriente medio, China, Ocean\'ia, Am\'erica del Norte y Am\'erica del Sur).
+Otra importante modificaci\'on en el sistema de intercambio de informaci\'on cultural comenz\'o a hace 10 mil a\~nos con el surgimiento independiente de la agricultura en seis regiones distintas del mundo (\'Africa subsahariana, Oriente medio, China, Ocean\'ia, Am\'erica del Norte y Am\'erica del Sur).
 %
 El aumento progresivo de la poblaci\'on y el surgimiento de la escritura intensificaron los procesos de acumulaci\'on cultural, haciendo de estas regiones los principales centros tecnol\'ogicos de la humanidad.
 %
 Para el a\~no 1400 el mundo florec\'ian de sociedades pr\'osperas: china llevaba 2 milenios siendo el principal centro productivo y tecnol\'ogico del mundo; en el mundo \'Arabe se comerciaban estos productos desde el oc\'eano Atl\'antico en Espa\~na, hasta el oc\'eano Pac\'ifico en las Filipinas; el oc\'eano Pac\'ifico estaba totalmente ocupado, y ya se hab\'ian producido intercambios entre Ocean\'ia y Am\'erica del Sur; y en el jard\'in de la diversidad gen\'etica y cultural humana, \'Africa subsahariana, se desarrollaba entre otras, la sociedad Bantu.
 
-% Parrafo
-
-Los seres humanos crecemos y nos desarrollamos en entornos culturales, por lo que la din\'amica de los sistemas de intercambio de informaci\'on cultural afectan directamente nuestros procesos de aprendizaje individual.
-%
-La intensificaci\'on de la interconexi\'on global a partir del uso de energ\'ias f\'osiles en el siglo 19 y el desarrollo de las comunicaciones electr\'onicas durante el siglo 20 ha tenido enormes consecuencia para el desarrollo de la ciencia moderna.
-%
-La adopci\'on de los smartphones a principios de este siglo, con dispositivos de comunicaci\'on instant\'anea, est\'a teniendo consecuencias que han desconocemos sobre nuestra capacidad de aprendizaje colectivo e individual.
 
 % Parrafo
 
@@ -497,9 +556,9 @@ De forma similar, el aislamiento de Europa occidental del sistema mundo luego de
 
 Estas observaciones sugieren que el aprendizaje humano es una propiedad poblacional.
 %
-Si bien se han propuesto muchas causas internas para explicar la prosperidad actual de Europa occidental\footnote{La ``\'etica protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de Jos\'e Luis Romero~\cite{romero1967-revolucionBurguesa}, o m\'as recientemente el ``sistema de parentesco'' de Joseph Henrich~\cite{henrich2020-weirdest}}, ninguna de ellas puede responder la paradoja de c\'omo una sociedad sumida en un proceso de involuci\'on cultural \'unico, como la feudal, pudo generar de repente el extraordinario desarrollo cient\'ifico y t\'ecnico de la modernidad.
+Si bien se han propuesto muchas causas internas para explicar la prosperidad actual de Europa occidental\footnote{La ``\'etica protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de Jos\'e Luis Romero~\cite{romero1967-revolucionBurguesa}, o m\'as recientemente el ``sistema de parentesco'' de Joseph Henrich~\cite{henrich2020-weirdest}}, ninguna de ellas puede responder la paradoja de c\'omo una sociedad como la feudal, sumida en un proceso de involuci\'on cultural \'unico, pudo generar de repente el extraordinario desarrollo cient\'ifico y t\'ecnico de la modernidad.
 %
-Nada de esto resulta extra\~no cuando se consideran los eventos globales: las enfermedades transmitidas por los exploradores feudales que eliminaron a 2/3 de la poblaci\'on americana al menos; y el giro geopol\'itico que se produce a partir de que en 1546 los exploradores feudales descubren la monta\~na de plata de Potos\'i, metal que China hab\'ia incorporado recientemente como una de sus monedas oficiales.
+Nada de esto resulta extra\~no cuando se consideran los eventos globales: las enfermedades transmitidas por los exploradores feudales que eliminaron a 2/3 de la poblaci\'on americana al menos; y el giro geopol\'itico que se produce a partir de que en 1546 los exploradores feudales descubren la monta\~na de plata de Potos\'i, metal que China hab\'ia incorporado recientemente como una de sus monedas oficiales~\cite{charlaChile}.
 
 % Parrafo
 
@@ -528,6 +587,14 @@ Son pocos los estudios que ponen a prueba estas hip\'otesis en datos del mundo r
 La raz\'on por la que es dif\'icil evaluar estas hip\'otesis es la necesidad de registrar los contactos a nivel individual, lo que suele ser dif\'icil en estudios antropol\'ogicos cl\'asicos.
 %
 Para evaluar algunas hip\'otesis relacionadas con el hecho de que el aprendizaje humano es un fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos, en esta tesis nos propusimos estudiar el efecto que las interacciones sociales (su contexto, din\'amica y estructura) tiene sobre el aprendizaje individual usando datos de comunidades virtuales.
+
+\section{Aprendizaje}
+
+Los seres humanos crecemos y nos desarrollamos en entornos culturales, por lo que la din\'amica de los sistemas de intercambio de informaci\'on cultural afectan directamente nuestros procesos de aprendizaje individual.
+%
+La intensificaci\'on de la interconexi\'on global a partir del uso de energ\'ias f\'osiles en el siglo 19 y el desarrollo de las comunicaciones electr\'onicas durante el siglo 20 ha tenido enormes consecuencia para el desarrollo de la ciencia moderna.
+%
+La adopci\'on de los smartphones a principios de este siglo, con dispositivos de comunicaci\'on instant\'anea, est\'a teniendo consecuencias que han desconocemos sobre nuestra capacidad de aprendizaje colectivo e individual.
 
 \section{Objetivos}
 
