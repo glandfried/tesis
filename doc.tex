@@ -1,7 +1,8 @@
 \documentclass[a4paper,11pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage{siunitx,letltxmacro} % \num{} \SI{}
+\usepackage[binary-units]{siunitx} % \num{} \SI{}
+\usepackage{letltxmacro}
 \LetLtxMacro{\svqty}{\qty}
 \usepackage{physics}
 \LetLtxMacro{\qty}{\svqty}
@@ -19,7 +20,6 @@
 
 \usepackage{float} % para que los gr\'aficos se queden en su lugar con [H]
 \usepackage{subcaption}
-\usepackage{wrapfig}
 \usepackage{color}
 \usepackage{colortbl} % para que funcione color en las tablas
 \usepackage{amsmath} %para escribir funci\'on partida , matrices
@@ -6215,7 +6215,7 @@ Esto sugiere que la cantidad de trabajo mejora la eficiencia relativa del paquet
 La versi\'on \texttt{R} no aumenta su tiempo de ejecuci\'on durante la convergencia, lo que pone de manifiesto el impacto que tiene la inicializaci\'on de la clase en este lenguaje.
 \textbf{Historia de la ATP:}
 %
-En la secci\'on \ref{sec:atp} analizamos una base de datos real con \num{447000} partidas.
+En la secci\'on~\ref{sec:atp} analizamos una base de datos real con \num{447000} partidas.
 %
 En este escenario realista, realizamos el an\'alisis utilizando una estaci\'on de trabajo adicional para mostrar el impacto de diferentes hardware en el tiempo de ejecuci\'on.
 %
