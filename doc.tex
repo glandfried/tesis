@@ -603,7 +603,7 @@ Estas observaciones sugieren que el aprendizaje humano es una propiedad poblacio
 %
 Si bien se han propuesto muchas causas internas para explicar la prosperidad actual de Europa occidental\footnote{La ``\'etica protestante'' de Max Weber~\cite{weber1905-eticaProtestante}, la ``mentalidad burguesa'' de Jos\'e Luis Romero~\cite{romero1967-revolucionBurguesa}, o m\'as recientemente el ``sistema de parentesco'' de Joseph Henrich~\cite{henrich2020-weirdest}}, ninguna de ellas puede responder la paradoja de c\'omo una sociedad como la feudal, sumida en un proceso de involuci\'on cultural \'unico, pudo generar de repente el extraordinario desarrollo cient\'ifico y t\'ecnico de la modernidad.
 %
-Nada de esto resulta extra\~no cuando se consideran los eventos globales: las enfermedades transmitidas por los exploradores feudales que eliminaron a 2/3 de la poblaci\'on americana al menos; y el giro geopol\'itico que se produce a partir de que en 1546 los exploradores feudales descubren la monta\~na de plata de Potos\'i, metal que China hab\'ia incorporado recientemente como una de sus monedas oficiales~\cite{charlaChile}.
+Nada de esto resulta extra\~no cuando se consideran los eventos globales: las enfermedades transmitidas por los exploradores feudales que eliminaron a 2/3 de la poblaci\'on americana al menos; y el giro geopol\'itico que se produce a partir de que en 1546 los exploradores feudales descubren la monta\~na de plata de Potos\'i, metal que China hab\'ia incorporado recientemente como una de sus monedas oficiales~\cite{dussel2017}.
 
 % Parrafo
 
@@ -6343,156 +6343,102 @@ Ahora que ofrecemos la primera implementaci\'on de TrueSkill Through Time en \te
 
 \chapter{Resultado 3. Efecto de la posici\'on en el red de intercambios en el aprendizaje.}\label{ch:topo}
 
-La cultura es una fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
+Los seres humanos crecen y se desarrollan en entornos culturales dinámicos, haciendo que el aprendizaje humano dependa en gran medida de las interacciones sociales y la transmisión cultural.
 %
-Por esta raz\'on se supone que las propiedades de estas redes tienen un afecto sobre los procesos de evoluci\'on y acumulaci\'on cultural.% y por consecuencia sobre el aprendizaje de las personas
+Aunque está ampliamente aceptado que la estructura de esas ``redes culturales'' afecta los procesos de aprendizaje social y acumulación cultural, estudios recientes han cuestionado la hipótesis de que todo lo que maximice el flujo de información cultural debería repercutir positivamente en el aprendizaje.
 %
-Algunas hip\'otesis generales han podido ser evaluadas, sin embargo poner a prueba otras m\'as espec\'ificas se ha visto obstaculizado por la necesidad de datos detallados sobre el comportamiento de todos los individuos de una comunidad en el tiempo.
+La razón por la que resulta difícil para los estudios antropológicos evaluar estas hipótesis es la falta de datos granulares sobre la interacción de todos los individuos de una comunidad humana a lo largo del tiempo.
 %
-Para explorar c\'omo la estructura de una rede de intercambios de informaci\'on afecta el aprendizaje humano, estudiamos a lo largo de 8 a\~nos la evoluci\'on de la red de jugadores de Go de una de las principales plataformas de servicio en l\'inea.
+En este trabajo estudiamos la estructura de interacciones y la evolución de las habilidades de todos los individuos de una de las comunidades virtuales de Go más importantes, a lo largo de 8 años.
 %
-Debido a que para sacar conclusiones causal de datos observacionales es necesario explicitar un modelo causal, basados en los descubrimientos consensos de la literatura sobre evoluci\'on cultural acumulativa, proponemos cuatro factores del aprendizaje humano: el ambiente, la experiencia individual, la informaci\'on cultural y la habilidad inicial.
+Dado que la tasa de aprendizaje depende de la etapa en la que se encuentran los individuos al inicio del proceso, implementamos el modelo de habilidad estado del arte para obtener estimaciones precisas a lo largo de toda la serie temporal, permitiendo comparar por separado a individuos novatos, intermedios y expertos.
 %
-Conocer la habilidades iniciales fundamental debido a que, en todos los modelos causales estructurales, la tasa de aprendizaje depende del estad\'io en el que se encuentra los individuos antes de empezar el proceso.
+Analizando la posición topológica que ocupan los individuos en la red a lo largo del tiempo mediante técnicas clásicas de grafos dinámicos, descubrimos que los valores moderados de centralidad tienen un efecto positivo de segundo orden cuando los individuos están en la mitad del proceso de aprendizaje.
 %
-Gracias a nuestra implementaci\'on del modelo de habilidad estado-del-arte, obtuvimos buenas estimaciones a lo largo de toda la serie temporal, incluso al inicio, permiti\'endonos comparar separadamente a las personas novatas, intermedias y expertas.
+Por el contrario, los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada más que aprender.
 %
-Adem\'as, el modelo causal asume que el acceso a la informaci\'on cultural depende red de intercambio de informaci\'on.
-%
-Para explorar el efecto causal que la red tiene sobre el aprendizaje individual, utilizamos t\'ecnicas cl\'asicas de an\'alisis de grafos din\'amicos, determinamos la posici\'on topol\'ogica que los individuos tienen en la red a trav\'es del tiempo.
-%
-Encontramos que los valores moderados de centralidad tiene un efecto positivo de segundo orden s\'olo en los jugadores que est\'an en el medio del proceso de aprendizaje.
-%
-Los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada m\'as que aprender.
-%
-Hasta donde sabemos, este es el primer trabajo que es la explora el efecto que la posici\'on en una red din\'amica tiene sobre el aprendizaje individual.
-%.
+Por último, discutimos nuestros resultados en relación con trabajos anteriores.
 
 \section{Introducci\'on}
-La especial integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas se debi\'o a una coevoluci\'on gen\'etico-cultural desencadenada por el surgimiento previo de la crianza cooperativa~\cite{Hrdy2020,Koster2020}.
+
+La integración de los procesos biológicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas se debió a una coevolución genético-cultural desencadenada por el surgimiento previo de la crianza cooperativa~\cite{Hrdy2020, Koster2020}.
 %
-El surgimiento de la comprensi\'on mutua produjo cambios radicales para nuestra especie.
+El surgimiento de la comprensión mutua produjo cambios radicales para nuestra especie.
 %
-El conocimiento que antes deb\'ia ser redescubierto mediante costosa experiencia individual, luego de la transici\'on cultural comenz\'o a ser transmitido a la siguiente generaci\'on a trav\'es de aprendizaje social.
+Esas cadenas de transmisión de información producen artefactos más complejos que cualquier individuo actúan solo~\cite{Derex2015}.
 %
-Esas cadenas de transmisi\'on de informaci\'on producen artefactos m\'as complejos que cualquier individuo act\'uan solo~\cite{Derex2015}.
-%
-Emergi\'o as\'i un nuevo sistema de informaci\'on, aut\'onomo del sistema de informaci\'on biol\'ogico, lo que nos permiti\'o ocupar todos los nichos ecol\'ogicos de la tierra como ning\'un otro vertebrado terrestre hab\'ia logrado antes~\cite{Boyd2011}.
+Emergió así un nuevo sistema de información, autónomo del sistema de información biológico, lo que nos permitió ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre había logrado antes~\cite{Boyd2011}.
+
 % Parrafo
 
-Basada en los principios de la teor\'ia de la evoluci\'on se ha desarrollado un marco de ``evoluci\'on cultural'' que intenta explicar c\'omo cambia la cultura en el tiempo.
+La cultura es un fenómeno poblacional que surge como consecuencia del intercambio de información entre individuos.
 %
-La descendencia, mutaci\'on y selecci\'on de la informaci\'on cultural se produce cuando una persona adopta el comportamiento de otras personas, sea porque es el comportamiento de la mayor\'ia (\emph{frequency-based strategy}), sea porque es la otra persona es particularmente exitosas o prestigiosas (\emph{payoff-based strategy}), o sea por otros tipos de sesgos de selecci\'on~\cite{muthukrishna2016-whenAndWhoSocialLearning, rendell2011-cognitiveCulture}.
+Todos los procesos de aprendizaje social modifican en cierta medida la variante cultural adoptada.
 %
-Todos los procesos de aprendizaje social modifican en alg\'un grado la variante cultural adoptada.
+La descendencia, la mutación y la selección de la información cultural se producen cuando un individuo adopta el comportamiento de otros, ya sea porque es el comportamiento de la mayoría (estrategia basada en la frecuencia), porque el otro individuo es especialmente exitoso o prestigioso (estrategia basada en la retribución) o en función de diferentes sesgos de selección~\cite{muthukrishna2016-whenAndWhoSocialLearning,rendell2011-cognitiveCulture}.
 %
-Y algunas de esas variantes culturales se propagan m\'as r\'apido o son m\'as estables que otras, predominando en el tiempo.
+En este proceso, algunas de las variantes culturales se extienden más rápidamente o son más estables que otras, lo que afecta al proceso general de adquisición de habilidades y acumulación cultural.
+
 % Parrafo
 
-Por lo tanto, la cultura sea una fen\'omeno poblacional que emerge como consecuencia del intercambio de informaci\'on entre individuos.
+La estructura de estas ``redes culturales'' permite o impide el acceso a la información cultural, afectando entonces los procesos de aprendizaje social y acumulación cultural~\cite{Derex2020}.
 %
-Esto define una red de intercambio de informaci\'on, y su estructura permite o impede el acceso a la informaci\'on cultural que requieren los individuos para el aprendizaje social, afectando el proceso global de evoluci\'on y acumulaci\'on cultural.
+Aunque se ha demostrado que la capacidad de acumulación cultural es proporcional al tamaño efectivo de la población~\cite{shennan2001-demographyAndCulture, Henrich2004, kempe2014-experiment}, estudios recientes han cuestionado la suposición de que todo lo que maximice el flujo de información cultural debería repercutir positivamente~\cite{Derex2020}.
 %
-La hip\'otesis de que la estructura de las redes de intercambio de informaci\'on tienen un efecto sobre los procesos culturales poblacionales ha sido verificado en varios estudios antropol\'ogicos.
+La hipótesis afirma que las redes totalmente conectadas producen una homogeneización cultural que reduce las posibilidades de innovación, mientras que las redes fragmentadas tienden a perder variantes culturales complejas con el tiempo~\cite{derex2018-divideAndConquer,Creanza2017}.
 %
-La capacidad de acumulaci\'on cultural ha mostrado ser proprocional al tama\~no efectivo de la poblaci\'on~\cite{kempe2014-experiment, kline2010-populationSize, Henrich2004, shennan2001-demographyAndCulture}.
+La razón por la que es difícil evaluar estas hipótesis en datos del mundo real es que debemos registrar todas las interacciones al interior de una comunidad a nivel individual, lo que suele ser difícil~\cite{Derex2020}.
+%
+Existen algunos estudios, sin embargo, que demuestran que las sociedades humanas suelen desarrollar redes parcialmente conectadas, lo que maximizaría la adaptabilidad al garantizar tanto contactos regulares con grupos externos como el mantenimiento de la diferenciación local~\cite{padilla2022-interconnectivity,migliano2017-hunterGathererNetwork}.
+
 % Parrafo
 
-Esto hizo pensar que las redes altamenete conectadas favorecer\'ian la acumulaci\'on de innovaciones culturales, creyendo que ellas favorecer\'ian la innovaci\'on garantizando al mismo tiempo la acumulaci\'on cultural en el tiempo.
+Para responder cómo la estructura de la red de intercambio afecta los procesos de aprendizaje social a nivel individual, decidimos estudiar en detalle la evolución de una de las mayores comunidades de jugadores de Go en línea (OGS \url{https://online-go.com}) durante 8 años.
 %
-Sin embargo, estudios te\'oricos y experimentales recientes han mostrado que estructuras con moderada conexi\'on son las que favorecen los procesos de evoluci\'on cultural~\cite{Derex2020}.
+El Go es un juego de mesa para dos jugadores creado en China hace aproximadamente 3.000 años.
 %
-Las redes totalmente conectadas producen homogeinizaci\'on cultural reduciendo las chances de innovaci\'on y las redes fragmentadas en peque\~nos grupos pierden con el tiempo sus variantes culturales complejas~\cite{derex2018-divideAndConquer,Creanza2017}.
+Aunque las reglas son sencillas, el Go presenta una enorme complejidad en comparación con el ajedrez: fue en 1996 cuando el primer algoritmo de inteligencia artificial venció a uno de los mejores jugadores de ajedrez~\cite{Campbell2002}, mientras que en el juego del Go este objetivo se consiguió 20 años después~\cite{Plata2016}.
 %
-Luego, las redes con una desidad de conexi\'on intermedia, al asegurar tanto el contacto regular con grupos externos y la estabilidad de los contactos internos, maximizar\'ia la capacidad de adaptaci\'on cultural que la poblaci\'on tiene en su conjunto.
+Aprender a jugar al Go no solo implica adquirir una tradición cultural milenaria, un conjunto de estrategias complejas acumuladas de generación en generación, sino también adaptarse a las innovaciones que surgen cada día.
+
 % Parrafo
 
-En efecto, las sociedades humanas desarrollan t\'ipicamente redes parcialmente conectadas que permite adquirir tama\~nos de poblaci\'on efectiva relativamente grandes menteniendo al mismo tiempo una diferenciaci\'on local~\cite{padilla2022-interconnectivity,migliano2017-hunterGathererNetwork}.
+Aunque nuestra base de datos cuenta con más de 7 millones de jugadores y casi 15 millones de partidas entre noviembre de 2005 y julio de 2018, hemos decidido trabajar exclusivamente con los ocho primeros años (con \num{446000} jugadores y \num{818000} partidas) porque: 1. pudimos comprobar a través de la información proporcionada por la plataforma OGS, que no hay bots en ese período; 2. a finales de 2013 se produce una fusión entre OGS y otro portal de Go que (Nova) que produce un cambio repentino en la estructura de la red.
 %
-Esta ventaja de la conexi\'on parcial es una propiedad global de la red.
-%
-El desaf\'io actual es estudiar los efectos que la estructura de las redes de intercambio de informaci\'on tiene sobre los procesos de aprendizaje social a nivel individual.
-%
-Poner a prueba algunas de estas hip\'otesis se ha visto obstaculizado debido a que se requieren datos granulares y longitudinales del comportamiento de todos los individuos de una comunidad humana en el tiempo.
+El juego Go ya ha permitido estudiar cómo las variantes culturales particulares son impulsadas por una mezcla de procesos de aprendizaje individuales y sociales~\cite{Beheim2014}.
+
 % Parrafo
 
-Para responder c\'omo la estructura de la red de intercambio de informaci\'on afecta los procesos de aprendizaje social a nivel individual decidimos estudiar la evoluci\'on de una de las principales redes de jugadores de Go en l\'inea.
+Dado que los individuos aprenden principalmente cuando están directamente implicados en tareas de resolución de problemas en los que se ven comprometidos personalmente~\cite{Ormrod2017}, nos enfocamos en la red de partidas, definida como un grafo en el que los nodos representan a los jugadores y los juegos jugados entre ellos son las aristas.
 %
-El Go ya ha permitido estudiar c\'omo variantes culturales particulares son impulsadas por una combinaci\'on de procesos de aprendizaje individual y social~\cite{Beheim2014}.
-%.
-El juego de Go es un juego de mesa de dos jugadores creado en China hace aproximadamente 3 mil a\~nos.
+Para calcular la posición topológica de los individuos en la red, nos basamos en una metodología clásica y robusta de ventanas deslizantes de análisis dinámico de grafos~\cite{Kossinets2006, Mcgregor2014}.
 %
-Si bien las reglas son simples, el Go presenta una enorme complejidad comparado con el ajedrez: fue en 1996 que el primer algoritmo de inteligencia artificial le gan\'o a uno de los mejores jugadores de ajedrez ~\cite{Campbell2002}, mientras que en Go este objetivo se alcanz\'o 20 a\~nos despu\'es~\cite{Silver2016}.
+Esta técnica divide la red en pequeñas subredes compuestas únicamente por nodos y vértices activos en un periodo determinado.
 %
-% Los jugadores colocan piedras en las intersecciones de un tablero de 19$\times$19, que luego no podr\'an volver a mover.
-%.
-%
-% El objetivo de ambos jugadores es rodear y capturar las piedras de su contrincante para controlar la mayor cantidad de territorio posible.
-%.
-Aprender a jugar al Go implica aquirir una tradici\'on cultural milenaria, un conjunto de estrategias complejas que fueron acumul\'andose de generaci\'on en generaci\'on.
+Luego, cada una de estas subredes se analiza utilizando varias métricas de redes clásicas.
+
 % Parrafo
 
-Nuestra base de datos cuenta con m\'as de 7 millones de jugadores y casi 15 millones de partidas entre Noviembre del 2005 y Julio de 2018.
+Según los principales hallazgos de la bibliografía sobre aprendizaje social y acumulación cultural~\cite{Derex2020}, el aprendizaje humano depende de al menos cuatro variables fundamentales: el \emph{entorno}, el \emph{experiencia individual}, el \emph{estructura de red} que da acceso a la información cultural, y la \emph{habilidad inicial}.
 %
-Sin ermbargo, la base de datos contiene un cambio de fase repentino al octavo a\~no: a fines de 2013 se produjo una fusi\'on entre OGS y otro portal de Go, llamado Nova.
-%
-Si bien este evento natural ofrece una oportunidad para estudiar el comportamiento de las fusiones sociales en detalle, para enfocarnos en el problema original decidimos trabajar exclusivamente con los primeros 8 a\~nos del conjunto de datos, que cuenta con {446000} jugadores y {818000} partidas.
-%
-Si bien la base de datos completa contiene bots, a trav\'es de informaci\'on prove\'ida por OGS, confirmamos que no exist\'ia ninguno durante el per\'iodo analizado, entre el 2005 y el 2013.
-% Parrafo
-
-Antes de explorar estad\'isticamente el efecto causal a partir de datos observacionales, es importante explicitar al menos un modelo causal~\cite{pearl2009-causality}.
-%
-Si bien de que las proposiciones de las ciencias emp\'iricas siempre contienen alg\'un grado de incertidumbre, debido que se validan en sistemas naturales que por definici\'on son abiertos, el lenguaje tradicional de la ciencia se suele enmarcar en t\'erminos de hallazgos ``singulares y definitivos''~\cite{stirling2010-keepItComplex, smaldino2016-badScience, shepherd2021-statisticalPractice}.
-%
-Elegir un modelo causal no implica refrendarlo como el \'unico posible, y menos a\'un como el \'unico verdadero.
-%
-Es simplemente la \'unica forma con la que contamos para sacar conslusiones causales de datos observacionales.
-%
-A diferencia del enfoque frecuentista de la probabilidad, que selecciona una \'unica hip\'otesis a trav\'es de la optimizaci\'on de alguna funci\'on de costo ad-hoc, las conclusiones que sacamos a trav\'es del enfoque Bayesiano de la probabilidad son por naturaleza ``plurales y condicionales'', en tanto la aplicaci\'on estricta de las reglas de la probabilidad nos obliga evaluar la creencia de todas y cada una de las hip\'otesis, tanto al interior de los modelos como entre modelos alterntiavos, en base a informaci\'on limitada que disponemops (datos).
-% Parrafo
-
-Todav\'ia no es com\'un encontrar la especificaci\'on gr\'afica de los diferentes modelos causales que se usan en la literatura acad\'emica de evoluci\'on cultural.
-%
-Sin embargo es posibles proponer estructuras causales que reflejen las conclusiones principales que ha alcanzado el \'area hasta el momento.
-%
-En base a los descubrimiento principales de la literatura acerca de la evoluci\'on y acumulaci\'on cultural en estructuras poblacionales din\'amicas~\cite{Derex2020} podemos decir que el aprendizaje individual depende al menos de tres variables fundamentales.
-%
-el \emph{ambiente} al cual deben adaptarse.
-%
-la \emph{experiencia individual}, que siempre es un factor fundamental para el aprendizaje.
-%
-y la \emph{informaci\'on cultural} del contexto de uno, que es fuente del aprendizaje social.
-%
-Finalmente, en todos los modelos causales estructurales de aprendizaje (e.g.\,\,\,funciones sigmoideas, leyes de potencia o de von Bertalanffy) la tasa aprendizaje depende del estad\'io en el que se encuentra cada uno de los individuos.
-%
-Por este motivo, conocer la \emph{habilidad inicial} de las personas tambipen es fundamental para comparar el comportamiento de distintas curvas de aprendizaje.
-%
-Y como ya hemos revisado al principio de esta introducci\'on, la informaci\'on cultural depende a su vez de la \emph{red de intercambio de informaci\'on}.
-%
-Finalmente, en la base de datos que estamos analizando, cada nueva partidas adem\'as de contar como experiencia individual modifica la estructura de la red.
-%\todo{Agregar relaci\'on causal entre experiencia individual y la IEN del siguiente paso? Explicitar el State-space model?}
 \begin{figure}[ht!]
 \centering \small
 \tikz{
     \node[accion, fill={rgb:red!65,15;green!50,1;blue!50,1},minimum size=0.3cm] (a) {} ;
-    \node[const, below=of a] (na) {$\hfrac{\textbf{\small Aprendizaje}}{\text{(Individual y social)}}$} ;
+    \node[const, below=of a] (na) {$\hfrac{\textbf{\small Learning}}{\text{(Individual and social)}}$} ;
     \node[accion, fill=black!85,above=of a, xshift=-0.85cm, yshift=-0.075cm] (e) {} ;
-    \node[const,left=of e,yshift=0.075cm] (ne) {Ambiente} ;
+    \node[const,left=of e,yshift=0.075cm] (ne) {Environment};
     \node[accion,fill=black!7, line width=0.75pt, draw={rgb:red,20;green,3;blue,3},above=of a, xshift=0.85cm, yshift=-0.075cm] (s) {} ;
     \node[accion,fill=black!50, left=of a, xshift=-0.5cm, yshift=-0cm] (i) {} ;
-    \node[const,left=of i] (ni) {Habilidad inicial} ;
-    \node[const,right=of s, yshift=-0.075cm] (ns) {Informaci\'on cultural} ;
+    \node[const,left=of i] (ni) {Initial ability} ;
+    \node[const,right=of s, yshift=-0.075cm] (ns) {Cultural information} ;
     \node[accion, fill=black!50, above=of a, yshift=0.35cm] (m) {} ;
-    \node[const,left=of m,yshift=0.25cm, xshift=0.2cm] (nm) {Experiencia individual} ;
+    \node[const,left=of m,yshift=0.25cm, xshift=0.2cm] (nm) {Individual experience};
     \node[accion, fill={rgb:red,20;green,3;blue,3},above=of s,yshift=0.2cm,minimum size=0.3cm] (d) {} ;
-    \node[const,right=of d, yshift=0.1cm,text width=1.5cm] (nd) {\textbf{Redes de intercambio de infromaci\'on}} ;
-    \node[accion, fill=black!50,above=of d,xshift=0cm, yshift=0.2cm] (ien) {} ;
-    \node[const,above=of ien] (nien) {Tama\~no de la poblaci\'on} ;
-%
-%     \node[accion, fill=black!50,below=of ien,xshift=1.2cm, yshift=-0.2cm] (sz) {} ;
-%     \node[const,right=of sz] (nsz) {\en{Global size}Tama\~no global}} ;
-%
+    \node[const,right=of d, yshift=0.1cm,text width=1.6cm] (nd) {\textbf{Network structure}};
+    \node[accion,fill=black!7,above=of d,xshift=0cm, yshift=0.2cm] (ien) {} ;
+    \node[const,left=of ien] (nien) {Population size};
+
     \edge {i,e,m} {a};
     \edge[line width=1pt,draw={rgb:red,20;green,2;blue,2}] {s} {a};
     \edge[line width=1pt,draw={rgb:red,20;green,3;blue,3}] {d} {s};
@@ -6501,116 +6447,95 @@ Finalmente, en la base de datos que estamos analizando, cada nueva partidas adem
     \edge {m} {d};
 }
 \caption{
-  Modelo causal. El aprendizaje humano depende de la habilidad incial, la experiencia individual, la informaci\'on cultural y el ambiente. Y el acceso a la informaci\'on cultural depende de la red de intercambio de informaci\'on.
- .
-  Los colores son los roles de las variables en el an\'alisis estad\'isitico: causa (rojo), efecto (rosa), control (gris), constantes (negro), no observables (blanco).
+  Modelo causal. El aprendizaje humano depende de la habilidad inicial, la experiencia individual, la información cultural y el ambiente. Y el acceso a la información cultural depende de la estructura de la red de intercambios.
+  Los colores son los roles de las variables en el análisis estadístico: causa (rojo), efecto (rosa), control (gris), constantes (negro), no observables (blanco).
 }
 \label{fig:general_model}
 \end{figure}
 % Parrafo
 
-En la figure~\ref{fig:general_model} resumimos el modelo causal en t\'erminos gr\'aficos, donde las flechas representan relaciones causales entre las variables y los colores representan el rol que las variables cumplen en el an\'alisis estad\'isitico: causa (rojo), efecto (rosa), control (gris), constante (negro), no observable (blanco).
+En la figure~\ref{fig:general_model} resumimos el modelo causal en términos gráficos, donde las flechas representan relaciones causales entre las variables y los colores representan el rol que las variables cumplen en el análisis estadístico: causa (rojo), efecto (rosa), control (gris), constante (negro), no observable (blanco).
 %
-Dado que queremos conocer el efecto que la red de intercambio de informaci\'on tiene sobre el aprendizaje humano, en este modelo causal es necesario considerar la informaci\'on cultural como una variable oculta para conservar abierto el flujo de inferencia entre las variables causa y efecto~\cite{pearl2009-causality}.
+Dado que queremos explorar el efecto que la estructura de la red tiene en el aprendizaje humano (camino rojo), la información cultural debe tratarse como una variable oculta~\cite{pearl2009-causality}.
 %
-and the size of the network, which remains relatively stable over the period studied
-En nuestra base de datos el ambiente es constante, dado que las reglas del juego del Go no cambian con el tiempo.%; y el tama\~no de la red, que se mantiene relativamente estable a lo largo del periodo estudiado
+En nuestra base de datos, el ambiente es constante ya que las reglas del juego Go no cambian con el tiempo, y el tamaño de la red permanece relativamente estable durante el periodo estudiado.
 %
-Luego, para evaluar el efecto causal necesitamos observar c\'omo cambia la habilidad dada la estructura de la red, para diferentes valores de experiencia individual y habilidad inicial.
+Entonces, para evaluar el efecto, necesitamos observar cómo cambia la habilidad dada la estructura de la red para diferentes valores de experiencia individual y habilidad inicial.
 %
-La diferencia de aprendizaje que observemos entre diferentes estratificaciones basadas en la posici\'on de los individuos en la red, manteniendo fijas el resto de las variables, puede ser considerado el efecto causal para el modelo causal propuesto.
+La diferencia en el aprendizaje que observamos entre las distintas estratificaciones basadas en la posición de los individuos en la red, manteniendo fijas todas las demás variables, puede considerarse el efecto del modelo causal propuesto.
+
 % Parrafo
 
-Debido a que conocer la habilidad inicial permite considerar la experiencia y la informaci\'on cultural adquirida por los individuos durante el periodo estudiado como los factores efectivos de sus curvas de aprendizaje, estimarla fue uno de los problemas principales de este trabajo.
+Sin embargo, todos los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no pueden obtener estimaciones iniciales fiables debido a que usan el último posterior como prior del siguiente evento, propagando la información en una sola dirección por el sistema, del pasado al futuro.
 %
-available in programming languages with larger communities
-Sin embargo, todos los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no pueden obtener estimaciones iniciales fiables debido a que usan el \'ultimo posterior como prior del siguiente evento, propagando la informaci\'on en una sola direcci\'on por el sistema, del pasado al futuro.%disponible en los lenguajes de programaci\'on con mayores comunidades
+En cambio, el modelo estado del arte de la industria del video juego, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la información histórica a través de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
 %
-En cambio, el modelo estado del arte de la industria del video juego, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
+Como este modelo no estaba disponible en los lenguajes de programación más populares, lo implementamos en Julia, Python y R~\cite{Landfried2021-TTT}.
+
 % Parrafo
 
-Debido a que este modelo, que hab\'ia sido especificado hace m\'as una d\'ecada~\cite{Dangauthier2007}, no se encontraba disponible hasta ahora en los lenguajes de programaci\'on con mayores comunidades, nos vimos obligados a implementarlo~\cite{Landfried2021-TTT}.
+Conocer las habilidades iniciales de los individuos nos permite comparar curvas de aprendizaje que se encuentran en el mismo estadío.
 %
-A trav\'es de este modelo, que ya hemos publicado en \texttt{Julia}, \texttt{Python}, y \texttt{R}~\cite{Landfried2021-TTT}, podemos conocer las habilidades iniciales de los individuos y por lo tanto comparar curvas de aprendizaje que se encuentran en el mismo estad\'io.
+La diferencia de aprendizaje que observemos entre diferentes estratificaciones basadas en la posición de los individuos en la red, manteniendo fijas el resto de las variables, puede ser considerado el efecto causal para el modelo causal propuesto.
 %
-La diferencia de aprendizaje que observemos entre diferentes estratificaciones basadas en la posici\'on de los individuos en la red, manteniendo fijas el resto de las variables, puede ser considerado el efecto causal para el modelo causal propuesto.
-% Parrafo [Posici\'on]
+Esto nos permitiría detectar el efecto de la red de intercambio de información sobre el proceso de aprendizaje individual dado el modelo causal propuesto.
+%
+Hasta donde sabemos, éste es el primer trabajo que explora el efecto que la posición en una red dinámica tiene sobre el aprendizaje individual.
+%
+Nuestra base de datos está disponible para que otros grupos de investigación evalúen modelos causales alternativos.
 
-Finalmente, la posici\'on topol\'ogica de los individuos en red la computamos mediante la metodolog\'ia cl\'asica de ventanas deslizantes que consiste en partir el grafo en peque\~nos subgrafos, compuesto \'unicamente por los nodos y v\'ertices activos en un cierto per\'iodo de tiempo, cada uno de los cuales son analizados con las herramientas para grafos est\'aticos~\cite{Kossinets2006}.
 %
-Definimos la red de intercambio de informaci\'on como un grafo donde los nodos representan a los jugadores, y los ejes, a las partidas jugadas entre ellos.
-%
-Cada nueva partida en la que participan los jugadores aumenta la experiencia individual por un lado.
-%.
-Pero adem\'as, la observaci\'on atenta del comportamiento del oponente y la interacci\'on directa con sus estrategias hace de las partidas un canal privilegiado de transmisi\'on de informaci\'on cultural.
-%
-Entonces, el flujo de informaci\'on est\'a parcialmente condicionado por la red de partidas entre jugadores.
-% Parrafo
-
-%\todo{Reformar parrafo. Dejar que es el primero que hace esto. Conclusiones fuera. Disclaimer dicho de otra forma. }
-Todo ello nos permiti\'o detectar el efecto causal que la red de intercambio de informaci\'on tiene en el proceso de aprendizaje individual dado el modelo casual propuesto.
-%
-%
-% Los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada m\'as que aprender.
-%.
-% of popularity, nearness and intermediation
-% Encontramos que los valores moderado de centralidad son los que m\'as favorecen los procesos de aprendizaje individual.
-%.
-Hasta donde sabemos, este es el primer trabajo que es la explora el efecto que la posici\'on en una red din\'amica tiene sobre el aprendizaje individual.
-%
-Nuestra base de datos est\'a disponible para que otros grupos de investigaci\'on eval\'uen modelos causales alternativos.
-
 
 \section{Material and methods}
 
-Esta secci\'on est\'a dividida en cinco partes: describimos el conjunto de datos; explicamos intuitivamente el modelo de estimaci\'on de habilidad; elaboramos la metodolog\'ia para estudiar los gr\'aficos din\'amicos; detallamos las medidas espec\'ificas que utilizamos para su an\'alisis; y finalmente proveemos informaci\'on suficiente para reproducir los an\'alisis.
+Esta sección está dividida en cuatro partes: describimos el conjunto de datos; explicamos intuitivamente el modelo de estimación de habilidad; elaboramos la metodología para estudiar los grafos en el tiempo; detallamos las medidas específicas que utilizamos para el análisis.
 
 \subsection{Dataset y participantes}
 % https://forums.online-go.com/t/can-we-get-an-sgf-database-dump/38837/22
 % https://archive.org/details/ogs2021
 
-En este trabajo usamos m\'etodos no experimentales, realizando an\'alisis sobre datos de archivo, provistos por la plataforma de juego de Go en l\'inea OGS.
+En este trabajo usamos métodos no experimentales, realizando análisis sobre datos de archivo, provistos por la plataforma de juego de Go en línea OGS.
 %
-El conjunto de datos se ha hecho p\'ublico hace varios a\~nos, y se encuentra disponibles para realizar trabajos de investigaci\'on cient\'ifica.
+El conjunto de datos se ha hecho público hace varios años, y se encuentra disponibles para realizar trabajos de investigación científica.
 %
-Para preservar el anonimato de los participantes, en ning\'un caso estudiamos el comportamiento de los individuos, sino el comportamiento agregado en conjuntos de partidas.
+Para preservar el anonimato de los participantes, en ningún caso estudiamos el comportamiento de los individuos, sino el comportamiento agregado en conjuntos de partidas.
 
 % Parrafo
 
-El servidor de OGS se encuentra en los estados unidos y actualmente la base de datos p\'ublica cuenta con decenas de millones de partidas.
+El servidor de OGS se encuentra en los Estados Unidos y actualmente la base de datos pública cuenta con decenas de millones de partidas.
 %
-La plataforma OGS es, junto a KGS, es la m\'as utilizada para jugar al Go en l\'inea en el hemisferio occidental.
+La plataforma OGS es, junto a KGS, la más utilizada para jugar al Go en línea en el hemisferio occidental.
 %
-Si bien composici\'on de sus participanets por caracter\'isticas socio-culturales es desconocida, sabemos que el uso de plataforma en l\'inea produce naturalmente sesgos por sexo, edad, nacionalidad, entre otras.
+Si bien la composición de sus participantes por características socio-culturales es desconocida, sabemos que el uso de este tipo de plataformas en línea produce naturalmente sesgos por sexo, edad, nacionalidad, entre otras.
 %
-Sin embargo sabemos que sus participantes provienen de diferentes pa\'ises alrededor del mundo, por lo que actualmente la p\'agina oficial puede ser traducida a casi 30 idiomas.
+Sin embargo, el hecho de que la página oficial tenga la opción de mostrar sus contenidos en casi $30$ idiomas indica que los participantes son de distintos países alrededor del mundo.
 
 % Parrafo
 
-Para los objetivos de este trabajo decidimos analizar solamente las partidas que se encuentran en el per\'iodo 2005 al 2013.
+Para los objetivos de este trabajo decidimos analizar solamente las partidas que se encuentran en el período 2005 al 2013.
 %
-Esto reduce el conjunto de datos a 446000 participantes y 818000 partidas.
+Esto reduce el conjunto de datos a \num{446000} participantes y \num{818000} partidas.
 %
-La decisi\'on se tom\'o por dos razones.
+La decisión se tomó por dos razones.
 %
-Por un lado, exclu\'imos del an\'alisis el impacto que la fusi\'on entre las plataformas OGS y Nova tuvo sobre la base de datos, que se produjo a fines del 2013.
+Por un lado, excluimos del análisis el impacto que la fusión entre las plataformas OGS y Nova tuvo sobre la base de datos, la que se produjo a fines del 2013.
 %
-Por otro lado, restringiendo el an\'alisis al per\'iodo previo a 2013 garantizamos que la base de datos estuviera libre de bots, algo que pudimos constatar a trav\'es de consultas que le hicimos a la API que prov\'ee OGS para interectuar con la base de datos.
+Por otro lado, restringiendo el análisis al período previo a 2013 garantizamos que la base de datos estuviera libre de bots, algo que pudimos constatar a través de consultas que le hicimos a la API que proveé OGS para interactuar con la base de datos.
+%
+Finalmente, si bien analizamos la base de datos completas, decidimos enfocar el estudio sobre los individuos que jugaron al menos $150$ partidas, para estudiar curvas de aprendizaje suficientemente largas.
+%
+Debido a que la cantidad de partidas jugadas por persona sigue una distribución exponencial, este filtro basado en la actividad produce un conjunto de individuos de tamaño cercano a $1000$.
+
+
+\subsection{TrueSkill Through Time}
+
+Los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no permiten obtener estimaciones iniciales fiables debido a que usan el último posterior como prior del siguiente evento, propagando la información en una sola dirección por el sistema, del pasado al futuro.
+%
+En cambio, el modelo de estimación de habilidad estado del arte, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la información histórica a través de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
 
 % Parrafo
 
-Finalmente, debido que el objetivo de este trabajo es analizar el impacto que la posici\'on top\'ologica tiene sobre el aprendizaje, decidimos estudiar el comportamiento de los individuos que jugaron al menos $150$ de partidas, para tener curvas de aprendizaje suficientemente largas.
-%
-Debido a que la cantidad de partidas jugadas por persona sigue una distribuci\'on exponencial, este filtro basado en la actividad produce un conjunto de individuos de tama\~no cercano a $1000$.
-
-
-\subsection{Estimaci\'on de aprendizaje}
-Ninguno de los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) pueden obtener estimaciones iniciales fiables debido a que usan el \'ultimo posterior como prior del siguiente evento, propagando la informaci\'on en una sola direcci\'on por el sistema, del pasado al futuro.
-%
-En cambio, el modelo de estimaci\'on de habilidad estado del arte, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
-% Parrafo
-
-El modelo causal com\'un a todos los estimadores supone que los resultados observados de las partidas son una consecuencia directa de las habilidades ocultas (figura~\ref{fig:generative_model_elo_3} izquierda).
+El modelo causal común a todos los estimadores supone que los resultados observados de las partidas son una consecuencia directa de las habilidades ocultas (figura~\ref{fig:generative_model_elo_3} izquierda).
 %
 \begin{figure}[ht!]
 \centering
@@ -6624,7 +6549,7 @@ El modelo causal com\'un a todos los estimadores supone que los resultados obser
     \node[const, left=of d, xshift=-0.9cm, yshift=0.2cm] (d_name) {\small Diferencia};
     \node[latent, above=of d, xshift=-0.8cm, yshift=-0.45cm] (p1) {$p_i$} ;.
     \node[latent, above=of d, xshift=0.8cm, yshift=-0.45cm] (p2) {$p_j$} ;.
-    \node[const, left=of p1, xshift=-0.1cm, yshift=0.2cm] (p_name) {\small Desempe\~no};
+    \node[const, left=of p1, xshift=-0.1cm, yshift=0.2cm] (p_name) {\small Desempeño};
     \node[accion, above=of p1,yshift=0.3cm] (s1) {} ;.
     \node[const, right=of s1] (ds1) {$s_i$};
     \node[accion, above=of p2,yshift=0.3cm] (s2) {} ;.
@@ -6644,36 +6569,35 @@ El modelo causal com\'un a todos los estimadores supone que los resultados obser
      \caption{
     (Izquierda) Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos.
     Las variables observables se pintan de gris, las ocultas en blanco, y las constantes se muestran como puntos negros.
-    (Derecha) Actualizaci\'on de creencias para el caso ganador.
+    (Derecha) Actualizaci\'on de creencias para un caso ganador.
     El posterior proporcional se obtiene como el producto de la distribuci\'on a priori y la verosimilitud.
   }
     \label{fig:generative_model_elo_3}
 \end{figure}
 %
-Seg\'un este modelo, gana la persona con mayor desempe\~no, $r = (p_i > p_j)$, siendo los desempe\~nos variables aleatorias centradas en las verdaderas habilidades, $\N(p\,|\,s,\beta^2)$.
+Según este modelo, gana la persona con mayor desempeño, $r = (p_i > p_j)$, siendo los desempeños variables aleatorias centradas en las verdaderas habilidades, $\N(p\,|\,s,\beta^2)$.
 %
-La escala de las estimaciones est\'a determinada por el par\'ametro $\beta$: habilidades a distancia de un $\beta$ tienen 76\% de probabilidad de ganar.
+La escala de las estimaciones está determinada por el parámetro $\beta$: habilidades a distancia de un $\beta$ tienen 76\% de probabilidad de ganar.
 %
-Aqu\'i usamos $\beta=1$.
+Aquí usamos $\beta=1$.
+
 % Parrafo
 
-%
-% En cualquier proceso de inferencia, la sorpresa definida como el complemento de la verosimilitud funciona como un filtro para el prior.
-%
-En la figura~\ref{fig:generative_model_elo_3} derecha mostramos c\'omo se actualiza un prior gaussiano luego de que observamos a un jugador ganar una partida.
+En la figura~\ref{fig:generative_model_elo_3} derecha mostramos cómo se actualiza un prior gaussiano luego de que observamos a un jugador ganar una partida.
 %
 En la regi\'on de hip\'otesis de muy alta habilidad, donde el resultado ganador no nos hubiera generado casi ninguna sorpresa ($\lim_{s_i \to \infty}P(r|s_i) = 1$), el posterior recibe casi toda la densidad del prior.
 %
 En cambio, en la regi\'on de hip\'otesis de muy baja habilidad, ($\lim_{s_i \to -\infty}P(r|s_i) = 0$), posterior no recibe casi nada de la densidad del prior.
 %
 Debido a que las habilidades cambian en el tiempo, debemos agregar alguna incertidumbre luego de cada paso temporal, $\N(s_t | s_{t_1}, \gamma^2)$.
+
 % Parrafo
 
-Para analizar el aprendizaje en el tiempo, la mayor\'ia de los modelos ultizan el \'ultimo posterior como prior del siguiente evento.
+Para analizar el aprendizaje en el tiempo, la mayoría de los modelos utilizan el último posterior como prior del siguiente evento.
 %
-Este enfoque ad-hoc, sin embargo, tiene varios problemas que el modelo TrueSkill Through Time resuelve aplicando estrictamente las reglas de la probabilidad, lo que obliga a propagar toda la informaci\'on hist\'orica a trav\'es de la red.
+Este enfoque ad-hoc, sin embargo, tiene varios problemas que el modelo TrueSkill Through Time resuelve aplicando estrictamente las reglas de la probabilidad, lo que obliga a propagar toda la información histórica a través de la red.
 %
-En la figura~\ref{fig:trueskillthroughtime} mostramos las estimaciones obtenidos con TrueSkill (rojo) y con TrueSkill Through Time (verde) luego de haber visto a dos jugadores competir dos veces.
+En la figura~\ref{fig:trueskillthroughtime} mostramos las estimaciones obtenidas con TrueSkill (rojo) y con TrueSkill Through Time (verde) luego de haber visto a dos jugadores competir dos veces.
 %
 \begin{figure}[ht!]
 \centering
@@ -6688,372 +6612,277 @@ En la figura~\ref{fig:trueskillthroughtime} mostramos las estimaciones obtenidos
     \node[const, above=of a2] (g2) {\small \ \ Game 2 ($p_A < p_B$)};
 }
 \caption{
- Estimaciones obtenidos con TrueSkill (rojo) y con TrueSkill Through Time (verde) luego de haber visto a dos jugadores competir dos veces: la primera gana el jugador A y en la segunda el jugador B.
+ Estimaciones obtenidas con TrueSkill (rojo) y con TrueSkill Through Time (verde) luego de haber visto a dos jugadores competir dos veces: la primera gana el jugador A y en la segunda el jugador B.
 }
 \label{fig:trueskillthroughtime}
 \end{figure}
 %
-Las estimaciones de TrueSkill Through Time son correctas de acuerdo a lo que sugieren los datos (una victoria cada uno), ambos jugadores tienen la misma habilidad (centradas en 0).
+Las estimaciones de TrueSkill Through Time son correctas de acuerdo a lo que sugieren los datos (una victoria cada uno), teniendo ambos jugadores la misma habilidad (centradas en 0).
 %
-TrueSkill y los otros estimadores mencionados, en cambio ofrecen estimaciones sesgadas y con mayor incertidumbre.
+Los estimadores de habilidad usados comúnmente, en cambio, ofrecen estimaciones sesgadas y con mayor incertidumbre.
 
-\subsection{\En{A classical dynamic graph analysis methodology}\Es{Una metodolog\'ia cl\'asica de an\'alisis de grafos din\'amicos}}
-Para explorar el efecto que la estructura de la red tiene sobre el aprendizaje individual necesitamos describir c\'omo cambia la posici\'on de los individuos en el tiempo.
+
+\subsection{Una metodología clásica de análisis de grafos dinámicos}
+
+Nos basamos en una metodología clásica y robusta de grafos dinámicos~\cite{Kossinets2006, Mcgregor2014} para calcular la posición topológica de los individuos en la red a lo largo del tiempo (donde los jugadores son los nodos y las partidas jugadas entre ellos son las aristas).
 %
-Una metodolog\'ia cl\'asica de analisis de grafos din\'amicos consiste en partir el grafo en peque\~nos subgrafos compuesto \'unicamente por los nodos y v\'ertices activos en un cierto per\'iodo de tiempo, para analizarlos con los indicadores espec\'ificos para grafos est\'aticos.
+Esta técnica divide la red en pequeñas subredes compuestas únicamente por nodos y vértices activos en un periodo determinado.
 %
-Un ejemplo paradigm\'atico de este tipo de trabajo lo ofrecen Kossinets y Watts~\cite{Kossinets2006}.
-%
-Esta metodolog\'ia analiza cada subgrafo mediante indicadores dise\~nados para grafos est\'aticos y analiza su comportamiento en el tiempo.
+A continuación, cada una de estas subredes se analiza utilizando diversas métricas de red.
+
 % Parrafo
 
-Para determinar el tama\~no de la ventana, Kossinets y Watts~\cite{Kossinets2006} estudian c\'omo cambia el comportamiento de un conjunto de indicadores est\'aticos a trav\'es del tiempo.
+Para determinar el tamaño de la ventana, Kossinets y Watts~\cite{Kossinets2006} estudian cómo cambia el comportamiento de un conjunto de indicadores a través del tiempo.
 %
 \begin{figure}[ht!]
 	\includegraphics[width=0.8\textwidth]{static/duncan-watts-metrics.pdf}
 	\caption{
-	Grado medio, tama\~no de la componente m\'as grande,  largo promedio de los caminos m\'inimos y el coeficiente de clustering para ventanas de una semana, dos semanas y un mes.
+	Grado medio, tamaño de la componente más grande,  largo promedio de los caminos mínimos y el coeficiente de clustering para ventanas de una semana, dos semanas y un mes.
 	}
 	\label{Figuras.DW}
 \end{figure}
 %
-Siguiendo esta metodolog\'ia, en la figura~\ref{Figuras.DW} analizamos el grado medio, el tama\~no de la componente m\'as grande, el largo promedio de los caminos m\'inimos, y el coeficiente de clustering, para diferentes tama\~nos de ventana: una semana, dos semanas, y un mes de largo.
+Siguiendo esta metodología, en la figura~\ref{Figuras.DW} analizamos el grado medio, el tamaño de la componente más grande, el largo promedio de los caminos mínimos, y el coeficiente de clustering, para diferentes tamaños de ventana: una semana, dos semanas, y un mes de largo.
 %
-Queremos un tama\~no de ventana que tenga suficiente granuralidad para detectar los peque\~nos cambios, pero que sea lo suficientemente suave para evitar ruidos locales.
+Queremos un tamaño de ventana que tenga suficiente granuralidad para detectar los pequeños cambios, pero que sea lo suficientemente suave para evitar ruidos locales.
+
 % Parrafo
 
-Podemos ver que el grado medio est\'a fuertemente inlfuenciado por el tama\~no de la ventana.
+Podemos ver que el grado medio está fuertemente influenciado por el tamaño de la ventana.
 %
-A medida que aumentamos el tama\~no de la ventana aumenta el grado promedio, porque observamos m\'as partidas en promedio por jugador, pero el ruido nunca se reduce.
+A medida que aumentamos el tamaño de la ventana aumenta el grado promedio, porque observamos más partidas en promedio por jugador, pero el ruido nunca se reduce.
 %
-En segundo lugar, la proporci\'on de la componente principal no se ve muy afectada por el tama\~no de la ventana, salvo durante los primeros meses cuando todav\'ia hab\'ia poca actividad en el sitio, y en un breve falla del servidor ocurrida a fines del a\~no 2010.
+En segundo lugar, la proporción de la componente principal no se ve muy afectada por el tamaño de la ventana, salvo durante los primeros meses cuando todavía había poca actividad en el sitio, y en un breve falla del servidor ocurrida a fines del año 2010.
 %
 La ventana de dos semanas es capaz de detectar la misma componente conexa que la ventana de un mes con mayor granularidad.
 %
-En tercer lugar, el largo promedio de los caminos m\'inimos de la componente m\'as grande muestra que, en general, los jugadores se encuentran a cuatro saltos de distancia.
+En tercer lugar, el largo promedio de los caminos mínimos de la componente más grande muestra que, en general, los jugadores se encuentran a cuatro saltos de distancia.
 %
-Por \'ultimo, el coeficiente de clustering muestra que la densidad del grafo (la proporci\'on de tr\'iangulos) es baja utilizando para cualquier tama\~no de ventana debido a que la plataforma estudiada favorece los v\'inculos sin necesidad que las personas tengan conocidos en compun, evitando as\'i la emergencia de comunidades cerradas.
+Por último, el coeficiente de clustering muestra que la densidad del grafo (la proporción de triángulos) es baja utilizando para cualquier tamaño de ventana debido a que la plataforma estudiada favorece los vínculos sin necesidad que las personas tengan conocidos en común, evitando así la emergencia de comunidades cerradas.
+
 % Parrafo
 
-Decidimos utilizar una ventana de tama\~no medio debido a que nos permite evitar ruido sin perder la capacidad de detectar tendencia coyunturales relevantes.
-\subsection{La posici\'on de los individuos en la red}
-Para describir la posici\'on de los individuos analizamos 6 medidas de centralidad, que pueden ser clasificadas en 3 grupos.
+Decidimos utilizar una ventana de tamaño medio debido a que nos permite evitar ruido sin perder la capacidad de detectar tendencia coyunturales relevantes.
+
+\subsection{La posición de los individuos en la red}
+
+Para describir la posición de los individuos analizamos 6 medidas de centralidad, que pueden ser clasificadas en 3 grupos.
 %
-Las medidas de popularidad, como \emph{degree} y \emph{eigenvector}, est\'an basadas en la cantidad de ejes que tiene los nodos (y sus vecinos): las personas que conoce a todo el mundo (y sus conocidos tambi\'en) tiene valores altos de popularidad.
+\begin{enumerate}[i)]
+\item Las medidas de popularidad, como \emph{degree} y \emph{eigenvector}, están basadas en la cantidad de ejes que tiene los nodos (y sus vecinos): las personas que conocen a todo el mundo (y sus conocidos también) tiene valores altos de popularidad.
 %
-Las medidas de cercan\'ia, como \emph{closeness} y \emph{harmonic}, est\'an basadas en la distancia t\'ipica que un nodo tiene hacia el resto: las personas que est\'a cerca de todo el mundo tiene valores altos de cercan\'ia.
+\item Las medidas de cercanía, como \emph{closeness} y \emph{harmonic}, están basadas en la distancia típica que un nodo tiene hacia el resto: las personas que está cerca de todo el mundo tiene valores altos de cercanía.
 %
-Y medidas de intermediaci\'on, como \emph{betweenness} o \emph{communicability}, est\'an basadas en la influencia que un nodo tiene para los flujos de informaci\'on: las personas que conecta varias comunidades separadas tienen valores altos de intermediaci\'on.
+\item Y medidas de intermediación, como \emph{betweenness} o \emph{communicability}, están basadas en la influencia que un nodo tiene para los flujos de información: las personas que conectan varias comunidades separadas tienen valores altos de intermediación.
+\end{enumerate}
 %
-Las definiciones est\'an basadas en las implementaciones del paquete \texttt{networkx} de Python que usamos durante el estudio~\cite{hagberg2020-networkx}.
+Las definiciones están basadas en las implementaciones del paquete \texttt{networkx} de Python que usamos durante el estudio~\cite{hagberg2020-networkx}.
+
+
 \subsubsection{Indicadores de popularidad o prestigio}
-Llamamos indicadores de popularidad a aquellos que est\'an basados en la cantidad de contactos que tienen las personas.
+
+Llamamos indicadores de popularidad a aquellos que están basados en la cantidad de contactos que tienen las personas.
 %
 Conocer \emph{directamente} a muchas otras puede ser un indicador de su popularidad.
 %
-Bajo esta idea, la centralidad conocida como \emph{grado} define la popularidad como la fracci\'on de contactos que tiene cada nodo $p$ sobre todos los contactos posibles.
+Bajo esta idea, la centralidad conocida como \emph{grado} define la popularidad como la fracción de contactos que tiene cada nodo $p$ sobre todos los contactos posibles.
 %
 \begin{equation}
 \emph{degree}(p) = \frac{\text{Contactos efectivos de $p$}}{\text{Contactos potenciales}}
 \end{equation}
 %
-Esta definici\'on de grado no tiene en cuenta el peso de los ejes.
+Esta definición de grado no tiene en cuenta el peso de los ejes.
+
 % Parrafo
 
-La popularidad (o el prestigio) tambi\'en puede verse influenciada por la cantidad de contactos \emph{indirectos}, la cantidad de contactos que tienen mis contactos.
+La popularidad (o el prestigio) también puede verse influenciada por la cantidad de contactos \emph{indirectos}, la cantidad de contactos que tienen mis contactos.
 %
 Esta concepto es detectado por la centralidad conocida como \emph{eigenvector}.
 %
-La soluci\'on iterativa ofrece una interpretaci\'on intuitiva.
+La solución iterativa ofrece una interpretación intuitiva.
 %
 En el primer paso, multiplicamos la matriz de adyacencias $A$ por el vector unitario, $A \cdot \bm{1} = x^{\prime}$, y obtenemos la suma de contactos directos de los nodos.
 %
 En el segundo paso, $A \cdot x^{\prime} =  x^{\prime\prime}$, obtendremos la suma de los contactos de los vecinos.
 %
-Y as\'i sucesivamente.
+Y así sucesivamente.
 %
-% Si seguimos iterando, obtendremos la suma de la suma de los contactos de los vecinos de los vecinos.
-%.
 En cada paso, sin embargo, se normaliza el vector para que tenga longitud 1, lo que produce un decaimiento en la importancia a medida que nos alejamos del nodo de origen.
-%.
-% \begin{equation*}
-% (A \cdot x) / ||A \cdot x||  = x^{\prime}
-% \end{equation*}
-%.
-Una vez que el vector convergi\'o, $x^*$, el valor de eigenvalue del nodo $p$ es su p-\'esimo elemento.
+%
+Una vez que el vector convergió, $x^*$, el valor de eigenvalue del nodo $p$ es su p-ésimo elemento.
 %
 \begin{equation}
 \emph{eigenvalue}(p) = x^{*}_p
 \end{equation}
-\subsubsection{Indicadores de cercan\'ia}
+
+
+\subsubsection{Indicadores de cercanía}
+
+Llamamos indicadores de cercanía a aquellos que están basados la distancia que los individuos tienen hacia el resto de los nodos.
 %
-% Estar cerca de muchos nodos puede tener consecuecias en el flujo de informaci\'on y el aprendizaje individual.
+La medida de cercanía paradigmática es \emph{closeness}, definida como el recíproco de las distancias mínimas promedio que un individuo tiene con todos los otros nodos.
 %
-Llamamos indicadores de cercan\'ia a aquellos que est\'an basados la distancia que los individuos tienen hacia el resto de los nodos.
-%
-La medida de cercan\'ia paradigm\'atica es \emph{closeness}, definida como el rec\'iproco de las distancias m\'inimas promedio que un individuo tiene con todos los otros nodos.
-%
-Cuando hay m\'as de un componente, s\'olo se calcula el camino m\'as corto entre nodos del mismo componente, ponderando por la proporci\'on del componente para no asignar valores de centralidad elevados a nodos pertenecientes a componentes perif\'ericos.
+Cuando hay más de una componente, sólo se calcula el camino más corto entre nodos de la misma componente, ponderando por la proporción de la componente para no asignar valores de centralidad elevados a nodos pertenecientes a componentes periféricas.
 %
 \begin{equation}
-	\emph{closeness}(p) = {\text{\En{Component's proportion}\Es{Proporci\'on de la componente}}  \cdot   \text{\En{Reciprocal of the average shortest path }\Es{promedio invertido}} }
+	\emph{closeness}(p) = { \text{Proporción de la componente}  \cdot   \text{promedio invertido} }
 \end{equation}
 %
-Esta soluci\'on es conocida como Wasserman y Faust closeness.
+Esta solución es conocida como Wasserman y Faust closeness.
 %
-Otra forma de resolver el problema es calcular la \emph{harmonic centrality} (la suma de los rec\'iprocos de las distancias m\'inimas).
+Otra forma de resolver el problema es calcular la \emph{harmonic centrality} (la suma de los recíprocos de las distancias mínimas).
 %
 \begin{equation} \label{eq:harmonic}
-    \emph{harmonic}(p)= \sum_r (\text{\En{Length of shortest path between $p$ and $r$}\Es{Distancia m\'inima entre $p$ y $r$}})^{-1}
+    \emph{harmonic}(p)= \sum_r (\text{Distancia mínima entre $p$ y $r$})^{-1}
 \end{equation}
 %
 Esta medida maneja apropiadamente $\infty$, asumiendo $\infty^{-1} = 0$.
 %
 En Harmonic centrality cada componente resulta independiente del resto, lo que no ocurre closeness.
-% % Parrafo
+
+\subsubsection{Indicadores de intermediación}
+
+Llamamos indicadores de intermediación a aquellos que están basados en la influencia que un nodo tiene para los flujos de información.
 %
-%
-% Estas dos soluciones est\'an basadas en caminos m\'inimos.
-%.
-%
-% Una cr\'itica com\'un a las medidas basadas en los caminos m\'inimos que no tienen en cuenta la propagaci\'on de la informaci\'on a trav\'es del resto de los caminos.
-%.
-%
-% La medida \emph{information centrality} intenta capturar este efecto calculando todas las distancias entre pares de nodos.
-%.
-%
-% Sin embargo, como su implementaci\'on no admite grafos con m\'as de un componente, tuvimos que descartarla.
-%
-% % Stephenson and Zelen \cite{stephenson1989-informationCentrality} computes the harmonic mean of \emph{information} between nodes.
-% %.
-% % La informaci\'on que circula entre dos nodos $i$ y $j$ por el camino $s$ se define como el rec\'iproco de la distancia $I_{i,j}(s) = 1/D_{i,j}(s)$.
-% %.
-% % La informaci\'on entre dos nodos se define como la sumatoria de todos los caminos $s$ que conectan a $i$ y $j$, $I_{i,j} = \sum_s I_{i,j}(s)$
-% %.
-% % Y la informaci\'on a la que accede un nodo es la harmonic mean de la informaci\'on que tiene con todo el resto de los nodos.
-% %.
-% % \begin{equation}
-% % I_i = \frac{n-1}{\sum_j 1/I_{i,j}}
-% % \end{equation}
-% %.
-% % Cuando dos caminos $s$ comparten un mismo eje, esta definici\'on se modifica, manteniendo la misma idea.
-% %.
-% % Se ha demostrado que esta definici\'on de information centrality puede ser interpretada como la hermonic mean de la resistencia en un circuito el\'ectrico (Current-flow closeness centrality)~\cite{Brandes2005}.
-\subsubsection{Indicadores de intermediaci\'on}
-Llamamos indicadores de intermediaci\'on a aquellos que est\'an basados en la influencia que un nodo tiene para los flujos de informaci\'on.
-%
-%
-% Ser un nodo de intermediaci\'on entre distintos subgrupos, un canal obligado para la transmisi\'on de informaci\'on, puede ser una variable que afecte los procesos de aprendizaje social de los individuos.
-%.
-La medida de intermediaci\'on paradigm\'atica es \emph{betweenness}, definida como la suma de las proporciones de caminos m\'inimos entre todos los pares $q$ y $r$ que pasan por $p$.
+La medida de intermediación paradigmática es \emph{betweenness}, definida como la suma de las proporciones de caminos mínimos entre todos los pares $q$ y $r$ que pasan por $p$.
 %
 \begin{equation}
-	\emph{betweenness}(p) = { \sum_{q,r}\frac{\text{Caminos m\'inimos entre $q$ y $r$ que pasan por $p$}}{\text{Caminos m\'inimos entre $q$ y $r$}}}
+	\emph{betweenness}(p) = { \sum_{q,r}\frac{\text{Caminos mínimos entre $q$ y $r$ que pasan por $p$}}{\text{Caminos mínimos entre $q$ y $r$}}}
 \end{equation}
 %
 Es una medida que beneficia a los nodos ``puente''.
+
 % Parrafo
 
-\emph{Load Centrality} es una variante de betweenness, pero su definici\'on formal usa el concepto de flujo.
+\emph{Load Centrality} es una variante de betweenness, pero su definición formal usa el concepto de flujo.
 %
-El flujo que env\'ia un nodo $q$ hacia una nodo $r$ se transmite por los caminos m\'inimos, dividiendo el flujo en partes iguales cada vez que aparece m\'as de una alterativa disponible.
+El flujo que envía un nodo $q$ hacia una nodo $r$ se transmite por los caminos mínimos, dividiendo el flujo en partes iguales cada vez que aparece más de una alterativa disponible.
 %
 \begin{equation}
 	\emph{load}(p)= { \sum_{q,r} \text{Cantidad de flujo enviada por el nodo $q$ al $r$ que pasa por $p$} }
 \end{equation}
 %
-Si hay un solo camino con distancia m\'inima, todo el flujo ir\'a por ah\'i.
+Si hay un solo camino con distancia mínima, todo el flujo irá por ahí.
 %
-Estas dos soluciones est\'an basadas en caminos m\'inimos.
-% % Parrafo
-%
-%
-% Algunas medidas que consideran todos los caminos entre pares de nodos son \emph{Communicability betweenness} y \emph{Current-flow betweenness}.
-%.
-%
-% Sin embargo sus implementaciones solo admiten grafos con una \'unica componente.
-%.
-%
-% Por este motivo, si bien hemos explorado su comportamiento, no las presentaremos en detalle en este trabajo.
-% %Pero debido a que los indicadores de intermediaci\'on se ven menos afectados que los indicadores de cercan\'ia cuando se analizan , estas medidas fueron utilizadas durante el estudio.
-%.
-% %
-% \begin{quotation} \cite{Estrada2009}:
-% At one extreme, betweenness has been defined by considering information passing only through the shortest paths between pairs of nodes.
-% At the other extreme, an alternative type of betweenness has been defined
-% by considering all possible walks of any length.
-% Communicability betweenness centrality lies between these two opposing viewpoints, allowing information to pass through all possible routes, but introduce a scaling so that longer walks carry less importance.
-% \end{quotation}
-%
-% \begin{equation}
-%  \text{comm} = \sum_{k=0}^{\infty} \frac{1}{k!} \, \text{numero de caminos}(\text{de largo } k)
-% \end{equation}
-%
-% \begin{quotation} \cite{newman2005-currentFlow}:
-% Betweenness, by counting only shortest paths, implicitly assumes that information spreads only along those shortest paths.
-% Here, we propose a betweenness measure that relaxes this assumption, based on random walks, counting how often a node is traversed by a random walk between two other nodes.
-% Current flow in electrical circuits is an analogy for random walks.
-% \end{quotation}
-%
-% Ahora, podremos definir la versi\'on en redes el\'ectricas como la fracci\'on de una unidad de corriente que pasa por x.
-% The measure is based on random walks, counting how often a node is traversed by a random walk between two other nodes.
-%
-% \begin{equation}
-%  \text{flowBetween}(x) = \sum_{y\neq z} \text{fraccion de Random Walks entre $y$ y $z$ que pasa por $x$}
-% \end{equation}
-%
-%
-% \subsection{Materials and Procedure}
-%
-% En este trabajo proveemos los datos y el c\'odigo fuente de modo de permitir que los resultados sean reproducidos por un investigador independiente.
-% %
-
-%
-Los resultados de este trabajo pueden ser reproducidos
+Estas dos soluciones están basadas en caminos mínimos.
 
 
 \section{Resultados}
-En esta secci\'on exploramos el efecto causal que la posici\'on topol\'ogica de los individuos en la red de intercambio de informaci\'on tiene sobre sus procesos de aprendizaje individual.
-%
-Proposing a causal model does not imply believing that it is the only true one, it is just the only way we have to draw causal conclusions from observational data
-Para sacar conclusiones causales de datos observacionales se hace necesario proponer al menos un modelo causal~\cite{pearl2009-causality}.
-%
-Cumulative Cultural Evolution within Evolving Population Structures
-Para ello, hemos especificado en la introducci\'on un modelo causal basado en las principales descubrimientos alcanzados en el \'area que estudia los procesos de evoluci\'on y acumulaci\'on cultural en poblacionales con estructuras din\'amicas~\cite{Derex2020}.
-%
-Basado en los principales consensos, podemos afirmar que el aprendizaje humano depende de al menos cuatro factores: el ambiente, la experiencia individual, la informaci\'on cultural y la habilidad inicial.
-%
-Y a su vez, el acceso a la informaci\'on cultural depende del la red de intercambio de informaci\'on.
-% Parrafo
 
-Para alcanzar una conclusi\'on causal debemos asegurarnos que las variables seleccionadas como observables durante su evaluaci\'on (a veces llamadas ``variables de control'') preserve abierto el flujo de inferencia entre la causa y el efecto, manteniendo cerrado el resto de flujos de inferencia indirectos que se producen por dependencias probabil\'isticas no causales.
+En esta sección exploramos el efecto causal que la posición topológica de los individuos en la red partidas tiene sobre sus procesos de aprendizaje individual.
 %
-La selecci\'on de estas variables depende de la estructura del modelo causal propuesto y se realiza siguiendo el criterio de \emph{d-separaci\'on}.
+En la subsección~\ref{sec:initial_ability} estimamos la habilidad inicial de los individuos a través del modelo estado-del-arte de la industria y la academia (TrueSkill Through Time), que hemos publicado por primera vez desde su creación en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT}.
 %
-En el modelo propuesto, el efecto que la red de intercambios tiene sobre el aprendizaje de los individuos se puede evaluar cuando condicionamos sobre la experiencia individual y habilidad inicial (el ambiente ya es constante en nuestro caso).
+En la subsección~\ref{sec:results_centralities} medimos la posición topológica de los individuos en la red de intercambios de información (indicadores de popularidad, cercanía e intermediación) utilizando la metodología clásica de análisis de grafos dinámicos~\cite{Kossinets2006, Mcgregor2014}.
 %
-Es decir, la diferencia de aprendizaje que surga de variar la posici\'on topol\'ogica de los individuos en la red de intercambio de informaci\'on, manteniendo fijas la experiencia individual y habilidad inicial, puede ser considerado el efecto causal para el modelo causal propuesto.
-%.
-%
-% En otros modelos causales alternativos se seleccionar\'a otro conjunto de variables.
-% Parrafo
+Finalmente, en la subsección~\ref{sec:efecto_topologia} evaluamos cómo cambia el aprendizaje en función de la posición topológica los individuos en el red, manteniendo la habilidad incial y la experiencia individual fijas.
 
-La habilidad inicial es importante debido a que, como en todos los modelos causales estructurales (e.g.~funciones sigmoideas, leyes de potencia o de von Bertalanffy) la tasa aprendizaje depende del estad\'io en el que se encuentra cada uno de los individuos al empezar el proceso, conocer su valor nos permite considerar la experiencia individual y la informaci\'on cultural adquirida por los individuos durante el periodo estudiado como los factores efectivos de sus curvas de aprendizaje.
-%
-Por este motivo, en la subsecci\'on~\ref{sec:initial_ability} estimamos la habilidad inicial de los individuos a trav\'es del modelo estado-del-arte de la industria y la academia (TrueSkill Through Time), que hemos publicado por primera vez desde su creaci\'on en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT}.
-%
-Luego, en la subsecci\'on~\ref{sec:results_centralities} medimos la posici\'on topol\'ogica de los individuos en la red de intercambios de informaci\'on (indicadores de popularidad, cercan\'ia e intermediaci\'on) utilizando la metodolog\'ia cl\'asica de an\'alisis de grafos din\'amicos~\cite{Kossinets2006}.
-%
-%
-% Luego, como queremos explorar el efecto que la posici\'on de los individuos en la red tiene sobre el aprendizaje en este modelo causal es necesario ocultar la variable informaci\'on cultural para abrir el flujo de inferencia entre las causa y el efecto~\cite{pearl2009-causality}.
-%.
-%
-% En este trabajo consideramos que la informaci\'on cultural depende de la red, la cual est\'a definida por su estructura y tama\~no (este \'ultimo permance estable a lo largo del per\'iodo analizado).
-%
-% % Parrafo
-Finalmente, evaluamos c\'omo cambia el aprendizaje en funci\'on de la posici\'on topol\'ogica los individuos en el red, manteniendo la abilidad incial y la experiencia individual fijas.
-% Parrafo
 
 \subsection{La habilidad inicial de las curvas de aprendizaje individuales}\label{sec:initial_ability}
-Conocer la habilidad inicial es fundamental cuando se quiere conocer el estad\'io en el que encuetran los individuos antes de comenzar un proceso de aprendizaje.
+
+
+Conocer la habilidad inicial es importante debido a que en todos los modelos causales estructurales (e.g.~funciones sigmoideas, leyes de potencia o de von Bertalanffy) la tasa aprendizaje depende del estadío en el que se encuentra cada uno de los individuos al empezar el proceso.
 %
-Sin embargo, los modelos de habilidad m\'as utilizados en la industria del video juego y la academia (como Elo, Glicko, Item-Response Theory y TrueSkill) no son capaces de ofrecer buenas estimaciones iniciales fiables debido a que usan el \'ultimo posterior como prior del siguiente evento, propagando la informaci\'on en una sola direcci\'on por el sistema, del pasado al futuro.
+Sin embargo, los modelos de habilidad más utilizados en la industria del video juego y la academia no son capaces de ofrecer buenas estimaciones iniciales fiables.
 %
-Sin embargo, la aplicaci\'on estricta de las reglas de la probabilidad requiere propagar la informaci\'on hist\'orica en todas las direcci\'on, a trav\'es de toda la red.
+Por el contrario, el estimador de habilidad estado del arte, TrueSkill Through Time, ofrece estimaciones con baja incertidumbre a lo largo de toda la curva de aprendizaje, proporcionando estimaciones precisas de la habilidad inicial y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
+%
+Si bien la especificación de este modelo había sido publicadas más de una década atrás~\cite{Dangauthier2007}, no existía ninguna versión de código abierto disponible hasta el lanzamiento de nuestros paquetes en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT}.
+%
+Sin nuestra implementación no hubiera sido posible distinguir el estadío inicial en el que se encuentran los individuos antes de comenzar el proceso de aprendizaje, y por lo tanto hubiera sido imposible evaluar el efecto causal que la posición en la red tiene sobre el aprendizaje.
+
 % Parrafo
 
-Haciendo esto, el modelo estado del arte en industria del video juego, TrueSkill Through Time, logra estimaciones con baja incertidumbre en toda la curva de aprendizaje, ofreciendo buenas estimaciones iniciales de habilidad y garantizando adem\'as la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
+En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribución de habilidades iniciales de los jugadores con al menos 150 partidas jugadas.
 %
-Si bien las espec\'ificaciones de este modelo hab\'ian sido publicadas m\'as de una d\'ecada atr\'as~\cite{Dangauthier2007}, hasta el lanzamiento de nustros paquetes en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT} no exist\'ia ninguna versi\'on de c\'odigo abierto disponible.
+Antes de explorar los posibles efectos causales, discriminamos a la población en grupos según el nivel de su habilidad inicial: ``novatos'', ``intermedios'' y ``expertos''.
 %
-Sin nuestra implementaci\'on no hubiera sido posible distinguir el estad\'io inicial en el que se encuentran los individuos antes de comenzar el proceso de aprendizaje, y por lo tanto hubiera sido imposible evaluar el efecto causal que la posici\'on en la red tiene sobre el aprendizaje.
 % Parrafo
 
-En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribuci\'on de habilidades iniciales de los jugadores con al menos 150 partidas jugadas.
+En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribución de habilidades iniciales de los jugadores con al menos 150 partidas jugadas.
 %
-Con la idea de evaluar los distintos efectos causales que se producen en los diferentes estadios de habilidad inicial, se\~nalamos en el gr\'afico los grupos que ser\'an analizados m\'as adelante, los cuales llamamos ``novatos'', ``intermedios'' y ``expertos''.
+Antes de explorar los posibles efectos causales, discriminamos a la población en grupos según el nivel de su habilidad inicial: ``novatos'', ``intermedios'' y ``expertos''.
 %
 \begin{figure}[ht!]
  	\centering
 	\includegraphics[width=0.5\linewidth]{static/hist-ttt-inicial-min-150-partidas}
 	\caption{
-	Distribuci\'on de habilidad inicial para individuos con al menos 150 partidas jugadas. En color se\~nalamos los estad\'ios iniciales de las curvas de aprendizaje individuales que analizamos en este trabajo: novatos, intermedio y experto.
+	Distribución de habilidad inicial para individuos con al menos 150 partidas jugadas. En color señalamos los estadíos iniciales de las curvas de aprendizaje individuales que analizamos en este trabajo: novatos, intermedio y experto.
 	}
 	\label{Figuras.HistogramaTTTInicial}
  \end{figure}
 %
-Definimos como novatos a los individuos con habilidades iniciales entre 7 y 10, como intermedios a los individuos con habildiades iniciales entre 12 y 13 , y comom expertos a los individsuos con habilidades inciales entre 16 y 18.
+Definimos como novatos a los individuos con habilidades iniciales entre 7 y 10, como intermedios a los individuos con habilidades iniciales entre 12 y 13 , y como expertos a los individuos con habilidades iniciales entre 16 y 18.
 %
-Las personas que reci\'en empiezan (aka beginners) tienen mucho que aprender y sus curvas de aprendizaje suelen ser pronunciadas.
+La distancia que existe entre grupos nos permite distinguir claramente las clases.
+
+% Parrafo
+
+Las personas que recién empiezan (aka beginners) tienen mucho que aprender, por lo que sus curvas de aprendizaje suelen ser pronunciadas.
 %
-Las personas con cierta experiencia necesitan trabajar m\'as para adquirir nuevos conocimientos, por lo que sus curvas de aprendizaje suelen crecer m\'as lentamente.
+Las personas con cierta experiencia necesitan trabajar más para adquirir nuevos conocimientos, por lo que sus curvas de aprendizaje suelen crecer más lentamente.
 %
-Las personas que consiguen niveles de habilidad altos (aka expertas) alcanzan un l\'imite en la adquisici\'on de nuevo conocimiento, por lo que sus curvas de aprendizaje suelen ser estables o incluso levemente decrecientes.
-%.
+Las personas expertas alcanzan un límite en la adquisición de nuevo conocimiento, por lo que sus curvas de aprendizaje suelen ser estables o incluso levemente decrecientes.
 %
-% Nuestro objetivo evaluar el efecto de la posici\'on en la red tiene sobre estas curvas de aprendizaje.
-%
+Por ello, es esperable que el efecto de la posición en la red sea diferente en cada caso.
+
+
+
 \subsection{La posici\'on topol\'ogica de los individuos en la red} \label{sec:results_centralities}
-Para estudiar c\'omo cambia la red de intercambio de informaci\'on a trav\'es del tiempo, usamos una metodolog\'ia cl\'asica de analisis de grafos din\'amicos que parte el grafo en peque\~nos subgrafos compuesto \'unicamente por los nodos y v\'ertices activos en un cierto per\'iodo de tiempo~\cite{Kossinets2006}.
-%
-De esta forma obtuvimos aproximadamente $200$ subgrafos que se corresponden a ventanas de dos semanas de largo que cubren los $7.5$ a\~nos que abarca el estudio.
-%
-Para describir la posici\'on topol\'ogica de los individuos, en cada una de las ventanas deslizantes computamos seis medidas de centralidad individual, que clasificamos en 3 grupos: popularidad, cercan\'ia e intermediaci\'on (descritos en la secci\'on metodolog\'ia).
-% Parafo
-En la figura~\ref{Figuras.HistogramasCentralidades} mostramos la distribuci\'on de medianas de eigenvalue, harmonic y load, una medida de centralidad por cada tipo de indiciador (popularidad, cercan\'ia e intermediaci\'on).
+
+Para describir la posición topológica de los individuos en cada una de las ventanas deslizantes computamos seis medidas de centralidad individual, que clasificamos en 3 grupos: popularidad, cercanía e intermediación (descritos en la sección metodología).
+% s
+En la figura~\ref{Figuras.HistogramasCentralidades} mostramos la distribución de medianas de eigenvalue, harmonic y load, una medida de centralidad por cada tipo de indiciador (popularidad, cercanía e intermediación).
 %
 \begin{figure}[ht!]
  	\centering
 	 \begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/eigenvector-centrality-150-partidas-hist}
+	\includegraphics[width=\linewidth]{static/eigenvector-centrality-150-partidas-hist}
 	\caption{Eigenvector}
 	\label{fig:eigenvector-centrality-150-partidas-hist}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/harmonic-centrality-inverse-weight-150-partidas-hist}
+	\includegraphics[width=\linewidth]{static/harmonic-centrality-inverse-weight-150-partidas-hist}
 	\caption{Harmonic}
 	\label{fig:harmonic-centrality-inverse-weight-150-partidas-hist}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/load-centrality-150-partidas-hist}
+	\includegraphics[width=\linewidth]{static/load-centrality-150-partidas-hist}
 	\caption{Load}
 	\label{fig:load-centrality-150-partidas-hist}
 	\end{subfigure}
 	\caption{
-	Distribuci\'on de medianas de las centralidades eigenvalue, harmonic y load, teniendo en cuenta \'unicamente las primeras 50 partidas jugadas de usuarios con al menos 150 partidas jugadas totales. Las l\'ineas punteadas muestran los percentiles 2, 40, 60 y 98.
+	Distribución de medianas de las centralidades eigenvalue, harmonic y load, teniendo en cuenta únicamente las primeras 50 partidas jugadas de usuarios con al menos 150 partidas jugadas totales. Las líneas punteadas muestran los percentiles 2, 40, 60 y 98.
 	}
 	\label{Figuras.HistogramasCentralidades}
  \end{figure}
 %
-Las figuras \ref{fig:eigenvector-centrality-150-partidas-hist} y \ref{fig:load-centrality-150-partidas-hist} tienen el eje x en escala logar\'itmica.
+Las figuras \ref{fig:eigenvector-centrality-150-partidas-hist} y \ref{fig:load-centrality-150-partidas-hist} tienen el eje x en escala logarítmica.
 %
-Aqu\'i mostramos el valor mediano de centralidad en las primeras $50$ partidas de los jugadores activos que alcanzaron al menos $150$ partidos de experiencia.
+Aquí mostramos el valor mediano de centralidad en las primeras $50$ partidas de los jugadores activos que alcanzaron al menos $150$ partidos de experiencia.
 %
-En todos los casos las distribuciones se encuentran centradas alrededor de un valor t\'ipico, con diferentes tipos de dispersi\'on.
+En todos los casos las distribuciones se encuentran centradas alrededor de un valor típico, con diferentes tipos de dispersión.
 %
-Otras combinaciones de valores fueron exploradas, y los resultados que aqu\'i presentamos no se ven afectados.
+Otras combinaciones de valores fueron exploradas, y los resultados que aquí presentamos no se ven afectados.
 %
 \en{The distribution of median centrality values of those who have individual experience between $50$ and $150$ games played is similar to the one shown in Figure~\ref{Figuras.HistogramasCentralidades}.
 %
-La distribuci\'on de valores medianos de centralidad de quienes tienen experiencia individual entre $50$ y $150$ partidas jugadas es similar a la que se muestra en la figura~\ref{Figuras.HistogramasCentralidades}.
+La distribución de valores medianos de centralidad de quienes tienen experiencia individual entre $50$ y $150$ partidas jugadas es similar a la que se muestra en la figura~\ref{Figuras.HistogramasCentralidades}.
+
 % Parrafo
 
-Con la idea de evaluar el efecto que la posici\'on de la red tienen sobre el aprendizaje, identificamos dos grupos que ser\'an analizados m\'as adelante, los cuales nos referimos como cohortes de ``baja'' y ``alta'' centralidad.
-%
-%
-% Para comparar las curvas de aprendizaje seg\'un diferentes valores de centralidad, clasificamos a los jugadores en cohortes seg\'un su valor de centralidad mediana, dividendo a la poblaci\'on en dos grupos: aquellos con centralidades bajas y aquellos con centralidades altas.
+Para evaluar el efecto que tienen las posiciones de los individuos en la red sobre el aprendizaje, identificamos cohortes de centralidad baja y alta.
 %.
-Para evitar posibles outliers eliminamos del an\'alisis a los jugadores con valores de centralidad por debajo del percentil 2 y por arriba del 98.
+Eliminamos del análisis a los jugadores con valores de centralidad inferiores al percentil 2 y superiores al 98.
 %
-Y para distinguir con claridad las cohortes estudiadas, eliminamos tambi\'en el grupo de jugadores con valores de centralidad entre los percentiles 40 y 60.
+Y para distinguir con claridad las cohortes estudiadas, eliminamos también el grupo de jugadores con valores de centralidad entre los percentiles 40 y 60.
 %
 De esa forma, los jugadores clasificados en las cohortes de baja y alta centralidad son aquellos que tienen sus valores de centralidad entre los percentiles 2 y 40, y entre los percentiles 60 y 98 respectivamente.
 %
-% % Parrafo
-%
-%
-% Debido a la estructura del modelo causal, para evaluar el efecto de los factores individuales y sociales sobre el aprendizaje necesitamos observar c\'omo cambia la habilidad dada la experiencia individual y la posici\'on de los jugadores en el red.
-\subsection{\en{The effect that the position in the network has on individual learning.}El efecto que la posici\'on en la red tiene sobre el aprendizaje individual.}}
+Es esperable que el efecto sobre el aprendizaje sea diferente en cada caso.
+
+
+\subsection{El impacto que la posición en la red tiene sobre el aprendizaje individual.}
 
 
 Para evaluar el efecto causal es necesario, en el modelo causal propuesto, comparar las curvas de aprendizaje que producen las diferentes posiciones de los individuos en la red (definidas en la secci\'on~\ref{sec:results_centralities} como cohortes de centralidades baja o alta), para mismos valores de habilidad inicial y experiencia individual.
@@ -7063,62 +6892,47 @@ Observar el comportamiento de las distintas curvas de aprendizaje dado un valor 
 De esta forma, la diferencia entre las curvasa de aprendizaje puede ser interpretada como el efecto causal producido por la posici\'on de los individuos en la red.
 %
 La habilidad inicial, adem\'as de actuar como variable de control en este modelo causal, nos permite tambi\'en evaluar separadamente el comportamiento que este efecto causal tiene en los distintos estad\'ios del aprendiaje (definidos en la secci\'on~\ref{sec:initial_ability} como novatos, intermedios y expertos).
-%
-% Luego, para cada una de estas cohortes analizamos el comportamiento de las curva de aprendizaje del grupo con centralidad baja y centralidad alta, tal como fue definida en la secci\'on \ref{sec:results_centralities}.
-%
-%
-% De esta forma intentamos detectar el rol que cumple los factores sociales se\~nalados en el modelo causal~\ref{fig:general_model}, en particular la posici\'on en el red, sobre el aprendizaje individual.
-% Parrafo
 
-%
-%
-% Hasta ahora la experiencia individual ha sido el factor de aprendizaje m\'as estudiado, sobre el que ya se han propuesto modelos causales estructurales, como sigmoid functions, power laws or von Bertalanffy, que han sido ampliamente adoptados por la comunidad cient\'ifica.
-%.
-%
-% Si bien sabemos que los factores sociales juegan un rol relevante en el proceso de aprendizaje, como describimos en la introducci\'on, todav\'ia no se han incorporado estas variables en modelos causales estructurales que hayan sido ampliamente aceptados.
-%.
-%
-% Analizando separadamente las curvas de aprendizaje en funci\'on de la habilidad inicial y el nivel de centralidad buscamos encontrar nuevas intuiciones sobre el modelo causal estrucutral subyacente.
 % Parrafo
 
 En la figura~\ref{fig:curvas_de_aprendizaje} podemos observar las diferentes curvas de aprendizaje dados mismos valores de habilidad inicial y experiencia.
 %
 Cada fila contiene un determinado nivel de habilidad inicial: novato, intermedio y experto.
 %
-En cada columna se eval\'ua una misma medida de centralidad, una por cada tipo de indicador: popularidad (\emph{eigenvector}), cercan\'ia (\emph{harmonic}) e intermediaci\'on (\emph{load}).
+Y en cada columna se evalúa una misma medida de centralidad, una por cada tipo de indicador: popularidad (\emph{eigenvector}), cercanía (\emph{harmonic}) e intermediación (\emph{load}).
 %
 Las curvas de aprendizaje azule y naranja representa la habilidad en poblaciones con niveles de centralidad baja y alto respectivamente.
 %
 \begin{figure}[ht!]
     \centering
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-low-eigenvector-centrality}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-low-eigenvector-centrality}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-low-harmonic-centrality-inverse-weight}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-low-harmonic-centrality-inverse-weight}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-low-load-centrality}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-low-load-centrality}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-med-eigenvector-centrality}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-med-eigenvector-centrality}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-med-harmonic-centrality-inverse-weight}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-med-harmonic-centrality-inverse-weight}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-med-load-centrality}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-med-load-centrality}
 	\end{subfigure}
     \begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-high-eigenvector-centrality}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-high-eigenvector-centrality}
 	\caption{Eigenvector}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-high-harmonic-centrality-inverse-weight}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-high-harmonic-centrality-inverse-weight}
 	\caption{Harmonic}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}\centering
-	\includegraphics[width=\linewidth]{static/paper/evolucion-ttt-inicial-high-load-centrality}
+	\includegraphics[width=\linewidth]{static/evolucion-ttt-inicial-high-load-centrality}
 	\caption{Load}
 	\end{subfigure}
 	\caption{
@@ -7127,200 +6941,101 @@ Las curvas de aprendizaje azule y naranja representa la habilidad en poblaciones
 	\label{fig:curvas_de_aprendizaje}
 \end{figure}
 %
-Al interior de cada figura, el eje x permite comparar las curvas de aprendizaje para mismos valores de expriencia.
+Al interior de cada figura, el eje x permite comparar las curvas de aprendizaje para mismos valores de experiencia.
 %
-En el eje y, las curvas de aprendizaje est\'an medidas usando el modelo de habilidad estado del arte de la industria del video juego, bajo una escala en la que un punto diferencia de habilidad equivalga a 76\% de probabilidad de ganar.
+En el eje y, las curvas de aprendizaje están medidas usando el modelo de habilidad estado del arte de la industria del video juego, bajo una escala en la que un punto diferencia de habilidad equivalga a 76\% de probabilidad de ganar.
 %
-La leyenda indica el tama\~no de la pobalaci\'on en cada una de las curvas de aprendizaje.
+La leyenda indica el tamaño de la población en cada una de las curvas de aprendizaje.
 %
-El area sombrada representa dos desv\'ios estandar de la curva de aprendizaje estimada.
-% Parrafo EFECTO DE SEGUNDO ORDEN
+El área sombrada representa dos desvíos estándar de la curva de aprendizaje estimada.
 
-Curiosamente, el efecto de la centralidad sobre las curvas de aprendizaje solo se observa en la poblaci\'on con habilidad incial intermedia.
-%
-El impacto en las curvas de aprendizaje no es significativo solo en t\'erminos estad\'isiticos, es adem\'as relevante en t\'erminos cualitativos en tanto la diferencia de habilidad entre las poblaciones con baja y alta centralidad alcanza al final de la serie una distancia de 1 punto, lo que equivale a 76\% de probabilidad de ganar.
-%
-No es sorprendente que este efecto no se observe en la poblaci\'on experta pues, como ellas no tienen nada m\'as que aprender, sus curvas de aprendizaje se mantienen planas.
-%
-Lo que puede parecer sorprendente es que las curvas de aprendizaje de la poblaci\'on de novatos, que es la que tiene m\'as por aprender, dependa solo de la experiencia y es independiente de la posici\'on de los individuos en la red.
-%
-%
-% Los resultados obtenidos con el resto de las medidas de centralidad son equivalentes.
-% Parrafo MOTIVOS DEL EFECTO DE SEGUNDO ORDEN
+% Parrafo
 
-Esto parecer\'ia indiciar que la posici\'on de los individuos en la red tendr\'ia un factor de arendizaje de segundo orden que se activa solo cuando las personas ya adquirieron suficiente conocimiento por experiencia individual para sacarle provecho de la informaci\'on cultural.
-% %.
+Curiosamente, el efecto de la centralidad sobre las curvas de aprendizaje solo se observa en la población con habilidad inicial intermedia.
 %
-% La experiencia individual parece ser el factor fundamental de aprendizaje para los jugadores que reci\'en comienzan.
-%.
+El impacto en las curvas de aprendizaje no es significativo solo en términos estadísticos, es además relevante en términos cualitativos en tanto la diferencia de habilidad entre las poblaciones con baja y alta centralidad alcanza al final de la serie una distancia de 1 punto, lo que equivale a 76\% de probabilidad de ganar.
 %
-% En esta poblaci\'on, la experiencia produce un aumento r\'apido de la habilidad, como est\'a previsto en todos los modelos de aprendizaje.
-%.
+No es sorprendente que este efecto no se observe en la población experta pues, como ellas no tienen nada más que aprender, sus curvas de aprendizaje se mantienen planas.
 %
-% Y la posici\'on en la red no produce ning\'un efecto significativo.
-%.
-%
-% Pero a medida que los individuos adquieren m\'as experiencia, el crecimiento empieza a perder velocidad y los factores de segundo orden comienzan a ser visibles.
-%
-% % Parrafo MOTIVOS DEL EFECTO DE SEGUNDO ORDEN
-%
-%
-% ?`Pero por qu\'e el efecto del factor de segundo orden solo aparece en la poblaci\'on con habilidad inicial intermedia.
-%
-Aparentemente, a diferencia del efecto de la expriencia sobre el aprendizaje que decae continuamente, el efecto de este factor social parece estar gobernado por un crecimiento inicial y un decaimiento final, una especie de u invertida.
-%
-Por un lado, para explotar los factores sociales es posible que se requiera cierto conocimiento previo que permita decodificar las estrategias del oponente para poder incorporar algunos de sus aspectos en la estrategia propia.
-%
-Esto no podr\'ia ser realizado por los jugadores novatos, pero si por los intermedios y los expertos.
-%
-Pero por otro lado todo proceso de aprendizaje se satura, lo que produce un decaimiento tambi\'en en el efecto de los factores sociales de aprendizaje.
-%
-De este modo, a pesar que de los jugadores expertos sean capaces de comprender mejor que nadie las estrategias utilizadas por sus oponentes, al no tener mucho m\'as que aprender, tampoco se observa un efecto del factor soocial sobre el aprendizaje.
-%
-%
-% S\'olo cuando la habilidad inicial de los jugadores es intermedia la centralidad cultural tiene un efecto sobre las curvas de aprendizaje, que se suma al aprendizaje generado por experiencia individual.
-% Parrafo POR QUE BAJA CENTLIDAD
+Lo que puede parecer sorprendente es que las curvas de aprendizaje de la población de novatos, que es la que tiene más por aprender, dependa solo de la experiencia y es independiente de la posición de los individuos en la red.
 
-?`Y por qu\'e baja centralidad es mejor que alta.
 %
-Abordamos este tema en la secci\'on discusi\'on.
-%
-Por el momento, es importante notar la enorme diferencia que hay entre la categor\'ia de ``baja centralidad'' usada a lo largo de este trabajo y los procesos de aislamiento, total o parcial, que la literatura de evoluci\'on cultural se\~nalan como causa de involuci\'on cutural en la historia de la humanidad.
-%
-La plataforma en l\'inea que analizamos se caracteriza por facilitar los contactos entre las personas, con una tendencia a la formaci\'on de parejas al azar, por lo que no existen barreras sociales ni ambiantales que produzcan la emergencia de comunidadades asiladas.
-%
-Adem\'as, es importante recordar que las centralidades fueron calculadas en ventanas que tienen un largo de dos semanas, lo cu\'al hace que veamos solo un subconjunto de las partidas que cada jugadore tiene.
-%
-Si bien en cada ventanas existe siempre alguna componente asilada, cuando extendemos el tama\~no de la ventana vemos que no existen jugadores realmente aislados.
-%
-Por este motivo, lo que nosotros denominamos ``centralidad baja'' en otros contextos deber\'ia ser interpretado como centralidad media.
-%
-%
-% Esta observaci\'on es repite con todas las centralidades analizadas.
-%.
-%
-% Estos resultados son consistentes tambi\'en cuando agregamos filtros para considerar jugadores cuya nivel de actividad sea similar.
-%.
+
 \section{Discusiones}
-% Parrafo. Resumen. Objetivo, medios y Resultados
 
-En este trabajo hemos explorado el efecto que la posici\'on topol\'ogica de los idividuos en una red de intercambio de infromaci\'on tiene sobre el aprendizaje individual.
+En este trabajo, exploramos el efecto que la posición topológica de los individuos en una red de intercambios culturales tiene sobre el aprendizaje individual.
 %
-Para sacar conclusiones causales de datos observacionales especificamos un modelo causal que intenta resumir los principales acuerdos alcanzados en el \'area de evoluci\'on cultural acumulativa, teniendo en cuenta las caracter\'isiticas particulares de nuestra base de datos.
+Para sacar conclusiones causales de datos observacionales especificamos un modelo causal que busca resumir los principales acuerdos alcanzados en el área de aprendizaje social y acumulación cultural.
 %
-Estudiando la red de partidas de una de las comuinidad virtuales m\'as importantes de Go durante sus primeros 8 a\~nos de vida (2005-2013), pudimos detectar la existencia de un efecto de segundo orden de la posici\'on de los individuos en la red sobre el aprendizaje, que solo se activa cuando los jugadores tienen una habilidad inicial intermedia.
-% Parrafo. Las verdades plurales y condicionales.
+Estudiando la red de partidas de una de las comunidades virtuales más importantes de Go durante sus primeros 8 años de vida (2005-2013), pudimos detectar la existencia de un efecto de segundo orden de la posición de los individuos en la red sobre el aprendizaje, que solo se activa cuando los jugadores tienen una habilidad inicial intermedia.
 
-A diferencia de las ciencias formales, que validan sus proposiciones dentro de sistemas axiom\'aticos cerrados, las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas abiertos que por definici\'on contienen siempre alg\'un grado de incertidumbre.
-%
-?`Es posible alcanzar ``verdades'' si es inevitable decir ``no s\'e''? S\'i.
-%
-La aplicaci\'on estricta de las reglas de la probabilidad (enfoque bayesiano) garantiza los acuerdos intersubjetivos en contextos de incertidumbre, fundamento de las verdades emp\'iricas.
-%
- Bajo incertidumbre se hace necesario creer al mismo tiempo en A y no A para que sea la sorpresa, \'unica fuente de informaci\'on, el filtro de todas las posibles hip\'otesis.
-%
-De esta forma, el enfoque Bayesiano actualiza \'optimamente las creencias de todas y cada una de las hip\'otesis de acuerdo a la evidencia emp\'irica y formal (datos y modelos causales).
-%
-Este conocimiento emp\'irico es por naturaleza ``plural', dado que se le otorga una grado de creencia no nulo a hip\'otesis que son mutuamente excluyentes, y ``condicional'', dado que la distribuci\'on de creencias a la que arribamos depende de la informaci\'on limitada que disponemos (datos) y de los modelos causales que asumimos como verdaderos durante el proceso de inferencia.
-% Parrafo. Modelo casual (Generalidades)
+% Parrafo
 
-Las conclusiones causales de este trabajo se han obtenido a partir de un \'unico modelo causal, que hemos especificado intentando resumir los principales acuerdos alcanzados por la comunidad que estudia los procesos de evoluci\'on cultural acumulativa en estructuras poblacionales din\'amicas.
+A diferencia del efecto de la experiencia en el aprendizaje, que decae continuamente, el efecto de este factor social parece regirse por un crecimiento inicial y un decaimiento final, una especie de patrón en forma de U invertida.
 %
-Si bien todav\'ia no es com\'un encontrar en esta literatura acad\'emica la formalizaci\'on gr\'afica de sus modelos causales, siempre es posible extraer las princiaples estructuras causales que son expresadas usando lenguaje natural.
-%.
+Por un lado, explotar los factores sociales puede requerir conocimientos previos para decodificar las estrategias del adversario e incorporar algunos de sus aspectos a la estrategia propia.
 %
-% Cada trabajo particular plantea sus propios modelos causales, relativos al problema concreto de estudio.
-%.
-Los modelos causales siempre se pueden complejizar, agregando variables con una importancia de segundo orden, o detalles espec\'ificos a los contextos particulares.
+Los novatos no tienen la perspicacia necesaria para lograrlo, pero los jugadores intermedios y expertos sí.
 %
-Sin embargo, su evaluaci\'on a trav\'es de la aplicaci\'on estricta de las reglas de la probabilidad, $P(\text{Modelo}|\text{Datos},\text{Intervenciones})$, produce una balance natural a favor de los modelos que tienen la complejidad necesaria y suficiente.
+Por otra parte, todo proceso de aprendizaje se satura en algún momento, lo que también produce un decaimiento del efecto de los factores de aprendizaje social.
 %
-Naturalmente, este m\'etodo penaliza los modelos que no tienen la complejidad necesaria para predicir los datos observados.
-%
-Pero tambi\'en penaliza los modelos que introducen complejidad innecesaria, que no mejoran la predicci\'on a priori de los datos.
-% Parrafo. Modelo casual (Nuestro modelo)
+Así, aunque los jugadores expertos pueden entender mejor que nadie las estrategias de sus oponentes, al no tener mucho más que aprender no se observa por lo tanto el efecto del factor social en el aprendizaje.
 
-En vez de comparar el desempe\~no de modelos causales alternativos presentes en la literatura acad\'emica, en este trabajo decidimos extraer el n\'ucleo de ideas compartidas por los diferentres modelos relativas a nuestra variable de inter\'es: el aprendizaje individual.
-%
-De esta forma llegamos a plantear un modelo en el que el aprendizaje humano se ve afectada por los tres factores principales: el ambiente, la experiencia individual, y el acceso a informaci\'on cultural.
-%
-Adem\'as, debido a que en todos los modelos causales estructurales la tasa de aprendizaje depende de la habilidad incial, nos vimos obligados a agregar esa variable como cuarto factor.
-%
-Agregamos adem\'as al modelo causal uno de los factores m\'as discutidos en las \'ultimas d\'ecadas, el rol que la red de intercambio de informaci\'on tiene sobre el acceso a la informaci\'on cultural.
-%
-Y por \'ultimo, agregamos una relaci\'on causal entre experiencia individual y la red de intercambios de informaci\'on debido son las partidas jugadas la forma en la que se agregan nodos y ejes a nuestra red.
-% Parrafo. Metodolog\'ia de estimaci\'on de habilidad
+% Parrafo
 
-Estimar la habilidad inicial ha sido uno de los problemas centrales de este trabajo.
+Esto parece indicar que la posición de los individuos en la red tendría un efecto de segundo orden que sólo se activa cuando las personas han adquirido suficientes conocimientos para aprovechar la información cultural.
 %
-Los modelos habitualmente usados en la industria y la academia, al usar el \'ultimo posterior como prior del siguiente evento, propagan la informaci\'on en un \'unico sentido, del pasado al futuro, produciendo estimaciones de habilidad iniciales que tienen siempre muy alta incertidumbre.
+Pero, ¿por qué es mejor una centralidad baja que una centralidad alta?
 %
-Sin embargo, la aplicaci\'on estricta de las reglas de la probabilidad requiere que la informaci\'on se propage en todos los sentidos, tambi\'en del futuro hacia al pasado.
+Es importante señalar que la plataforma online analizada facilita el contacto entre personas, con una tendencia a establecer juegos basados en el azar.
 %
-De esta forma obtenemos estimaciones correctas con baja incertidumbre, incluso al inicio de cada serie de tiempo.
+En este contexto, no existen barreras sociales o ambientales que produzcan la aparición de comunidades aisladas.
 %
-Esta soluci\'on, que ya hab\'ia sido especificada hace m\'as de una d\'ecada en el modelo TrueSkill Through Time~\cite{Dangauthier2007}, no estaba disponible todav\'ia en ninguno de los lenguajes de programaci\'on con mayores comunidades, por lo que nos vimos obligados a implementarlo~\cite{Landfried2021-TTT}.
+En otras palabras, lo que llamamos baja centralidad está lejos de representar situaciones de aislamiento, asociadas a la pérdida de conocimiento cultural.
 %
-A trav\'es de nuestros software de c\'odigo abierto, en \texttt{Julia}, \texttt{Python}, y \texttt{R}, pudimos conocer las habilidades iniciales de los individuos y por lo tanto evaluar el efecto causal que la red tiene sobre el aprendizaje.
-% Parrafo. Metodolog\'ia de estimaci\'on de la posici\'on en la rede
+Por esta razón, nuestra cohorte de centralidad baja podría interpretarse como de centralidad media para la literatura sobre aprendizaje social y acumulación cultural.
 
-Estudiar la din\'amica estructural de una red, que contiene medio mill\'on de nodos en un per\'iodo de 8 a\~nos, fue otro de los problemas centrales de este trabajo.
-%
-El an\'alisis de grafos es una tarea computacionalmente complejo.
-%
-Desarrollar algoritmos que sean adem\'as capaces de considerar la din\'amica, incorporando la naturaleza temporal de los v\'inculos al an\'alisis, impone una complejidad computacional adicional.
-%
-Si bien existen algunos m\'etodos que miden propiedades estructurales din\'amicas, esta \'area no ha alcanzado todav\'ia la madurez suficiente que sus soluciones est\'en disponibles en los diversos lenguajes de programaci\'on cient\'ifica.
-%
-En este contexto, decidimos seguir el ejemplo de Kossinets y Watts~\cite{Kossinets2006}: estudiar la din\'amica del grafo usando la metodolog\'ia de ventanas deslizantes (que parte el grafo en peque\~nos subgrafos compuesto \'unicamente por los nodos y v\'ertices activos en un cierto per\'iodo de tiempo), analizando la topolog\'ia mediante indicadores dise\~nados para grafos est\'aticos.
-%
-Debido a que nuestro objetivo fue identificar el acceso a la informaci\'on cultural de los individuos en la red, usamos seis medidas de centralidad que clasificamos en 3 grupos (de popularidad, cercan\'ia e intermediaci\'on).
-% Parrafo. Resultados
+% Parrafo
 
-As\'i es como resueltos estos probelmas, y dada la estructura del modelo causal propuesto, pudimos detectar la existencia de un efecto de segundo orden de la posici\'on topol\'ogica de los individuos en la red de intercambios de informaci\'on sobre los procesos de aprendizaje individual.
+Nuestro resultado se alinea con recientes trabajos teóricos y experimentales, que muestran que las estructuras con conexión moderada favorecen los procesos de aprendizaje social y acumulación cultural~\cite{Derex2020}.
 %
-Denominamos a este efecto como de ``segundo orden'' no porque sea de poca importancia (es al mismo tiempo significativo estad\'isticamente y relevante en t\'erminos de probabilidad de ganar), sino porque el efecto solo se observ\'o en la poblaci\'on con habilidad incial intermedia.
+Aunque todavía no es común encontrar en la literatura académica la formalización gráfica de los modelos causales, en la introducción especificamos un modelo causal que pretende resumir los principales acuerdos alcanzados en el campo de la evolución cultural acumulativa, considerando las características particulares de nuestra base de datos.
 %
-Es normal no observar efecto alguno en la poblaci\'on experta pues, como ellas no tienen nada m\'as que aprender, sus curvas de aprendizaje se mantienen planas.
+Siempre podemos aumentar la complejidad de los modelos causales añadiendo variables de importancia de segundo orden o detalles específicos de contextos particulares.
 %
-Lo que nos result\'o contra intuitivo al principio fue que la poblaci\'on de novatos, que es la que tiene m\'as por aprender, no estuviera afectada por la posici\'on en la red, y que su aprendizaje dependa exclusivamente de la experiencia individual.
+Sin embargo, su evaluación mediante la aplicación estricta de las reglas de probabilidad, $P(\text{Modelo}|\text{Datos},\text{Intervenciones})$, arroja un equilibrio natural a favor de los modelos que tienen la complejidad necesaria y suficiente, penalizando tanto a los modelos que no tienen la complejidad necesaria para predecir los datos observados como a los modelos que introducen una complejidad innecesaria que no mejora la predicción previa de los datos.
 %
-Por \'ultimo, observamos que cuando se activa, el efecto positivo sobre el aprendizaje lo producen posiciones de baja centralidad.
-% Parrafo. Posibles interpretaciones de los resultados
+En lugar de comparar el rendimiento de modelos causales alternativos presentes en la literatura, en este trabajo extraemos las ideas centrales compartidas por los principales modelos.
 
-No es sorprende que en el contexto analizado, en el que la plataforma en l\'inea fomenta la formaci\'on de parejas al azar, los procesos de aprendizaje se van beneficiados por valores de centralidad relativamente bajos.
-%
-Es decir, lo que llamamos ``baja centralidad'' est\'a muy lejos de representar situaciones de aislamiento, que est\'an asociadas con p\'erdida de conocimientos culturales.
-%
-Al contrario, est\'a en l\'inea con resultados obtenidos en contextos similares, donde se encontr\'o que repetir compa\~nero de equipo en juegos en l\'inea est\'a asociado con procesos de aprendizaje que son mayores a largo plazo~\cite{Landfried2019}.
-%
-Y en general, est\'a nuestro resultado est\'a en l\'inea con los trabajos te\'oricos y experimentales recientes, que han mostrado que estructuras con moderada conexi\'on son las que favorecen los procesos de evoluci\'on cultural~\cite{Derex2020}.
-% Parrafo MOTIVOS DEL EFECTO DE SEGUNDO ORDEN
+% Parrafo
 
-?`C\'omo se puede explicar que los factores sociales tengan un efecto sobre los jugadores con habilidad intermedia y no tengan efecto alguno sobre los jugadores novatos y expertos.
+La estimación de la capacidad inicial ha sido uno de los problemas centrales de este trabajo.
 %
-Los procesos de aprendizaje basados en la experiencia individual se caracterizan por tener una etapa inicial de r\'apido crecimiento, una etapa intermedia de crecimiento lento, y una etapa final de saturaci\'on en la que el proceso de aprendizaje se detiene o incluso puede decrecer.
+Los modelos comúnmente utilizados en la industria y en el mundo académico propagan la información en una sola dirección, del pasado al futuro, produciendo estimaciones de la habilidad inicial con una incertidumbre muy elevada.
 %
-Por el contrario, el efecto de los factores social parecer\'ia activarse solo cuando las personas adquieren suficiente conocimiento para sacar provecho de la informaci\'on cultural.
+Sin embargo, la aplicación estricta de las reglas de la probabilidad exige propagar la información en todas las direcciones, incluso del futuro al pasado.
 %
-Para poder imitar algunos aspectos de la estrategia del oponente es necesario contar con cierto conocimiento previo que permita decodificar su comportamiento.
+De esta forma TrueSkill Through Time~\cite{Dangauthier2007} consigue estimaciones precisas con baja incertidumbre, incluso al principio de cada serie temporal.
 %
-Esto no podr\'ia ser realizado por los jugadores novatos, pero si por los intermedios y los expertos.
+Debido a que este modelo no estaba disponible en ninguno de los lenguajes de programación más populares, nos vimos obligados a implementarlo~\cite{Landfried2021-TTT}.
 %
-Pero debido a todo proceso de aprendizaje llega a un punto de saturaci\'on, el efecto de los factores sociales sobre el aprendizaje tampoco se observa en los jugadores expertos a pesar de que ellos sean quienes mejor comprenden las estrategias de los oponentes.
-%
-As\'i, solo con una habilidad intermedia se sacar\'ia provecho de la informaci\'on cultural.%, lo que explicar\'ia este com portamiento de U invertida de los factores sociales sobre el aprendizaje individua
-% Parrafo. Hueco y l\'ineas abiertas
+A través de nuestro software de código abierto, en \texttt{Julia}, \texttt{Python}, y \texttt{R}, obtenemos las habilidades iniciales de los individuos, lo que nos permite evaluar el efecto de la red en los procesos de aprendizaje.
 
-Si bien creemos que es necesario hacer una transici\'on completa hacia una ciencia que produzca consluiones ``plurales y condicionales'', a trav\'es de la aplicaci\'on estricta de las reglas de la probabilidad (enfoque bayesiano) y la evaluaci\'on completa del espacio de hip\'otesis (m\'axima incertidumbre), este trabajo contiene todav\'ia algunas partes que debieron ser resuletas haciendo uso de decisones ad-hoc.
+% Parrafo
+
+Estudiar la dinámica estructural de una red que contiene medio millón de nodos durante un periodo de ocho años fue otro de los retos que enfrentó este trabajo.
 %
-Uno de los puntos m\'as problem\'atica ha sido el m\'etodo usado para analizar el comportamiento de la red din\'amica, y por lo tanto la falta de un modelo describir correctamente la posici\'on topol\'ogica de los individuos en la red.
+El análisis de grafos es una tarea compleja e intensiva desde el punto de vista computacional.
 %
-Adem\'as, en este trabajo no hemos evaluado el desempe\~no de modelos causales alternativos.
+En este contexto, decidimos seguir la metodología clásica y robusta~\cite{Kossinets2006, Mcgregor2014} que estudia la dinámica del grafo utilizando ventanas deslizantes.
 %
-En un contexto acad\'emico que todav\'ia no tiene la habitud de explicitar sus modelos causales, nuestro humilde objetivo fue especificar un modelo capaz de expresar los principales consesos alcanzados en el \'area de evoluci\'on cultural acumulativa y de explorar las conclusiones causales que se desprenden de \'el.
+Dado que las redes sociales online suelen tener las propiedades fundamentales de las redes del ego humano~\cite{arnaboldi2017-egoNetwork}, nuestras observaciones pueden eventualmente ser representativas del comportamiento humano en otros dominios.
+
+% Parrafo
+
+Nuestros resultados también están alineados con otros análisis nuestros anteriores, en el que observamos que repetir compañeros de equipo en juegos en línea también mejora los procesos de aprendizaje a largo plazo a pesar de estar asociados con valores de centralidad bajos~\cite{Landfried2019}.
 %
-La evaluaci\'on completa del espacio de posibles modelos causales es una tarea necesariamente colectiva.
+A pesar del aparente acuerdo con la literatura previa, los resultados de nuestro trabajo deben ser considerados sólo como exploratorios y no como conclusiones causales definitivas.
 
 
 
@@ -8531,7 +8246,7 @@ De hecho, el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dy
 
 % Parrafo
 
-En el cap\'itulo~\cite{ch:epistemico} (secci\'on \ref{sec:propiedades_funcion_costo}) hemos visto que debido a que en los procesos multiplicativos los impactos de las p\'erdidas son m\'as fuertes que los de las ganancias (por ejemplo, un \'unico cero en la secuencia produce una extinci\'on irreversible) existe una ventaja a favor de las variantes que reducen las fluctuaciones: por diversificaci\'on individual (\emph{propiedad epist\'emica}), por cooperaci\'on (\emph{propiedad evolutiva}), por especializaci\'on cooperativa (\emph{propiedad de especiaci\'on}), y por heterogeneidad cooperativa (\emph{propiedad ecol\'ogica}).
+En el cap\'itulo~\ref{ch:epistemico} (secci\'on \ref{sec:propiedades_funcion_costo}) hemos visto que debido a que en los procesos multiplicativos los impactos de las p\'erdidas son m\'as fuertes que los de las ganancias (por ejemplo, un \'unico cero en la secuencia produce una extinci\'on irreversible) existe una ventaja a favor de las variantes que reducen las fluctuaciones: por diversificaci\'on individual (\emph{propiedad epist\'emica}), por cooperaci\'on (\emph{propiedad evolutiva}), por especializaci\'on cooperativa (\emph{propiedad de especiaci\'on}), y por heterogeneidad cooperativa (\emph{propiedad ecol\'ogica}).
 
 %
 
@@ -8562,7 +8277,7 @@ Decimos que Ole Peters reformula la teor\'ia de decisiones en t\'erminos general
 
 % Parrafo
 
-Bajo este principio, en el cap\'itulo~\cite{ch:epistemico} mostramos que la evoluci\'on de la cooperaci\'on no est\'a condicionada por un dilema justamente debido a que en los procesos de multiplicativos de selecci\'on de las formas de vida, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
+Bajo este principio, en el cap\'itulo~\ref{ch:epistemico} mostramos que la evoluci\'on de la cooperaci\'on no est\'a condicionada por un dilema justamente debido a que en los procesos de multiplicativos de selecci\'on de las formas de vida, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
 %
 Si bien ciertas coyunturas pueden favorecer a la deserci\'on en el corto plazo (\emph{propiedad menor}), la emergencia de unidades cooperativas de nivel superior es un fen\'omeno permanente en la historia de la vida (transiciones evolutivas mayores).
 %
