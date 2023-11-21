@@ -6865,8 +6865,6 @@ En todos los casos las distribuciones se encuentran centradas alrededor de un va
 %
 Otras combinaciones de valores fueron exploradas, y los resultados que aquí presentamos no se ven afectados.
 %
-\en{The distribution of median centrality values of those who have individual experience between $50$ and $150$ games played is similar to the one shown in Figure~\ref{Figuras.HistogramasCentralidades}.
-%
 La distribución de valores medianos de centralidad de quienes tienen experiencia individual entre $50$ y $150$ partidas jugadas es similar a la que se muestra en la figura~\ref{Figuras.HistogramasCentralidades}.
 
 % Parrafo
@@ -8315,21 +8313,21 @@ Lo cierto es que este l\'imite a la biomasa humana no est\'a impuesto por la cap
 
 % Parrafo
 
-Los estudios comparados muestran que las sociedades capaces de integrarse org\'anicamente con los sistemas ecol\'ogicos est\'an dotadas de instituciones locales que emergieron a lo largo del tiempo, a trav\'es de las generaciones en comunidades aut\'onomas.
+Los estudios comparados muestran que las sociedades capaces de integrarse org\'anicamente con los sistemas ecol\'ogicos desarrollaron instituciones locales con características propias, que emergen como resultado de la experiencia histórica que acumulan las comunidades autónomas a trav\'es de las generaciones.
 %
 El remplazo repentino de estos sistemas culturales por instituciones externas, estatales o de mercado, ha producido devastadoras consecuencias ecol\'ogicas~\cite{segato2013-colonialidad}.
 %
-A pesar de todos los avances, la ciencia metropolitana no es capaz de compensar la p\'erdida de los conocimientos milenarios, y la crisis ecol\'ogica actual no deja de profundizarse.
+A pesar de todos los avances, la ciencia metropolitana no es capaz de compensar la p\'erdida de estos conocimientos milenarios, y la crisis ecol\'ogica actual no deja de profundizarse.
 
 % Parrafo
 
-La ventaja a favor de la diversificaci\'on y la cooperaci\'on no es solo te\'orica, su ruptura ya tuvo y sigue teniendo consecuencia nefastas para la vida y el conocimiento.
+La ventaja a favor de la diversificaci\'on y la cooperaci\'on no es solo te\'orica, su ruptura ya tuvo y sigue teniendo consecuencia negativas para la vida y el conocimiento.
 %
 Si consideramos que la inteligencia es la capacidad de la vida de sobrevivir y reproducirse, su exterminio parece ser su ant\'onimo m\'as acabado: la ignorancia.
 %
 Promover la pluralidad y la coexistencia no es un imperativo moral, sino pr\'actico.
 %
-Del mismo modo que seleccionar una \'unica hip\'otesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposici\'on de un \'unico tipo de sociedad ha mostrado tener consecuencia ecol\'ogicas cada vez m\'as negativas.
+Del mismo modo que seleccionar una \'unica hip\'otesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposici\'on de un \'unico tipo de sociedad ha tenido consecuencia ecol\'ogicas cada vez m\'as evidentes.
 
 \section{El enfoque bayesiano en Am\'erica Latina} \label{sec:bayesplurinacional}
 
@@ -8922,16 +8920,41 @@ Finalizamos discutiendo cómo evaluar efectos causales usando como ejemplo los m
 
 % Parrafo
 
-En la Unidad 5 realizamos presentamos un problema de apuestas
+En la Unidad 5 realizamos una introducción a la teoría (ergódica) de \emph{toma de decisiones}.
+%
+Revisamos la naturaleza multiplicativa de la función de costo de la teoría de la probabilidad (la regla del producto) y de la teoría de la evolución (la secuencia de tasas de reproducción y supervivencia).
+%
+Presentamos un problema de apuestas en el que una casa de apuestas paga $3$ veces cuando una moneda normal sale Cara, y $1.2$ cuando sale Sello, y nos vemos obligados a apostar todos nuestros recursos en cada vuelta, apostando una proporción $b$ por cara y $(1-b)$ por sello.
+%
+Explicamos la definición de ergodicidad con simulaciones y análisis matemático, mostrando que no cualquier función de costo permite calcular la tasa de crecimiento que efectivamente se obtiene en el tiempo.
+%
+Derivamos la propiedad epistémica que explica el funcionamiento de la teoría de la probabilidad: \emph{no importa cuánto pague la casa de apuestas, individualmente el comportamiento que tiene mayor tasa de crecimiento es el que divide los recursos en la misma proporción que la frecuencia observada}.
+%
+Reflexionamos sobre la importancia de la cooperación en evolución, y vemos cómo la cooperación por sí sola aumenta la tasa de crecimiento de todos los individuos.
+%
+Discutimos el error de la teoría de decisiones clásica, mostrando que no existe un dilema del prisionero bajo procesos como los epistémicos o evolutivos, que son de naturaleza multiplicativa.
+%
+Finalizamos mostrando otras propiedades de la función de costo epistémico evolutiva, discutidas en el capítulo \ref{ch:epistemico}.
 
+% Parrafo
 
-
-
-
-
-
-
-
+En la Unidad 6 presentamos la consigna de un hackatón, basado en un problema de inferencia con apuestas e intercambio de recursos.
+%
+Cada persona $i$ comienzan con una unidad de recursos, $\omega_i = 1$, y al finalizar el juego se reparte un premio siguiendo la proporción de recursos que cada persona tienen sobre el total al finalizar el proceso de apuestas, $\omega_i / \sum_i \omega_i$.
+%
+El problema de inferencia para esta competencia es una Monty Hall extendido, de cuatro puertas, en el que la posición del regalo se genera con un sesgo que tiene un ciclo de 365 pasos temporales.
+%
+Al inscribirse, cada persona recibirá un array de longitud 2190 que representa la posición de los regalos en pasos temporales consecutivos.
+%
+El objetivo es maximizar la tasa de crecimiento de sus propios recursos apostando sobre la posición del regalo en los siguientes 1095 pasos temporales.
+%
+Primero deben estimar el sesgo con el que se esconden los regalos en el tiempo.
+%
+Segundo deben determinar, en cada paso temporal, qué caja conviene elegir inicialmente para recibir la pista.
+%
+Tercero, deben actualizar sus creencia sobre la posición del regalo según la pista que reciben.
+%
+Este problema lleva a la práctica los conceptos de probabilidad, de inferencia causal, de teoría de la información, de series temporales y de toma de decisiones.
 
 
 
