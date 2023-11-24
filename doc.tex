@@ -3965,8 +3965,9 @@ Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el 
 
 \chapter{Resultado 2. Implementaci\'on del estimador de habilidad estado del arte} \label{ch:ttt}
 
-A pesar de que en los estimadores de habilidad Elo y TrueSkill son los m\'as utilizados en la industria del video juego, ellos no permiten obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio debido a que propagan la informaci\'on
-en una sola direcci\'on a trav\'es del sistema, utilizando el \'ultimo posterior como prior del siguiente evento.
+Si bien las redes bayesianas han mostrado ser útiles para evaluar el aprendizaje en los sistemas educativos, hace falta más trabajo en el desarrollo de redes bayesianas dinámicas~\cite{Almond2015}.
+%
+Por ejemplo, los estimadores de habilidad m\'as utilizados en la industria del video juego, como Elo y TrueSkill, no permiten obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio debido a que propagan la informaci\'on en una sola direcci\'on a trav\'es del sistema, utilizando el \'ultimo posterior como prior del siguiente evento.
 %
 Durante el doctorado descubrimos la especificaci\'on de un modelo conocido como TrueSkill Through Time (TTT), que propaga toda la informaci\'on hist\'orica a trav\'es del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica.
 %
@@ -3978,7 +3979,7 @@ La mejora de este modelo se hace evidente a partir de las predicciones a priori,
 %
 Con no m\'as de tres hiperpar\'ametros intuitivos, el modelo TTT logra resultados similares y hasta mejores que modelos m\'as complejos como KickScore, de forma m\'as eficiente.
 %
-Luego de ilustrar su modo de uso b\'asico, mostramos c\'omo estimar la curvas de aprendizaje de los jugadores hist\'oricas de la Asociaci\'on de Tenistas Profesionales (ATP).
+Luego de ilustrar su modo de uso b\'asico, mostramos c\'omo estimar la curvas de aprendizaje de los jugadores hist\'oricos de la Asociaci\'on de Tennis Profesional (ATP).
 %
 Este algoritmo requiere pocas iteraciones para converger, permitiendo analizar millones de observaciones usando cualquier ordenador de gama baja.
 
@@ -6466,7 +6467,9 @@ La diferencia en el aprendizaje que observamos entre las distintas estratificaci
 
 % Parrafo
 
-Sin embargo, todos los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no pueden obtener estimaciones iniciales fiables debido a que usan el último posterior como prior del siguiente evento, propagando la información en una sola dirección por el sistema, del pasado al futuro.
+Si bien las redes bayesianas han mostrado ser útiles para evaluar el aprendizaje en los sistemas educativos, hace falta más trabajo en el desarrollo de redes bayesianas dinámicas~\cite{Almond2015}.
+%
+Por ejemplo, todos los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no pueden obtener estimaciones iniciales fiables debido a que usan el último posterior como prior del siguiente evento, propagando la información en una sola dirección por el sistema, del pasado al futuro.
 %
 En cambio, el modelo estado del arte de la industria del video juego, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la información histórica a través de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
 %
@@ -7011,13 +7014,13 @@ La estimación de la capacidad inicial ha sido uno de los problemas centrales de
 %
 Los modelos comúnmente utilizados en la industria y en el mundo académico propagan la información en una sola dirección, del pasado al futuro, produciendo estimaciones de la habilidad inicial con una incertidumbre muy elevada.
 %
-Sin embargo, la aplicación estricta de las reglas de la probabilidad exige propagar la información en todas las direcciones, incluso del futuro al pasado.
+Si bien trabajos recientes intentan mejorar estas estimaciones analizando los chats entre jugadores mediante técnicas de procesamiento de lenguaje natural moderna~\cite{Rezapour2023}, sus estimaciones tiene una nivel de granularidad muy bajo en tanto solo permiten clasificar la habilidad en tres categorías (expertos, novatos o desconocida).
 %
-De esta forma TrueSkill Through Time~\cite{Dangauthier2007} consigue estimaciones precisas con baja incertidumbre, incluso al principio de cada serie temporal.
+Por el contrario, el desarrollo reciente de redes bayesianas dinámicas, como TrueSkill Through Time~\cite{Dangauthier2007}, produce estimaciones precisas con baja incertidumbre incluso al principio de las series temporales de cada individuo.
 %
 Debido a que este modelo no estaba disponible en ninguno de los lenguajes de programación más populares, nos vimos obligados a implementarlo~\cite{Landfried2021-TTT}.
 %
-A través de nuestro software de código abierto, en \texttt{Julia}, \texttt{Python}, y \texttt{R}, obtenemos las habilidades iniciales de los individuos, lo que nos permite evaluar el efecto de la red en los procesos de aprendizaje.
+A través de nuestro software de código abierto, en \texttt{Julia}, \texttt{Python}, y \texttt{R}, pudimos conocer con precisión la habilidad inicial de los individuos, permitiéndonos analizar por separado el efecto que la estructura de red tiene sobre los procesos de aprendizaje.
 
 % Parrafo
 
