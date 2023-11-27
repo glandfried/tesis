@@ -6954,7 +6954,8 @@ El área sombrada representa dos desvíos estándar de la curva de aprendizaje e
 
 Curiosamente, el efecto de la centralidad sobre las curvas de aprendizaje solo se observa en la población con habilidad inicial intermedia.
 %
-El impacto en las curvas de aprendizaje no es significativo solo en términos estadísticos, es además relevante en términos cualitativos en tanto la diferencia de habilidad entre las poblaciones con baja y alta centralidad alcanza al final de la serie una distancia de 1 punto, lo que equivale a 76\% de probabilidad de ganar.
+El impacto en las curvas de aprendizaje no es significativo solo en términos estadísticos, es además relevante en términos cualitativos en tanto la diferencia de habilidad entre tig
+las poblaciones con baja y alta centralidad alcanza al final de la serie una distancia de 1 punto, lo que equivale a 76\% de probabilidad de ganar.
 %
 No es sorprendente que este efecto no se observe en la población experta pues, como ellas no tienen nada más que aprender, sus curvas de aprendizaje se mantienen planas.
 %
@@ -6964,11 +6965,12 @@ Lo que puede parecer sorprendente es que las curvas de aprendizaje de la poblaci
 
 \section{Discusiones}
 
+
 En este trabajo, exploramos el efecto que la posición topológica de los individuos en una red de intercambios culturales tiene sobre el aprendizaje individual.
 %
-Para sacar conclusiones causales de datos observacionales especificamos un modelo causal que busca resumir los principales acuerdos alcanzados en el área de aprendizaje social y acumulación cultural.
-%
 Estudiando la red de partidas de una de las comunidades virtuales más importantes de Go durante sus primeros 8 años de vida (2005-2013), pudimos detectar la existencia de un efecto de segundo orden de la posición de los individuos en la red sobre el aprendizaje, que solo se activa cuando los jugadores tienen una habilidad inicial intermedia.
+%
+Para interpretar los resultados, especificamos un modelo causal que busca resumir los principales acuerdos alcanzados en el área de aprendizaje social y acumulación cultural.
 
 % Parrafo
 
@@ -7004,7 +7006,7 @@ Aunque todavía no es común encontrar en la literatura académica la formalizac
 %
 Siempre podemos aumentar la complejidad de los modelos causales añadiendo variables de importancia de segundo orden o detalles específicos de contextos particulares.
 %
-Sin embargo, su evaluación mediante la aplicación estricta de las reglas de probabilidad, $P(\text{Modelo}|\text{Datos},\text{Intervenciones})$, arroja un equilibrio natural a favor de los modelos que tienen la complejidad necesaria y suficiente, penalizando tanto a los modelos que no tienen la complejidad necesaria para predecir los datos observados como a los modelos que introducen una complejidad innecesaria que no mejora la predicción previa de los datos.
+Sin embargo, su evaluación mediante la aplicación estricta de las reglas de probabilidad, $P(\text{Modelo}|\text{Datos})$, arroja un equilibrio natural a favor de los modelos que tienen la complejidad necesaria y suficiente, penalizando tanto a los modelos que no tienen la complejidad necesaria para predecir los datos observados como a los modelos que introducen una complejidad innecesaria que no mejora la predicción previa de los datos.
 %
 En lugar de comparar el rendimiento de modelos causales alternativos presentes en la literatura, en este trabajo extraemos las ideas centrales compartidas por los principales modelos.
 
@@ -7038,8 +7040,10 @@ Nuestros resultados también están alineados con otros análisis nuestros anter
 %
 A pesar del aparente acuerdo con la literatura previa, los resultados de nuestro trabajo deben ser considerados sólo como exploratorios y no como conclusiones causales definitivas.
 
+%
 
-
+Utilizando el modelo de habilidad de estado del arte y técnicas clásicas de análisis dinámico de grafos, descubrimos que los valores moderados de centralidad tienen una relación de segundo orden con el aprendizaje, que sólo se activa para los individuos con experiencia intermedia.
+Los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada más que aprender.
 
 
 
