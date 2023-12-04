@@ -19,7 +19,9 @@
 \usepackage{ragged2e} %\justifying
 
 \usepackage{float} % para que los gr\'aficos se queden en su lugar con [H]
-\usepackage{subcaption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
 \usepackage{color}
 \usepackage{colortbl} % para que funcione color en las tablas
 \usepackage{amsmath} %para escribir funci\'on partida , matrices
@@ -665,7 +667,7 @@ Una de las ventajas del estudio de las comunidades virtuales es el intercambio d
 %
 Esto crea oportunidades para estudiar no solo el aprendizaje individual, sino tambi\'en c\'omo se construye el conocimiento de manera colaborativa en entornos en l\'inea.
 %
-Adem\'as, las comunidades virtuales tiene la ventaja de que las interacciones se producen de forma espont\'anea y natural, ya que los participantes se involucran en el aprendizaje de manera voluntaria.
+Adem\'as, las comunidades virtuales tienen la ventaja de que las interacciones se producen de forma espont\'anea y natural, ya que los participantes se involucran en el aprendizaje de manera voluntaria.
 %
 Esto contrasta con entornos de laboratorio, lo que hace que los datos recopilados reflejen con mayor fidelidad el comportamiento real de las personas en contextos de aprendizaje.
 
@@ -675,40 +677,39 @@ Entender c\'omo los agentes aprenden rasgos culturales es tambi\'en una de las p
 %
 En los \'ultimos a\~nos las empresas Deep Mind y Meta abrieron nuevas l\'ineas de investigaci\'on en lo que se ha dado a llamar \emph{cooperative AI}~\cite{dafoe2020-coopAI,dafoe2021-coopAIcomment}.
 %
-Solo reci\'en durante la escritura de esta tesis, han comenzado a surgir los primeros resultados de nivel humano en un juego de estrategia ``Diplomacy'', que involucra negociaci\'on entre varios jugadores~\cite{kramar2022-deepMindDiplomacy,meta2022-diplomacy}
+Solo reci\'en durante la escritura de esta tesis, han comenzado a surgir los primeros resultados de nivel humano en un juego de estrategia \emph{``Diplomacy''}, que involucra negociaci\'on entre varios jugadores~\cite{kramar2022-deepMindDiplomacy,meta2022-diplomacy}.
 %
-Sin embargo, mediante discusiones personales con investigadores formados en el campo, podemos decir que todav\'ia no ha madurado lo suficiente este tipo de inteligencia artificial multi-agente.
+Sin embargo, mediante discusiones personales con investigadores formados en el campo, podemos ratificar que todav\'ia no ha madurado lo suficiente este tipo de inteligencia artificial multi-agente.
 
 % Parrafo
 
-Conocer c\'omo las personas aprendemos es un problema importante adem\'as para muchos \'ambitos de la vida, como la educaci\'on, el trabajo y el deporte.
-%
-?`Cu\'al es la relaci\'on entre la formaci\'on de equipos y el aprendizaje individual a largo plazo?
-%
-?`Cu\'al es la mejor forma de medir el aprendizaje de un individuo en el tiempo?
-%
-?`Cu\'al es el efecto que la posici\'on topol\'ogica de un individuo en la red de intercambios din\'amica tiene sobre el aprendizaje individual?
-%
-?`Cu\'ales son las propiedades m\'as generales del aprendizaje?
-%
+Conocer c\'omo las personas aprendemos es un problema importante, adem\'as, para diversos \'ambitos de la vida, como la educaci\'on, el trabajo y el deporte.
+Entre las preguntas surgidas en este contexto, podemos destacar:
+\begin{itemize}
+\item ?`Cu\'al es la relaci\'on entre la formaci\'on de equipos y el aprendizaje individual a largo plazo?
+
+\item ?`Cu\'al es la mejor forma de medir el aprendizaje de un individuo en el tiempo?
+
+\item ?`Cu\'al es el efecto que la posici\'on topol\'ogica de un individuo en la red de intercambios din\'amica tiene sobre el aprendizaje individual?
+
+\item ?`Cu\'ales son las propiedades m\'as generales del aprendizaje?
+
+\end{itemize}
 Estas son algunas de las preguntas particulares que desarrollamos en esta tesis.
 
 \paragraph{Estructura de la tesis}
 
 En el cap\'itulo~\ref{ch:Incertidumbre} nos enfocaremos espec\'ificamente en los principios que fundamentan las reglas de la probabilidad como razonamiento com\'un de las ciencias emp\'iricas, veremos c\'omo se construyen sistemas de comunicaci\'on con la realidad que minimizan la tasa de sorpresa, y estudiaremos en detalle los modelos de estimaci\'on de habilidad que eran estado del arte al inicio de esta tesis.
 %
-En los cap\'itulos~\ref{ch:team},~\ref{ch:tt} y~\ref{ch:topo} reproducimos los art\'iculos cient\'ifico del doctorado.
+En los cap\'itulos~\ref{ch:team},~\ref{ch:ttt} y~\ref{ch:topo} reproducimos los art\'iculos cient\'ifico del doctorado.
 %
 En el cap\'itulo~\ref{ch:team} estudiamos las curvas de aprendizaje en un videojuego por turnos en la que los jugadores pueden participar individualmente o en equipos y exploramos c\'omo las estrategias de formaci\'on de equipos pueden afectar la habilidad esperada por aprendizaje individual.
 %
-En el cap\'itulo~\ref{ch:tt} implementamos una modelo de estimaci\'on de habilidad que no estaba disponible hasta entonces en ninguno de los principales lenguaje de programaci\'on que, a diferencia de los estimadores de habilidad considerados estado del arte hasta el momento, propagando la informaci\'on hist\'orica por toda la historia de eventos ofrece estimaciones iniciales fiables y garantiza comparabilidad de las estimaciones en el tiempo y el espacio.
+En el cap\'itulo~\ref{ch:ttt} implementamos un modelo de estimaci\'on de habilidad que no estaba disponible hasta entonces en ninguno de los principales lenguaje de programaci\'on que, a diferencia de los estimadores de habilidad considerados estado del arte hasta el momento, propagando la informaci\'on hist\'orica por toda la historia de eventos ofrece estimaciones iniciales fiables y garantiza comparabilidad de las estimaciones en el tiempo y el espacio.
 %
 En el cap\'itulo~\ref{ch:topo} usamos el nuevo estimador de habilidad para estudiar las curvas de aprendizaje en una comunidad virtual de juegos de Go y evaluar c\'omo la posici\'on de los individuos en la red de partidas efecta el aprendizaje de las personas en el tiempo.
 %
 En el cap\'itulo~\ref{ch:epistemico} discutimos en t\'erminos te\'oricos el isomorfismo entre la teor\'ia de la probabilidad y de la evoluci\'on y discutimos las consecuencias que tiene para el aprendizaje cultural y biol\'ogico.
-%
-En el cap\'itulo 7 propongo reflexiono sobre la interdisciplina y la emergencia de la ciencia de datos, comparto mi proceso de aprendizaje doctoral que me llev\'o al encuentro del enfoque bayesiano, y finalizo contando sobre la organizaci\'on de la comunidad Bayes Plurinacional y el Congreso Bayesino.
-\todo[inline]{Verificar que esta ultima parte tenga sentido en el contexto de una tesis}
 
 
 
@@ -762,25 +763,13 @@ En el cap\'itulo 7 propongo reflexiono sobre la interdisciplina y la emergencia 
 \chapter{Incertidumbre e informaci\'on}\label{ch:Incertidumbre}
 
 
-% La ciencia es una instituci\'on que tiene pretensi\'on de verdad: alcanzar acuerdos intersubjetivos con validez universal.
-% %
-% Las ciencias formales (matem\'atica, l\'ogica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiom\'aticos cerrados.
-% %
-% Sin embargo, las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas abiertos que contienen siempre alg\'un grado de incertidumbre.
-% %
-% ?`Es posible entonces alcanzar acuerdos intersubjetivos ("verdades") en las ciencias emp\'iricas en las que es inevitable decir "no s\'e"? S\'i.
-% %
-% Podemos evitar mentir: maximizando incertidumbre (no afirmar m\'as de lo que se sabe) dada la informaci\'on disponible (sin ocultar lo que s\'i se sabe)~\cite{Jaynes2003}.
-
-% Parrafo
-
 Las reglas de la probabilidad se conocen desde finales del siglo 18 y desde entonces se las ha adoptado como sistema de razonamiento en todas las ciencias emp\'iricas.
 %
 Estas reglas son conceptualmente intuitivas: preservar la creencia previa que sigue siendo compatible con los datos (regla del producto) y predecir con la contribuci\'on de todas las hip\'otesis (regla de la suma).
 %
 A lo largo de todos estos siglos, las reglas de la probabilidad han sido derivadas repetidas veces a partir de diversos sistemas axiom\'aticos~\cite{halpern2017}.
 %
-Si bien en todo este tiempo no se ha propuesto nada mejor en t\'erminos pr\'acticos, el costo computacional asociados a la evaluaci\'on de todo el espacio de hip\'otesis ha limitado hist\'oricamente la aplicaci\'on estricta de las reglas de la probabilidad.
+Si bien en todo este tiempo no se ha propuesto nada mejor en t\'erminos pr\'acticos, el costo computacional asociado a la evaluaci\'on de todo el espacio de hip\'otesis ha limitado hist\'oricamente la aplicaci\'on estricta de las reglas de la probabilidad.
 %
 Por ello, a lo largo de los siglos se fueron desarrollando t\'ecnicas para resolver este problema.
 
@@ -792,13 +781,15 @@ En esta \'epoca se desarrollan m\'etodos anal\'iticos para estimar la probabilid
 %
 Conceptualmente se ha mostrado que las soluciones que ofrece la f\'isica estad\'istica son equivalentes a las que se obtiene con el enfoque bayesiano a trav\'es del principio de ``no mentir'' (maximizar entrop\'ia dada la informaci\'on disponible)~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, Jaynes2003}.
 
+\todo[inline]{No me convence nada la perspectiva hist\'orica, no es el objeto de la tesis y no aporta absolutmente nada. En particular, se habla de enfoque bayesiano como contraste cuando aun no se ha presentado nada al respecto ni definido. Sacaría todo.}
+
 % Parrafo
 
-Durante el siglo 20 se deja de lado la pretensi\'on de evaluar todo el espacio de hip\'otesis y se comienzan a desarrollar m\'etodos que seleccionan una \'unica hip\'otesis mediante alguna funci\'on de costo ad-hoc (e.g~como m\'axima verosimilitud).
+Durante el siglo 20 se deja de lado la pretensi\'on de evaluar todo el espacio de hip\'otesis y se comienzan a desarrollar m\'etodos que seleccionan una \'unica hip\'otesis mediante alguna funci\'on de costo ad-hoc (e.g.,~como m\'axima verosimilitud).
 %
 Estas aproximaciones puntuales, al evitar evaluar todo el espacio de hip\'otesis, permitieron en la pr\'actica extender el campo de aplicaciones de la teor\'ia de la probabilidad~\cite{friedman2001-elementsOfStatisticalLearning}.
 %
-Sin embargo, debido a que las t\'ecnicas de selecci\'on de hip\'otesis puntuales muestra todav\'ia inestabilidades (e.g.~overfitting), buena parte del trabajo durante esta \'epoca estuvo dedicado a desarrollar m\'etodos robustos.
+Sin embargo, debido a que las t\'ecnicas de selecci\'on de hip\'otesis puntuales muestra todav\'ia inestabilidades (e.g.,~overfitting), buena parte del trabajo durante esta \'epoca estuvo dedicado a desarrollar m\'etodos robustos.
 
 % Parrafo
 
@@ -828,7 +819,7 @@ En la secci\'on \ref{sec:trueskill} mostramos en detalle el modelo de estimaci\'
 %que utilizaremos para construir base emp\'irica en uno de nuestros trabajos, y que evalupara aanlizar los factores de aprendizaje social el siguiente cap\'itulo.
 %
 
-%
+\todo[inline]{Todo lo que aparece en esta parte introductoria es superflua e innecesaria, no hay que justificar nada ni desde lo hist\'orico, ni desde la comparaci\'on liviana con otros desarrollos. Todo esto mete ruido y no ayuda en nada. Directamente lo sacar\'ia. En todo caso, podr\'ia llegar a formar parte de un cap\'itulo de discusi\'on al final, pero ac\'a esto no va}
 
 \section{Razonamiento bajo incertidumbre}\label{sec:principios_interculturales}
 
@@ -842,16 +833,16 @@ El ``principio de no mentir'' garantiza un primer acuerdo intersubjetivo en cont
 %
 Finalmente, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservaci\'on de la creencia que sigue siendo compatible con los datos de base emp\'irica.
 
+\todo[inline]{Qu\'e significa esto? Qu\'e define? Qu\'e aporta?. Lo leo en modo jurado y no entiendo qu\'e quer\'es decir... traes axiomas o elementos que no les diste contexto, no definis los t\'erminos claramente. Esto debe ser una introducci\'on en la que definas los conceptos. De nuevo, todo lo anterior suena m\'as a que hay que sacarlo que a dejarlo.}
+
 \subsection{Incertidumbre}
 
 La idea de que \emph{todo} lo que ocurre en la naturaleza tiene una causa previa que lo genera se conoce en la historia de la filosof\'ia como el principio de \emph{raz\'on suficiente} y ha estado presente en los debates que anteceden el desarrollo de la teor\'ia de la probabilidad.
 %
-%Leibniz (1646-1716),  \cite{Leibniz and China: A Commerce of Light}
-%La Monadolog\'ia (escrita en franc\'es en 1714 y publicada en alem\'an en 1720)  \cite{leibniz1714-monadologie}.
-%
-Esta idea parece est\'a relacionada con la imposibilidad de crear azar, de crear un ``m\'etodo efectivo'' capaz de generar a veces un resultado y a veces otro dadas exactamente las mismas condiciones iniciales.
+Esta idea parece estar relacionada con la imposibilidad de \emph{crear azar}, de crear un ``m\'etodo efectivo'' capaz de generar a veces un resultado y a veces otro dadas exactamente las mismas condiciones iniciales.
 %
 Antes del desarrollo de las ciencias de la computaci\'on exist\'ia una intuici\'on respecto de su imposibilidad.
+
 
 % Parrafo
 
@@ -860,7 +851,7 @@ En teor\'ia de la computabilidad, la tesis de Church-Turing afirma que toda func
 Debido a que todos las definiciones alternativas del concepto de ``m\'etodo efectivo'' resultaron ser equivalentes a una maquina de Turing, actualmente se supone que la hip\'otesis Church-Turing es cierta.
 %
 La imposibilidad de crear n\'umeros aleatorios est\'a determinada por la definici\'on misma de funci\'on, $f(x) = y$, pues las mismas condiciones iniciales $x$, luego de aplicado un ``m\'etodo efectivo'' $f$, debe producir siempre el mismo resultado $y$.
-
+\todo[inline]{Este parrafo no parece aportar demasiado, lo sacar\'ia. De hecho, lo mezclar\'ia naturalmente, diciendo en lugar de metodo efectivo capaz de generar un resultado aleatorio, directemente diciendo que no es posible definir un algoritmo que lo haga}
 % Parrafo
 
 El fundador de la teor\'ia de la probabilidad moderna, Pierre-Simon Laplace (1749-1827), ten\'ia la convicci\'on de que no exist\'ian eventos aleatorios en la naturaleza.
@@ -868,22 +859,25 @@ El fundador de la teor\'ia de la probabilidad moderna, Pierre-Simon Laplace (174
 Que si tuvi\'eramos conocimiento completo (infinitamente preciso) del estado del mundo $x$ en un instante de tiempo, y el modelo causal correcto que rige el comportamiento del mundo $f$, entonces tendr\'iamos conocimiento completo del estado del mundo en cualquier instante posterior $y$.
 
 \begin{quotation}
-Les \'ev\'enemens actuels ont, avec les pr\'ec\'edens, une liaison fond\'ee sur le principe \'evident, qu’une chose ne peut pas commencer d’être, sans une cause qui la produise. [\dots] Une intelligence qui, pour un instant donn\'e, connaîtrait toutes les forces dont la nature est anim\'ee [\dots] rien ne serait incertain pour elle, et l’avenir comme le pass\'e, serait pr\'esent à ses yeux~\cite{laplace1816-philosophique}. \end{quotation}
+Les \'ev\'enemens actuels ont, avec les pr\'ec\'edens, une liaison fond\'ee sur le principe \'evident, qu’une chose ne peut pas commencer d’être, sans une cause qui la produise. [\dots] Une intelligence qui, pour un instant donn\'e, connaîtrait toutes les forces dont la nature est anim\'ee [\dots] rien ne serait incertain pour elle, et l’avenir comme le pass\'e, serait pr\'esent à ses yeux~\cite{laplace1816-philosophique}. 
+\end{quotation}
 
 Vivir en un mundo determinista no nos libera, sin embargo, de la incertidumbre.
+\todo[inline]{Ok, metemos determinismo de una, dando por cierto la visi\'on de Laplace y matando a Dios, ok. Un poco fuerte para una sola oraci\'on ;-P}
 %
 Conocer las condiciones iniciales con precisi\'on \emph{finita} ha mostrado ser suficiente para impedir predecir el comportamiento de modelos causales, incluso en el corto plazo.
+\todo[inline]{Que significa 'precisi\'on' en este contexto?}
 %
 Un ejemplo de sistema determinista capaz de adquirir comportamientos imprevisibles es el siguiente modelo ``poblacional''.
 %
 \begin{equation}
  \text{Poblaci\'on}(t+1) = r \cdot \text{Poblaci\'on}(t)\cdot (1-\text{Poblaci\'on}(t))
 \end{equation}
+\todo[inline]{Tenes que explicar enseguida que es cada cosa, si bien a continuacion pones que estas hablando de una proporcion a un total no definido, se espera que eso este definido empezando con un ''donde Poblacion...". Ademas, tenes que dar el sistema completo para que este bien definido. En particular, las condiciones de borde. Como solo tenes el tiempo como variable, tenes que decir en que rango se mueve el tiempo y dar el valor inicial. La matemática tiene que estar bien expresada. Otra cosa importante es que estás discretizando el fenomeno poblacional, tendr\'ias que hablar de $\Delta t$ y no de 1 ya asociado a `paso de tiempo'}
 %
-El modelo establece que el tama\~no de una poblaci\'on, medida como proporci\'on respecto de la capacidad m\'axima de un sistema, depende exclusivamente de su tama\~no en el tiempo anterior y de un factor de reproducci\'on $r$.
+El modelo establece que el tama\~no de una poblaci\'on, medida como proporci\'on respecto de la capacidad m\'axima de un sistema, depende exclusivamente de su tama\~no en el pasado y de un factor de reproducci\'on $r$.
 %
-Las relaciones causales se suelen expresar en t\'erminos gr\'aficos.
-
+\todo[inline]{Que es una capacidad maxima del sistema?. Cambi\'e 'tiempo anterior' por pasado, ya que no hay razon para discretizar el sistema en este momento.}
 % Parrafo
 
 \begin{figure}[ht!]
@@ -896,17 +890,22 @@ Las relaciones causales se suelen expresar en t\'erminos gr\'aficos.
      \path[->] (n1) edge node [yshift=0.5cm] {$r \cdot \text{pob}_n \cdot (1-\text{pob}_n)$} (n2);
 
 }
-\caption{Modelo causal expresado gr\'aficamente. Las flechas representan la relaci\'on causal entre las variables. }
+\caption{Modelo causal expresado gr\'aficamente. Las flechas representan la relaci\'on causal entre las variables. 
+\todo[inline]{Flechas en plural? Yo veo una sola. Explicar que rol juega la ecuaci\'on como label de la flecha}}
 \label{fig:modelo_poblacional}
 \end{figure}
 
+\todo[inline]{La figura \ref{fig:modelo_poblacional} no est\'a explicada ni discutida en el texto, hay que aprovechar para presentar como se construye la representaci\'on gr\'afica del modelo. Ademas, en la ecuacion se habla de tiempo t y en la representación se habla de n. Se esta discretizando el sistema y ademas se explicita la relacion de causalidad entre los dos tama\~nos de polaci\'on. Todo esto debe estar explicado, sino no se entiende nada.}
 % Parrafo
 
 Dependiendo del factor de reproducci\'on $r$ y de la poblaci\'on inicial pop$_0$, podemos observar diferentes tipos de comportamientos.
+\todo[inline]{Apa! te aparece el tama\~no de la poblaci\'on inicial! Porque no aprovechas para vincular con la postura laplaciana y decis que al tener el tama\~no de la poblaci\'on y el modelo causal (y su parametrizacion), podes justamente determinar el tama\~no de la poblaci\'on en el futuro?}
 %
 Por ejemplo, dada una poblaci\'on inicial $\text{pop}_0 = 0.5$, cuando el valor del par\'ametro $r$ es bajo (figura~\ref{fig:poblacion_punto_fijo}) la poblaci\'on tiende a un valor fijo;
+\todo[inline]{Cual es la intuicion de r como para saber que significa bajo o no bajo? EXPLICAR. Por ejemplo, en el primer caso, depende lo que pasa de la poblacion inicial?}
 cuando es intermedio (figura~\ref{fig:poblacion_periodico}) la poblaci\'on oscila en un per\'iodo;
 y cuando llega a su l\'imite m\'aximo (figura~\ref{fig:poblacion_caotico}) la poblaci\'on tiene un comportamiento denominado ``ca\'otico''.
+\todo[inline]{Tenes que ser mas cuidadoso con la definición, yo lo presentaria al reves, respecto a caos, diria las caracteristicas del crecimiento de la poblacion y despues diria que a eso se lo llama comportamiento caotico. La referencia a esto es el paper de Lorenz que funda toda la investigacion en caos}
 %
 \begin{figure}[ht!]
     \centering
@@ -926,18 +925,21 @@ y cuando llega a su l\'imite m\'aximo (figura~\ref{fig:poblacion_caotico}) la po
     \label{fig:poblacion_caotico}
     \end{subfigure}
     \caption{
-    Tipos de atractores del modelo causal no-lineal
+    Tipos de atractores del modelo causal no-lineal.\todo[inline]{Que significa no-lineal, de donde sale que sea o no lineal? donde lo dijiste o lo presentaste?}
     }
     \label{fig:poblacion}
 \end{figure}
 %
 Bajo un r\'egimen ca\'otico no se observan per\'iodos de ninguna longitud, el sistema produce trayectorias que nunca pasan por los mismos puntos.
 %
-En la figura \ref{fig:pseudo_aleatorio} vemos que los primeros 2000 puntos de la trayectoria determinista que comienza con $r=3.99$ y $\text{pop}_0 = 0.5$ se parece a una variable aleatoria.
+En la figura~\ref{fig:pseudo_aleatorio} vemos que los primeros 2000 puntos de la trayectoria determinista que comienza con $r=3.99$ y $\text{pop}_0 = 0.5$ se parece a una variable aleatoria.
+\todo[inline]{Estas jugando con fuego... primero dec\'is que no hay azar posible, despues decis que se parece a una variable aleatoria, cuando no definiste variable ni aleatorio de forma solida. Yo te sugiero que describas lo que se ve sin opinar (ya se que crees que no es una opinion, pero al no construir presentando las definiciones, queda todo en el aire}
 %
 Otra de las propiedades del atractor ca\'otico es la sensibilidad a las condiciones iniciales.
+\todo[inline]{Que es una atractor? Cuando lo definiste? En un sistema caotico, tiene sentido hablas de atractores?}
 %
 En la figura~\ref{fig:poblacion_caotico} hacemos zoom en los primeros 30 pasos temporales y observamos que si modificamos levemente las condiciones iniciales las trayectoria r\'apidamente divergen hasta volverse completamente diferentes.
+\todo[inline]{decir explicitamente en el texto cual es el cambio realizado}
 %
 \begin{figure}[ht!]
     \centering
@@ -954,42 +956,50 @@ En la figura~\ref{fig:poblacion_caotico} hacemos zoom en los primeros 30 pasos t
     \label{fig:sensibilidad}
     \end{subfigure}
     \caption{Comportamiento del modelo causal no lineal con $r=3.99$ y $\text{pop}_0 = 0.5$.
-    (\subref{fig:pseudo_aleatorio}): primeros 2000 puntos.
-    (\subref{fig:sensibilidad}): primeros 30 puntos. La linea roja comienza con $\text{pop}_0 = 0.499$.}
+    \subref{fig:pseudo_aleatorio}: primeros 2000 puntos.
+    \subref{fig:sensibilidad}: primeros 30 puntos. La l\'inea roja comienza con $\text{pop}_0 = 0.499$.}
     \label{fig:propiedades_caoticas}
 \end{figure}
-
+\todo[inline]{No me gusta que digas 'parece aleatorio' en todo caso, tenes que decir que no se perciben estructuras. Tenes que usar los terminos con cuidado, es una tesis de doctorado}
 %
 
 La sensibilidad a las condiciones iniciales impone un l\'imite a la capacidad predictiva.
 %
 Por m\'as que la naturaleza sea determinista y conozcamos el mecanismo subyacente, si el sistema se encuentra bajo un atractor ca\'otico, jam\'as vamos a poder predecir el destino inevitable m\'as all\'a de cierto tiempo debido a que en ning\'un sistema natural podremos medir con infinita precisi\'on las condiciones iniciales.
+\todo[inline]{de nuevo, todo es muy liviano... 'mas de un cierto tiempo', si tus condiciones iniciales no estan seguras, no podes predecir ningun tiempo. Eso es la joda de los sistemas complejos con comportamiento caotico. Por eso para conocer el clima, se usa la tecnica de ensamble... todo este texto deja mucho flanco para criticar, no corresponde con una tesis de doctorado!}
 %
 La imposibilidad de determinar si estamos en presencia de \emph{exactamente} las mismas condiciones iniciales constituye ya una fuente de incertidumbre para las ciencias emp\'iricas.
-
+\todo[inline]{que significa 'exactamente', vos no estas en presencia o no, lo que no podes hacer es determinar cuales son las condiciones iniciales del sistema}
 % Parrafo
 
 Si bien los sistemas sociales, al igual que el clima, se los considera sistemas ca\'oticos sensibles a las condiciones iniciales, desde las ciencias sociales, al igual que la f\'isica cu\'antica, se suele afirmar que el mundo no tiene forma de funci\'on determinista.
+\todo[inline]{Bueno, otro salto a que te peguen, metes la cuantica si saber mas allá de boca de jarro que significa... en cuantica tenes un concepto que se llama decoherencia que vincula la trasnformacion de la vista de un sistema con comportamiento cuantico a uno con comportamiento medio o continuo. Si bien podr\'ia ser tentador charlar sobre todas esas cosas, no queda claro a donde apunta toda esta perorate vac\'ia y que no solida.}
+
 %
 Justamente, el concepto de libre albedr\'io afirma que una persona expuesta ante un estado del universo determinado, bajo exactamente las mismas condiciones iniciales, tiene todav\'ia la capacidad de elegir una acci\'on.
-
+\todo[inline]{Si claro, pero te retruco poniendo el concepto de agente racional y ah\'i te vas a poner a discutir las bases de la teor\'ia economica-social? Para qu\'e?}
 % Parrafo
 
 Sea porque el mundo natural admite la posibilidad de que un efecto surja sin su propia causa, sea por nuestra incapacidad de conocer los modelos causales correctos o de conocer las condiciones iniciales con infinita precisi\'on, nuestro conocimiento sobre el mundo natural contiene siempre un grado de incertidumbre.
 
+\todo[inline]{Creo que el \'ultimo parrafo es lo m\'as importante de todo esto que decis y se podria llegar a esto de manera bastante mas simple y sin dejar tantos flancos abiertos}
 % Parrafo
+\todo[inline]{Y entonces, cual es la definicion formal de incertidumbre? Una introduccion debe presentar los conceptos que atraviesan la tesis de manera clara y contundente. Termin\'e de leer y no s\'e qu\'e significa incertidumbre}
 
 \subsection{Principio de integridad}\label{sec:principio_integridad}
 
 % Parrafo
 
-Cuando la incertidumbre nos impide describir el mundo mediante funci\'on deterministas, podemos todav\'ia expresar nuestra incertidumbre utilizando funciones de probabilidad, que a cada hip\'otesis $h$ le asigne una proporci\'on $p$ de nuestra creencia, $P(h) = p$.
+Cuando la incertidumbre nos impide describir el mundo mediante funciones deterministas, todav\'ia  podemos expresar nuestra incertidumbre utilizando funciones de probabilidad, que a cada hip\'otesis $h$ le asigne una proporci\'on $p$ de nuestra creencia, $P(h) = p$.
+\todo[inline]{la incertidumbre te impide describir? O lo que pasa es que los resultados de las funciones deterministas se alejan de lo que realmente pasa en ese mundo? Entonces, no es que te impida, sino que te las vuelve inutiles. Que es una creencia? Cuando la definiste? Que es una funcion de probabilidad, donde esta definida? son funciones en plural o es una sola funcion? Todas las funciones se llaman P mayuscula...}
+
 %
 Por ejemplo, cuando una persona elije una caja entre tres para esconder un regalo, se abren tres posibles ``universos paralelos'', uno por cada una de las posibles elecciones (figura~\ref{fig:libre_albedrio}).
+\todo[inline]{La figura mencionada no tiene nada que ver con el texto, tenes que explicar!!! Como corno se vincula?}
 %
 En este caso, el conjunto de acciones posibles (esconder el regalo detr\'as de una de las tres cajas) representan nuestro \emph{espacio de hip\'otesis} (figura~\ref{fig:espacio_de_hipotesis}).
 %
-Y las diferentes formas de dividir la creencia le vamos a llamar \emph{distribuci\'on de creencias}.
+Y las diferentes formas de dividir la creencia acerca de d\'onde se encuentra el regalo, la vamos a llamar \emph{distribuci\'on de creencias}.
 
 
 \begin{figure}[ht!]
@@ -1031,25 +1041,30 @@ Y las diferentes formas de dividir la creencia le vamos a llamar \emph{distribuc
 
     \node[const, above=of p1, yshift=.15cm] (fp1) {$P(r_1)$};
     \node[const, above=of p2, yshift=.15cm] (fp2) {$P(r_2)$};
-    \node[const, above=of p3, yshift=.15cm] (fp3) {$P(r_1)$};
+    \node[const, above=of p3, yshift=.15cm] (fp3) {$P(r_3)$};
     }
    \caption{Espacio de hip\'otesis}
    \label{fig:espacio_de_hipotesis}
 \end{subfigure}
-    \caption{(a) El concepto te\'orico de libre albedr\'io afirma que una persona, ante un estados $s$ del universo, es capaz de elegir acciones $a$ mutuamente excluyentes, como por ejemplo el lugar donde esconder el regalo $a \in \{r_1, r_2, r_3\}$. Por definici\'on, no es posible describir el mundo mediante funciones porque las condiciones iniciales no determinan un \'unico universo posible.
-    (b) Las funciones de probabilidad sobre los universos paralelos (e.g.~espacio de hip\'otesis) nos permiten expresar nuestra incertidumbre respecto de la posici\'on del regalo.}
+    \caption{\subref{fig:libre_albedrio}: El concepto te\'orico de libre albedr\'io afirma que una persona, ante un estado $s$ del universo, es capaz de elegir acciones $a$ mutuamente excluyentes, como por ejemplo el lugar donde esconder el regalo $a \in \{r_1, r_2, r_3\}$. Por definici\'on, no es posible describir el mundo mediante funciones porque las condiciones iniciales no determinan un \'unico universo posible.
+    \subref{fig:espacio_de_hipotesis}: Las funciones de probabilidad sobre los universos paralelos (e.g.~espacio de hip\'otesis) nos permiten expresar nuestra incertidumbre respecto de la posici\'on del regalo.
+    \todo[inline]{no se entiende la sematica del primer grafico ni la de la segunda, que muestran o que ejemplifican. Como es posible que el libre albedrío est\'e relacionado con ese gr\'afico (a)? Que es s? Que es a? Que es s'?. Ademas en (b) estaba dos veces el caso r1, lo arregl\'e. Finalmente, ojo porque en el texto estas presentando que queres saber donde esta el regalo, y acá estas enfoncando en donde lo encondes, es inconsistente}.}
 \end{figure}
 
 
-El ``principio de integridad'' establece la conservaci\'on de la creencia, de modo que no haya ni perdidas ni generaci\'on espont\'anea de creencia.
+El \textbf{principio de integridad} establece la conservaci\'on de la creencia, de modo que no haya ni perdidas ni generaci\'on espont\'anea de creencia.
+\todo[inline]{Ok, por fin definis algo, pero en el ejemplo que venis presentando, no tiene sentido la creacion de creencia, son tres puertas... como puede haber perdida o creacion en un contexto asi. En este caso, lo que podrias ejemplificar con el ejemplo es que la suma de tu crencia sobre la posiblidad de ocurrencia de que el regalo est\'e en cada una de las cajas debe dar 1. Ademas podrias quizas aprovechar para presentar dos distribuciones posibles en base a las creencias de dos personas distintas basadas en su premonicion o lo que fuera}
+
 %
-Esto es, que la suma de las proporciones de creencias asignadas a cada una de los universos paralelos (o hip\'otesis) sea siempre $1$.
+Esto es, que la suma de las proporciones de creencias asignadas a cada uno de los universos paralelos posibles (o hip\'otesis) sea siempre $1$.
 %
 \begin{equation}
 \sum_{i} P(\text{hip\'otesis}_i) = 1
 \end{equation}
+\todo[inline]{Que es $i$ en esta sumatoria, supongo que es cada una de las hipotesis, pero no lo decis}
 %
 Bajo este principio hay infinitas distribuciones de creencias posibles.
+\todo[inline]{Por que? Son tres cajas nada m\'as, donde est\'a lo infinito en la distribucion de creencias? Explicar, no corresponde tirar estas afirmaciones sin tener una explicaci\'on s\'olida}
 %
 Por ejemplo, podemos tener el presentimiento de que el regalo est\'a en la caja del medio.
 %
@@ -1086,26 +1101,31 @@ Podemos expresar la certeza asignado toda la creencia a la caja del medio (figur
         }
     \caption{Preferencia parcial}
     \label{fig:preferencia_parcial}
- \end{subfigure}
-\caption{Dos distribuci\'on de creencias que tienen preferencia por una de las hip\'otesis.}
- \label{fig:distribucion_de_creencias}
+\end{subfigure}
+\caption{Dos distribuciones de creencias que tienen preferencia por la hip\'otesis de que el regalo se encuentra en la caja del medio. En \subref{fig:preferencia_total}, tenemos total certeza acerca de la ubicaci\'on del regalo, sin embargo en \subref{fig:preferencia_parcial}, si bien tenemos mayor preferencia por la ubicaci\'on del centro, se expresa cierta duda que se distribuye equitativamente entre las otras dos opciones.}
+\label{fig:distribucion_de_creencias}
 \end{figure}
 
 % Parrafo
 
 ?`Pero cu\'al de todas las infinitas posibles distribuciones de creencias tiene validez intersubjetiva?
+\todo[inline]{te das cuenta que no terminas de dar porque son infinitas, lo sugeris, pero no lo decis, tenes que hacerlo!}
 
 \subsection{Principio de no mentir}\label{sec:principio_indiferencia}
 
-El ``principio de no mentir'' es el fundamento intercultural de los acuerdos intersubjetivos en contextos de incertidumbre.
+El \textbf{principio de no mentir} es el fundamento intercultural de los acuerdos intersubjetivos en contextos de incertidumbre.
+\todo[inline]{No creo que sea una buena estrategia, presentarlo basado en acuerdos intersubjetivos}
 %
-Para no mentir en contextos de incertidumbre debemos no afirmar m\'as de lo que sabemos (maximizar incertidumbre) sin dejar de decir todo lo que s\'i sabemos (dada la informaci\'on disponible).
+Para no mentir en contextos de incertidumbre, debemos no afirmar m\'as de lo que sabemos (maximizar incertidumbre) sin dejar de decir todo lo que s\'i sabemos dada la informaci\'on disponible.
+\todo[inline]{Hablas de maximimar incertidumbre, pero no diste una definicion que admita la nocion de maximizacion como una funcion, ac\'a es donde hace agua, saca lo superfluo y enfocate en las definiciones}
 %
 Este principio se lo conoce como ``m\'axima entrop\'ia dadas restricciones'' o MaxEnt.
 
 % Parrafo
 
 El caso que estamos analizado, donde s\'olo conocemos el espacio de hip\'otesis (las posibles posiciones del regalo) y no tenemos m\'as informaci\'on que nos permita tener preferencia por ninguna de las opciones, vamos a estar de acuerdo en la necesidad de dividir la creencia en partes iguales.
+\todo[inline]{ Como `vamos a estar de acuerdo'? Estas presentando algo, tenes que decir 'siguiendo el principio anterior, la unica opcion es dividir equitativamente la creencia entre las tres posibilidades disponibles}
+
 %
 \begin{figure}[ht!]
 \begin{subfigure}[b]{0.2\textwidth}
@@ -1113,9 +1133,10 @@ El caso que estamos analizado, donde s\'olo conocemos el espacio de hip\'otesis 
   \tikz{
     \node[latent] (r) {\includegraphics[width=0.24\textwidth]{static/regalo.png}} ;
     \node[const,above=of r, yshift=.15cm] (nr) {$r \in \{1,2,3\}$} ;
-    \node[const, below=of r, yshift=-0.8cm] (title) {(a) Modelo causal};
+%     \node[const, below=of r, yshift=-0.8cm] (title) {(a) Modelo causal};
    }
-
+   \caption{Modelo causal}
+   \label{fig:principio_de_indiferencia_a}
 \end{subfigure}
 \begin{subfigure}[b]{0.44\textwidth}
     \centering \vskip 0pt
@@ -1134,8 +1155,10 @@ El caso que estamos analizado, donde s\'olo conocemos el espacio de hip\'otesis 
     \edge[-] {r2} {br2};
     \edge[-] {r3} {br3};
 
-    \node[const, below=of br2, yshift=-0.1cm] (title) {(b) Caminos del modelo causal};
+%     \node[const, below=of br2, yshift=-0.1cm] (title) {(b) Caminos del modelo causal};
     }
+    \caption{Caminos del modelo causal}
+    \label{fig:principio_de_indiferencia_b}
 \end{subfigure}
 \begin{subfigure}[b]{0.32\textwidth}
 \centering\vskip 0pt
@@ -1147,32 +1170,37 @@ El caso que estamos analizado, donde s\'olo conocemos el espacio de hip\'otesis 
          \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
          \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
-         \node[const, below=of p2, yshift=-0.8cm] (title) {(c) Creencia honesta};
+%          \node[const, below=of p2, yshift=-0.8cm] (title) {(c) Creencia honesta};
 
         }
+        \caption{Creencia honesta}
+        \label{fig:principio_de_indiferencia_c}
 \end{subfigure}
-\caption{Principio de indiferencia. Figura (a): el modelo causal tiene una \'unica variable $r$ que puede tomar tres valores posibles. Figura (b): el modelo causal induce tres caminos paralelos por los que dividimos la creencia en partes iguales. Figura (c): como resultado obtenemos una creencia honesta que garantiza los acuerdos intersubjetivos dado el modelo causal.
-}
+\caption{Principio de indiferencia. En \subref{fig:principio_de_indiferencia_a}: el modelo causal tiene una \'unica variable $r$ que puede tomar tres valores posibles. En \subref{fig:principio_de_indiferencia_b}: el modelo causal induce tres caminos paralelos por los que dividimos la creencia en partes iguales. Figura~\subref{fig:principio_de_indiferencia_c}: como resultado obtenemos una creencia honesta que garantiza los acuerdos intersubjetivos dado el modelo causal.
+\todo[inline]{Esta figura no esta mencionada en el texto ni descripta correctamente, esta tirada aca presentando cosas nueva. Ademas los subcaptions no tienen que formar parte de la figura, sino que deben estar aparte, lo arregl\'e.}}
 \label{fig:principio_de_indiferencia}
 \end{figure}
 %
-Esta distribuci\'on de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales), incorporando la informaci\'on disponibles (al no asignar creencia por fuera de las tres cajas).
+Esta distribuci\'on de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales), incorporando la informaci\'on disponible (al no asignar creencia por fuera de las tres cajas).
+\todo[inline]{Al no estar definido ni incertidumbre y todo en el aire, no queda claro como llegas a esto. Segun el principio anterior, la distribucion de creencia debería estar dividida en tu espacion de hipotesis, por ende, no podrias desde antes asignar creencia a algo que no fueran esas tres cajas, como podrias asignar algo 'por fuera de las tres cajas' como estas diciendo?}
 %
 A las distribuciones de creencias que permiten alcanzar acuerdos intersubjetivos las vamos a llamar \emph{creencia honesta}.
-
+\todo[inline]{No esta definido tampoco que es un acuerdo intersubjetivo... en todo caso lo que podrias decir en el marco de lo que presentaste, es que esta distribucion es la que mejor cumple MaxEnt}
 % Parrafo
 
 El principio de no mentir puede generalizarse a modelos causales multidimensionales.
 %
-Para ejemplificar, supongamos que nos permiten elegir una caja $c$ y que despu\'es alguien nos da una pista, se\~nala una caja $s$ y nos muestra que en su interior no est\'a el regalo.
+Para ejemplificar, supongamos que nos permiten elegir una caja $c$ y que despu\'es alguien nos d\'e una pista adicional: se\~nala una caja $s$ y nos muestra que en su interior no est\'a el regalo.
 %
-En este caso tenemos tres variables y al menos una dependencia causal, la pista $s$ no puede se\~nalar la caja donde est\'a el regalo $r$, $s \neq r$.
+En este caso tenemos tres variables y, al menos, una dependencia causal, la pista $s$ no puede se\~nalar la caja donde est\'a el regalo $r$, $s \neq r$.
 %
 ?`Pero ser\'a que nuestra elecci\'on $c$ tambi\'en afecta la pista $s$?
+\todo[inline]{De pronto ahora aparece s, r y c... nunca las definiste antes, no est\'a claro qu\'e son...uy uy uy, parece que r es la caja donde est\'a el regalo, c es la caja que elegimos y s es la caja se\~nalada por la pista, eso hay que decirlo claramente!!!!. s no es una pista en el sentido estricto, la pista o la informacion adicional da cuenta de donde NO esta el regalo, tenes que escribir claro.}
 %
 Es decir, otra opci\'on es que la pista adem\'as de no se\~nalar la caja donde est\'a el regalo, $s \neq r$, tampoco se\~nale la caja elegida, $s \neq c$, para dejarnos siempre con la duda.
 %
 Estos son dos modelos causales multidimensionales alternativos: en el primero hay s\'olo una dependencia causal (figura~\ref{fig:modelo_causal_1}) y en el segundo hay dos dependencias causales (figura \ref{fig:modelo_causal_2}).
+\todo[inline]{En que se basa la multidimensionalidad?? No esta claro de donde sale eso. Tampoco esta claro como es una causa que te den informacion adicional??? cual es la relacion de causalidad en cada caso? Hay una flecha en un grafico, que significa? que la posicion del regalo causa que yo elija algo? Hay explicar bien. Ademas, de pronto tiraste tu espacio de hipotesis, tu distribucion de creencias...}
 %
 Para simplificar el problema, consideraremos que la caja elegida es $c=1$.
 
@@ -1213,7 +1241,7 @@ Para simplificar el problema, consideraremos que la caja elegida es $c=1$.
   \caption{Modelo B: $s \neq r$ y $s \neq c$}
   \label{fig:modelo_causal_2}
   \end{subfigure}
-  \caption{Modelos causales alternativos. Figura~\ref{fig:modelo_causal_1}: la pista s\'olo depende de la posici\'on del regalo. Figura~\ref{fig:modelo_causal_2}: la pista depende de la posici\'on del regalo y la caja elegida previamente.
+  \caption{Modelos causales alternativos. Figura~\subref{fig:modelo_causal_1}: la pista s\'olo depende de la posici\'on del regalo. Figura~\subref{fig:modelo_causal_2}: la pista depende de la posici\'on del regalo y la caja elegida previamente.
   Los c\'irculos representan las variables y la flecha representa la relaci\'on causa $\rightarrow$ efecto.
   %A su vez, $r=i$ representa la proposici\'on ``el regalo se encuentra en la posici\'on $i$'', y $s=i$ representa la proposici\'on ``la pista se\~nala la posici\'on $i$''.
   }
@@ -1237,10 +1265,11 @@ En la figura~\ref{fig:caminos} mostramos los caminos paralelos que generan ambos
 
 % Parrafo
 
-En el modelo A, por cada posici\'on del regalo, se abren otros dos universos paralelos que se corresponden con las cajas hacia las que puede se\~nalar la pista, en las que no est\'a el regalo en ese universo.
+En el modelo mostrado en la figura~\ref{fig:caminos_pre_montyhall}, por cada posici\'on del regalo, se abren otros dos universos paralelos que se corresponden con las cajas hacia las que puede se\~nalar la pista, en las que no est\'a el regalo en ese universo.
 %
-En cambio, en el modelo B, la pista genera dos universos s\'olo cuando el regalo est\'a en la misma caja que elegimos, $r=c=1$.
-%
+En cambio, en el modelo mostrado en la figura~\ref{fig:caminos_montyhall}, la pista genera dos universos solo cuando el regalo est\'a en la misma caja que elegimos, $r=c=1$.
+\todo[inline]{Ojo con la nomenclatura, tenes que ser consistente, en el grafico hablas de r1, r2, r3, pero en el texto hablas de c=1 indicando posicion, si en lugar de r1, pusieras  s=1, sería consistente con indicar que ese camino corresponde con que el regalo esta en la posicion 1... fijate y arreglalo o explica bien. Ademas hay que explicar con mayor detalle las cosas, no se entiende nada como pasas de una a otra cosa... es una tesis de doctorado, no hay que adivinar!}
+
 % Podemos recibir una pista tanto en la puerta 2, $s_2$, como en la puerta 3, $s_3$.
 % %
 % Cuando el regalo est\'a en otra caja, $r\neq 1$, la pista puede se\~nalar \'unicamente a una de las cajas, la que no tiene el regalo y la que no fue elegida.
@@ -1340,11 +1369,12 @@ En cambio, en el modelo B, la pista genera dos universos s\'olo cuando el regalo
 \caption{Modelo B}
 \label{fig:caminos_montyhall}
 \end{subfigure}
-\caption{Los caminos paralelos que se generan a partir de los modelos causales alternativos. El principio de m\'axima incertidumbre dada la informaci\'on disponible divide la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.}
+\caption{Los caminos paralelos que se generan a partir de los modelos causales alternativos. El principio de m\'axima incertidumbre, dada la informaci\'on disponible, divide la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.\todo[inline]{el principio de incertidumbre no divide nada, en todo caso, para cumplir con ese principio, es necesario dividir la creencia en partes iguales}}
 \label{fig:caminos}
 \end{figure}
 %
-La creencia en las hojas de los universo paralelo del modelo causal representa la \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$, $P(r=i, s=j|\text{Modelo})$.
+La creencia en las hojas de los universos paralelos del modelo causal representa la \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$, $P(r=i, s=j|\text{Modelo})$.
+\todo[inline]{hojas del universo paralelo, de que estas hablando??}
 %
 \begin{table}[ht!]
 \centering
@@ -1368,8 +1398,8 @@ $P(r=i, s=j | \text{Modelo A})$ \hspace{1.8cm} $P(r=i, s=j | \text{Modelo B})$ \
 %
 %La conjunci\'on l\'ogica la expresamos con una simple coma ($,$), y colocamos del lado derecho del condicional ($\cdot|\cdot$) las proposiciones que moment\'aneamente consideramos ciertas.
 %
-Cada una de las celdas de la tabla representa una de las terminales de los universos paralelos representados en la figura \ref{fig:caminos}.
-
+Cada una de las celdas de la tabla representa una de las terminales de los universos paralelos representados en la figura~\ref{fig:caminos}.
+\todo[inline]{No se entiende nada de lo que explicas, realmente no se puede seguir lo que estas diciendo}
 % Parrafo
 
 Por el ``principio de integridad'', la creencia asignada a una variable individual (creencia marginal) es la suma de todos los caminos paralelos (creencia conjunta) en los que esa variable est\'a presente.
