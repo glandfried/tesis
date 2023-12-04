@@ -8985,50 +8985,49 @@ Este problema lleva a la práctica los conceptos de probabilidad, de inferencia 
 
 
 
-\section{Hacia una ciencia de datos causal bayesiana} \label{sec:volverAlFuturo}
+\section{Trabajo futuro. Hacia una ciencia de datos causal bayesiana.} \label{sec:volverAlFuturo}
 
-% El hecho de que las reglas de la probabilidad garanticen actualizar las creencias preservando el principio intercultural de no mentir (de maximizar incertidumbre dada la informaci\'on disponible) hace que \'este sea el sistema de razonamiento general, de toda ciencia emp\'irica.
-% %
-% Adem\'as de ser una respuesta epistemol\'ogica, es principalmente una respuesta metodol\'ogica que ofrece un procedimiento concreto para actualizar las creencias de forma \'optima.
-% %
-% Por ello el enfoque bayesiano es esencial en las \'areas ``vitales'' como en los sistemas de salud, las investigaciones judiciales y las apuestas.
+Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computaci\'on y encontrar all\'i las respuestas m\'as simples y concretas a las reflexiones epistemol\'ogicas y metodol\'ogicas m\'as trascendentales desarrolladas durante mi formaci\'on en ciencias antropol\'ogicas, no solo explica por qu\'e que ella es la principal herramienta qu\'e encontr\'e en el doctorado en computaci\'on.
 %
-
-Las \'areas de investigaci\'on en aprendizaje autom\'atico (o ciencia de datos) siguen desarrollando una multitud de algoritmos gen\'ericos sin interpretaci\'on causal, que si bien permiten usar las correlaciones para predecir, no permiten sacar conclusiones causal y por lo tanto tampoco recomendaciones para la intervenci\'on en los sistemas.
-%
-Al mismo tiempo, quienes trabajan en ciencias sociales (u otras ciencias empíricas) proponen un enorme cantidad de argumentos causales en lenguaje natural, que si bien están fundados en el conocimiento experto del área, al no estar especificados en términos probabilísticos no pueden ser evaluados correctamente.
+El hecho de que las reglas de la probabilidad garanticen actualizar las creencias preservando el principio intercultural de no mentir (de maximizar incertidumbre dada la informaci\'on disponible) hace que \'este sea el sistema de razonamiento general, de toda ciencia emp\'irica.
+% %
+Adem\'as de ser una respuesta epistemol\'ogica, es principalmente una respuesta metodol\'ogica que ofrece un procedimiento concreto para actualizar las creencias de forma \'optima.
+% %
+Por ello el enfoque bayesiano es esencial en las \'areas ``vitales'' como en los sistemas de salud, las investigaciones judiciales y las apuestas.
 
 % Parrafo
 
-Existe así un complementariedad mutua entre el \'area del aprendizaje autom\'atico y las ciencias sociales que todavía no está siendo explotada.
+Las \'areas de investigaci\'on en aprendizaje autom\'atico (o ciencia de datos) siguen desarrollando una multitud de algoritmos gen\'ericos sin interpretaci\'on causal, que si bien permiten usar las dependencias entre variables para predecir, no permiten sacar conclusiones causal y por lo tanto tampoco recomendaciones para la intervenci\'on.
 %
-Las ciencia de datos tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de evaluar correctamente los modelos causales alternativos.
+Al mismo tiempo, quienes trabajan en ciencias sociales (y otras ciencias empíricas) proponen un enorme cantidad de argumentos causales en lenguaje natural, que si bien están fundados en el conocimiento experto del área, al no estar especificados en términos probabilísticos no pueden ser evaluados correctamente.
+%
+Los argumentos causales provenientes de las ciencias sociales (y otras ciencias empíricas) le va a permitir a la ciencia de datos sacar conclusiones causales.
+%
+Y la especificaci\'on probabil\'istica de los argumentos causales le va a permitir a la ciencias sociales evaluar correctamente sus hip\'otesis, poniendo en valor el conocimiento experto actual.
+
+% Parrafo
+
+Existe así un complementariedad que todavía no está siendo explotada: las ciencia de datos tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de evaluar correctamente los modelos causales alternativos.
 %
 En este sentido, como trabajo futuro me propongo trabajar activamente para acercar posiciones.
-
-% Parrafo
-
-\subsection{Objetivo: especificar y evaluar argumentos casuales.}
-
-El objetivo de este plan es implementar y desarrollar metodologías de trabajo que permitan poner en valor el conocimiento experto mediante la especificación y evaluación probabilística de argumentos casuales expresados en lenguaje natural.
 %
-Esta metodología sería tanto para las ciencias sociales, donde las teorías se expresan todavía en lenguaje natural, como para el \'area de aprendizaje automático, que al trabajar sin modelos causales se ve impedida de sacar conclusiones causales.
+El objetivo es implementar y desarrollar metodologías de trabajo que permitan poner en valor el conocimiento experto mediante la especificación y evaluación probabilística de argumentos casuales expresados en lenguaje natural.
 %
-El desafío de este plan consiste traducir matemáticamente argumentos expresados en lenguaje natural, integrar los diferentes elementos de prueba en un único modelo probabilístico causal, computar correctamente el valor de verdad de los modelos causales alternativos.
+El desafío consiste en traducir matemáticamente argumentos expresados en lenguaje natural, integrar los diferentes elementos de prueba en un único modelo probabilístico causal, computar correctamente el valor de verdad de los modelos causales alternativos.
 %
 La complejidad del problema ponen en tensión las metodologías actuales de las ciencias de datos, y por lo tanto se presenta como una oportunidad para la innovación.
 
-\subsection{Herramienta: métodos gráficos e inferencia causal probabilística.}
-
-Por este motivo la inferencia causal es un \'area de creciente inter\'es dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
-
 % Parrafo
 
+Por este motivo la inferencia causal es un \'area de creciente inter\'es dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
+%
+Las teorías causales (i.e.~sistema de modelos causales que se prenden y apagan en función del contexto) son hipótesis, y como tales pueden ser evaluadas mediante la aplicación estricta de las reglas de la probabilidad~\cite{winn2012-causality}, $P(\text{Teoría causales}|\text{Datos})$.
+%
 En las \'ultimas d\'ecadas se fueron desarrollando t\'ecnicas que permiten aprovechar toda la potencia del aprendizaje autom\'atico probabil\'istico~\cite{murphy-pmlBook1,murphy-pmlBook2} de forma flexible e intuitiva, para crear modelos personalizados a la medida de cada problema espec\'ifico.
 %
 A este enfoque tambi\'en se lo conoce como ``aprendizaje autom\'atico basado en modelos''~\cite{Bishop2013, Bishop2006}.
 %
-En ella se desarrollaron los m\'etodos gr\'aficos~\cite{Pearl1986, Kschischang2001, koller2009-PGM} que permiten: (1) especificar los argumentos causales a trav\'es de redes causales intuitivas para personas sin formaci\'on matem\'atica , que codifican las consecuencias que las eventuales intervenciones sobre la naturaleza produce sobre la estructura causal; (2) realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal, en los casos que podemos resolver la matem\'atica; (3) y delegar la inferencia a los lenguajes de programaci\'on probabil\'istica a trav\'es de una sintaxis que nos permite traducir directamente la especificaci\'on gr\'afica del modelo que hicimos en (1).
+En ella se desarrollaron los m\'etodos gr\'aficos~\cite{Pearl1986, Kschischang2001, koller2009-PGM} que permiten: especificar matemáticamente los argumentos causales a trav\'es de redes bayesianas causales que son intuitivas para personas sin formaci\'on matem\'atica; realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal; y delegar la inferencia a los lenguajes de programaci\'on probabil\'istica a trav\'es de una sintaxis que permite traducir directamente la especificaci\'on gr\'afica del modelo .
 
 % Parrafo
 
@@ -9036,181 +9035,36 @@ El desarrollo de los m\'etodos gr\'aficos ofrece hoy la capacidad de desarrollar
 %
 El desarrollo de la programaci\'on probabil\'istica por su parte, permite resolver eficientemente las consecuencias l\'ogicas de los modelos causales.
 %
-Se produce as\'i un beneficio mutuo.
+A pesar de que están disponibles estas y otras herramientas, existe en la actualidad una escasa oferta de formación teórica y práctica en América latina y el Caribe.
 %
-Los argumentos causales provenientes de las ciencias sociales le va a permitir a la ciencia de datos sacar conclusiones causales.
-%
-Y la especificaci\'on probabil\'istica de los argumentos causales le va a permitir a la ciencias sociales evaluar correctamente sus hip\'otesis, poniendo en valor el conocimiento experto actual.
+En este contexto, al interior de la comunidad Bayes Plurinacional hemos decidido comenzar a organizar regularmente la Escuela Bayesiana Plurinacional, que tiene por objetivo impulsar el desarrollo de tallares prácticos dictados por investigadores de nuestra región.
 
-\subsection{Proyectos}
+% Parrafo
+
+El objetivo de la Escuela Bayesiana Plurinacional es fortalecer la oferta de formación en inferencia bayesiana en América latina y el Caribe.
+%
+Para ello, evitaremos invitar a personalidades extranjeras, impulsando especialmente la creación de cursos prácticos dictados por personas que residan en la región.
+%
+En particular, buscaremos personas que implementen actualmente métodos bayesianos en sus trabajos (como por ejemplo ocurre habitualmente en el sector científico) como fuente para el desarrollo de cursos prácticos en inferencia bayesiana basados en problemas reales.
+%
+Idealmente, cada uno de estos talleres debería tener una duración aproximada de 3 sesiones donde: se contextualice el problema real en lenguaje natural; se especifique matemáticamente (el o) los modelos probabilísticos; y se enseñe con ejemplos concretos a realizar la inferencia.
+%
+Además, se recomendará a los docentes incluir al cierre la descripción de problemas que todavía no saben resolver vinculados al tema presentado en el taller.
+
+% Parrafo
+
+
+
+% Parrafo
+
+
+En lo personal, mi objetivo a futuro es dar asistencia a grupos de investigación existentes.
+%
+
+
+
 
 Para ello, es indispensable colaborar \emph{in situ} con los equipos multidisciplinarios a cargo de las investigaciones de modo tal de desarrollar los elementos metodológicos específicos requeridos para responder a las necesidades concretas.
-
-
-
-
-
-
-
-% \section{Verdades relevantes}
-%
-% Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computaci\'on y encontrar all\'i las respuestas m\'as simples y concretas a las reflexiones epistemol\'ogicas y metodol\'ogicas m\'as trascendentales desarrolladas durante mi formaci\'on en ciencias antropol\'ogicas, no solo explica por qu\'e que ella es la principal herramienta qu\'e encontr\'e en el doctorado en computaci\'on.
-%
-% % Parrafo CAPITULO ANTROPOCAOS
-%
-% ?`Qu\'e nos hace vivir mejor, vivir bien? Esas son las verdaderas relevantes para toda forma de vida. Si para poder observar necesitamos ojos, entonces vamos a aprender a observar, y descubir los ojos. Eso es lo que hace la vida misma, que se dot\'o de ojos en especies tan lejanas como los p\'ajaros, peces y humanos.
-% Las verdades relevantes emergen, como emerge la vida.
-%
-%
-% \subsection{Aprender a beber (Elementos/Fundamentos) \emph{Suma Uma\~na}}
-% %
-% El agua es fuente de vida.
-% %
-%
-%
-%
-%
-% \subsection{Aprender a comer (Existir/Consumir) \emph{Suma Manq'a\~na}}
-%
-% Para vivir necesitamos energ\'ia: ox\'igeno, agua, vida.
-% %
-% Comer es intercambio de vida. Somos lo que comemos
-%
-%
-% \subsection{Aprender a danzar (Ser/Pertenecer) \emph{Suma Thoko\~na}}
-%
-% Actuar siempre con una dimensi\'on espiritual.
-% %
-% Ser cuerpo, pertenecer al grupo.
-%
-%
-% \subsection{Aprender a dormir (Moderar/Reanimar) \emph{Suma Iki\~na} }
-%
-% Dormir antes de la media noche, para tener la energ\'ia de dos d\'ias.
-%
-%
-% La probabilidad es como ox\'igeno al interior de la caja.
-% %
-% Por eso hay que aprender a respirar lo menos posible.
-% %
-% Somos y existimos gracias a qye existe ox\'igeno al interior de la caja.
-% %
-% Si nos sorprendemos, m\'as ox\'igenos consumimos.
-% %
-% Por eso, aprender a comer es aprender a consumir lo necesario para ser y exisitir.
-% %
-% Eso es lo que usa Bayes para seleccionar las hip\'otesis.
-% %
-% Consumiendo lo necesario, las que menos consumen, m\'as tienen.%
-%
-% %\subsection{Aprender a vivir (Nacer/Renacer) \emph{s} }
-%
-% \subsection{Aprender a trabajar (Integrar/Participar) \emph{Suma Irnaka\~na}}
-%
-% El trabajo comunitario es alegr\'ia.
-% %
-% Respiramos menos cuando trabajamos en comunidad.
-% %
-% Bayes predice con la contribuci\'on de todas las hip\'otesis.
-% %
-% Las hip\'otesis son mutuamente excluyentes.
-% %
-% Cada persona es \'unica, cada una distinta de la otra.
-% %
-% La diversidad de la hip\'otesis y de los recuerdos, mejor podemos reconstruir y construir la realidad.
-%
-%
-% \subsection{Aprender a meditar (Reflexionar/Adaptar) \emph{Suma Lupi\~na}}
-%
-% El equilibrio personal (\emph{Amiki}) restablece el equilibrio del entorno (\emph{Ch'uju}).
-%
-% Actualizar las creencias.
-% %
-% Se vive paso a paso.
-% %
-% En Bayes los datos los incoporamos de a gupos, de a uno, de a dos, o de a todos.
-% %
-% En cualquier caso, antes de ver los datos existe un equilibrio.
-% %
-% El mundo cambia, se transforma.
-% %
-% Luego de ver los datos, existe un nuevo equilibrio.
-% %
-% Para transitr de un viejo equilibrio a un nuevo equilibrio, entre verdades emp\'iricas, entre uno y otra m\'axima incertidumbre dada la informaci\'on, ne cesitammos reflexionar, adaptarnos.
-%
-% \subsection{Aprender a pensar (Comprender/Entender) \emph{Suma Amuya\~na}}
-% %
-% Sin perder la raz\'on, caminemos la senda del coraz\'on.
-% %
-% En Bayes la adaptaci\'on no ocurre solamente en base a la modificaci\'on de la realidad, a trav\'es de los datos.
-% %
-% Tambi\'en ocurre cuando cambiamos el especio de hip\'otesis.
-% %
-% Pensar es proponer razones, nuevas hip\'otesis, capaces de comprender mejor los datos del mundo que cambi\'o.
-% %
-% Cambiar el espacio de hip\'otesis, es el segundo paso necesario de la reflexi\'on y la adaptaci\'on.
-% %
-% Cambiamos el espacio de hip\'otesis, con datos fijos, y adaptamos nuestras creencias.
-% %
-% Proponemos nuevos horizontes, aqu\'i siempre mejoramos lo que ten\'iamos o nos quedamos igual.
-%
-%
-% \subsection{Aprender a amar y ser amado (Admitir/Retribuir) \emph{Suma Muna\~na Munayasi\~na} }
-%
-% El proceso de complementariedad y respeto a todo lo que existe.
-% %
-% El objetivo
-%
-% \subsection{Aprender a escuchar (Contemplar/Explorar) \emph{Suma Amuya\~na}}
-% %
-% % 9. \emph{Suma Ist'a\~na} (Saber escuchar). Percibir, sentir, escuchar con todo el cuerpo.
-%
-%
-%
-% \subsection{Aprender a hablar (Creer/Describir) \emph{Suma Aruskipa\~na}}
-% %
-% % 10. \emph{Suma Aruskipa\~na} (Saber hablar). Antes de hablar hay que sentir y pensar bien. Lo que se habla se escribe en los corazones de quienes escuchan.
-%
-%
-% \subsection{Aprender a so\~nar (Imaginar/Predecir) \emph{Suma Samkasi\~na}}
-% %
-% % 11. \emph{Suma Samkasi\~na} (Saber so\~nar). Todo empieza desde los sue\~nos. Por eso, los sue\~nos son el inicio de la realidad.
-%
-%
-% \subsection{Aprender a caminar (Decidir/Accionar) \emph{Suma Sarnaqa\~na} }
-% %
-% % 12. \emph{Suma Sarnaqa\~na} (Saber caminar). No existe el cansancio para quien sabe caminar. Nunca se camina solo, se camina junto a la Pachamama.
-%
-%
-% \subsection{Aprender a dar y recibir (Coexisitir/Revivir) \emph{Suma Chura\~na, suma Katuka\~na}}
-% %
-% % 13. \emph{Suma Chura\~na, suma Katuka\~na} (Saber dar y saber recibir). Hay que dar y recibir con dicha y agradecimiento porque la vida es la uni\'on de muchos seres y fuerzas.
-% %
-%
-%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
