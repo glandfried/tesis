@@ -769,25 +769,15 @@ A lo largo de todos estos siglos, las reglas de la probabilidad han sido derivad
 %
 Si bien en todo este tiempo no se ha propuesto nada mejor en t\'erminos pr\'acticos, el costo computacional asociado a la evaluaci\'on de todo el espacio de hip\'otesis ha limitado hist\'oricamente la aplicaci\'on estricta de las reglas de la probabilidad.
 %
-Por ello, a lo largo de los siglos se fueron desarrollando t\'ecnicas para resolver este problema.
-
-% Parrafo
-
-El primer ciclo de soluciones llega de la mano de f\'isica estad\'istica, en la segunda mitad del siglo 19.
+%Por ello, a lo largo de los siglos se fueron desarrollando t\'ecnicas para resolver este problema (f)
 %
-En esta \'epoca se desarrollan m\'etodos anal\'iticos para estimar la probabilidad de los microestados dada alguna informaci\'on macro, como la energ\'ia, la temperatura, o alg\'un promedio.
-%
-Conceptualmente se ha mostrado que las soluciones que ofrece la f\'isica estad\'istica son equivalentes a las que se obtiene con el enfoque bayesiano a trav\'es del principio de ``no mentir'' (maximizar entrop\'ia dada la informaci\'on disponible)~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, Jaynes2003}.
-
-\todo[inline]{No me convence nada la perspectiva hist\'orica, no es el objeto de la tesis y no aporta absolutmente nada. En particular, se habla de enfoque bayesiano como contraste cuando aun no se ha presentado nada al respecto ni definido. Sacaría todo.}
-
-% Parrafo
-
-Durante el siglo 20 se deja de lado la pretensi\'on de evaluar todo el espacio de hip\'otesis y se comienzan a desarrollar m\'etodos que seleccionan una \'unica hip\'otesis mediante alguna funci\'on de costo ad-hoc (e.g.,~como m\'axima verosimilitud).
-%
-Estas aproximaciones puntuales, al evitar evaluar todo el espacio de hip\'otesis, permitieron en la pr\'actica extender el campo de aplicaciones de la teor\'ia de la probabilidad~\cite{friedman2001-elementsOfStatisticalLearning}.
-%
-Sin embargo, debido a que las t\'ecnicas de selecci\'on de hip\'otesis puntuales muestra todav\'ia inestabilidades (e.g.,~overfitting), buena parte del trabajo durante esta \'epoca estuvo dedicado a desarrollar m\'etodos robustos.
+% El primer ciclo de soluciones llega de la mano de f\'isica estad\'istica, en la segunda mitad del siglo 19~\cite{jaynes1957-informationTheoryAndStatisticalMechanics, Jaynes2003}.
+% %
+% Durante el siglo 20 se deja de lado la pretensi\'on de evaluar todo el espacio de hip\'otesis y se comienzan a desarrollar m\'etodos que seleccionan una \'unica hip\'otesis mediante alguna funci\'on de costo ad-hoc (e.g.,~como m\'axima verosimilitud).
+% %
+% Estas aproximaciones puntuales, al evitar evaluar todo el espacio de hip\'otesis, permitieron en la pr\'actica extender el campo de aplicaciones de la teor\'ia de la probabilidad~\cite{friedman2001-elementsOfStatisticalLearning}.
+% %
+% Sin embargo, debido a que las t\'ecnicas de selecci\'on de hip\'otesis puntuales muestra todav\'ia inestabilidades (e.g.,~overfitting), buena parte del trabajo durante esta \'epoca estuvo dedicado a desarrollar m\'etodos robustos.
 
 % Parrafo
 
@@ -797,62 +787,61 @@ En esta \'epoca se desarrollan los m\'etodos num\'ericos de aproximaci\'on por m
 %
 Por primera vez desde el descubrimiento de la teor\'ia de la probabilidad, comienza a ser posible en todos los campos de las ciencia resolver la inferencia de los modelos probabil\'isticos aplicando estrictamente las reglas de la probabilidad, evaluando todo el espacio de hip\'otesis (aka~enfoque bayesiano).
 
-% Parrafo
-
-Si bien en la actualidad el crecimiento del enfoque bayesiano es un fen\'omeno mundial que se est\'a acelerando, su desarrollo sigue siendo incipiente.
+% % Parrafo
 %
-Luego de superados estos obst\'aculos, la inercia hist\'orica aparece ahora como una de las limitaciones principales, a la que nuestra casa de estudios no est\'a exenta.
+% Si bien en la actualidad el crecimiento del enfoque bayesiano es un fen\'omeno mundial que se est\'a acelerando, su desarrollo sigue siendo incipiente.
+% %
+% Luego de superados estos obst\'aculos, la inercia hist\'orica aparece ahora como una de las limitaciones principales, a la que nuestra casa de estudios no est\'a exenta.
+% %
+% Por ello, antes de presentar los modelos b\'asicos de estimaci\'on de habilidad,
 %
-Por ello, antes de presentar los modelos b\'asicos de estimaci\'on de habilidad, introducimos los fundamentos epistemol\'ogicos de la construcci\'on de conocimiento en contextos de incertidumbre (secci\'on \ref{sec:principios_interculturales}), y revisamos el enfoque bayesiano de la probabilidad (secc\'on \ref{sec:reglas_de_la_probabilidad}).
-
-% Parrafo
-
-La evaluaci\'on de modelos causales alternativos y la construcci\'on de datos son dos tareas centrales a resolver en ciencias emp\'iricas.
+% En la sección presentamos las reglas de la probabilidad (secc\'on \ref{sec:reglas_de_la_probabilidad}), y discutimos revisamos los fundamentos epistemol\'ogicos de la construcci\'on de conocimiento en contextos de incertidumbre, y
 %
-Los m\'etodos frecuentistas no ofrecen soluciones a estos dos problemas.
+% % Parrafo
 %
-Por ello, mostraremos c\'omo la aplicaci\'on estricta de las reglas de la probabilidad permiten: evaluar naturalmente modelos causales alternativos (secci\'on \ref{sec:modelos_alternativos}); y construir sistemas de informaci\'on \'optimos (datos) que sirvan como base emp\'irica para evaluar nuevas hip\'otesis (secci\'on \ref{sec:base_empirica_metodo}).
-% Parrafo
-En la secci\'on \ref{sec:trueskill} mostramos en detalle el modelo de estimaci\'on de habilidad bayesiano m\'as utilizados en el industria del video juego.
-%que utilizaremos para construir base emp\'irica en uno de nuestros trabajos, y que evalupara aanlizar los factores de aprendizaje social el siguiente cap\'itulo.
-%
-
-\todo[inline]{Todo lo que aparece en esta parte introductoria es superflua e innecesaria, no hay que justificar nada ni desde lo hist\'orico, ni desde la comparaci\'on liviana con otros desarrollos. Todo esto mete ruido y no ayuda en nada. Directamente lo sacar\'ia. En todo caso, podr\'ia llegar a formar parte de un cap\'itulo de discusi\'on al final, pero ac\'a esto no va}
-
+% La evaluaci\'on de modelos causales alternativos y la construcci\'on de datos son dos tareas centrales a resolver en ciencias emp\'iricas.
+% %
+% Los m\'etodos frecuentistas no ofrecen soluciones a estos dos problemas.
+% %
+% Por ello, mostraremos c\'omo la aplicaci\'on estricta de las reglas de la probabilidad permiten: evaluar naturalmente modelos causales alternativos (secci\'on \ref{sec:modelos_alternativos}); y construir sistemas de informaci\'on \'optimos (datos) que sirvan como base emp\'irica para evaluar nuevas hip\'otesis (secci\'on \ref{sec:base_empirica_metodo}).
+% % Parrafo
+% En la secci\'on \ref{sec:trueskill} mostramos en detalle el modelo de estimaci\'on de habilidad bayesiano m\'as utilizados en el industria del video juego.
+% %que utilizaremos para construir base emp\'irica en uno de nuestros trabajos, y que evalupara aanlizar los factores de aprendizaje social el siguiente cap\'itulo.
+% %
 \section{Razonamiento bajo incertidumbre}\label{sec:principios_interculturales}
 
-Las reglas de la probabilidad constituyen el principal sistema de razonamiento bajo incertidumbre.
+% Las reglas de la probabilidad constituyen el principal sistema de razonamiento bajo incertidumbre.
+% %
+% Estas reglas puede derivarse de principios filos\'oficos con validez intercultural.
+% %
+% El ``principio de integridad'' garantiza que no exista ni p\'erdida ni creaci\'on espont\'anea de creencias cuando la distribuimos entre las hip\'otesis alternativas.
+% %
+% El ``principio de no mentir'' garantiza un primer acuerdo intersubjetivo en contextos de incertidumbre (m\'axima incertidumbre dada informaci\'on disponible).
+% %
+% Finalmente, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservaci\'on de la creencia que sigue siendo compatible con los datos de base emp\'irica.
 %
-Estas reglas puede derivarse de principios filos\'oficos con validez intercultural.
-%
-El ``principio de integridad'' garantiza que no exista ni p\'erdida ni creaci\'on espont\'anea de creencias cuando la distribuimos entre las hip\'otesis alternativas.
-%
-El ``principio de no mentir'' garantiza un primer acuerdo intersubjetivo en contextos de incertidumbre (m\'axima incertidumbre dada informaci\'on disponible).
-%
-Finalmente, el ``principio de coherencia'' garantiza la continuidad del acuerdo intersubjetivo mediante la preservaci\'on de la creencia que sigue siendo compatible con los datos de base emp\'irica.
-
-\todo[inline]{Qu\'e significa esto? Qu\'e define? Qu\'e aporta?. Lo leo en modo jurado y no entiendo qu\'e quer\'es decir... traes axiomas o elementos que no les diste contexto, no definis los t\'erminos claramente. Esto debe ser una introducci\'on en la que definas los conceptos. De nuevo, todo lo anterior suena m\'as a que hay que sacarlo que a dejarlo.}
+% \todo[inline]{Qu\'e significa esto? Qu\'e define? Qu\'e aporta?. Lo leo en modo jurado y no entiendo qu\'e quer\'es decir... traes axiomas o elementos que no les diste contexto, no definis los t\'erminos claramente. Esto debe ser una introducci\'on en la que definas los conceptos. De nuevo, todo lo anterior suena m\'as a que hay que sacarlo que a dejarlo.}
 
 \subsection{Incertidumbre}
 
 La idea de que \emph{todo} lo que ocurre en la naturaleza tiene una causa previa que lo genera se conoce en la historia de la filosof\'ia como el principio de \emph{raz\'on suficiente} y ha estado presente en los debates que anteceden el desarrollo de la teor\'ia de la probabilidad.
 %
-Esta idea parece estar relacionada con la imposibilidad de \emph{crear azar}, de crear un ``m\'etodo efectivo'' capaz de generar a veces un resultado y a veces otro dadas exactamente las mismas condiciones iniciales.
+Esta idea parece estar relacionada con la imposibilidad de \emph{crear azar}, es decir de crear un algoritmo capaz de generar a veces un resultado y a veces otro dadas exactamente las mismas condiciones iniciales.
 %
-Antes del desarrollo de las ciencias de la computaci\'on exist\'ia una intuici\'on respecto de su imposibilidad.
-
+% Antes del desarrollo de las ciencias de la computaci\'on exist\'ia una intuici\'on respecto de su imposibilidad.
+%
+%
+% % Parrafo
+%
+% En teor\'ia de la computabilidad, la tesis de Church-Turing afirma que toda funci\'on sobre los n\'umeros naturales puede ser calculada por un ``m\'etodo efectivo'' si y s\'olo si es computable por una m\'aquina de Turing.
+% %
+% Debido a que todos las definiciones alternativas del concepto de ``m\'etodo efectivo'' resultaron ser equivalentes a una maquina de Turing, actualmente se supone que la hip\'otesis Church-Turing es cierta.
+%
+La imposibilidad de crear n\'umeros aleatorios est\'a determinada por la definici\'on misma de funci\'on, $f(x) = y$, pues las mismas condiciones iniciales $x$, luego de aplicado un algoritmo $f$, debe producir siempre el mismo resultado $y$.
 
 % Parrafo
 
-En teor\'ia de la computabilidad, la tesis de Church-Turing afirma que toda funci\'on sobre los n\'umeros naturales puede ser calculada por un ``m\'etodo efectivo'' si y s\'olo si es computable por una m\'aquina de Turing.
-%
-Debido a que todos las definiciones alternativas del concepto de ``m\'etodo efectivo'' resultaron ser equivalentes a una maquina de Turing, actualmente se supone que la hip\'otesis Church-Turing es cierta.
-%
-La imposibilidad de crear n\'umeros aleatorios est\'a determinada por la definici\'on misma de funci\'on, $f(x) = y$, pues las mismas condiciones iniciales $x$, luego de aplicado un ``m\'etodo efectivo'' $f$, debe producir siempre el mismo resultado $y$.
-\todo[inline]{Este parrafo no parece aportar demasiado, lo sacar\'ia. De hecho, lo mezclar\'ia naturalmente, diciendo en lugar de metodo efectivo capaz de generar un resultado aleatorio, directemente diciendo que no es posible definir un algoritmo que lo haga}
-% Parrafo
-
-El fundador de la teor\'ia de la probabilidad moderna, Pierre-Simon Laplace (1749-1827), ten\'ia la convicci\'on de que no exist\'ian eventos aleatorios en la naturaleza.
+El fundador de la teor\'ia de la probabilidad moderna, Pierre-Simon Laplace (1749-1827), parecía tener cierta convicci\'on de que no exist\'ian eventos aleatorios en la naturaleza.
 %
 Que si tuvi\'eramos conocimiento completo (infinitamente preciso) del estado del mundo $x$ en un instante de tiempo, y el modelo causal correcto que rige el comportamiento del mundo $f$, entonces tendr\'iamos conocimiento completo del estado del mundo en cualquier instante posterior $y$.
 
@@ -860,50 +849,45 @@ Que si tuvi\'eramos conocimiento completo (infinitamente preciso) del estado del
 Les \'ev\'enemens actuels ont, avec les pr\'ec\'edens, une liaison fond\'ee sur le principe \'evident, qu’une chose ne peut pas commencer d’être, sans une cause qui la produise. [\dots] Une intelligence qui, pour un instant donn\'e, connaîtrait toutes les forces dont la nature est anim\'ee [\dots] rien ne serait incertain pour elle, et l’avenir comme le pass\'e, serait pr\'esent à ses yeux~\cite{laplace1816-philosophique}. 
 \end{quotation}
 
-Vivir en un mundo determinista no nos libera, sin embargo, de la incertidumbre.
-\todo[inline]{Ok, metemos determinismo de una, dando por cierto la visi\'on de Laplace y matando a Dios, ok. Un poco fuerte para una sola oraci\'on ;-P}
+% Vivir en un mundo determinista no nos libera, sin embargo, de la incertidumbre.
+% \todo[inline]{Ok, metemos determinismo de una, dando por cierto la visi\'on de Laplace y matando a Dios, ok. Un poco fuerte para una sola oraci\'on ;-P}
+% %
+% Conocer las condiciones iniciales con precisi\'on \emph{finita} ha mostrado ser suficiente para impedir predecir el comportamiento de modelos causales, incluso en el corto plazo.
+% \todo[inline]{Que significa 'precisi\'on' en este contexto?}
+% %
+Revisemos un sistema determinista sencillo.
 %
-Conocer las condiciones iniciales con precisi\'on \emph{finita} ha mostrado ser suficiente para impedir predecir el comportamiento de modelos causales, incluso en el corto plazo.
-\todo[inline]{Que significa 'precisi\'on' en este contexto?}
+Supongamos que el tamaño de una población, medida como proporci\'on de una capacidad m\'axima, se actualiza exclusivamente en función del su tama\~no previo y de un factor de reproducci\'on $r$,
 %
-Un ejemplo de sistema determinista capaz de adquirir comportamientos imprevisibles es el siguiente modelo ``poblacional''.
-%
-\begin{equation}
- \text{Poblaci\'on}(t+1) = r \cdot \text{Poblaci\'on}(t)\cdot (1-\text{Poblaci\'on}(t))
-\end{equation}
-\todo[inline]{Tenes que explicar enseguida que es cada cosa, si bien a continuacion pones que estas hablando de una proporcion a un total no definido, se espera que eso este definido empezando con un ''donde Poblacion...". Ademas, tenes que dar el sistema completo para que este bien definido. En particular, las condiciones de borde. Como solo tenes el tiempo como variable, tenes que decir en que rango se mueve el tiempo y dar el valor inicial. La matemática tiene que estar bien expresada. Otra cosa importante es que estás discretizando el fenomeno poblacional, tendr\'ias que hablar de $\Delta t$ y no de 1 ya asociado a `paso de tiempo'}
-%
-El modelo establece que el tama\~no de una poblaci\'on, medida como proporci\'on respecto de la capacidad m\'axima de un sistema, depende exclusivamente de su tama\~no en el pasado y de un factor de reproducci\'on $r$.
-%
-\todo[inline]{Que es una capacidad maxima del sistema?. Cambi\'e 'tiempo anterior' por pasado, ya que no hay razon para discretizar el sistema en este momento.}
 % Parrafo
-
-\begin{figure}[ht!]
-\centering
-\tikz{
-    \node[latent, minimum size=1.25cm] (n1) {$\text{pob}_n$} ;
-
-    \node[latent, right=of n1, xshift=3cm, minimum size=1.25cm] (n2) {$\text{pob}_{n+1}$} ;
-
-     \path[->] (n1) edge node [yshift=0.5cm] {$r \cdot \text{pob}_n \cdot (1-\text{pob}_n)$} (n2);
-
-}
-\caption{Modelo causal expresado gr\'aficamente. Las flechas representan la relaci\'on causal entre las variables. 
-\todo[inline]{Flechas en plural? Yo veo una sola. Explicar que rol juega la ecuaci\'on como label de la flecha}}
-\label{fig:modelo_poblacional}
-\end{figure}
-
-\todo[inline]{La figura \ref{fig:modelo_poblacional} no est\'a explicada ni discutida en el texto, hay que aprovechar para presentar como se construye la representaci\'on gr\'afica del modelo. Ademas, en la ecuacion se habla de tiempo t y en la representación se habla de n. Se esta discretizando el sistema y ademas se explicita la relacion de causalidad entre los dos tama\~nos de polaci\'on. Todo esto debe estar explicado, sino no se entiende nada.}
-% Parrafo
-
-Dependiendo del factor de reproducci\'on $r$ y de la poblaci\'on inicial pop$_0$, podemos observar diferentes tipos de comportamientos.
-\todo[inline]{Apa! te aparece el tama\~no de la poblaci\'on inicial! Porque no aprovechas para vincular con la postura laplaciana y decis que al tener el tama\~no de la poblaci\'on y el modelo causal (y su parametrizacion), podes justamente determinar el tama\~no de la poblaci\'on en el futuro?}
+% \begin{figure}[H]
 %
-Por ejemplo, dada una poblaci\'on inicial $\text{pop}_0 = 0.5$, cuando el valor del par\'ametro $r$ es bajo (figura~\ref{fig:poblacion_punto_fijo}) la poblaci\'on tiende a un valor fijo;
-\todo[inline]{Cual es la intuicion de r como para saber que significa bajo o no bajo? EXPLICAR. Por ejemplo, en el primer caso, depende lo que pasa de la poblacion inicial?}
-cuando es intermedio (figura~\ref{fig:poblacion_periodico}) la poblaci\'on oscila en un per\'iodo;
-y cuando llega a su l\'imite m\'aximo (figura~\ref{fig:poblacion_caotico}) la poblaci\'on tiene un comportamiento denominado ``ca\'otico''.
-\todo[inline]{Tenes que ser mas cuidadoso con la definición, yo lo presentaria al reves, respecto a caos, diria las caracteristicas del crecimiento de la poblacion y despues diria que a eso se lo llama comportamiento caotico. La referencia a esto es el paper de Lorenz que funda toda la investigacion en caos}
+% \centering
+% \tikz{
+%     \node[latent, minimum size=1.25cm] (n1) {$\text{pob}_t$} ;
+%
+%     \node[latent, right=of n1, xshift=3cm, minimum size=1.25cm] (n2) {$\text{pob}_{t+\Delta t}$} ;
+%
+%      \path[->] (n1) edge node [yshift=0.5cm] {} (n2);%{$r \cdot \text{pob}_t \cdot (1-\text{pob}_t)$}
+%
+% }
+% % \caption{Modelo causal expresado gr\'aficamente. La flecha representa la relaci\'on causal entre las variables.
+% % \label{fig:modelo_poblacional}
+% \end{figure}
+%
+\begin{align*}
+ \text{Poblaci\'on}&(0) = \text{pop}_0 \\
+ \text{Poblaci\'on}&(t+\Delta t) = r \cdot \text{Poblaci\'on}(t)\cdot (1-\text{Poblaci\'on}(t))
+\end{align*}
+con $r \in [0,4]$ y pop$_0 \in [0,1]$.
+%
+Determinados los valores iniciales $r$ y pop$_0$ queda determinado el valor de la población en cualquier tiempo.
+%
+Dado $r=1.3$ y $\text{pop}_0 = 0.5$, la poblaci\'on tiende a un valor fijo  (figura~\ref{fig:poblacion_punto_fijo}).
+%
+Dado $r=3.5$ y $\text{pop}_0 = 0.5$, la poblaci\'on oscila en un per\'iodo (figura~\ref{fig:poblacion_periodico}).
+%
+Dado $r=3.5$ y $\text{pop}_0 = 0.5$, la poblaci\'on tiene un comportamiento denominado ``ca\'otico'', en el que no se observan per\'iodos de ninguna longitud, pues el sistema produce trayectorias que nunca pasan por los mismos puntos (figura~\ref{fig:poblacion_caotico}).
 %
 \begin{figure}[ht!]
     \centering
@@ -922,61 +906,41 @@ y cuando llega a su l\'imite m\'aximo (figura~\ref{fig:poblacion_caotico}) la po
     \caption{Ca\'otico}
     \label{fig:poblacion_caotico}
     \end{subfigure}
-    \caption{
-    Tipos de atractores del modelo causal no-lineal.\todo[inline]{Que significa no-lineal, de donde sale que sea o no lineal? donde lo dijiste o lo presentaste?}
-    }
+    \caption{Tipos de comportamientos del modelo determinista.}
     \label{fig:poblacion}
 \end{figure}
 %
-Bajo un r\'egimen ca\'otico no se observan per\'iodos de ninguna longitud, el sistema produce trayectorias que nunca pasan por los mismos puntos.
-%
-En la figura~\ref{fig:pseudo_aleatorio} vemos que los primeros 2000 puntos de la trayectoria determinista que comienza con $r=3.99$ y $\text{pop}_0 = 0.5$ se parece a una variable aleatoria.
-\todo[inline]{Estas jugando con fuego... primero dec\'is que no hay azar posible, despues decis que se parece a una variable aleatoria, cuando no definiste variable ni aleatorio de forma solida. Yo te sugiero que describas lo que se ve sin opinar (ya se que crees que no es una opinion, pero al no construir presentando las definiciones, queda todo en el aire}
-%
-Otra de las propiedades del atractor ca\'otico es la sensibilidad a las condiciones iniciales.
-\todo[inline]{Que es una atractor? Cuando lo definiste? En un sistema caotico, tiene sentido hablas de atractores?}
-%
-En la figura~\ref{fig:poblacion_caotico} hacemos zoom en los primeros 30 pasos temporales y observamos que si modificamos levemente las condiciones iniciales las trayectoria r\'apidamente divergen hasta volverse completamente diferentes.
-\todo[inline]{decir explicitamente en el texto cual es el cambio realizado}
+Si modificamos levemente el valor inicial de la población bajo un comportamiento caótico, de $0.5$ a $0.499$, produce trayectoria que r\'apidamente divergen hasta volverse completamente diferentes (figura~\ref{fig:sensibilidad}).
 %
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
     \centering
-    \includegraphics[page=14,width=\linewidth]{figures/poblacion}
-    \caption{Comportamiento que parece aleatorio}
-    \label{fig:pseudo_aleatorio}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
-    \centering
     \includegraphics[page=13,width=\linewidth]{figures/poblacion}
-    \caption{Sensibilidad a condiciones iniciales}
-    \label{fig:sensibilidad}
     \end{subfigure}
-    \caption{Comportamiento del modelo causal no lineal con $r=3.99$ y $\text{pop}_0 = 0.5$.
-    \subref{fig:pseudo_aleatorio}: primeros 2000 puntos.
-    \subref{fig:sensibilidad}: primeros 30 puntos. La l\'inea roja comienza con $\text{pop}_0 = 0.499$.}
-    \label{fig:propiedades_caoticas}
+    \caption{Sensibilidad a condiciones iniciales: $\text{pop}_0 = 0.5$ (negro), $\text{pop}_0 = 0.499$ (rojo).}
+    \label{fig:sensibilidad}
 \end{figure}
-\todo[inline]{No me gusta que digas 'parece aleatorio' en todo caso, tenes que decir que no se perciben estructuras. Tenes que usar los terminos con cuidado, es una tesis de doctorado}
 %
-
-La sensibilidad a las condiciones iniciales impone un l\'imite a la capacidad predictiva.
-%
-Por m\'as que la naturaleza sea determinista y conozcamos el mecanismo subyacente, si el sistema se encuentra bajo un atractor ca\'otico, jam\'as vamos a poder predecir el destino inevitable m\'as all\'a de cierto tiempo debido a que en ning\'un sistema natural podremos medir con infinita precisi\'on las condiciones iniciales.
-\todo[inline]{de nuevo, todo es muy liviano... 'mas de un cierto tiempo', si tus condiciones iniciales no estan seguras, no podes predecir ningun tiempo. Eso es la joda de los sistemas complejos con comportamiento caotico. Por eso para conocer el clima, se usa la tecnica de ensamble... todo este texto deja mucho flanco para criticar, no corresponde con una tesis de doctorado!}
-%
-La imposibilidad de determinar si estamos en presencia de \emph{exactamente} las mismas condiciones iniciales constituye ya una fuente de incertidumbre para las ciencias emp\'iricas.
-\todo[inline]{que significa 'exactamente', vos no estas en presencia o no, lo que no podes hacer es determinar cuales son las condiciones iniciales del sistema}
-% Parrafo
-
-Si bien los sistemas sociales, al igual que el clima, se los considera sistemas ca\'oticos sensibles a las condiciones iniciales, desde las ciencias sociales, al igual que la f\'isica cu\'antica, se suele afirmar que el mundo no tiene forma de funci\'on determinista.
-\todo[inline]{Bueno, otro salto a que te peguen, metes la cuantica si saber mas allá de boca de jarro que significa... en cuantica tenes un concepto que se llama decoherencia que vincula la trasnformacion de la vista de un sistema con comportamiento cuantico a uno con comportamiento medio o continuo. Si bien podr\'ia ser tentador charlar sobre todas esas cosas, no queda claro a donde apunta toda esta perorate vac\'ia y que no solida.}
+Esta sensibilidad a las condiciones iniciales de modelos deterministas impone, en los hechos, límites a la capacidad predictiva.
 
 %
+
+
+
+Alcanza con no conocer las condiciones iniciales con precisión \emph{infinitesimal} para introducir ignorancia completa en sistemas deterministas.
+%
+A esta incertidumbre, que proviene de nuestra ignorancia, se la conoce como \emph{epistémica}.
+
+%
+
+Si la naturaleza, por algún motivo no fuera determiniasta
+
+existe otro concepto de incertidumbre que se la conoce como \emph{ontológica}
+
 Justamente, el concepto de libre albedr\'io afirma que una persona expuesta ante un estado del universo determinado, bajo exactamente las mismas condiciones iniciales, tiene todav\'ia la capacidad de elegir una acci\'on.
-\todo[inline]{Si claro, pero te retruco poniendo el concepto de agente racional y ah\'i te vas a poner a discutir las bases de la teor\'ia economica-social? Para qu\'e?}
-% Parrafo
+% \todo[inline]{Si claro, pero te retruco poniendo el concepto de agente racional y ah\'i te vas a poner a discutir las bases de la teor\'ia economica-social? Para qu\'e?}
+% % Parrafo
 
 Sea porque el mundo natural admite la posibilidad de que un efecto surja sin su propia causa, sea por nuestra incapacidad de conocer los modelos causales correctos o de conocer las condiciones iniciales con infinita precisi\'on, nuestro conocimiento sobre el mundo natural contiene siempre un grado de incertidumbre.
 
