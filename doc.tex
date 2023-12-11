@@ -7712,15 +7712,13 @@ A largo plazo solo sobreviven las variantes capaces de reducir las fluctuaciones
 
 
 
-\chapter{Conclusiones y trabajo futuro}
+\chapter{Conclusiones}
 
 % Parrafo
 
 En la secci\'on~\ref{sec:doctorado} se repasa el trayecto del doctorado, desde las ilusiones iniciales hasta la respuesta final: el enfoque bayesiano de la probabilidad.
 %
-En las secciones~\ref{sec:bayesplurinacional} se revisa el estado de la comunidad bayesiana de América latina y la organizaci\'on de la comunidad Bayes Plurinacional.
-%
-En la secci\'on~\ref{sec:volverAlFuturo} vamos a conversar sobre el trabajo futuro sobre especificaci\'on y evaluaci\'on de modelos causales en ciencias de datos.
+En las secciones~\ref{sec:volverAlFuturo} discutiré sobre el trabajo futuro en el área de la ciencia de datos causal bayesiana.
 
 
 \section{Mi trayecto interdisciplinar: incertidumbre y acuerdos intersubjetivos} \label{sec:doctorado}
@@ -7744,7 +7742,7 @@ Se crean también las ciencias pol\'iticas, la econom\'ia y la criminolog\'ia, q
 %
 El resto, y por lo tanto \emph{todo}, qued\'o a cargo de la antropolog\'ia.
 %
-As\'i es que la antropolog\'ia es la \'unica ciencia social que recibi\'o el objeto social completo: todas las culturas del mundo en el tiempo y el espacio, desde el origen de la humanidad hasta el presente, desde sociedades n\'omadas cazadoras-recolectoras actuales, hasta las sociedades agricultoras estatales antiguas, en sus aspectos ecol\'ogicos, econ\'omicos, pol\'iticos, religiosos y otros no contemplados por la cosmovisi\'on colonial-moderna.
+As\'i es que la antropolog\'ia es la \'unica ciencia social que recibi\'o el objeto social completo: todas las culturas del mundo, en el tiempo y el espacio, desde el origen de la humanidad hasta el presente, desde sociedades n\'omadas cazadoras-recolectoras actuales, hasta las sociedades agricultoras estatales antiguas y modernas, en sus aspectos ecol\'ogicos, econ\'omicos, pol\'iticos, religiosos y otros no contemplados por la cosmovisi\'on colonial-moderna.
 
 % Parrafo
 
@@ -8249,94 +8247,52 @@ Promover la pluralidad y la coexistencia no es un imperativo moral, sino pr\'act
 %
 Del mismo modo que seleccionar una \'unica hip\'otesis tiene consecuencias negativas conocidas en probabilidad (overfitting), la imposici\'on de un \'unico tipo de sociedad ha tenido consecuencia ecol\'ogicas cada vez m\'as evidentes.
 
-\section{El enfoque bayesiano en Am\'erica latina} \label{sec:bayesplurinacional}
+\section{Hacia una ciencia de datos causal bayesiana.} \label{sec:volverAlFuturo}
 
-A pesar de que las reglas de la probabilidad se conocen desde finales del siglo 18, de que hayan sido adoptadas como sistema de razonamiento en todas las ciencias emp\'iricas, y de que hasta ahora no se haya propuesto nada mejor en lo pr\'actico, el costo computacional asociados a la evaluaci\'on de todo el espacio de hip\'otesis ha limitado en los hechos su campo de aplicaci\'on hasta las v\'isperas del siglo 21, cuando comienza el enorme crecimiento en la capacidad de c\'omputo.
-
-
-\subsection{La Comunidad Bayesiana Plurinacional}
-
-
-La relevancia de la aplicaci\'on estricta de las reglas de la probabilidad (enfoque bayesiano), tanto en lo que respecta al valor de la verdad como al valor pr\'actico del conocimiento, contrasta con la realidad actual en la que el enfoque bayesiano sigue siendo marginal incluso en la facultad de ciencias exactas y naturales m\'as importante de nuestro pa\'is.
+La aplicación estricta de las reglas de probabilidad (o enfoque bayesiano) constituye la base de la inteligencia artificial y de las ciencias empíricas que aspiran a alcanzar verdades en contextos de incertidumbre.
 %
-Si bien los principales obst\'aculos que imped\'ian su aplicaci\'on han sido levantados en la Era de la computaci\'on electr\'onica, la inercia hist\'orica hace que su desarrollo siga siendo incipiente, especialmente en los pa\'ises perif\'ericos como el nuestro.
+Si bien estas reglas se conocen desde el siglo 18, su aplicación se ha visto limitada históricamente debido al costo computacional asociado a la evaluación de todo el espacio de hipótesis.
 %
-Es as\'i que la adopci\'on del enfoque bayesiano en nuestro continente, especialmente en ciencias con menor formaci\'on en matem\'atica y programaci\'on como las ciencias sociales, es en la inmensa mayor\'ia de los casos inexistente.
+Aunque estos obstáculos han sido superado gracias a los avances computacionales y algorítmicos modernos, la inercia histórica hace que su desarrollo siga siendo incipiente, especialmente en países periféricos.
+%
+Las cuestiones computacionales, sin embargo, son solo el primer paso de la inteligencia artificial.
 
-% Parrafo
+%
 
+Para explicar el mundo y tomar decisiones todas las ciencias que trabajan con datos, desde la física hasta las ciencias sociales, desarrollan teorías causales justamente porque no es posible sacar conclusiones causales y predecir las consecuencias de las intervenciones sin proponer modelos que tengan una interpretación causal~\cite{pearl2009-causality, peters2017-causalInference}.
+%
+Las teorías causales son hipótesis, y como tales pueden ser evaluadas mediante la aplicación estricta de las reglas de la probabilidad~\cite{winn2012-causality}, $P(\text{Teoría causal}|\text{Datos})$, que penaliza naturalmente la complejidad innecesaria.
+%
+Hoy la inteligencia artificial tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema específico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
+
+\subsection{La comunidad Bayes Plurinacional}
+
+La relevancia de la aplicación estricta de las reglas de la probabilidad contrasta con la realidad actual en la que el enfoque bayesiano es marginal incluso en las universidades más importantes de la región, y prácticamente inexistente en ciencias empíricas que no cuentan con formación específica en matemática y programación.
+%
 Este diagn\'ostico fue emergiendo durante la segunda mitad del doctorado.
 %
 A partir de la falta de referentes bayesianos en la propia facultad, comenc\'e un proceso de b\'usqueda activa.
 %
-Antes de la pandemia tuve la suerte de conocer al Grupo de Modelado Probabil\'istico, uno de los equipos bayesianos m\'as importantes de la Argentina, que participan activamente en el desarrollo del lenguaje de programaci\'on probabil\'istica de Python \texttt{pymc}.
+Este diagnóstico era compartido por otros referentes bayesianos de Argentina.
 %
-Antes de la pandemia tambi\'en organizamos el primer seminario bayesiano en nuestra Facultad de Ciencias Exactas y Naturales, y durante la pandemia seguimos organizando diversos grupos de estudio, cursos y talleres abiertos.
-
-% Parrafo
-
-A trav\'es de conversaciones personales con todos los investigadores que trabajaban intensamente con el enfoque bayesiano, fue madurando la necesidad de impulsar la comunidad bayesiana para favorecer la transici\'on probabil\'istica en nuestro pa\'is.
-%
-En junio del 2022, realizamos la primera reuni\'on con Osvaldo Mart\'in, Rodrigo D\'iaz y Gimena Serrano, donde decidimos realizar un congreso-taller bayesiano los primeros d\'ias del mes de agosto del a\~no 2023.
-%
-La Secretar\'ia de Ciencia y Tecnolog\'ia de la provincia de Santiago del Estero ofreci\'o apoyo para realizar el evento en sus instalaciones.
-
-% Parrafo
-
-En las primeras reuniones comenzamos a definir el perfil del congreso y la organizaci\'on.
-%
-En este contexto de fundaci\'on, aparece la necesidad de nombrar.
-%
-Si bien la idea de organizar un congreso con los pa\'ises vecinos ya se nos presentaba como una desaf\'io importante, buscamos un nombre amplio capaz de incluir a los países de nuestra América.
-%
-Inicialmente elegimos una versi\'on resumida del nombre de nuestra organizaci\'on local \emph{Bayes (de las Provincias Unidas) del Sur} y creamos una p\'agina web con el nombre \texttt{http://bayesdelsur.com.ar/}, la cual qued\'o alojada en nuestro repositorio \texttt{https://github.com/BayesDeLasProvinciasUnidasDelSur/CBS}.
-
-% Parrafo
-
-Si bien hab\'iamos evitado el uso de la palabra ``Provincia'' debido a que no se la conoce com\'unmente en los pa\'ises vecinos a las \emph{Provincias Unidas del Rio de La Plata} (nombre oficial de la Argentina), la palabra ``Sur'' tampoco permit\'ia representar a los pa\'ises del norte de nuestra Am\'erica.
-%
-Necesit\'abamos un nombre lo suficientemente general capaz de incluir a todos los pa\'ises, pero lo suficientemente local para otorgarle real identidad.
-%
-Y nuestros pa\'ises comparten fundamentalmente una larga historia de procesos coloniales e independentistas, de donde surge la palabra ``Plurinacional'', un principio filos\'ofico, pol\'itico y cultural de coexistencia, que nace del arraigo milenario de nuestras comunidades locales, que es una ense\~nanza para el mundo.
-
-% Parrafo
-
-De esta forma decidimos llamar ``Bayes Plurinacional'' a la organizaci\'on.
+En el año 2022 creamos la comunidad Bayes Plurinacional con el objetivo de impulsar las comunidades bayesianas de la región.
 %
 \begin{figure}[ht!]
 \centering
-  \begin{subfigure}[b]{0.55\textwidth}
+  \begin{subfigure}[b]{0.45\textwidth}
   \includegraphics[page=1,width=\textwidth]{static/BP.pdf}
   \end{subfigure}
 \end{figure}
-%
-Y por lo tanto, el evento pas\'o a llamarse Congreso Bayesiano Plurinacional.
 
 % Parrafo
 
 Una de las primeras actividades de organizaci\'on consisti\'o en analizar sistem\'aticamente y en profundidad la comunidad cient\'ifica argentina que tuviera publicaciones utilizando m\'etodos bayesianos.
 %
-Para ello, desarroll\'e una pieza de software mediante la cual pudimos explorar los perfiles p\'ublicos de todo el personal de investigaci\'on activo (a septiembre del 2023) del Consejo Nacional de Investigaciones Cient\'ificas y T\'ecnicas (CONICET).
+Para ello, desarroll\'e otra pieza de software mediante la cual exploramos la red de co-autor\'ias de todos los art\'iculos cient\'ificos (fuente Scopus).
 %
-A todas aquellas personas que identificamos, le enviamos una carta a trav\'es de la pesta\~na "Contacto" de la p\'agina de CONICET, en la cual invit\'abamos a participar del Congreso Bayesiano Plurinacional y a la comunidad Bayes Plurinacional.
-
-% Parrafo
-
-Enviamos cartas personalizadas a 171 investigadores.
+En el anexo se pueden visualizar las redes bipartitas entre ``art\'iculos'' y ``autores'' (figura~\ref{fig:redes_co_autorias}).
 %
-Si bien no todas ellas trabajaban con m\'etodos bayesianos, aparecieron en nuestra lista la mayor\'ia de las personas que conoc\'iamos previamente que s\'i lo hac\'ian con regularidad.
-%
-Además, 20 investigadores que no conoc\'iamos previamente respondieron una formulario dando su aval al evento que est\'abamos organizando y pidiendo ser contactadas para participar de su organizaci\'on.
-%
-El formulario inclu\'ia la pregunta ?`A qui\'en no deber\'iamos dejar de invitar?, obteniendo de esta forma la referencia de 8 investigadores m\'as.
-%
-Algunos de ellos participaron de la organizaci\'on, como Guillermo ``Willy'' Pregliasco, del congreso como Gabriel Alzamendi, y de ambas como Luciano Moffatt.
-
-% Parrafo
-
-Luego de ponernos en contacto con una proporci\'on significativa de investigadores argentinos (por correo electr\'onico, tel\'efono o video conferencia) y antes de finalizar el a\~no decidimos realizar otra investigaci\'on sistem\'atica y exhaustiva, esta vez sobre la comunidad bayesiana de América latina.
-%
-Para ello, desarroll\'e otra pieza de software mediante la cual exploramos la red de co-autor\'ias de todos los art\'iculos cient\'ificos (fuente Scopus) que tuvieran al menos una afiliaci\'on en Amércia latina y el Caribe, y alguna palabra claves en el t\'itulo o abstract vinculada al enfoque bayesiano: (bayes OR bayesian OR causal inference OR state space model OR hidden markov model OR probabilistic programing OR markov chain monte carlo OR hamiltonian monte carlo OR hybrid monte carlo OR sequential monte carlo OR expectation propagation OR belief propagation OR variational inference OR MaxEnt OR sum-product algorithm) AND (NOT (naive bayes OR bayes syndrome)).
+En la siguiente figura~\ref{fig:papers_bayesianos} se detalla la cantidad de artículos científicos vinculados al enfoque bayesiano publicados cada año con al menos una autoría con filiación en América latina y el Caribe.
 
 % Parrafo
 
@@ -8346,6 +8302,7 @@ Para ello, desarroll\'e otra pieza de software mediante la cual exploramos la re
   \includegraphics[page=2,width=\textwidth]{figures/papers.pdf}
   \end{subfigure}
   \caption{Cantidad de art\'iculos cient\'ificos que fueron detectados con al menos una afiliaci\'on en Latinoam\'erica y alguna palabra claves en el t\'itulo o abstract vinculada al enfoque bayesiano. Dejamos en blanco el \'ultimo punto que representa al a\~no 2022 (a\~no en que se realiz\'o la b\'usqueda), para el cual tenemos datos parciales.}
+  \label{fig:papers_bayesianos}
 \end{figure}
 
 % Parrafo
@@ -8376,109 +8333,34 @@ A partir del a\~no 2013 el crecimiento exponencial de las publicaciones bayesian
 
 Con el surgimiento de las redes neuronales profundas, nuevamente la complejidad computacional de la aplicaci\'on estricta de las reglas de la probabilidad act\'ua como un l\'imite al enfoque bayesiano.
 %
-Desde entonces, la atenci\'on del \'area de la inteligencia artificial pasa a enfocarse nuevamente en m\'etodos que seleccionan una \'unica hip\'otesis en vez de integrar todo el espacio de hip\'otesis.
+Aún así, el auge de las redes neuronales profundas no produjo la aparición de un sistema de razonamiento bajo incertidumbre nuevo, con mejor desempe\~no que el de las reglas de la probabilidad.
 %
-Sin embargo, esto no significa que se haya propuesto un sistema de razonamiento bajo incertidumbre nuevo, con mejor desempe\~no que el de las reglas de la probabilidad.
+El enfoque bayesiano sigue siendo el corazón de la Inteligencia Artificial y de toda ciencia empírica.
 %
 En este contexto, NeurlIPS realiza una competencia en el a\~no 2021 denominada ``Approximate inference in Bayesian Deep Learning''.
 %
 En ese a\~no se publica el art\'iculo ``What Are Bayesian Neural Network Posteriors Really Like?''~\cite{Izmailov2021} en el que aproximan las distribuciones de probabilidad de redes neuronales mediante full-batrch Hamiltonian Monte Carlo (HMC).
 %
-All\'i se confirma la observaci\'on previa~\cite{Wilson2020}, en la que se muestra que los m\'etodos de \emph{deep ensambles}, que en vez de quedarse con una \'unica hip\'otesis se quedan con un conjunto, proporcionan un mecanismo eficaz de aproximaci\'on de la aplicaci\'on estricta de las reglas de la probabilidad.
+All\'i se confirma la observaci\'on previa~\cite{Wilson2020}, en la que se muestra que los m\'etodos de \emph{deep ensambles} proporcionan un mecanismo eficaz de aproximaci\'on de la aplicaci\'on estricta de las reglas de la probabilidad.
 
 % Parrafo
-
-Haber obtenido la red de co-autor\'ias de art\'iculos bayesianos con afiliaci\'on en América latina y el Caribe nos permiti\'o verificar que la comunidad era m\'as grande de lo que cre\'iamos inicialmente.
+Gracias a que la mitad de los autores proveen en sus art\'iculos cient\'ificos alg\'un medio de contacto, pudimos conversar personalmente con una gran cantidad de investigadores bayesianos de la región y verificar que sus protagonistas no se suelen conocen todav\'ia.
 %
-Por ejemplo, la cantidad de autores individuales detectados en los principales pa\'ises son: Brasil 9501, México 3276, Argentina 1640, Chile 1295, Colombia 1069.
+Esto ratific\'o nuestro objetivo principal a largo plazo, de contribuir en el desarrollo de las comunidades bayesianas de de la región.
 %
-Para explorar la estructura de la comunidad bayesiana realizamos, con la colaboraci\'on de Ariel Salgado, visualizaciones a trav\'es de redes bipartitas (figura~\ref{fig:redes_co_autorias}), con nodos ``art\'iculos'' (en rojo), nodos ``autores'' (en azul), y ejes entre los autores y sus art\'iculos.
+En este contexto, decidimos organizar el Congreso Bayesiano Plurinacional 2023.
 %
-La versi\'on interactiva subida a la web (\texttt{http://bayesdelsur.com.ar/comunidad.html}) permite mover nodos, y desplegar los datos de los autores (nombre y afiliaciones) y de los art\'iculos (t\'itulo, abstract, journal y a\~no).
-
-% Parrafo
-\clearpage
-\begin{figure}[!ht]
-\noindent \centering \Wider[1.3cm]{
-  \begin{subfigure}[b]{0.32\textwidth}
-  \caption{Argentina}
-  \includegraphics[page=1,width=\textwidth]{static/Argentina.png}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \caption{Brasil}
-  \includegraphics[page=1,width=\textwidth]{static/Brasil.png}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-      \caption{Chile}
-  \includegraphics[page=1,width=\textwidth]{static/Chile.png}
-  \end{subfigure}}
-\end{figure}
-  \begin{figure}[!ht]
-  \noindent \centering \Wider[1.3cm]{
-    \begin{subfigure}[b]{0.32\textwidth}
-      \caption{Colombia}
-  \includegraphics[page=1,width=\textwidth]{static/Colombia.png}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-  \caption{Cuba}
-  \includegraphics[page=1,width=\textwidth]{static/Cuba.png}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \caption{M\'exico}
-  \includegraphics[page=1,width=\textwidth]{static/Mexico.png}
-  \end{subfigure}}
-\end{figure}
-\begin{figure}[!ht]
-\noindent \centering  \Wider[1.3cm]{
-    \begin{subfigure}[b]{0.32\textwidth}
-      \caption{Peru}
-  \includegraphics[page=1,width=\textwidth]{static/Peru.png}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \caption{Uruguay}
-  \includegraphics[page=1,width=\textwidth]{static/Uruguay.png}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-      \caption{Venezuela}
-  \includegraphics[page=1,width=\textwidth]{static/Venezuela.png}
-  \end{subfigure}
-  \caption{Red de co-autorias bayesianas. Fuente Scopus. }
-  \label{fig:redes_co_autorias}}
-\end{figure}
-%
-Gracias a que la mitad de los autores proveen en sus art\'iculos cient\'ificos alg\'un medio de contacto, pudimos invitar al congreso a una proporci\'on importante.
-%
-Para ello tuve que desarrollar otra pieza de software que nos permitiera enviar de forma autom\'atica correos electr\'onicos a trav\'es de nuestra cuenta \texttt{bayesdelsur@gmail.com}.
-%
-De esta forma, en pocas semanas, superamos el n\'umero de inscripciones que nos hab\'iamos propuesto inicialmente, por lo que decidimos cerrar el per\'iodo de inscripci\'on al final del primer y \'unico llamado.
-%
-A trav\'es de conversaciones personales con diversos investigadores, pudimos verificar que la comunidad est\'a muy desconectada, pues sus protagonistas no se suelen conocen todav\'ia.
-
-% Parrafo
-
-Esto ratific\'o nuestro objetivo principal a largo plazo, de contribuir en la transici\'on bayesiana en América latina y el Caribe.
-%
-Nos propusimos entonces alcanzar dos objetivos particulares: fortalecer a los investigadores bayesianos activos actualmente en nuestros pa\'ises; y promover la emergencia de la generaci\'on bayesiana.
-%
-Para potenciar el trabajo de quienes ya trabajan con el enfoque bayesiano nos propusimos llevar adelante encuentros presenciales y virtuales peri\'odicos que fortalezcan lo v\'inculos al interior de la comunidad bayesiana plurinacional.
-%
-Para expandir la comunidad actual, nos propusimos impulsar cursos y formaciones abiertas para los diversos niveles (introductorio, intermedio y avanzado) con reconocimiento de las principales universidades p\'ublicas y privadas de nuestros pa\'ises.
-
-% Parrafo
-
-El impacto de estas tares podr\'a ser medido en los pr\'oximos a\~nos, por ejemplo, en la estructura de la red de co-autor\'ias bayesianas de Am\'erica latina (figura~\ref{fig:redes_co_autorias}).
-
-% Parrafo
+%El impacto de estas tares podr\'a ser medido en los pr\'oximos a\~nos, por ejemplo, en la estructura de la red de co-autor\'ias bayesianas de Am\'erica latina (figura~\ref{fig:redes_co_autorias}).
 
 \subsection{El Congreso Bayesiano Plurinacional 2023}
 
-%\todo[inline]{Desde la evaluaci\'on de las propuestas, la renuncia del grupo de modelado, los financiamientos perdidos, el llamado telef\'onico a cada una de las personas que vino, hasta la fiesta en Santiago}
-
-El congreso se realiz\'o en colaboraci\'on con la Secretar\'ia de Ciencia y Tecnolog\'ia de Santiago del Estero los d\'ias 4, 5 y 6 de agosto del 2023.
+La comunidad Bayes Plurinacional realizó con éxito el Congreso Bayesiano Plurinacional 2023 los días 4, 5 y 6 de agosto en las instalaciones de la Secretaría de Ciencia y Tecnología de la provincia de Santiago del Estero, Argentina.
 %
 La diversidad disciplinar fue extraordinaria: ecolog\'ia, medicina, astronom\'ia, geolog\'ia, psicolog\'ia, cu\'antica, econom\'ia, ingenier\'ia, filosof\'ia, biolog\'ia, estad\'istica, computaci\'on, antropolog\'ia, entre otras.
 %
 La diversidad de regiones tambi\'en: Chile, Paraguay, Uruguay, Colombia, Honduras, Brasil, Argentina (C\'ordoba, Salta, Mendoza, Entre Rios, Santa Fe, Santiago del Estero, Buenos Aires), tanto del sector privado, del p\'ublico y de la academia.
+%
+Además, durante el congreso nos visit\'o el gobernador de la provincia de Santiago del Estero, Gerardo Zamora (figura en anexo~\ref{fig:gerardo}).
 
 % Parrafo
 
@@ -8492,415 +8374,230 @@ La diversidad de regiones tambi\'en: Chile, Paraguay, Uruguay, Colombia, Hondura
 
 % Parrafo
 
-De la foto participan de izquierda a derecha: Gimena Serrano, Laura Calfayan, Diego Sevilla, Silvia Morales, Gustavo Landfried, Sebasti\'an Retondo, Albert Ortiz, Mat\'ias Leizerovich, Juan Fern\'andez Zaragoza, Javier Arellana, Mario Gonz\'alez Olmedo, Marcos Feole, Mat\'ias Alejando Vera, Andrea Paula Goijman, Lucas Mansilla, Nicol\'as Dib Ashur, Hugo Cristo Sant Anna, Ana Ver\'onica Scotta, Gonzalo R\'ios, Edmundo Vizgarra, Bernardo Lagos, Victoria Nogu\'es, Natalia Sandez Pernas, Nicol\'as Alejandro Comay, Luiggina Cappellotto, Luciano Moffatt, Noelia Arguelles, Carlo Iguar\'an, Yasm\'in Elena Navarrete D\'iaz, Asael Alonzo Matamoros, Maria Raquel Mart\'inez, Hossein Dinani, Gabriel Alzamendi, Lucia Concepci\'on Moran Figueredo, Mart\'in Amigo, Sergio Michael Davis Irarr\'azabal, Pamela Eugenia Pairo.
-Aunque no est\'an en la foto, tuvimos la presencia tambi\'en de Rocco Di Tella, Tom\'as Olego y Enrique \'Alvarez.
+%De la foto participan de izquierda a derecha: Gimena Serrano, Laura Calfayan, Diego Sevilla, Silvia Morales, Gustavo Landfried, Sebasti\'an Retondo, Albert Ortiz, Mat\'ias Leizerovich, Juan Fern\'andez Zaragoza, Javier Arellana, Mario Gonz\'alez Olmedo, Marcos Feole, Mat\'ias Alejando Vera, Andrea Paula Goijman, Lucas Mansilla, Nicol\'as Dib Ashur, Hugo Cristo Sant Anna, Ana Ver\'onica Scotta, Gonzalo R\'ios, Edmundo Vizgarra, Bernardo Lagos, Victoria Nogu\'es, Natalia Sandez Pernas, Nicol\'as Alejandro Comay, Luiggina Cappellotto, Luciano Moffatt, Noelia Arguelles, Carlo Iguar\'an, Yasm\'in Elena Navarrete D\'iaz, Asael Alonzo Matamoros, Maria Raquel Mart\'inez, Hossein Dinani, Gabriel Alzamendi, Lucia Concepci\'on Moran Figueredo, Mart\'in Amigo, Sergio Michael Davis Irarr\'azabal, Pamela Eugenia Pairo.
+%Aunque no est\'an en la foto, tuvimos la presencia tambi\'en de Rocco Di Tella, Tom\'as Olego y Enrique \'Alvarez.
 
 % Parrafo
 
-Con el consejo de Rita Salvatierra, Asael Cardozo y Gimena Serrano organizamos un cronograma en el que se alternaban una serie de actividades, evitando bloques extensos de cualquier tipo (ver detalles en el anexo~\ref{sec:cronograma}).
+Tuvimos 5 sesiones de conversaciones interpersonales de 40 minutos cada una; 4 bloques con 3 exposiciones en profundidad de 25 minutos cada una (12 en total); 4 bloques de taller de 50 minutos; y sesiones de póster que incluyeron la exposici\'on oral breve a todo el auditorio.
 %
-Al momento de la acreditaci\'on cada persona recibi\'o al azar un color, y un n\'umero de orden, que usamos al final para sortear 10 libros de la editorial especializada en estad\'istica CRC.
+Las sesiones de conversaciones en grupos lograron crear una ambiente ameno, de apertura y conocimiento mutuo.
 %
-Tuvimos 5 sesiones de conversaciones interpersonales de 40 minutos cada una; 4 bloques con 3 exposiciones en profundidad de 25 minutos cada una (12 en total); 4 bloques de taller de 50 minutos; y sesiones de p\'oster que incluyeron la exposici\'on oral breve a todo el auditorio.
+Las exposiciones abarcaron una variedad de temas,
+%
+\begin{enumerate} \setlength\itemsep{-0.05cm} \small
+\item Gabriel A Alzamendi: \emph{Métodos basados en inferencia Bayesiana para la evaluación de los mecanísmos vocales de la fonación humana}.
+
+\item Nicolás A Comay: \emph{Abordaje Bayesiano a la toma de decisiones perceptuales y su confianza asociada}.
+
+\item Javier Arellana: \emph{Bayesian retrieval scheme and its application to Cassini Mission SAR observations in an area of Titan, Saturn's largest moon}.
+
+
+\item Yasmín E Navarrete Díaz: \emph{Sistemas frágiles: una formulación bayesiana de la teoría cuántica}.
+
+
+\item Diego JR Sevilla: \emph{Regresión bayesiana para el análisis de series temporales con apilamiento en Astronomía de rayos X}.
+
+\item Andrea P Goijman: \emph{Modelos de ocupación multiespecie con enfoque bayesiano: una herramienta valiosa para estudios de biodiversidad en ecología}.
+
+\item Hossein Dinani: \emph{Bayesian estimation for quantum sensing}.
+
+
+\item Albert R Ortiz: \emph{Aplicación de métodos bayesianos en ingeniería estructural}.
+
+\item Gonzalo Ríos: \emph{Bayesian Machine Learning Applied to Marketing}.
+
+\item Sergio M Davis Irarrázabal: \emph{Probabilidad bayesiana a partir de la estimación plausible de cantidades}.
+
+\item Tomás A Olego: \emph{Métodos robustos Bayesianos Generalizados para los modelos de regresión logística}.
+
+\item Luciano Moffatt. \emph{Modelado Bayesiano Computacional de Sistemas Biológicos}.
+\end{enumerate}
 
 % Parrafo
 
-\subsubsection{Conversaciones, ideas, propuestas y demandas}
-
-Las sesiones de conversaciones interpersonales lograron crear una ambiente de apertura y confianza mutua que no se percibe en congresos cl\'asicos (seg\'un fue expresado independientemente de forma privada por varias personas).
+Durante el congreso quedó de manifiesto una imperiosa necesidad de contar con mayor cantidad de instancias de formación teórica y práctica en métodos bayesianos.
 %
-Los grupos fueron formados aleatoriamente en base a los colores y n\'umeros.
+Por ello, en la sesión de cierre decidimos comenzar a organizar la Escuela Bayesiana Plurinacional.
 %
-La actividad inicial del congreso fue una sesi\'on de conversaciones, ``Bienvenida y fuente de ideas''.
+Gracias a esta actividad inaugural, actualmente existe una activa comunidad bayesiana.
 %
-La segunda sesi\'on fue luego del almuerzo, en una zona verde, donde discutimos sobre ``Ideas: principios y fines''.
-%
-El segundo d\'ia comenzamos conversando en grupo sobre ``Ideas: objetivos y estrategias'', la cual se transform\'o luego en la conversaci\'on general, donde se propusieron la mayor cantidad de ideas para la asamblea de cierre.
-%
-Durante el transcurso del d\'ia, estas ideas quedaron plasmadas en un conjunto de notas.
-%
-\begin{figure}[!ht]
-\centering
-  \begin{subfigure}[b]{0.25\textwidth}
-  \includegraphics[page=1,width=\textwidth]{static/nota3.jpeg}
-  \end{subfigure}
-   \begin{subfigure}[b]{0.25\textwidth}
-  \includegraphics[page=1,width=\textwidth]{static/nota4.jpeg}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.23\textwidth}
-  \includegraphics[page=1,width=\textwidth]{static/nota5.jpeg}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.24\textwidth}
-  \includegraphics[page=1,width=\textwidth]{static/nota7.jpeg}
-  \end{subfigure}
-  \caption{Ideas para la comunidad Bayes Plurinacional}
-\end{figure}
-%
-Las discusiones continuaron en la cuarta sesi\'on de conversaciones, realizada luego del almuerzo, sobre ``Ideas: comunidad y colaboraci\'on''.
-%
-Finalmente, cuando llegamos a la asamblea de cierre ``Conclusiones: acciones a futuro'', muchas de las ideas ya hab\'ian sido tratadas.
-%
-All\'i decidimos, adem\'as de darle continuidad al Congreso Bayesiano Plurinacional y los Seminarios Virtuales, iniciar la organizaci\'on de la Escuela Bayesiana Plurinacional y las Reuniones Virtuales de Resoluci\'on Problemas.
-
-% Parrafo
-
-Durante el congreso qued\'o de manifiesto una imperiosa necesidad de contar con mayor cantidad de instancias de formaci\'on te\'orica y pr\'actica en m\'etodos bayesianos.
-%
-Esto se puede ver claramente en la lista completa de propuestas, que reproducimos a continuaci\'on.
-%
-Evidentemente la oferta actual de cursos en m\'etodos bayesianos es en la actualidad mucho menor a la demandada:
-
-% Parrafo
-
-\begin{description}\setlength\itemsep{0cm}
-\item[Formaci\'on te\'orica y pr\'actica:] \phantom{.} \\[-0.7cm]
-\begin{itemize} \setlength\itemsep{0cm}
-\item Escuela con distintos niveles, claros.
-\item Escuela que rote por pa\'is
-\item Escuela con puntos doctorado
-\item Workshop pr\'actico (programar modelos en vivo)
-\item Formaci\'on con enfoque en resoluci\'on de problemas
-\item Encuentros virtuales peri\'odicos de: ``charla presentaci\'on'' + ``en qu\'e andamos''`.
-\item Difundir oportunidades para presentar cursos de posgrado
-\item Cursos de posgrado (con diferentes niveles)
-\item Hacer hackat\'on con varios niveles.
-\item Cursos introductorios y avanzados (que cumplan con los requisitos de los doctorados)
-\item Foro de intercambio de consultas sobre temas puntuales
-\item Charlas sobre buenas pr\'acticas de programaci\'on
-\item Charlas/seminarios mensuales (virtuales)
-\item Divulgaci\'on dirigida a estudiantes con t\'itulo llamativo y contenido claro.
-\item Escuela-Congreso cada dos a\~nos (cada a\~no es muy frecuente).
-\item Cursos online. Canal para colaborar / hacer preguntas
-\item Divulgaci\'on cursos disponibles
-\end{itemize}
-
-\item[Colaboraci\'on:]\phantom{.} \\[-0.7cm]
-\begin{itemize} \setlength\itemsep{0cm}
-\item Transdisciplinariedad, no como valor por su aporte a cada disciplina, sino por las relaciones comunes pre-disciplinares.
-\item Desarrollo articulado de herramientas inform\'aticas
-\item Mantenernos comunicados
-\item Grupo discord
-\end{itemize}
-
-\item[Institucionalizaci\'on:]\phantom{.} \\[-0.7cm]
-\begin{itemize} \setlength\itemsep{0cm}
-\item Hacer una Asociaci\'on para conseguir mejor financiaci\'on
-\item Conseguir auspiciantes amigables
-\item Sacar castor de la imagen (especie invasora) poner carpincho.
-\item Buscar identidad para la comunidad
-\end{itemize}
-
-\item[Comunicaci\'on:]\phantom{.} \\[-0.7cm]
-\begin{itemize} \setlength\itemsep{0cm}
-\item Promover que las charlas contengan l\'ineas de generalizaci\'on
-\item REVISTA
-\item Lista de difusi\'on
-\item Difusi\'on de herramientas librer\'ias de programaci\'on
-\item Lista de investigadores clasificados por temas, metodolog\'ia, etc, para poder buscar facilmente colaboradores
-\end{itemize}
-
-\end{description}
-
-
-\subsubsection{Exposiciones en profundidad}
-
-Tuvimos 12 charlas en profundidad de 25 minutos sobre diversas aplicaciones basadas en m\'etodos bayesianos.
-
-% Parrafo
-
-\hspace{0.6cm} 1. \textbf{Gabriel Alzamendi}: \emph{M\'etodos basados en inferencia Bayesiana para la evaluaci\'on de los mecan\'ismos vocales de la fonaci\'on humana.}
-%
-Gabriel expuso sobre modelos fisiol\'ogicos bayesianos de estimaci\'on de variables cl\'inicas de descripci\'on y explicaci\'on (causal) de patalog\'ias de la fonaci\'on humana.
-%
-Hizo \'enfasis en la adecuaci\'on del enfoque bayesiano para la biomedicina debido a su s\'olido marco t\'eorico.
-%
-Ejemplific\'o con varios de sus trabajos originales y abord\'o un caso de estudio cl\'inico de estimaci\'on no invasiva de la activaci\'on muscular intr\'inseca y la presi\'on subgl\'otica~\cite{Alzamendi2020, Ibarra2021}.
-
-% Parrafo
-
-\hspace{0.6cm} 2. \textbf{Nicol\'as Alejandro Comay}: \emph{Abordaje Bayesiano a la toma de decisiones perceptuales y su confianza asociada.}
-%
-Nicol\'as explic\'o por qu\'e los modelos bayesianos son \'utiles para modelar: 1) la percepci\'on humana; 2) la toma de decisiones en base a nuestra informaci\'on sensorial; 3) y la asignaci\'on de grados de confianza o incertidumbre.
-%
-Cont\'o un experimento de toma de decisiones perceptuales que incluye reporte de confianza, y discuti\'o sobre el grado de evidencia que tienen los modelos bayesianos actuales sobre los procesos de decisi\'on y confianza de los seres humanos~\cite{Comay2023}.
-
-% Parrafo
-
-\hspace{0.6cm} 3. \textbf{Javier Arellana}: \emph{Bayesian retrieval scheme and its application to Cassini Mission SAR observations in an area of Titan, Saturn's largest moon.}
-%
-Javier present\'o el proceso bayesiano de estimaci\'on de los par\'ametros de la superficie de Tit\'an basado en el modelo de dispersi\'on electromagn\'etica Small Perturbation Model, realizado mediante el lenguaje de programaci\'on probabil\'itica PyMC.
-%
-Debido a que no fue posible determinar un\'ivocamente las caracter\'isticas geof\'isicas de Tit\'an, en base a la simulaci\'on de datos y el modelo se propusieron modificaciones para un futuro radar con el fin de desambiguar la inferencia~\cite{Grings2021, Arellana2023}.
-
-% Parrafo
-
-\hspace{0.6cm} 4. \textbf{Yasm\'in Elena Navarrete D\'iaz}: \emph{Sistemas fr\'agiles: una formulaci\'on bayesiana de la teor\'ia cu\'antica.}
-%
-Yasm\'in present\'o una reconstrucci\'on de la teor\'ia cu\'antica a trav\'es de la aplicaci\'on de la teor\'ia de probabilidad bayesiana a los sistemas ``fr\'agiles''.
-%
-Mostr\'o que los espacios de Hilbert complejos, los operadores que no conmutan y la regla de la traza para los valores de expectaci\'on cu\'anticos aparecen de forma natural mediante el uso del \'algebra lineal para resolver ecuaciones integrales que involucran probabilidades cl\'asicas sobre un conjunto de variables ocultas.
-%
-Y abord\'o el caso de variables ocultas no locales~\cite{Navarrete2023}.
-
-\hspace{0.6cm} 5. \textbf{Diego Javier Ram\'on Sevilla}: \emph{Regresi\'on bayesiana para el an\'alisis de series temporales con apilamiento en Astronom\'ia de rayos X.}
-%
-Diego present\'o el problema que genera el apilamiento de huellas de fotones en la identificaci\'on de fotones individuales en Astronom\'ia de rayos X.
-%
-Para realizar la inferencia correctamente desarroll\'o una distribuci\'on de probabilidad, derivada de la distribuci\'on de Poisson, que considera el efecto del apilamiento, capaz de caracterizar variaciones peque\~nas de la tasa de colecci\'on de fotones en datos que presentan apilamiento en series temporales~\cite{Sevilla2017}.
-
-\hspace{0.6cm} 6. \textbf{Andrea Paula Goijman}:  \emph{Modelos de ocupaci\'on multiespecie con enfoque bayesiano: una herramienta valiosa para estudios de biodiversidad en ecolog\'ia.}
-%
-Andrea presenet\'o el problema de no-avistamientos de flora o fauna, que puede atribuirse tanto a ausencia de los espec\'imenes como a falta de detecci\'on.
-%
-Coment\'o que los modelos bayesiano, al permitir modelar todas las especies en conjunto, producen mejorar resultados su contraparte frecuentista.
-%
-Ejemplific\'o con un estudio que se realiz\'o a lo largo de varios a\~nos sobre el impacto que los sistemas de producci\'on agr\'icola tienen sobre las comunidades de aves~\cite{Goijman2020, Contreras2022}.
-
-\hspace{0.6cm} 7. \textbf{Hossein Dinani}: \emph{Bayesian estimation for quantum sensing}.
-%
-Hossein habl\'o de los problemas de los sensores basados en sistemas cu\'anticos individuales, que obligan en la mayor\'ia de las aplicaciones pr\'acticas realizar lecturas promediadas.
-%
-Remarc\'o que el enfoque bayesiano utiliza naturalmente la informaci\'on disponible de forma eficiente.
-%
-Ejemplific\'o con una aplicaci\'on bayesiana con la que consigi\'o optimizar por 3 un protocolo de detecci\'on de un campo magn\'etico independiente del tiempo con un \'unico esp\'in de electr\'on asociado a un centro de vacante de nitr\'ogeno a temperatura ambiente~\cite{Dinani2019}.
-
-\hspace{0.6cm} 8. \textbf{Albert Ortiz}: \emph{Aplicaci\'on de m\'etodos bayesianos en ingenier\'ia estructural}.
-%
-Albert nos cont\'o que en ingenier\'ia civil la inferencia bayesiana se utiliza para determinar la incertidumbre respecto del comportamiento de las estructuras.
-%
-Nos present\'o tres ejemplos: un estudio de la variabilidad de las propiedades mec\'anicas del concreto y el acero de refuerzo en Colombia a trav\'es de datos experimentales; la estimaci\'on de hip\'otesis en un modelo de elementos finitos de un edificio de cinco plantas; y evaluaci\'on bayesiana de modelos de interacci\'on humano-estructura~\cite{Hurtado2023, Guerrero2022, Calonge2023}.
-
-\hspace{0.6cm} 9. \textbf{Gonzalo R\'ios}: \emph{Bayesian Machine Learning Applied to Marketing}.
-%
-Gonzalo nos cont\'o su experiencia en la empresa NoiseGrsap, que prov\'ee servicios de optimizaci\'on de la inversi\'on publictaria utilizando modelos de Marketing Mix Modeling.
-%
-Nos explic\'o que los enfoques estad\'isticos cl\'asicos no son adecuados y por lo tanto el enfoque bayesiano juega un papel fundamental.
-%
-Y nos mostr\'o c\'omo lo implementan en la pr\'actica mediante la incorporaci\'on de informaci\'on a priori, la inclusi\'on de componentes no param\'etricos basados en procesos gaussianos, y m\'etodos bayesianos de entrenamiento.
-
-\hspace{0.6cm} 10. \textbf{Sergio Michael Davis Irarr\'azabal}: \emph{Probabilidad bayesiana a partir de la estimaci\'on plausible de cantidades.}
-%
-Sergio nos mostr\'o c\'omo deducir las reglas de la probabilidad (la suma y el producto) a trav\'es de un sistema axiom\'atico alternativo al de Cox del ``sentido com\'un'', que se utiliza habitualmente para justificar las probabilidades bayesianas.
-%
-A diferencia del teorema de Cox, que resulta dif\'icil de seguir, esta nueva propuesta resulta m\'as natural y en la pr\'actica permitir demostrar la teor\'ia de probabilidad de manera m\'as directa~\cite{DavisLibro}.
-
-\hspace{0.6cm} 11. \textbf{Tom\'as Olego}: \emph{M\'etodos robustos Bayesianos Generalizados para los modelos de regresi\'on log\'istica}.
-%
-Tom\'as nos present\'o un modelo de regresi\'on log\'istica multinomial resuelto con inferencia variacional sobre funciones de costo altenativas a la aplicaci\'on estricta de las reglas de la probabilidad.
-%
-Evalu\'o la robustez del m\'etodo mediante simulaciones computacionales, mostrando que es posible actualizar las creencias sin abandonar el criterio de Utilidad Esperada.
-%
-Compar\'o su m\'etodo respecto de alternativas frecuentistas y bayesianos computados con el M\'etodo de Monte Carlo sobre una base de datos real.
-
-
-\hspace{0.6cm} 12. \textbf{Luciano Moffatt}. \emph{Modelado Bayesiano  Computacional de Sistemas Biol\'ogicos}.
-%
-Luciano habl\'o sobre c\'omo traducir conocimientos biol\'ogicos en ecuaciones matem\'aticas que dan lugar a modelos computacionales construidos para predecir resultados experimentales.
-%
-Remarc\'o la importancia de calcular la evidencia para evaluar los datos experimentales mediante modelos alternativos.
-%
-Ejemplific\'o con una metodolog\'ia aplicada en inmunolog\'ia y en neurociencias.
-%
-Y describi\'o diversos m\'etodos alternativos existentes para calcular la evidencia bayesiana.
-
-% Parrafo
-
-Durante el congreso nos visit\'o el gobernador de la provincia de Santiago del Estero, Gerardo Morales.
-%
-En la foto~\ref{fig:gerardo} vemos, de izquierda a derecha, a Edmundo Vizgarra, Sergio Michael Davis Irarr\'azabal, el gobernador Gerardo Zamora, Gustavo Landfried, Adri\'an Suarez, Ricardo Montenegro, Gimena Serrano, Mar\'ia Della Aringa.
-%
-\begin{figure}[!ht]
-\centering
-  \begin{subfigure}[b]{0.8\textwidth}
-  \includegraphics[page=1,width=\textwidth]{static/Gerardo.jpeg}
-  \end{subfigure}
-  \caption{El gobernador de la provincia de Santiago del Estero visita a organizadores del Congreso Bayesiano Plurinacional.}
-  \label{fig:gerardo}
-\end{figure}
-
-%
-% \subsubsection{Las claves del \'exito}
-%
-% La organizaci\'on del congreso estuvo repleta de obst\'aculos de los m\'as inimaginables.
-% %
-% El \'exito en la organizaci\'on del congreso tuvo dos claves.
-%
-% una de las claves m\'as importantes de la organizaci\'on del congreso fue el desarrollo del software que nos explorar la comunidad, analizarla y contactarla.
-%
-%
-% En los pr\'oximos a\~nos podremos medir el impacto de la organizaci\'on de la comunidad bayesiana en la estructura de la red.
-%
-% % Parrafo
-%
-% Parrafo
-
-Gracias a esta actividad inaugural, actualmente existe una activa comunidad bayesiana, con miembros de diversos pa\'ises, que contin\'ua organizando actividades presenciales y virtuales, como la Escuela Bayesiana Plurinacional o el seminario Verdades Emp\'iricas.
+Recientemente, la comunidad Bayes Plurinacional a enviado un proyecto a la organización de Inteligencia Artificial de América Latina \emph{Khipu} para la realización de la Escuela Bayesiana Plurinacional 2024 en la Universidad Nacional de Salta, Argentina.
 
 % Parrafo
 
 \subsection{Taller ``Verdades empíricas''}
 
-Durante el congreso se present\'o un taller sobre inferencia bayesiana denominado ``Verdades empíricas''.
+Durante el congreso presenté un taller sobre inferencia bayesiana denominado ``Verdades empíricas'', que hace referencia a la necesidad que tienen las ciencias empíricas de alcanzar verdades (o acuerdos intersubjetivos) en contextos de incertidumbre.
 %
-El nombre hace referencia al subtítulo del Congreso Bayesiano Plurinacional: ``acuerdos intersubjetivos en contextos de incertidumbre'', que es el requisito de las verdades en ciencias empíricas
+El taller estuvo dividido en 5 unidades y un hackatón.
 %
-El taller estuvo dividido en 5 unidades y un hackat\'on.
+Se puede acceder en línea a través de \url{https://github.com/BayesPlurinacional/tallerBP-2023}.
 
 % Parrafo
 
-En la unidad 1 realizamos una introducci\'on a los \emph{Modelos gr\'aficos e inferencia}.
-%
-Allí justificamos las reglas de la probabilidad a través del principio de no mentir, que nos obligar a preservar la creencia previa que sigue siendo compatible con los dato (regla del producto) y que nos impide crear o destruir creencia de forma espontánea (regla de la suma).
-%
-Presentamos el lenguaje de especificaci\'on gráfico de modelos causales y aplicamos las reglas de la probabilidad para evaluar dos modelos causales alternativos.
-%
-Discutimos el problema computacional de las reglas de la probabilidad y mostramos las soluciones bayesianas del siglo 18 y soluciones de la física estadística en el siglo 19.
-%
-Finalmente revisamos la emergencia del \emph{overfitting} en el enfoque frecuentista, usando como ejemplo la regresi\'on lineal, y mostramos que la aplicaci\'on estricta de las reglas de la probabilidad resuelve naturalmente este problema.
-
 \begin{figure}[ht!]
 \centering
-  \begin{subfigure}[b]{0.49\textwidth}
+  \begin{subfigure}[b]{0.32\textwidth} \centering
   \fbox{\includegraphics[width=\textwidth]{static/1-intro.jpg}}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.49\textwidth}
+  \begin{subfigure}[b]{0.32\textwidth} \centering
   \fbox{\includegraphics[width=\textwidth]{static/2-causa.jpg}}
   \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
-  \fbox{\includegraphics[width=\textwidth]{static/3-dato.jpg}}\end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.49\textwidth}
+  \begin{subfigure}[b]{0.32\textwidth} \centering
+  \fbox{\includegraphics[width=\textwidth]{static/3-dato.jpg}}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth} \centering
   \fbox{\includegraphics[width=\textwidth]{static/4-tiempo.jpg}}
   \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth} \centering
   \fbox{\includegraphics[width=\textwidth]{static/5-decision.jpg}}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.49\textwidth}
+  \begin{subfigure}[b]{0.32\textwidth} \centering
   \fbox{\includegraphics[width=\textwidth]{static/6-hackaton.jpg}}
   \end{subfigure}
   \caption{Unidades del Taller ``Verdades empíricas''.}
 \end{figure}
 
-En la unidad 2 realizamos una introducci\'on a los \emph{inferencia causal}.
+% Parrafo
+
+En la unidad 1 se presenta una introducción a los \emph{Modelos gr\'aficos e inferencia}.
 %
-Comenzamos discutiendo las dificultades que existen para: estimar correctamente el efecto causal mostrando un ejemplo paradoja de Simpson); y para identificar observacionalmente el verdadero modelo causal mostrando modelos diferentes que tienen la misma predicci\'on.
+Allí se justifican las reglas de la probabilidad y se presentan los métodos gráfico de especificación matemática de los modelos probabilísticos y se aplican las reglas de la probabilidad para evaluar dos modelos causales alternativos.
 %
-Mostramos como los niveles de razonamiento causal (asociacional, intervencional y contrafactual) emergen naturalmente del proceso generativo de los datos.
+Se discute el problema computacional de las reglas de la probabilidad y se muestran soluciones bayesianas del siglo 18 y soluciones de la física estadística del siglo 19.
 %
-Revisamos en qué condiciones se abren y cierran los flujos de inferencia en los modelos causales (\emph{d-separation}).
+Finalmente se revisa la emergencia del \emph{overfitting} en el enfoque frecuentista y se muestra que la aplicación estricta de las reglas de la probabilidad resuelve naturalmente este problema.
 %
-Presentamos el criterio \emph{backdoor} para la identificaci\'on de efectos causales a partir de observaciones (sin intervenciones).
-%
-Realizamos la estimaci\'on de un efecto causal en un conjunto de datos sintético.
-%
-Finalmente definimos el concepto de teorías causales como sistemas de modelos causales que se prenden y apagan en funci\'on del contexto, y mostramos c\'omo identificarlas a partir de intervenciones.
+Aplicaciones: Monty Hall extendido y regresión lineal bayesiana.
 
 % Parrafo
 
-En la Unidad 3 realizamos una introducci\'on al \emph{problema de comunicaci\'on con la realidad}.
+En la unidad 2 se presenta una introducción a la \emph{Inferencia causal}.
 %
-Comenzamos discutiendo sobre los niveles de base empírica y la estructura invariante del dato empírico.
+Se discute las dificultades que existen para estimar correctamente el efecto causal cuando no se cuenta con un modelo causal y para identificar el verdadero modelo causal cuando solo se cuenta con datos observacionales.
 %
-Mostramos que la tasa de predicci\'on de dos sistemas de comunicaci\'on con la realidad alternativos, medida en \'ordenes de magnitud, resulta ser el negativo de la entropía (cuando el modelo causal es correcto) o el negativo de la entropía cruzada (cuando el modelo causal es incorrecto)
+Se muestra cómo los niveles de razonamiento causal (asociacional, intervencional y contrafactual) emergen naturalmente del proceso generativo de los datos.
 %
-Revisamos la propiedad de la entropía como medida de la informaci\'on.
+Se revisa en qué condiciones se abren y cierran los flujos de inferencia en los modelos causales (\emph{d-separation}).
 %
-Definimos el principio de no mentir como maximizaci\'on de la entropía dada restricciones y presentamos la familia exponencial.
+Se presenta el criterio \emph{backdoor} para la identificación de efectos causales a partir de observaciones (sin intervenciones).
 %
-Finalmente evaluamos sistemas de comunicaci\'on con la realidad que difieren no en los modelos causales sino en los procedimientos que usan para transmitir las se\~nales (test diagn\'osticos de chagas).
+Se evalúan diversos escenarios de estimación de efectos causales.
+%
+Finalmente definimos el concepto de teorías causales y mostramos cómo identificarlas a partir de intervenciones.
+%
+Aplicaciones: cómputo del efecto causal en modelos lineales bayesianos y evaluación de teorías causales alternativas con datos sintéticos.
 
 % Parrafo
 
-En la Unidad 4 realizamos una introducci\'on a los \emph{modelos de historia completa}.
+En la unidad 3 se presenta una introducción a \emph{El problema de comunicación con la realidad}.
 %
-Motivamos el problema con el modelo de estimaci\'on de habilidad TrueSkill que usa el posterior de un evento como prior del siguiente, propagando así la informaci\'on en una única direcci\'on, del pasado al futuro.
+Se comienza discutiendo los niveles de base empírica y se identifica el rol que cumplen las hipótesis en la construcción de los datos empíricos.
 %
-Presentamos el algoritmo suma-producto, que permite realizar la inferencia mediante el pasaje de mensaje entre los nodos del modelo causal (expresado como un \emph{factor graph}).
+Se revisa la estructura invariante del dato empírico y su equivalencia con el esquema emisor-receptor de la teoría de la información: unidad de análisis (fuente), dimensiones (transmisor), procedimientos (perceptor), hipótesis indicadoras (receptor), y estimación (destino).
 %
-Usamos esas reglas para derivar el posterior exacto en el modelo TrueSkill, y revisamos los problemas de estimaci\'on que efectivamente tiene el modelo TrueSkill.
+Se muestra que la tasa de predicción de dos sistemas de comunicación medida en órdenes de magnitud, resulta ser el negativo de la entropía (cuando el modelo causal es correcto) o el negativo de la entropía cruzada (cuando el modelo causal es incorrecto)
 %
-Especificamos el modelo causal de historia completa, que vincula todos los eventos en una misma red causal.
+Se revisa la propiedad de la entropía como medida de la información.
 %
-Revisamos el algoritmo iterativo que propaga la informaci\'on hist\'orica por toda la red causal, y verificamos la mejora en de las estimaciones.
+Se define formalmente el principio de no mentir como maximización de la entropía dada restricciones y se presenta la familia de distribuciones exponenciales.
 %
-Finalizamos discutiendo c\'omo evaluar efectos causales usando como ejemplo los modelos lineales para series temporales.
+Se evalúan sistemas de comunicación con la realidad que difieren, no en los modelos causales, sino en los procedimientos que se usan para transmitir las señales.
+%
+Aplicaciones: evaluación de estimadores de habilidad alterativos y evaluación de los test diagnósticos de Chagas.
 
 % Parrafo
 
-En la Unidad 5 realizamos una introducci\'on a la teoría (erg\'odica) de \emph{toma de decisiones}.
+En la unidad 4 se presenta una introducción a los \emph{Modelos de historia completa}.
+%
+Se motiva el problema mediante los modelos habitualmente utilizados en la industria del videojuego, como TrueSkill, que usan el posterior de un evento como prior del siguiente, propagando la información en una única dirección, del pasado al futuro.
+%
+Se presenta el algoritmo suma-producto, que permite realizar la inferencia mediante pasaje de mensaje entre los nodos de la red causal (expresada como un \emph{factor graph}).
+%
+Se usan esas reglas para derivar el posterior exacto en el modelo TrueSkill, y se revisan los problemas de estimación que efectivamente tiene el modelo TrueSkill.
+%
+Se especifica el modelo causal de historia completa, que vincula todos los eventos en una misma red causal.
+%
+Se revisa el algoritmo iterativo que propaga la información histórica por toda la red causal, y se verifica la mejora de las estimaciones.
+%
+Se finaliza discutiendo la evaluación de efectos causales en series temporales.
+%
+Aplicaciones: estimador de habilidad estado del arte en la industria del videojuego y apuestas en tenis en base a pagos históricos de una casa de apuestas.
+
+% Parrafo
+
+En la unidad 5 se presenta una introducción a la teoría (ergódica) de \emph{toma de decisiones}.
 %
 Revisamos la naturaleza multiplicativa de la funci\'on de costo de la teoría de la probabilidad (la regla del producto) y de la teoría de la evoluci\'on (la secuencia de tasas de reproducci\'on y supervivencia).
 %
-Presentamos un problema de apuestas en el que una casa de apuestas paga $3$ veces cuando una moneda normal sale Cara, y $1.2$ cuando sale Sello, y nos vemos obligados a apostar todos nuestros recursos en cada vuelta, apostando una proporci\'on $b$ por cara y $(1-b)$ por sello.
+Presentamos un problema de apuestas binario, en el que nos vemos obligados a apostar todos nuestros recursos en cada vuelta, dividiendo una proporción $b$ por cara y $(1-b)$ por sello.
 %
-Explicamos la definici\'on de ergodicidad con simulaciones y análisis matemático, mostrando que no cualquier funci\'on de costo permite calcular la tasa de crecimiento que efectivamente se obtiene en el tiempo.
+Mostramos en ese ejemplo que no cualquier función de costo permite calcular la tasa de crecimiento que efectivamente se obtiene en el tiempo e introducimos el concepto de ergodicidad.
 %
-Derivamos la propiedad epistémica que explica el funcionamiento de la teoría de la probabilidad: \emph{no importa cuánto pague la casa de apuestas, individualmente el comportamiento que tiene mayor tasa de crecimiento es el que divide los recursos en la misma proporci\'on que la frecuencia observada}.
+Derivamos la propiedad epistémica que explica el funcionamiento de la teoría de la probabilidad.
 %
-Reflexionamos sobre la importancia de la cooperaci\'on en evoluci\'on, y vemos c\'omo la cooperaci\'on por sí sola aumenta la tasa de crecimiento de todos los individuos.
+Derivamos la propiedad evolutiva, que le permite a la vida aumentar la tasa de crecimiento reduciendo fluctuaciones mediante la cooperación.
+%
+Derivamos la propiedad de especiación, que le permite a grupos cooperativos aumentar un más la tasa de crecimiento mediante la especialización cooperativa.
+%
+%Discutimos la propiedad ecológica, que permite aumentar la tasa de crecimiento mediante la heterogeneidad cooperativa.
 %
 Discutimos el error de la teoría de decisiones clásica, mostrando que no existe un dilema del prisionero bajo procesos como los epistémicos o evolutivos, que son de naturaleza multiplicativa.
 %
-Finalizamos mostrando otras propiedades de la funci\'on de costo epistémico evolutiva, discutidas en el capítulo \ref{ch:epistemico}.
+Aplicaciones: un problema de inferencia con apuestas e intercambio de recursos (``apuestas de vida'').
 
-% Parrafo
-
-En la Unidad 6 presentamos la consigna de un hackat\'on, basado en un problema de inferencia con apuestas e intercambio de recursos.
+%Cada persona $i$ comienzan con una unidad de recursos, $\omega_i = 1$, y al finalizar el juego se reparte un premio siguiendo la proporción de recursos que cada persona tienen sobre el total al finalizar el proceso de apuestas, $\omega_i / \sum_i \omega_i$.
 %
-Cada persona $i$ comienzan con una unidad de recursos, $\omega_i = 1$, y al finalizar el juego se reparte un premio siguiendo la proporci\'on de recursos que cada persona tienen sobre el total al finalizar el proceso de apuestas, $\omega_i / \sum_i \omega_i$.
-%
-El problema de inferencia para esta competencia es una Monty Hall extendido, de cuatro puertas, en el que la posici\'on del regalo se genera con un sesgo que tiene un ciclo de 365 pasos temporales.
-%
-Al inscribirse, cada persona recibirá un array de longitud 2190 que representa la posici\'on de los regalos en pasos temporales consecutivos.
-%
-El objetivo es maximizar la tasa de crecimiento de sus propios recursos apostando sobre la posici\'on del regalo en los siguientes 1095 pasos temporales.
-%
-Primero deben estimar el sesgo con el que se esconden los regalos en el tiempo.
-%
-Segundo deben determinar, en cada paso temporal, qué caja conviene elegir inicialmente para recibir la pista.
-%
-Tercero, deben actualizar sus creencia sobre la posici\'on del regalo según la pista que reciben.
-%
-Este problema lleva a la práctica los conceptos de probabilidad, de inferencia causal, de teoría de la informaci\'on, de series temporales y de toma de decisiones.
-
-
-
-\section{Trabajo futuro. Hacia una ciencia de datos causal bayesiana.} \label{sec:volverAlFuturo}
-
-Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computaci\'on y encontrar all\'i las respuestas m\'as simples y concretas a las reflexiones epistemol\'ogicas y metodol\'ogicas m\'as trascendentales desarrolladas durante mi formaci\'on en ciencias antropol\'ogicas, no solo explica por qu\'e que ella es la principal herramienta qu\'e encontr\'e en el doctorado en computaci\'on.
-%
-El hecho de que las reglas de la probabilidad garanticen actualizar las creencias preservando el principio intercultural de no mentir (de maximizar incertidumbre dada la informaci\'on disponible) hace que \'este sea el sistema de razonamiento general, de toda ciencia emp\'irica.
 % %
-Adem\'as de ser una respuesta epistemol\'ogica, es principalmente una respuesta metodol\'ogica que ofrece un procedimiento concreto para actualizar las creencias de forma \'optima.
+% El problema de inferencia es una Monty Hall extendido, de cuatro puertas, en el que la posición del regalo se genera con un sesgo que tiene un ciclo de 365 pasos temporales.
 % %
-Por ello el enfoque bayesiano es esencial en las \'areas ``vitales'' como en los sistemas de salud, las investigaciones judiciales y las apuestas.
+% Al inscribirse, cada persona recibirá un array de longitud 2190 que representa la posición de los regalos en pasos temporales consecutivos.
+% %
+% El objetivo es maximizar la tasa de crecimiento de sus propios recursos apostando sobre la posición del regalo en los siguientes 1095 pasos temporales.
+% %
+% Primero deben estimar el sesgo con el que se esconden los regalos en el tiempo.
+% %
+% Segundo deben determinar, en cada paso temporal, qué caja conviene elegir inicialmente para recibir la pista.
+% %
+% Tercero, deben actualizar sus creencia sobre la posición del regalo según la pista que reciben.
+% %
+% Este problema lleva a la práctica los conceptos de probabilidad, de inferencia causal, de teoría de la información, de series temporales y de toma de decisiones.
 
-% Parrafo
+\subsection{Trabajo futuro: especificación y evaluación de argumentos causales.}
+%
+% Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computaci\'on y encontrar all\'i las respuestas m\'as simples y concretas a las reflexiones epistemol\'ogicas y metodol\'ogicas m\'as trascendentales desarrolladas durante mi formaci\'on en ciencias antropol\'ogicas, no solo explica por qu\'e que ella es la principal herramienta qu\'e encontr\'e en el doctorado en computaci\'on.
+% %
+% El hecho de que las reglas de la probabilidad garanticen actualizar las creencias preservando el principio intercultural de no mentir (de maximizar incertidumbre dada la informaci\'on disponible) hace que \'este sea el sistema de razonamiento general, de toda ciencia emp\'irica.
+% % %
+% Adem\'as de ser una respuesta epistemol\'ogica, es principalmente una respuesta metodol\'ogica que ofrece un procedimiento concreto para actualizar las creencias de forma \'optima.
+% % %
+% Por ello el enfoque bayesiano es esencial en las \'areas ``vitales'' como en los sistemas de salud, las investigaciones judiciales y las apuestas.
+%
+% % Parrafo
 
-Las \'areas de investigaci\'on en aprendizaje autom\'atico (o ciencia de datos) siguen desarrollando una multitud de algoritmos gen\'ericos sin interpretaci\'on causal, que si bien permiten usar las dependencias entre variables para predecir, no permiten sacar conclusiones causal y por lo tanto tampoco recomendaciones para la intervenci\'on.
+
+Las \'areas de investigaci\'on en aprendizaje autom\'atico, inteligencia artificial y ciencia de datos siguen desarrollando una multitud de algoritmos gen\'ericos sin interpretaci\'on causal, que si bien permiten usar las dependencias entre variables para predecir, no permiten sacar conclusiones causal y por lo tanto tampoco recomendaciones para la intervenci\'on~\cite{pearl2009-causality}.
 %
 Al mismo tiempo, quienes trabajan en ciencias sociales (y otras ciencias empíricas) proponen un enorme cantidad de argumentos causales en lenguaje natural, que si bien están fundados en el conocimiento experto del área, al no estar especificados en términos probabilísticos no pueden ser evaluados correctamente.
+
+% Parrafo
+
+Existe así un complementariedad que todavía no está siendo explotada: las ciencia de datos tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema específico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
 %
 Los argumentos causales provenientes de las ciencias sociales (y otras ciencias empíricas) le va a permitir a la ciencia de datos sacar conclusiones causales.
 %
-Y la especificaci\'on probabil\'istica de los argumentos causales le va a permitir a la ciencias sociales evaluar correctamente sus hip\'otesis, poniendo en valor el conocimiento experto actual.
+Y la especificaci\'on probabil\'istica de los argumentos causales le va a permitir a la ciencias sociales evaluar correctamente sus hip\'otesis, poniendo en valor el conocimiento experto actual.`
 
 % Parrafo
 
-Existe así un complementariedad que todavía no está siendo explotada: las ciencia de datos tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de evaluar correctamente los modelos causales alternativos.
+La complejidad del problema ponen en tensión las metodologías actuales de las ciencias de datos, y por lo tanto se presenta como una oportunidad para la innovación.
 %
-En este sentido, como trabajo futuro me propongo trabajar activamente para acercar posiciones.
-%
-El objetivo es implementar y desarrollar metodologías de trabajo que permitan poner en valor el conocimiento experto mediante la especificaci\'on y evaluaci\'on probabilística de argumentos casuales expresados en lenguaje natural.
-%
-El desafío consiste en traducir matemáticamente argumentos expresados en lenguaje natural, integrar los diferentes elementos de prueba en un único modelo probabilístico causal, computar correctamente el valor de verdad de los modelos causales alternativos.
-%
-La complejidad del problema ponen en tensi\'on las metodologías actuales de las ciencias de datos, y por lo tanto se presenta como una oportunidad para la innovaci\'on.
-
-% Parrafo
-
 Por este motivo la inferencia causal es un \'area de creciente inter\'es dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
 %
 Las teorías causales (i.e.~sistema de modelos causales que se prenden y apagan en funci\'on del contexto) son hip\'otesis, y como tales pueden ser evaluadas mediante la aplicaci\'on estricta de las reglas de la probabilidad~\cite{winn2012-causality}, $P(\text{Teoría causales}|\text{Datos})$.
@@ -8909,51 +8606,21 @@ En las \'ultimas d\'ecadas se fueron desarrollando t\'ecnicas que permiten aprov
 %
 A este enfoque tambi\'en se lo conoce como ``aprendizaje autom\'atico basado en modelos''~\cite{Bishop2013, Bishop2006}.
 %
-En ella se desarrollaron los m\'etodos gr\'aficos~\cite{Pearl1986, Kschischang2001, koller2009-PGM} que permiten: especificar matemáticamente los argumentos causales a trav\'es de redes bayesianas causales que son intuitivas para personas sin formaci\'on matem\'atica; realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal; y delegar la inferencia a los lenguajes de programaci\'on probabil\'istica a trav\'es de una sintaxis que permite traducir directamente la especificaci\'on gr\'afica del modelo .
-
+%En ella se desarrollaron los m\'etodos gr\'aficos~\cite{Pearl1986, Kschischang2001, koller2009-PGM} que permiten: especificar matemáticamente los argumentos causales a trav\'es de redes bayesianas causales que son intuitivas para personas sin formaci\'on matem\'atica; realizar la inferencia de forma distribuida mediante pasaje de mensajes entre los nodos de la red causal; y delegar la inferencia a los lenguajes de programaci\'on probabil\'istica a trav\'es de una sintaxis que permite traducir directamente la especificaci\'on gr\'afica del modelo .
 % Parrafo
-
 El desarrollo de los m\'etodos gr\'aficos ofrece hoy la capacidad de desarrollar flujos de trabajo interdisciplinarios, basados en un lenguaje intuitivo com\'un (las redes bayesianas causales).
 %
 El desarrollo de la programaci\'on probabil\'istica por su parte, permite resolver eficientemente las consecuencias l\'ogicas de los modelos causales.
-%
-A pesar de que están disponibles estas y otras herramientas, existe en la actualidad una escasa oferta de formaci\'on te\'orica y práctica en América latina y el Caribe.
-%
-En este contexto, al interior de la comunidad Bayes Plurinacional hemos decidido comenzar a organizar regularmente la Escuela Bayesiana Plurinacional, que tiene por objetivo impulsar el desarrollo de tallares prácticos dictados por investigadores de nuestra regi\'on.
 
 % Parrafo
 
-El objetivo de la Escuela Bayesiana Plurinacional es fortalecer la oferta de formaci\'on en inferencia bayesiana en América latina y el Caribe.
+En este sentido, como trabajo futuro me propongo implementar y desarrollar metodologías de trabajo que permitan poner en valor el conocimiento experto mediante la especificación y evaluación probabilística de argumentos casuales expresados en lenguaje natural.
 %
-Para ello, evitaremos invitar a personalidades extranjeras, impulsando especialmente la creaci\'on de cursos prácticos dictados por personas que residan en la regi\'on.
+Los procesos penales son un campo ideal para llevar a cabo este objetivo debido al enorme trabajo que el Estado y los privados dedican para construir el conjunto de datos que forman la base empírica, y para proponer argumentos causales en competencia capaces de explicar esa prueba.
 %
-En particular, buscaremos personas que implementen actualmente métodos bayesianos en sus trabajos (como por ejemplo ocurre habitualmente en el sector científico) como fuente para el desarrollo de cursos prácticos en inferencia bayesiana basados en problemas reales.
+El desafío consiste en traducir matemáticamente argumentos expresados en lenguaje natural, integrar los diferentes elementos de prueba en un único modelo probabilístico causal, computar correctamente el valor de verdad de los modelos causales alternativos.
 %
-Idealmente, cada uno de estos talleres debería tener una duraci\'on aproximada de 3 sesiones donde: se contextualice el problema real en lenguaje natural; se especifique matemáticamente (el o) los modelos probabilísticos; y se ense\~ne con ejemplos concretos a realizar la inferencia.
-%
-Además, se recomendará a los docentes incluir al cierre la descripci\'on de problemas que todavía no saben resolver vinculados al tema presentado en el taller.
-
-% Parrafo
-
-
-
-% Parrafo
-
-
-En lo personal, mi objetivo a futuro es dar asistencia a grupos de investigaci\'on existentes.
-%
-
-
-
-
-Para ello, es indispensable colaborar \emph{in situ} con los equipos multidisciplinarios a cargo de las investigaciones de modo tal de desarrollar los elementos metodol\'ogicos específicos requeridos para responder a las necesidades concretas.
-
-
-
-
-
-
-
+Por ello, el plan de investigación actual en el Departamento de Computación se denomina \emph{Especificación y evaluación probabilística de argumentos causales en procesos judiciales penales}.
 
 
 
@@ -8967,40 +8634,6 @@ Para ello, es indispensable colaborar \emph{in situ} con los equipos multidiscip
 
 \chapter{Apendice} \label{app:technical}
 
-
-\section{Congreso Bayesiano Plurinacional}
-
-\pagestyle{empty}
-
-\begin{figure}[H]
-  \centering
-    \begin{subfigure}[b]{0.95\textwidth} \centering
-    \fbox{\includegraphics[page=1,width=\linewidth]{static/carpeta.pdf}}
-    \end{subfigure}
-\end{figure}
-
-\subsection{Cronograma} \label{sec:cronograma}
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[b]{0.95\textwidth}\centering
-    \fbox{\includegraphics[page=2,width=\linewidth]{static/carpeta.pdf}}
-    \end{subfigure}
-\end{figure}
-
-\subsection{Charlas y taller} \label{sec:charlas_taller}
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[b]{0.95\textwidth}\centering
-    \fbox{\includegraphics[page=3,width=\linewidth]{static/carpeta.pdf}}
-    \end{subfigure}
-\end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \begin{subfigure}[b]{1\textwidth}\centering
-%     \fbox{\includegraphics[page=7,width=\linewidth]{static/carpeta.pdf}}
-%     \end{subfigure}
-% \end{figure}
 
 
 \section{TrueSkill Through Time}
@@ -9088,6 +8721,8 @@ h$convergence(epsilon=0.01, iterations=10)
   \caption{ATP TrueSkill}
   \label{atp_trueskill}
 \end{figure}
+
+
 
 
 \section{TrueSynergy} \label{sec:TrueSynergy}
@@ -9498,6 +9133,76 @@ Weak & $3845$ &  \\
 }
   \label{fig:trueskillDimorphismMaxMin_ProbWin}
 \end{figure}
+
+
+\newpage
+\section{Bayes Plurinacional}
+
+
+\begin{figure}[!ht]
+\centering
+  \begin{subfigure}[b]{0.8\textwidth}
+  \includegraphics[page=1,width=\textwidth]{static/Gerardo.jpeg}
+  \end{subfigure}
+  \caption{El gobernador de la provincia de Santiago del Estero visita a organizadores del Congreso Bayesiano Plurinacional. De izquierda a derecha, Edmundo Vizgarra, Sergio Davis Irarr\'azabal, el gobernador Gerardo Zamora, Gustavo Landfried, Adri\'an Suarez, Ricardo Montenegro, Gimena Serrano, Mar\'ia Della Aringa}
+  \label{fig:gerardo}
+\end{figure}
+
+\clearpage
+\begin{figure}[!ht]
+\noindent \centering \Wider[1.3cm]{
+  \begin{subfigure}[b]{0.3\textwidth}\centering
+  \caption{Argentina}
+  \includegraphics[page=1,width=\textwidth]{static/Argentina.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}\centering
+    \caption{Brasil}
+  \includegraphics[page=1,width=\textwidth]{static/Brasil.png}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}\centering
+      \caption{Chile}
+  \includegraphics[page=1,width=\textwidth]{static/Chile.png}
+  \end{subfigure}}
+\end{figure}
+  \begin{figure}[!ht]
+  \noindent \centering \Wider[1.3cm]{
+    \begin{subfigure}[b]{0.30\textwidth}\centering
+      \caption{Colombia}
+  \includegraphics[page=1,width=\textwidth]{static/Colombia.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.30\textwidth}\centering
+  \caption{Cuba}
+  \includegraphics[page=1,width=\textwidth]{static/Cuba.png}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.30\textwidth}\centering
+    \caption{M\'exico}
+  \includegraphics[page=1,width=\textwidth]{static/Mexico.png}
+  \end{subfigure}}
+\end{figure}
+\begin{figure}[!ht]
+\noindent \centering  \Wider[1.3cm]{
+    \begin{subfigure}[b]{0.3\textwidth}\centering
+      \caption{Peru}
+  \includegraphics[page=1,width=\textwidth]{static/Peru.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}\centering
+    \caption{Uruguay}
+  \includegraphics[page=1,width=\textwidth]{static/Uruguay.png}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}\centering
+      \caption{Venezuela}
+  \includegraphics[page=1,width=\textwidth]{static/Venezuela.png}
+  \end{subfigure}
+  \caption{Red de co-autorias bayesianas realizadas con la colaboraci\'on de Ariel Salgado. Una versi\'on interactiva se encuentra disponible en la web (\texttt{http://bayesdelsur.com.ar/comunidad.html}). Permite desplegar los datos de los autores (nombre y afiliaciones) y de los art\'iculos (t\'itulo, abstract, journal y a\~no).
+ }
+  \label{fig:redes_co_autorias}}
+\end{figure}
+%
+
+
+
+
+
 
 \section{Propiedad de las distribuci\'on gaussiana} \label{sec:propiedades_de_la_gaussiana}
 
