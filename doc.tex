@@ -943,23 +943,23 @@ A este conjunto se lo conoce como \textbf{espacio de hip\'otesis}.
 
 Aunque la incertidumbre nos impide describir el mundo mediante funciones deterministas, podemos describir nuestra creencias utilizando funciones de probabilidad.
 %
-Una funci\'on de probabilidad asigna una proporci\'on de la creencia (un n\'umero entre 0 y 1) a cada posible hip\'otesis $h$.
+Vamos a suponer que la creencia total se representa con la unidad, en tanto que una funci\'on de probabilidad asigna una fracci\'on de la creencia total a cada posible hip\'otesis $h$. 
 %
-En la teor\'ia de la probabilidad, la regla de la suma garantiza el principio de integridad, esto es que no se produzcan p\'erdidas ni creaciones espont\'aneas de creencias cuando la distribuimos entre hip\'otesis mutuamente excluyentes (i.e.~si hip\'otesis que no pueden ocurrir simult\'aneamente).
+En la teor\'ia de la probabilidad, la regla de la suma garantiza el principio de integridad, esto es que no se produzcan p\'erdidas ni creaciones espont\'aneas de creencias cuando la distribuimos entre hip\'otesis mutuamente excluyentes (i.e.,~las hip\'otesis no pueden ocurrir simult\'aneamente).
 
 %
 
-Por ejemplo, supongamos que una persona escondi\'o una regalo detr\'as de una caja entre tres.
+Por ejemplo, supongamos que tenemos tres cajas \emph{exactamente} iguales y una persona esconde un regalo dentro de una de ellas.
+No hay forma que, por la mera inspecci\'on exterior, otra persona sepa en cu\'al caja fue escondido el regalo. 
+La \'unica manera ser\'ia abrir la caja para inspeccionar su interior.
 %
-El regalo puede estar en la caja 1, $r_1$, en la caja 2, $r_2$, o en la caja 3 ,$r_3$.
+La hip\'otesis de que el regalo se encuentra en la caja 1, la llamamos $r_1$. En tanto si se encontrara en la caja 2, ser\'ia $r_2$, o en la caja 3, $r_3$.
 %
-Luego, nuestro espacio de hip\'otesis es $R = \{r_1, r_2, r_3\}$ (Notaci\'on: $r_i \equiv r = i$, ``el regalo $r$ se encuentra en al posici\'on $i$'').
+Luego, nuestro espacio de hip\'otesis es $R = \{r_1, r_2, r_3\}$ (Notaci\'on: $r_i \equiv r = i$, ``el regalo $r$ se encuentra en la posici\'on $i$'').
 %
-Por el principio de integridad, la creencia asignada a dos hip\'otesis $P(r_1 \, \cup \, r_2)$ debe ser la suma de creencias asignadas a cada una de ellas $P(r_1) + P(r_2)$.
-%
-Si adem\'as el espacio de hip\'otesis es exhaustivo la suma debe ser 1, pues estaremos sumando la creencia que asignamos a todas las posibles hip\'otesis.
-%
-%En el ejemplo del regalo, sabemos que hay solo 3 cajas donde puede estar escondido.
+Por el principio de integridad, la creencia asignada a dos hip\'otesis $P(r_1 \, \cup \, r_2)$ debe ser la suma de creencias asignadas a cada una de ellas individualmente $P(r_1) + P(r_2)$.
+
+Si, adem\'as, el espacio de hip\'otesis es exhaustivo, la suma de todas las creencias debe ser la unidad, pues estamos sumando la creencia que asignamos a todas las posibles hip\'otesis.
 %
 \begin{figure}[ht!]
 \centering
@@ -982,9 +982,11 @@ Si adem\'as el espacio de hip\'otesis es exhaustivo la suma debe ser 1, pues est
 \end{subfigure}
  \end{figure}
 %
-Bajo este principio hay infinitas formas de dividir la creencias que cumplen con la restricci\'on de sumar 1.
+Bajo este principio, hay infinitas formas de dividir la creencias que cumplen con la restricci\'on de sumar 1.
 %
-Por ejemplo, si tenemos el presentimiento de que el regalo est\'a en la caja del medio podemos expresar una certeza total asignado toda la creencia a la caja del medio (figura~\ref{fig:preferencia_total}) o podemos expresar una preferencia parcial que asignando mayor proporci\'on a la caja del medio que a la de los costados (figura~\ref{fig:preferencia_parcial}).
+Por ejemplo, si tuvi\'eramos el \emph{presentimiento} de que el regalo est\'a en la caja del medio, podr\'iamos expresar una certeza total asignando toda la creencia a la caja del medio. 
+Esta situaci\'on se representa en la figura~\ref{fig:preferencia_total} en la que las hip\'otesis $r_1$ y $r_2$ no tienen asignada ninguna creencia y la creencia $r_2$ recoge la certeza total.
+Por otro lado, tambi\'en podemos expresar una preferencia no total, pero s\'i m\'as fuerte, asignando mayor proporci\'on a la caja del medio que a las de los costados, como se ejemplifica en la figura~\ref{fig:preferencia_parcial}.
 %
 \begin{figure}[ht!]
  \centering
@@ -1027,10 +1029,6 @@ A las diferentes formas de dividir la creencia le llamamos \emph{distribuci\'on 
 
 La ciencia es una instituci\'on que tiene pretensi\'on de alcanzar acuerdos intersubjetivos con validez universal (``verdades'').
 %
-% Las ciencias formales
-% %
-% Las ciencias emp\'iricas, desde la f\'isica hasta las ciencias sociales, deben validar sus proposiciones en sistemas abiertos que contienen siempre alg\'un grado de incertidumbre.
-%
 ¿En contextos de incertidumbre, alguna de las infinitas distribuciones de creencias permite alcanzar estos acuerdos intersubjetivos?
 %
 S\'i.
@@ -1043,10 +1041,12 @@ Este principio se formaliz\'o a mediados del siglo 20 como ``m\'axima entrop\'ia
 
 Antes de su definici\'on formal, esta idea ya era discutida en el siglo 18 por los fundadores de la teor\'ia de la probabilidad bajo el nombre de \emph{principio de indiferencia}~\cite{jaynes1984-bayesianBackground}.
 %
-Según este principio, cuando no existe razones para tener preferencia por ninguna de las opciones debemos asignar la misma creencia a todos los eventos para no mentir (MaxEnt).
+Seg\'un este principio, cuando no existe razones para tener preferencia por ninguna de las opciones debemos asignar la misma creencia a todos los eventos para no mentir (MaxEnt).
+\todo[inline]{Saca la primera parte, no tiene nada que ver por como venis presentando los conceptos y no hace falta, quedate con presentar el principio de indiferencia y llama así a la subsection}
 
 %
 Esta distribuci\'on de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales).
+\todo[inline]{ac\'a tenemos un problemilla: traes incertidumbre asociada a la noci\'on de maximimizaci\'on... para eso tenes que tenerla definida como una funci\'on y hasta ahora no la presentaste, creo que es ac\'a donde deber\'ias formalizar la noci\'on de incertidumbre para poder hablar de maximizarla... adem\'as que tendr\'ia que ser claro porque uno busca tener m\'as incertidumbre y no menos, resulta anti-intuitivo en los t\'erminos que venis usando}
 
 % Parrafo
 
@@ -1071,6 +1071,7 @@ Esta distribuci\'on de creencias maximiza la incertidumbre (dividiendo la creenc
 \caption{Sin informaci\'on a favor de ninguna caja, dividir la creencia en partes iguales representa la creencia honesta que cumple con el principio de no mentir  (MaxEnt).}
 \label{fig:principio_de_indiferencia}
 \end{figure}
+\todo[inline]{En la figura usas subfigure cuando no hace falta}
 
 % Parrafo
 
@@ -1078,11 +1079,11 @@ El principio de indiferencia puede aplicarse tambi\'en cuando trabajamos con mod
 %
 Para ello, extenderemos el ejemplo del regalo.
 
+\todo[inline]{deberia estar claro al terminar esta secci\'on porque separar la creencia en tres partes iguales es \emph{mejor}  que no hacerlo, para eso tenes que presentar los conceptos necesarios} 
 
-\subsubsection{Maxima incertidumbre dado modelos causales alternativos}
+\subsubsection{M\'axima incertidumbre dado modelos causales alternativos}
 
 %
-
 Supongamos que ahora nos piden que elijamos una caja $c \in \{1, 2, 3\}$ y despu\'es alguien nos muestra el interior de una caja $s \in \{1, 2, 3\}$ en la que no est\'a el regalo $r \in \{1, 2, 3\}$.
 %
 En este ejemplo tenemos tres variables: la posición del regalo, $r$; la caja que elegimos, $c$; y la pista que recibimos $s$.
@@ -1091,7 +1092,7 @@ Por la descripción del juego sabemos que hay al menos una relaci\'on causal ent
 %
 Este modelo causal se especifica de forma gr\'afica en la figura~\ref{fig:modelo_causal_1}.
 %
-Adem\'as, podemos sospechar que existe una segunda relaciones causal, según la cual la pista tampoco est\'a habilitada a abrir la caja que elegimos $s \neq c$ (figura \ref{fig:modelo_causal_2}).
+Adem\'as, podemos sospechar que existe una segunda relaciones causal, seg\'un la cual la pista tampoco est\'a habilitada a abrir la caja que elegimos $s \neq c$ (figura \ref{fig:modelo_causal_2}).
 
 % Parrafo
 
@@ -1559,7 +1560,7 @@ El sistema axiom\'atico de Ramsey~\cite{Ramsey1926} las deriva haciendo una anal
 %
 El sistema axiom\'atico de Kolmogorov~\cite{Kolmogorov1950} no busca justificar las reglas de la probabilidad pues la regla de la suma se incluye directamente como axioma y la regla del producto se propone como una definici\'on complementaria.
 %
-Este último sistema axiom\'atico es el m\'as utilizado por su simplicidad matem\'atica y en su versi\'on original dice,
+Este \'ultimo sistema axiom\'atico es el m\'as utilizado por su simplicidad matem\'atica y en su versi\'on original dice,
 %
 \begin{quotation}
 Sea $E$ un conjunto de elementos y $F$ un conjunto de subconjuntos de $E$.
