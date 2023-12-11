@@ -1085,10 +1085,11 @@ Para ello, extenderemos el ejemplo del regalo.
 
 %
 Supongamos que ahora nos piden que elijamos una caja $c \in \{1, 2, 3\}$ y despu\'es alguien nos muestra el interior de una caja $s \in \{1, 2, 3\}$ en la que no est\'a el regalo $r \in \{1, 2, 3\}$.
+\todo[inline]{Por qu\'e aca cambias la notaci\'on? no hay motivos para saltar de nomeclatura. Ya se que a vos te parece trivial, pero no se justifica y puede confundir. En todo caso, empareja para que lo anterior sea consistente con esta si es que la notacion a partir de aca es mejor o mas clara para lo que sigue.} 
 %
-En este ejemplo tenemos tres variables: la posición del regalo, $r$; la caja que elegimos, $c$; y la pista que recibimos $s$.
+En este ejemplo tenemos tres variables: la posici\'on del regalo, $r$; la caja que elegimos, $c$; y la pista que recibimos $s$.
 %
-Por la descripción del juego sabemos que hay al menos una relaci\'on causal entre la posici\'on del regalo $r$ y la pista $s$, pues la pista no puede abrir la misma posici\'on en la que encuentra el regalo $s \neq r$.
+Por la descripci\'on del juego sabemos que hay al menos una relaci\'on causal entre la posici\'on del regalo $r$ y la pista $s$, pues la pista no puede abrir la misma posici\'on en la que encuentra el regalo $s \neq r$.
 %
 Este modelo causal se especifica de forma gr\'afica en la figura~\ref{fig:modelo_causal_1}.
 %
@@ -1145,7 +1146,7 @@ Cada uno de los modelos causales alternativos restringe un conjunto de universos
 %
 Aplicando el principio indiferencia, dividimos la creencia en partes iguales en cada una de las bifurcaciones de los universos paralelos que producen los modelos causales.
 %
-En la figura~\ref{fig:caminos} mostramos cómo se divide la creencia a través de los universos paralelos de ambos modelos causales.
+En la figura~\ref{fig:caminos} mostramos c\'omo se divide la creencia a través de los universos paralelos de ambos modelos causales.
 %
 Los caminos que van de la raíz a la hoja representan universos posibles del modelo causal.
 %
@@ -1153,7 +1154,7 @@ El estado del universo se representa con círculos.
 %
 La raíz contiene toda la creencia, la cual se divide en cada una de las bifurcaciones hasta llegar a las hojas.
 %
-De esta forma se maximiza la incertidumbre dada la información provista por los modelos causales.
+De esta forma se maximiza la incertidumbre dada la informaci\'on provista por los modelos causales.
 %
 Para simplificar el problema, consideramos que la variable $c$ es conocida, y vale $c=1$.
 
@@ -1316,7 +1317,7 @@ En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$.
 \caption{Creencia marginal honesta sobre el regalo en ambos modelos causales.}
 \end{figure}
 %
-La cerradura representa la variable $c$ (la elección de la caja) que por simplicidad consideramos que vale $c=1$ (que elegimos la primera caja).
+La cerradura representa la variable $c$ (la elecci\'on de la caja) que por simplicidad consideramos que vale $c=1$ (que elegimos la primera caja).
 
 \subsection{Principio de coherencia (regla del producto)} \label{sec:principio_choerencia} % (dados los datos de base emp\'irica)
 
@@ -1491,9 +1492,9 @@ Para que la creencia que sobrevive sea considerada nuestra nueva creencia total 
 \underbrace{P(r_i| s_2, \text{Modelo})}_{\hfrac{\text{Nueva creencia}}{\text{}}} = \frac{\overbrace{P(r_i, s_2| \text{Modelo})}^{\hfrac{\text{Creencia que}}{\text{sobrevive}}}}{\underbrace{P(s_2| \text{Modelo})}_{\hfrac{\text{Creencia total}}{\text{que sobrevive}}}}
 \end{equation}
 %
-Si multiplicamos a ambos lados por el denominador, obtenemos la expresión de la regla del producto de la teor\'ia de la probabilidad.
+Si multiplicamos a ambos lados por el denominador, obtenemos la expresi\'on de la regla del producto de la teor\'ia de la probabilidad.
 %
-La nueva distribución de creencias a la que llegamos depende del modelo causal elegido.
+La nueva distribuci\'on de creencias a la que llegamos depende del modelo causal elegido.
 %
 \begin{figure}[ht!]
 \centering
@@ -8243,33 +8244,33 @@ Del mismo modo que seleccionar una \'unica hip\'otesis tiene consecuencias negat
 
 \section{Hacia una ciencia de datos causal bayesiana} \label{sec:volverAlFuturo}
 
-La aplicación estricta de las reglas de probabilidad (o enfoque bayesiano) constituye la base de la inteligencia artificial y de las ciencias empíricas que aspiran a alcanzar verdades en contextos de incertidumbre.
+La aplicaci\'on estricta de las reglas de probabilidad (o enfoque bayesiano) constituye la base de la inteligencia artificial y de las ciencias empíricas que aspiran a alcanzar verdades en contextos de incertidumbre.
 %
-Si bien estas reglas se conocen desde el siglo 18, su aplicación se ha visto limitada históricamente debido al costo computacional asociado a la evaluación de todo el espacio de hipótesis.
+Si bien estas reglas se conocen desde el siglo 18, su aplicaci\'on se ha visto limitada hist\'oricamente debido al costo computacional asociado a la evaluaci\'on de todo el espacio de hip\'otesis.
 %
-Aunque estos obst\'aculos han sido superado gracias a los avances computacionales y algorítmicos modernos, la inercia histórica hace que su desarrollo siga siendo incipiente, especialmente en países perif\'ericos.
+Aunque estos obst\'aculos han sido superado gracias a los avances computacionales y algorítmicos modernos, la inercia hist\'orica hace que su desarrollo siga siendo incipiente, especialmente en países perif\'ericos.
 %
 Las cuestiones computacionales, sin embargo, son solo el primer paso de la inteligencia artificial.
 
 %
 
-Para explicar el mundo y tomar decisiones todas las ciencias que trabajan con datos, desde la física hasta las ciencias sociales, desarrollan teorías causales justamente porque no es posible sacar conclusiones causales y predecir las consecuencias de las intervenciones sin proponer modelos que tengan una interpretación causal~\cite{pearl2009-causality, peters2017-causalInference}.
+Para explicar el mundo y tomar decisiones todas las ciencias que trabajan con datos, desde la física hasta las ciencias sociales, desarrollan teorías causales justamente porque no es posible sacar conclusiones causales y predecir las consecuencias de las intervenciones sin proponer modelos que tengan una interpretaci\'on causal~\cite{pearl2009-causality, peters2017-causalInference}.
 %
-Las teorías causales son hipótesis, y como tales pueden ser evaluadas mediante la aplicación estricta de las reglas de la probabilidad~\cite{winn2012-causality}, $P(\text{Teoría causal}|\text{Datos})$, que penaliza naturalmente la complejidad innecesaria.
+Las teorías causales son hip\'otesis, y como tales pueden ser evaluadas mediante la aplicaci\'on estricta de las reglas de la probabilidad~\cite{winn2012-causality}, $P(\text{Teoría causal}|\text{Datos})$, que penaliza naturalmente la complejidad innecesaria.
 %
 Hoy la inteligencia artificial tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema específico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
 
 \subsection{La comunidad Bayes Plurinacional}
 
-La relevancia de la aplicación estricta de las reglas de la probabilidad contrasta con la realidad actual en la que el enfoque bayesiano es marginal incluso en las universidades m\'as importantes de la región, y pr\'acticamente inexistente en ciencias empíricas que no cuentan con formación específica en matem\'atica y programación.
+La relevancia de la aplicaci\'on estricta de las reglas de la probabilidad contrasta con la realidad actual en la que el enfoque bayesiano es marginal incluso en las universidades m\'as importantes de la regi\'on, y pr\'acticamente inexistente en ciencias empíricas que no cuentan con formaci\'on específica en matem\'atica y programaci\'on.
 %
 Este diagn\'ostico fue emergiendo durante la segunda mitad del doctorado.
 %
 A partir de la falta de referentes bayesianos en la propia facultad, comenc\'e un proceso de b\'usqueda activa.
 %
-Este diagnóstico era compartido por otros referentes bayesianos de Argentina.
+Este diagn\'ostico era compartido por otros referentes bayesianos de Argentina.
 %
-En el a\~no 2022 creamos la comunidad Bayes Plurinacional con el objetivo de impulsar las comunidades bayesianas de la región.
+En el a\~no 2022 creamos la comunidad Bayes Plurinacional con el objetivo de impulsar las comunidades bayesianas de la regi\'on.
 %
 \begin{figure}[ht!]
 \centering
@@ -8286,7 +8287,7 @@ Para ello, desarroll\'e otra pieza de software mediante la cual exploramos la re
 %
 En el anexo se pueden visualizar las redes bipartitas entre ``art\'iculos'' y ``autores'' (figura~\ref{fig:redes_co_autorias}).
 %
-En la siguiente figura~\ref{fig:papers_bayesianos} se detalla la cantidad de artículos científicos vinculados al enfoque bayesiano publicados cada a\~no con al menos una autoría con filiación en Am\'erica latina y el Caribe.
+En la siguiente figura~\ref{fig:papers_bayesianos} se detalla la cantidad de artículos científicos vinculados al enfoque bayesiano publicados cada a\~no con al menos una autoría con filiaci\'on en Am\'erica latina y el Caribe.
 
 % Parrafo
 
@@ -8327,9 +8328,9 @@ A partir del a\~no 2013 el crecimiento exponencial de las publicaciones bayesian
 
 Con el surgimiento de las redes neuronales profundas, nuevamente la complejidad computacional de la aplicaci\'on estricta de las reglas de la probabilidad act\'ua como un l\'imite al enfoque bayesiano.
 %
-A\'un así, el auge de las redes neuronales profundas no produjo la aparición de un sistema de razonamiento bajo incertidumbre nuevo, con mejor desempe\~no que el de las reglas de la probabilidad.
+A\'un así, el auge de las redes neuronales profundas no produjo la aparici\'on de un sistema de razonamiento bajo incertidumbre nuevo, con mejor desempe\~no que el de las reglas de la probabilidad.
 %
-El enfoque bayesiano sigue siendo el corazón de la Inteligencia Artificial y de toda ciencia empírica.
+El enfoque bayesiano sigue siendo el coraz\'on de la Inteligencia Artificial y de toda ciencia empírica.
 %
 En este contexto, NeurlIPS realiza una competencia en el a\~no 2021 denominada ``Approximate inference in Bayesian Deep Learning''.
 %
@@ -8338,9 +8339,9 @@ En ese a\~no se publica el art\'iculo ``What Are Bayesian Neural Network Posteri
 All\'i se confirma la observaci\'on previa~\cite{Wilson2020}, en la que se muestra que los m\'etodos de \emph{deep ensambles} proporcionan un mecanismo eficaz de aproximaci\'on de la aplicaci\'on estricta de las reglas de la probabilidad.
 
 % Parrafo
-Gracias a que la mitad de los autores proveen en sus art\'iculos cient\'ificos alg\'un medio de contacto, pudimos conversar personalmente con una gran cantidad de investigadores bayesianos de la región y verificar que sus protagonistas no se suelen conocen todav\'ia.
+Gracias a que la mitad de los autores proveen en sus art\'iculos cient\'ificos alg\'un medio de contacto, pudimos conversar personalmente con una gran cantidad de investigadores bayesianos de la regi\'on y verificar que sus protagonistas no se suelen conocen todav\'ia.
 %
-Esto ratific\'o nuestro objetivo principal a largo plazo, de contribuir en el desarrollo de las comunidades bayesianas de de la región.
+Esto ratific\'o nuestro objetivo principal a largo plazo, de contribuir en el desarrollo de las comunidades bayesianas de de la regi\'on.
 %
 En este contexto, decidimos organizar el Congreso Bayesiano Plurinacional 2023.
 %
@@ -8348,7 +8349,7 @@ En este contexto, decidimos organizar el Congreso Bayesiano Plurinacional 2023.
 
 \subsection{El Congreso Bayesiano Plurinacional 2023}
 
-La comunidad Bayes Plurinacional realizó con \'exito el Congreso Bayesiano Plurinacional 2023 los días 4, 5 y 6 de agosto en las instalaciones de la Secretaría de Ciencia y Tecnología de la provincia de Santiago del Estero, Argentina.
+La comunidad Bayes Plurinacional realiz\'o con \'exito el Congreso Bayesiano Plurinacional 2023 los días 4, 5 y 6 de agosto en las instalaciones de la Secretaría de Ciencia y Tecnología de la provincia de Santiago del Estero, Argentina.
 %
 La diversidad disciplinar fue extraordinaria: ecolog\'ia, medicina, astronom\'ia, geolog\'ia, psicolog\'ia, cu\'antica, econom\'ia, ingenier\'ia, filosof\'ia, biolog\'ia, estad\'istica, computaci\'on, antropolog\'ia, entre otras.
 %
@@ -8373,50 +8374,50 @@ Adem\'as, durante el congreso nos visit\'o el gobernador de la provincia de Sant
 
 % Parrafo
 
-Tuvimos 5 sesiones de conversaciones interpersonales de 40 minutos cada una; 4 bloques con 3 exposiciones en profundidad de 25 minutos cada una (12 en total); 4 bloques de taller de 50 minutos; y sesiones de póster que incluyeron la exposici\'on oral breve a todo el auditorio.
+Tuvimos 5 sesiones de conversaciones interpersonales de 40 minutos cada una; 4 bloques con 3 exposiciones en profundidad de 25 minutos cada una (12 en total); 4 bloques de taller de 50 minutos; y sesiones de p\'oster que incluyeron la exposici\'on oral breve a todo el auditorio.
 %
 Las sesiones de conversaciones en grupos lograron crear una ambiente ameno, de apertura y conocimiento mutuo.
 %
 Las exposiciones abarcaron una variedad de temas,
 %
 \begin{enumerate} \setlength\itemsep{-0.05cm} \small
-\item Gabriel A Alzamendi: \emph{M\'etodos basados en inferencia Bayesiana para la evaluación de los mecanísmos vocales de la fonación humana}.
+\item Gabriel A Alzamendi: \emph{M\'etodos basados en inferencia Bayesiana para la evaluaci\'on de los mecanísmos vocales de la fonaci\'on humana}.
 
 \item Nicol\'as A Comay: \emph{Abordaje Bayesiano a la toma de decisiones perceptuales y su confianza asociada}.
 
 \item Javier Arellana: \emph{Bayesian retrieval scheme and its application to Cassini Mission SAR observations in an area of Titan, Saturn's largest moon}.
 
 
-\item Yasmín E Navarrete Díaz: \emph{Sistemas fr\'agiles: una formulación bayesiana de la teoría cu\'antica}.
+\item Yasmín E Navarrete Díaz: \emph{Sistemas fr\'agiles: una formulaci\'on bayesiana de la teoría cu\'antica}.
 
 
-\item Diego JR Sevilla: \emph{Regresión bayesiana para el an\'alisis de series temporales con apilamiento en Astronomía de rayos X}.
+\item Diego JR Sevilla: \emph{Regresi\'on bayesiana para el an\'alisis de series temporales con apilamiento en Astronomía de rayos X}.
 
-\item Andrea P Goijman: \emph{Modelos de ocupación multiespecie con enfoque bayesiano: una herramienta valiosa para estudios de biodiversidad en ecología}.
+\item Andrea P Goijman: \emph{Modelos de ocupaci\'on multiespecie con enfoque bayesiano: una herramienta valiosa para estudios de biodiversidad en ecología}.
 
 \item Hossein Dinani: \emph{Bayesian estimation for quantum sensing}.
 
 
-\item Albert R Ortiz: \emph{Aplicación de m\'etodos bayesianos en ingeniería estructural}.
+\item Albert R Ortiz: \emph{Aplicaci\'on de m\'etodos bayesianos en ingeniería estructural}.
 
 \item Gonzalo Ríos: \emph{Bayesian Machine Learning Applied to Marketing}.
 
-\item Sergio M Davis Irarr\'azabal: \emph{Probabilidad bayesiana a partir de la estimación plausible de cantidades}.
+\item Sergio M Davis Irarr\'azabal: \emph{Probabilidad bayesiana a partir de la estimaci\'on plausible de cantidades}.
 
-\item Tom\'as A Olego: \emph{M\'etodos robustos Bayesianos Generalizados para los modelos de regresión logística}.
+\item Tom\'as A Olego: \emph{M\'etodos robustos Bayesianos Generalizados para los modelos de regresi\'on logística}.
 
-\item Luciano Moffatt. \emph{Modelado Bayesiano Computacional de Sistemas Biológicos}.
+\item Luciano Moffatt. \emph{Modelado Bayesiano Computacional de Sistemas Biol\'ogicos}.
 \end{enumerate}
 
 % Parrafo
 
-Durante el congreso quedó de manifiesto una imperiosa necesidad de contar con mayor cantidad de instancias de formación teórica y pr\'actica en m\'etodos bayesianos.
+Durante el congreso qued\'o de manifiesto una imperiosa necesidad de contar con mayor cantidad de instancias de formaci\'on te\'orica y pr\'actica en m\'etodos bayesianos.
 %
-Por ello, en la sesión de cierre decidimos comenzar a organizar la Escuela Bayesiana Plurinacional.
+Por ello, en la sesi\'on de cierre decidimos comenzar a organizar la Escuela Bayesiana Plurinacional.
 %
 Gracias a esta actividad inaugural, actualmente existe una activa comunidad bayesiana.
 %
-Recientemente, la comunidad Bayes Plurinacional a enviado un proyecto a la organización de Inteligencia Artificial de Am\'erica Latina \emph{Khipu} para la realización de la Escuela Bayesiana Plurinacional 2024 en la Universidad Nacional de Salta, Argentina.
+Recientemente, la comunidad Bayes Plurinacional a enviado un proyecto a la organizaci\'on de Inteligencia Artificial de Am\'erica Latina \emph{Khipu} para la realizaci\'on de la Escuela Bayesiana Plurinacional 2024 en la Universidad Nacional de Salta, Argentina.
 
 % Parrafo
 
@@ -8424,7 +8425,7 @@ Recientemente, la comunidad Bayes Plurinacional a enviado un proyecto a la organ
 
 Durante el congreso present\'e un taller sobre inferencia bayesiana denominado ``Verdades empíricas'', que hace referencia a la necesidad que tienen las ciencias empíricas de alcanzar verdades (o acuerdos intersubjetivos) en contextos de incertidumbre.
 %
-El taller estuvo dividido en 5 unidades y un hackatón.
+El taller estuvo dividido en 5 unidades y un hackat\'on.
 %
 Se puede acceder en línea a trav\'es de \url{https://github.com/BayesPlurinacional/tallerBP-2023}.
 
@@ -8460,110 +8461,110 @@ Se puede acceder en línea a trav\'es de \url{https://github.com/BayesPlurinacio
 
 % Parrafo
 
-En la unidad 1 se presenta una introducción a los \emph{Modelos gr\'aficos e inferencia}.
+En la unidad 1 se presenta una introducci\'on a los \emph{Modelos gr\'aficos e inferencia}.
 %
-Allí se justifican las reglas de la probabilidad y se presentan los m\'etodos gr\'afico de especificación matem\'atica de los modelos probabilísticos y se aplican las reglas de la probabilidad para evaluar dos modelos causales alternativos.
+Allí se justifican las reglas de la probabilidad y se presentan los m\'etodos gr\'afico de especificaci\'on matem\'atica de los modelos probabilísticos y se aplican las reglas de la probabilidad para evaluar dos modelos causales alternativos.
 %
 Se discute el problema computacional de las reglas de la probabilidad y se muestran soluciones bayesianas del siglo 18 y soluciones de la física estadística del siglo 19.
 %
-Finalmente se revisa la emergencia del \emph{overfitting} en el enfoque frecuentista y se muestra que la aplicación estricta de las reglas de la probabilidad resuelve naturalmente este problema.
+Finalmente se revisa la emergencia del \emph{overfitting} en el enfoque frecuentista y se muestra que la aplicaci\'on estricta de las reglas de la probabilidad resuelve naturalmente este problema.
 %
-Aplicaciones: Monty Hall extendido y regresión lineal bayesiana.
+Aplicaciones: Monty Hall extendido y regresi\'on lineal bayesiana.
 
 % Parrafo
 
-En la unidad 2 se presenta una introducción a la \emph{Inferencia causal}.
+En la unidad 2 se presenta una introducci\'on a la \emph{Inferencia causal}.
 %
 Se discute las dificultades que existen para estimar correctamente el efecto causal cuando no se cuenta con un modelo causal y para identificar el verdadero modelo causal cuando solo se cuenta con datos observacionales.
 %
-Se muestra cómo los niveles de razonamiento causal (asociacional, intervencional y contrafactual) emergen naturalmente del proceso generativo de los datos.
+Se muestra c\'omo los niveles de razonamiento causal (asociacional, intervencional y contrafactual) emergen naturalmente del proceso generativo de los datos.
 %
 Se revisa en qu\'e condiciones se abren y cierran los flujos de inferencia en los modelos causales (\emph{d-separation}).
 %
-Se presenta el criterio \emph{backdoor} para la identificación de efectos causales a partir de observaciones (sin intervenciones).
+Se presenta el criterio \emph{backdoor} para la identificaci\'on de efectos causales a partir de observaciones (sin intervenciones).
 %
-Se eval\'uan diversos escenarios de estimación de efectos causales.
+Se eval\'uan diversos escenarios de estimaci\'on de efectos causales.
 %
-Finalmente definimos el concepto de teorías causales y mostramos cómo identificarlas a partir de intervenciones.
+Finalmente definimos el concepto de teorías causales y mostramos c\'omo identificarlas a partir de intervenciones.
 %
-Aplicaciones: cómputo del efecto causal en modelos lineales bayesianos y evaluación de teorías causales alternativas con datos sint\'eticos.
+Aplicaciones: c\'omputo del efecto causal en modelos lineales bayesianos y evaluaci\'on de teorías causales alternativas con datos sint\'eticos.
 
 % Parrafo
 
-En la unidad 3 se presenta una introducción a \emph{El problema de comunicación con la realidad}.
+En la unidad 3 se presenta una introducci\'on a \emph{El problema de comunicaci\'on con la realidad}.
 %
-Se comienza discutiendo los niveles de base empírica y se identifica el rol que cumplen las hipótesis en la construcción de los datos empíricos.
+Se comienza discutiendo los niveles de base empírica y se identifica el rol que cumplen las hip\'otesis en la construcci\'on de los datos empíricos.
 %
-Se revisa la estructura invariante del dato empírico y su equivalencia con el esquema emisor-receptor de la teoría de la información: unidad de an\'alisis (fuente), dimensiones (transmisor), procedimientos (perceptor), hipótesis indicadoras (receptor), y estimación (destino).
+Se revisa la estructura invariante del dato empírico y su equivalencia con el esquema emisor-receptor de la teoría de la informaci\'on: unidad de an\'alisis (fuente), dimensiones (transmisor), procedimientos (perceptor), hip\'otesis indicadoras (receptor), y estimaci\'on (destino).
 %
-Se muestra que la tasa de predicción de dos sistemas de comunicación medida en órdenes de magnitud, resulta ser el negativo de la entropía (cuando el modelo causal es correcto) o el negativo de la entropía cruzada (cuando el modelo causal es incorrecto)
+Se muestra que la tasa de predicci\'on de dos sistemas de comunicaci\'on medida en \'ordenes de magnitud, resulta ser el negativo de la entropía (cuando el modelo causal es correcto) o el negativo de la entropía cruzada (cuando el modelo causal es incorrecto)
 %
-Se revisa la propiedad de la entropía como medida de la información.
+Se revisa la propiedad de la entropía como medida de la informaci\'on.
 %
-Se define formalmente el principio de no mentir como maximización de la entropía dada restricciones y se presenta la familia de distribuciones exponenciales.
+Se define formalmente el principio de no mentir como maximizaci\'on de la entropía dada restricciones y se presenta la familia de distribuciones exponenciales.
 %
-Se eval\'uan sistemas de comunicación con la realidad que difieren, no en los modelos causales, sino en los procedimientos que se usan para transmitir las se\~nales.
+Se eval\'uan sistemas de comunicaci\'on con la realidad que difieren, no en los modelos causales, sino en los procedimientos que se usan para transmitir las se\~nales.
 %
-Aplicaciones: evaluación de estimadores de habilidad alterativos y evaluación de los test diagnósticos de Chagas.
+Aplicaciones: evaluaci\'on de estimadores de habilidad alterativos y evaluaci\'on de los test diagn\'osticos de Chagas.
 
 % Parrafo
 
-En la unidad 4 se presenta una introducción a los \emph{Modelos de historia completa}.
+En la unidad 4 se presenta una introducci\'on a los \emph{Modelos de historia completa}.
 %
-Se motiva el problema mediante los modelos habitualmente utilizados en la industria del videojuego, como TrueSkill, que usan el posterior de un evento como prior del siguiente, propagando la información en una \'unica dirección, del pasado al futuro.
+Se motiva el problema mediante los modelos habitualmente utilizados en la industria del videojuego, como TrueSkill, que usan el posterior de un evento como prior del siguiente, propagando la informaci\'on en una \'unica direcci\'on, del pasado al futuro.
 %
 Se presenta el algoritmo suma-producto, que permite realizar la inferencia mediante pasaje de mensaje entre los nodos de la red causal (expresada como un \emph{factor graph}).
 %
-Se usan esas reglas para derivar el posterior exacto en el modelo TrueSkill, y se revisan los problemas de estimación que efectivamente tiene el modelo TrueSkill.
+Se usan esas reglas para derivar el posterior exacto en el modelo TrueSkill, y se revisan los problemas de estimaci\'on que efectivamente tiene el modelo TrueSkill.
 %
 Se especifica el modelo causal de historia completa, que vincula todos los eventos en una misma red causal.
 %
-Se revisa el algoritmo iterativo que propaga la información histórica por toda la red causal, y se verifica la mejora de las estimaciones.
+Se revisa el algoritmo iterativo que propaga la informaci\'on hist\'orica por toda la red causal, y se verifica la mejora de las estimaciones.
 %
-Se finaliza discutiendo la evaluación de efectos causales en series temporales.
+Se finaliza discutiendo la evaluaci\'on de efectos causales en series temporales.
 %
-Aplicaciones: estimador de habilidad estado del arte en la industria del videojuego y apuestas en tenis en base a pagos históricos de una casa de apuestas.
+Aplicaciones: estimador de habilidad estado del arte en la industria del videojuego y apuestas en tenis en base a pagos hist\'oricos de una casa de apuestas.
 
 % Parrafo
 
-En la unidad 5 se presenta una introducción a la teoría (ergódica) de \emph{toma de decisiones}.
+En la unidad 5 se presenta una introducci\'on a la teoría (erg\'odica) de \emph{toma de decisiones}.
 %
 Revisamos la naturaleza multiplicativa de la funci\'on de costo de la teor\'ia de la probabilidad (la regla del producto) y de la teor\'ia de la evoluci\'on (la secuencia de tasas de reproducci\'on y supervivencia).
 %
-Presentamos un problema de apuestas binario, en el que nos vemos obligados a apostar todos nuestros recursos en cada vuelta, dividiendo una proporción $b$ por cara y $(1-b)$ por sello.
+Presentamos un problema de apuestas binario, en el que nos vemos obligados a apostar todos nuestros recursos en cada vuelta, dividiendo una proporci\'on $b$ por cara y $(1-b)$ por sello.
 %
-Mostramos en ese ejemplo que no cualquier función de costo permite calcular la tasa de crecimiento que efectivamente se obtiene en el tiempo e introducimos el concepto de ergodicidad.
+Mostramos en ese ejemplo que no cualquier funci\'on de costo permite calcular la tasa de crecimiento que efectivamente se obtiene en el tiempo e introducimos el concepto de ergodicidad.
 %
 Derivamos la propiedad epist\'emica que explica el funcionamiento de la teoría de la probabilidad.
 %
-Derivamos la propiedad evolutiva, que le permite a la vida aumentar la tasa de crecimiento reduciendo fluctuaciones mediante la cooperación.
+Derivamos la propiedad evolutiva, que le permite a la vida aumentar la tasa de crecimiento reduciendo fluctuaciones mediante la cooperaci\'on.
 %
-Derivamos la propiedad de especiación, que le permite a grupos cooperativos aumentar un m\'as la tasa de crecimiento mediante la especialización cooperativa.
+Derivamos la propiedad de especiaci\'on, que le permite a grupos cooperativos aumentar un m\'as la tasa de crecimiento mediante la especializaci\'on cooperativa.
 %
-%Discutimos la propiedad ecológica, que permite aumentar la tasa de crecimiento mediante la heterogeneidad cooperativa.
+%Discutimos la propiedad ecol\'ogica, que permite aumentar la tasa de crecimiento mediante la heterogeneidad cooperativa.
 %
 Discutimos el error de la teor\'ia de decisiones cl\'asica, mostrando que no existe un dilema del prisionero bajo procesos como los epist\'emicos o evolutivos, que son de naturaleza multiplicativa.
 %
 Aplicaciones: un problema de inferencia con apuestas e intercambio de recursos (``apuestas de vida'').
 
-%Cada persona $i$ comienzan con una unidad de recursos, $\omega_i = 1$, y al finalizar el juego se reparte un premio siguiendo la proporción de recursos que cada persona tienen sobre el total al finalizar el proceso de apuestas, $\omega_i / \sum_i \omega_i$.
+%Cada persona $i$ comienzan con una unidad de recursos, $\omega_i = 1$, y al finalizar el juego se reparte un premio siguiendo la proporci\'on de recursos que cada persona tienen sobre el total al finalizar el proceso de apuestas, $\omega_i / \sum_i \omega_i$.
 %
 % %
-% El problema de inferencia es una Monty Hall extendido, de cuatro puertas, en el que la posición del regalo se genera con un sesgo que tiene un ciclo de 365 pasos temporales.
+% El problema de inferencia es una Monty Hall extendido, de cuatro puertas, en el que la posici\'on del regalo se genera con un sesgo que tiene un ciclo de 365 pasos temporales.
 % %
-% Al inscribirse, cada persona recibir\'a un array de longitud 2190 que representa la posición de los regalos en pasos temporales consecutivos.
+% Al inscribirse, cada persona recibir\'a un array de longitud 2190 que representa la posici\'on de los regalos en pasos temporales consecutivos.
 % %
-% El objetivo es maximizar la tasa de crecimiento de sus propios recursos apostando sobre la posición del regalo en los siguientes 1095 pasos temporales.
+% El objetivo es maximizar la tasa de crecimiento de sus propios recursos apostando sobre la posici\'on del regalo en los siguientes 1095 pasos temporales.
 % %
 % Primero deben estimar el sesgo con el que se esconden los regalos en el tiempo.
 % %
 % Segundo deben determinar, en cada paso temporal, qu\'e caja conviene elegir inicialmente para recibir la pista.
 % %
-% Tercero, deben actualizar sus creencia sobre la posición del regalo seg\'un la pista que reciben.
+% Tercero, deben actualizar sus creencia sobre la posici\'on del regalo seg\'un la pista que reciben.
 % %
-% Este problema lleva a la pr\'actica los conceptos de probabilidad, de inferencia causal, de teoría de la información, de series temporales y de toma de decisiones.
+% Este problema lleva a la pr\'actica los conceptos de probabilidad, de inferencia causal, de teoría de la informaci\'on, de series temporales y de toma de decisiones.
 
-\subsection{Trabajo futuro: especificación y evaluación de argumentos causales.}
+\subsection{Trabajo futuro: especificaci\'on y evaluaci\'on de argumentos causales.}
 %
 % Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computaci\'on y encontrar all\'i las respuestas m\'as simples y concretas a las reflexiones epistemol\'ogicas y metodol\'ogicas m\'as trascendentales desarrolladas durante mi formaci\'on en ciencias antropol\'ogicas, no solo explica por qu\'e que ella es la principal herramienta qu\'e encontr\'e en el doctorado en computaci\'on.
 % %
@@ -8590,7 +8591,7 @@ Y la especificaci\'on probabil\'istica de los argumentos causales le va a permit
 
 % Parrafo
 
-La complejidad del problema ponen en tensión las metodologías actuales de las ciencias de datos, y por lo tanto se presenta como una oportunidad para la innovación.
+La complejidad del problema ponen en tensi\'on las metodologías actuales de las ciencias de datos, y por lo tanto se presenta como una oportunidad para la innovaci\'on.
 %
 Por este motivo la inferencia causal es un \'area de creciente inter\'es dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
 %
@@ -8608,13 +8609,13 @@ El desarrollo de la programaci\'on probabil\'istica por su parte, permite resolv
 
 % Parrafo
 
-En este sentido, como trabajo futuro me propongo implementar y desarrollar metodologías de trabajo que permitan poner en valor el conocimiento experto mediante la especificación y evaluación probabilística de argumentos casuales expresados en lenguaje natural.
+En este sentido, como trabajo futuro me propongo implementar y desarrollar metodologías de trabajo que permitan poner en valor el conocimiento experto mediante la especificaci\'on y evaluaci\'on probabilística de argumentos casuales expresados en lenguaje natural.
 %
 Los procesos penales son un campo ideal para llevar a cabo este objetivo debido al enorme trabajo que el Estado y los privados dedican para construir el conjunto de datos que forman la base empírica, y para proponer argumentos causales en competencia capaces de explicar esa prueba.
 %
 El desafío consiste en traducir matem\'aticamente argumentos expresados en lenguaje natural, integrar los diferentes elementos de prueba en un \'unico modelo probabilístico causal, computar correctamente el valor de verdad de los modelos causales alternativos.
 %
-Por ello, el plan de investigación actual en el Departamento de Computación se denomina \emph{Especificación y evaluación probabilística de argumentos causales en procesos judiciales penales}.
+Por ello, el plan de investigaci\'on actual en el Departamento de Computaci\'on se denomina \emph{Especificaci\'on y evaluaci\'on probabilística de argumentos causales en procesos judiciales penales}.
 
 
 
