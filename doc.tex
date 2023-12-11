@@ -846,7 +846,7 @@ El fundador de la teor\'ia de la probabilidad moderna, Pierre-Simon Laplace (174
 Que si tuvi\'eramos conocimiento completo (infinitamente preciso) del estado del mundo $x$ en un instante de tiempo, y el modelo causal correcto que rige el comportamiento del mundo $f$, entonces tendr\'iamos conocimiento completo del estado del mundo en cualquier instante posterior $y$.
 
 \begin{quotation}
-Les \'ev\'enemens actuels ont, avec les pr\'ec\'edens, une liaison fond\'ee sur le principe \'evident, qu’une chose ne peut pas commencer d’être, sans une cause qui la produise. [\dots] Une intelligence qui, pour un instant donn\'e, connaîtrait toutes les forces dont la nature est anim\'ee [\dots] rien ne serait incertain pour elle, et l’avenir comme le pass\'e, serait pr\'esent à ses yeux~\cite{laplace1816-philosophique}. 
+Les \'ev\'enemens actuels ont, avec les pr\'ec\'edens, une liaison fond\'ee sur le principe \'evident, qu’une chose ne peut pas commencer d’être, sans une cause qui la produise. [\dots] Une intelligence qui, pour un instant donn\'e, connaîtrait toutes les forces dont la nature est anim\'ee [\dots] rien ne serait incertain pour elle, et l’avenir comme le pass\'e, serait pr\'esent à ses yeux~\cite{laplace1816-philosophique}.
 \end{quotation}
 
 %
@@ -873,9 +873,8 @@ Supongamos que el tama\~no de una poblaci\'on, medida como proporci\'on de una c
 %
 \begin{align*}
  \text{Poblaci\'on}&(0) = \text{pop}_0 \ \ & \text{pop}_0 \in [0,1]\\
- \text{Poblaci\'on}&(t+\Delta t) = r \cdot \text{Poblaci\'on}(t)\cdot (1-\text{Poblaci\'on}(t)) &r \in [0,4] \\
+ \text{Poblaci\'on}&(t+\Delta t) = r \cdot \text{Poblaci\'on}(t)\cdot (1-\text{Poblaci\'on}(t)) &r \in [0,4]
 \end{align*}
-
 %
 Determinados el valor inicial de pop$_0$ y del par\'ametro $r$, se puede determinar el valor de la poblaci\'on para cualquier tiempo $t$.
 %
@@ -906,7 +905,7 @@ Dado $r=3.99$ y $\text{pop}_0 = 0.5$, la poblaci\'on tiene un comportamiento den
     \label{fig:poblacion}
 \end{figure}
 %
-Si modificamos levemente el valor inicial de la poblaci\'on bajo un comportamiento ca\'otico (por ejemplo de $0.5$ a $0.499$) obtenemos trayectorias que r\'apidamente divergen entre s\'i, siendo completamente diferentes una decena de pasos temporales (figura~\ref{fig:sensibilidad}).
+Si modificamos levemente el valor inicial de la poblaci\'on bajo un comportamiento ca\'otico (por ejemplo de $0.5$ a $0.499$) obtenemos trayectorias que r\'apidamente divergen entre s\'i, siendo completamente diferentes luego de una decena de pasos temporales (figura~\ref{fig:sensibilidad}).
 %
 \begin{figure}[ht!]
     \centering
@@ -938,28 +937,27 @@ A este conjunto se lo conoce como \emph{espacio de hip\'otesis}.
 
 %
 
-Por ejemplo, cuando sabemos que una persona escondi\'o una regalo detrás de una caja entre tres, tenemos incertidumbre sobre la posici\'on del regalo.
-%
-El regalo puede estar en la caja 1, $r_1$, en la caja 2, $r_2$, o en la caja 3 ,$r_3$.
-%
-Luego, nuestro espacio de hip\'otesis es $R = \{r_1, r_2, r_3\}$.
-%
-Tener en cuenta la siguiente notaci\'on, $r_i \equiv r = i$, ``el regalo $r$ se encuentra en al posici\'on $i$''.
-
-
-\subsection{Regla de la suma y las distribuciones de creencias}\label{sec:principio_integridad}
+\subsection{Principio de integridad (regla de la suma)}\label{sec:principio_integridad}
 
 Aunque la incertidumbre nos impide describir el mundo mediante funciones deterministas, podemos describir nuestra creencias utilizando funciones de probabilidad.
 %
 Una funci\'on de probabilidad asigna una proporci\'on de la creencia (un número entre 0 y 1) a cada posible hip\'otesis $h$.
 %
-La regla de la suma nos obliga a no perder ni crear creencias de forma espontánea cuando la distribuimos entre hip\'otesis mutuamente excluyentes (i.e.~si ocurre una hip\'otesis no puede ocurrir el resto).
+En la teor\'ia de la probabilidad, la regla de la suma garantiza el principio de integridad, esto es que no se produzcan p\'erdidas ni creaciones espont\'aneas de creencias cuando la distribuimos entre hip\'otesis mutuamente excluyentes (i.e.~si hip\'otesis que no pueden ocurrir simult\'aneamente).
+
 %
-Por ejemplo, la creencia asignada a dos hip\'otesis $P(h_1 \, \cup \, h_2)$ no es más que la suma de creencias asignadas a cada una de ellas $P(h_1 \, \cup \, h_2)= P(h_1) + P(h_2)$.
+
+Por ejemplo, supongamos que una persona escondi\'o una regalo detr\'as de una caja entre tres.
 %
-Si además el espacio de hip\'otesis es exhaustivo (contiene todas las posibles hip\'otesis), entonces debemos dividir toda nuestra creencia entre las opciones disponibles.
+El regalo puede estar en la caja 1, $r_1$, en la caja 2, $r_2$, o en la caja 3 ,$r_3$.
 %
-En el ejemplo del regalo, sabemos que hay solo 3 cajas donde puede estar escondido.
+Luego, nuestro espacio de hip\'otesis es $R = \{r_1, r_2, r_3\}$ (Notaci\'on: $r_i \equiv r = i$, ``el regalo $r$ se encuentra en al posici\'on $i$'').
+%
+Por el principio de integridad, la creencia asignada a dos hip\'otesis $P(r_1 \, \cup \, r_2)$ debe ser la suma de creencias asignadas a cada una de ellas $P(r_1) + P(r_2)$.
+%
+Si además el espacio de hip\'otesis es exhaustivo la suma debe ser 1, pues estaremos sumando la creencia que asignamos a todas las posibles hip\'otesis.
+%
+%En el ejemplo del regalo, sabemos que hay solo 3 cajas donde puede estar escondido.
 %
 \begin{figure}[ht!]
 \centering
@@ -1041,17 +1039,13 @@ Este principio se formaliz\'o a mediados del siglo 20 como ``m\'axima entrop\'ia
 
 % Parrafo
 
-Antes de su definici\'on formal, esta idea ya era discutida en el siglo 18 por los fundadores de la teor\'ia de la probabilidad bajo el nombre de \emph{principio de indiferencia}~\cite{jaynes1984}.
+Antes de su definici\'on formal, esta idea ya era discutida en el siglo 18 por los fundadores de la teor\'ia de la probabilidad bajo el nombre de \emph{principio de indiferencia}~\cite{jaynes1984-bayesianBackground}.
 %
-Según este principio, cuando no existe razones para tener preferencia por ninguna de las opciones debemos asignar la misma probabilidad a todos los eventos.
-%
-Siguiendo el ejemplo, solo sabemos que el regalo se encuentra detrás de alguna de las tres cajas, y al no tener más informaci\'on nos vemos en la necesidad de dividir la creencia en partes iguales para expresar una distribuci\'on de creencias que cumple con el principio de no mentir (MaxEnt).
+Según este principio, cuando no existe razones para tener preferencia por ninguna de las opciones debemos asignar la misma creencia a todos los eventos para no mentir (MaxEnt).
 %
 Esta distribuci\'on de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales).
 
 % Parrafo
-
-
 
 \begin{figure}[ht!]
 \centering
@@ -1088,11 +1082,13 @@ Para ello, extenderemos el ejemplo del regalo.
 
 Supongamos que ahora nos piden que elijamos una caja $c \in \{1, 2, 3\}$ y despu\'es alguien nos muestra el interior de una caja $s \in \{1, 2, 3\}$ en la que no está el regalo $r \in \{1, 2, 3\}$.
 %
-En este ejemplo tenemos tres variables ($r$, $c$ y $s$) y podemos imaginar al menos dos modelos causales alternativos entre las variables.
+En este ejemplo tenemos tres variables: la posición del regalo, $r$; la caja que elegimos, $c$; y la pista que recibimos $s$.
 %
-En un modelo causal (figura~\ref{fig:modelo_causal_1}) una única relaci\'on causal entre la posici\'on del regalo $r$ y la pista $s$, pues sabemos que la pista no puede abrir la misma posici\'on en la que encuentra el regalo $s \neq r$.
+Por la descripción del juego sabemos que hay al menos una relaci\'on causal entre la posici\'on del regalo $r$ y la pista $s$, pues la pista no puede abrir la misma posici\'on en la que encuentra el regalo $s \neq r$.
 %
-En un modelo causal alternativo (figura \ref{fig:modelo_causal_2}) se propone una segunda relaciones causal, que afirma que la pista tampoco puede abrir la caja que elegimos $s \neq c$.
+Este modelo causal se especifica de forma gráfica en la figura~\ref{fig:modelo_causal_1}.
+%
+Además, podemos sospechar que existe una segunda relaciones causal, según la cual la pista tampoco está habilitada a abrir la caja que elegimos $s \neq c$ (figura \ref{fig:modelo_causal_2}).
 
 % Parrafo
 
@@ -1131,33 +1127,32 @@ En un modelo causal alternativo (figura \ref{fig:modelo_causal_2}) se propone un
   \caption{Modelo B: $s \neq r$ y $s \neq c$}
   \label{fig:modelo_causal_2}
   \end{subfigure}
-  \caption{Modelos causales alternativos. Figura~\subref{fig:modelo_causal_1}: la pista s\'olo depende de la posici\'on del regalo. Figura~\subref{fig:modelo_causal_2}: la pista depende de la posici\'on del regalo y la caja elegida previamente.
+  \caption{Modelos causales alternativos. Modelo~\subref{fig:modelo_causal_1}: la pista s\'olo depende de la posici\'on del regalo. Modelo~\subref{fig:modelo_causal_2}: la pista depende de la posici\'on del regalo y la caja elegida previamente.
   Los c\'irculos representan las variables y la flecha representa la relaci\'on causa $\rightarrow$ efecto.
   %A su vez, $r=i$ representa la proposici\'on ``el regalo se encuentra en la posici\'on $i$'', y $s=i$ representa la proposici\'on ``la pista se\~nala la posici\'on $i$''.
   }
   \label{fig:modelos_causales}
 \end{figure}
 
-Ahora, para determinar la distribuci\'on de creencias honestas debemos maximizar la incertidumbre incorporando la informaci\'on que proveen los modelos causales en caso de que sea ciertos.
-%
-Cada uno de los modelos causales alternativos restringe un conjunto de universos paralelos.
-%
-Siguiendo con el principio de maximizar incertidumbre dada la informaci\'on disponible, definimos la distribuci\'on de creencia honesta dividiendo la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.
-%
-En la figura~\ref{fig:caminos} mostramos los caminos paralelos que generan ambos modelos causales sobre los cuales se divide la creencia.
 
-% Parrafo
-
-En el modelo mostrado en la figura~\ref{fig:caminos_pre_montyhall}, por cada posici\'on del regalo, se abren otros dos universos paralelos que se corresponden con las cajas hacia las que puede se\~nalar la pista, en las que no est\'a el regalo en ese universo.
+Ahora, para determinar la distribuci\'on de creencias honestas debemos maximizar la incertidumbre incorporando la informaci\'on que proveen los modelos causales.
 %
-En cambio, en el modelo mostrado en la figura~\ref{fig:caminos_montyhall}, la pista genera dos universos solo cuando el regalo est\'a en la misma caja que elegimos, $r=c=1$.
-
-% Podemos recibir una pista tanto en la puerta 2, $s_2$, como en la puerta 3, $s_3$.
-% %
-% Cuando el regalo est\'a en otra caja, $r\neq 1$, la pista puede se\~nalar \'unicamente a una de las cajas, la que no tiene el regalo y la que no fue elegida.
-% %
-% Por ejemplo, si el regalo est\'a en la puerta 2, $r_2$, la pista s\'olo puede se\~nalar la puerta 3, $s_3$.
+Cada uno de los modelos causales alternativos restringe un conjunto de universos posibles.
 %
+Aplicando el principio indiferencia, dividimos la creencia en partes iguales en cada una de las bifurcaciones de los universos paralelos que producen los modelos causales.
+%
+En la figura~\ref{fig:caminos} mostramos cómo se divide la creencia a través de los universos paralelos de ambos modelos causales.
+%
+Los caminos que van de la raíz a la hoja representan universos posibles del modelo causal.
+%
+El estado del universo se representa con círculos.
+%
+La raíz contiene toda la creencia, la cual se divide en cada una de las bifurcaciones hasta llegar a las hojas.
+%
+De esta forma se maximiza la incertidumbre dada la información provista por los modelos causales.
+%
+Para simplificar el problema, consideramos que la variable $c$ es conocida, y vale $c=1$.
+
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
@@ -1251,12 +1246,15 @@ En cambio, en el modelo mostrado en la figura~\ref{fig:caminos_montyhall}, la pi
 \caption{Modelo B}
 \label{fig:caminos_montyhall}
 \end{subfigure}
-\caption{Los caminos paralelos que se generan a partir de los modelos causales alternativos. El principio de m\'axima incertidumbre, dada la informaci\'on disponible, divide la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal.\todo[inline]{el principio de incertidumbre no divide nada, en todo caso, para cumplir con ese principio, es necesario dividir la creencia en partes iguales}}
+\caption{Los posibles universos dado los modelos causales alternativos. Por el principio de indiferencia dividimos la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal. Por simplicidad suponemos que $c=1$.}
 \label{fig:caminos}
 \end{figure}
 %
-La creencia en las hojas de los universos paralelos del modelo causal representa la \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$, $P(r=i, s=j|\text{Modelo})$.
-\todo[inline]{hojas del universo paralelo, de que estas hablando??}
+En el modelo A, por cada posible posici\'on del regalo, se abren otros dos universos paralelos que se corresponden con las cajas hacia las que puede se\~nalar la pista, en las que no est\'a el regalo en ese universo (figura~\ref{fig:caminos_pre_montyhall}).
+%
+En cambio, en el modelo B, la pista genera dos universos solo cuando el regalo est\'a en la misma caja que elegimos, $r=c=1$ (figura~\ref{fig:caminos_montyhall}).
+%
+La creencia que llega a las hojas representa la \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$, $P(r=i, s=j|\text{Modelo})$.
 %
 \begin{table}[ht!]
 \centering
@@ -1278,13 +1276,14 @@ $P(r=i, s=j | \text{Modelo A})$ \hspace{1.8cm} $P(r=i, s=j | \text{Modelo B})$ \
   \label{tab:creencia_conjunta}
 \end{table}
 %
+Esta informaci\'on la podemos resumir en forma de tabla que representa la creencia asignada a cada uno de los universos paralelos (tabla~\ref{tab:creencia_conjunta}).
 %La conjunci\'on l\'ogica la expresamos con una simple coma ($,$), y colocamos del lado derecho del condicional ($\cdot|\cdot$) las proposiciones que moment\'aneamente consideramos ciertas.
-%
-Cada una de las celdas de la tabla representa una de las terminales de los universos paralelos representados en la figura~\ref{fig:caminos}.
-\todo[inline]{No se entiende nada de lo que explicas, realmente no se puede seguir lo que estas diciendo}
+
 % Parrafo
 
-Por el ``principio de integridad'', la creencia asignada a una variable individual (creencia marginal) es la suma de todos los caminos paralelos (creencia conjunta) en los que esa variable est\'a presente.
+En la tabla~\ref{tab:creencia_conjunta} tenemos la creencia conjunta de que ocurren ambas variables a la vez.
+%
+Por el principio de integridad (o regla de la suma), la creencia de una variable individual (creencia marginal) no es más que la suma de las creencias asignadas a todos los universos en los que esa variable est\'a presente.
 %
 \begin{equation} \label{eq:creencia_marginal}
 \begin{split}
@@ -1296,7 +1295,7 @@ P(s_j|\text{Modelo A}) = \sum_i P(r_i, s_j|\text{Modelo A}) = 1/3 \\  P(s_j|\tex
 
 Lo mismo ocurre con cualquiera de las variables de un modelo multidimensional.
 %
-En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$
+En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$.
 %
 \begin{figure}[H]
 \centering
@@ -1310,20 +1309,20 @@ En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
         }
-\caption{Creencia marginal honesta sobre el regalo en ambos modelos causales. }
+\caption{Creencia marginal honesta sobre el regalo en ambos modelos causales.}
 \end{figure}
-
-\subsection{Principio de coherencia} \label{sec:principio_choerencia} % (dados los datos de base emp\'irica)
-
-El principio de no mentir nos permiti\'o definir la creencia conjunta honesta inicial, y el principio de integridad nos permiti\'o derivar de ella la creencia marginal honesta.
 %
-?`Pero c\'omo para preservar los acuerdos intersubjetivos cuando recibimos nueva informaci\'on?
+La cerradura representa la variable $c$ (la elección de la caja) que por simplicidad consideramos que vale $c=1$ (que elegimos la primera caja).
+
+\subsection{Principio de coherencia (regla del producto)} \label{sec:principio_choerencia} % (dados los datos de base emp\'irica)
+
+El principio indiferencia (MaxEnt) nos permiti\'o definir la creencia conjunta honesta inicial, y el principio de integridad (regla de la suma) nos permiti\'o derivar de ella la creencia marginal honesta.
 %
-El principio de coherencia establece que la nueva creencia honesta, despu\'es de haber visto un nuevo dato, es la creencia previa que sigue siendo compatible con ese dato.
-
-% Parrafo
-
-Supongamos que alguien nos indica con certeza que el regalo no est\'a en la caja del medio.
+?`Pero c\'omo podemos preservar los acuerdos intersubjetivos cuando recibimos nueva informaci\'on?
+%
+Veamos un ejemplo.
+% %
+Supongamos que alguien nos indica con certeza que el regalo no est\'a en la caja del medio, $s=2$, después de haber elegido la primera caja, $c=1$.
 %
 ?`Cu\'al es la nueva creencia marginal honesta sobre el regalo despu\'es de haber visto esta pista?
 
@@ -1344,22 +1343,9 @@ Supongamos que alguien nos indica con certeza que el regalo no est\'a en la caja
         }
 \end{figure}
 
-% Parrafo
+Por el principio de coherencia la nueva creencia honesta, despu\'es de haber visto un nuevo dato, debe ser la creencia honesta previa que sigue siendo compatible con ese dato.
 %
-% Para actualizar las creencias posiblemente nos veamos tentados a aplicar el principio de indiferencia nuevamente, asignando $0.5$ a las dos cajas restantes.
-% %
-% Aunque esa propuesta coincida con la soluci\'on correcta que obtendremos para el modelo A, esa
-% decisi\'on conduce a errores en t\'erminos generales.
-% %
-% El principio de indiferencia s\'olo se aplica una \'unica vez, al inicio.
-% %
-% Despu\'es s\'olo actualizaremos esa creencia en funci\'on de la nueva informaci\'on que vayamos incorporando.
-%
-% % Parrafo
-
-Para actualizar las creencias simplemente nos quedamos con la creencia previa que es compatible con el dato.
-%
-Para ello nos quedamos con los caminos paralelos del modelo causal que siguen siendo compatible con el observable, $P(r_i, s_2)$.
+Para ello nos quedamos con los caminos paralelos del modelo causal que siguen siendo compatible con el observable, $P(r_i, s_2)$, dejando fijo el valor de $s=2$ y variable el valor $r=i$.
 %
 \begin{table}[ht!]
 \centering
@@ -1489,19 +1475,22 @@ En la figura~\ref{fig:caminos_compatibles} mostramos los caminos que son compati
 % En este caso, en el que estamos considerando una variable nueva (la se\~nal $s$) que representa la pista, el espacio de hip\'otesis es otro, m\'as grande, por lo que esta creencia a priori no nos sirve.
 % %
 
-Es decir, para actualizar nuestra creencia nos quedamos con la creencia a priori que es compatible con los datos.
+% Es decir, para actualizar nuestra creencia nos quedamos con la creencia a priori que es compatible con los datos.
+% %
+% Lo que nos permitir\'a cumplir el objetivo que nos hab\'iamos propuesto, actualizar la creencia sobre el regalo luego de haber visto la pista.
+% %
+La creencia que sobrevive, $P(r_i, s_2)$, no representa todavía nuestra la creencia total pues $\sum_i P(r_i,s_2) = P(s_2) < 1$.
 %
-Lo que nos permitir\'a cumplir el objetivo que nos hab\'iamos propuesto, actualizar la creencia sobre el regalo luego de haber visto la pista.
-%
-\textbf{La creencia que sobrevive}, $P(r_i, s_2)$, es ahora nuestra nueva creencia total.
-%
-Para expresarla nuevamente como tal, la normalizamos para que vuelva a sumar 1.
+Para que la creencia que sobrevive sea considerada nuestra nueva creencia total necesitamos normalizarla por la creencia total que sobrevive, de modo tal para que vuelva a sumar 1.
 %
 \begin{equation}
-P(r_i| s_2, \text{Modelo} ) = \frac{P(r_i, s_2| \text{Modelo})}{P(s_2| \text{Modelo})}
+\underbrace{P(r_i| s_2, \text{Modelo})}_{\hfrac{\text{Nueva creencia}}{\text{}}} = \frac{\overbrace{P(r_i, s_2| \text{Modelo})}^{\hfrac{\text{Creencia que}}{\text{sobrevive}}}}{\underbrace{P(s_2| \text{Modelo})}_{\hfrac{\text{Creencia total}}{\text{que sobrevive}}}}
 \end{equation}
 %
-La concusi\'on a la que llegamos depende del modelo causal elegido.
+Si multiplicamos a ambos lados por el denominador, obtenemos la expresión de la regla del producto de la teor\'ia de la probabilidad.
+%
+La nueva distribución de creencias a la que llegamos depende del modelo causal elegido.
+%
 \begin{figure}[ht!]
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
@@ -1545,13 +1534,13 @@ La teor\'ia de la probabilidad es actualmente el enfoque m\'as utilizado para re
 %
 La teor\'ia de la probabilidad puede resumirse en dos reglas, conocidas como la regla de la suma y la regla del producto.
 %
-La regla de la suma proviene del principio de integridad y establece que cualquier creencia marginal puede ser obtenida integrando la creencia conjunta.
+La regla de la suma expresa el principio de integridad y establece que cualquier creencia marginal puede ser obtenida integrando la creencia conjunta.
 %
 \begin{equation}
 P(r_i) = \sum_j P(r_i, s_j)
 \end{equation}
 %
-La segunda regla proviene del principio de coherencia y, expresada como producto, establece que cualquier distribuci\'on conjunta puede ser expresada como el producto de distribuciones condicionales uni-dimensionales.
+La regla del producto expresa el principio de coherencia y establece que cualquier distribuci\'on conjunta puede ser expresada como el producto de distribuciones condicionales uni-dimensionales.
 %
 \begin{equation}
 P(s_j)P(r_i|s_j) = P(r_i, s_j)
@@ -1565,9 +1554,10 @@ El sistema axiom\'atico de Cox~\cite{Cox1946} las deriva a partir de axiomas del
 %
 El sistema axiom\'atico de Ramsey~\cite{Ramsey1926} las deriva haciendo una analog\'ia con los pagos que aceptar\'iamos en una apuesta.
 %
-El sistema axiom\'atico de Kolmogorov~\cite{Kolmogorov1950} la regla de la suma forma parte de los axiomas y la regla del producto de una definici\'on complementaria.
+El sistema axiom\'atico de Kolmogorov~\cite{Kolmogorov1950} no busca justificar las reglas de la probabilidad pues la regla de la suma se incluye directamente como axioma y la regla del producto se propone como una definici\'on complementaria.
 %
-Este sistema axiom\'atico es el m\'as utilizado y en su versi\'on original dice,
+Este último sistema axiom\'atico es el m\'as utilizado por su simplicidad matemática y en su versi\'on original dice,
+%
 \begin{quotation}
 Sea $E$ un conjunto de elementos y $F$ un conjunto de subconjuntos de $E$.
 %
@@ -1625,7 +1615,7 @@ En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes de
 \underbrace{P(\text{Hip\'otesis }|\text{ Datos, Modelo})}_{\text{\scriptsize Posterior}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis, Modelo})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis }|\text{ Modelo})}^{\text{\scriptsize Prior}} }{\underbrace{P(\text{Datos }|\text{ Modelo})}_{\text{\scriptsize Evidencia}}}
 \end{equation}
 %
-Los diferentes factores del teorema de Bayes han recibido nombres a lo largo de la historia, que revisemos a continuaci\'on.
+Los diferentes factores del teorema de Bayes han recibido nombres a lo largo de la historia, que revisamos a continuaci\'on.
 
 \subsubsection{Prior}
 
@@ -7845,7 +7835,7 @@ Si bien nuestro objetivo inicial era el estudio de la evoluci\'on de las estrate
 %
 Con el estimador de habilidad estado-del-arte de aquel momento (TrueSkill) que utilizamos en el cap\'itulo~\ref{ch:team}, incorporamos los modelos bayesianos a la tesis.
 %
-Gracias a que el modelo estaba disponible como paquetes en varios lenguajes de programaci\'on, pudimos llevar adelante ese primer trabajo sin conocer todos sus detalles t\'ecnicos. 
+Gracias a que el modelo estaba disponible como paquetes en varios lenguajes de programaci\'on, pudimos llevar adelante ese primer trabajo sin conocer todos sus detalles t\'ecnicos.
 %
 En el primer art\'iculo cient\'ifico~\cite{Landfried2019}, sin embargo, usamos m\'etodos frecuentistas para analizar los efectos que la formaci\'on de equipos tiene sobre el aprendizaje: el efecto positivo de jugar en equipo, especialmente de tener compa\~neros estables.
 
@@ -8738,7 +8728,7 @@ En la segunda parte presentamos el modelo bayesiano \texttt{TrueSynergy}, una mo
 Realizamos simulaciones sint\'eticas para cuantificar la mejora de estimaci\'on de habilidad de \texttt{TrueSynergy} cuando los equipos tienen un componente de sinergia.
 %A su vez, ejecutamos simulaciones para cuantificar los efectos negativos que genera el agregado de complejidad del modelo \texttt{TrueSynergy} sobre la estimaci\'on de habilidad de los jugadores individuales en contextos donde no hay presencia alguna de sinergia.
 
-\subsection{TrueSkill: sobrestimaci\'on de habilidad en contextos de sinergia} 
+\subsection{TrueSkill: sobrestimaci\'on de habilidad en contextos de sinergia}
 
 \texttt{TrueSkill} fue dise\~nado para clacular la habilidad de los jugadores en equipo, sin considerar la posibilidad de que exista sinergia entre jugadores.
 En la p\'agina oficial de \texttt{TrueSkill}, en la secci\'on preguntas frecuentes,
@@ -8748,7 +8738,7 @@ En la p\'agina oficial de \texttt{TrueSkill}, en la secci\'on preguntas frecuent
  \textbf{Q: You are saying that the TrueSkill ranking system assumes that the skill of a team is the sum of the skills of its players. I think this model is not appropriate: I am usually playing much better with people from my friends list rather than with random players. Will this assumption lead to incorrect rankings?}
 
  \vspace{0.3cm}
- 
+
  The assumption that the team skill is the sum of the skills of its players is exactly that: an assumption. The TrueSkill ranking system will use the assumption to adopt the skill points of individual players such that the team outcome can be best predicted based on the additive assumptions of the skills. Provided that you and your friends also play team games with other players now and then, \emph{the TrueSkill ranking system will assign you a skill belief that is somewhere between the skill when you are playing with your friends and the skill when you are playing as an individual}. So, in the worst case, every other game is not with your friends: then you are slightly ranked too high when you play with random team players and slightly ranked too low when you play with your friends. But, if you mostly play with your friends only the system will identify your skill correctly for most of your games.
 \end{quote}
 
@@ -8762,25 +8752,25 @@ Compiten con gente siempre distinta (sistema abierto), a la que se le conoce la 
 Las simulaciones realizadas con sinergia permiten formular la siguiente hip\'otesis: \emph{La sinergia se incorpora como skill de los jugadores en la proporci\'on de partidas jugadas juntos.}
 
 \begin{equation}\label{eq:sobreestimacion}
-   \hfrac{\text{sobreestimaci\'on}}{\text{por jugador}} = \frac{\text{sinergia total del equipo}}{\text{tama\~no del equipo}}(\text{proporci\'on de partidas en equipo}) 
+   \hfrac{\text{sobreestimaci\'on}}{\text{por jugador}} = \frac{\text{sinergia total del equipo}}{\text{tama\~no del equipo}}(\text{proporci\'on de partidas en equipo})
 \end{equation}
 
 A continuaci\'on detallamos los experimentos realizados
 
 \begin{enumerate}
- 
+
  \item Dos jugadores, con sinergia equivalente a $8$~tsp, juegan la mitad de las veces partidas individuales. Observaci\'on: la sobreestimaci\'on de habilidad de cada jugador es de $2$~TrueSkill Points (tsp) de acuerdo a la ecuaci\'on \ref{eq:sobreestimacion} (Fig.~\ref{F2})
- 
+
  \item Dos jugadores, con sinergia equivalente a $8$~tsp, juegan $\frac{1}{3}$ de las veces partidas individuales. Observaciones: La sinergia se absorbe de acuerdo a la ecuaci\'on \ref{eq:sobreestimacion}, $\frac{8}{2}\frac{2}{3} = 2.667$ (Fig.~\ref{F4})
-  
+
  \item Dos jugadores, con sinergia equivalente a $8$~tsp, juegan $\frac{1}{5}$ de las veces partidas individuales. Observaciones: La sinergia se absorbe de acuerdo a la ecuaci\'on \ref{eq:sobreestimacion}. $\frac{8}{2}\frac{4}{5} = 3.2$ (Fig.~\ref{F5}).
-  
+
  \item Dos jugadores, con sinergia equiavelente a $8$~tsp, juegan $\frac{1}{10}$ de las veces partidas individuales. Observaciones: La sinergia se absorbe de acuerdo a la ecuaci\'on \ref{eq:sobreestimacion}. $\frac{8}{2}\frac{9}{10} = 3.6 $ (Fig.~\ref{F6})
-  
+
  \item  Tres jugadores, una par de jugadores aportan sinergia equiavelente a $8$~tsp, las otras aportan $0$. Juegan $\frac{1}{2}$ de las veces partidas individuales. Observaciones: La sinergia se absorbe de acuerdo a la ecuaci\'on \ref{eq:sobreestimacion} (Fig.~\ref{F7})
- 
+
  \item  Tres jugadores, las tres aristas aportan cada una sinergia equiavelente a $8$~tsp. Juegan $\frac{1}{2}$ de las veces partidas individuales. Observaciones: La sinergia se absorbe de acuerdo a la ecuaci\'on \ref{eq:sobreestimacion} (Fig.~\ref{F8})
- 
+
 \end{enumerate}
 
  \begin{figure}[H]
@@ -8816,7 +8806,7 @@ A continuaci\'on detallamos los experimentos realizados
 Mediante ejemplos sint\'eticos (Fig.~\ref{fig:sobreestimacion}) observamos que en el modelo \texttt{TrueSkill} la sinergia se asigna equivocadamente como habilidad de los jugadores.
 El error de estimaci\'on del modelo \texttt{TrueSkill} parece estar definido por la ecuaci\'on~\ref{eq:sobreestimacion}.
 La magnitud del error de estimaci\'on de habilidad de los jugadores puede ser arbitrariamente grande, proporcional a la sinergia del equipo.
-Es necesario entonces contar con un modelo capaz de distinguir qu\'e componenetes del rendimiento de un equipo provienen de la habilidad individual de cada jugador, y qu\'e componentes del rendimiento de un equipo provienen de la sinergia entre jugadores. 
+Es necesario entonces contar con un modelo capaz de distinguir qu\'e componenetes del rendimiento de un equipo provienen de la habilidad individual de cada jugador, y qu\'e componentes del rendimiento de un equipo provienen de la sinergia entre jugadores.
 
 \subsection{Modelo TrueSynergy}
 
@@ -8888,13 +8878,13 @@ A continuaci\'on detallamos los experimentos realizados
 
 \subsubsection{Convergencia de habilidad y sinergia}
 \begin{enumerate}
- 
+
  \item Dos jugadores, con sinergia equivalente a $8$~tsp, juegan 75\% de las partidas individuales (Fig.~\ref{H4_mu} y \ref{H4_lambda})
- 
+
  \item Dos jugadores, con sinergia equivalente a $8$~tsp, 50\% de las partidas individuales (Fig.~\ref{H1_mu} y \ref{H1_lambda}).
-  
+
  \item Dos jugadores, con sinergia equivalente a $8$~tsp, 25\% de las partidas individuales (Fig.~\ref{H3_mu} y \ref{H3_lambda}).
-  
+
 \end{enumerate}
 
 \begin{figure}[H]
