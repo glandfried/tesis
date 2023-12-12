@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{book}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-tabla]{babel}
 \usepackage[binary-units]{siunitx} % \num{} \SI{}
 \usepackage{letltxmacro}
 \LetLtxMacro{\svqty}{\qty}
@@ -1042,7 +1042,7 @@ Este principio se formaliz\'o a mediados del siglo 20 como ``m\'axima entrop\'ia
 Antes de su definici\'on formal, esta idea ya era discutida en el siglo 18 por los fundadores de la teor\'ia de la probabilidad bajo el nombre de \emph{principio de indiferencia}~\cite{jaynes1984-bayesianBackground}.
 %
 Seg\'un este principio, cuando no existe razones para tener preferencia por ninguna de las opciones debemos asignar la misma creencia a todos los eventos para no mentir (MaxEnt).
-\todo[inline]{Saca la primera parte, no tiene nada que ver por como venis presentando los conceptos y no hace falta, quedate con presentar el principio de indiferencia y llama así a la subsection}
+\todo[inline]{Saca la primera parte, no tiene nada que ver por como venis presentando los conceptos y no hace falta, quedate con presentar el principio de indiferencia y llama as\'i a la subsection}
 
 %
 Esta distribuci\'on de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales).
@@ -1084,16 +1084,21 @@ Para ello, extenderemos el ejemplo del regalo.
 \subsubsection{M\'axima incertidumbre dado modelos causales alternativos}
 
 %
-Supongamos que ahora nos piden que elijamos una caja $c \in \{1, 2, 3\}$ y despu\'es alguien nos muestra el interior de una caja $s \in \{1, 2, 3\}$ en la que no est\'a el regalo $r \in \{1, 2, 3\}$.
+Sigamos con el ejemplo del regalo escondido dentro de una de tres cajas. 
+Tenemos que eligir una caja $c \in \{1, 2, 3\}$, pero ahora un or\'aculo nos indica que en el interior de una de las cajas $s \in \{1, 2, 3\}$ \textbf{no est\'a} el regalo $r \in \{1, 2, 3\}$.
 \todo[inline]{Por qu\'e aca cambias la notaci\'on? no hay motivos para saltar de nomeclatura. Ya se que a vos te parece trivial, pero no se justifica y puede confundir. En todo caso, empareja para que lo anterior sea consistente con esta si es que la notacion a partir de aca es mejor o mas clara para lo que sigue.} 
 %
 En este ejemplo tenemos tres variables: la posici\'on del regalo, $r$; la caja que elegimos, $c$; y la pista que recibimos $s$.
 %
-Por la descripci\'on del juego sabemos que hay al menos una relaci\'on causal entre la posici\'on del regalo $r$ y la pista $s$, pues la pista no puede abrir la misma posici\'on en la que encuentra el regalo $s \neq r$.
+En base a la descripci\'on del juego, sabemos que al menos hay una relaci\'on causal entre la posici\'on del regalo $r$ y la pista $s$, pues la pista \textbf{no puede coincidir} con la misma posici\'on en la que encuentra el regalo, es decir $s \neq r$.
+\todo[inline]{Esta bien que es un ejemplo, pero que sucede con nuestra selecci\'on en el modelo A, no se lo considera? Se supone que no importa? Algo habr\'ia que decir al respecto para formular el modelo A, sino queda raro. No servir\'ia mejor comenzar por un modelo en el que elegimos la posici\'on y otro en el que se agrega la pista? Queda raro que el juego sea elegir la caja y en el modelo A eso no est\'a contemplado.}
 %
 Este modelo causal se especifica de forma gr\'afica en la figura~\ref{fig:modelo_causal_1}.
+\todo[inline]{Tenes que presentar la notaci\'on gr\'afica: qu\'e significan los c\'irculos y qu\'e las flechas}
 %
-Adem\'as, podemos sospechar que existe una segunda relaciones causal, seg\'un la cual la pista tampoco est\'a habilitada a abrir la caja que elegimos $s \neq c$ (figura \ref{fig:modelo_causal_2}).
+Adem\'as, podemos sospechar que existe una segunda relaci\'on causal, seg\'un la cual la pista tampoco podr\'ia coincidir con la caja que elegimos, es decir $s \neq c$. 
+La figura~\ref{fig:modelo_causal_2} ejemplifica este modelo alternativo que incluye las dos relaciones mencionadas.
+\todo[inline]{En general, habr\'ia que explicar la causalidad en estos modelos, yo no entiendo como se deducen esas relaciones del texto que pones, no est\'a bien explicado}
 
 % Parrafo
 
@@ -1134,25 +1139,26 @@ Adem\'as, podemos sospechar que existe una segunda relaciones causal, seg\'un la
   \end{subfigure}
   \caption{Modelos causales alternativos. Modelo~\subref{fig:modelo_causal_1}: la pista s\'olo depende de la posici\'on del regalo. Modelo~\subref{fig:modelo_causal_2}: la pista depende de la posici\'on del regalo y la caja elegida previamente.
   Los c\'irculos representan las variables y la flecha representa la relaci\'on causa $\rightarrow$ efecto.
-  %A su vez, $r=i$ representa la proposici\'on ``el regalo se encuentra en la posici\'on $i$'', y $s=i$ representa la proposici\'on ``la pista se\~nala la posici\'on $i$''.
+  \todo[inline]{Fijate que en el texto hablas de \emph{dependencia} pero antes te referis a causalidad... al menos en espa\~nol esas palabras tienen distinta fuerza, tendr\'ias que definir bien a que llamas la relaci\'on causa-efecto en este ejemplo, a m\'i no me queda claro}q 
   }
   \label{fig:modelos_causales}
 \end{figure}
 
 
-Ahora, para determinar la distribuci\'on de creencias honestas debemos maximizar la incertidumbre incorporando la informaci\'on que proveen los modelos causales.
+Para determinar la distribuci\'on de creencias, debemos maximizar la incertidumbre incorporando la informaci\'on que proveen los modelos causales.
 %
 Cada uno de los modelos causales alternativos restringe un conjunto de universos posibles.
 %
-Aplicando el principio indiferencia, dividimos la creencia en partes iguales en cada una de las bifurcaciones de los universos paralelos que producen los modelos causales.
+Aplicando el principio de indiferencia, dividimos la creencia en partes iguales en cada una de las bifurcaciones de los universos paralelos que producen los modelos causales.
 %
 En la figura~\ref{fig:caminos} mostramos c\'omo se divide la creencia a través de los universos paralelos de ambos modelos causales.
 %
-Los caminos que van de la raíz a la hoja representan universos posibles del modelo causal.
+Los caminos que van de la ra\'iz a la hoja representan universos posibles del modelo causal.
 %
-El estado del universo se representa con círculos.
+El estado del universo se representa con c\'irculos.
+\todo[inline]{Que es el \emph{estado}? Donde lo definiste antes? El estado son las hipotesis que vas dando por ciertas en ese camino causal? Hay que explicar las cosas}
 %
-La raíz contiene toda la creencia, la cual se divide en cada una de las bifurcaciones hasta llegar a las hojas.
+La ra\'iz contiene toda la creencia, la cual se divide en cada una de las bifurcaciones hasta llegar a las hojas.
 %
 De esta forma se maximiza la incertidumbre dada la informaci\'on provista por los modelos causales.
 %
@@ -1165,22 +1171,22 @@ Para simplificar el problema, consideramos que la variable $c$ es conocida, y va
 \tikz{
 \node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
 
-\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r_1$};
-\node[latent,below=of b0,yshift=0.7cm] (r2) {$r_2$};
-\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r_3$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r=1$};
+\node[latent,below=of b0,yshift=0.7cm] (r2) {$r=2$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r=3$};
 
 \node[latent, below=of r1, draw=white, yshift=0.7cm] (br1) {$\frac{1}{3}$};
 \node[latent, below=of r2, draw=white, yshift=0.7cm] (br2) {$\frac{1}{3}$};
 \node[latent, below=of r3, draw=white, yshift=0.7cm] (br3) {$\frac{1}{3}$};
-\node[latent,below=of br1,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s_2$};
-\node[latent,below=of br1,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s_3$};
+\node[latent,below=of br1,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s=2$};
+\node[latent,below=of br1,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s=3$};
 
 \node[latent,below=of r1d2,yshift=0.7cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
 \node[latent,below=of r1d3,yshift=0.7cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};
-\node[latent,below=of br2,yshift=0.7cm, xshift=-0.5cm] (r2d1) {$s_1$};
-\node[latent,below=of br2,yshift=0.7cm, xshift=0.5cm] (r2d3) {$s_3$};
-\node[latent,below=of br3,yshift=0.7cm, xshift=-0.5cm] (r3d1) {$s_1$};
-\node[latent,below=of br3,yshift=0.7cm, xshift=0.5cm] (r3d2) {$s_2$};
+\node[latent,below=of br2,yshift=0.7cm, xshift=-0.5cm] (r2d1) {$s=1$};
+\node[latent,below=of br2,yshift=0.7cm, xshift=0.5cm] (r2d3) {$s=3$};
+\node[latent,below=of br3,yshift=0.7cm, xshift=-0.5cm] (r3d1) {$s=1$};
+\node[latent,below=of br3,yshift=0.7cm, xshift=0.5cm] (r3d2) {$s=2$};
 
 \node[latent,below=of r2d1,yshift=0.7cm, draw=white] (br2d1) {$\frac{1}{3}\frac{1}{2}$};
 \node[latent,below=of r2d3,yshift=0.7cm,draw=white] (br2d3) {$\frac{1}{3}\frac{1}{2}$};
@@ -1207,9 +1213,9 @@ Para simplificar el problema, consideramos que la variable $c$ es conocida, y va
 \centering
 \tikz{
 \node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
-\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r_1$};
-\node[latent,below=of b0,yshift=0.7cm] (r2) {$r_2$};
-\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r_3$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=-2cm] (r1) {$r=1$};
+\node[latent,below=of b0,yshift=0.7cm] (r2) {$r=2$};
+\node[latent,below=of b0,yshift=0.7cm, xshift=2cm] (r3) {$r=3$};
 
 % \node[latent, below=of r1, draw=white, yshift=0.8cm] (br1) {$\frac{1}{3}$};
 % \node[latent, below=of r2, draw=white, yshift=0.8cm] (br2) {$\frac{1}{3}$};
@@ -1221,10 +1227,10 @@ Para simplificar el problema, consideramos que la variable $c$ es conocida, y va
 \node[latent, below=of r1, draw=white, yshift=0.7cm] (bc11) {$\frac{1}{3}$};
 \node[latent, below=of r2, draw=white, yshift=0.7cm] (bc12) {$\frac{1}{3}$};
 \node[latent, below=of r3, draw=white, yshift=0.7cm] (bc13) {$\frac{1}{3}$};
-\node[latent,below=of bc11,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s_2$};
-\node[latent,below=of bc11,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s_3$};
-\node[latent,below=of bc12,yshift=0.7cm] (r2d3) {$s_3$};
-\node[latent,below=of bc13,yshift=0.7cm] (r3d2) {$s_2$};
+\node[latent,below=of bc11,yshift=0.7cm, xshift=-0.5cm] (r1d2) {$s=2$};
+\node[latent,below=of bc11,yshift=0.7cm, xshift=0.5cm] (r1d3) {$s=3$};
+\node[latent,below=of bc12,yshift=0.7cm] (r2d3) {$s=3$};
+\node[latent,below=of bc13,yshift=0.7cm] (r3d2) {$s=2$};
 
 \node[latent,below=of r1d2,yshift=0.7cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
 \node[latent,below=of r1d3,yshift=0.7cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};
@@ -1251,56 +1257,62 @@ Para simplificar el problema, consideramos que la variable $c$ es conocida, y va
 \caption{Modelo B}
 \label{fig:caminos_montyhall}
 \end{subfigure}
-\caption{Los posibles universos dado los modelos causales alternativos. Por el principio de indiferencia dividimos la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal. Por simplicidad suponemos que $c=1$.}
+\caption{Los posibles universos dado los modelos causales alternativos. Por el principio de indiferencia dividimos la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal. Por simplicidad suponemos que $c=1$.
+\todo[inline]{Fijate que ajust\'e la notaci\'on de la figura para que sea coherente con lo que dec\'is al principio. Adem\'as, yo te sugiero poner la distribuci\'on de probabilidad para separar en casos por nivel y dejar la parte de obtener la condicional en el texto. Por ejemplo en el modelo A para el camino r=1, yo separar\'ia 1/2 y 1/2 en cada opcion de s sin incluir la multiplicaci\'on por la probablidad de que pase r=1, eso lo discutir\'ia directamente en el texto. Ademas, tenes que aclarar que pasa con las bifurcaciones que no incluis, se entienden que son caminos de creencia nula porque no pueden ocurrir, pero no decis nada y despues aparecen en la tabla de abajo todas las combinaciones, lo mas prolijo sería incluirlas aca con 0.}}
 \label{fig:caminos}
 \end{figure}
 %
 En el modelo A, por cada posible posici\'on del regalo, se abren otros dos universos paralelos que se corresponden con las cajas hacia las que puede se\~nalar la pista, en las que no est\'a el regalo en ese universo (figura~\ref{fig:caminos_pre_montyhall}).
+\todo[inline]{Aca tenes que explicar que luego en el siguiente nivel volves a aplicar el principio de indiferencia y separar la creencia total de ese universo en los dos casos posible y le asignas la mitad a cada una. Luego tendr\'ias que presentar la noci\'on de condicional si queres hablar de la prob de cada caso. Ademas, en realidad en cada caso se abren tres opciones, no dos, solo que una es un camino prohibido o con creencia nula.}
 %
 En cambio, en el modelo B, la pista genera dos universos solo cuando el regalo est\'a en la misma caja que elegimos, $r=c=1$ (figura~\ref{fig:caminos_montyhall}).
 %
-La creencia que llega a las hojas representa la \emph{creencia conjunta} honesta de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$, $P(r=i, s=j|\text{Modelo})$.
+La creencia que llega a las hojas representa la \emph{creencia conjunta} de que el regalo se encuentre en la caja $i$ y la pista se\~nale la caja $j$, $P(r=i, s=j|\text{Modelo})$.
 %
 \begin{table}[ht!]
 \centering
 $P(r=i, s=j | \text{Modelo A})$ \hspace{1.8cm} $P(r=i, s=j | \text{Modelo B})$ \\[0.1cm]
  \begin{tabular}{|c|c|c|c|} \hline \setlength\tabcolsep{0.4cm}
-       & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, \\ \hline
-  $s_1$ & $0$ & $1/6$ & $1/6$  \\ \hline
-  $s_2$ & $1/6$ & $0$ & $1/6$  \\ \hline
-  $s_3$ & $1/6$ & $1/6$ & $0$ \\ \hline
+       & \, $r=1$ \, &  \, $r=2$ \, & \, $r=3$ \, \\ \hline
+  $s=1$ & $0$ & $1/6$ & $1/6$  \\ \hline
+  $s=2$ & $1/6$ & $0$ & $1/6$  \\ \hline
+  $s=3$ & $1/6$ & $1/6$ & $0$ \\ \hline
   \end{tabular}
   \hspace{1.5cm}
   \begin{tabular}{|c|c|c|c|} \hline  \setlength\tabcolsep{0.4cm}
- & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \,  \\ \hline
-  $s_1$ & $0$ & $0$ & $0$ \\ \hline
-  $s_2$ & $1/6$ & $0$ & $1/3$ \\ \hline
-  $s_3$ & $1/6$ & $1/3$ & $0$  \\ \hline
+ & \, $r=1$ \, &  \, $r=2$ \, & \, $r=3$ \,  \\ \hline
+  $s=1$ & $0$ & $0$ & $0$ \\ \hline
+  $s=2$ & $1/6$ & $0$ & $1/3$ \\ \hline
+  $s=3$ & $1/6$ & $1/3$ & $0$  \\ \hline
   \end{tabular}
-  \caption{Creencia conjunta honesta para cada uno de los modelos causales. Las celdas representan universos paralelos y el valor la creencia asignada a cada uno de ellos.}
+  \caption{Creencia conjunta para cada uno de los modelos causales. Las celdas representan universos paralelos y el valor la creencia asignada a cada una de ellas.
+  \todo[inline]{Tambien ajust\'e la notaci\'on en la tabla para que sea coherente con lo anterior. Ojo!}}
   \label{tab:creencia_conjunta}
 \end{table}
 %
-Esta informaci\'on la podemos resumir en forma de tabla que representa la creencia asignada a cada uno de los universos paralelos (tabla~\ref{tab:creencia_conjunta}).
+Esta informaci\'on la podemos resumir en forma de tabla~\ref{tab:creencia_conjunta} que representa la creencia asignada a cada uno de los universos paralelos.
 %La conjunci\'on l\'ogica la expresamos con una simple coma ($,$), y colocamos del lado derecho del condicional ($\cdot|\cdot$) las proposiciones que moment\'aneamente consideramos ciertas.
 
 % Parrafo
 
-En la tabla~\ref{tab:creencia_conjunta} tenemos la creencia conjunta de que ocurren ambas variables a la vez.
+En la tabla~\ref{tab:creencia_conjunta} tenemos la creencia conjunta de que ocurra cada combinaci\'on posible de variables.
 %
-Por el principio de integridad (o regla de la suma), la creencia de una variable individual (creencia marginal) no es m\'as que la suma de las creencias asignadas a todos los universos en los que esa variable est\'a presente.
+Por el principio de integridad (o regla de la suma), la creencia de una variable individual (creencia marginal) no es m\'as que la suma de las creencias asignadas en todos los universos en los que esa variable est\'a presente.
+Por ejemplo, podemos extraer la creencia individual de que la pista $s$ est\'e asignada a una posici\'on determinada: 
 %
 \begin{equation} \label{eq:creencia_marginal}
 \begin{split}
-P(s_j|\text{Modelo A}) = \sum_i P(r_i, s_j|\text{Modelo A}) = 1/3 \\  P(s_j|\text{Modelo B}) = \sum_i P(r_i, s_j|\text{Modelo B}) = 1/2
+P(s=j|\text{Modelo A}) = \sum_{i \in \{1,2,3\}} P(r=i, s=j|\text{Modelo A}) = 1/3 \\  P(s=j|\text{Modelo B}) = \sum_{i \in \{1,2,3\}} P(r=i, s=j|\text{Modelo B}) = 1/2
 \end{split}
 \end{equation}
-
+\todo[inline]{Falta discutir en palabras que significan estas ecuaciones, por ejemplo, dar la explicaci\'on  de que significa la diferencia en cada modelo. Tenes que decir en donde se mueve $i$ en la sumatoria. Adem\'as, segun la tabla de antes en el modelo B si s=1, la marginal es 0... esta bien?}
 % Parrafo
 
 Lo mismo ocurre con cualquiera de las variables de un modelo multidimensional.
+\todo[inline]{Y este comentario descolgado? A que apunta?}
 %
-En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$.
+En ambos modelos, la creencia marginal sobre el regalo es $1/3$.
+\todo[inline]{No te cuesta nada decir que es sumar por cada columna de la tabla en cada modelo, no? Ademas, no te sorprende que aun teniendo una pista, la marginal sobre el regalo siga siendo 1/3? A mi me sorprende. Algo tenes que decir}
 %
 \begin{figure}[H]
 \centering
@@ -1314,16 +1326,18 @@ En ambos modelos la creencia marginal honesta sobre el regalos es $1/3$.
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
         }
-\caption{Creencia marginal honesta sobre el regalo en ambos modelos causales.}
+\caption{Creencia marginal sobre el regalo en ambos modelos causales.}
 \end{figure}
 %
 La cerradura representa la variable $c$ (la elecci\'on de la caja) que por simplicidad consideramos que vale $c=1$ (que elegimos la primera caja).
+\todo[inline]{Esto ultimo no aporta nada, es solo para representar que podr\'ias estar eligiendo la primer caja? Yo lo sacaria si no tiene un objetivo claro}
 
 \subsection{Principio de coherencia (regla del producto)} \label{sec:principio_choerencia} % (dados los datos de base emp\'irica)
 
-El principio indiferencia (MaxEnt) nos permiti\'o definir la creencia conjunta honesta inicial, y el principio de integridad (regla de la suma) nos permiti\'o derivar de ella la creencia marginal honesta.
+El principio indiferencia (MaxEnt) nos permiti\'o definir la creencia conjunta inicial, y el principio de integridad (regla de la suma) nos permiti\'o derivar de ella la creencia marginal.
 %
 ?`Pero c\'omo podemos preservar los acuerdos intersubjetivos cuando recibimos nueva informaci\'on?
+\todo[inline]{Sacar todo esto de intersubjetivos!}
 %
 Veamos un ejemplo.
 % %
@@ -1355,14 +1369,14 @@ Para ello nos quedamos con los caminos paralelos del modelo causal que siguen si
 \begin{table}[ht!]
 \centering
 $P(r=i, s=2 | \text{Modelo A})$ \hspace{2.7cm} $P(r=i, s=2 | \text{Modelo B})$ \\[0.1cm]
-\begin{tabular}{|c|c|c|c||c|} \hline \setlength\tabcolsep{0.4cm}
-       & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline
-  $s_2$ & $1/6$ & $0$ & $1/6$ & $1/3$ \\ \hline
+\begin{tabular}{|c|c|c|c||c|} \hline \setlength\tabcolsep{0.2cm}
+       & \, $r=1$ \, &  \, $r=2$ \, & \, $r=3$ \, & \\ \hline
+  $s=2$ & $1/6$ & $0$ & $1/6$ & $1/3$ \\ \hline
   \end{tabular}
-  \hspace{1.5cm}
-  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm}
- & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, & \\ \hline
-  $s_2$ & $1/6$ & $0$ & $1/3$ & $1/2$ \\ \hline
+%   \hspace{1.5cm}
+  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.2cm}
+ & \, $r=1$ \, &  \, $r=2$ \, & \, $r=3$ \, & \\ \hline
+  $s=2$ & $1/6$ & $0$ & $1/3$ & $1/2$ \\ \hline
   \end{tabular}
   \caption{La creencia conjunta y marginal que sobrevive luego de ver el dato.}
   \label{tab:creencia_compatible}
@@ -1484,7 +1498,7 @@ En la figura~\ref{fig:caminos_compatibles} mostramos los caminos que son compati
 % %
 % Lo que nos permitir\'a cumplir el objetivo que nos hab\'iamos propuesto, actualizar la creencia sobre el regalo luego de haber visto la pista.
 % %
-La creencia que sobrevive, $P(r_i, s_2)$, no representa todavía nuestra la creencia total pues $\sum_i P(r_i,s_2) = P(s_2) < 1$.
+La creencia que sobrevive, $P(r_i, s_2)$, no representa todav\'ia nuestra la creencia total pues $\sum_i P(r_i,s_2) = P(s_2) < 1$.
 %
 Para que la creencia que sobrevive sea considerada nuestra nueva creencia total necesitamos normalizarla por la creencia total que sobrevive, de modo tal para que vuelva a sumar 1.
 %
@@ -8244,25 +8258,25 @@ Del mismo modo que seleccionar una \'unica hip\'otesis tiene consecuencias negat
 
 \section{Hacia una ciencia de datos causal bayesiana} \label{sec:volverAlFuturo}
 
-La aplicaci\'on estricta de las reglas de probabilidad (o enfoque bayesiano) constituye la base de la inteligencia artificial y de las ciencias empíricas que aspiran a alcanzar verdades en contextos de incertidumbre.
+La aplicaci\'on estricta de las reglas de probabilidad (o enfoque bayesiano) constituye la base de la inteligencia artificial y de las ciencias emp\'iricas que aspiran a alcanzar verdades en contextos de incertidumbre.
 %
 Si bien estas reglas se conocen desde el siglo 18, su aplicaci\'on se ha visto limitada hist\'oricamente debido al costo computacional asociado a la evaluaci\'on de todo el espacio de hip\'otesis.
 %
-Aunque estos obst\'aculos han sido superado gracias a los avances computacionales y algorítmicos modernos, la inercia hist\'orica hace que su desarrollo siga siendo incipiente, especialmente en países perif\'ericos.
+Aunque estos obst\'aculos han sido superado gracias a los avances computacionales y algor\'itmicos modernos, la inercia hist\'orica hace que su desarrollo siga siendo incipiente, especialmente en pa\'ises perif\'ericos.
 %
 Las cuestiones computacionales, sin embargo, son solo el primer paso de la inteligencia artificial.
 
 %
 
-Para explicar el mundo y tomar decisiones todas las ciencias que trabajan con datos, desde la física hasta las ciencias sociales, desarrollan teorías causales justamente porque no es posible sacar conclusiones causales y predecir las consecuencias de las intervenciones sin proponer modelos que tengan una interpretaci\'on causal~\cite{pearl2009-causality, peters2017-causalInference}.
+Para explicar el mundo y tomar decisiones todas las ciencias que trabajan con datos, desde la f\'isica hasta las ciencias sociales, desarrollan teor\'ias causales justamente porque no es posible sacar conclusiones causales y predecir las consecuencias de las intervenciones sin proponer modelos que tengan una interpretaci\'on causal~\cite{pearl2009-causality, peters2017-causalInference}.
 %
-Las teorías causales son hip\'otesis, y como tales pueden ser evaluadas mediante la aplicaci\'on estricta de las reglas de la probabilidad~\cite{winn2012-causality}, $P(\text{Teoría causal}|\text{Datos})$, que penaliza naturalmente la complejidad innecesaria.
+Las teor\'ias causales son hip\'otesis, y como tales pueden ser evaluadas mediante la aplicaci\'on estricta de las reglas de la probabilidad~\cite{winn2012-causality}, $P(\text{Teor\'ia causal}|\text{Datos})$, que penaliza naturalmente la complejidad innecesaria.
 %
-Hoy la inteligencia artificial tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema específico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
+Hoy la inteligencia artificial tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias emp\'iricas, y las ciencias emp\'iricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema espec\'ifico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
 
 \subsection{La comunidad Bayes Plurinacional}
 
-La relevancia de la aplicaci\'on estricta de las reglas de la probabilidad contrasta con la realidad actual en la que el enfoque bayesiano es marginal incluso en las universidades m\'as importantes de la regi\'on, y pr\'acticamente inexistente en ciencias empíricas que no cuentan con formaci\'on específica en matem\'atica y programaci\'on.
+La relevancia de la aplicaci\'on estricta de las reglas de la probabilidad contrasta con la realidad actual en la que el enfoque bayesiano es marginal incluso en las universidades m\'as importantes de la regi\'on, y pr\'acticamente inexistente en ciencias emp\'iricas que no cuentan con formaci\'on espec\'ifica en matem\'atica y programaci\'on.
 %
 Este diagn\'ostico fue emergiendo durante la segunda mitad del doctorado.
 %
@@ -8287,7 +8301,7 @@ Para ello, desarroll\'e otra pieza de software mediante la cual exploramos la re
 %
 En el anexo se pueden visualizar las redes bipartitas entre ``art\'iculos'' y ``autores'' (figura~\ref{fig:redes_co_autorias}).
 %
-En la siguiente figura~\ref{fig:papers_bayesianos} se detalla la cantidad de artículos científicos vinculados al enfoque bayesiano publicados cada a\~no con al menos una autoría con filiaci\'on en Am\'erica latina y el Caribe.
+En la siguiente figura~\ref{fig:papers_bayesianos} se detalla la cantidad de art\'iculos cient\'ificos vinculados al enfoque bayesiano publicados cada a\~no con al menos una autor\'ia con filiaci\'on en Am\'erica latina y el Caribe.
 
 % Parrafo
 
@@ -8328,9 +8342,9 @@ A partir del a\~no 2013 el crecimiento exponencial de las publicaciones bayesian
 
 Con el surgimiento de las redes neuronales profundas, nuevamente la complejidad computacional de la aplicaci\'on estricta de las reglas de la probabilidad act\'ua como un l\'imite al enfoque bayesiano.
 %
-A\'un así, el auge de las redes neuronales profundas no produjo la aparici\'on de un sistema de razonamiento bajo incertidumbre nuevo, con mejor desempe\~no que el de las reglas de la probabilidad.
+A\'un as\'i, el auge de las redes neuronales profundas no produjo la aparici\'on de un sistema de razonamiento bajo incertidumbre nuevo, con mejor desempe\~no que el de las reglas de la probabilidad.
 %
-El enfoque bayesiano sigue siendo el coraz\'on de la Inteligencia Artificial y de toda ciencia empírica.
+El enfoque bayesiano sigue siendo el coraz\'on de la Inteligencia Artificial y de toda ciencia emp\'irica.
 %
 En este contexto, NeurlIPS realiza una competencia en el a\~no 2021 denominada ``Approximate inference in Bayesian Deep Learning''.
 %
@@ -8349,7 +8363,7 @@ En este contexto, decidimos organizar el Congreso Bayesiano Plurinacional 2023.
 
 \subsection{El Congreso Bayesiano Plurinacional 2023}
 
-La comunidad Bayes Plurinacional realiz\'o con \'exito el Congreso Bayesiano Plurinacional 2023 los días 4, 5 y 6 de agosto en las instalaciones de la Secretaría de Ciencia y Tecnología de la provincia de Santiago del Estero, Argentina.
+La comunidad Bayes Plurinacional realiz\'o con \'exito el Congreso Bayesiano Plurinacional 2023 los d\'ias 4, 5 y 6 de agosto en las instalaciones de la Secretar\'ia de Ciencia y Tecnolog\'ia de la provincia de Santiago del Estero, Argentina.
 %
 La diversidad disciplinar fue extraordinaria: ecolog\'ia, medicina, astronom\'ia, geolog\'ia, psicolog\'ia, cu\'antica, econom\'ia, ingenier\'ia, filosof\'ia, biolog\'ia, estad\'istica, computaci\'on, antropolog\'ia, entre otras.
 %
@@ -8381,30 +8395,30 @@ Las sesiones de conversaciones en grupos lograron crear una ambiente ameno, de a
 Las exposiciones abarcaron una variedad de temas,
 %
 \begin{enumerate} \setlength\itemsep{-0.05cm} \small
-\item Gabriel A Alzamendi: \emph{M\'etodos basados en inferencia Bayesiana para la evaluaci\'on de los mecanísmos vocales de la fonaci\'on humana}.
+\item Gabriel A Alzamendi: \emph{M\'etodos basados en inferencia Bayesiana para la evaluaci\'on de los mecan\'ismos vocales de la fonaci\'on humana}.
 
 \item Nicol\'as A Comay: \emph{Abordaje Bayesiano a la toma de decisiones perceptuales y su confianza asociada}.
 
 \item Javier Arellana: \emph{Bayesian retrieval scheme and its application to Cassini Mission SAR observations in an area of Titan, Saturn's largest moon}.
 
 
-\item Yasmín E Navarrete Díaz: \emph{Sistemas fr\'agiles: una formulaci\'on bayesiana de la teoría cu\'antica}.
+\item Yasm\'in E Navarrete D\'iaz: \emph{Sistemas fr\'agiles: una formulaci\'on bayesiana de la teor\'ia cu\'antica}.
 
 
-\item Diego JR Sevilla: \emph{Regresi\'on bayesiana para el an\'alisis de series temporales con apilamiento en Astronomía de rayos X}.
+\item Diego JR Sevilla: \emph{Regresi\'on bayesiana para el an\'alisis de series temporales con apilamiento en Astronom\'ia de rayos X}.
 
-\item Andrea P Goijman: \emph{Modelos de ocupaci\'on multiespecie con enfoque bayesiano: una herramienta valiosa para estudios de biodiversidad en ecología}.
+\item Andrea P Goijman: \emph{Modelos de ocupaci\'on multiespecie con enfoque bayesiano: una herramienta valiosa para estudios de biodiversidad en ecolog\'ia}.
 
 \item Hossein Dinani: \emph{Bayesian estimation for quantum sensing}.
 
 
-\item Albert R Ortiz: \emph{Aplicaci\'on de m\'etodos bayesianos en ingeniería estructural}.
+\item Albert R Ortiz: \emph{Aplicaci\'on de m\'etodos bayesianos en ingenier\'ia estructural}.
 
-\item Gonzalo Ríos: \emph{Bayesian Machine Learning Applied to Marketing}.
+\item Gonzalo R\'ios: \emph{Bayesian Machine Learning Applied to Marketing}.
 
 \item Sergio M Davis Irarr\'azabal: \emph{Probabilidad bayesiana a partir de la estimaci\'on plausible de cantidades}.
 
-\item Tom\'as A Olego: \emph{M\'etodos robustos Bayesianos Generalizados para los modelos de regresi\'on logística}.
+\item Tom\'as A Olego: \emph{M\'etodos robustos Bayesianos Generalizados para los modelos de regresi\'on log\'istica}.
 
 \item Luciano Moffatt. \emph{Modelado Bayesiano Computacional de Sistemas Biol\'ogicos}.
 \end{enumerate}
@@ -8423,11 +8437,11 @@ Recientemente, la comunidad Bayes Plurinacional a enviado un proyecto a la organ
 
 \subsection{Taller ``Verdades emp\'iricas''}
 
-Durante el congreso present\'e un taller sobre inferencia bayesiana denominado ``Verdades empíricas'', que hace referencia a la necesidad que tienen las ciencias empíricas de alcanzar verdades (o acuerdos intersubjetivos) en contextos de incertidumbre.
+Durante el congreso present\'e un taller sobre inferencia bayesiana denominado ``Verdades emp\'iricas'', que hace referencia a la necesidad que tienen las ciencias emp\'iricas de alcanzar verdades (o acuerdos intersubjetivos) en contextos de incertidumbre.
 %
 El taller estuvo dividido en 5 unidades y un hackat\'on.
 %
-Se puede acceder en línea a trav\'es de \url{https://github.com/BayesPlurinacional/tallerBP-2023}.
+Se puede acceder en l\'inea a trav\'es de \url{https://github.com/BayesPlurinacional/tallerBP-2023}.
 
 % Parrafo
 
@@ -8463,9 +8477,9 @@ Se puede acceder en línea a trav\'es de \url{https://github.com/BayesPlurinacio
 
 En la unidad 1 se presenta una introducci\'on a los \emph{Modelos gr\'aficos e inferencia}.
 %
-Allí se justifican las reglas de la probabilidad y se presentan los m\'etodos gr\'afico de especificaci\'on matem\'atica de los modelos probabilísticos y se aplican las reglas de la probabilidad para evaluar dos modelos causales alternativos.
+All\'i se justifican las reglas de la probabilidad y se presentan los m\'etodos gr\'afico de especificaci\'on matem\'atica de los modelos probabil\'isticos y se aplican las reglas de la probabilidad para evaluar dos modelos causales alternativos.
 %
-Se discute el problema computacional de las reglas de la probabilidad y se muestran soluciones bayesianas del siglo 18 y soluciones de la física estadística del siglo 19.
+Se discute el problema computacional de las reglas de la probabilidad y se muestran soluciones bayesianas del siglo 18 y soluciones de la f\'isica estad\'istica del siglo 19.
 %
 Finalmente se revisa la emergencia del \emph{overfitting} en el enfoque frecuentista y se muestra que la aplicaci\'on estricta de las reglas de la probabilidad resuelve naturalmente este problema.
 %
@@ -8485,23 +8499,23 @@ Se presenta el criterio \emph{backdoor} para la identificaci\'on de efectos caus
 %
 Se eval\'uan diversos escenarios de estimaci\'on de efectos causales.
 %
-Finalmente definimos el concepto de teorías causales y mostramos c\'omo identificarlas a partir de intervenciones.
+Finalmente definimos el concepto de teor\'ias causales y mostramos c\'omo identificarlas a partir de intervenciones.
 %
-Aplicaciones: c\'omputo del efecto causal en modelos lineales bayesianos y evaluaci\'on de teorías causales alternativas con datos sint\'eticos.
+Aplicaciones: c\'omputo del efecto causal en modelos lineales bayesianos y evaluaci\'on de teor\'ias causales alternativas con datos sint\'eticos.
 
 % Parrafo
 
 En la unidad 3 se presenta una introducci\'on a \emph{El problema de comunicaci\'on con la realidad}.
 %
-Se comienza discutiendo los niveles de base empírica y se identifica el rol que cumplen las hip\'otesis en la construcci\'on de los datos empíricos.
+Se comienza discutiendo los niveles de base emp\'irica y se identifica el rol que cumplen las hip\'otesis en la construcci\'on de los datos emp\'iricos.
 %
-Se revisa la estructura invariante del dato empírico y su equivalencia con el esquema emisor-receptor de la teoría de la informaci\'on: unidad de an\'alisis (fuente), dimensiones (transmisor), procedimientos (perceptor), hip\'otesis indicadoras (receptor), y estimaci\'on (destino).
+Se revisa la estructura invariante del dato emp\'irico y su equivalencia con el esquema emisor-receptor de la teor\'ia de la informaci\'on: unidad de an\'alisis (fuente), dimensiones (transmisor), procedimientos (perceptor), hip\'otesis indicadoras (receptor), y estimaci\'on (destino).
 %
-Se muestra que la tasa de predicci\'on de dos sistemas de comunicaci\'on medida en \'ordenes de magnitud, resulta ser el negativo de la entropía (cuando el modelo causal es correcto) o el negativo de la entropía cruzada (cuando el modelo causal es incorrecto)
+Se muestra que la tasa de predicci\'on de dos sistemas de comunicaci\'on medida en \'ordenes de magnitud, resulta ser el negativo de la entrop\'ia (cuando el modelo causal es correcto) o el negativo de la entrop\'ia cruzada (cuando el modelo causal es incorrecto)
 %
-Se revisa la propiedad de la entropía como medida de la informaci\'on.
+Se revisa la propiedad de la entrop\'ia como medida de la informaci\'on.
 %
-Se define formalmente el principio de no mentir como maximizaci\'on de la entropía dada restricciones y se presenta la familia de distribuciones exponenciales.
+Se define formalmente el principio de no mentir como maximizaci\'on de la entrop\'ia dada restricciones y se presenta la familia de distribuciones exponenciales.
 %
 Se eval\'uan sistemas de comunicaci\'on con la realidad que difieren, no en los modelos causales, sino en los procedimientos que se usan para transmitir las se\~nales.
 %
@@ -8527,7 +8541,7 @@ Aplicaciones: estimador de habilidad estado del arte en la industria del videoju
 
 % Parrafo
 
-En la unidad 5 se presenta una introducci\'on a la teoría (erg\'odica) de \emph{toma de decisiones}.
+En la unidad 5 se presenta una introducci\'on a la teor\'ia (erg\'odica) de \emph{toma de decisiones}.
 %
 Revisamos la naturaleza multiplicativa de la funci\'on de costo de la teor\'ia de la probabilidad (la regla del producto) y de la teor\'ia de la evoluci\'on (la secuencia de tasas de reproducci\'on y supervivencia).
 %
@@ -8535,7 +8549,7 @@ Presentamos un problema de apuestas binario, en el que nos vemos obligados a apo
 %
 Mostramos en ese ejemplo que no cualquier funci\'on de costo permite calcular la tasa de crecimiento que efectivamente se obtiene en el tiempo e introducimos el concepto de ergodicidad.
 %
-Derivamos la propiedad epist\'emica que explica el funcionamiento de la teoría de la probabilidad.
+Derivamos la propiedad epist\'emica que explica el funcionamiento de la teor\'ia de la probabilidad.
 %
 Derivamos la propiedad evolutiva, que le permite a la vida aumentar la tasa de crecimiento reduciendo fluctuaciones mediante la cooperaci\'on.
 %
@@ -8562,7 +8576,7 @@ Aplicaciones: un problema de inferencia con apuestas e intercambio de recursos (
 % %
 % Tercero, deben actualizar sus creencia sobre la posici\'on del regalo seg\'un la pista que reciben.
 % %
-% Este problema lleva a la pr\'actica los conceptos de probabilidad, de inferencia causal, de teoría de la informaci\'on, de series temporales y de toma de decisiones.
+% Este problema lleva a la pr\'actica los conceptos de probabilidad, de inferencia causal, de teor\'ia de la informaci\'on, de series temporales y de toma de decisiones.
 
 \subsection{Trabajo futuro: especificaci\'on y evaluaci\'on de argumentos causales.}
 %
@@ -8579,11 +8593,11 @@ Aplicaciones: un problema de inferencia con apuestas e intercambio de recursos (
 
 Las \'areas de investigaci\'on en aprendizaje autom\'atico, inteligencia artificial y ciencia de datos siguen desarrollando una multitud de algoritmos gen\'ericos sin interpretaci\'on causal, que si bien permiten usar las dependencias entre variables para predecir, no permiten sacar conclusiones causal y por lo tanto tampoco recomendaciones para la intervenci\'on~\cite{pearl2009-causality}.
 %
-Al mismo tiempo, quienes trabajan en ciencias sociales (y otras ciencias empíricas) proponen un enorme cantidad de argumentos causales en lenguaje natural, que si bien est\'an fundados en el conocimiento experto del \'area, al no estar especificados en t\'erminos probabilísticos no pueden ser evaluados correctamente.
+Al mismo tiempo, quienes trabajan en ciencias sociales (y otras ciencias emp\'iricas) proponen un enorme cantidad de argumentos causales en lenguaje natural, que si bien est\'an fundados en el conocimiento experto del \'area, al no estar especificados en t\'erminos probabil\'isticos no pueden ser evaluados correctamente.
 
 % Parrafo
 
-Existe así un complementariedad que todavía no est\'a siendo explotada: las ciencia de datos tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias empíricas, y las ciencias empíricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema específico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
+Existe as\'i un complementariedad que todav\'ia no est\'a siendo explotada: las ciencia de datos tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias emp\'iricas, y las ciencias emp\'iricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema espec\'ifico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
 %
 Los argumentos causales provenientes de las ciencias sociales (y otras ciencias emp\'iricas) le va a permitir a la ciencia de datos sacar conclusiones causales.
 %
@@ -8591,7 +8605,7 @@ Y la especificaci\'on probabil\'istica de los argumentos causales le va a permit
 
 % Parrafo
 
-La complejidad del problema ponen en tensi\'on las metodologías actuales de las ciencias de datos, y por lo tanto se presenta como una oportunidad para la innovaci\'on.
+La complejidad del problema ponen en tensi\'on las metodolog\'ias actuales de las ciencias de datos, y por lo tanto se presenta como una oportunidad para la innovaci\'on.
 %
 Por este motivo la inferencia causal es un \'area de creciente inter\'es dentro del campo de la inteligencia artificial~\cite{pearl2009-causality, peters2017-causalInference}.
 %
@@ -8609,13 +8623,13 @@ El desarrollo de la programaci\'on probabil\'istica por su parte, permite resolv
 
 % Parrafo
 
-En este sentido, como trabajo futuro me propongo implementar y desarrollar metodologías de trabajo que permitan poner en valor el conocimiento experto mediante la especificaci\'on y evaluaci\'on probabilística de argumentos casuales expresados en lenguaje natural.
+En este sentido, como trabajo futuro me propongo implementar y desarrollar metodolog\'ias de trabajo que permitan poner en valor el conocimiento experto mediante la especificaci\'on y evaluaci\'on probabil\'istica de argumentos casuales expresados en lenguaje natural.
 %
-Los procesos penales son un campo ideal para llevar a cabo este objetivo debido al enorme trabajo que el Estado y los privados dedican para construir el conjunto de datos que forman la base empírica, y para proponer argumentos causales en competencia capaces de explicar esa prueba.
+Los procesos penales son un campo ideal para llevar a cabo este objetivo debido al enorme trabajo que el Estado y los privados dedican para construir el conjunto de datos que forman la base emp\'irica, y para proponer argumentos causales en competencia capaces de explicar esa prueba.
 %
-El desafío consiste en traducir matem\'aticamente argumentos expresados en lenguaje natural, integrar los diferentes elementos de prueba en un \'unico modelo probabilístico causal, computar correctamente el valor de verdad de los modelos causales alternativos.
+El desaf\'io consiste en traducir matem\'aticamente argumentos expresados en lenguaje natural, integrar los diferentes elementos de prueba en un \'unico modelo probabil\'istico causal, computar correctamente el valor de verdad de los modelos causales alternativos.
 %
-Por ello, el plan de investigaci\'on actual en el Departamento de Computaci\'on se denomina \emph{Especificaci\'on y evaluaci\'on probabilística de argumentos causales en procesos judiciales penales}.
+Por ello, el plan de investigaci\'on actual en el Departamento de Computaci\'on se denomina \emph{Especificaci\'on y evaluaci\'on probabil\'istica de argumentos causales en procesos judiciales penales}.
 
 
 
