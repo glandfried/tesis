@@ -718,7 +718,7 @@ En el cap\'itulo 7 concluyo la tesis con una revisi\'on del mi trayecto en el do
 \chapter{Metodología}\label{ch:metodo}
 
 
-Desde el descubrimiento de las reglas de la probabilidad a finales del siglo 18 hasta el presente, la teoría de la probabilidad es el enfoque más utilizado para razonar en contextos de incertidumbre.
+Desde el descubrimiento de las reglas de la probabilidad a finales del siglo 18 hasta el presente, la teoría de la probabilidad es el enfoque m\'as utilizado para razonar en contextos de incertidumbre.
 %
 Las reglas de la probabilidad, conocidas como ``regla de la suma'' y ``regla del producto'', han sido derivadas formalmente a partir de varios sistemas axiom\'aticos conceptualmente distintos e independientes entre si~\cite{halpern2017}.
 %
@@ -726,21 +726,22 @@ El sistema axiom\'atico de Ramsey~\cite{Ramsey1926} las deriva haciendo una anal
 %
 El sistema axiom\'atico de Cox~\cite{Cox1946} las deriva a partir de axiomas del ``sentido com\'un''.
 %
-El sistema axiomático de Kolmogorov \cite{Kolmogorov1950} en cambio, incluye una caso particular de la regla del producto como axioma e incorpora la regla del producto como una definición complementaria que cumple con los axiomas.
+El sistema axiom\'atico de Kolmogorov~\cite{Kolmogorov1950} en cambio, incluye una caso particular de la regla del producto como axioma e incorpora la regla del producto como una definici\'on complementaria que cumple con los axiomas.
 %
-Por su elegancia matemática el sistemas axiom\'atico de Kolmogorov es el m\'as utilizado.
+Por su elegancia matem\'atica el sistemas axiom\'atico de Kolmogorov es el m\'as utilizado.
 %
-En la sección \ref{} presentamos la teoría elemental de la probabilidad siguiendo los axiomas de Kolmogorov, en su versión simple.
+En la secci\'on \ref{} presentamos la teoría elemental de la probabilidad siguiendo los axiomas de Kolmogorov, en su versi\'on simple.
 %
-En la sección \ref{} revisaremos algunas consecuencias de la aplicación estricta de las reglas de la probabilidad.
+En la secci\'on \ref{} revisaremos algunas consecuencias de la aplicaci\'on estricta de las reglas de la probabilidad.
 %
-En la sección \ref{} ofreceros una operacionalización el dato fundamental de esta tesis (la habilidad de los individuos en el tiempo o aprendizaje) basada en el modelo de estimación de habilidad de la industria del video juego.
+En la secci\'on \ref{} ofreceros una operacionalizaci\'on el dato fundamental de esta tesis (la habilidad de los individuos en el tiempo o aprendizaje) basada en el modelo de estimaci\'on de habilidad de la industria del video juego.
 
 \section{Teoría elemental de la probabilidad}
 
-\subsection{Sistema axiomático}
+\subsection{Sistema axiom\'atico}
 
-En la sección 1 del capítulo 1 ``Elementary Theory Of Probability'' de su libro (traducción al ingles~\cite{Kolmogorov1950} de su manuscrito original) se presenta el siguiente sistema axiomático, definido sobre elementos discretos.
+En la secci\'on 1 del capítulo 1 ``Elementary Theory Of Probability'' de su libro (traducci\'on al ingles~\cite{Kolmogorov1950} de su manuscrito original) se presenta el siguiente sistema axiom\'atico, definido sobre elementos discretos.
+\todo[inline]{Queda raro como empieza, yo diría directamente algo como que vamos a seguir la axiomatizacion presentada por Kolmogorov, no hace falta referenciar la seccion y el capitulo}  
 %
 \begin{quotation}
   Let $\textbf{H}$ be a collection of elements $h_1, h_2, h_3, \dots$,  which we shall call \emph{elementary events}, and $\mathbb{H}$ a set of subsets of $\textbf{H}$;
@@ -773,32 +774,33 @@ En la sección 1 del capítulo 1 ``Elementary Theory Of Probability'' de su libr
 \end{quotation}
 %
 \emph{Field} (campo en español) hace referencia a que el conjunto de conjuntos $\mathbb{H}$ est\'a cerrado bajo complementos, uniones e intersecciones contables: ``A system of sets is called a field if the sum, product and difference of two sets of the system also belongs to the same system''~\cite{Kolmogorov1950}.
+\todo[inline]{countable me parece que se traduce como enumerable en contexto matem\'atico}
 %
 Kolmogorov denomina al campo $\mathbb{H}$ bajo la etiqueta \emph{random events}.
 %
-El enfoque bayesiano de la probabilidad lo suele denominar \emph{espacio de hipótesis} debido a que este mismo sistema axiomático se lo utiliza para asignar y actualizar probabilidades sobre eventos que nos son necesariamente aleatorios.
+El enfoque bayesiano de la probabilidad lo suele denominar \emph{espacio de hip\'otesis} debido a que este mismo sistema axiom\'atico se lo utiliza para asignar y actualizar probabilidades sobre eventos que no son necesariamente aleatorios.
 %
-Kologorov reconoce esta interpretación cuando más adelante dice ``$H_1, H_2, \dots, H_2$ are often called \emph{hipótesis}''.
+Kologorov reconoce esta interpretaci\'on cuando m\'as adelante dice ``$H_1, H_2, \dots, H_2$ are often called \emph{hypothesis}''.
 
 % Parrafo
 
-La forma más simple de crear un campo de probabilidad (\emph{field of probability}) es tomar un conjunto arbitrario de hipótesis elementales $\textbf{H} = \{h_1, h_2, \dots, h_k\}$
+La forma m\'as simple de crear un campo de probabilidad (\emph{field of probability}) es tomar un conjunto arbitrario de hip\'otesis elementales $\textbf{H} = \{h_1, h_2, \dots, h_k\}$
 % %
 % Por ejemplo, supongamos que tenemos tres cajas \emph{exactamente} iguales y una persona esconde un regalo dentro de una de ellas.
 % %
-% Una vez escondido, la posición del regalo permanece fija (no es aleatoria).
+% Una vez escondido, la posici\'on del regalo permanece fija (no es aleatoria).
 % %
 % Las hip\'otesis elementales ``el regalo se encuentra en la caja $i$'' las llamamos $r_i$.
 % %
-% Luego el conjunto de hipótesis elementales es $\textbf{H} = \{r_1, r_2, r_3\}$.
+% Luego el conjunto de hip\'otesis elementales es $\textbf{H} = \{r_1, r_2, r_3\}$.
 % %
-y asignarle una probabilidad arbitraria a cada hipótesis elemental $\{p_1, p_2, \dots p_k\}$ tal que la suma $p_1 + p_2 + \dots + p_k = 1$.
+y asignarle una probabilidad arbitraria a cada hip\'otesis elemental $\{p_1, p_2, \dots p_k\}$ tal que la suma $p_1 + p_2 + \dots + p_k = 1$.
 
 % Parrafo
 
 \subsection{Terminología basada en la teoría de conjuntos}
 
-En la sección 3 ``Notes on Terminology'' Kolmogorv aclara algunos aspectos terminológicos.
+En la secci\'on 3 ``Notes on Terminology'' Kolmogorv aclara algunos aspectos terminol\'ogicos.
 %
 \begin{quotation}
   We have defined the object of our future study $\mathbb{H}$.
@@ -863,11 +865,11 @@ En la sección 3 ``Notes on Terminology'' Kolmogorv aclara algunos aspectos term
 
 \subsection{Las reglas de la probabilidad}
 
-En el sistema axiomático de Kolmogorov un caso particular de la regla de la suma de la teoría de la probabilidad aparece incluida directamente como axioma 5.
+En el sistema axiom\'atico de Kolmogorov un caso particular de la regla de la suma de la teoría de la probabilidad aparece incluida directamente como axioma 5.
 %
-La regla del producto (o probabilidad condicional) en cambio se incluye mediante una definición complementaria que cumple con los axiomas.
+La regla del producto (o probabilidad condicional) en cambio se incluye mediante una definici\'on complementaria que cumple con los axiomas.
 %
-En la sección 4 ``Immediate Corollaries of the Axioms; Conditional Probabilities; Theorem of Bayes'' dice,
+En la secci\'on 4 ``Immediate Corollaries of the Axioms; Conditional Probabilities; Theorem of Bayes'' dice,
 %
 \begin{quotation}
   From $A + \overline{A} = \textbf{H}$ and the Axioms 4 and 5 it follows that
@@ -944,7 +946,7 @@ En la sección 4 ``Immediate Corollaries of the Axioms; Conditional Probabilitie
 
 % Parrafo
 
-Sea el experimento $\mathcal{H}= \{ H_1, H_2, \dots, H_n \}$ (esto asume que las hipótesis $H_i$ son mutuamente exclusivas) y sea $D \subset \textbf{H}$ un conjunto arbitrario.
+Sea el experimento $\mathcal{H}= \{ H_1, H_2, \dots, H_n \}$ (esto asume que las hip\'otesis $H_i$ son mutuamente exclusivas) y sea $D \subset \textbf{H}$ un conjunto arbitrario.
 %
 Luego, vale el teorema de la probabilidad total
 %
@@ -972,7 +974,7 @@ P(H_i D ) = P(H_i) P(D|H_i) \ \ \ \ \text{con} \ \ \ \ i \in \{1,\dots n\}
 %
 Queda demostrado así el teorema de la probabilidad total.
 %
-Luego definimos la fórmula general del teorema de Bayes como,
+Luego definimos la f\'ormula general del teorema de Bayes como,
 %
 \begin{equation} \label{eq:full_bayes_theorem_kologorov}
 P(H_i|D) = \frac{P(H_i) P(D|H_i)}{P(D)} = \frac{P(H_i) P(D|H_i)}{\sum_{j \in \{1, \dots, n \} } P(H_j) P(D|H_j) } \ \ \ \ \text{con} \ \ \ \ i \in \{1,\dots n\}
@@ -996,7 +998,7 @@ En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes se
 
 
 
-\section{Aplicación estricta de las reglas de la probabilidad}
+\section{Aplicaci\'on estricta de las reglas de la probabilidad}
 
 \subsection{Acuerdos intersubjetivos en contextos de incertidumbre}
 
@@ -1916,7 +1918,7 @@ R\'apidamente, con menos de 16 observaciones, es casi seguro que el modelo causa
     \includegraphics[width=\linewidth]{figures/monty_hall_selection.pdf}
     \end{subfigure}
     \caption{
-    Evaluación de modelos alternativos
+    Evaluaci\'on de modelos alternativos
     }
     \label{fig:monty_hall_selection}
 \end{figure}
@@ -1929,7 +1931,7 @@ Este mismo m\'etodo ser\'a usado en para evaluar el modelo de estimaci\'on de ha
 
 El problema hist\'orico para la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del conjunto de hip\'otesis que se ponen a prueba cuando se buscan  $\mathcal{H}$.
 %
-Con hipótesis que toman discretos, por ejemplo, el tama\~no de la distribuci\'on conjunta crece de forma exponencial en funci\'on de la cantidad de variable $n$ y la cantidad de estados $e$ que pueden adquirir las variables $e^n-1$.
+Con hip\'otesis que toman discretos, por ejemplo, el tama\~no de la distribuci\'on conjunta crece de forma exponencial en funci\'on de la cantidad de variable $n$ y la cantidad de estados $e$ que pueden adquirir las variables $e^n-1$.
 %
 En modelos continuos, la imposibilidad de resolver las integrales ha sido un serio obst\'aculo trambi\'en.
 %
@@ -2227,7 +2229,7 @@ As\'i, el modelo reduce fluctuaciones en cada una de las predicciones individual
 
 
 
-\section{Cuestiones relativas a la operacionalización del los datos} \label{sec:base_empirica_metodo}
+\section{Cuestiones relativas a la operacionalizaci\'on del los datos} \label{sec:base_empirica_metodo}
 
 
 
@@ -2661,7 +2663,7 @@ Para construir un sistema de informaci\'on con la realidad (un dato de base emp\
 En la siguiente secci\'on veremos c\'omo se ha construido el dato de base emp\'irica \emph{habilidad} durante el siglo 20 hasta princpios del siglo 21.
 
 
-\section{Operacionalización del dato \emph{habilidad}.}
+\section{Operacionalizaci\'on del dato \emph{habilidad}.}
 
 Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
 %
@@ -6472,7 +6474,7 @@ Finalmente, si bien analizamos la base de datos completas, decidimos enfocar el 
 Debido a que la cantidad de partidas jugadas por persona sigue una distribuci\'on exponencial, este filtro basado en la actividad produce un conjunto de individuos de tama\~no cercano a $1000$.
 
 
-\subsection{Modelo de estimación de habilidad}
+\subsection{Modelo de estimaci\'on de habilidad}
 
 Los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no permiten obtener estimaciones iniciales fiables debido a que usan el \'ultimo posterior como prior del siguiente evento, propagando la informaci\'on en una sola direcci\'on por el sistema, del pasado al futuro.
 %
@@ -6712,7 +6714,7 @@ Si hay un solo camino con distancia m\'inima, todo el flujo ir\'a por ah\'i.
 Estas dos soluciones est\'an basadas en caminos m\'inimos.
 
 
-\section{Análisis}
+\section{An\'alisis}
 
 En esta secci\'on exploramos el efecto causal que la posici\'on topol\'ogica de los individuos en la red partidas tiene sobre sus procesos de aprendizaje individual.
 %
@@ -8106,7 +8108,7 @@ Las teor\'ias causales son hip\'otesis, y como tales pueden ser evaluadas median
 %
 Hoy la inteligencia artificial tiene la oportunidad de hacer uso de los modelos causales que se desarrollan en diversas ciencias emp\'iricas, y las ciencias emp\'iricas tienen la oportunidad de crear y evaluar modelos a la medida de cada problema espec\'ifico~\cite{murphy-pmlBook1,murphy-pmlBook2, Bishop2013, Bishop2006}.
 
-\section{Visión}
+\section{Visi\'on}
 
 REESCRIBIR
 
@@ -8520,7 +8522,7 @@ Recientemente, la comunidad Bayes Plurinacional a enviado un proyecto a la organ
 
 DEFINICION DEL CONCEPTO ENSEÑAJE
 
-Derivación: Aprender a (enseñar a aprender)
+Derivaci\'on: Aprender a (enseñar a aprender)
 
 AGREGAR OBJETIVOS DE LA ESCUELA BAYESIANA
 
@@ -8674,9 +8676,9 @@ OBJETIVO: intervenir la realidad.
 
 EXPLICAR: cuestiones relativas a la inferencia causal.
 
-\subsection{Tarea 1: Revisión de los problemas reales y conocimiento experto}
+\subsection{Tarea 1: Revisi\'on de los problemas reales y conocimiento experto}
 
-\subsection{Tarea 2: Especificación de argumentos causales}
+\subsection{Tarea 2: Especificaci\'on de argumentos causales}
 %
 % Haber tenido la rara oportunidad de sumergirme en las profundidades del enfoque bayesiano durante el doctorado en ciencias de la computaci\'on y encontrar all\'i las respuestas m\'as simples y concretas a las reflexiones epistemol\'ogicas y metodol\'ogicas m\'as trascendentales desarrolladas durante mi formaci\'on en ciencias antropol\'ogicas, no solo explica por qu\'e que ella es la principal herramienta qu\'e encontr\'e en el doctorado en computaci\'on.
 % %
@@ -8731,7 +8733,7 @@ Por ello, el plan de investigaci\'on actual en el Departamento de Computaci\'on 
 
 \subsection{Tarea 3: Algoritmos eficiente de inferencia}
 
-Aproximación de la aplicación estricta de las reglas de la probabilidad
+Aproximaci\'on de la aplicaci\'on estricta de las reglas de la probabilidad
 
 
 
