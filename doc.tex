@@ -1133,13 +1133,10 @@ La primer definición matemática de justicia, verdad u honestidad ya existía p
 Tres siglos después, inmediatamente después de que se deriva la teoría de la información a partir de la aplicación estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entropía} como medida de la tasa de información temporal, se generaliza finalmente el concepto de \emph{honestidad} como máxima entropía dada la información disponible (MaxEnt)~\cite{Jaynes2003}.
 %
 \begin{quotation}
-The essence of ``honesty'' or ``objectivity'' demands that we take into account all the
-evidence we have, not just some arbitrarily chosen subset of it. Any such choice would
-amount either to ignoring evidence that we have, or presuming evidence that we do not
-have.
+The essence of ``honesty'' or ``objectivity'' demands that we take into account all the evidence we have, not just some arbitrarily chosen subset of it. Any such choice would amount either to ignoring evidence that we have, or presuming evidence that we do not have.
 \end{quotation}
 %
-En este sentido la \emph{verdad en contextos de incertidumbre} queda definida como la distribución de probabilidad que maximiza la incertidumbre o entropía (no afirmar más de lo que sabés) dada la información disponible (sin dejar de decir todo lo que sí se sabe).
+En este sentido la distribución de probabilidad honesta se obtiene la que no afirma más de lo que sabés (maximiza la incertidumbre) sin dejar de decir todo lo que sí se sabe (dada la información disponible).
 %
 Lo interesante es que este principio ya está codificado en la propia regla del producto de la teoría de la probabilidad.
 %
@@ -1190,39 +1187,40 @@ Y se incorpora una restricción adicional, si el regalo se encuentra en el caja 
 %
 Y no tenemos más información.
 %
-Esto hace que, si el regalo se encuentra en la caja 1, $r_1$, no tengamos preferencia por la hipótesis ninguna de las hipótesis elementales $s_2$ o $s_3$ (y de forma equivalente ocurre en los otros casos $r_i$).
+Esto hace que, si el regalo se encuentra en la caja 1, $R=r_1$, no haya preferencia por la ninguna de las hipótesis elementales $s_2$ o $s_3$.
+%
+Y de forma equivalente ocurre en los otros casos $R =r_i$.
 
 % Parrafo
 
 A esta información inicial la llamaremos Modelo $A$, $M_A$.
 %
-Necesitamos entonces definir la distribución de probabilidad a priori honesta $P(R,C,S|M_A)$.
+Necesitamos entonces la distribución de probabilidad honesta $P(R,C,S|M_A)$.
 %
-Para simplificar el problema supondremos además que siempre elegimos la caja 1, por lo que reducimos el problema a solo dos hipótesis, $P(R,S|C=c_1, M_A)$.
+Para simplificar el problema supondremos además que siempre elegimos la caja 1, reduciendo el problema a solo dos hipótesis, $P(R,S|C=c_1, M_A)$.
 %
 Las restricciones vinculadas a los modelos suelen representarse mediante lo que se conoce como  \emph{redes bayesianas}.
 %
-Los nodos de la red son las hipótesis del problema de investigación $\mathcal{H}$ y los ejes representan una dependencia entre hipótesis.
+Los nodos de esa red son las hipótesis del problema de investigación $\mathcal{H} = \{R, S\}$ y los ejes representan una dependencia entre hipótesis.
 %
-En el modelo $$
-
-
-
-
-
-
-
-\todo[inline]{Por qu\'e aca cambias la notaci\'on? no hay motivos para saltar de nomeclatura. Ya se que a vos te parece trivial, pero no se justifica y puede confundir. En todo caso, empareja para que lo anterior sea consistente con esta si es que la notacion a partir de aca es mejor o mas clara para lo que sigue.}
+En el modelo $A$ hay una dependencia entre la hipótesis R y la hipótesis S.
 %
-En este ejemplo tenemos tres variables: la posici\'on del regalo, $r$; la caja que elegimos, $c$; y la pista que recibimos $s$.
+En la figura~\ref{fig:modelo_causal_1} se especifica de forma gr\'afica la red bayesiana.
+
+% Parrafo
+
+Nada nos obliga a suponer que el modelo $A$ es correcto.
 %
-En base a la descripci\'on del juego, sabemos que al menos hay una relaci\'on causal entre la posici\'on del regalo $r$ y la pista $s$, pues la pista \textbf{no puede coincidir} con la misma posici\'on en la que encuentra el regalo, es decir $s \neq r$.
-\todo[inline]{Esta bien que es un ejemplo, pero que sucede con nuestra selecci\'on en el modelo A, no se lo considera? Se supone que no importa? Algo habr\'ia que decir al respecto para formular el modelo A, sino queda raro. No servir\'ia mejor comenzar por un modelo en el que elegimos la posici\'on y otro en el que se agrega la pista? Queda raro que el juego sea elegir la caja y en el modelo A eso no est\'a contemplado.}
+Podemos sospechar, por ejemplo, que existe una dependencia adicional entre la caja que elegimos
+y la pista que nos dan, si elegimos la caja $i$, $C=c_i$, no puede ocurrir que se muestre el interior de la caja $S=s_i$.
 %
-Este modelo causal se especifica de forma gr\'afica en la figura~\ref{fig:modelo_causal_1}.
-\todo[inline]{Tenes que presentar la notaci\'on gr\'afica: qu\'e significan los c\'irculos y qu\'e las flechas}
-%
-Adem\'as, podemos sospechar que existe una segunda relaci\'on causal, seg\'un la cual la pista tampoco podr\'ia coincidir con la caja que elegimos, es decir $s \neq c$.
+A
+
+Esto hace que, si el regalo se encuentra en la caja 1, $r_1$, no tengamos preferencia por la hipótesis ninguna de las hipótesis elementales $s_2$ o $s_3$ (y de forma equivalente ocurre en los otros casos $r_i$).
+
+
+
+
 La figura~\ref{fig:modelo_causal_2} ejemplifica este modelo alternativo que incluye las dos relaciones mencionadas.
 \todo[inline]{En general, habr\'ia que explicar la causalidad en estos modelos, yo no entiendo como se deducen esas relaciones del texto que pones, no est\'a bien explicado}
 
