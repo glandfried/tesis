@@ -994,7 +994,7 @@ En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes se
 
 
 
-\section{Aplicaci\'on estricta de las reglas de la probabilidad}
+\section{Aplicaci\'on estricta de las reglas de la probabilidad} \label{sec:aplicacion_estricta}
 
 
 La teoría de la probabilidad es el sistema de razonamiento para contextos de incertidumbre.
@@ -1009,7 +1009,7 @@ Es decir, la teoría de la probabilidad nos obliga a definir una probabilidad a 
 %
 En este capítulo revisaremos algunos ejemplos concretos de la aplicación estricta de las reglas de la probabilidad que nos permiten discutiremos algunas de sus consecuencias más relevantes.
 
-\subsection{Acuerdos intersubjetivos en contextos de incertidumbre}
+\subsection{Acuerdos intersubjetivos en contextos de incertidumbre} \label{sec:acuerdos_intersubjetivos}
 
 Debido a que las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos, el conocimiento contienen siempre alg\'un grado de incertidumbre.
 %
@@ -1112,78 +1112,106 @@ De aquí en adelante \emph{distribuciones de probabilidad} y \emph{distribuci\'o
 
 % Parrafo
 
-Expresar subjetividades individuales no tiene ningún valor para la ciencia.
+Lo que queremos en ciencia empírica no es expresar nuestras subjetividades individuales si no alcanzar acuerdos entre subjetividades.
 %
 La ciencia es una instituci\'on que tiene pretensi\'on de alcanzar verdad, proposiciones que sean valgan de forma universal.
 %
-Las ciencias formales (matem\'atica, l\'ogica) validan esas proposiciones derivando teoremas dentro de sistemas axiom\'aticos cerrados.
+Llamamos a esto, acuerdos intersubjetivos.
 %
-Sin embargo, las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos que contienen siempre alg\'un grado de incertidumbre.
+Las ciencias formales (matem\'atica, l\'ogica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiom\'aticos cerrados.
 %
-%¿Cómo se pueden validar de forma universal proposiciones en ciencias que tienen siempre algún grado de incertidumbre?
+Sin embargo, las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben alcanzar estos acuerdos en sistemas naturales abiertos que contienen siempre alg\'un grado de incertidumbre.
 %
-Lo que queremos en ciencia empírica no es expresar nuestras subjetividades individuales si no alcanzar acuerdos entre subjetividades.
-%
-Llamamos a esto, acuerdos intersubjetivos en contextos de incertidumbre.
+¿Es posible alcanzar acuerdos intersubjetivos (verdades) en contextos de incertidumbre?
 
 % Parrafo
 
-?`Es posible entonces alcanzar acuerdos intersubjetivos (``verdades'') en las ciencias emp\'iricas si es inevitable decir ``no s\'e''?
+Esta pregunta está formulada desde el inicio de los debates del desarrollo de la teoría de la probabilidad en 1648, determinar el \emph{precio justo} en contextos de incertidumbre~\cite{devlin2008-theUnfinishedGame}.
 %
-La historia del enfoque bayesiano de la probabilidad encontró una respuesta.
+La primer definición matemática de justicia, verdad u honestidad ya existía previamente a estos debates bajo el viejo principio filosófico de \emph{indiferencia}, que comienza a ser discutido al inicio del siglo 18 por quienes serán considerados luego los fundadores de la teor\'ia de la probabilidad~\cite{jaynes1984-bayesianBackground}.
 %
-En pocas palabras, para ser honestos debemos evitar decir m\'as de lo que se sabe, incorporando al mismo tiempo toda la informaci\'on disponible.
+Tres siglos después, inmediatamente después de que se deriva la teoría de la información a partir de la aplicación estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entropía} como medida de la tasa de información temporal, se generaliza finalmente el concepto de \emph{honestidad} como máxima entropía dada la información disponible (MaxEnt)~\cite{Jaynes2003}.
+%
+\begin{quotation}
+The essence of ``honesty'' or ``objectivity'' demands that we take into account all the
+evidence we have, not just some arbitrarily chosen subset of it. Any such choice would
+amount either to ignoring evidence that we have, or presuming evidence that we do not
+have.
+\end{quotation}
+%
+En este sentido la \emph{verdad en contextos de incertidumbre} queda definida como la distribución de probabilidad que maximiza la incertidumbre o entropía (no afirmar más de lo que sabés) dada la información disponible (sin dejar de decir todo lo que sí se sabe).
+%
+Lo interesante es que este principio ya está codificado en la propia regla del producto de la teoría de la probabilidad.
+%
+Lo que esperamos de una probabilidad \emph{a priori} es justamente que incorpore toda la información $M$ que tenemos antes de comenzar a ver los datos $D$.
+%
+\begin{quotation}
+To solve this problem does not require any new principles beyond the product rule (\dots). Let us now use the notation:
+\begin{align*}
+M &= \text{ prior information,} \\
+H &= \text{ some hypothesis to be tested,} \\
+D &= \text{ the data,}
+\end{align*}
+and write the product rule in the form
+\begin{align}
+P(DH|M) = P(D|HM)P(H|M) = P(H|DM)P(D|M)
+\end{align}
+\end{quotation}
+%
+Luego, para determinar la probabilidad \emph{a priori} $P(H|M)$ necesitamos definir con precisión cuál es la información previa $M$.
+%
+Generalmente $M$ es el modelo causal, pero representa en realidad todas las restricciones que utilizamos como información previa.
+%
+La sección actual,~\nameref{sec:acuerdos_intersubjetivos}, termina justamente con la evaluación honesta de los modelos causales alternativos.
 
 % Parrafo
 
-
-Antes de su definici\'on formal, esta idea ya era discutida en el siglo 18 por los fundadores de la teor\'ia de la probabilidad bajo el nombre de \emph{principio de indiferencia}~\cite{jaynes1984-bayesianBackground}.
+Comencemos entonces definiendo precisamente cuál es la información previa de nuestro ejemplo $M$.
 %
-Seg\'un este principio, cuando no existe razones para tener preferencia por ninguna de las opciones debemos asignar la misma creencia a todos los eventos para no mentir (MaxEnt).
-\todo[inline]{Saca la primera parte, no tiene nada que ver por como venis presentando los conceptos y no hace falta, quedate con presentar el principio de indiferencia y llama as\'i a la subsection}
-
+Supongamos que solo sabemos que el regalo está escondido detrás de alguna de las tres cajas y no tenemos información adicional que nos haga preferir alguna caja por sobre otra.
 %
-Esta distribuci\'on de creencias maximiza la incertidumbre (dividiendo la creencia en partes iguales).
-\todo[inline]{ac\'a tenemos un problemilla: traes incertidumbre asociada a la noci\'on de maximimizaci\'on... para eso tenes que tenerla definida como una funci\'on y hasta ahora no la presentaste, creo que es ac\'a donde deber\'ias formalizar la noci\'on de incertidumbre para poder hablar de maximizarla... adem\'as que tendr\'ia que ser claro porque uno busca tener m\'as incertidumbre y no menos, resulta anti-intuitivo en los t\'erminos que venis usando}
+En este contexto no es difícil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
+%
+Esta distribución de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial}.
+%
+No casualmente esa la que maximiza la incertidumbre entre todas las opciones que incorporan la única información disponible: el regalo está en alguna de las tres cajas.
 
 % Parrafo
 
-\begin{figure}[ht!]
-\centering
-\begin{subfigure}[b]{0.32\textwidth}
-\centering\vskip 0pt
-\tikz{ %
-
-         \node[factor, minimum size=0.8cm] (p1) {} ;
-         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
-         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
-%          \node[const, below=of p2, yshift=-0.8cm] (title) {(c) Creencia honesta};
-
-        }
-        \caption{M\'axima incertidumbre}
-        \label{fig:principio_de_indiferencia_c}
-\end{subfigure}
-\caption{Sin informaci\'on a favor de ninguna caja, dividir la creencia en partes iguales representa la creencia honesta que cumple con el principio de no mentir  (MaxEnt).}
-\label{fig:principio_de_indiferencia}
-\end{figure}
-\todo[inline]{En la figura usas subfigure cuando no hace falta}
+Ahora, extendamos la información a priori.
+%
+Supongamos que ahora se nos pide que elijamos una caja y alguien que conoce la ubicación del regalo muestra el interior de una de las cajas que no contiene el regalo.
+%
+Se incorporan ahora las hipótesis elementales $c_i \equiv \text{ ``elegimos la caja $i$''}$ y $s_i \equiv \text{ ``muestran el interior de la caja $i$''}$.
+%
+Luego, nuestro problema de investigación (o experimento) $\mathcal{H}$ consiste de tres hipótesis, $\mathcal{H} = {R, C, S}$, con $R=\{r_1, r_2, r_3\}$, $C=\{c_1, c_2, c_3\}$ y $S=\{s_1, s_2, s_3\}$.
+%
+Y se incorpora una restricción adicional, si el regalo se encuentra en el caja $i$ no puede ocurrir que se muestre el interior de la caja $i$.
+%
+Y no tenemos más información.
+%
+Esto hace que, si el regalo se encuentra en la caja 1, $r_1$, no tengamos preferencia por la hipótesis ninguna de las hipótesis elementales $s_2$ o $s_3$ (y de forma equivalente ocurre en los otros casos $r_i$).
 
 % Parrafo
 
-El principio de indiferencia puede aplicarse tambi\'en cuando trabajamos con modelos causales multidimensionales.
+A esta información inicial la llamaremos Modelo $A$, $M_A$.
 %
-Para ello, extenderemos el ejemplo del regalo.
-
-\todo[inline]{deberia estar claro al terminar esta secci\'on porque separar la creencia en tres partes iguales es \emph{mejor}  que no hacerlo, para eso tenes que presentar los conceptos necesarios}
-
-\subsubsection{M\'axima incertidumbre dado modelos causales alternativos}
-
+Necesitamos entonces definir la distribución de probabilidad a priori honesta $P(R,C,S|M_A)$.
 %
-Sigamos con el ejemplo del regalo escondido dentro de una de tres cajas.
-Tenemos que eligir una caja $c \in \{1, 2, 3\}$, pero ahora un or\'aculo nos indica que en el interior de una de las cajas $s \in \{1, 2, 3\}$ \textbf{no est\'a} el regalo $r \in \{1, 2, 3\}$.
+Para simplificar el problema supondremos además que siempre elegimos la caja 1, por lo que reducimos el problema a solo dos hipótesis, $P(R,S|C=c_1, M_A)$.
+%
+Las restricciones vinculadas a los modelos suelen representarse mediante lo que se conoce como  \emph{redes bayesianas}.
+%
+Los nodos de la red son las hipótesis del problema de investigación $\mathcal{H}$ y los ejes representan una dependencia entre hipótesis.
+%
+En el modelo $$
+
+
+
+
+
+
+
 \todo[inline]{Por qu\'e aca cambias la notaci\'on? no hay motivos para saltar de nomeclatura. Ya se que a vos te parece trivial, pero no se justifica y puede confundir. En todo caso, empareja para que lo anterior sea consistente con esta si es que la notacion a partir de aca es mejor o mas clara para lo que sigue.}
 %
 En este ejemplo tenemos tres variables: la posici\'on del regalo, $r$; la caja que elegimos, $c$; y la pista que recibimos $s$.
