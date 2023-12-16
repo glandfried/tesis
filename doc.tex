@@ -1757,32 +1757,67 @@ Este mismo m\'etodo ser\'a usado para evaluar el modelo a lo largo de la tesis.
 
 \subsection{Costo computacional y balance natural de las reglas de la probabilidad}
 
-El problema hist\'orico para la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del conjunto de hip\'otesis del problema de investigación (o experimento) $\mathcal{H} = \{H_1, H_2, \dots, H_N\} $.
+El problema hist\'orico para la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del las hip\'otesis de investigación (o experimento) $\mathcal{H} = \{H_1, H_2, \dots, H_N\} $.
 %
 Con hip\'otesis binarias $|H_i|=2$, el tama\~no de la distribuci\'on conjunta crece de forma exponencial, $2^N-1$.
 %
-En modelos continuos, la imposibilidad de resolver las integrales ha sido un serio obst\'aculo para aplicar la regla de la suma y por lo tanto para aplicar estrictamente las reglas de la probabilidad.
+En hipótesis continuos, la imposibilidad matemática de resolver las integrales requeridas para la aplicación la regla de la suma ha impedido realizar la inferencia de las hipótesis activas al interior de cada modelo, y de evaluar correctamente el propio modelo.
 %
-Solo algunos pocos modelos con solución analítica podían ser evaluados correctamente antes de la computación moderna.
-%
-Incluso modelos como el lineal, que tienen solución analítica fueron prohibitivos por la necesidad de invertir matrices.
+El famoso modelo lineal es un caso paradigmático: es un modelo que tiene solución analítica pero que quedó impedido de ser implementado correctamente hasta el desarrollo de la computación moderna debido al costo computacional de la inversión de matrices.
 
 % Parrafo
 
 Revisemos el modelo lineal.
 %
-
+Comenzaremos a introducir lentamente algunos conceptos de causalidad.
 %
-En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipótesis mediante una red bayesiana y la definición de las probabilidades condicionales de las hipótesis.
+En particular, un modelo causal lineal de grado 3 supone que el mundo tiene $3$ causas $W_1$, $W_2$, $W_3$, de $N+1$ consecuencias $Y_1$ a $Y_{N+1}$, con dependencias causales entre variables regida por la siguiente relación.
 %
+\begin{equation}
+y_i \leftarrow w_0 + w_1 x_i + w_2 x_i^2
+\end{equation}
+%
+La flecha representa la dependencia causal.
+%
+Esta notación, adoptada en el área de Inferencia Bayesiana Causal~\cite{pearl2009}, involucra la idea de que cambios en los valores de las causas producen cambios en los valores de las consecuencias, pero no a la inversa.
+%
+Las hipótesis de investigación (o experimento) del modelo causal lineal más básico ($N=1$) son $\mathcal{H}=\{Y_1, Y_2, W1, W_2, W_3 \}$, con $Y_1=Y_2=W_1=W_2=W_3=(-\infty, \infty)$.
+%
+Las variables $x_i \in (-\infty, \infty)$ no son hipótesis sino constantes que se nos informa con exactitud al recibir la observación de la hipótesis $Y_i$.
+%
+Las hipótesis $Y_1$ hasta $Y_N$ son observables.
+%
+A través de la observación de las consecuencias $Y_1$ a $Y_N$ tenemos que inferir el valor de las causas no observables $W_1$, $W_2$ y $W_3$ para predecir en todo el rango de $x_{N+1}$ el valor de la consecuencia todavía no observada $Y_{N+1}$.
 
+% Parrafo
+
+Al modelo lineal, se le agrega un elemento más.
+%
+Los valores observados $y_i$ se generan con un ruido aleatorio que tiene media 0 y desvío $\beta$.
+%
+La distribución honesta respecto a la información de la media y el desvío es la distribución Gaussiana o Normal.
+%
+\begin{equation}
+P(y_i|x_i, w_1, w_2, w_3, \beta) = \N(y_i| w_0 + w_1 x_i + w_2 x_i^2,\ \beta^2)
+\end{equation}
+%
+Esta es la distribución de probabilidad condicional de las hipótesis $Y_i$.
+%
+La distribución de probabilidad a priori de las causas $W_i$ son,
+%
+\begin{equation}
+P(w_i|\sigma) = \N(w_i|0, \sigma )
+\end{equation}
+%
+En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipótesis mediante una red bayesiana y las probabilidades condicionales de las hipótesis.
+%
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[c]{0.45\textwidth}
       \begin{equation*}
       \begin{split}
       p(y | x, \bm{w}, \beta ) &= \N(y \,|\, w_0 + w_1 x + w_2 x^2, \beta^2) \\[0cm]
-      p(w_i) &= \N(w_i \,|\, 0, \sigma_{i}^2) \\[0cm]
+      p(w_i) &= \N(w_i \,|\, 0, \sigma^2) \\[0cm]
       \end{split}
       \end{equation*}
     \end{subfigure}
@@ -1790,48 +1825,55 @@ En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipót
     \centering
     \tikz{
 
-    \node[latent, fill=black!100, minimum size=2pt] (x) {} ; %
-    \node[const, right=of x] (c_x) {$x_i$};
+    \node[latent, fill=black!100, minimum size=2pt] (beta) {} ; %
     \node[latent, fill=black!20, yshift=-1.5cm] (t) {$y_i$} ; %
-    \node[latent, fill=black!100, yshift=-1.5cm , xshift=-2cm,minimum size=2pt] (beta)
-    {} ; %
+    \node[latent, fill=black!100, yshift=-1.5cm , xshift=-2cm,minimum size=2pt] (x) {} ; %
+    \node[const, above=of x] (c_x) {$x_i$};
+
     \node[const, above=of beta] (c_beta) {$\beta$};
-    \node[latent, fill=black!0, yshift=-1.5cm, xshift=2cm] (w) {$\bm{w}$};
-    \node[latent, fill=black!100, xshift=2cm, minimum size=2pt] (alpha) {} ; %
+    \node[latent, fill=black!0, yshift=-1.5cm, xshift=2cm] (w) {$w_d$};
+    \node[latent, fill=black!100,yshift=-1.5cm, xshift=3.75cm, minimum size=2pt] (alpha) {} ; %
     \node[const, right=of alpha] (c_alpha) {$\sigma$};
 
+    \node[latent, xshift=2cm] (ypred) {$y_{N+1}$} ; %
+    \node[latent, fill=black!100, xshift=3.75cm, minimum size=2pt] (xpred) {} ; %
+    \node[const, above=of xpred] (c_xpred) {$x_{N+1}$};
+
+
     \edge {x,beta,w} {t};
+    \edge {beta,xpred,w} {ypred};
     \edge {alpha} {w};
 
-    \node[invisible, fill=black!0, minimum size=0pt, xshift=0.52cm] (data_inv) {} ; %
+    \node[invisible, above=of c_x, xshift=-0.2cm] (ia) {};
+    \node[invisible, above=of w] (ib) {};
 
-    \plate {no} {(x)(t)(data_inv)} {$i: $ Datos}; %
+
+    \plate {no} {(x)(t)(ia)} {\scalebox{0.7}{$i \in \{1, \dots, N\}$}}; %
+    \plate {si} {(w)(ib)} {\scalebox{0.7}{$d \in \{1, \dots, D\} $}}; %
     }
     \end{subfigure}
-    \caption{Modelo lineal con priors conjugados. La placa con sub\'indice ``$i:\text{ Datos}$'' representa el plegamiento de muchas variable $y_i$.}
+    \caption{Modelo causal lineal. Continuamos con la notación de redes bayesianas presentada en la figura~\ref{fig:modelos_causales}. Los puntos negros representan constantes.}
     \label{fig:modelo_lineal}
 \end{figure}
-%
-
-
-En el modelo linea, las dimensiones del espacio de hip\'otesis est\'a determinado por la cantidad de par\'ametros $w$.
 
 % Parrafo
 
-
-
-Ante esta dificultad, durante el siglo 20 se propusieron una serie de t\'ecnicas que buscaban evitar el costo computacional de la aplicaci\'on estricta de las reglas de la probabilidad.
+La distribución de probabilidad a posteriori sobre las causas, $P(\bm{w}|\bm{y}, \bm{x}, \sigma)$, y la predicción de la próxima consecuencia $P(y_{N+1}|x_{N+1}, \bm{w}, \bm{y}, \bm{x}, \beta)$, ambas son distribuciones Gaussianas conocidas (capítulo 2~\cite{Bishop2006}).
 %
-
-
-Una de las t\'ecnicas m\'as sencillas para evitar el costo computacional asociado a la evaluaci\'on completa del espacio de hip\'otesis consiste naturalmente en seleccionar una \'unica hip\'otesis en base a alg\'un criterio ad-hoc, como por ejemplo maximizar la verosimilitud.
+El vectores $\bm{w}$ contienen las hipótesis elementales de $w_1$ a $w_D$, el vector $\bm{y}$ contienen las hipótesis elementales de $y_1$ a $y_N$, y el vector $\bm{x}$ contiene los valores $x_1$ a $x_N$.
+%
+Ante la dificultad para resolver la inferencia de este modelo aplicando estrictamente las reglas de la probabilidad, durante el siglo 20 se adoptó el hábito de seleccionar una \'unica hip\'otesis en base a alg\'un criterio ad-hoc, como por ejemplo \emph{maximo a posteriori}.
 %
 \begin{equation*}
- \underset{\bm{w}}{\text{ max }} P(\bm{t} | \bm{x}, \bm{w}, \beta) = \underset{\bm{w}}{\text{ min }} \sum_{i=1}^{n}  (t_i - \bm{w}^T\bm{\phi}(\bm{x}_i))^2
+ \underset{\bm{w}}{\text{ max }} P(\bm{y} | \bm{x}, \bm{w}, \beta) P(\bm{w}|\sigma)
 \end{equation*}
 %
-donde $\bm{\phi}$ es una transformaci\'on de los datos.
+donde la función $\bm{\phi}$ devuelve un vector de longitud $D$ con la transformación que sufre la variable $x_i$ en cada caso.
 %
+Y también se adoptó un procedimiento ad-hoc, que incluye una etapa llamada de ``entrenamiento'' y una etapa
+%
+
+
 Si bien este enfoque permiti\'o durante el siglo 20 ``ajustar'' funciones lineales a los datos, introdujo al mismo una serie de problemas que siguen presente en muchos de los algoritmos de inteligencia artificial modernos.
 
 % Parrafo
