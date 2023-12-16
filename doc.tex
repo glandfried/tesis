@@ -1757,16 +1757,20 @@ Este mismo m\'etodo ser\'a usado para evaluar el modelo a lo largo de la tesis.
 
 \subsection{Costo computacional y balance natural de las reglas de la probabilidad}
 
-El problema hist\'orico para la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del las hip\'otesis de investigación (o experimento) $\mathcal{H} = \{H_1, H_2, \dots, H_N\} $.
+El obstáculo hist\'orico de la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del las hip\'otesis de investigación (o experimento) $\mathcal{H} = \{H_1, H_2, \dots, H_N\}$.
 %
-Con hip\'otesis binarias $|H_i|=2$, el tama\~no de la distribuci\'on conjunta crece de forma exponencial, $2^N-1$.
+En el caso más simple, con hip\'otesis de investigación binarias $|H_i|=2$, la cantidad de combinaciones (o universos paralelos) a evaluar, $P(h_1, h_2, \dots h_N)$, crece de forma exponencial $2^N-1$.
 %
-En hipótesis continuos, la imposibilidad matemática de resolver las integrales requeridas para la aplicación la regla de la suma ha impedido realizar la inferencia de las hipótesis activas al interior de cada modelo, y de evaluar correctamente el propio modelo.
+No solo hay que asignar probabilidades iniciales a cada una de esas combinaciones.
 %
-El famoso modelo lineal es un caso paradigmático: es un modelo que tiene solución analítica pero que quedó impedido de ser implementado correctamente hasta el desarrollo de la computación moderna debido al costo computacional de la inversión de matrices.
+Hay que incorporar la información que transmite la observación de una hipótesis elemental en las restantes $2^N-2$ combinaciones a través del grado de sorpresa asociada a los supuestos iniciales (el modelo, conjunto de restricciones formales), la cantidad de creencias asignada por los supuestos a la hipótesis elemental observada con anterioridad a ser observada (predicción a priori).
+%
+En casos más complejos, que involucran además preguntas (o hipótesis) de investigación con graduaciones continuas ni siquiera posible cuando las integrales requeridas para la aplicación de la regla de la suma no tiene solución analítica.
 
 % Parrafo
 
+El famoso modelo lineal es un caso paradigmático en la historia de la probabilidad, es un modelo que tiene solución analítica que no pudo ser evaluado correctamente hasta el desarrollo de la computación moderna debido al costo computacional de la inversión de matrices.
+%
 Revisemos el modelo lineal.
 %
 Comenzaremos a introducir lentamente algunos conceptos de causalidad.
@@ -1860,7 +1864,7 @@ En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipót
 
 La distribución de probabilidad a posteriori sobre las causas, $P(\bm{w}|\bm{y}, \bm{x}, \sigma)$, y la predicción de la próxima consecuencia $P(y_{N+1}|x_{N+1}, \bm{w}, \bm{y}, \bm{x}, \beta)$, ambas son distribuciones Gaussianas conocidas (capítulo 2~\cite{Bishop2006}).
 %
-El vectores $\bm{w}$ contienen las hipótesis elementales de $w_1$ a $w_D$, el vector $\bm{y}$ contienen las hipótesis elementales de $y_1$ a $y_N$, y el vector $\bm{x}$ contiene los valores $x_1$ a $x_N$.
+El vector $\bm{w}$ contiene las hipótesis elementales de $w_1$ a $w_D$, el vector $\bm{y}$ contiene las hipótesis elementales de $y_1$ a $y_N$, y el vector $\bm{x}$ contiene los valores $x_1$ a $x_N$.
 %
 Ante la dificultad para resolver la inferencia de este modelo aplicando estrictamente las reglas de la probabilidad, durante el siglo 20 se adoptó el hábito de seleccionar una \'unica hip\'otesis en base a alg\'un criterio ad-hoc, como por ejemplo \emph{maximo a posteriori}.
 %
