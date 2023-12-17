@@ -1776,27 +1776,23 @@ Revisemos el modelo lineal.
 %
 Comenzaremos a introducir lentamente algunos conceptos de causalidad.
 %
-Un modelo causal lineal de grado D supone que el mundo tiene $D+1$ causas ($W_0$ a $W_D$ con $D\geq 1$) que actúan sobre $N+1$ consecuencias ($Y_0$ a $Y_{N}$ con $N\geq1$) y que entre ellas existe la siguiente dependencias causales.
+Un modelo causal lineal de grado D supone que el mundo tiene $D+1$ causas ($W_0$ a $W_D$ con $D\geq 0$) que actúan sobre $N+1$ consecuencias ($Y_0$ a $Y_{N}$ con $N\geq1$) y que entre ellas existe la siguiente dependencias causales.
 %
 \begin{equation*} \label{eq:modelo_lineal}
-y_i \leftarrow \sum_{d = 0}^{D} w_d x_d^d \hspace{1cm} \text{con $i \in \{0, \dots,N+1$}
+y_i \leftarrow \sum_{d = 0}^{D} w_d x_d^d \hspace{1cm} \text{$i \in \{0, \dots,N\}$}
 \end{equation*}
 %
 La flecha representa la dependencia causal.
 %
 Esta notación, adoptada en el área de Inferencia Bayesiana Causal~\cite{pearl2009-causality}, involucra la idea de que cambios en los valores de las causas producen cambios en los valores de las consecuencias, pero no a la inversa.
 %
-Las hipótesis de investigación (o experimento) del modelo causal lineal más básico ($N=1, D=1$) son $\mathcal{H}=\{Y_0, Y_1, W_0, W_1\}$, con $Y_0=Y_1=W_0=W_1 = (-\infty, \infty)$.
+Las hipótesis de investigación (o experimento) de un modelo causal lineal son $\mathcal{H}=\{Y_0, \dots , Y_N, W_0, \dots, W_D\}$, con $Y_0=\dots=Y_N=W_0=\dots = W_D = (-\infty, \infty)$.
 %
-\begin{equation*}
-y_i \leftarrow  w_0 + w_1 x_i  \hspace{1cm}   \text{con $i \in \{0,1\}$}
-\end{equation*}
+Las variables $x_i \in (-\infty, \infty)$ no son hipótesis sino constantes que conocemos con exactitud al momento de recibir la observación de la hipótesis $Y_i$.
 %
-Las variables $x_i \in (-\infty, \infty)$ no son hipótesis sino constantes que se nos informa con exactitud al recibir la observación de la hipótesis $Y_i$.
+Las hipótesis $Y_0$ hasta $Y_{N-1}$ son observables.
 %
-Las hipótesis $Y_1$ hasta $Y_N$ son observables.
-%
-A través de la observación de las consecuencias $Y_1$ a $Y_N$ tenemos que inferir el valor de las causas no observables $W_1$, $W_2$ y $W_3$ para predecir en todo el rango de $x_{N+1}$ el valor de la consecuencia todavía no observada $Y_{N+1}$.
+A través de la observación de las consecuencias $Y_0$ a $Y_{N-1}$ tenemos que inferir el valor de las causas no observables $W_0$ a $W_D$ para predecir el valor de la consecuencia todavía no observada $Y_{N}$ para cualquier valor $x_{N}$.
 
 % Parrafo
 
@@ -1806,30 +1802,24 @@ Los valores observados $y_i$ se generan con un ruido aleatorio que tiene media 0
 %
 La distribución honesta respecto a la información de la media y el desvío es la distribución Gaussiana o Normal.
 %
-\begin{equation}
-P(y_i|x_i, w_1, w_2, w_3, \beta) = \N(y_i| w_0 + w_1 x_i + w_2 x_i^2,\ \beta^2)
+\begin{equation} \label{eq:likelihood_modelo_lineal}
+p(y_i|x_i, w_0, \dots, w_D, \beta, M_D) = \N(y_i| \sum_{d = 0}^{D} w_d x_d^d,\ \beta^2) \hspace{1cm} \text{$i \in \{0,\dots, N\}$}
 \end{equation}
 %
-Esta es la distribución de probabilidad condicional de las hipótesis $Y_i$.
+Esta es la distribución de probabilidad condicional de las hipótesis $Y_i$ dado el modelo grado $D$, $M_D$.
+%
+Las distribuciones de probabilidad sobre variables continuas se notan con $p$ minúscula.
 %
 La distribución de probabilidad a priori de las causas $W_i$ son,
 %
-\begin{equation}
-P(w_i|\sigma) = \N(w_i|0, \sigma )
+\begin{equation} \label{eq:prior_modelo_lineal}
+p(w_d|\sigma,M_D) = \N(w_d|0, \sigma^2) \hspace{1cm} \text{$d \in \{0,\dots,D\}$}
 \end{equation}
 %
-En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipótesis mediante una red bayesiana y las probabilidades condicionales de las hipótesis.
+En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal mediante la notación de redes bayesianas que representan a las hipótesis ocultas con círculos blancos, las hipótesis observadas con círculos grises, los puntos negros como constantes (o parámetros) del modelo y las dependencias causales entre hipótesis mediante flechas.
 %
 \begin{figure}[ht!]
     \centering
-    \begin{subfigure}[c]{0.45\textwidth}
-      \begin{equation*}
-      \begin{split}
-      p(y | x, \bm{w}, \beta ) &= \N(y \,|\, w_0 + w_1 x + w_2 x^2, \beta^2) \\[0cm]
-      p(w_i) &= \N(w_i \,|\, 0, \sigma^2) \\[0cm]
-      \end{split}
-      \end{equation*}
-    \end{subfigure}
     \begin{subfigure}[c]{0.45\textwidth}
     \centering
     \tikz{
@@ -1844,9 +1834,9 @@ En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipót
     \node[latent, fill=black!100,yshift=-1.5cm, xshift=3.75cm, minimum size=2pt] (alpha) {} ; %
     \node[const, right=of alpha] (c_alpha) {$\sigma$};
 
-    \node[latent, xshift=2cm] (ypred) {$y_{N+1}$} ; %
+    \node[latent, xshift=2cm] (ypred) {$y_{N}$} ; %
     \node[latent, fill=black!100, xshift=3.75cm, minimum size=2pt] (xpred) {} ; %
-    \node[const, above=of xpred] (c_xpred) {$x_{N+1}$};
+    \node[const, above=of xpred] (c_xpred) {$x_N$};
 
 
     \edge {x,beta,w} {t};
@@ -1857,8 +1847,8 @@ En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipót
     \node[invisible, above=of w] (ib) {};
 
 
-    \plate {no} {(x)(t)(ia)} {\scalebox{0.7}{$i \in \{1, \dots, N\}$}}; %
-    \plate {si} {(w)(ib)} {\scalebox{0.7}{$d \in \{1, \dots, D\} $}}; %
+    \plate {no} {(x)(t)(ia)} {\scalebox{0.7}{$i \in \{0, \dots, N-1\}$}}; %
+    \plate {si} {(w)(ib)} {\scalebox{0.7}{$d \in \{0, \dots, D\} $}}; %
     }
     \end{subfigure}
     \caption{Modelo causal lineal. Continuamos con la notación de redes bayesianas presentada en la figura~\ref{fig:modelos_causales}. Los puntos negros representan constantes.}
@@ -1867,47 +1857,63 @@ En la figura~\ref{fig:modelo_lineal} se especifica las dependencias entre hipót
 
 % Parrafo
 
-La distribución de probabilidad a posteriori sobre las causas, $P(\bm{w}|\bm{y}, \bm{x}, \sigma)$, y la predicción de la próxima consecuencia $P(y_{N+1}|x_{N+1}, \bm{w}, \bm{y}, \bm{x}, \beta)$, ambas son distribuciones Gaussianas conocidas (capítulo 2~\cite{Bishop2006}).
+Sea $\bm{w} \in (W_0, \dots, W_D)$ un vector que contiene las hipótesis elementales de $w_0$ a $w_D$, $\bm{y} \in (Y_0, \dots, Y_{N-1})$ el vector que contiene las hipótesis elementales observadas de $y_0$ a $y_{N-1}$, y $\bm{x}$ el vector que contiene los valores asociados a las hipótesis observadas $x_0$ a $x_N$.
 %
-El vector $\bm{w}$ contiene las hipótesis elementales de $w_1$ a $w_D$, el vector $\bm{y}$ contiene las hipótesis elementales de $y_1$ a $y_N$, y el vector $\bm{x}$ contiene los valores $x_1$ a $x_N$.
+La distribución de probabilidad a posteriori de las causas, $p(\bm{w}|\bm{y}, \bm{x}, \sigma, M_D)$, y la predicción de la próxima consecuencia $p(y_{N}|x_{N}, \bm{w}, \beta, M_D)$, ambas son distribuciones Gaussianas conocidas (capítulo 2~\cite{Bishop2006}).
 %
-Ante la dificultad para resolver la inferencia de este modelo aplicando estrictamente las reglas de la probabilidad, durante el siglo 20 se adoptó el hábito de seleccionar una \'unica hip\'otesis en base a alg\'un criterio ad-hoc, como por ejemplo \emph{maximo a posteriori}.
+Sin embargo, ante la dificultad para resolver la inferencia del modelo lineal aplicando estrictamente las reglas de la probabilidad, durante el siglo 20 se adoptó el hábito de seleccionar una \'unica hip\'otesis elemental para cada hipótesis de investigación no observable en base a alg\'un criterio ad-hoc, como por ejemplo \emph{máxima verosimilitud}.
 %
 \begin{equation*}
- \underset{\bm{w}}{\text{ max }} P(\bm{y} | \bm{x}, \bm{w}, \beta) P(\bm{w}|\sigma)
+ \underset{\bm{w}}{\text{ max }} p(\bm{y} | \bm{x}, \bm{w}, \beta, M_D)
 \end{equation*}
 %
-donde la función $\bm{\phi}$ devuelve un vector de longitud $D$ con la transformación que sufre la variable $x_i$ en cada caso.
+Esto permitió durante el siglo 20 utilizar los modelos lineales para predecir nuevos datos.
 %
-Y también se adoptó un procedimiento ad-hoc, que incluye una etapa llamada de ``entrenamiento'' y una etapa
+A la acción de seleccionar hipótesis elementales se la conoce en la jerga de Inteligencia Artificial como ``ajustar el modelo'', a los vectores $\bm{y}$ y $\bm{x}$ se los conoce como ``datos de entrenamiento'', y a las hipótesis observables todavía no observadas, $y_N$, se las conoce como ``datos de testeo''.
 %
-
-
-Si bien este enfoque permiti\'o durante el siglo 20 ``ajustar'' funciones lineales a los datos, introdujo al mismo una serie de problemas que siguen presente en muchos de los algoritmos de inteligencia artificial modernos.
+\begin{equation*}
+\begin{split}
+p(y_N|x_N, \beta, M_D)
+ & = \int\dots\int_{\bm{w} \in (W_0, \dots, W_D)} p(y_{N}|x_{N}, \bm{w}, \beta, M_D) p(\bm{w}|\bm{y}, \bm{x},\sigma, M_D) \, \text{d}\bm{w} \\
+ &\approx \,  p(y_N|x_{N}, \underbrace{\underset{\bm{w}}{\text{ max }} p(\bm{y} | \bm{x}, \bm{w}, \beta, M_D)}_{\hfrac{\text{Hipótesis elementales $\bm{w}$ que}}{\hfrac{\text{que maximizan la función}}{\text{de costo ad-hoc}} } } , \beta, M_D)
+\end{split}
+\end{equation*}
+%
+Estos enfoques ad-hoc, en vez de predecir el valor de la hipótesis aún no observada $y_N$ con la contribución de todas las hipótesis no observables $\bm{w}$ mediante la aplicación estricta de las reglas de la probabilidad, aproximan la predicción mediante la selección del vector de hipótesis elementales $\bm{w}$ que maximiza la función de costo ad-hoc.
+%
+A diferencia de la predicción realizada mediante la regla de la suma, las predicciones realizadas con un único vector $\bm{w}$ de hipótesis elementales tiene mayor tendencia a asignar a priori probabilidad cercana a cero a la hipótesis elemental $y_N$ que finalmente se hace observable.
+%
+Además, la ruptura de la aplicación estricta de las reglas de la probabilidad impide evaluar correctamente los modelos alternativos.
 
 % Parrafo
 
-Supongamos que tenemos un conjunto de datos generados a partir de una funci\'on objetivo que decidimos modelar con polinomios de distinto grado $n \in \{0, 1, \dots, 9\}$.
+Por ejemplo, supongamos que tenemos un conjunto de datos generado a partir de una funci\'on sinoidal con un ruido aleatorio que tiene desvío estándar $\beta$ y media nula.
 %
 \begin{equation*}
-y = \sum_{i=0}^n w_i \, x^i
+p(y_i|x_i,\beta) = \N(y_i \,| \, \text{sen}(x_i), \beta^2)
 \end{equation*}
 %
-Una inc\'ognita muy b\'asica que quisi\'eramos resolver en general es determinar cu\'al es el mejor modelo.
+En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal mediante una l\'inea punteada, y las observaciones $y_0$ a $y_N$ mediante puntos negros.
 %
-El problema de los enfoques que seleccionan una \'unica hip\'otesis es precisamente el uso de criterios ad-hoc.
+Supongamos además que tenemos 10 modelos lineales alternativos $M_D$, con $D \in \{0, \dots, 9\}$.
 %
-Sin poder recurrir a las reglas de la probabilidad para evaluar modelos, ?`qu\'e significar\'ia que un modelo es mejor que otro?
+Una pregunta básica que quisiéramos responder es, ¿cuál de todos los modelos lineales ``ajusta'' mejor los datos?.
+%
+En primer lugar, sin la posibilidad de aplicar las reglas de la probabilidad, ¿qué significa que un modelo sea mejor que otro?
 
-% Parrafo
+%
 
-La funci\'on objetivo es una sinoidal $\N(y \,| \, \text{sen}(x), \beta^2)$ en el rango $x \in [-\pi,\pi]$ (l\'inea punteada en figura~\ref{fig:model_selection_OLS}).
+Los modelos de grado 0 a 2 no tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
 %
-En este caso, si bien ning\'un modelo es cierto, el modelo de grado 3 (l\'inea roja en figura~\ref{fig:model_selection_OLS}) deber\'ia ser suficiente para ajustar la funci\'on objetivo.
+A partir del grado 3 todos los modelos tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
 %
-Sin embargo, al evaluando por m\'axima la versoimilutd nos encontramos con el hecho de que la verosimilutd crece indefinidamente a medida que le agregamos complejidad (grados) a los modelos.
+En la figura~\ref{fig:model_selection_OLS} graficamos el ajuste de todos los modelos destacando el modelo de grado 3 (linea roja) y el modelo de grado 9 (línea celeste).
 %
-El problema es que el modelo de grado 9 (l\'inea celeste en figura~\ref{fig:model_selection_OLS}), a pesar de ser el que m\'as cerca pasa por los todos puntos observados, no es el que m\'as cerca pasa por la funci\'on objetivo oculta, y por lo tanto no ser\'a el que mejor desempe\~no tenga sobre los datos nuevos.
+A medida que los modelos son más complejos (a mayor grado), tienen mayor flexibilidad y por lo tanto el valor de m\'axima verosimilitud aumenta (figura~\ref{fig:model_selection_maxLikelihood}).
+%
+El problema es que el modelo de grado 9, a pesar de ser el que m\'as cerca pasa por los todos puntos observados, no es el que m\'as cerca pasa por la funci\'on objetivo oculta, y por lo tanto no ser\'a el modelo que mejor desempe\~no tenga sobre datos nuevos.
+%
+Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre de \emph{overfitting} (o sobreajuste).
 
 % Parrafo
 
@@ -1921,7 +1927,7 @@ El problema es que el modelo de grado 9 (l\'inea celeste en figura~\ref{fig:mode
   \begin{subfigure}[t]{0.32\textwidth}
   \centering
   \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_maxLikelihood.pdf}
-  \caption{Verosimilitud de modelos}
+  \caption{Máxima verosimilitud}
   \label{fig:model_selection_maxLikelihood}
   \end{subfigure}
   \begin{subfigure}[t]{0.32\textwidth}
@@ -1930,39 +1936,25 @@ El problema es que el modelo de grado 9 (l\'inea celeste en figura~\ref{fig:mode
   \caption{Validaci\'on en l\'inea}
   \label{fig:model_selection_maxApriori_online}
   \end{subfigure}
-  \caption{Modelos polinomiales de grado 0 a 9 ajustados por m\'axima versoimilutd a datos generados con una sinodal, $\N(y \,| \, \text{sen}(x), \beta^2) \ \ x \in [-\pi,\pi]$. Los modelo de grado 3 y 9 se muestran en rojo y celeste respectivamente.}
+  \caption{Modelos lineal de grado $D=0$ a $D=9$ ajustados por m\'axima verosimilitud a datos generados con una sinodal, $\N(y_i \,| \, \text{sen}(x_i), \beta^2)$ en el rango $[-\pi,\pi]$.
+  En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal con línea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (línea roja) y el modelo grado 9 (línea celeste).
+  En la figura~\ref{fig:model_selection_maxLikelihood} se muestra el valor de máxima verosimilitud obtenido por cada uno de los modelos.
+  En la figura~\ref{fig:model_selection_maxApriori_online} se muestra la probabilidad del modelo calculando cada una de las predicciones individuales a priori, usando como dato de entrenamiento en cada paso los datos ya observados.
+   }
   \label{fig:overfitting}
 \end{figure}
 
 % Parrafo
 
-Este problema se lo conoce con el nombre de \emph{overfitting} y en parte surge debido a que la predicci\'on de los modelos que estamos evaluando no ``pre-dice'' en sentido estricto, debido a que antes seleccionamos los par\'ametros que mejor ajustaban los datos.
+Hemos visto en la sección anterior que para evaluar modelos necesitamos la predicción a priori de los datos, $P(\text{Datos}|\text{Modelo}, I)$ (ecuaci\'on~\ref{eq:p<datos|modelo>}), la que se descompone como una secuencia de predicciones individuales de cada dato, con la informaci\'on de todos los datos anteriores.
 %
-\begin{align*}
-\widehat{P}(\text{dato}|\text{Modelo}) & = P(\text{dato} \, | \, \overbrace{\underset{h}{\text{arg max}} \ P(\text{dato}|h, \text{Modelo})}^{\text{Hip\'otesis que mejor predice}},  \, \text{Modelo} )
-\end{align*}
+Si aproximamos el producto de predicciones $P(\bm{y}|\bm{x}, \bm{w}, \beta, \sigma, M_D)$ mediante un procedimiento de entrenamiento en línea, en el que en cada paso se selecciona un nuevo vector $\bm{w}$ en base a los datos vistos hasta el momento para predecir el siguiente dato, el modelo de grado 3 obtiene probabilidad 1 (figura~\ref{fig:model_selection_maxApriori_online}).
 %
-Ser\'ia m\'as honesto decir que el modelo ``post-dice'', dice despu\'es de haber visto los datos.
+Podría pensarse que el procedimiento de entrenamiento en línea resuelve el problema del sobreajuste debido a que penaliza los modelos que tienen mayor complejidad que la necesaria.
 %
-Para evitar esta ``trampa'', los enfoques que usan criterios ad-hoc para seleccionar hip\'otesis se ven obligados a evaluar modelos separando los datos en al menos dos partes: una para ``entrenar'', para seleccionar la hip\'otesis al interior del modelo; y otra para ``evaluar'', para seleccionar el modelo que mejor predice.
+Sin embargo, hemos incurrido nuevamente en un sobreajuste debido a que hemos seleccionado un único modelo, que por ejemplo no será capaz de predecir correctamente datos por fuera del rango $[-\pi, \pi]$.
 %
-\begin{align*}
-\widehat{P}(\text{dato}_{\textbf{Evaluar}}|\text{Modelo}) & = P(\text{dato}_{\textbf{Evaluar}} \, | \, \underset{h}{\text{arg max}} \ P(\text{dato}_{\textbf{Entrenar}}|h, \text{Modelo}),  \, \text{Modelo} )
-\end{align*}
-%
-Si revisamos la definici\'on exacta que dan las reglas de la probabilidad de $P(\text{Datos}|\text{Modelo})$ (ecuaci\'on~\ref{eq:p<datos|modelo>}), observamos que se trata de una secuencia de predicciones del siguiente dato, con la informaci\'on de todos los datos anteriores.
-%
-Las reglas de la probabilidad nos resuelven este problema de forma  autom\'atica.
-%
-Si emulamos este procedimiento ``online'' que se observa en la descomposici\'on (\ref{eq:p<datos|modelo>}), entrenando el modelo en cada iteraci\'on y prediciendo el sieguiente dato, encontramos que el modelo que mejor predice es el modelo de grado 3 (figura~\ref{fig:model_selection_maxApriori_online}).
-
-% Parrafo
-
-Si bien parece que hemos resuelto el problema principal, sigue sobreajustando los datos.
-%
-Pues si comenzamos a observar puntos por fuera del rango $[-\pi, \pi]$, el modelo de grado 3 va a tener un p\'esimo desempe\~no.
-%
-Con los criterios ad-hoc aparce siempre, por alg\'un lado, el problema.
+%Con los criterios de selección de hipótesis ad-hoc aparece siempre, por alg\'un lado, las consecuencias negativas de la ruptura de la aplicación estricta de las reglas de la probabilidad.
 
 % % Parrafo
 %
@@ -2018,17 +2010,36 @@ Con los criterios ad-hoc aparce siempre, por alg\'un lado, el problema.
 % Al multiplicar la verosimilitud por el creencia previa, obtenemos el primer poterior (gr\'afico central).
 % %
 % Luego de observar un segundo dato (tercera fila) y repetir la operaci\'on, obtenemos un posterior muy cercano al verdadero valor.
-%
-% % Parrafo
 
+
+% Parrafo
+
+?`Será que la aplicaci\'on estricta de las reglas de la probabilidad produce sobreajuste?
 %
-% \subsection{El balance natural de las reglas de la probabilidad}
-?`La aplicaci\'on estricta de las reglas de la probabilidad produce sobreajuste?
-%
-Los modelos polinomiales que estamos implementando tienen soluci\'on anal\'itica, por lo que hoy en d\'ia podemos pedirle a la computadora que calcule la predicci\'on exacta que hace cada uno de elos, $P(\text{Datos}|\text{Modelo})$, y calcular entonces el posterior exacto $P(\text{Modelo}|\text{Datos})$ .
+Los modelos lineales que estamos implementando tienen soluci\'on anal\'itica, por lo que hoy en d\'ia podemos calcular la predicci\'on exacta que hacen los modelos $P(\bm{y}|\bm{x}, \bm{w}, \beta, \sigma, M_D)$, y calcular entonces el posterior exacto de los modelos $P(M_D|\bm{y},\bm{x}, \beta, \sigma)$.
 %
 Aplicando las reglas de la probabilidad obtenemos un resultado interesante.
 %
+En la figura~\ref{model_selection_MAP_non-informative.pdf} nuevamente la sinoidal (línea punteada), los datos (puntos negros) y el ``ajuste'' de los modelos (graficando solo el valor máximo a posteriori de $y_i$ para cada uno de los modelos, sin su incertidumbre asociada).
+%
+Y en la figura~\ref{fig:model_selection_evidence} observamos la probabilidad a posteriori de los modelos.
+
+%
+
+Por un lado, el modelo que tiene la complejidad necesaria y suficiente (el de grado 3), es el que recibe mayor probabilidad a posteriori.
+%
+Y por otro lado, los modelos con complejidad mayor a la necesaria, si bien tienen menor probabilidad que el modelo de grado 3, no son rechazados.
+%
+Todos ellos reciben una probabilidad visiblemente mayor a 0.
+%
+Los \'unicos modelos rechazados son los que tienen menor complejidad de la necesaria (grado 0 a 2).
+%
+En este caso no se produce ninguno de los problemas de sobreajuste que emergen de los enfoques con criterios de selección de hipótesis ad-hoc.
+%
+Si empezamos a ver datos por fuera del rango $[-\pi, \pi]$, los modelos más complejos están todavía disponibles para predecir los datos que no puede predecir el modelo de grado 3.
+
+%
+
 \begin{figure}[ht!] \centering
   \begin{subfigure}[t]{0.32\textwidth}
   \centering
@@ -2048,21 +2059,7 @@ Aplicando las reglas de la probabilidad obtenemos un resultado interesante.
 
 % Parrafo
 
-La alicaci\'on estricta de las reglas de la probabilidad no produce ninguno de los sobreajustes que vimos en la secci\'on anterior quye emergen de los enfoques con criterios ad-hoc.
-%
-En primer lugar, el modelo que tiene la complejidad m\'inima necesaria (el de grado 3), es el que recibe mayor probabilidad a posteriori.
-%
-Al mismo tiempo, los modelos con complejidad mayor a la necesaria no son rechazados.
-%
-Todos ellos reciben una probabilidad visiblemente mayor a 0.
-%
-Si empezamos a ver datos por fuera del rango $[-\pi, \pi]$, estos modelos complejos iran a nuestro rescate, podr\'an explicar los nuevos datos.
-%
-Los \'unicos modelos rechazados son los que tienen menor complejidad de la necesaria (grado 0 a 2).
-
-% Parrafo
-
-Este balance surge naturalemente de las reglas de la probabilidad.
+Este balance surge naturalmente de las reglas de la probabilidad.
 %
 Por definici\'on, toda distribuci\'on de creencias debe sumar o integrar 1.
 %
