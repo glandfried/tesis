@@ -1755,20 +1755,19 @@ R\'apidamente, con unas decenas de observaciones podemos tener una preferencia f
 Este mismo m\'etodo ser\'a usado para evaluar el modelo a lo largo de la tesis.
 
 
-\subsection{Costo computacional y balance natural de las reglas de la probabilidad}
+\subsection{Consecuencias de la ruptura de las reglas de la probabilidad}
 
 El obstáculo hist\'orico de la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del las hip\'otesis de investigación (o experimento) $\mathcal{H} = \{H_1, H_2, \dots, H_N\}$.
 %
-En el caso más simple, con hip\'otesis de investigación binarias $|H_i|=2$, la cantidad de combinaciones (o universos paralelos) a evaluar, $P(h_1, h_2, \dots h_N)$, crece de forma exponencial $2^N-1$.
+En el caso más simple, con hip\'otesis de investigación binarias $|H_i|=2$, la cantidad de combinaciones (o universos paralelos) a evaluar, $P(h_1, h_2, \dots h_N)$, crece de forma exponencial $2^N$.
 %
-No solo hay que asignar probabilidades iniciales a cada una de esas combinaciones.
+No solo hay que asignar probabilidades iniciales a cada una de esas combinaciones de hipótesis elementales.
 %
-Hay que incorporar la información que transmite la observación de una hipótesis elemental en las restantes $2^N-2$ combinaciones a través del grado de sorpresa asociada a los supuestos iniciales del modelo o conjunto de restricciones
-%(formalmente es la cantidad de probabilidad asignada por los supuestos a la hipótesis elemental que fue observada con anterioridad a que sea observada,predicción a priori).
+Cuando observamos alguna de las hipótesis elementales, se debe incorporar la información que transmite a través del grado de grado de sorpresa (o predicción a priori) asociada a cada una de la $2^{N-1}$ combinación de hipótesis elementales no observadas.
 %
-En casos más complejos, que involucran además preguntas (o hipótesis) de investigación continuas ni siquiera es posible aplicar la regla de la suma cuando sus integrales no tiene solución analítica.
+En casos más complejos, que involucran además preguntas (o hipótesis) de investigación continuas ni siquiera es posible aplicar la regla de la suma cuando sus integrales no tienen solución analítica.
 %
-El famoso modelo lineal es un caso paradigmático en la historia de la probabilidad, es un modelo para el cual sus integrales tienen solución analítica pero que no pudo ser evaluado correctamente hasta el desarrollo de la computación moderna debido al costo computacional asociado a la inversión de matrices.
+El famoso modelo lineal es un caso paradigmático en la historia de la probabilidad, pues sus integrales tienen solución analítica pero que no pudo ser evaluado correctamente hasta el desarrollo de la computación moderna debido al costo computacional asociado a la inversión de matrices.
 
 %
 
@@ -1806,9 +1805,9 @@ La distribución honesta respecto a la información de la media y el desvío es 
 p(y_i|x_i, w_0, \dots, w_D, \beta, M_D) = \N(y_i| \sum_{d = 0}^{D} w_d x_d^d,\ \beta^2) \hspace{1cm} \text{$i \in \{0,\dots, N\}$}
 \end{equation}
 %
-Esta es la distribución de probabilidad condicional de las hipótesis $Y_i$ dado el modelo grado $D$, $M_D$.
+Esta es la distribución de probabilidad condicional de las hipótesis $Y_i$ dado el modelo de grado $D$, $M_D$.
 %
-Las distribuciones de probabilidad sobre variables continuas se notan con $p$ minúscula.
+Las distribuciones de probabilidad sobre hipótesis continuas se notan con $p$ minúscula.
 %
 La distribución de probabilidad a priori de las causas $W_i$ son,
 %
@@ -1816,7 +1815,7 @@ La distribución de probabilidad a priori de las causas $W_i$ son,
 p(w_d|\sigma,M_D) = \N(w_d|0, \sigma^2) \hspace{1cm} \text{$d \in \{0,\dots,D\}$}
 \end{equation}
 %
-En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal mediante la notación de redes bayesianas que representan a las hipótesis ocultas con círculos blancos, las hipótesis observadas con círculos grises, los puntos negros como constantes (o parámetros) del modelo y las dependencias causales entre hipótesis mediante flechas.
+En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notación de redes bayesianas que representan a las hipótesis ocultas con círculos blancos, las hipótesis observadas con círculos grises, los parámetros del modelo con puntos negros, y las dependencias causales mediante flechas.
 %
 \begin{figure}[ht!]
     \centering
@@ -1867,21 +1866,21 @@ Sin embargo, ante la dificultad para resolver la inferencia del modelo lineal ap
  \underset{\bm{w}}{\text{ max }} p(\bm{y} | \bm{x}, \bm{w}, \beta, M_D)
 \end{equation*}
 %
-Esto permitió durante el siglo 20 utilizar los modelos lineales para predecir nuevos datos.
-%
 A la acción de seleccionar hipótesis elementales se la conoce en la jerga de Inteligencia Artificial como ``ajustar el modelo'', a los vectores $\bm{y}$ y $\bm{x}$ se los conoce como ``datos de entrenamiento'', y a las hipótesis observables todavía no observadas, $y_N$, se las conoce como ``datos de testeo''.
 %
-\begin{equation*}
+Esto permitió durante el siglo 20 utilizar los modelos lineales para predecir nuevos datos.
+%
+\begin{equation} \label{eq:prediccion_ad_hoc}
 \begin{split}
 p(y_N|x_N, \beta, M_D)
  & = \int\dots\int_{\bm{w} \in (W_0, \dots, W_D)} p(y_{N}|x_{N}, \bm{w}, \beta, M_D) p(\bm{w}|\bm{y}, \bm{x},\sigma, M_D) \, \text{d}\bm{w} \\
  &\approx \,  p(y_N|x_{N}, \underbrace{\underset{\bm{w}}{\text{ max }} p(\bm{y} | \bm{x}, \bm{w}, \beta, M_D)}_{\hfrac{\text{Hipótesis elementales $\bm{w}$ que}}{\hfrac{\text{que maximizan la función}}{\text{de costo ad-hoc}} } } , \beta, M_D)
 \end{split}
-\end{equation*}
+\end{equation}
 %
-Estos enfoques ad-hoc, en vez de predecir el valor de la hipótesis aún no observada $y_N$ con la contribución de todas las hipótesis no observables $\bm{w}$ mediante la aplicación estricta de las reglas de la probabilidad, aproximan la predicción mediante la selección del vector de hipótesis elementales $\bm{w}$ que maximiza la función de costo ad-hoc.
+En vez de predecir el valor de la hipótesis aún no observada $y_N$ con la contribución de todas las hipótesis no observables $\bm{w}$ mediante la aplicación estricta de la regla de la suma, estos enfoques aproximan la predicción de $y_N$ mediante la selección del vector de hipótesis elementales $\bm{w}$ que maximiza la función de costo ad-hoc sobre los datos de entrenamiento.
 %
-A diferencia de la predicción realizada mediante la regla de la suma, las predicciones realizadas con un único vector $\bm{w}$ de hipótesis elementales tiene mayor tendencia a asignar a priori probabilidad cercana a cero a la hipótesis elemental $y_N$ que finalmente se hace observable.
+A diferencia de la predicción realizada mediante la regla de la suma, las predicciones realizadas con un único vector $\bm{w}$ de hipótesis elementales son más inestables, esto es tiene mayor tendencia a asignar a priori probabilidad cercana a cero a la hipótesis elemental $y_N$ que finalmente se hace observable.
 %
 Además, la ruptura de la aplicación estricta de las reglas de la probabilidad impide evaluar correctamente los modelos alternativos.
 
@@ -1890,28 +1889,28 @@ Además, la ruptura de la aplicación estricta de las reglas de la probabilidad 
 Por ejemplo, supongamos que tenemos un conjunto de datos generado a partir de una funci\'on sinoidal con un ruido aleatorio que tiene desvío estándar $\beta$ y media nula.
 %
 \begin{equation*}
-p(y_i|x_i,\beta) = \N(y_i \,| \, \text{sen}(x_i), \beta^2)
+p(y_i|x_i,\beta) = \N(y_i \,| \, \text{sen}(x_i), \beta^2)  \hspace{1cm} \text{$i \in \{0,\dots,N-1\}$}
 \end{equation*}
 %
-En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal mediante una l\'inea punteada, y las observaciones $y_0$ a $y_N$ mediante puntos negros.
+En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal mediante una l\'inea punteada, y las observaciones $y_0$ a $y_{N-1}$ mediante puntos negros.
 %
 Supongamos además que tenemos 10 modelos lineales alternativos $M_D$, con $D \in \{0, \dots, 9\}$.
 %
-Una pregunta básica que quisiéramos responder es, ¿cuál de todos los modelos lineales ``ajusta'' mejor los datos?.
+Una pregunta básica que quisiéramos responder es, ¿cuál de todos los modelos lineales ``ajusta'' mejor los datos?
 %
-En primer lugar, sin la posibilidad de aplicar las reglas de la probabilidad, ¿qué significa que un modelo sea mejor que otro?
+Los modelos lineales de grado 0 a 2 no tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$, mientras que todos los modelos de grado mayor o igual a grado 3 sí tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
+%
+Sin la posibilidad de aplicar estrictamente las reglas de la probabilidad, ¿qué significa que un modelo sea mejor que otro?
+%
+El siguiente ejemplo está presente en el capítulo 3 del libro de Bishop~\cite{Bishop2006}.
 
 %
 
-Los modelos de grado 0 a 2 no tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
+En la figura~\ref{fig:model_selection_OLS} graficamos el ajuste de todos los modelos, destacando los modelos de grado 3 (linea roja) y de grado 9 (línea celeste).
 %
-A partir del grado 3 todos los modelos tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
+En la figura~\ref{fig:model_selection_maxLikelihood} podemos ver que a medida que aumentamos la complejidad de los (aumentamos el grado), los modelos tienen efectivamente flexibilidad y por lo tanto el valor de m\'axima verosimilitud aumenta.
 %
-En la figura~\ref{fig:model_selection_OLS} graficamos el ajuste de todos los modelos destacando el modelo de grado 3 (linea roja) y el modelo de grado 9 (línea celeste).
-%
-A medida que los modelos son más complejos (a mayor grado), tienen mayor flexibilidad y por lo tanto el valor de m\'axima verosimilitud aumenta (figura~\ref{fig:model_selection_maxLikelihood}).
-%
-El problema es que el modelo de grado 9, a pesar de ser el que m\'as cerca pasa por los todos puntos observados, no es el que m\'as cerca pasa por la funci\'on objetivo oculta, y por lo tanto no ser\'a el modelo que mejor desempe\~no tenga sobre datos nuevos.
+El problema es que el modelo de grado 9, a pesar de ser el que m\'as cerca pasa por los todos puntos observados, no es el que m\'as cerca pasa por la funci\'on objetivo oculta (la sinoidal), y por lo tanto no ser\'a el modelo que mejor desempe\~no tenga sobre datos nuevos.
 %
 Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre de \emph{overfitting} (o sobreajuste).
 
@@ -1939,20 +1938,22 @@ Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre 
   \caption{Modelos lineal de grado $D=0$ a $D=9$ ajustados por m\'axima verosimilitud a datos generados con una sinodal, $\N(y_i \,| \, \text{sen}(x_i), \beta^2)$ en el rango $[-\pi,\pi]$.
   En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal con línea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (línea roja) y el modelo grado 9 (línea celeste).
   En la figura~\ref{fig:model_selection_maxLikelihood} se muestra el valor de máxima verosimilitud obtenido por cada uno de los modelos.
-  En la figura~\ref{fig:model_selection_maxApriori_online} se muestra la probabilidad del modelo calculando cada una de las predicciones individuales a priori, usando como dato de entrenamiento en cada paso los datos ya observados.
+  En la figura~\ref{fig:model_selection_maxApriori_online} se muestra la probabilidad de los modelo aproximando cada una de las predicciones individuales a priori mediante la ecuación ad-hoc \eqref{eq:prediccion_ad_hoc}, usando como dato de entrenamiento en cada paso solo los datos observados previamente.
    }
   \label{fig:overfitting}
 \end{figure}
 
 % Parrafo
 
-Hemos visto en la sección anterior que para evaluar modelos necesitamos la predicción a priori de los datos, $P(\text{Datos}|\text{Modelo}, I)$ (ecuaci\'on~\ref{eq:p<datos|modelo>}), la que se descompone como una secuencia de predicciones individuales de cada dato, con la informaci\'on de todos los datos anteriores.
+Hemos visto en la sección anterior que para evaluar modelos alternativos necesitamos la predicción a priori de los datos que hace cada uno de ellos, $P(\text{Datos}|\text{Modelo}, I)$, la que se descompone como una secuencia de predicciones individuales de cada condicionada en la informaci\'on de todos los datos anteriores (revisar ecuaci\'on~\ref{eq:p<datos|modelo>}).
 %
-Si aproximamos el producto de predicciones $P(\bm{y}|\bm{x}, \bm{w}, \beta, \sigma, M_D)$ mediante un procedimiento de entrenamiento en línea, en el que en cada paso se selecciona un nuevo vector $\bm{w}$ en base a los datos vistos hasta el momento para predecir el siguiente dato, el modelo de grado 3 obtiene probabilidad 1 (figura~\ref{fig:model_selection_maxApriori_online}).
+Para aproximar el posterior de los modelos bajo el enfoque ad-hoc, cada una de las predicciones individuales involucradas en la productoria \eqref{eq:p<datos|modelo>} se computan aplicando la predicción ad-hic \ref{eq:prediccion_ad_hoc} mediante un procedimiento de ``entrenamiento en línea'', en el que en cada paso se selecciona un nuevo vector $\bm{w}$ en base al conjunto de datos de entrenamiento disponible hasta el momento.
 %
-Podría pensarse que el procedimiento de entrenamiento en línea resuelve el problema del sobreajuste debido a que penaliza los modelos que tienen mayor complejidad que la necesaria.
+En la figura~\ref{fig:model_selection_maxApriori_online} se puede observar que esta aproximación del posterior de los modelo asigna probabilidad 1 al modelo de grado 3.
 %
-Sin embargo, hemos incurrido nuevamente en un sobreajuste debido a que hemos seleccionado un único modelo, que por ejemplo no será capaz de predecir correctamente datos por fuera del rango $[-\pi, \pi]$.
+Podría pensarse que este procedimiento de entrenamiento en línea resuelve el problema del sobreajuste en tanto penaliza los modelos que tienen mayor complejidad de la necesaria.
+%
+Sin embargo, hemos ``sobreajustado'' nuevamente los datos debido a que hemos seleccionado un único modelo que no será capaz de predecir correctamente datos que se encuentren fuera del rango $x_i \in [-\pi, \pi]$.
 %
 %Con los criterios de selección de hipótesis ad-hoc aparece siempre, por alg\'un lado, las consecuencias negativas de la ruptura de la aplicación estricta de las reglas de la probabilidad.
 
@@ -2018,27 +2019,21 @@ Sin embargo, hemos incurrido nuevamente en un sobreajuste debido a que hemos sel
 %
 Los modelos lineales que estamos implementando tienen soluci\'on anal\'itica, por lo que hoy en d\'ia podemos calcular la predicci\'on exacta que hacen los modelos $P(\bm{y}|\bm{x}, \bm{w}, \beta, \sigma, M_D)$, y calcular entonces el posterior exacto de los modelos $P(M_D|\bm{y},\bm{x}, \beta, \sigma)$.
 %
-Aplicando las reglas de la probabilidad obtenemos un resultado interesante.
+En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica el máximo valor de la distribución posterior (o predicción) de la hipótesis aún no observada $y_N$ para cada uno de los modelos (sin su incertidumbre asociada), y se grafica nuevamente la sinoidal (línea punteada) y los datos (puntos negros).
 %
-En la figura~\ref{model_selection_MAP_non-informative.pdf} nuevamente la sinoidal (línea punteada), los datos (puntos negros) y el ``ajuste'' de los modelos (graficando solo el valor máximo a posteriori de $y_i$ para cada uno de los modelos, sin su incertidumbre asociada).
-%
-Y en la figura~\ref{fig:model_selection_evidence} observamos la probabilidad a posteriori de los modelos.
+En la figura~\ref{fig:model_selection_evidence} se reporta la probabilidad a posteriori sobre el conjunto de modelos alternativos en base a los datos observados.
 
-%
+% Parrafo
 
+La aplicación estricta de las reglas de la probabilidad no produce ninguno de los sobreajustes que emergen de cuando se aplican enfoques con criterios de selección de hipótesis ad-hoc.
+%
 Por un lado, el modelo que tiene la complejidad necesaria y suficiente (el de grado 3), es el que recibe mayor probabilidad a posteriori.
 %
-Y por otro lado, los modelos con complejidad mayor a la necesaria, si bien tienen menor probabilidad que el modelo de grado 3, no son rechazados.
+Pero por otro lado, los modelos con complejidad mayor a la necesaria, si bien tienen menor probabilidad que el modelo de grado 3, no son rechazados, todos ellos reciben una probabilidad visiblemente mayor a 0.
 %
-Todos ellos reciben una probabilidad visiblemente mayor a 0.
-%
-Los \'unicos modelos rechazados son los que tienen menor complejidad de la necesaria (grado 0 a 2).
-%
-En este caso no se produce ninguno de los problemas de sobreajuste que emergen de los enfoques con criterios de selección de hipótesis ad-hoc.
-%
-Si empezamos a ver datos por fuera del rango $[-\pi, \pi]$, los modelos más complejos están todavía disponibles para predecir los datos que no puede predecir el modelo de grado 3.
+Los \'unicos modelos rechazados son los que tienen menor complejidad de la necesaria, con grado 0 a 2.
 
-%
+% Parrafo
 
 \begin{figure}[ht!] \centering
   \begin{subfigure}[t]{0.32\textwidth}
@@ -2053,69 +2048,54 @@ Si empezamos a ver datos por fuera del rango $[-\pi, \pi]$, los modelos más com
   \caption{Posterior de modelos}
   \label{fig:model_selection_evidence}
   \end{subfigure}
-  \caption{Modelos polinomiales de grado 0 a 9 ajustados mediante las reglas de la probabilidad a datos generados con una sinodal, $\N(y \,| \, \text{sen}(x), \beta^2) \ \ x \in [-\pi,\pi]$.}
+  \caption{Modelos lineal de grado $D=0$ a $D=9$ ajustados mediante la aplicación estricta de las reglas de la probabilidad a datos generados con una sinodal, $\N(y_i \,| \, \text{sen}(x_i), \beta^2)$ en el rango $[-\pi,\pi]$.
+  En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica la sinoidal con línea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (línea roja) y el modelo grado 9 (línea celeste).
+  En la figura~\ref{fig:model_selection_evidence} se muestra la probabilidad de los modelos calculada mediante la aplicación estricta de las reglas de la probabilidad.}
   \label{fig:evaluacion_de_modelo}
 \end{figure}
 
 % Parrafo
 
-Este balance surge naturalmente de las reglas de la probabilidad.
+Veamos concretamente cómo son las predicciones que los modelos hacen del siguiente dato $y_N$ cuando se nos informa un valor de $x_n=0.1$ (línea vertical de la figura~\ref{fig:model_selection_MAP_non-informative}.
 %
-Por definici\'on, toda distribuci\'on de creencias debe sumar o integrar 1.
+En la figura \ref{fig:balance_natural} se grafica la predicci\'on a priori de $P(y_N|x_N=0.1, M_D)$ que hace un modelo rígido $D=1$, un modelo simple $D=3$, y un modelo compelejo $D=9$.
 %
-Los modelos que m\'as complejos, al ser m\'as flexibles, distribuyen la predicci\'on en un espacio m\'as amplio que los modelos m\'as simples.
+Allí se puede ver que el modelo r\'igido (grado $D=1$) concentra toda la probabilidad en una regi\'on lejana al verdadero valor, por lo que siempre tienen un mal desempe\~no predictivo.
 %
-Esto hace que siempre haya una regi\'on donde los modelos m\'as simples ganan, y otra donde los modelos m\'as complejos ganan.
+El modelo simple (grado $D=3$), que tiene la complejidad mínima necesaria, concentra la mayor parte de su probabilidad alrededor del verdadero valor.
 %
-Supongamos que recibimos un datos $x = 0.2$.
+El modelo complejo (grado $D=9$) tambi\'en concentra la mayor parte de su probabilidad sobre el verdadero valor, pero con mayor dispersión que el modelo simple.
+
+% Parrafo
+
+El balance naturalmente de las reglas de la probabilidad está relacionado con el hecho de que las distribuciones de probabilidad debe sumar o integrar 1.
 %
-En la figura~\ref{fig:balance_natural} vemos la predicci\'on que hacen los distintos modelos de la variable $y$.
+Esto hace que los modelos que m\'as complejos, al ser m\'as flexibles, distribuyan la predicci\'on en un espacio m\'as amplio que los modelos m\'as simples.
 %
+Y dependiendo de d\'onde caiga el siguiente dato, hay una regi\'on en la que gana el modelo m\'as simple, y hay otra regi\'on donde gana el modelo m\'as complejo.
+
+% Parrafo
+
 \begin{figure}[ht!] \centering
- \includegraphics[page=2,width=0.45\textwidth]{figures/pdf/evidencia_de_modelos_alternativos}
+ \includegraphics[page=1,width=0.45\textwidth]{figures/pdf/evidencia_de_modelos_alternativos}
   \caption{Representa la predicci\'on que los diversos tipos de modelos polinomiales (clasificados por su complejidad) hacen de la variable $y$ para $x=0.2$.}
   \label{fig:balance_natural}
 \end{figure}
 
 % Parrafo
 
-Los modelos r\'igidos (grado 0 a 2) colocan toda su creencia en una regi\'on lejana al verdadero valor, por lo que siempre tienen un mal desempe\~no predictivo.
-%
-Los modelos simples (grado 3), la mayor parte de su creencia sobre el verdadero valor.
-%
-Y los modelos complejos (grado 4 a 9) tambi\'en ponen la mayor parte de su creencia sobre el verdadero valor, pero distribuyen tambi\'en algo de creencia hacia los costados.
-%
-Dependiendo de d\'onde caiga el siguiente dato, hay una regi\'on en la que gana el modelo m\'as simple, y hay otra regi\'on donde gana el modelo m\'as complejo.
-
-% Parrafo
-
 A diferencia de los enfoque basados en criterios ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad realiza las predicciones con la contribuci\'on de todas las hip\'otesis.
 %
-Por la regla de la suma, podemos expresar la evidencia como una suma de las predicciones conjuntas realizadas individualmente por cada una de sus hip\'otesis.
+Si empezamos a ver datos por fuera del rango $x_i \in [-\pi, \pi]$, los modelos más complejos están aún disponibles para predecirlos.
 %
-\begin{equation}
+\begin{equation*}
 \begin{split}
-P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = \sum^{\text{Hip\'otesis}}_h P(\text{Dat\en{a}\es{os}}|h,\text{Model\es{o}}) P(h|\text{Model\es{o}})
+\underbrace{p(\bm{y}|\bm{x},\beta)}_{p(\text{Datos}|I)} & = \sum_{d=1}^D \left( \underbrace{ \int\dots\int_{\bm{w} \in (W_0, \dots, W_d)} \overbrace{p(\bm{y}|\bm{x}, \bm{w}, \beta, M_d)}^{p(\text{Datos}|\text{Hipótesis},\text{Modelo},I)} \, \text{d}\bm{w} }_{p(\text{Datos}|\text{Modelo},I)} \right) P(M_d)
 \end{split}
-\end{equation}
+\end{equation*}
 %
-Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la evidencia tambi\'en ser\'a mayor a $0$, evitando as\'i el peor caso.
+Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la predicción del dato ser\'a mayor a $0$, evitando los problemas de sobreajuste asociados a los enfoque que seleccionan una \'unica hip\'otesis del espacio.
 %
-De esta forma, las hip\'otesis de un mismo modelo cooperan en la predicci\'on a priori de los datos observados, evitando los problemas de sobreajuste asociados a los enfoque que seleccionan una \'unica hip\'otesis del espacio.
-%
-Combinando la regla del producto y de la suma podemos expresar la evidencia como una productoria de sumatorias.
-%
- \begin{equation}
-\begin{split}
-P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}) & = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots \\
-& = \left( \sum^{\text{Hipo}}_h P(d_1|h,\text{M}) P(h|\text{M}) \right) \left( \sum^{\text{Hipo}}_h P(d_2|d_1,h,\text{M}) P(h|d_1,\text{M}) \right)  \dots \\\end{split}
-\end{equation}
-%
-Cada predicci\'on individual de la productoria es una en el fondo una media aritm\'etica.
-%
-As\'i, el modelo reduce fluctuaciones en cada una de las predicciones individuales a trav\'es de la contribuci\'on que realiza el conjunto de sus hip\'otesis.
-
-
 
 
 \section{Cuestiones relativas a la operacionalizaci\'on del los datos} \label{sec:base_empirica_metodo}
