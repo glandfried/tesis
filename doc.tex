@@ -858,7 +858,7 @@ Kolmogorv aclara algunos aspectos terminol\'ogicos, que creemos conveniente repr
 \end{quotation}
 %
 
-\subsection{Las reglas de la probabilidad}
+\subsection{Las reglas de la probabilidad} \label{sec:reglas_de_la_probabilidad}
 
 En el sistema axiom\'atico de Kolmogorov, un caso particular de la regla de la suma de la teor\'ia de la probabilidad aparece incluida directamente como axioma~\ref{item:Kol_5}.
 %
@@ -2137,39 +2137,42 @@ Sin embargo, la soluci\'on f\'isica tambi\'en requiere resolver un proceso de in
 %
 En esta secci\'on revisaremos algunos conceptos relativos a la operacionalizaci\'on de datos en las ciencias emp\'iricas.
 
-\subsection{Base emp\'irica e hip\'otesis te\'oricas}
+\subsection{Base emp\'irica}
 
-En la sección \emph{\nameref{sec:teoria_elemental_probabilidad}} definimos el conjunto de datos como un subconjunto arbitrario de hipótesis elementales
-
-
-
-El matemático y epistemólogo de esta casa de estudios, Gregorio Klimovsky, llamó \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
+En la sección \emph{\nameref{sec:reglas_de_la_probabilidad}} definimos el conjunto de datos sobre el que se evalúan las hipótesis de investigación $H_i \in \mathcal{H}$ mediante la fórmula general del teorema de Bayes \eqref{eq:teorema_bayes} como un subconjunto arbitrario de hipótesis elementales, $D \subset \textbf{H}$, tal que $P(Datos)>0$
 %
-La notación de la Teor\'ia de la Probabilidad la base emp\'irica se expresa expl\'icitamente a través del condicional, $P(\text{Hipótesis}|\text{Datos})$.
+Recordemos que la investigación (o experimento) $\mathcal{H} = \{H_1, \dots, H_N\}$ consiste en determinar, para cada hipótesis $H_i \in \mathcal{H}$ cuál de todas sus hipótesis elementales $h_i \in H_i$ ocurre.
 %
-Recordemos que el conjunto de Datos
-
-
-La base emp\'irica no forma parte de las hipótesis de investigación $\mathcal{H}$.
+Debido a que las hipótesis elementales al interior de cada hipótesis son mutuamente excluyentes, el conjunto de Datos no pueden contener más de una hipótesis elemental por hipótesis de investigación.
 %
-Sin embargo, hemos visto que en el proceso de investigaci\'on, algunos elementos
-
-
-En la jerga de la Teor\'ia de la Probabilidad (o de la Informaci\'on) se les llama ``Datos'' a las hip\'otesis de investigaci\'on (o experimento) que en cierto momento pasan a formar parte del conjunto de restricciones indubitables, tautol\'ogicas, inamovibles.
+\begin{equation*}
+D \subseteq \textbf{H} \land P(D)> 0 \implies (\forall \, H_i \in \mathcal{H})(\text{cardinal}(DH_i) \leq 1)
+\end{equation*}
 %
-Sin embargo, el conjunto de hip\'otesis de investigaci\'on $\mathcal{H}$ re\'une tanto a las hip\'otesis ocultas (preguntas abiertas) $H \subseteq \mathcal{H}$, como las hip\'otesis de base emp\'irica (o informaci\'on inicial) $I \subset \mathcal{H}$, con $I \cap H = \emptyset$ y $I \cup H = \mathcal{H}$.
+Según esta definición puramente formal podemos definir arbitrariamente $\sum_{H_i \in \mathcal{H}} \text{cardinal}(H_i)^N$ conjuntos de datos distintos.
 %
-El conjunto de hip\'otesis de base emp\'irica est\'a compuesto por lo que llamamos restricciones formales $R \subseteq I$, por datos $D \subseteq I$, o por preguntas cerradas $C \subseteq I$.
-%
-En todos los casos, las hip\'otesis de base emp\'irica $I$ tienen concentran la probabilidad en una \'unica hip\'otesis elemental, $\forall \, I_i \in I \text{cardinal}( \{h | h \in I_i, P(h)=1 \}=1$.
-%
-En cambio, las hip\'otesis ocultas $H$ distribuyen la probabilidad entre m\'as de una hip\'otesis elemental, $\forall \,H_i \in H  \ \text{cardinal}( \{h | h \in H_i, P(h)=1 \}=0$.
+Sin embargo, en ciencias empíricas el concepto de \emph{conjunto de datos} las hipótesis de investigación se evalúan sobre un único conjunto de datos, que se determina en función de una dimensión no capturada por la definición formal.
 
 % Parrafo
 
-El teorema de Bayes nos permite transitar entre diferentes para actualizar la creencia de alguna hip\'otesis oculta $H_i \in Q$
-
+El matemático y epistemólogo de esta casa de estudios, Gregorio Klimovsky, llamó \emph{base emp\'irica} al conjunto de supuestos que son aceptados como verdad indubitable (al menos momentáneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
 %
+En la terminología de la Teoría de la Probabilidad, la conclusión de una investigación empírica (o experimento empírico) es $P(\text{Hipótesis}|\text{Base empírica})$.
+%
+La base emp\'irica está compuesto por lo que llamamos evidencia formal que no se pone en duda (el sistemas de restricciones o modelos) y la evidencia empírica (lo que coloquialmente llamamos datos).
+%
+Hemos visto en más de un ejemplo que, en caso de que no exista un consenso sobre la evidencia formal (modelos o sistema de restricciones), ella pasan a formar parte de las hipótesis de investigación $\mathcal{H}$ y son evaluadas mediante la aplicación estricta de las reglas de la probabilidad.
+
+% Parrafo
+
+El conjunto de base empírica depende
+
+Klimovsky llama \emph{base emp\'irica filos\'ofica} al conjunto de supuestos aceptados incluso
+
+A pesar de que existan c\'irculos filos\'oficos que(que Klimovsky llama \emph{base emp\'irica filos\'ofica}), en la vida cotidiana no hay mayor controversia al respecto.
+
+
+
 Para que una comunidad se ponga de acuerdo sobre la existencia de los objetos cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verduler\'ia, o el resultado de la final del \'ultimo mundial de f\'utbol, suele ser suficiente los supuestos que Klimovsky llama de ``sentido com\'un''.
 %
 Ciertamente el ``sentido com\'un'' puede variar entre culturas y entre disciplinas.
@@ -2178,9 +2181,6 @@ Por ejemplo, ciertos c\'irculos filos\'oficos llegan a poner en duda las percepc
 
 
 
-En este sentido, Klimovsky llama \emph{base emp\'irica filos\'ofica} al conjunto de supuestos aceptados incluso
-
-A pesar de que existan c\'irculos filos\'oficos que(que Klimovsky llama \emph{base emp\'irica filos\'ofica}), en la vida cotidiana no hay mayor controversia al respecto.
 %
 Los objetos que cualquier persona tomar\'ia por ciertos en su vida cotidiana constituyen una base emp\'irica significativamente m\'as amplia, que llama \emph{base emp\'irica epistemol\'ogica}, pues son la base de control inicial de toda actividad cient\'ifica.
 %
