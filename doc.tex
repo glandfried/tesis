@@ -713,7 +713,7 @@ Estas son algunas de las preguntas particulares que desarrollamos en esta tesis.
 % En el cap\'itulo 7 concluyo la tesis con una revisi\'on del mi trayecto en el doctorado que me llev\'o al enfoque bayesiano, comento la organizaci\'on del Congreso Bayesiano Plurinacional 2023 y cierro con una reflexi\'on sobre el trabajo futuro.
 
 
-\section{Teor\'ia elemental de la probabilidad}
+\section{Teor\'ia elemental de la probabilidad} \label{sec:teoria_elemental_probabilidad}
 
 Desde el descubrimiento de las reglas de la probabilidad a finales del siglo 18 hasta el presente, la teor\'ia de la probabilidad es el enfoque m\'as utilizado para razonar en contextos de incertidumbre.
 %
@@ -970,7 +970,7 @@ P(H_i D ) = P(H_i) P(D|H_i) \ \ \ \ \text{con} \ \ \ \ i \in \{1,\dots n\}
 %
 Queda demostrado as\'i el teorema de la probabilidad total.
 %
-Luego definimos la f\'ormula general del teorema de Bayes como,
+Además, si $P(D)>0$, la f\'ormula general del teorema de Bayes se define como,
 %
 \begin{equation} \label{eq:full_bayes_theorem_kologorov}
 P(H_i|D) = \frac{P(H_i) P(D|H_i)}{P(D)} = \frac{P(H_i) P(D|H_i)}{\sum_{j \in \{1, \dots, n \} } P(H_j) P(D|H_j) } \ \ \ \ \text{con} \ \ \ \ i \in \{1,\dots n\}
@@ -1208,7 +1208,7 @@ Para simplificar el problema supondremos además que siempre elegimos la caja 1,
 %
 El sistema de restricciones de los modelos se suele representar mediante lo que se conoce como \emph{redes bayesianas}.
 %
-Los nodos de esa red son las hip\'otesis del problema de investigaci\'on $\mathcal{H} = \{H_R, H_S\}$ y los ejes representan una dependencia entre hip\'otesis.
+Los nodos de esa red son las hipótesis del problema de investigación $\mathcal{H} = \{H_R, H_S, \{c_1\}\}$ y los ejes representan una dependencia entre hipótesis.
 %
 En el modelo $A$ hay una dependencia entre la hip\'otesis $H_R$ y la hip\'otesis $H_S$.
 %
@@ -1237,14 +1237,14 @@ En cambio, si el regalo se encuentra en una caja distinta a la que elegimos $r_i
     \node[latent, below=of r, yshift=0.3cm] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
     \node[const, left=of d] (nd) {\Large $H_S$};
 
-    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(r_i, s_i|c_1,M_A)=0$} ;
+    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(s_i|r_i,M_A)=0$} ;
 
     \edge {r} {d};
   }
   \caption{Modelo $M_A$}
   \label{fig:modelo_causal_1}
   \end{subfigure}
-  \hspace{0.5cm}
+  \hspace{0.25cm}
   \begin{subfigure}[b]{0.63\textwidth}
   \centering
   \tikz{
@@ -1258,15 +1258,15 @@ En cambio, si el regalo se encuentra en una caja distinta a la que elegimos $r_i
     \node[latent, fill=black!30, above=of d, yshift=-0.3cm, xshift=1.2cm] (c) {\includegraphics[width=0.06\textwidth]{static/cerradura.png}} ;
     \node[const,right=of c] (nc) {\Large $c_1$} ;
 
-    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(r_i, s_i|c_1,M_A)=0 \land P(r_i, s_1|c_1,M_A)=0$ \hspace{1cm}} ;
+    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(s_i|r_i,M_A)=0 \land P(s_1|c_1,M_A)=0$ \hspace{1cm}} ;
 
     \edge {r,c} {d};
   }
   \caption{Modelo $M_B$}
   \label{fig:modelo_causal_2}
   \end{subfigure}
-  \caption{Modelos alternativos especificados como redes bayesianas. Los nodos blancos representan las hip\'otesis, la flecha representa relaciones de dependencia entre hip\'otesis, y los nodos pintados de gris representan hip\'otesis ya conocidas (datos).
-  En el Modelo A~\subref{fig:modelo_causal_1} la pista s\'olo depende de la posici\'on del regalo, no puede mostrarse el interior de la caja que contiene el regalo $P(r_i, s_i|c_1,M_A)=0$. En el Modelo B~\subref{fig:modelo_causal_2} la pista depende de la posici\'on del regalo y la caja elegida previamente, no puede mostrarse el interior de la caja que contiene el regalo, ni la caja elegida $P(r_i, s_i|c_1,M_B)=0$, $P(r_i, s_1|c_1,M_B)=0$.
+  \caption{Modelos alternativos especificados como redes bayesianas. Los nodos blancos representan las hipótesis, la flecha representa relaciones de dependencia entre hipótesis, y los nodos pintados de gris representan hipótesis ya conocidas (datos).
+  En el Modelo A~\subref{fig:modelo_causal_1} la pista s\'olo depende de la posici\'on del regalo, no puede mostrarse el interior de la caja que contiene el regalo $P(s_i|r_i,M_A)=0$. En el Modelo B~\subref{fig:modelo_causal_2} la pista depende de la posici\'on del regalo y la caja elegida previamente, no puede mostrarse el interior de la caja que contiene el regalo, ni la caja elegida $P(s_i|r_i,M_B)=0$, $P(s_1|c_1,M_B)=0$.
   }
   \label{fig:modelos_causales}
 \end{figure}
@@ -1629,7 +1629,7 @@ Y justamente, cuando tenemos más de un sistemas de restricciones (o modelo), es
 % %
 % En la formulaci\'on del teorema de Bayes inicial~\eqref{eq:teorema_bayes} solo hay hip\'otesis y datos.
 %
-Es decir, en el fondo nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ debe incluir $H_M$, $\mathcal{H} = \{H_R, H_S, H_M\}$.
+Es decir, en el fondo nuestro problema de investigación (o experimento) $\mathcal{H}$ debe incluir $H_M$, $\mathcal{H} = \{H_R, H_S, \{c_1\}, H_M\}$.
 % %
 % Si aplicamos el teorema de Bayes para actualizar la probabilidad de los modelos $M$ dado los datos $D = \{r_i, s_j, c_1\}$,
 % %
@@ -1685,28 +1685,33 @@ Las repeticiones se especifican en redes bayesianas mediante el uso de placas (v
     \node[latent, below=of r, yshift=0.3cm] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
     \node[const, left=of d] (nd) {\Large $H_{S_t}$};
 
+    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(s_{it}|r_{it},M_A)=0$} ;
+
     \edge {r} {d};
-    \plate {Datos} {(r)(nr)(d)(nd)} {$t \in \{1, \dots T\} $}; %
+    \plate {Datos} {(r)(nr)(d)(nd)(M)} {$t \in \{1, \dots T\} $}; %
   }
-  \caption{Modelo A}
+  \caption{Modelo $M_A$}
   \end{subfigure}
-  \begin{subfigure}[b]{0.33\textwidth}
+  \begin{subfigure}[b]{0.63\textwidth}
   \centering
   \tikz{
 
-    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
+    \node[latent] (d) {\includegraphics[width=0.05\textwidth]{static/dedo.png}} ;
     \node[const,above=of d] (nd) {\Large $H_{S_t}\,$} ;
 
-    \node[latent, above=of d, yshift=-0.3cm, xshift=-1.2cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
+    \node[latent, above=of d, yshift=-0.3cm, xshift=-1.2cm] (r) {\includegraphics[width=0.06\textwidth]{static/regalo.png}} ;
     \node[const,left=of r] (nr) {\Large $\ \ H_{R_t}$} ;
 
-    \node[latent, fill=black!30, above=of d, yshift=-0.3cm, xshift=1.2cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
+    \node[latent, fill=black!30, above=of d, yshift=-0.3cm, xshift=1.2cm] (c) {\includegraphics[width=0.06\textwidth]{static/cerradura.png}} ;
     \node[const,right=of c] (nc) {\Large $c_{1t}$} ;
 
+    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(s_{it}|r_{it},M_A)=0 \land P(s_{1t}|c_{1t},M_A)=0$ \hspace{1cm}} ;
+
+
     \edge {r,c} {d};
-    \plate {Datos} {(r)(nr)(d)(nd)(c)(nc)} {$t \in \{1, \dots T\} $}; %
+    \plate {Datos} {(r)(nr)(d)(nd)(c)(nc)(M)} {$t \in \{1, \dots T\} $}; %
   }
-  \caption{Modelo B}
+  \caption{Modelo $M_B$}
   \end{subfigure}
   \caption{Extensi\'on de los modelos $M_A$ y $M_B$ mediante la repeticiones de las restricciones entre hip\'otesis.}
   \label{fig_modelos_con_repeticiones}
@@ -2133,11 +2138,18 @@ En esta secci\'on revisaremos algunos conceptos relativos a la operacionalizaci\
 
 \subsection{Base emp\'irica e hip\'otesis te\'oricas}
 
-El matemático y epistem\'ologo Gregorio Klimovsky, em\'erito de esta casa de estudios, llam\'o \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) por toda una comunidad~\cite{klimovsky1994-desventuras}.
+En la sección \emph{\nameref{sec:teoria_elemental_probabilidad}} definimos el conjunto de datos como un subconjunto arbitrario de hipótesis elementales
+
+
+
+El matemático y epistemólogo de esta casa de estudios, Gregorio Klimovsky, llamó \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
 %
-En la notaci\'on de la Teor\'ia de la Probabilidad la base emp\'irica se expresa expl\'icitamente a trav\'es del condicional, $P(\text{Hip\'otesis}|\text{Base emp\'irica})$.
+La notación de la Teor\'ia de la Probabilidad la base emp\'irica se expresa expl\'icitamente a través del condicional, $P(\text{Hipótesis}|\text{Datos})$.
 %
-La base emp\'irica no forma parte de las hip\'otesis de investigaci\'on $\mathcal{H}$.
+Recordemos que el conjunto de Datos
+
+
+La base emp\'irica no forma parte de las hipótesis de investigación $\mathcal{H}$.
 %
 Sin embargo, hemos visto que en el proceso de investigaci\'on, algunos elementos
 
