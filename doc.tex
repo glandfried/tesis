@@ -1178,33 +1178,35 @@ Supongamos que solo sabemos que el regalo est\'a escondido detr\'as de alguna de
 %
 En este contexto, \textbf{no} es dif\'icil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
 %
-Esta distribuci\'on de probabilidad se corresponde con la figura~\ref{fig:preferencia_maxima} y no casualmente es la distribuci\'on que maximiza la incertidumbre (o entrop\'ia) entre todas las opciones que incorporan la \'unica informaci\'on disponible: el regalo est\'a en alguna de las tres cajas.
+Esta distribuci\'on de probabilidad se corresponde con la figura~\ref{fig:preferencia_maxima} y no casualmente corresponder\'a con la distribuci\'on que maximiza la incertidumbre (o entrop\'ia) entre todas las opciones que incorporan la \'unica informaci\'on disponible: el regalo est\'a en alguna de las tres cajas.
 %
-Para derivar las distribuciones de probabilidad que maximizan la entrop\'ia dada las restricciones disponibles, se suele usar los multiplicadores de Lagrange.
+Para derivar las distribuciones de probabilidad que maximizan la entrop\'ia dadas las restricciones disponibles, se suele usar los multiplicadores de Lagrange.
 %
 Aqu\'i nos bast\'o con utilizar el viejo principio filos\'ofico de indiferencia, que suele corresponderse con la intuici\'on com\'un.
 
 % Parrafo
 
-Ahora bien, continuemos con el ejemplo.
+Continuemos con el ejemplo.
 %
-Supongamos que se nos pide que elijamos una caja y alguien (un or\'aculo) que conoce la ubicaci\'on del regalo muestra el interior de una de las cajas que \textbf{no} contiene el regalo.
+Supongamos que se nos pide que elijamos una caja y alguien (un or\'aculo), quien conoce la ubicaci\'on del regalo, muestra el interior de una de las cajas que \textbf{no} contiene el regalo.
 %
-Se incorporan entonces las hip\'otesis elementales $c_i$ que corresponde con \emph{``elegimos la caja i''} y $s_i$ con \emph{``muestran el interior de la caja i''}.
+Se incorporan, entonces, las hip\'otesis elementales $c_i$ que corresponde con \emph{``elegimos la caja i''} y $s_i$ con \emph{``muestran el interior de la caja i''}.
 %
 Luego, nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ consiste de tres hip\'otesis, $\mathcal{H} = \{H_R, H_C, H_S\}$, con $H_R=\{r_1, r_2, r_3\}$, $H_C=\{c_1, c_2, c_3\}$ y $H_S=\{s_1, s_2, s_3\}$.
+\todo[inline]{Aprovechar para aclarar que hipotesis refiere a conjunto de hipotesis elementales}
 %
-En la descripci\'on se explicita la siguiente restricci\'on: si el regalo se encuentra en el caja $i$, $r_i$, no puede ocurrir que se muestre el interior de la caja $i$, $s_i$.
+En la descripci\'on del juego se explicita la siguiente restricci\'on: si el regalo se encuentra en el caja $i$, no puede ocurrir que se muestre el interior de la caja $i$.
 %
-Debido a que no tenemos ninguna otra restricci\'on adicional, si el regalo se encuentra en la caja 1, $r_1$, no hay preferencia por ninguna de las hip\'otesis elementales $s_2$ o $s_3$ (y de forma equivalente para los otros casos $r_i$).
+Debido a que no tenemos ninguna otra restricci\'on adicional, si el regalo se encontrara en la caja 1, es decir que es cierta $r_1$, no hay preferencia por ninguna de las hip\'otesis elementales $s_2$ o $s_3$ (de forma equivalente se puede hacer el razonamiento para los casos en los que fueran ciertas $r_2$ o $r_3$).
 
 % Parrafo
 
-A esta informaci\'on inicial la llamaremos Modelo $A$, $M_A$.
+A esta informaci\'on inicial la llamaremos Modelo $A$, o simplemente $M_A$.
 %
-Necesitamos entonces la distribuci\'on de probabilidad honesta $P(H_R,H_C,H_S|M_A)$.
+Necesitamos entonces la distribuci\'on de probabilidad que sigue la visi\'on honesta del sistema $P(H_R,H_C,H_S|M_A)$.
 %
-Para simplificar el problema supondremos adem\'as que siempre elegimos la caja 1, reduciendo el problema a solo dos hip\'otesis, $P(H_R,H_S|c_1, M_A)$.
+Para simplificar el problema y sin perder generalidad, supondremos adem\'as que siempre elegimos la caja 1, es decir,  que es cierta $c_1$. 
+De esta manera, reducimos el problema a solo dos hip\'otesis: $P(H_R,H_S|c_1, M_A)$.
 %
 El sistema de restricciones de los modelos se suele representar mediante lo que se conoce como \emph{redes bayesianas}.
 %
@@ -1213,12 +1215,15 @@ Los nodos de esa red son las hip\'otesis del problema de investigaci\'on $\mathc
 En el modelo $A$ hay una dependencia entre la hip\'otesis $H_R$ y la hip\'otesis $H_S$.
 %
 En la figura~\ref{fig:modelo_causal_1} se especifica el sistema de restricciones $M_A$ usando la notaci\'on de redes bayesianas.
+\todo[inline]{Ac\'a hay que explicar la notaci\'on grafica, es el primer lugar donde se la menciona, hay que explicar en concreto usando el ejemplo}
 
 % Parrafo
 
 Nada nos obliga a suponer que el modelo $M_A$ es correcto.
 %
-Podemos sospechar, por ejemplo, que existe una restricci\'on (o dependencia) adicional no explicitada en la descripci\'on entre la elecci\'on de la caja $H_c$ y la pista que recibimos $H_S$: si elegimos la caja $i$, $c_i$, no puede ocurrir $s_i$.
+Por ejemplo, tal como hab\'iamos mencionado anteriormente, podemos contar con la pista indicada por el or\'aculo. 
+Esto plantea una restricci\'on (o dependencia) adicional no explicitada en la descripci\'on original del juego entre la elecci\'on de la caja $H_c$ y la pista que recibimos $H_S$: si elegimos la caja $i$, es decir si $c_i$ es cierta, no puede ocurrir $s_i$.
+\todo[inline]{Arreglé el parrafo anterior para hacerlo coherente con haber introducido la pista un cachito antes, como estaba parecía que recien ahora te aparece esa informaci\'on y en realidad, recien ahora la consideras}
 %
 Al sistema de informaci\'on previa $M_A$ que incorpora esta nueva restricci\'on, le llamamos Modelo $M_B$, y tiene asociada la distribuci\'on de probabilidad honesta $P(H_R,H_S|c_1,M_B)$.
 %
@@ -1571,7 +1576,7 @@ La nueva distribuci\'on de probabilidad a la que llegamos depende del modelo ele
 \caption{Distribuci\'on de probabilidad a posterior dado el dato $s_2$ y el modelo. El modelo $A$ asigna la misma probabilidad a la caja 1 y 3. El modelo $B$ asigna $1/3$ a la hip\'otesis $r_1$ y $2/3$ a la hip\'otesis $r_3$.}
 \end{figure}
 %
-Si bien ambas respuesta son diferentes, ellas comparten la propiedad de ser la distribuci\'on de probabilidad honesta dada las restricciones.
+Si bien ambas respuesta son diferentes, ellas comparten la propiedad de ser la distribuci\'on de probabilidad honesta dadas las restricciones.
 %
 Lo que hemos hecho no es otra cosa que aplicar el teorema de Bayes,
 %
