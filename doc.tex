@@ -737,7 +737,7 @@ En la secci\'on \ref{} ofreceros una operacionalizaci\'on el dato fundamental de
 \subsection{Sistema axiom\'atico}
 
 En la secci\'on 1 del cap\'itulo 1 ``Elementary Theory Of Probability'' de su libro (traducci\'on al ingles~\cite{Kolmogorov1950} de su manuscrito original) se presenta el siguiente sistema axiom\'atico, definido sobre elementos discretos.
-\todo[inline]{Queda raro como empieza, yo dir\'ia directamente algo como que vamos a seguir la axiomatizacion presentada por Kolmogorov, no hace falta referenciar la seccion y el capitulo}  
+\todo[inline]{Queda raro como empieza, yo dir\'ia directamente algo como que vamos a seguir la axiomatizacion presentada por Kolmogorov, no hace falta referenciar la seccion y el capitulo}
 %
 \begin{quotation}
 Let $\textbf{H}$ be a collection of elements $h_1, h_2, h_3, \dots$,  which we shall call \emph{elementary events}, and $\mathbb{H}$ a set of subsets of $\textbf{H}$;
@@ -970,7 +970,7 @@ P(H_i D ) = P(H_i) P(D|H_i) \ \ \ \ \text{con} \ \ \ \ i \in \{1,\dots n\}
 %
 Queda demostrado as\'i el teorema de la probabilidad total.
 %
-Además, si $P(D)>0$, la f\'ormula general del teorema de Bayes se define como,
+Adem\'as, si $P(D)>0$, la f\'ormula general del teorema de Bayes se define como,
 %
 \begin{equation} \label{eq:full_bayes_theorem_kologorov}
 P(H_i|D) = \frac{P(H_i) P(D|H_i)}{P(D)} = \frac{P(H_i) P(D|H_i)}{\sum_{j \in \{1, \dots, n \} } P(H_j) P(D|H_j) } \ \ \ \ \text{con} \ \ \ \ i \in \{1,\dots n\}
@@ -1173,7 +1173,7 @@ Pero antes de ello, veamos un ejemplo concreto.
 
 % Parrafo
 
-Retomemos el ejemplo de las tres cajas y el regalo escondido. 
+Retomemos el ejemplo de las tres cajas y el regalo escondido.
 Supongamos que solo sabemos que el regalo est\'a escondido detr\'as de alguna de las tres cajas y no tenemos informaci\'on adicional que nos haga preferir alguna caja por sobre otra.
 %
 En este contexto, \textbf{no} es dif\'icil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
@@ -1208,7 +1208,7 @@ Para simplificar el problema supondremos adem\'as que siempre elegimos la caja 1
 %
 El sistema de restricciones de los modelos se suele representar mediante lo que se conoce como \emph{redes bayesianas}.
 %
-Los nodos de esa red son las hipótesis del problema de investigación $\mathcal{H} = \{H_R, H_S, \{c_1\}\}$ y los ejes representan una dependencia entre hipótesis.
+Los nodos de esa red son las hip\'otesis del problema de investigaci\'on $\mathcal{H} = \{H_R, H_S, \{c_1\}\}$ y los ejes representan una dependencia entre hip\'otesis.
 %
 En el modelo $A$ hay una dependencia entre la hip\'otesis $H_R$ y la hip\'otesis $H_S$.
 %
@@ -1265,7 +1265,7 @@ En cambio, si el regalo se encuentra en una caja distinta a la que elegimos $r_i
   \caption{Modelo $M_B$}
   \label{fig:modelo_causal_2}
   \end{subfigure}
-  \caption{Modelos alternativos especificados como redes bayesianas. Los nodos blancos representan las hipótesis, la flecha representa relaciones de dependencia entre hipótesis, y los nodos pintados de gris representan hipótesis ya conocidas (datos).
+  \caption{Modelos alternativos especificados como redes bayesianas. Los nodos blancos representan las hip\'otesis, la flecha representa relaciones de dependencia entre hip\'otesis, y los nodos pintados de gris representan hip\'otesis ya conocidas (datos).
   En el Modelo A~\subref{fig:modelo_causal_1} la pista s\'olo depende de la posici\'on del regalo, no puede mostrarse el interior de la caja que contiene el regalo $P(s_i|r_i,M_A)=0$. En el Modelo B~\subref{fig:modelo_causal_2} la pista depende de la posici\'on del regalo y la caja elegida previamente, no puede mostrarse el interior de la caja que contiene el regalo, ni la caja elegida $P(s_i|r_i,M_B)=0$, $P(s_1|c_1,M_B)=0$.
   }
   \label{fig:modelos_causales}
@@ -1629,7 +1629,7 @@ Y justamente, cuando tenemos m\'as de un sistemas de restricciones (o modelo), e
 % %
 % En la formulaci\'on del teorema de Bayes inicial~\eqref{eq:teorema_bayes} solo hay hip\'otesis y datos.
 %
-Es decir, en el fondo nuestro problema de investigación (o experimento) $\mathcal{H}$ debe incluir $H_M$, $\mathcal{H} = \{H_R, H_S, \{c_1\}, H_M\}$.
+Es decir, en el fondo nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ debe incluir $H_M$, $\mathcal{H} = \{H_R, H_S, \{c_1\}, H_M\}$.
 % %
 % Si aplicamos el teorema de Bayes para actualizar la probabilidad de los modelos $M$ dado los datos $D = \{r_i, s_j, c_1\}$,
 % %
@@ -2138,33 +2138,33 @@ En esta secci\'on revisaremos algunos conceptos relativos a la operacionalizaci\
 
 \subsection{Base emp\'irica}
 
-En la sección \emph{\nameref{sec:reglas_de_la_probabilidad}} definimos el conjunto de datos sobre el que se evalúan las hipótesis de investigación $H_i \in \mathcal{H}$ mediante la fórmula general del teorema de Bayes \eqref{eq:teorema_bayes} como un subconjunto arbitrario de hipótesis elementales, $D \subset \textbf{H}$, tal que $P(Datos)>0$
+En la secci\'on \emph{\nameref{sec:reglas_de_la_probabilidad}} definimos el conjunto de datos sobre el que se eval\'uan las hip\'otesis de investigaci\'on $H_i \in \mathcal{H}$ mediante la f\'ormula general del teorema de Bayes \eqref{eq:teorema_bayes} como un subconjunto arbitrario de hip\'otesis elementales, $D \subset \textbf{H}$, tal que $P(Datos)>0$
 %
-Recordemos que la investigación (o experimento) $\mathcal{H} = \{H_1, \dots, H_N\}$ consiste en determinar, para cada hipótesis $H_i \in \mathcal{H}$ cuál de todas sus hipótesis elementales $h_i \in H_i$ ocurre.
+Recordemos que la investigaci\'on (o experimento) $\mathcal{H} = \{H_1, \dots, H_N\}$ consiste en determinar, para cada hip\'otesis $H_i \in \mathcal{H}$ cu\'al de todas sus hip\'otesis elementales $h_i \in H_i$ ocurre.
 %
-Debido a que las hipótesis elementales al interior de cada hipótesis son mutuamente excluyentes, el conjunto de Datos no pueden contener más de una hipótesis elemental por hipótesis de investigación.
+Debido a que las hip\'otesis elementales al interior de cada hip\'otesis son mutuamente excluyentes, el conjunto de Datos no pueden contener m\'as de una hip\'otesis elemental por hip\'otesis de investigaci\'on.
 %
 \begin{equation*}
 D \subseteq \textbf{H} \land P(D)> 0 \implies (\forall \, H_i \in \mathcal{H})(\text{cardinal}(DH_i) \leq 1)
 \end{equation*}
 %
-Según esta definición puramente formal podemos definir arbitrariamente $\sum_{H_i \in \mathcal{H}} \text{cardinal}(H_i)^N$ conjuntos de datos distintos.
+Seg\'un esta definici\'on puramente formal podemos definir arbitrariamente $\sum_{H_i \in \mathcal{H}} \text{cardinal}(H_i)^N$ conjuntos de datos distintos.
 %
-Sin embargo, en ciencias empíricas el concepto de \emph{conjunto de datos} las hipótesis de investigación se evalúan sobre un único conjunto de datos, que se determina en función de una dimensión no capturada por la definición formal.
+Sin embargo, en ciencias emp\'iricas el concepto de \emph{conjunto de datos} las hip\'otesis de investigaci\'on se eval\'uan sobre un \'unico conjunto de datos, que se determina en funci\'on de una dimensi\'on no capturada por la definici\'on formal.
 
 % Parrafo
 
-El matemático y epistemólogo de esta casa de estudios, Gregorio Klimovsky, llamó \emph{base emp\'irica} al conjunto de supuestos que son aceptados como verdad indubitable (al menos momentáneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
+El matem\'atico y epistem\'ologo de esta casa de estudios, Gregorio Klimovsky, llam\'o \emph{base emp\'irica} al conjunto de supuestos que son aceptados como verdad indubitable (al menos moment\'aneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
 %
-En la terminología de la Teoría de la Probabilidad, la conclusión de una investigación empírica (o experimento empírico) es $P(\text{Hipótesis}|\text{Base empírica})$.
+En la terminolog\'ia de la Teor\'ia de la Probabilidad, la conclusi\'on de una investigaci\'on emp\'irica (o experimento emp\'irico) es $P(\text{Hip\'otesis}|\text{Base emp\'irica})$.
 %
-La base emp\'irica está compuesto por lo que llamamos evidencia formal que no se pone en duda (el sistemas de restricciones o modelos) y la evidencia empírica (lo que coloquialmente llamamos datos).
+La base emp\'irica est\'a compuesto por lo que llamamos evidencia formal que no se pone en duda (el sistemas de restricciones o modelos) y la evidencia emp\'irica (lo que coloquialmente llamamos datos).
 %
-Hemos visto en más de un ejemplo que, en caso de que no exista un consenso sobre la evidencia formal (modelos o sistema de restricciones), ella pasan a formar parte de las hipótesis de investigación $\mathcal{H}$ y son evaluadas mediante la aplicación estricta de las reglas de la probabilidad.
+Hemos visto en m\'as de un ejemplo que, en caso de que no exista un consenso sobre la evidencia formal (modelos o sistema de restricciones), ella pasan a formar parte de las hip\'otesis de investigaci\'on $\mathcal{H}$ y son evaluadas mediante la aplicaci\'on estricta de las reglas de la probabilidad.
 
 % Parrafo
 
-El conjunto de base empírica depende
+El conjunto de base emp\'irica depende
 
 Klimovsky llama \emph{base emp\'irica filos\'ofica} al conjunto de supuestos aceptados incluso
 
