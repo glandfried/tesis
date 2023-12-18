@@ -713,9 +713,9 @@ Estas son algunas de las preguntas particulares que desarrollamos en esta tesis.
 % En el cap\'itulo 7 concluyo la tesis con una revisi\'on del mi trayecto en el doctorado que me llev\'o al enfoque bayesiano, comento la organizaci\'on del Congreso Bayesiano Plurinacional 2023 y cierro con una reflexi\'on sobre el trabajo futuro.
 
 
-\section{Teoría elemental de la probabilidad}
+\section{Teor\'ia elemental de la probabilidad}
 
-Desde el descubrimiento de las reglas de la probabilidad a finales del siglo 18 hasta el presente, la teoría de la probabilidad es el enfoque m\'as utilizado para razonar en contextos de incertidumbre.
+Desde el descubrimiento de las reglas de la probabilidad a finales del siglo 18 hasta el presente, la teor\'ia de la probabilidad es el enfoque m\'as utilizado para razonar en contextos de incertidumbre.
 %
 Las reglas de la probabilidad, conocidas como ``regla de la suma'' y ``regla del producto'', han sido derivadas formalmente a partir de varios sistemas axiom\'aticos conceptualmente distintos e independientes entre si~\cite{halpern2017}.
 %
@@ -727,7 +727,7 @@ El sistema axiom\'atico de Kolmogorov~\cite{Kolmogorov1950} en cambio, incluye u
 %
 Por su elegancia matem\'atica el sistemas axiom\'atico de Kolmogorov es el m\'as utilizado.
 %
-En la secci\'on \ref{} presentamos la teoría elemental de la probabilidad siguiendo los axiomas de Kolmogorov, en su versi\'on simple.
+En la secci\'on \ref{} presentamos la teor\'ia elemental de la probabilidad siguiendo los axiomas de Kolmogorov, en su versi\'on simple.
 %
 En la secci\'on \ref{} revisaremos algunas consecuencias de la aplicaci\'on estricta de las reglas de la probabilidad.
 %
@@ -736,24 +736,24 @@ En la secci\'on \ref{} ofreceros una operacionalizaci\'on el dato fundamental de
 
 \subsection{Sistema axiom\'atico}
 
-En la secci\'on 1 del capítulo 1 ``Elementary Theory Of Probability'' de su libro (traducci\'on al ingles~\cite{Kolmogorov1950} de su manuscrito original) se presenta el siguiente sistema axiom\'atico, definido sobre elementos discretos.
-\todo[inline]{Queda raro como empieza, yo diría directamente algo como que vamos a seguir la axiomatizacion presentada por Kolmogorov, no hace falta referenciar la seccion y el capitulo}  
+En la secci\'on 1 del cap\'itulo 1 ``Elementary Theory Of Probability'' de su libro (traducci\'on al ingles~\cite{Kolmogorov1950} de su manuscrito original) se presenta el siguiente sistema axiom\'atico, definido sobre elementos discretos.
+\todo[inline]{Queda raro como empieza, yo dir\'ia directamente algo como que vamos a seguir la axiomatizacion presentada por Kolmogorov, no hace falta referenciar la seccion y el capitulo}  
 %
 \begin{quotation}
-  Let $\textbf{H}$ be a collection of elements $h_1, h_2, h_3, \dots$,  which we shall call \emph{elementary events}, and $\mathbb{H}$ a set of subsets of $\textbf{H}$;
-  %%
-  \begin{enumerate}\itemsep-0.05cm
+Let $\textbf{H}$ be a collection of elements $h_1, h_2, h_3, \dots$,  which we shall call \emph{elementary events}, and $\mathbb{H}$ a set of subsets of $\textbf{H}$;
+%%
+\begin{enumerate}\itemsep-0.05cm
   \item $\mathbb{H}$ is a field of sets.
   \item $\mathbb{H}$ contains the set $\textbf{H}$
-  \item To each set $H_i \in \mathbb{H}$ is assigned a non-negative real number, $P(H_i)$.
-  \item $P(\textbf{H}) = 1$
+  \item To each set $H_i \in \mathbb{H}$ is assigned a non-negative real number, $P(H_i)$. \label{item:Kol_3}
+  \item $P(\textbf{H}) = 1$ \label{item:Kol_4}
   \item If $H_1 \in \mathbb{H}$ and $H_2 \in \mathbb{H}$ have no elements in common, then
-  \begin{equation}
+\begin{equation}
   P(H_1 \cup H_2 ) = P(H_1) + P(H_2)
-  \end{equation}
-  \end{enumerate}
+\end{equation} \label{item:Kol_5}
+\end{enumerate}
   %
-  A system of sets, $\mathbb{H}$, together with a definite assignment of numbers $P(H_i)$, satisfying Axioms 1-5, is called \emph{field of probabilities}.
+A system of sets, $\mathbb{H}$, together with a definite assignment of numbers $P(H_i)$, satisfying Axioms 1-5, is called \emph{field of probabilities}.
 %   % Parrafo
 %
 %   Our system of Axioms 1-5 is \emph{consistent}.
@@ -769,14 +769,13 @@ En la secci\'on 1 del capítulo 1 ``Elementary Theory Of Probability'' de su lib
 %   Our system of axioms is not, however,
 \end{quotation}
 %
-\emph{Field} (campo en español) hace referencia a que el conjunto de conjuntos $\mathbb{H}$ est\'a cerrado bajo complementos, uniones e intersecciones contables: ``A system of sets is called a field if the sum, product and difference of two sets of the system also belongs to the same system''~\cite{Kolmogorov1950}.
-\todo[inline]{countable me parece que se traduce como enumerable en contexto matem\'atico}
+\emph{Field} (campo en espa\~nol) hace referencia a que el conjunto de conjuntos $\mathbb{H}$ es cerrado respecto a complemento, uni\'on e intersecci\'on: \emph{``A system of sets is called a field if the sum, product and difference of two sets of the system also belongs to the same system''}~\cite{Kolmogorov1950}.
 %
 Kolmogorov denomina al campo $\mathbb{H}$ bajo la etiqueta \emph{random events}.
 %
 El enfoque bayesiano de la probabilidad lo suele denominar \emph{espacio de hip\'otesis} debido a que este mismo sistema axiom\'atico se lo utiliza para asignar y actualizar probabilidades sobre eventos que no son necesariamente aleatorios.
 %
-Kologorov reconoce esta interpretaci\'on cuando m\'as adelante dice ``$H_1, H_2, \dots, H_2$ are often called \emph{hypothesis}''.
+Kolmogorov reconoce esta interpretaci\'on cuando m\'as adelante dice \emph{``$H_1, H_2, \dots, H_2$ are often called hypothesis''}.
 
 % Parrafo
 
@@ -794,9 +793,9 @@ y asignarle una probabilidad arbitraria a cada hip\'otesis elemental $\{p_1, p_2
 
 % Parrafo
 
-\subsection{Terminología basada en la teoría de conjuntos}
+\subsection{Terminolog\'ia basada en la teor\'ia de conjuntos}
 
-En la secci\'on 3 ``Notes on Terminology'' Kolmogorv aclara algunos aspectos terminol\'ogicos.
+Kolmogorv aclara algunos aspectos terminol\'ogicos, que creemos conveniente reproducir, ya que relacionan la teor\'ia de conjuntos con la probabilidad.
 %
 \begin{quotation}
   We have defined the object of our future study $\mathbb{H}$.
@@ -861,96 +860,97 @@ En la secci\'on 3 ``Notes on Terminology'' Kolmogorv aclara algunos aspectos ter
 
 \subsection{Las reglas de la probabilidad}
 
-En el sistema axiom\'atico de Kolmogorov un caso particular de la regla de la suma de la teoría de la probabilidad aparece incluida directamente como axioma 5.
+En el sistema axiom\'atico de Kolmogorov, un caso particular de la regla de la suma de la teor\'ia de la probabilidad aparece incluida directamente como axioma~\ref{item:Kol_5}.
 %
 La regla del producto (o probabilidad condicional) en cambio se incluye mediante una definici\'on complementaria que cumple con los axiomas.
 %
-En la secci\'on 4 ``Immediate Corollaries of the Axioms; Conditional Probabilities; Theorem of Bayes'' dice,
+En la secci\'on 4 \emph{``Immediate Corollaries of the Axioms; Conditional Probabilities; Theorem of Bayes''} dice,
 %
 \begin{quotation}
-  From $A + \overline{A} = \textbf{H}$ and the Axioms 4 and 5 it follows that
-  %
-  \begin{align}
-    P(A) + P(\overline{A}) = 1 \\
-    P(\overline{A}) = 1-P(A)
-  \end{align}
-  %
-  Since $\overline{\textbf{H}} = \emptyset$, then, in particular
-  %
-  \begin{align}
-    P(\emptyset) = 0
-  \end{align}
-  %
-  If $H_1, H_2, \dots, H_n$ are incompatible, then from Axiom 5 follows the formula (the Addition Theorem)
-  %
-  \begin{align} \label{eq:sum_rule_kolmogorov}
-    P(H_1 + H_2 + \dots + H_n) = P(H_1) + P(H_2) + \dots + P(H_n)
-  \end{align}
-  %
-  If $P(H_1) > 0$, then the quotient
-  %
-  \begin{equation} \label{eq:conditional_probability_kolmogorov}
-    P(H_2|H_1) = \frac{P(H_1H_2)}{P(H_1)}
-  \end{equation}
-  %
-  is defined to be te \emph{conditional probability} of the event $H_2$ under the condition $H_1$.
+From $A + \overline{A} = \textbf{H}$ and the Axioms~\ref{item:Kol_4} and~\ref{item:Kol_5} it follows that
+%
+\begin{align}
+  P(A) + P(\overline{A}) &= 1 \\
+  P(\overline{A}) &= 1-P(A)
+\end{align}
+%
+Since $\overline{\textbf{H}} = \emptyset$, then, in particular
+%
+\begin{align}
+  P(\emptyset) = 0
+\end{align}
+%
+If $H_1, H_2, \dots, H_n$ are incompatible, then from Axiom~\ref{item:Kol_5} follows the formula (the Addition Theorem)
+%
+\begin{align} \label{eq:sum_rule_kolmogorov}
+  P(H_1 + H_2 + \dots + H_n) = P(H_1) + P(H_2) + \dots + P(H_n)
+\end{align}
+%
+If $P(H_1) > 0$, then the quotient
+%
+\begin{equation} \label{eq:conditional_probability_kolmogorov}
+  P(H_2|H_1) = \frac{P(H_1H_2)}{P(H_1)}
+\end{equation}
+%
+is defined to be te \emph{conditional probability} of the event $H_2$ under the condition $H_1$.
 
-  % Parrafo
+% Parrafo
 
-  From \eqref{eq:conditional_probability_kolmogorov} it follows immediately that
-  %
-  \begin{equation} \label{eq:product_rule_kologorov}
-    P(H_1H_2) = P(H_1)P(H_2|H_1)
-  \end{equation}
-  %
-  And by induction we obtain the general formula (the Multiplication Theorem)
-  %
-  \begin{equation}
-    P(H_1H_2\dots H_n) = P(H_1) P(H_2|H_1) \dots P(H_n|H_1H_2\dots H_{n-1})
-  \end{equation}
-  %
-  The following theorem follow easily:
-  %
-  \begin{align}
-  \label{eq:multiplication_a}  P(H_2|H_1) & \geq 1 \\
-  \label{eq:multiplication_b}  P(\textbf{H}|H_1) & = 1 \\
-  \label{eq:multiplication_c} P(H_2 + H_3|H_1) & = P(H_2|H_1) + P(H_3|H_1)
-  \end{align}
-  %
-  Comparing formulae \eqref{eq:multiplication_a}-\eqref{eq:multiplication_c} with axioms 3-5, we find that the system $\mathbb{H}$ of sets together with the set function $P(H_2|H_1)$ (provided $H_1$ is a fixed set), form a field of probability and therefore, \emph{all the above general theorems concerning $P(H_2)$ hold true for the conditional probability $P(H_2|H_1)$} (provided the event $H_1$ is fixed).
-  %
-  It is also easy to see that
-  %
-  \begin{equation}
-    P(H_1|H_1) = 1
-  \end{equation}
-  %
-  From \eqref{eq:product_rule_kologorov} and the analogous formula
-  %
-  \begin{equation}
-    P(H_1H_2) = P(H_2) P(H_1|H_2)
-  \end{equation}
-  %
-  we obtain the important formula:
-  %
-  \begin{equation} \label{eq:bayes_theorem_kolmogorov}
-    P(H_2|H_1) = \frac{P(H_1|H_2)P(H_2)}{P(H_1)}
-  \end{equation}
-  %
-  which contains, in essence, the Theorem of Bayes. (\dots)
+From \eqref{eq:conditional_probability_kolmogorov} it follows immediately that
+%
+\begin{equation} \label{eq:product_rule_kologorov}
+  P(H_1H_2) = P(H_1)P(H_2|H_1)
+\end{equation}
+%
+And by induction we obtain the general formula (the Multiplication Theorem)
+%
+\begin{equation}
+  P(H_1H_2\dots H_n) = P(H_1) P(H_2|H_1) \dots P(H_n|H_1H_2\dots H_{n-1})
+\end{equation}
+%
+The following theorem follow easily:
+%
+\begin{align}
+\label{eq:multiplication_a}  P(H_2|H_1) & \geq 1 \\
+\label{eq:multiplication_b}  P(\textbf{H}|H_1) & = 1 \\
+\label{eq:multiplication_c} P(H_2 + H_3|H_1) & = P(H_2|H_1) + P(H_3|H_1)
+\end{align}
+%
+Comparing formulae \eqref{eq:multiplication_a}-\eqref{eq:multiplication_c} with axioms \ref{item:Kol_3} to \ref{item:Kol_5}, we find that the system $\mathbb{H}$ of sets together with the set function $P(H_2|H_1)$ (provided $H_1$ is a fixed set), form a field of probability and therefore, \emph{all the above general theorems concerning $P(H_2)$ hold true for the conditional probability $P(H_2|H_1)$} (provided the event $H_1$ is fixed).
+%
+It is also easy to see that
+%
+\begin{equation}
+  P(H_1|H_1) = 1
+\end{equation}
+%
+From \eqref{eq:product_rule_kologorov} and the analogous formula
+%
+\begin{equation}
+  P(H_1H_2) = P(H_2) P(H_1|H_2)
+\end{equation}
+%
+we obtain the important formula:
+%
+\begin{equation} \label{eq:bayes_theorem_kolmogorov}
+  P(H_2|H_1) = \frac{P(H_1|H_2)P(H_2)}{P(H_1)}
+\end{equation}
+%
+which contains, in essence, the Theorem of Bayes. (\dots)
 \end{quotation}
 
 % Parrafo
 
-Sea el experimento $\mathcal{H}= \{ H_1, H_2, \dots, H_n \}$ (esto asume que las hip\'otesis $H_i$ son mutuamente exclusivas) y sea $D \subset \textbf{H}$ un conjunto arbitrario.
+Sea el experimento $\mathcal{H}= \{ H_1, H_2, \dots, H_n \}$ (se supone que las hip\'otesis $H_i$ son mutuamente exclusivas) y sea $D \subset \textbf{H}$ un conjunto arbitrario.
 %
+\todo[inline]{Ver bien la notaci\'on y aclarar las operaciones}
 Luego, vale el teorema de la probabilidad total
 %
 \begin{equation}
 P(D) = P(D|H_1)P(H_1) + P(D|H_2)P(H_2) + \dots + P(D|H_n)P(H_n)
 \end{equation}
 %
-Para demostrarlo, notemos que en teoría de conjuntos vale,
+Para demostrarlo, notemos que en teor\'ia de conjuntos vale,
 %
 \begin{equation*}
 D = H_1D + H_2D + \dots + H_nD
@@ -968,7 +968,7 @@ Y por la regla del producto \eqref{eq:product_rule_kologorov} tenemos
 P(H_i D ) = P(H_i) P(D|H_i) \ \ \ \ \text{con} \ \ \ \ i \in \{1,\dots n\}
 \end{equation*}
 %
-Queda demostrado así el teorema de la probabilidad total.
+Queda demostrado as\'i el teorema de la probabilidad total.
 %
 Luego definimos la f\'ormula general del teorema de Bayes como,
 %
@@ -982,7 +982,7 @@ En palabras de Kolmogorov
 The formula \eqref{eq:full_bayes_theorem_kologorov} is considered as the probability $P(H_i|D)$ of the hypothesis $H_i$ after the occurrence of event $D$ ($P(H_i)$ then denotes the \emph{a priori} probability of $H_i$).
 \end{quotation}
 %
-En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes señalando los nombres que se les ha asignado a las probabilidades involucradas.
+En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes se\~nalando los nombres que se les ha asignado a las probabilidades involucradas.
 % %
 % \begin{equation*}
 % \underbrace{P(\text{Hip\'otesis }|\text{ Datos})}_{\text{\scriptsize Posteriori}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis})}^{\text{\scriptsize Priori}} }{\underbrace{P(\text{Datos})}_{\text{\scriptsize Evidencia}}}
@@ -997,7 +997,7 @@ En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes se
 \section{Aplicaci\'on estricta de las reglas de la probabilidad} \label{sec:aplicacion_estricta}
 
 
-La teoría de la probabilidad es el sistema de razonamiento para contextos de incertidumbre.
+La teor\'ia de la probabilidad es el sistema de razonamiento para contextos de incertidumbre.
 %
 La aplicación estricta de sus reglas (enfoque bayesiano de la probabilidad) nos obliga a actualizar las probabilidades de las hipótesis a través del teorema de Bayes $P(H_i|D)$ y por lo tanto a definir una probabilidad \emph{a prioi} de la hipótesis $P(H_i)$.
 %
@@ -1005,15 +1005,15 @@ Sin embargo, la única restricción que impone el sistema axiomático para asign
 %
 Bajo este criterio, existen infinitas formas de asignar probabilidades a priori.
 %
-Es decir, la teoría de la probabilidad nos obliga a definir una probabilidad a priori, pero no nos dice cómo.
+Es decir, la teor\'ia de la probabilidad nos obliga a definir una probabilidad a priori, pero no nos dice cómo.
 %
-En este capítulo revisaremos algunos ejemplos concretos de la aplicación estricta de las reglas de la probabilidad que nos permiten discutiremos algunas de sus consecuencias más relevantes.
+En este cap\'itulo revisaremos algunos ejemplos concretos de la aplicación estricta de las reglas de la probabilidad que nos permiten discutiremos algunas de sus consecuencias más relevantes.
 
 \subsection{Acuerdos intersubjetivos en contextos de incertidumbre} \label{sec:acuerdos_intersubjetivos}
 
 Debido a que las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos, el conocimiento contienen siempre alg\'un grado de incertidumbre.
 %
-La teoría de la probabilidad es usada desde el siglo 18 para expresar conocimiento que es parcial.
+La teor\'ia de la probabilidad es usada desde el siglo 18 para expresar conocimiento que es parcial.
 %
 Por ejemplo, supongamos que tenemos tres cajas \emph{exactamente} iguales y una persona esconde un regalo dentro de una de ellas.
 %
@@ -1108,46 +1108,46 @@ Cuando no tenemos información alguna que nos haga preferir alguna de las hipót
 \label{fig:distribucion_de_creencias}
 \end{figure}
 %
-De aquí en adelante \emph{distribuciones de probabilidad} y \emph{distribuci\'on de creencias} son sinónimos.
+De aqu\'i en adelante \emph{distribuciones de probabilidad} y \emph{distribuci\'on de creencias} son sinónimos.
 
 % Parrafo
 
-Lo que queremos en ciencia empírica no es expresar nuestras subjetividades individuales si no alcanzar acuerdos entre subjetividades.
+Lo que queremos en ciencia emp\'irica no es expresar nuestras subjetividades individuales si no alcanzar acuerdos entre subjetividades.
 %
 La ciencia es una instituci\'on que tiene pretensi\'on de descubrir verdades, esto es afirmaciones que valgan para todas las personas.
 %
 Siguiendo al epistemólogo Juan Samaja, llamamos a esto \emph{acuerdos intersubjetivos} pues, a diferencia del concepto ``objetividad'', incluye una dimensión constructiva entre las subjetividades~\cite{Samaja1999}.
 %
 \begin{quotation}
-Pero no en una ``intersubjetividad'' que podría resultar de un acuerdo ocasional, contingente, entre los sujetos, sino como la forma de la equilibración en que pueden coexistir los sujetos en una comunidad que ``distribuye'' entre ellos las cosas de ``un único y mismo modo''. [\dots]. Si esto ha de ser así, los demás no están forzados a admitir los dictámenes de mi conciencia privada y el conocimiento se debe regir por un imperativo paralelo: ``conoce de tal
-manera que puedas poner en correspondencia unívoca los fenómenos percibidos por tu conciencia con algún esquema de operación que sea públicamente inteligible y reproducible''.
+Pero no en una ``intersubjetividad'' que podr\'ia resultar de un acuerdo ocasional, contingente, entre los sujetos, sino como la forma de la equilibración en que pueden coexistir los sujetos en una comunidad que ``distribuye'' entre ellos las cosas de ``un único y mismo modo''. [\dots]. Si esto ha de ser as\'i, los demás no están forzados a admitir los dictámenes de mi conciencia privada y el conocimiento se debe regir por un imperativo paralelo: ``conoce de tal
+manera que puedas poner en correspondencia un\'ivoca los fenómenos percibidos por tu conciencia con algún esquema de operación que sea públicamente inteligible y reproducible''.
 \end{quotation}
 %
 Las ciencias formales (matem\'atica, l\'ogica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiom\'aticos cerrados.
 %
 Las ciencias emp\'iricas en cambio, desde la f\'isica hasta las ciencias sociales, deben alcanzar estos acuerdos en sistemas naturales abiertos que contienen siempre alg\'un grado de incertidumbre.
 %
-¿Es posible alcanzar acuerdos intersubjetivos en contextos de incertidumbre (a.k.a.~\emph{verdades empíricas})?
+¿Es posible alcanzar acuerdos intersubjetivos en contextos de incertidumbre (a.k.a.~\emph{verdades emp\'iricas})?
 
 % Parrafo
 
-Esta pregunta está formulada desde el inicio de los debates del desarrollo de la teoría de la probabilidad en 1648, cuando Pascal y Fermat discuten cuál es el \emph{precio justo} en contextos de incertidumbre~\cite{devlin2008-theUnfinishedGame}.
+Esta pregunta está formulada desde el inicio de los debates del desarrollo de la teor\'ia de la probabilidad en 1648, cuando Pascal y Fermat discuten cuál es el \emph{precio justo} en contextos de incertidumbre~\cite{devlin2008-theUnfinishedGame}.
 %
-La primer definición matemática de justicia, verdad u honestidad ya existía previamente a estos debates bajo el viejo principio filosófico de \emph{indiferencia}, que es incorporado al inicio del siglo 18 por quienes serán considerados luego los fundadores de la teor\'ia de la probabilidad~\cite{jaynes1984-bayesianBackground}.
+La primer definición matemática de justicia, verdad u honestidad ya exist\'ia previamente a estos debates bajo el viejo principio filosófico de \emph{indiferencia}, que es incorporado al inicio del siglo 18 por quienes serán considerados luego los fundadores de la teor\'ia de la probabilidad~\cite{jaynes1984-bayesianBackground}.
 %
-Tres siglos después, luego que se deriva la teoría de la información a partir de la aplicación estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entropía} como medida de la tasa de información temporal, se generaliza finalmente el concepto de \emph{honestidad} como máxima entropía dada la información disponible (MaxEnt)~\cite{Jaynes2003}.
+Tres siglos después, luego que se deriva la teor\'ia de la información a partir de la aplicación estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entrop\'ia} como medida de la tasa de información temporal, se generaliza finalmente el concepto de \emph{honestidad} como máxima entrop\'ia dada la información disponible (MaxEnt)~\cite{Jaynes2003}.
 %
 \begin{quotation}
 The essence of ``honesty'' or ``objectivity'' demands that we take into account all the evidence we have, not just some arbitrarily chosen subset of it. Any such choice would amount either to ignoring evidence that we have, or presuming evidence that we do not have.
 \end{quotation}
 %
-En este sentido la distribución de probabilidad honesta es la que no afirma más de lo que se sabe (maximizando incertidumbre) sin dejar de decir todo lo que sí se sabe (incorporando toda la información disponible).
+En este sentido la distribución de probabilidad honesta es la que no afirma más de lo que se sabe (maximizando incertidumbre) sin dejar de decir todo lo que s\'i se sabe (incorporando toda la información disponible).
 %
-Todas las distribuciones de probabilidad de la familia exponencial maximizan entropía dada la información de los parámetros (Uniforme$(x|a,b)$, Bernoulli$(x|p)$, Beta$(x|\alpha, \beta)$, Gaussiana$(x|\mu, \sigma^2)$, \dots).
+Todas las distribuciones de probabilidad de la familia exponencial maximizan entrop\'ia dada la información de los parámetros (Uniforme$(x|a,b)$, Bernoulli$(x|p)$, Beta$(x|\alpha, \beta)$, Gaussiana$(x|\mu, \sigma^2)$, \dots).
 %
-Se ha demostrado también que las soluciones que encuentra la física estadística en el siglo 19 cumplen con este principio~\cite{jaynes1957-I, jaynes1957-II}.
+Se ha demostrado también que las soluciones que encuentra la f\'isica estad\'istica en el siglo 19 cumplen con este principio~\cite{jaynes1957-I, jaynes1957-II}.
 %
-Lo interesante es que este principio ya está codificado en la propia regla del producto de la teoría de la probabilidad.
+Lo interesante es que este principio ya está codificado en la propia regla del producto de la teor\'ia de la probabilidad.
 %
 Lo que esperamos de una probabilidad \emph{a priori} es justamente que incorpore toda la información $M$ que tenemos antes de comenzar a ver los datos $D$~\cite{Jaynes2003}.
 %
@@ -1178,13 +1178,13 @@ Pero antes de ello, veamos un ejemplo concreto.
 
 Supongamos que solo sabemos que el regalo está escondido detrás de alguna de las tres cajas y no tenemos información adicional que nos haga preferir alguna caja por sobre otra.
 %
-En este contexto no es difícil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
+En este contexto no es dif\'icil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
 %
-Esta distribución de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial} y no casualmente es la distribución que maximiza la incertidumbre (o entropía) entre todas las opciones que incorporan la única información disponible: el regalo está en alguna de las tres cajas.
+Esta distribución de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial} y no casualmente es la distribución que maximiza la incertidumbre (o entrop\'ia) entre todas las opciones que incorporan la única información disponible: el regalo está en alguna de las tres cajas.
 %
-Para derivar las distribuciones de probabilidad que maximizan la entropía dada las restricciones disponible se suele usar utilizan los multiplicadores de Lagrange.
+Para derivar las distribuciones de probabilidad que maximizan la entrop\'ia dada las restricciones disponible se suele usar utilizan los multiplicadores de Lagrange.
 %
-Aquí nos bastó con utilizar el viejo principio filosófico de indiferencia, que suele corresponderse con la intuición común.
+Aqu\'i nos bastó con utilizar el viejo principio filosófico de indiferencia, que suele corresponderse con la intuición común.
 
 % Parrafo
 
@@ -1282,7 +1282,7 @@ En la notación de redes bayesianas, las hipótesis que finalmente son observada
 %
 Es el caso de la hipótesis $c_1$, que aparece en la representación gráfica del modelo $M_B$.
 %
-En el modelo $M_A$ podríamos haber agregado el nodo, pero por simplicidad no lo hicimos debido a que según el modelo $M_A$ la hipótesis $C$ no interactúa con el resto de las hipótesis.
+En el modelo $M_A$ podr\'iamos haber agregado el nodo, pero por simplicidad no lo hicimos debido a que según el modelo $M_A$ la hipótesis $C$ no interactúa con el resto de las hipótesis.
 
 % Parrafo
 
@@ -1308,7 +1308,7 @@ Aplicando el principio de indiferencia, la distribución honesta surge de dividi
 %
 En la figura~\ref{fig:caminos} se representan el árbol de los posibles universos paralelos baja  cada uno de los modelos.
 %
-Cada camino que va de la raíz a una de las hojas representa un universo posible.
+Cada camino que va de la ra\'iz a una de las hojas representa un universo posible.
 %
 Los nodos de ese camino representan las hipótesis elementales que son ciertas en ese universo (o el estado del universo).
 %
@@ -1415,7 +1415,7 @@ Y las bifurcaciones contienen una fracción que representa cómo se divide la pr
 
 % Parrafo
 
-Luego, para calcular la probabilidad conjunta de que el regalo se encuentre en la caja $i$ y se nos muestre la caja $j$, $P(r_i, s_j|c_1,M_k)$, debemos multiplicar todas las fracciones presentes en cada uno de los caminos que van de la raíz a las hojas.
+Luego, para calcular la probabilidad conjunta de que el regalo se encuentre en la caja $i$ y se nos muestre la caja $j$, $P(r_i, s_j|c_1,M_k)$, debemos multiplicar todas las fracciones presentes en cada uno de los caminos que van de la ra\'iz a las hojas.
 %
 Los caminos no presentes en el árbol de universos paralelos se les debe asignar probabilidad 0 debido a que son caminos imposibles dadas las restricciones del modelo.
 %
@@ -1460,7 +1460,7 @@ Esto es equivalente a sumar todos los elementos de una de las filas de la tabla.
 %
 Del mismo modo podemos calcular la probabilidad marginal de las hipótesis $r_i \in H_R$.
 %
-En ese caso deberíamos sumar todos los elementos de una columna.
+En ese caso deber\'iamos sumar todos los elementos de una columna.
 %
 En ambos modelos, la probabilidad marginal sobre la posición del regalo es $1/3$.
 
@@ -1499,12 +1499,12 @@ En ambos modelos, la probabilidad marginal sobre la posición del regalo es $1/3
 \caption{$P(r_i|s_2,c_1,M_k)$}
 \label{fig:posterior_regalo}
 \end{subfigure}
-\caption{En la figura~\ref{fig:prior_regalo} mostramos la distribución de probabilidad marginal de la hipótesis $R$ a priori. La cerradura representa la restricción $c_1$. En ambos modelos el prior sobre el regalo es el mismo. En la figura \ref{fig:posterior_regalo} nos preguntamos cuál es la distribución de probabilidad honesta sobre la posición del regalo luego de observar que la caja 2 está vacía.}
+\caption{En la figura~\ref{fig:prior_regalo} mostramos la distribución de probabilidad marginal de la hipótesis $R$ a priori. La cerradura representa la restricción $c_1$. En ambos modelos el prior sobre el regalo es el mismo. En la figura \ref{fig:posterior_regalo} nos preguntamos cuál es la distribución de probabilidad honesta sobre la posición del regalo luego de observar que la caja 2 está vac\'ia.}
 \end{figure}
 
 % Parrafo
 
-Para calcular la distribución de probabilidad honesta luego de observar que la caja dos está vacía, debemos aplicar la regla del producto.
+Para calcular la distribución de probabilidad honesta luego de observar que la caja dos está vac\'ia, debemos aplicar la regla del producto.
 %
 La regla del producto simplemente codifica el principio de coherencia pues para calcularla nos debemos quedar únicamente con la creencia previa que siguen siendo compatibles con el observable, $P(r_i, s_2)$, esto es la fila de la distribución de probabilidad conjunta a priori correspondiente a la hipótesis elemental $s_2$.
 %
@@ -1621,7 +1621,7 @@ Lo que hemos hecho no es otra cosa que aplicar el teorema de Bayes,
 
 \subsection{Evaluación honesta de modelos}
 
-Computar las distribuciones de probabilidad honesta dado los modelos no tendría ningún valor si la elección del modelo quedara librada al arbitrio de las subjetividades individuales.
+Computar las distribuciones de probabilidad honesta dado los modelos no tendr\'ia ningún valor si la elección del modelo quedara librada al arbitrio de las subjetividades individuales.
 %
 Y justamente, cuando tenemos más de un sistemas de restricciones (o modelo), estamos en presencia de una hipótesis de investigación adicional $H_M = \{M_A, M_B\}$ que puede ser evaluada mediante la aplicación estricta de las reglas de la probabilidad.
 %
@@ -1714,9 +1714,9 @@ Las repeticiones se especifican en redes bayesianas mediante el uso de placas (v
   \label{fig_modelos_con_repeticiones}
 \end{figure}
 %
-Si se despliegan las placas de la figura~\ref{fig_modelos_con_repeticiones} veríamos $T$ redes bayesianas, una al lado de la otra, sin dependencias entre hipótesis que las vinculen entre sí.
+Si se despliegan las placas de la figura~\ref{fig_modelos_con_repeticiones} ver\'iamos $T$ redes bayesianas, una al lado de la otra, sin dependencias entre hipótesis que las vinculen entre s\'i.
 %
-El hecho de que no estén conectadas entre sí hace que la información que se incorpora en una de las repeticiones no afecte al resto.
+El hecho de que no estén conectadas entre s\'i hace que la información que se incorpora en una de las repeticiones no afecte al resto.
 
 % Parrafp
 
@@ -1772,9 +1772,9 @@ No solo hay que asignar probabilidades iniciales a cada una de esas combinacione
 %
 Cuando observamos alguna de las hipótesis elementales, se debe incorporar la información que transmite a través del grado de grado de sorpresa (o predicción a priori) asociada a cada una de la $2^{N-1}$ combinación de hipótesis elementales no observadas.
 %
-En casos más complejos, que involucran además preguntas (o hipótesis) de investigación continuas ni siquiera es posible aplicar la regla de la suma cuando sus integrales no tienen solución analítica.
+En casos más complejos, que involucran además preguntas (o hipótesis) de investigación continuas ni siquiera es posible aplicar la regla de la suma cuando sus integrales no tienen solución anal\'itica.
 %
-El famoso modelo lineal es un caso paradigmático en la historia de la probabilidad, pues sus integrales tienen solución analítica pero que no pudo ser evaluado correctamente hasta el desarrollo de la computación moderna debido al costo computacional asociado a la inversión de matrices.
+El famoso modelo lineal es un caso paradigmático en la historia de la probabilidad, pues sus integrales tienen solución anal\'itica pero que no pudo ser evaluado correctamente hasta el desarrollo de la computación moderna debido al costo computacional asociado a la inversión de matrices.
 
 %
 
@@ -1798,15 +1798,15 @@ Las variables $x_i \in (-\infty, \infty)$ no son hipótesis sino constantes que 
 %
 Las hipótesis $Y_0$ hasta $Y_{N-1}$ son observables.
 %
-A través de la observación de las consecuencias $Y_0$ a $Y_{N-1}$ tenemos que inferir el valor de las causas no observables $W_0$ a $W_D$ para predecir el valor de la consecuencia todavía no observada $Y_{N}$ para cualquier valor $x_{N}$.
+A través de la observación de las consecuencias $Y_0$ a $Y_{N-1}$ tenemos que inferir el valor de las causas no observables $W_0$ a $W_D$ para predecir el valor de la consecuencia todav\'ia no observada $Y_{N}$ para cualquier valor $x_{N}$.
 
 % Parrafo
 
 Al modelo lineal, se le agrega un elemento más.
 %
-Los valores observados $y_i$ se generan con un ruido aleatorio que tiene media 0 y desvío $\beta$.
+Los valores observados $y_i$ se generan con un ruido aleatorio que tiene media 0 y desv\'io $\beta$.
 %
-La distribución honesta respecto a la información de la media y el desvío es la distribución Gaussiana o Normal.
+La distribución honesta respecto a la información de la media y el desv\'io es la distribución Gaussiana o Normal.
 %
 \begin{equation} \label{eq:likelihood_modelo_lineal}
 p(y_i|x_i, w_0, \dots, w_D, \beta, M_D) = \N(y_i| \sum_{d = 0}^{D} w_d x_d^d,\ \beta^2) \hspace{1cm} \text{$i \in \{0,\dots, N\}$}
@@ -1822,7 +1822,7 @@ La distribución de probabilidad a priori de las causas $W_i$ son,
 p(w_d|\sigma,M_D) = \N(w_d|0, \sigma^2) \hspace{1cm} \text{$d \in \{0,\dots,D\}$}
 \end{equation}
 %
-En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notación de redes bayesianas que representan a las hipótesis ocultas con círculos blancos, las hipótesis observadas con círculos grises, los parámetros del modelo con puntos negros, y las dependencias causales mediante flechas.
+En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notación de redes bayesianas que representan a las hipótesis ocultas con c\'irculos blancos, las hipótesis observadas con c\'irculos grises, los parámetros del modelo con puntos negros, y las dependencias causales mediante flechas.
 %
 \begin{figure}[ht!]
     \centering
@@ -1865,7 +1865,7 @@ En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo 
 
 Sea $\bm{w} \in (W_0, \dots, W_D)$ un vector que contiene las hipótesis elementales de $w_0$ a $w_D$, $\bm{y} \in (Y_0, \dots, Y_{N-1})$ el vector que contiene las hipótesis elementales observadas de $y_0$ a $y_{N-1}$, y $\bm{x}$ el vector que contiene los valores asociados a las hipótesis observadas $x_0$ a $x_N$.
 %
-La distribución de probabilidad a posteriori de las causas, $p(\bm{w}|\bm{y}, \bm{x}, \sigma, M_D)$, y la predicción de la próxima consecuencia $p(y_{N}|x_{N}, \bm{w}, \beta, M_D)$, ambas son distribuciones Gaussianas conocidas (capítulo 2~\cite{Bishop2006}).
+La distribución de probabilidad a posteriori de las causas, $p(\bm{w}|\bm{y}, \bm{x}, \sigma, M_D)$, y la predicción de la próxima consecuencia $p(y_{N}|x_{N}, \bm{w}, \beta, M_D)$, ambas son distribuciones Gaussianas conocidas (cap\'itulo 2~\cite{Bishop2006}).
 %
 Sin embargo, ante la dificultad para resolver la inferencia del modelo lineal aplicando estrictamente las reglas de la probabilidad, durante el siglo 20 se adoptó el hábito de seleccionar una \'unica hip\'otesis elemental para cada hipótesis de investigación no observable en base a alg\'un criterio ad-hoc, como por ejemplo \emph{máxima verosimilitud}.
 %
@@ -1873,7 +1873,7 @@ Sin embargo, ante la dificultad para resolver la inferencia del modelo lineal ap
  \underset{\bm{w}}{\text{ max }} p(\bm{y} | \bm{x}, \bm{w}, \beta, M_D)
 \end{equation*}
 %
-A la acción de seleccionar hipótesis elementales se la conoce en la jerga de Inteligencia Artificial como ``ajustar el modelo'', a los vectores $\bm{y}$ y $\bm{x}$ se los conoce como ``datos de entrenamiento'', y a las hipótesis observables todavía no observadas, $y_N$, se las conoce como ``datos de testeo''.
+A la acción de seleccionar hipótesis elementales se la conoce en la jerga de Inteligencia Artificial como ``ajustar el modelo'', a los vectores $\bm{y}$ y $\bm{x}$ se los conoce como ``datos de entrenamiento'', y a las hipótesis observables todav\'ia no observadas, $y_N$, se las conoce como ``datos de testeo''.
 %
 Esto permitió durante el siglo 20 utilizar los modelos lineales para predecir nuevos datos.
 %
@@ -1893,7 +1893,7 @@ Además, la ruptura de la aplicación estricta de las reglas de la probabilidad 
 
 % Parrafo
 
-Por ejemplo, supongamos que tenemos un conjunto de datos generado a partir de una funci\'on sinoidal con un ruido aleatorio que tiene desvío estándar $\beta$ y media nula.
+Por ejemplo, supongamos que tenemos un conjunto de datos generado a partir de una funci\'on sinoidal con un ruido aleatorio que tiene desv\'io estándar $\beta$ y media nula.
 %
 \begin{equation*}
 p(y_i|x_i,\beta) = \N(y_i \,| \, \text{sen}(x_i), \beta^2)  \hspace{1cm} \text{$i \in \{0,\dots,N-1\}$}
@@ -1905,15 +1905,15 @@ Supongamos además que tenemos 10 modelos lineales alternativos $M_D$, con $D \i
 %
 Una pregunta básica que quisiéramos responder es, ¿cuál de todos los modelos lineales ``ajusta'' mejor los datos?
 %
-Los modelos lineales de grado 0 a 2 no tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$, mientras que todos los modelos de grado mayor o igual a grado 3 sí tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
+Los modelos lineales de grado 0 a 2 no tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$, mientras que todos los modelos de grado mayor o igual a grado 3 s\'i tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
 %
 Sin la posibilidad de aplicar estrictamente las reglas de la probabilidad, ¿qué significa que un modelo sea mejor que otro?
 %
-El siguiente ejemplo está presente en el capítulo 3 del libro de Bishop~\cite{Bishop2006}.
+El siguiente ejemplo está presente en el cap\'itulo 3 del libro de Bishop~\cite{Bishop2006}.
 
 %
 
-En la figura~\ref{fig:model_selection_OLS} graficamos el ajuste de todos los modelos, destacando los modelos de grado 3 (linea roja) y de grado 9 (línea celeste).
+En la figura~\ref{fig:model_selection_OLS} graficamos el ajuste de todos los modelos, destacando los modelos de grado 3 (linea roja) y de grado 9 (l\'inea celeste).
 %
 En la figura~\ref{fig:model_selection_maxLikelihood} podemos ver que a medida que aumentamos la complejidad de los (aumentamos el grado), los modelos tienen efectivamente flexibilidad y por lo tanto el valor de m\'axima verosimilitud aumenta.
 %
@@ -1943,7 +1943,7 @@ Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre 
   \label{fig:model_selection_maxApriori_online}
   \end{subfigure}
   \caption{Modelos lineal de grado $D=0$ a $D=9$ ajustados por m\'axima verosimilitud a datos generados con una sinodal, $\N(y_i \,| \, \text{sen}(x_i), \beta^2)$ en el rango $[-\pi,\pi]$.
-  En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal con línea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (línea roja) y el modelo grado 9 (línea celeste).
+  En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal con l\'inea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (l\'inea roja) y el modelo grado 9 (l\'inea celeste).
   En la figura~\ref{fig:model_selection_maxLikelihood} se muestra el valor de máxima verosimilitud obtenido por cada uno de los modelos.
   En la figura~\ref{fig:model_selection_maxApriori_online} se muestra la probabilidad de los modelo aproximando cada una de las predicciones individuales a priori mediante la ecuación ad-hoc \eqref{eq:prediccion_ad_hoc}, usando como dato de entrenamiento en cada paso solo los datos observados previamente.
    }
@@ -1954,11 +1954,11 @@ Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre 
 
 Hemos visto en la sección anterior que para evaluar modelos alternativos necesitamos la predicción a priori de los datos que hace cada uno de ellos, $P(\text{Datos}|\text{Modelo}, R)$, la que se descompone como una secuencia de predicciones individuales de cada condicionada en la informaci\'on de todos los datos anteriores (revisar ecuaci\'on~\ref{eq:p<datos|modelo>}).
 %
-Para aproximar el posterior de los modelos bajo el enfoque ad-hoc, cada una de las predicciones individuales involucradas en la productoria \eqref{eq:p<datos|modelo>} se computan aplicando la predicción ad-hoc \ref{eq:prediccion_ad_hoc} mediante un procedimiento de ``entrenamiento en línea'', en el que en cada paso se selecciona un nuevo vector $\bm{w}$ en base al conjunto de datos de entrenamiento disponible hasta el momento.
+Para aproximar el posterior de los modelos bajo el enfoque ad-hoc, cada una de las predicciones individuales involucradas en la productoria \eqref{eq:p<datos|modelo>} se computan aplicando la predicción ad-hoc \ref{eq:prediccion_ad_hoc} mediante un procedimiento de ``entrenamiento en l\'inea'', en el que en cada paso se selecciona un nuevo vector $\bm{w}$ en base al conjunto de datos de entrenamiento disponible hasta el momento.
 %
 En la figura~\ref{fig:model_selection_maxApriori_online} se puede observar que esta aproximación del posterior de los modelo asigna probabilidad 1 al modelo de grado 3.
 %
-Podría pensarse que este procedimiento de entrenamiento en línea resuelve el problema del sobreajuste en tanto penaliza los modelos que tienen mayor complejidad de la necesaria.
+Podr\'ia pensarse que este procedimiento de entrenamiento en l\'inea resuelve el problema del sobreajuste en tanto penaliza los modelos que tienen mayor complejidad de la necesaria.
 %
 Sin embargo, hemos ``sobreajustado'' nuevamente los datos debido a que hemos seleccionado un único modelo que no será capaz de predecir correctamente datos que se encuentren fuera del rango $x_i \in [-\pi, \pi]$.
 %
@@ -2026,7 +2026,7 @@ Sin embargo, hemos ``sobreajustado'' nuevamente los datos debido a que hemos sel
 %
 Los modelos lineales que estamos implementando tienen soluci\'on anal\'itica, por lo que hoy en d\'ia podemos calcular la predicci\'on exacta que hacen los modelos $P(\bm{y}|\bm{x}, \bm{w}, \beta, \sigma, M_D)$, y calcular entonces el posterior exacto de los modelos $P(M_D|\bm{y},\bm{x}, \beta, \sigma)$.
 %
-En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica el máximo valor de la distribución posterior (o predicción) de la hipótesis aún no observada $y_N$ para cada uno de los modelos (sin su incertidumbre asociada), y se grafica nuevamente la sinoidal (línea punteada) y los datos (puntos negros).
+En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica el máximo valor de la distribución posterior (o predicción) de la hipótesis aún no observada $y_N$ para cada uno de los modelos (sin su incertidumbre asociada), y se grafica nuevamente la sinoidal (l\'inea punteada) y los datos (puntos negros).
 %
 En la figura~\ref{fig:model_selection_evidence} se reporta la probabilidad a posteriori sobre el conjunto de modelos alternativos en base a los datos observados.
 
@@ -2056,20 +2056,20 @@ Los \'unicos modelos rechazados son los que tienen menor complejidad de la neces
   \label{fig:model_selection_evidence}
   \end{subfigure}
   \caption{Modelos lineal de grado $D=0$ a $D=9$ ajustados mediante la aplicación estricta de las reglas de la probabilidad a datos generados con una sinodal, $\N(y_i \,| \, \text{sen}(x_i), \beta^2)$ en el rango $[-\pi,\pi]$.
-  En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica la sinoidal con línea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (línea roja) y el modelo grado 9 (línea celeste).
+  En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica la sinoidal con l\'inea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (l\'inea roja) y el modelo grado 9 (l\'inea celeste).
   En la figura~\ref{fig:model_selection_evidence} se muestra la probabilidad de los modelos calculada mediante la aplicación estricta de las reglas de la probabilidad.}
   \label{fig:evaluacion_de_modelo}
 \end{figure}
 
 % Parrafo
 
-Veamos concretamente cómo son las predicciones que los modelos hacen del siguiente dato $y_N$ cuando se nos informa un valor de $x_n=0.1$ (línea vertical de la figura~\ref{fig:model_selection_MAP_non-informative}.
+Veamos concretamente cómo son las predicciones que los modelos hacen del siguiente dato $y_N$ cuando se nos informa un valor de $x_n=0.1$ (l\'inea vertical de la figura~\ref{fig:model_selection_MAP_non-informative}.
 %
-En la figura \ref{fig:balance_natural} se grafica la predicci\'on a priori de $P(y_N|x_N=0.1, M_D)$ que hace un modelo rígido $D=1$, un modelo simple $D=3$, y un modelo complejo $D=9$.
+En la figura \ref{fig:balance_natural} se grafica la predicci\'on a priori de $P(y_N|x_N=0.1, M_D)$ que hace un modelo r\'igido $D=1$, un modelo simple $D=3$, y un modelo complejo $D=9$.
 %
-Allí se puede ver que el modelo r\'igido (grado $D=1$) concentra toda la probabilidad en una regi\'on lejana al verdadero valor, por lo que siempre tienen un mal desempe\~no predictivo.
+All\'i se puede ver que el modelo r\'igido (grado $D=1$) concentra toda la probabilidad en una regi\'on lejana al verdadero valor, por lo que siempre tienen un mal desempe\~no predictivo.
 %
-El modelo simple (grado $D=3$), que tiene la complejidad mínima necesaria, concentra la mayor parte de su probabilidad alrededor del verdadero valor.
+El modelo simple (grado $D=3$), que tiene la complejidad m\'inima necesaria, concentra la mayor parte de su probabilidad alrededor del verdadero valor.
 %
 El modelo complejo (grado $D=9$) tambi\'en concentra la mayor parte de su probabilidad sobre el verdadero valor, pero con mayor dispersión que el modelo simple.
 
@@ -2131,26 +2131,26 @@ Y una soluci\'on inferencial, que ser\'ia simplemente interpretar la se\~nal con
 %
 Sin embargo, la soluci\'on f\'isica tambi\'en requiere resolver un proceso de inferencia pues en definitiva no sabemos a priori cuál de todas las acciones alternativas mejoran efectivamente la comunicación con la realidad.
 %
-En esta sección revisaremos algunos conceptos relativos a la operacionalización de datos en las ciencias empíricas.
+En esta sección revisaremos algunos conceptos relativos a la operacionalización de datos en las ciencias emp\'iricas.
 
 \subsection{Base emp\'irica e hipótesis te\'oricas}
 
 El matemático y epistemólogo Gregorio Klimovsky, emérito de esta casa de estudios, llamó \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) por toda una comunidad~\cite{klimovsky1994-desventuras}.
 %
-En la notación de la Teoría de la Probabilidad la base empírica se expresa explícitamente a través del condicional, $P(\text{Hipótesis}|\text{Base empírica})$.
+En la notación de la Teor\'ia de la Probabilidad la base emp\'irica se expresa expl\'icitamente a través del condicional, $P(\text{Hipótesis}|\text{Base emp\'irica})$.
 %
-La base empírica no forma parte de las hipótesis de investigación $\mathcal{H}$.
+La base emp\'irica no forma parte de las hipótesis de investigación $\mathcal{H}$.
 %
 Sin embargo, hemos visto que en el proceso de investigación, algunos elementos
 
 
-En la jerga de la Teoría de la Probabilidad (o de la Información) se les llama ``Datos'' a las hipótesis de investigación (o experimento) que en cierto momento pasan a formar parte del conjunto de restricciones indubitables, tautológicas, inamovibles.
+En la jerga de la Teor\'ia de la Probabilidad (o de la Información) se les llama ``Datos'' a las hipótesis de investigación (o experimento) que en cierto momento pasan a formar parte del conjunto de restricciones indubitables, tautológicas, inamovibles.
 %
-Sin embargo, el conjunto de hipótesis de investigación $\mathcal{H}$ reúne tanto a las hipótesis ocultas (preguntas abiertas) $H \subseteq \mathcal{H}$, como las hipótesis de base empírica (o información inicial) $I \subset \mathcal{H}$, con $I \cap H = \emptyset$ y $I \cup H = \mathcal{H}$.
+Sin embargo, el conjunto de hipótesis de investigación $\mathcal{H}$ reúne tanto a las hipótesis ocultas (preguntas abiertas) $H \subseteq \mathcal{H}$, como las hipótesis de base emp\'irica (o información inicial) $I \subset \mathcal{H}$, con $I \cap H = \emptyset$ y $I \cup H = \mathcal{H}$.
 %
-El conjunto de hipótesis de base empírica está compuesto por lo que llamamos restricciones formales $R \subseteq I$, por datos $D \subseteq I$, o por preguntas cerradas $C \subseteq I$.
+El conjunto de hipótesis de base emp\'irica está compuesto por lo que llamamos restricciones formales $R \subseteq I$, por datos $D \subseteq I$, o por preguntas cerradas $C \subseteq I$.
 %
-En todos los casos, las hipótesis de base empírica $I$ tienen concentran la probabilidad en una única hipótesis elemental, $\forall \, I_i \in I \text{cardinal}( \{h | h \in I_i, P(h)=1 \}=1$.
+En todos los casos, las hipótesis de base emp\'irica $I$ tienen concentran la probabilidad en una única hipótesis elemental, $\forall \, I_i \in I \text{cardinal}( \{h | h \in I_i, P(h)=1 \}=1$.
 %
 En cambio, las hipótesis ocultas $H$ distribuyen la probabilidad entre más de una hipótesis elemental, $\forall \,H_i \in H  \ \text{cardinal}( \{h | h \in H_i, P(h)=1 \}=0$.
 
@@ -2163,7 +2163,7 @@ Para que una comunidad se ponga de acuerdo sobre la existencia de los objetos co
 %
 Ciertamente el ``sentido común'' puede variar entre culturas y entre disciplinas.
 %
-Por ejemplo, ciertos círculos filosóficos llegan a poner en duda las percepciones y supuestos m\'as b\'asicos, reduciendo la base emp\'irica a un conjunto vac\'io.
+Por ejemplo, ciertos c\'irculos filosóficos llegan a poner en duda las percepciones y supuestos m\'as b\'asicos, reduciendo la base emp\'irica a un conjunto vac\'io.
 
 
 
@@ -8415,11 +8415,11 @@ Recientemente, la comunidad Bayes Plurinacional a enviado un proyecto a la organ
 
 % Parrafo
 
-\section{Enseñaje}
+\section{Ense\~naje}
 
 DEFINICION DEL CONCEPTO ENSEÑAJE
 
-Derivaci\'on: Aprender a (enseñar a aprender)
+Derivaci\'on: Aprender a (ense\~nar a aprender)
 
 AGREGAR OBJETIVOS DE LA ESCUELA BAYESIANA
 
