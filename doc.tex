@@ -1219,17 +1219,18 @@ En la figura~\ref{fig:modelo_causal_1} se especifica el sistema de restricciones
 
 % Parrafo
 
-Nada nos obliga a suponer que el modelo $M_A$ es correcto.
+Nada nos obliga a suponer que el $M_A$ es correcto.
 %
-Por ejemplo, tal como hab\'iamos mencionado anteriormente, podemos contar con la pista indicada por el or\'aculo. 
-Esto plantea una restricci\'on (o dependencia) adicional no explicitada en la descripci\'on original del juego entre la elecci\'on de la caja $H_c$ y la pista que recibimos $H_S$: si elegimos la caja $i$, es decir si $c_i$ es cierta, no puede ocurrir $s_i$.
+Por ejemplo, tal como hab\'iamos mencionado anteriormente, podemos contar con que la pista indicada por el or\'aculo difiere de nuestra elecci\'on. 
+Esto plantea una restricci\'on (o dependencia) adicional no explicitada en la descripci\'on original del juego entre la elecci\'on de la caja $H_C$ y la pista que recibimos $H_S$: si elegimos la caja $i$, es decir si $c_i$ es cierta, no puede ocurrir $s_i$.
 \todo[inline]{Arreglé el parrafo anterior para hacerlo coherente con haber introducido la pista un cachito antes, como estaba parecía que recien ahora te aparece esa informaci\'on y en realidad, recien ahora la consideras}
 %
-Al sistema de informaci\'on previa $M_A$ que incorpora esta nueva restricci\'on, le llamamos Modelo $M_B$, y tiene asociada la distribuci\'on de probabilidad honesta $P(H_R,H_S|c_1,M_B)$.
+Al modelo $A$, tambi\'en conocido como \emph{sistema de informaci\'on previa}, que incorpora esta nueva restricci\'on, le llamamos Modelo $B$ ($M_B$). 
+Este modelo tiene asociado la distribuci\'on de probabilidad $P(H_R,H_S|c_1,M_B)$.
 %
-Bajo el sistema de restricciones $M_B$, si el regalo se encuentra en la caja 1, $r_1$, no tenemos informaci\'on que nos haga preferir ninguna de las hip\'otesis elementales $s_2$ o $s_3$.
+Bajo las restricciones incluidas  en $M_B$, si el regalo se encontrara en la caja 1, es decir si $r_1$ fuera cierta, no tenemos informaci\'on que nos haga preferir ninguna de las hip\'otesis elementales $s_2$ o $s_3$.
 %
-En cambio, si el regalo se encuentra en una caja distinta a la que elegimos $r_i \neq r_1$, entonces la persona que muestra el interior de la caja tiene una \'unica opci\'on, $s_j$ con $j\neq i$ y $j\neq 1$.
+En cambio, si el regalo se encontrara en una caja distinta a la que elegimos (i.e., $r_i \neq r_1$), entonces el or\'aculo que muestra el interior de la caja tiene una \'unica opci\'on $s_j$ con las condiciones $j\neq i$ y $j\neq 1$.
 
 \begin{figure}[ht!]
    \hspace{0.5cm}
@@ -1285,37 +1286,37 @@ En la notaci\'on de redes bayesianas, las hip\'otesis que finalmente son observa
 %
 Es el caso de la hip\'otesis $c_1$, que aparece en la representaci\'on gr\'afica del modelo $M_B$.
 %
-En el modelo $M_A$ podr\'iamos haber agregado el nodo, pero por simplicidad no lo hicimos debido a que seg\'un el modelo $M_A$ la hip\'otesis $C$ no interact\'ua con el resto de las hip\'otesis.
+En $M_A$ podr\'iamos haber agregado ese nodo, pero por simplicidad no lo hicimos debido a que seg\'un $M_A$ la hip\'otesis $H_C$ no interact\'ua con el resto de las hip\'otesis.
 
 % Parrafo
 
-Para calcular las distribuciones de probabilidad honesta, $P(H_R,H_S|c_1,M_A)$ y $P(H_R,H_S|c_1,M_B)$, analicemos en detalle las restricciones de los modelos.
+Para calcular las distribuciones de probabilidad $P(H_R,H_S|c_1,M_A)$ y $P(H_R,H_S|c_1,M_B)$, analicemos en detalle las restricciones de los modelos.
 %
-En particular, cada modelo tiene asociado un conjunto de universos posibles.
+En particular, cada modelo tiene asociado un conjunto de \emph{universos posibles}.
 %
 En ambos modelos, el regalo puede estar indistintamente en cualquier caja.
 %
 Sin embargo, las cajas que se pueden mostrar dependen del modelo y la posici\'on del regalo.
 %
-En el modelo $M_A$, si el regalo se encuentra en la caja 1, $r_1$, la caja que se nos muestra puede ser indistintamente $S=s_2$ o $S=s_3$.
+En $M_A$, si el regalo se encontrara en la caja 1 (i.e., $r_1$ fuera cierta), la caja que se nos muestra puede ser cualquiera de las dos opciones disponibles, es decir $s_2$ o $s_3$ pueden ser ciertas.
 %
-De forma equivalente, para cada posible posici\'on del regalo $r_i$, en el modelo $M_A$ nos pueden mostrar indistintamente cualquiera de las otras dos cajas.
+De forma equivalente, para cada posible posici\'on del regalo $r_i$, en $M_A$ nos pueden mostrar indistintamente cualquiera de las otras dos cajas.
 %
-En el modelo $M_B$, solo cuando la posici\'on de regalo no coincide con la caja que elegimos, se nos puede mostrar indistintamente $s_2$ o $s_3$.
+En el modelo $M_B$, solo cuando la posici\'on de regalo \textbf{no coincide} con la de la caja que elegimos, se nos puede mostrar indistintamente cualquiera de las dos otras cajas (es decir, $s_2$ o $s_3$ pueden ser ciertas).
 %
 En el resto de los casos, cuando la elecci\'on de la caja no coincide con la posici\'on del regalo, solo es posible que nos muestren una \'unica caja.
 
 % Parrafo
 
-Aplicando el principio de indiferencia, la distribuci\'on honesta surge de dividir la probabilidad en partes iguales en cada una de las bifurcaciones de los universos paralelos que producen los modelos alterativos.
+Aplicando el principio de indiferencia, la distribuci\'on surge de dividir la probabilidad en partes iguales en cada una de las bifurcaciones de los universos paralelos que producen los modelos alterativos.
 %
-En la figura~\ref{fig:caminos} se representan el \'arbol de los posibles universos paralelos baja  cada uno de los modelos.
+En la figura~\ref{fig:caminos} se representan el \'arbol de los posibles universos paralelos bajo cada uno de los modelos.
 %
 Cada camino que va de la ra\'iz a una de las hojas representa un universo posible.
 %
 Los nodos de ese camino representan las hip\'otesis elementales que son ciertas en ese universo (o el estado del universo).
 %
-Y las bifurcaciones contienen una fracci\'on que representa c\'omo se divide la probabilidad entre los universos paralelos (en este caso aplicando el principio de indiferencia en todos los niveles)
+Y las bifurcaciones contienen una fracci\'on que representa c\'omo se divide la probabilidad entre los universos paralelos (en este caso aplicando el principio de indiferencia en todos los niveles, es decir, se dividen en partes iguales).
 
 %
 
@@ -1412,7 +1413,7 @@ Y las bifurcaciones contienen una fracci\'on que representa c\'omo se divide la 
 \caption{Modelo $M_B$}
 \label{fig:caminos_montyhall}
 \end{subfigure}
-\caption{Los posibles universos dados los sistemas de restricciones alternativos (o modelos). Debido a que no hay informaci\'on previa que nos haga preferir alguna de las bifurcaciones, por el principio de indiferencia dividimos la creencia en partes iguales en cada una de ellas. Por simplicidad suponemos que $c_1$.}
+\caption{Los posibles universos dados los sistemas de restricciones alternativos (o modelos). Debido a que no hay informaci\'on previa que nos haga preferir alguna de las bifurcaciones, siguiendo el principio de indiferencia dividimos la creencia en partes iguales en cada una de ellas. Por simplicidad suponemos $c_1$ como v\'alida.}
 \label{fig:caminos}
 \end{figure}
 
@@ -1422,7 +1423,7 @@ Luego, para calcular la probabilidad conjunta de que el regalo se encuentre en l
 %
 Los caminos no presentes en el \'arbol de universos paralelos se les debe asignar probabilidad 0 debido a que son caminos imposibles dadas las restricciones del modelo.
 %
-La probabilidad asignada a cada uno de los universos paralelos (o combinaciones) se resume en la tabla~\ref{tab:creencia_conjunta}.
+La probabilidad asignada a cada uno de los universos paralelos (o combinaciones) se resume en la tabla~\ref{tab:creencia_conjunta} en donde s\'i se muestran las combinaciones imposibles con una probabilidad de 0.
 %
 \begin{table}[ht!]
 \centering
@@ -1440,7 +1441,7 @@ $P(r_i, s_j |c_1, M_A)$ \hspace{3cm} $P(r_i, s_j | c_1, M_B)$ \\[0.1cm]
   $s_2$ & $1/6$ & $0$ & $1/3$ \\ \hline
   $s_3$ & $1/6$ & $1/3$ & $0$  \\ \hline
   \end{tabular}
-  \caption{Distribuci\'on de probabilidad honesta para cada uno de los modelos. Las celdas representan universos paralelos y el valor la probabilidad asignada a cada una de ellos.}
+  \caption{Distribuci\'on de probabilidad honesta para cada uno de los modelos. Las celdas representan universos paralelos y el valor la probabilidad asignada a cada una de ellos. Las combinaciones que tienen 0 como valor corresponden con aquellas combinaciones imposibles de acuerdo a las restricciones del modelo.}
   \label{tab:creencia_conjunta}
 \end{table}
 
