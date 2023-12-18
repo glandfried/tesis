@@ -1625,7 +1625,7 @@ Lo que hemos hecho no es otra cosa que aplicar el Teorema de Bayes,
 
 % Parrafo
 
-\subsection{Evaluaci\'on de modelos}
+\subsection{Evaluaci\'on de modelos} \label{sec:evaluacion_honesta_de_modelos}
 
 Computar las distribuciones de probabilidad dados los modelos no tendr\'ia ning\'un valor si la elecci\'on del modelo quedara librada al arbitrio de las subjetividades individuales.
 %
@@ -2012,7 +2012,7 @@ Pero por otro lado, los modelos con complejidad mayor a la necesaria, si bien ti
 %
 Los \'unicos modelos rechazados son los que tienen menor complejidad de la necesaria, con grado 0 a 2.
 
-% Parrafo
+% Parrafo´
 
 \begin{figure}[ht!] \centering
   \begin{subfigure}[t]{0.32\textwidth}
@@ -2077,7 +2077,7 @@ Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la 
 %
 
 
-\section{Cuestiones relativas a la operacionalizaci\'on del los datos} \label{sec:base_empirica_metodo}
+\section{Cuestiones relativas a la operacionalizaci\'on de proposiciones emp\'iricas} \label{sec:base_empirica_metodo}
 
 El problema fundamental de la teor\'ia de la informaci\'on es el de la comunicaci\'on con la realidad.
 %
@@ -2180,10 +2180,11 @@ La idea es que un concepto es T-te\'orico si no se puede determinar sin presupon
 \end{quotation}
 %
 Los datos T-no te\'oricos son la base emp\'irica de control para una teor\'ia T pues pueden ser construidos mediante teor\'ias independientes, previamente aceptadas.
+%
+En la secci\'on~\ref{} operacionalizaremos la funci\'on proposicional \emph{habilidad}.
 
 
-
-\subsection{La estructura invariante del dato emp\'irico} \label{sec:estructura_invariante}
+\subsection{La estructura invariante de las proposiciones emp\'iricas} \label{sec:estructura_invariante}
 
 El conjunto de datos $D\in \textbf{H} \land P(D)>0$ contiene a lo sumo una \'unica hip\'otesis elemental por cada una de las hip\'otesis de investigaci\'on pues los datos son funciones proposicionales, $f(x)=y$: una vez que se mide una caracter\'istica $f$ sobre una unidad de an\'alisis $x$ se obtiene un \'unico valor $y$.
 %
@@ -2193,27 +2194,21 @@ Al conversar informalmente usamos estas estructuras funcionales para expresar, p
 & \emph{Habilidad}(\text{Maradona}) > \emph{Habilidad}(\text{Messi})
 \end{align*}
 %
-La estructura funcional, $f(x)=y$, es tan solo la parte abstracta del dato emp\'irico, su parte formal.
+La estructura funcional, $f(x)=y$, es tan solo la parte abstracta de las funciones proposicionales, su parte formal.
 %
-Esto es lo que permite usar modelos matem\'aticos o simulaciones computacionales, artefactos puramente formales, para describir sistemas naturales puramente emp\'iricos.
+La definici\'on precisa de la funci\'on proposicional, sin embargo, radica en la operaci\'on emp\'irica que ejecutamos para vincular el concepto $f(x)$ con el valor $y$.
 %
-Cuando conversamos, constantemente nos expresamos usando funciones proposicionales de este tipo.
-%
-Sin embargo, raramente hacemos expl\'icita la definici\'on precisa de la funci\'on, por lo que dos personas pueden usar la misma palabra para expresar conceptos que en el fondo son distintos.
-%
-Ah\'i radica el origen de muchos de los desacuerdos que se producen en ciencia y en la vida cotidiana pues el significado preciso del dato depende de su ``operacionalizaci\'on'', del procedimiento preciso que una vez aplicado sobre una unidad de an\'alisis nos devuelve el valor de la variable.
-%
-Estos elementos de la praxis, que son los que determinan en los hechos el valor concreto que adquieren los conceptos abstractos, forman tambi\'en parte de la estructura de todo dato emp\'irico.
+Sin embargo, pocas veces hacemos expl\'icita la operaci\'on subyacente, por lo que dos personas pueden usar la misma palabra para expresar conceptos que en el fondo son completamente distintos.
 
 % Parrafo
 
-%Debemos esta propuesta al epistem\'ologo Argentino, contempor\'aneo de Gregorio Klimovsky y Rolando Garc\'ia, el profesor Juan Samaja.
-
-El epistem\'ologo Juan Samaja~\cite{Samaja1999} propone una estructura invariante del emp\'irico.
+En el lenguaje de la Teor\'ia de la Probabilidad, las funciones proposicionales $f(x)$ representan las hip\'otesis de investigaci\'on y las proposiciones emp\'iricas son sus distribuciones de probabilidad a posteriori, luego de incorporar hip\'otesis elementales como datos a la base emp\'irica.
 %
-Todo dato emp\'irico est\'a compuesto por: una hip\'otesis de investigaci\'on oculta de inter\'es ($H$), una hip\'otesis de investigaci\'on observable ($D$) vinculada a la hip\'otesis oculta de inter\'es, un procedimientos de medici\'on ($P$) que produce se\~nales que se incorporan a la base emp\'irica epistemol\'ogica ($B$) mediante la cual se infiere o estima el valor de verdad ($V$) o probabilidad de las hip\'otesis elementales de la hip\'otesis oculta $H$.
+El epistem\'ologo Juan Samaja~\cite{Samaja1999} propone una estructura que ser\'ia invariante a toda proposici\'on emp\'irica sobre hip\'otesis de investigaci\'on oculta.
 %
-Cada uno de estos elementos del dato emp\'irico forma parte de un camino que nos lleva de lo abstracto a lo concreto y de lo concreto a los abstracto.
+Esta estructura tendr\'ia, al menos, los siguientes elementos: la una hip\'otesis de investigaci\'on oculta de inter\'es ($H$), una hip\'otesis de investigaci\'on observable ($D$) que transmite indirectamente informaci\'on  de la hip\'otesis oculta de inter\'es, un procedimientos de medici\'on ($P$) que detecta se\~nales de la hip\'otesis observable, la que se incorpora a la base emp\'irica ($B$) mediante la cual se infiere o estima el valor de verdad ($V$) o probabilidad de las hip\'otesis elementales de la hip\'otesis oculta $H$.
+%
+Estos elementos conectan la parte abstracta de las proposiciones emp\'iricas (la funci\'on proposicional) con su parte emp\'irica, el procedimiento ejecutado en la realidad.
 %
 \begin{figure}[H]
     \centering
@@ -2264,28 +2259,20 @@ Cada uno de estos elementos del dato emp\'irico forma parte de un camino que nos
 \node[invisible, left=of fx, xshift=-4cm] (il) {};
 \node[invisible, right=of v, xshift=4cm] (ir) {};
 }
-\caption{Los niveles de abstracci\'on de la estructura invariante del dato emp\'irico (o el sistema de comunicaci\'on con la realidad).}
+\caption{Los niveles de abstracci\'on de la estructura invariante de las proposiciones emp\'iricas propuesta por Samaja. Los nombres originales utilizados por Samaja fueron renombrados bajo el lenguaje de la Teor\'ia de la Probabilidad.}
 \end{figure}
 
 % Parrafo
 
-El elecci\'on de cada uno de sus elementos depende de una serie de supuestos.
+Las proposiciones emp\'iricas est\'an cargadas de supuestos a priori.
 %
-Supongamos que elegimos como hip\'otesis oculta $H:=$ \emph{habilidad}(Messi).
+Especificar la hip\'otesis oculta, por ejemplo $H:=$ \emph{habilidad}(Messi), involucra suponer a priori que alguna de sus hip\'otesis elementales coincide con la realidad oculta, pues por definici\'on las hip\'otesis de investigaci\'on son conjuntos mutuamente excluyentes y exhaustivos.
 %
-Determina a priori qu\'e hip\'otesis elementales pertenecen a la hip\'otesis de investigaci\'on oculta $H$ involucra en s\'i mismo el supuesto de que ellas son mutuamente excluyentes y exhaustivas, alguna de ellas coincide con la realidad oculta.
+Por otra parte, la elecci\'on de la hip\'otesis observable, por ejemplo $D:=$ Ganar/Perder, se realiza en base a alg\'un modelo del mundo que vincula de alguna manera las habilidades ocultas con los resultados observables Ganar/Perder.
 %
-Supongamos que elegimos como hip\'otesis observable $D:=$ Ganar/Perder.
+El dise\~no del procedimiento de observaci\'on, por ejemplo $P:=$ \emph{Scraper} de \texttt{fifa.com}, se basa en la supuesta veracidad de la informaci\'on provista por la Federaci\'on Internacional de F\'utbol Asociado.
 %
-Elegimos esta dimensi\'on observable en base a una idea a priori de c\'omo funciona el mundo, de que existe en la realidad oculta una relaci\'on que vincula estrechamente la habilidad de Messi y los resultados de los partidos en los que participa Messi.
-%
-Supongamos que elegimos como procedimiento $P:=$ \emph{Scraper} de \texttt{fifa.com}.
-%
-Esta decisi\'on se toma en base a la confianza en la veracidad de la informaci\'on provista por la Federaci\'on Internacional de F\'utbol Asociado.
-%
-Supongamos que elegimos como base emp\'irica $B:=$ el modelo de estimaci\'on de habilidad de la industria del video juego.
-%
-Elegimos este modelo de relaciones causales entre las hip\'otesis no observables y observables debido a que es considerado el modelo estado del arte en la actualidad.
+La elecci\'on de un modelo de estimaci\'on de habilidad espec\'ifico como base emp\'irica $B:=$ se basa en el nivel de aceptaci\'on que tiene al interior de la comunidad acad\'emica, de la industria del video juego y del deporte.
 %
 El \'unico elemento externo a todo este conjunto de supuestos es la se\~nal que se incorpora a la base emp\'irica (True/False) como consecuencia de ejecutar el procedimiento.
 %
@@ -2299,11 +2286,9 @@ El segundo ejemplo es una mejora de ese estimador, realizada a principios del si
 
 % Parrafo
 
-La estructura invariante del dato emp\'irico, propuesta por Samaja, puede mapearse con el esquema emisor-receptor de la teor\'ia de la informaci\'on.
+La estructura invariante de las proposiciones emp\'iricas, propuesta por Samaja, puede mapearse con el esquema emisor-receptor de la teor\'ia de la informaci\'on.
 %
 Quiz\'as la diferencia m\'as relevante respecto de la propuesta de Samaja es que la teor\'ia de la informaci\'on adhiere a la aplicaci\'on estricta de las reglas de la probabilidad como procedimiento de inferencia universal~\cite{Mackay2003}.
-%
-Sin embargo, ambas propuestas representan la estructura invariante del dato emp\'irico con lo que parecen ser las mismas entidades.
 %
 En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de comunicaci\'on tiene la siguiente estructura (figura~\ref{fig:esquema_emisor_receptor}).
 %
@@ -2391,117 +2376,91 @@ En cambio, el receptor es el que realiza inferencia: ``performs the inverse oper
 
 %Todo dato de base emp\'irica metodol\'ogica se construye proponiendo una v\'inculo causal que ponga en de los conceptos abstractos no observables con la realidad concreta observable, y una interpretaci\'on de la realidad efectivamente observada, inferencial, de los conceptos abstractos no observados.
 
-\subsection{Tasa de informaci\'on de las operacionalizaciones de los datos} \label{sec:tasa_de_informacion}
+\subsection{Tasa de informaci\'on de las proposiciones emp\'iricas} \label{sec:tasa_de_informacion}
 
-En la secci\'on~\ref{sec:modelos_alternativos} evaluamos los dos modelos causales alternativos que usamos para introducir las reglas de la probabilidad.
+Una misma funci\'on proposicional, como por ejemplo \emph{habilidad}(Messi), puede tener varias operacionalizaciones alternativas si consideramos distintas hip\'otesis observables $D$, si consideramos distintos procedimiento $P$, o si consideramos distintas base emp\'iricas $B$.
 %
-All\'i generamos datos a partir de uno de los modelos, que luego los usamos para evaluar el desempe\~no predictivo.
+La aplicaci\'on estricta de las reglas de la probabilidad nos permite comparar el desempe\~no de proposiciones emp\'iricas alternativas.
 %
-En esta secci\'on compararemos el desempe\~no de los modelos, esta vez analizando de forma anal\'itica el desempe\~no de los modelos en el tiempo.
+De hecho, en la secci\'on~\ref{sec:evaluacion_honesta_de_modelos} hemos visto un ejemplo simple que inclu\'ia inicialmente tres hip\'otesis de investigaci\'on, $\mathcal{H}=\{H_R, H_S, H_C\}$, la posici\'on del regalo $H_R$, la caja que se abre $H_S$, y la caja elegida $H_C$.
+%
+En ese ejemplo consideramos dos operacionalizaciones distintas de la proposici\'on emp\'irica $P(H_R,H_S|c_1,M_k)$, cuando consideramos dos modelos alternativos $M = \{M_A, M_B\}$.
+%
+Para realizar la comparaci\'on ofrecimos una extensi\'on de los modelos (figura~\ref{fig_modelos_con_repeticiones}) donde se especifica el mismo sistema de restricciones entre hip\'otesis para una cantidad indefinida de repeticiones $T$.
+%
+En esta secci\'on revisaremos un aspecto adicional de esa evaluaci\'on de modelos.
 
 % Parrafo
 
-\begin{figure}[ht!]
-\centering \small
-\begin{subfigure}[c]{0.49\textwidth}
-\centering
- \tikz{
-    \node[latent,] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,left=of r] (nr) {\Large $r$} ;
-
-
-    \node[latent, below=of r] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const, left=of d] (nd) {\Large $s$} ;
-
-    \edge {r} {d};
-}
-\caption{Modelo causal incorrecto}
-\end{subfigure}
-\begin{subfigure}[c]{0.49\textwidth}
-\centering
-\tikz{
-
-    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const,left=of d] (nd) {\Large $s$} ;
-
-    \node[latent, above=of d, xshift=-1.5cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,left=of r] (nr) {\Large $r$} ;
-
-
-    \node[latent, fill=black!30, above=of d, xshift=1.5cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
-    \node[const,left=of c] (nc) {\Large $c$} ;
-
-    \edge {r,c} {d};
-}
-\caption{Modelo causal correcto}
-\end{subfigure}
-\caption{Dos modelos causales, uno correcto y otro incorrecto.}
-\end{figure}
-
-Para simplificar el an\'alisis consideraremos que la caja elegida es siempre la 1, $c=1$.
+Nuevamente, sea $\text{Datos}\in (H_{R_1}, H_{S_1}, \dots, H_{R_T}, H_{S_T})$ el vector de hip\'otesis elementales observadas $(r_{i1}, s_{j1}, \dots, r_{iT}, s_{jT})$.
 %
-Luego, en $T$ iteraciones del juego observaremos $n_{s2}$ pistas en caja 2 y $n_{s3}$ pistas en caja 3 (con $T=n_{s2} + n_{s3}$) y $n_{r1}$ regalos en caja elegida (1) y $n_{r0}$ regalos en otro caja (no 1), (con $T=n_{r1} + n_{r0}$).
+En $T$ repeticiones observaremos $n_{s2}$ hip\'otesis elementales $s_{2t}$ y $n_{s3}$ hip\'otesis elementales $s_{3t}$, con $T=n_{s2} + n_{s3}$, y observaremos $n_{r1}$ hip\'otesis elementales $r_{1t}$ y $n_{r0}$ hip\'otesis elementales distintas a $r_{1t}$, con $T=n_{r1} + n_{r0}$.
 %
-La predicci\'on conjunta de los datos es,
+Para simplificar la notaci\'on dejaremos impl\'icito el valor de $t$.
+%
+Adem\'as definimos $r_0 := r_{2} \lor r_{3}$.
+%
+Luego, la predicci\'on conjunta de los datos es,
+%
 \begin{align*}
-P(\text{D}_{_T} = \{\overbrace{n_{s2}, n_{s3}}^{T}, \overbrace{n_{r1}, n_{r0}}^{T} \} \, | \, \text{M}) = P(s2|M)^{n_{s2}\phantom{/T}}  P(s3|M)^{n_{s3}\phantom{/T}} \, P(r1|M)^{n_{r1}\phantom{/T}} \, P(r0|M)^{n_{r0}\phantom{/T}}
+P(\text{Datos}| M_k) = P(s_{2}|M_k)^{n_{s2}} \, P(s_{3}|M_k)^{n_{s3}} \, P(r_{1}|M_k)^{n_{r1}} \, P(r_{0} |M_k)^{n_{r0}}
 \end{align*}
 %
-Debido a que todas las predicciones son valores entre 0 y 1, el producto de $2T$ predicciones r\'apidamente tiende a 0.
+Debido a que todas las predicciones son valores entre 0 y 1, el producto de estas $2T$ predicciones r\'apidamente tiende a 0.
 %
 Para tener una intuici\'on del desempe\~no, podemos calcular la media geom\'etrica de la predicci\'on conjunta.
 %
 \begin{align*}
-\underbrace{P(\text{D}_{_T} = \{n_{s2}, n_{s3}, n_{r1}, n_{r0}\} \, | \, \text{M})^{1/T}}_{\text{Media geom\'etrica}} = P(s2|M)^{n_{s2}/T}  P(s3|M)^{n_{s3}/T} \, P(r1|M)^{n_{r1}/T} \, P(r0|M)^{n_{r0}/T}
+\underbrace{P(\text{Datos}| M_k)^{1/T}}_{\text{Media geom\'etrica}} =P(s_{2}|M_k)^{n_{s2}/T}  P(s_{3}|M_k)^{n_{s3}/T} \, P(r_{1}|M_k)^{n_{r1}/T} \, P(r_{0} |M_k)^{n_{r0}/T}
 \end{align*}
 %
-La media geom\'etrica puede interpretarse como la tasa de predicci\'on de los modelos, en el sentido de que si reemplazamos cada una de las las predicciones con ese mismo valor recuperaremos la predicci\'on conjunta original.
+La media geom\'etrica puede interpretarse como la tasa de predicci\'on de los modelos, en el sentido de que si reemplazamos cada una de las predicciones del producto con el valor de la media geom\'etrica recuperaremos la predicci\'on conjunta original.
 %
-Este valor var\'ia a medida que vamos observando nuevos datos, por la aleatoridad misma del proceso.
-%
-En el l\'imite, $T\rightarrow\infty$ las frecuencias observadas $n_{*}/T = p_*$, y el valor tiende as\'i a una constante que representa efectivamente la tasa de predicci\'on del modelo en el tiempo.
+En el l\'imite, $T\rightarrow\infty$ las frecuencias observadas tienden a la probabilidad, $n_{*}/T = p_*$, y el valor de la media geom\'etrica tiende a una constante que representa la tasa de predicci\'on a largo plazo.
 %
 \begin{align*}
-\overbrace{\lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}^{\text{Tasa de predicci\'on}} &= P(s2|M)^{p_{s2}} \, P(s3|M)^{p_{s3}} \, P(r1|M)^{p_{r1}} \, P(r0|M)^{p_{r0}} \\
-\underbrace{\log \lim_{T \rightarrow \infty} P(\text{D}|\text{M})^{1/T}}_{\hfrac{\text{\scriptsize Tasa de predicci\'on en}}{\text{\scriptsize \'ordenes de magnitud}}} &= p_{s2} \log P(s2|M) + p_{s3} \log P(s3|M) + p_{r1} \log P(r1|M) + p_{r0} \log P(r0|M)
+\overbrace{\lim_{T \rightarrow \infty} P(\text{Datos}|M_k)^{1/T}}^{\text{Tasa de predicci\'on}} &= P(s_{2t}|M_k)^{p_{s2}} \, P(s_{3t}|M_k)^{p_{s3}} \, P(r_{1t}|M_k)^{p_{r1}} \, P(r_{2t} + r_{3t} |M_k)^{p_{r0}}
+\end{align*}
+%
+Notar que si $M_k$ es el modelo con el que se generaron los datos (en este caso $M_B$) luego cada una de las probabilidades est\'a elevada a su propio valor.
+%
+Por ejemplo, vale que $\forall_{t=1}^T P(s_{2t}|M_B)= p_{s2}$.
+%
+Y lo mismo ocurre con el resto de probabilidades.
+%
+Luego vale,
+%
+\begin{align*}
+\overbrace{\log \lim_{T \rightarrow \infty} P(\text{Datos}|M_B)^{1/T}}^{\hfrac{\text{\scriptsize Tasa de predicci\'on en}}{\text{\scriptsize \'ordenes de magnitud}}} &= \sum_x^X p_x \log p_x = - \overbrace{\text{Entrop\'ia}}^{\hfrac{\text{\scriptsize Tasa de informaci\'on en}}{\text{\scriptsize \'ordenes de magnitud}}} \hspace{0.75cm}  \text{con } \scalebox{0.8}{X = \{s2, s3, r1, r0\}}
 \end{align*}
 %
 En escala logar\'itmica tenemos la tasa de predicci\'on expresada en \'ordenes de magnitud.
-
-% Parrafo
-
-Si el modelo que estamos analizando es el correcto, el que se corresponde con la realidad, entonces las predicciones son iguales a la probabilidad de observar los datos.
+%
+Cuando el modelo es correcto, la tasa de predicci\'on expresada en \'ordenes de magnitud es equivalente al negativo de la entrop\'ia (o tasa de informaci\'on en \'ordenes de magnitud).
+%
+En caso de $M_k$ no sea el modelo con el que se generaron los datos (En este caso $M_A$), vale
 %
 \begin{align*}
-\log \, \lim_{T \rightarrow \infty} P(\text{Datos}|\text{Modelo correcto})^{1/T} &= \sum_x p_x \log p_x = - \overbrace{\text{Entrop\'ia}}^{\hfrac{\text{\scriptsize Tasa de informaci\'on en}}{\text{\scriptsize \'ordenes de magnitud}}} \\
-\log \, \lim_{T \rightarrow \infty} P(\text{Datos}|\text{Modelo incorrecto})^{1/T} &= \sum_x p_x \log p_{x|M} = - \underbrace{\text{Entrop\'ia cruzada}}_{\hfrac{\text{\scriptsize Entrop\'ia +}}{\text{\scriptsize divergencia}}}
+\log \lim_{T \rightarrow \infty} P(\text{Datos}|M_A)^{1/T} &= \sum_x^X p_x \log p(x|M_A) = - \overbrace{\text{Entrop\'ia cruzada,}}^{\hfrac{\text{\scriptsize Tasa de informaci\'on en}}{\text{\scriptsize \'ordenes de magnitud}}} \hspace{0.25cm}  \text{con } \scalebox{0.8}{X = \{s2, s3, r1, r0\}}
 \end{align*}
 %
-Donde la informaci\'on de Shannon (en \'ordenes de magnitud) se define como el negativo del logaritmo de la predicci\'on (si la predicci\'on es 0, tenemos informaci\'on infinita, si la predicci\'on es 1, tenemos informaci\'on nula) y la entrop\'ia se define como su esperanza.
-%
-\begin{equation*}
-\overbrace{h(x) = - \log_2 P(x)}^{\text{Informaci\'on de Shannon}}  \hspace{2cm} \overbrace{H(X) = \sum_{x\in X} P(x) h(x)}^{\text{Entrop\'ia}}
-\end{equation*}
+Esto es, la tasa de predicci\'on en \'ordenes de magnitud del modelo incorrecto es equivalente al negativo de la entrop\'ia cruzada (entrop\'ia + divergencia KL).
 
 % Parrafo
 
-La tasa de predicci\'on no es m\'as que el negativo de la tasa de informaci\'on.
-%
-Es decir, a medida que mejoramos la predicci\'on disminuimos la cantidad de informaci\'on que obtenemos.
+Debido a que la tasa de predicci\'on no es m\'as que el negativo de la tasa de informaci\'on, a medida que mejoramos la predicci\'on disminuimos la cantidad de informaci\'on que obtenemos.
 %
 \begin{equation*}
 \underset{\text{M}}{\text{arg \textbf{max}}}
-\hspace{0.3cm}  \text{Predicci\'on}(\text{D}_{_T} \, | \, \text{M}) = \ \underset{\text{M}}{\text{arg \textbf{min}}} \hspace{0.3cm} \text{Informaci\'on} (\text{D}_{_T}\,|\,\text{M})
+\hspace{0.3cm}  P(\text{Datos} \, | \, \text{M}) = \ \underset{\text{M}}{\text{arg \textbf{min}}} \hspace{0.3cm} \text{Entrop\'ia cruzada} (\text{Datos}\,|\,\text{M})
 \end{equation*}
-
-% Parrafo
-
-Para construir un sistema de informaci\'on con la realidad (un dato de base emp\'irica metodol\'ogica) necesitamos minimizar la tasa de informaci\'on que recibimos de la realidad, maximizando la predicci\'on conjunta que hacemos de los datos (la evidencia).
+%
+Luego, preferimos las operacionalizaciones de las proposiciones emp\'iricas que minimizar la tasa de informaci\'on que recibimos de la realidad, maximizando la predicci\'on conjunta que hacemos de los datos.
 %
 En la siguiente secci\'on veremos c\'omo se ha construido el dato de base emp\'irica \emph{habilidad} durante el siglo 20 hasta princpios del siglo 21.
 
 
-\section{Operacionalizaci\'on del dato \emph{habilidad}.} \label{sec:operacionalizacion_habilidad}
+\section{Operacionalizaci\'on de \emph{habilidad} en la industria del video juego.} \label{sec:operacionalizacion_habilidad}
 
 Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
 %
@@ -2517,7 +2476,7 @@ Desde los primeros modelos generativos, propuestos hace casi un siglo por~\cite{
 %
 El campo sigui\'o progresando con los trabajos de Bradley y Terry \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}Mosteller, que condujeron al gran avance que tuvo lugar cuando Arpad Elo~\cite{Elo2008} desarroll\'o una metodolog\'ia para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
 
-\subsection{El estimadores de habilidad Elo: hip\'otesis indicadora ad-hoc.}
+\subsection{Antecedentes: el modelo de habilidad Elo}
 
 El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas profesionales supone que las habilidades ocultas generan el resultado observable a trav\'es de desempe\~nos aleatorios.
 %
@@ -2635,8 +2594,8 @@ A medida que la persona tiene m\'as cantidad de partidas jugadas, el valor de K 
 %
 De esa forma se rompe la simetr\'ia y se preserva las estimaciones de las personas que se consideran conocidas.
 
-
-\subsection{TrueSkill, estimaci\'on mediante la hip\'otesis indicadora universal.} \label{sec:trueskill}
+%
+% \section{TrueSkill, el estimador de la industria del video juego.}
 
 Los problemas asociados al algoritmo Elo se generan debido al uso de una hip\'otesis indicadora ad-hoc.
 %
@@ -2654,7 +2613,8 @@ Lo extiende a trav\'es de un modelo bayesiano que incorpora una distribuci\'on d
 
 Adem\'as, se extiende el modelo causal, permitiendo estimar la habilidad de los jugadores cuando participan en equipo, algo que no estaba incluido en el modelo causal original.
 
-\subsubsection{Evidencia}
+\subsection{Evidencia, verosimilitud y posterior exacto} \label{sec:trueskill}
+
 
 Una de las novedades de TrueSkill es la noci\'on de incertidumbre de la estimaci\'on de la habilidad.
 %
@@ -2735,7 +2695,7 @@ La evidencia es una predicci\'on hecha con todas las hip\'otesis a priori.
 %
 % Como es constante, la incertidumbre a posteriori de cada hip\'otesis es proporcional al producto de su incertidumbre a priori y su verosimilitud, como se muestra en la ecuaci\'on~\eqref{eq:posterior_win}.
 
-\subsubsection{Verosimilutd}
+% Parrafo
 
 La evidencia es la verosimilitud marginal $p(r)$.
 %
@@ -2787,7 +2747,7 @@ En cambio, en la regi\'on de hip\'otesis de muy baja habilidad, donde el resulta
 
 Esta es la estimaci\'on de habilidad correcta dado el modelo causal Elo.
 
-\subsubsection{Posterior aproximado}
+\subsection{Posterior aproximado}
 
 Es importante remarcar que la posterior, aunque se parezca, no es una distribuci\'on gaussiana, lo que nos impedir\'a usar la ecuaci\'on~\eqref{eq:posterior_win} iterativamente.
 %
