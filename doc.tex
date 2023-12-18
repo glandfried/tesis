@@ -1223,7 +1223,7 @@ Nada nos obliga a suponer que el $M_A$ es correcto.
 %
 Por ejemplo, tal como hab\'iamos mencionado anteriormente, podemos contar con que la pista indicada por el or\'aculo difiere de nuestra elecci\'on. 
 Esto plantea una restricci\'on (o dependencia) adicional no explicitada en la descripci\'on original del juego entre la elecci\'on de la caja $H_C$ y la pista que recibimos $H_S$: si elegimos la caja $i$, es decir si $c_i$ es cierta, no puede ocurrir $s_i$.
-\todo[inline]{Arreglé el parrafo anterior para hacerlo coherente con haber introducido la pista un cachito antes, como estaba parecía que recien ahora te aparece esa informaci\'on y en realidad, recien ahora la consideras}
+\todo[inline]{Arregl\'e el parrafo anterior para hacerlo coherente con haber introducido la pista un cachito antes, como estaba parec\'ia que recien ahora te aparece esa informaci\'on y en realidad, recien ahora la consideras}
 %
 Al modelo $A$, tambi\'en conocido como \emph{sistema de informaci\'on previa}, que incorpora esta nueva restricci\'on, le llamamos Modelo $B$ ($M_B$). 
 Este modelo tiene asociado la distribuci\'on de probabilidad $P(H_R,H_S|c_1,M_B)$.
@@ -2211,7 +2211,7 @@ Estos elementos de la praxis, que son los que determinan en los hechos el valor 
 
 El epistem\'ologo Juan Samaja~\cite{Samaja1999} propone una estructura invariante del emp\'irico.
 %
-Todo dato emp\'irico est\'a compuesto por: una hip\'otesis de investigaci\'on oculta de inter\'es ($H$), una hip\'otesis de investigaci\'on observable ($D$) vinculada a la hip\'otesis oculta de inter\'es, un procedimientos de medici\'on ($P$) que produce se\~nales que se incorporan a la base emp\'irica epistemol\'ogica ($B$) mediante la cual se infiere o estima ($E$) la probabilidad del verdadero valor de la hip\'otesis $H$.
+Todo dato emp\'irico est\'a compuesto por: una hip\'otesis de investigaci\'on oculta de inter\'es ($H$), una hip\'otesis de investigaci\'on observable ($D$) vinculada a la hip\'otesis oculta de inter\'es, un procedimientos de medici\'on ($P$) que produce se\~nales que se incorporan a la base emp\'irica epistemol\'ogica ($B$) mediante la cual se infiere o estima el valor de verdad ($V$) o probabilidad de las hip\'otesis elementales de la hip\'otesis oculta $H$.
 %
 Cada uno de estos elementos del dato emp\'irico forma parte de un camino que nos lleva de lo abstracto a lo concreto y de lo concreto a los abstracto.
 %
@@ -2240,7 +2240,7 @@ Cada uno de estos elementos del dato emp\'irico forma parte de un camino que nos
 
 \node[det, above=of observacion, yshift=-0.3cm] (hipotesisI) {B};
 \node[const, above=of hipotesisI, yshift=0.35cm] (inferencia) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Inferencia}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
-\node[det, above=of inferencia, yshift=-0.27cm] (resultado) {E};
+\node[det, above=of inferencia, yshift=-0.27cm] (resultado) {V};
 
 
 \draw[dashed] (-2.1,-5.4) -- (5.3,-5.4);
@@ -2271,15 +2271,15 @@ Cada uno de estos elementos del dato emp\'irico forma parte de un camino que nos
 
 El elecci\'on de cada uno de sus elementos depende de una serie de supuestos.
 %
-Supongamos que elegimos como hip\'otesis oculta $H:=$\emph{habilidad}(Messi).
+Supongamos que elegimos como hip\'otesis oculta $H:=$ \emph{habilidad}(Messi).
 %
 Determina a priori qu\'e hip\'otesis elementales pertenecen a la hip\'otesis de investigaci\'on oculta $H$ involucra en s\'i mismo el supuesto de que ellas son mutuamente excluyentes y exhaustivas, alguna de ellas coincide con la realidad oculta.
 %
-Supongamos que elegimos como hip\'otesis observable $D:=$Ganar/Perder.
+Supongamos que elegimos como hip\'otesis observable $D:=$ Ganar/Perder.
 %
 Elegimos esta dimensi\'on observable en base a una idea a priori de c\'omo funciona el mundo, de que existe en la realidad oculta una relaci\'on que vincula estrechamente la habilidad de Messi y los resultados de los partidos en los que participa Messi.
 %
-Supongamos que elegimos como procedimiento $P:=$\emph{Scraper} de \texttt{fifa.com}.
+Supongamos que elegimos como procedimiento $P:=$ \emph{Scraper} de \texttt{fifa.com}.
 %
 Esta decisi\'on se toma en base a la confianza en la veracidad de la informaci\'on provista por la Federaci\'on Internacional de F\'utbol Asociado.
 %
@@ -2291,21 +2291,32 @@ El \'unico elemento externo a todo este conjunto de supuestos es la se\~nal que 
 %
 Ahora bien, ?`c\'omo hacemos para derivar el valor de la \textit{habilidad}(Messi) a partir del indicador (True/False)?
 %
-En la siguiente secci\'on veremos dos ejemplos en detalle.
+En la siguiente secci\'on (\ref{sec:operacionalizacion_habilidad}) veremos dos ejemplos en detalle.
 %
 El primero usa una funci\'on de costo ad-hoc que fue muy exitosa durante el siglo 20 y que sigue siendo utilizada por la Federaci\'on Internacional de Ajedrez para determinar la habilidad de los ajedrecistas profesionales.
 %
-El segundo ejemplo es una mejora de ese estimador, realizada a principios del siglo 21, que haciendo uso del mismo modelo causal realiza la inferencia mediante aplicaci\'on estricta de las reglas de la probabilidad.
+El segundo ejemplo es una mejora de ese estimador, realizada a principios del siglo 21 que, haciendo uso del mismo modelo causal, realiza la inferencia mediante aplicaci\'on estricta de las reglas de la probabilidad.
 
 % Parrafo
 
 La estructura invariante del dato emp\'irico, propuesta por Samaja, puede mapearse con el esquema emisor-receptor de la teor\'ia de la informaci\'on.
 %
-En definitiva, este esquema tambi\'en busca representar la estructura invariante del dato emp\'irico.
+Quiz\'as la diferencia m\'as relevante respecto de la propuesta de Samaja es que la teor\'ia de la informaci\'on adhiere a la aplicaci\'on estricta de las reglas de la probabilidad como procedimiento de inferencia universal~\cite{Mackay2003}.
 %
-Adem\'as, la teor\'ia de la informaci\'on adhiere a la aplicaci\'on estricta de las reglas de la probabilidad como hip\'otesis indicadora universal~\cite{Mackay2003}.
+Sin embargo, ambas propuestas representan la estructura invariante del dato emp\'irico con lo que parecen ser las mismas entidades.
 %
 En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de comunicaci\'on tiene la siguiente estructura (figura~\ref{fig:esquema_emisor_receptor}).
+%
+\begin{quotation}
+By a communication system we will mean a system of the type indicated schematically in Figure \ref{fig:esquema_emisor_receptor}. It consists of essentially five parts:
+ \begin{enumerate} \setlength\itemsep{-0.05cm}
+  \item An \emph{information source} which produces a message or sequence of messages to be communicated to the receiving terminal.
+  \item A \emph{transmitter} which operates on the message in some way to produce a signal suitable for transmission over the channel.
+  \item The \emph{channel} is merely the medium used to transmit the signal from transmitter to receiver.
+  \item The \emph{receiver} ordinarily performs the inverse operation of that done by the transmitter, reconstructing the message from the signal.
+  \item The \emph{destination} is the person (or thing) for whom the message is intended.
+ \end{enumerate}
+\end{quotation}
 %
 \begin{figure}[H]
     \centering
@@ -2323,7 +2334,7 @@ En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de
 
 
 \node[det, right=of transmisor, xshift=0.7cm , minimum size=6pt] (perceptor) {};
-\node[const, above=of perceptor] (n_perceptor) {\scriptsize Perceptor};
+\node[const, above=of perceptor] (n_perceptor) {\scriptsize Canal};
 \node[const, right=of perceptor, yshift=-0.35cm, xshift=0.05cm] (senal_recibida) {$\hfrac{\text{Se\~nal}}{\text{recibida}}$};
 
 \node[det, below=of perceptor, yshift=0.2cm] (ruido) {};
@@ -2350,40 +2361,35 @@ En palabras de Shannon~\cite{shannon1948-theoryOfCommunication}, todo sistema de
 \edge {perceptor} {receptor};
 \edge {receptor} {destino};
 }
-\caption{Esquema de sistema de comunicaci\'on propuesto por Shannon.}
+\caption{Esquema de sistema de comunicaci\'on general propuesto por Shannon.}
 \label{fig:esquema_emisor_receptor}
  \end{figure}
 
 % Parrafo
 
+
+
 Haciendo el mapeo con los elementos de la estructura invariante del dato propuesta por Samaja obtenemos lo siguiente. \\[0.1cm]
-\noindent \textbf{Fuente}: el estado \textit{real} de la variable que  queremos conocer \hfill
+\noindent \textbf{Fuente}: Hip\'otesis oculta ($H$) \hfill
 \textit{habilidad}(Messi)\\
-\textbf{Transmisor}: dimensiones perceptibles de la variable \hfill
+\textbf{Transmisor}: Hip\'otesis observable ($D$)\hfill
 Ganar/Perder\\
-\textbf{Perceptor}: el cuerpo o instrumento de medici\'on \hfill
+\textbf{Canal}: Procedimiento ($P$) \hfill
 \textit{Scraper} de \texttt{fifa.com}  \\
-\textbf{Receptor}: indicador y lo que permite hacer inferencia \hfill
-True/False (I), Modelo Causal (M)\\
-\textbf{Destino}: la estimaci\'on, el posterior   \hfill
-$P$(\textit{habilidad}(Messi) $= h|$I, M) \\
+\textbf{Receptor}: Base emp\'irica ($B$) \hfill
+True/False ($d\in D$), Modelo Causal ($M$)\\
+\textbf{Destino}: Estimaci\'on (E), el Posterior   \hfill
+$P(\textit{habilidad}(\text{Messi}) = h | d, M)$ \\
 
 % Parrafo
 
-Por su parte, el mensaje enviado, la se\~nal enviada y la se\~nal recibida son producidas por la \textbf{realidad causal}:
+El mensaje enviado por la fuente, la se\~nal enviada por el transmisor, y la se\~nal recibida por el receptor est\'an producidas por la realidad causal oculta.
 %
-entre la fuente de informaci\'on y la dimensi\'on existe una realidad causal que las v\'incula;
-%
-la se\~nal observable que producen las dimensiones y la capacidad de los procedimientos de detectarla tambi\'en est\'a determinado por la realidad causal;
-%
-y la percepci\'on efectiva que producen los procedimientos hasta su registro en la base de datos, como indicador, sigue estando determinado por la realidad causal.
-%
-Una vez que recibimos el indicador (de base emp\'irica epistemol\'ogica), podemos usar nuestras hip\'otesis causales para realizar la \textbf{inferencia causal}, $P(\text{Indicador}|h, \text{M})$ \\
-
+En cambio, el receptor es el que realiza inferencia: ``performs the inverse operation of that done by the transmitter, reconstructing the message from the signal'' y enviando como mensaje la distribuci\'on de probabilidad a posteriori de la hip\'otesis de investigaci\'on oculta.
 
 % Parrafo
 
-Todo dato de base emp\'irica metodol\'ogica se construye proponiendo una v\'inculo causal que ponga en de los conceptos abstractos no observables con la realidad concreta observable, y una interpretaci\'on de la realidad efectivamente observada, inferencial, de los conceptos abstractos no observados.
+%Todo dato de base emp\'irica metodol\'ogica se construye proponiendo una v\'inculo causal que ponga en de los conceptos abstractos no observables con la realidad concreta observable, y una interpretaci\'on de la realidad efectivamente observada, inferencial, de los conceptos abstractos no observados.
 
 \subsection{Tasa de informaci\'on de las operacionalizaciones de los datos} \label{sec:tasa_de_informacion}
 
@@ -2495,7 +2501,7 @@ Para construir un sistema de informaci\'on con la realidad (un dato de base emp\
 En la siguiente secci\'on veremos c\'omo se ha construido el dato de base emp\'irica \emph{habilidad} durante el siglo 20 hasta princpios del siglo 21.
 
 
-\section{Operacionalizaci\'on del dato \emph{habilidad}.}
+\section{Operacionalizaci\'on del dato \emph{habilidad}.} \label{sec:operacionalizacion_habilidad}
 
 Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
 %
