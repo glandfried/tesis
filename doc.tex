@@ -1246,18 +1246,18 @@ En cambio, si el regalo se encuentra en una caja distinta a la que elegimos $r_i
   \caption{Modelo $M_A$}
   \label{fig:modelo_causal_1}
   \end{subfigure}
-  \hspace{1cm}
-  \begin{subfigure}[b]{0.33\textwidth}
+  \hspace{0.5cm}
+  \begin{subfigure}[b]{0.63\textwidth}
   \centering
   \tikz{
 
-    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
+    \node[latent] (d) {\includegraphics[width=0.05\textwidth]{static/dedo.png}} ;
     \node[const,above=of d] (nd) {\Large $H_S$} ;
 
-    \node[latent, above=of d, yshift=-0.3cm, xshift=-1.2cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
+    \node[latent, above=of d, yshift=-0.3cm, xshift=-1.2cm] (r) {\includegraphics[width=0.06\textwidth]{static/regalo.png}} ;
     \node[const,left=of r] (nr) {\Large $\ \ H_R$} ;
 
-    \node[latent, fill=black!30, above=of d, yshift=-0.3cm, xshift=1.2cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
+    \node[latent, fill=black!30, above=of d, yshift=-0.3cm, xshift=1.2cm] (c) {\includegraphics[width=0.06\textwidth]{static/cerradura.png}} ;
     \node[const,right=of c] (nc) {\Large $c_1$} ;
 
     \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(r_i, s_i|c_1,M_A)=0 \land P(r_i, s_1|c_1,M_A)=0$ \hspace{1cm}} ;
