@@ -2065,7 +2065,7 @@ Los \'unicos modelos rechazados son los que tienen menor complejidad de la neces
 
 Veamos concretamente cómo son las predicciones que los modelos hacen del siguiente dato $y_N$ cuando se nos informa un valor de $x_n=0.1$ (línea vertical de la figura~\ref{fig:model_selection_MAP_non-informative}.
 %
-En la figura \ref{fig:balance_natural} se grafica la predicci\'on a priori de $P(y_N|x_N=0.1, M_D)$ que hace un modelo rígido $D=1$, un modelo simple $D=3$, y un modelo compelejo $D=9$.
+En la figura \ref{fig:balance_natural} se grafica la predicci\'on a priori de $P(y_N|x_N=0.1, M_D)$ que hace un modelo rígido $D=1$, un modelo simple $D=3$, y un modelo complejo $D=9$.
 %
 Allí se puede ver que el modelo r\'igido (grado $D=1$) concentra toda la probabilidad en una regi\'on lejana al verdadero valor, por lo que siempre tienen un mal desempe\~no predictivo.
 %
@@ -2137,6 +2137,13 @@ En esta sección revisaremos algunos conceptos relativos a la operacionalizació
 
 El matemático y epistemólogo Gregorio Klimovsky, emérito de esta casa de estudios, llamó \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) por toda una comunidad~\cite{klimovsky1994-desventuras}.
 %
+En la notación de la Teoría de la Probabilidad la base empírica se expresa explícitamente a través del condicional, $P(\text{Hipótesis}|\text{Base empírica})$.
+%
+La base empírica no forma parte de las hipótesis de investigación $\mathcal{H}$.
+%
+Sin embargo, hemos visto que en el proceso de investigación, algunos elementos
+
+
 En la jerga de la Teoría de la Probabilidad (o de la Información) se les llama ``Datos'' a las hipótesis de investigación (o experimento) que en cierto momento pasan a formar parte del conjunto de restricciones indubitables, tautológicas, inamovibles.
 %
 Sin embargo, el conjunto de hipótesis de investigación $\mathcal{H}$ reúne tanto a las hipótesis ocultas (preguntas abiertas) $H \subseteq \mathcal{H}$, como las hipótesis de base empírica (o información inicial) $I \subset \mathcal{H}$, con $I \cap H = \emptyset$ y $I \cup H = \mathcal{H}$.
