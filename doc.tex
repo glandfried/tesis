@@ -2105,7 +2105,7 @@ Sin embargo, la soluci\'on f\'isica tambi\'en requiere resolver un proceso de in
 %
 En esta secci\'on revisaremos algunos conceptos relativos a la operacionalizaci\'on de datos en las ciencias emp\'iricas.
 
-\subsection{Base emp\'irica}
+\subsection{Base emp\'irica y datos T-te\'oricos}
 
 En la secci\'on \emph{\nameref{sec:reglas_de_la_probabilidad}} definimos el conjunto de datos sobre el que se eval\'uan las hip\'otesis de investigaci\'on $H_i \in \mathcal{H}$ mediante la f\'ormula general del teorema de Bayes \eqref{eq:teorema_bayes} como un subconjunto arbitrario de hip\'otesis elementales, $D \subset \textbf{H}$, tal que $P(Datos)>0$
 %
@@ -2152,17 +2152,20 @@ Visto de esta forma, la definici\'on de base emp\'irica depende del conjunto de 
 Los diferentes niveles de supuestos producen diferentes niveles de bases emp\'iricas, que formar\'ian una estructura en ``capas de cebolla'', con un n\'ucleo de base emp\'irica epistemol\'ogica y capas sucesivas $i$ de bases emp\'iricas metodol\'ogicas, BEM$_i$.
 %
 Para que uno de los niveles pueda actuar como base emp\'irica de control de una teor\'ia de nivel superior, es necesario que sus supuestos queden fuera de toda duda al momento de realizar la evaluaci\'on.
+%
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[page=4,width=\linewidth]{figures/baseEmpirica.pdf}
     \end{subfigure}
-    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris las bases emp\'iricas metodol\'ogicas, y en blanco los instrumentos de medici\'on o inferencia que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio, que dependen de la aceptaci\'on de una nueva teor\'ia T.}
+    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris las bases emp\'iricas metodol\'ogicas, y en blanco los instrumentos de medici\'on o inferencia que todav\'ia no han alcanzado un acuerdo intersubjetivo, que dependen de la aceptaci\'on de una nueva teor\'ia T.}
 \end{figure}
 
 % Parrafo
 
-Si los datos son una construcci\'on te\'orica entonces, concluyen los cr\'iticos, se pierde todo control externo y la ciencia no ser\'ia m\'as que un juego de auto justificaci\'on.
+Desde este punto de vista los datos no est\'an ``dados'', son una construcci\'on basada en supuestos.
+%
+Si esto fuera as\'i, concluyen los cr\'iticos, se pierde todo control externo y la ciencia no ser\'ia m\'as que un juego de auto justificaci\'on.
 %
 Sin embargo, es el concepto mismo de base emp\'irica como construcci\'on relativa a supuestos lo que permite superar esa cr\'itica pertinente.
 %
@@ -2178,29 +2181,18 @@ La idea es que un concepto es T-te\'orico si no se puede determinar sin presupon
 %
 Los datos T-no te\'oricos son la base emp\'irica de control para una teor\'ia T pues pueden ser construidos mediante teor\'ias independientes, previamente aceptadas.
 
-% En la secci\'on ``\nameref{sec:modelos_alternativos}'' hemos visto c\'omo garantizar los acuerdos intersubjetivos en la evaluaci\'on de los modelos causales alternativos.
-% %
-% En el cap\'itulo \ref{ch:ttt} seleccionamos el modelo de estimaci\'on de habilidad estado-del-arte en la industria del video juego, conocido como TrueSkill Through Time (TTT).
-
 
 
 \subsection{La estructura invariante del dato emp\'irico} \label{sec:estructura_invariante}
 
-Los datos cient\'ificos son funciones proposicionales, $f(x)=y$, donde la $x$ representa la unidad de an\'alisis, $f$ la variable, y la $y$ el valor de la variable.
+El conjunto de datos $D\in \textbf{H} \land P(D)>0$ contiene a lo sumo una \'unica hip\'otesis elemental por cada una de las hip\'otesis de investigaci\'on pues los datos son funciones proposicionales, $f(x)=y$: una vez que se mide una caracter\'istica $f$ sobre una unidad de an\'alisis $x$ se obtiene un \'unico valor $y$.
 %
-%La estructura funcional de las proposiciones emp\'iricas obliga que se cumpla la propiedad de replicabilidad: cada vez que se vuelve a medir la misma variable sobre la misma unidad de an\'alisis debemos obtener el mismo resultado.
-%
-Al conversar informalmente usamos estas estructuras funcionales para expresar, por ejemplo, que la habilidad de Maradona fue superior a la de Messi, o que la ideolog\'ia del partido comunista es comunista.
+Al conversar informalmente usamos estas estructuras funcionales para expresar, por ejemplo, que la habilidad de Maradona fue superior a la de Messi.
 %
 \begin{align*}\label{eq:opiniones}
-& \emph{Habilidad}(\text{Maradona}) > \emph{Habilidad}(\text{Messi}) \\[0.0cm]
-& \textit{Ideolog\'ia}(\text{Partido Comunista}) = \text{Comunista}
+& \emph{Habilidad}(\text{Maradona}) > \emph{Habilidad}(\text{Messi})
 \end{align*}
 %
-Las funciones \emph{Habilidad} e \emph{Ideolog\'ia} representan variables o caracter\'isticas que aplicadas sobre una unidad de an\'alisis particular, un jugador de f\'utbol o un partido pol\'itico, tienen un valor determinado, a pesar de que a veces no lo conozcamos con certidumbre.
-
-% Parrafo
-
 La estructura funcional, $f(x)=y$, es tan solo la parte abstracta del dato emp\'irico, su parte formal.
 %
 Esto es lo que permite usar modelos matem\'aticos o simulaciones computacionales, artefactos puramente formales, para describir sistemas naturales puramente emp\'iricos.
@@ -2217,65 +2209,93 @@ Estos elementos de la praxis, que son los que determinan en los hechos el valor 
 
 %Debemos esta propuesta al epistem\'ologo Argentino, contempor\'aneo de Gregorio Klimovsky y Rolando Garc\'ia, el profesor Juan Samaja.
 
-El epistem\'ologo Juan Samaja~\cite{Samaja1999} propone una hip\'otesis falsable (que \'el desaf\'ia a que encuentren un contra-ejemplo), de que todo dato emp\'irico se compone de dimensiones (D), que son especificaciones de la variable (V), y de procedimientos o protocolos (P), acciones que efectuadas sobre cierta fuente de datos (F) producen se\~nales o indicadores (I), objetos perceptibles desde el sentido com\'un, que interpretados con alguna hip\'otesis indicadora definen los resultados (R).
+El epistem\'ologo Juan Samaja~\cite{Samaja1999} propone una estructura invariante del emp\'irico.
 %
-Samaja representa la estructura invariante del dato emp\'irico mediante el siguiente esquema (cuadro~\ref{tab:matriz_datos}).
+Todo dato emp\'irico est\'a compuesto por: una hip\'otesis de investigaci\'on oculta de inter\'es ($H$), una hip\'otesis de investigaci\'on observable ($D$) vinculada a la hip\'otesis oculta de inter\'es, un procedimientos de medici\'on ($P$) que produce se\~nales que se incorporan a la base emp\'irica epistemol\'ogica ($B$) mediante la cual se infiere o estima ($E$) la probabilidad del verdadero valor de la hip\'otesis $H$.
 %
-\begin{table}[ht!]
-\centering \footnotesize
-\begin{tabular}{cccc}
-$f$ & \normalsize $x$ &\normalsize  = & $y$    \\
-  \normalsize  Variable (V) & \normalsize  Unidad de An\'alisis (UA) &\normalsize   &\normalsize  Resultado (R)    \\ \hline
- $\downarrow$ &$\downarrow$&&$\uparrow$ \\
- Examen de representatividad &Examen de viabilidad & & Hip\'otesis indicadora \\
- $\downarrow$ &$\downarrow$&&$\uparrow$ \\
- \normalsize Dimensiones (D) & \normalsize Fuente de datos (F) &  & \normalsize Indicador (I) \\
- $\downarrow$ &$\downarrow$&&$\uparrow$ \\
- \multicolumn{2}{c}{Examen de confiabilidad} & & Sentido com\'un \\
- \multicolumn{2}{c}{$\downarrow$} & &$\uparrow$ \\
- \multicolumn{2}{c}{\normalsize Procedimiento (P)} & $\rightarrow$ & \normalsize Percepci\'on \\
-\end{tabular}
-\caption{Estructura invariante del todo dato emp\'irico propuesta por Juan Samaja.}
-\label{tab:matriz_datos}
-\end{table}
+Cada uno de estos elementos del dato emp\'irico forma parte de un camino que nos lleva de lo abstracto a lo concreto y de lo concreto a los abstracto.
+%
+\begin{figure}[H]
+    \centering
+\tikz{
+
+\node[det] (fuente) {\large H};
+\node[const, above=of fuente, yshift=0.1cm] (fx) {\textit{variable}$(\text{Unidad an\'alisis})$};
+\node[const, right=of fx, xshift=0.6cm] (igual) {$=$};
+\node[const, right=of igual, xshift=0.6cm] (v) {valor};
+
+
+\draw[dashed] (-2.1,-0.65) -- (5.3,-0.65);
+\node[const, below=of fx, xshift=-3cm, yshift=-0.65cm] (conceptual) {\footnotesize Nivel conceptual oculto};
+
+\node[const, below=of fuente, yshift=-0.5cm] (realidad1) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
+\node[det, below=of fuente, yshift=-1.1cm] (dimension) {D};
+
+\draw[dashed] (-2.1,-3.5) -- (5.3,-3.5);
+\node[const, below=of dimension, xshift=-3cm, yshift=0.15cm] (conceptual2) {\footnotesize Nivel de mediaci\'on observacional};
+
+\node[const, below=of dimension, yshift=-0.6cm] (realidad2) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
+\node[det, right=of realidad2, xshift=-0.3cm] (procedimiento) {P};
+\node[const, right=of procedimiento, xshift=0.6cm] (observacion) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
+
+\node[det, above=of observacion, yshift=-0.3cm] (hipotesisI) {B};
+\node[const, above=of hipotesisI, yshift=0.35cm] (inferencia) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Inferencia}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
+\node[det, above=of inferencia, yshift=-0.27cm] (resultado) {E};
+
+
+\draw[dashed] (-2.1,-5.4) -- (5.3,-5.4);
+\node[const, below=of procedimiento, xshift=-4.9cm, yshift=-0.15cm] (praxis) {\footnotesize Nivel de contacto con la realidad};
+
+
+\edge[-] {fuente,dimension} {realidad1};
+\edge[-] {procedimiento} {realidad2};
+\edge    {dimension} {realidad2};
+\edge[-] {procedimiento} {observacion};
+\edge    {observacion} {hipotesisI};
+\edge[-] {hipotesisI, resultado} {inferencia};
+
+\node[const, right=of resultado] (n_resultado) {\small Probabilidad};
+\node[const, right=of fuente] (n_fuente) {\small $\hfrac{\text{\small Hip\'otesis}}{\text{\small oculta}}$};
+\node[const, right=of dimension] (n_dimension) {$\hfrac{\text{\small Hip\'otesis}}{\text{\small observable}}$};
+\node[const, below=of procedimiento] (n_procedimiento) {\small Procedimiento};
+\node[const, right=of hipotesisI] (n_hipotesis) {$\hfrac{\text{\small Base emp\'irica}}{\text{\small Se\~nales + Modelo}}$};
+
+
+\node[invisible, left=of fx, xshift=-4cm] (il) {};
+\node[invisible, right=of v, xshift=4cm] (ir) {};
+}
+\caption{Los niveles de abstracci\'on de la estructura invariante del dato emp\'irico (o el sistema de comunicaci\'on con la realidad).}
+\end{figure}
 
 % Parrafo
 
-El contenido de cada uno de sus elementos depende de una serie de supuestos.
-% Parrafo
-La selecci\'on de las dimensiones (D) depende de que \'estas expresen lo m\'as fielmente posible el concepto de la variable (V), que una vez observada permita inferir el valor real de la variable (R).
+El elecci\'on de cada uno de sus elementos depende de una serie de supuestos.
 %
-Los supuestos utilizados en esta etapa forman parte del \emph{examen de representatividad}.
+Supongamos que elegimos como hip\'otesis oculta $H:=$\emph{habilidad}(Messi).
 %
-Por ejemplo, si la variable es la \emph{Habilidad$(\cdot)$}, una dimensi\'on relevante a ser observada ser\'ian los resultados de los eventos deportivos (ganar/perder), pues ellos nos dan informaci\'on valiosa para inferir la variable de inter\'es.
+Determina a priori qu\'e hip\'otesis elementales pertenecen a la hip\'otesis de investigaci\'on oculta $H$ involucra en s\'i mismo el supuesto de que ellas son mutuamente excluyentes y exhaustivas, alguna de ellas coincide con la realidad oculta.
 %
-Por otra parte, durante la etapa de selecci\'on de la fuente de datos (F) se realiza el \emph{examen de viabilidad}, donde utilizamos otra series de supuestos para evaluar la autenticidad y accesibilidad de la informaci\'on.
+Supongamos que elegimos como hip\'otesis observable $D:=$Ganar/Perder.
 %
-Siguiendo con el mismo ejemplo, una fuente secundaria razonable sobre la que basarse ser\'ia la p\'agina oficial de la Federaci\'on Internacional de F\'utbol Asociado, \texttt{fifa.com}.
+Elegimos esta dimensi\'on observable en base a una idea a priori de c\'omo funciona el mundo, de que existe en la realidad oculta una relaci\'on que vincula estrechamente la habilidad de Messi y los resultados de los partidos en los que participa Messi.
 %
-Por \'ultimo, para definir el procedimiento de medici\'on (P) necesitamos realizar un \emph{examen de confiabilidad} donde se eval\'ua su capacidad para detectar en la fuente s\'olo las dimensiones de inter\'es y no otros est\'imulos asociados, y de discriminar m\'inimas cantidades.
+Supongamos que elegimos como procedimiento $P:=$\emph{Scraper} de \texttt{fifa.com}.
 %
-Por ejemplo, el desarrollo de un \emph{scraper} permite extraer los resultados de las partidas de la p\'agina oficial, generando en cada caso un indicador (I) binario (True/False) que se obtiene desde el sentido com\'un.
-% \begin{itemize} \itemsep-0.05cm
-% \item[$\bullet$] Dimensiones (D): Ganar/Perder
-% \item[$\bullet$] Fuente de datos (F): \texttt{atptour.com}
-% \item[$\bullet$] Procedimiento (P): Scraper
-% \item[$\bullet$] Indicador (I): True/False
-% \end{itemize}
-
-% Parrafo
-
+Esta decisi\'on se toma en base a la confianza en la veracidad de la informaci\'on provista por la Federaci\'on Internacional de F\'utbol Asociado.
+%
+Supongamos que elegimos como base emp\'irica $B:=$ el modelo de estimaci\'on de habilidad de la industria del video juego.
+%
+Elegimos este modelo de relaciones causales entre las hip\'otesis no observables y observables debido a que es considerado el modelo estado del arte en la actualidad.
+%
+El \'unico elemento externo a todo este conjunto de supuestos es la se\~nal que se incorpora a la base emp\'irica (True/False) como consecuencia de ejecutar el procedimiento.
+%
 Ahora bien, ?`c\'omo hacemos para derivar el valor de la \textit{habilidad}(Messi) a partir del indicador (True/False)?
-%
-Para ello necesitamos contar con lo que Juan Samaja llama \emph{hip\'otesis indicadora}.
-%
-%Juan Samaja no responde c\'omo determinarla.
 %
 En la siguiente secci\'on veremos dos ejemplos en detalle.
 %
-El primero usa una hip\'otesis indicadora ad-hoc muy exitosa, propuesta a mediados del siglo 20, que sigue siendo utilizada por la Federaci\'on Internacional de Ajedrez para determinar la habilidad de los ajedrecistas profesionales.
+El primero usa una funci\'on de costo ad-hoc que fue muy exitosa durante el siglo 20 y que sigue siendo utilizada por la Federaci\'on Internacional de Ajedrez para determinar la habilidad de los ajedrecistas profesionales.
 %
-El segundo ejemplo es una mejora de ese estimador, realizada a principios del siglo 21, que haciendo uso del mismo modelo causal emplea como hip\'otesis indicadora simplemente la aplicaci\'on estricta de las reglas de la probabilidad.
+El segundo ejemplo es una mejora de ese estimador, realizada a principios del siglo 21, que haciendo uso del mismo modelo causal realiza la inferencia mediante aplicaci\'on estricta de las reglas de la probabilidad.
 
 % Parrafo
 
@@ -2360,59 +2380,6 @@ y la percepci\'on efectiva que producen los procedimientos hasta su registro en 
 %
 Una vez que recibimos el indicador (de base emp\'irica epistemol\'ogica), podemos usar nuestras hip\'otesis causales para realizar la \textbf{inferencia causal}, $P(\text{Indicador}|h, \text{M})$ \\
 
-% Parrafo
-
-Cada uno de los pasos de la estructura del dato emp\'irico forma parte de un camino que nos lleva de lo abstracto a lo concreto y de lo concreto a los abstracto.
-%
-\begin{figure}[H]
-    \centering
-\tikz{
-
-\node[det] (fuente) {\large F};
-\node[const, above=of fuente, yshift=0.1cm] (fx) {\textit{variable}$(\text{Unidad an\'alisis})$};
-\node[const, right=of fx, xshift=0.6cm] (igual) {$=$};
-\node[const, right=of igual, xshift=0.6cm] (v) {valor};
-
-
-\draw[dashed] (-2.1,-0.65) -- (5.3,-0.65);
-\node[const, below=of fx, xshift=-3cm, yshift=-0.65cm] (conceptual) {\footnotesize Nivel conceptual oculto};
-
-\node[const, below=of fuente, yshift=-0.5cm] (realidad1) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
-\node[det, below=of fuente, yshift=-1.1cm] (dimension) {D};
-
-\draw[dashed] (-2.1,-3.5) -- (5.3,-3.5);
-\node[const, below=of dimension, xshift=-3cm, yshift=0.15cm] (conceptual2) {\footnotesize Nivel de mediaci\'on observacional};
-
-\node[const, below=of dimension, yshift=-0.6cm] (realidad2) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
-\node[det, right=of realidad2, xshift=-0.3cm] (procedimiento) {P};
-\node[const, right=of procedimiento, xshift=0.6cm] (observacion) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Realidad}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
-
-\node[det, above=of observacion, yshift=-0.3cm] (hipotesisI) {I};
-\node[const, above=of hipotesisI, yshift=0.35cm] (inferencia) {$\phantom{\bigg|}\hfrac{\text{\footnotesize Inferencia}}{\text{\footnotesize Causal}}\phantom{\bigg|}$};
-\node[det, above=of inferencia, yshift=-0.27cm] (resultado) {R};
-
-
-\draw[dashed] (-2.1,-5.4) -- (5.3,-5.4);
-\node[const, below=of procedimiento, xshift=-4.9cm, yshift=-0.15cm] (praxis) {\footnotesize Nivel de contacto con la realidad};
-
-
-\edge[-] {fuente,dimension} {realidad1};
-\edge[-] {dimension,procedimiento} {realidad2};
-\edge[-] {procedimiento, hipotesisI} {observacion};
-\edge[-] {hipotesisI, resultado} {inferencia};
-
-\node[const, right=of resultado] (n_resultado) {\small Resultado};
-\node[const, right=of fuente] (n_fuente) {\small Fuente};
-\node[const, right=of dimension] (n_dimension) {\small Dimensiones};
-\node[const, below=of procedimiento] (n_procedimiento) {\small Procedimiento};
-\node[const, right=of hipotesisI] (n_hipotesis) {\small $\hfrac{\text{\small Indicador +}}{\text{\small Hip\'otesis causal}}$};
-
-
-\node[invisible, left=of fx, xshift=-4cm] (il) {};
-\node[invisible, right=of v, xshift=4cm] (ir) {};
-}
-\caption{Los niveles de abstracci\'on de la estructura invariante del dato emp\'irico (o el sistema de comunicaci\'on con la realidad).}
-\end{figure}
 
 % Parrafo
 
