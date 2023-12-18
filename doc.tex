@@ -1447,9 +1447,9 @@ $P(r_i, s_j |c_1, M_A)$ \hspace{3cm} $P(r_i, s_j | c_1, M_B)$ \\[0.1cm]
 
 % Parrafo
 
-Una vez calculada la distribuci\'on de probabilidad conjunta honesta, podemos responder cualquier pregunta relacionada al problema de investigaci\'on mediante la aplicaci\'on estricta de las reglas de la probabilidad.
+Una vez calculada la distribuci\'on de probabilidad conjunta, podemos responder cualquier pregunta relacionada al problema de investigaci\'on mediante la aplicaci\'on estricta de las reglas de la probabilidad.
 %
-La regla de la suma establece que cualquier creencia marginal honesta puede ser obtenida integrando la creencia conjunta.
+La regla de la suma establece que cualquier creencia marginal puede ser obtenida integrando la creencia conjunta.
 %
 Por ejemplo, para obtener la probabilidad de la hip\'otesis $s_j$ debemos recuperar las probabilidades que asignamos a todos los universos paralelos en los que esa hip\'otesis elemental est\'a presente,
 %
@@ -1459,6 +1459,7 @@ P(s_j|c_1,M_A) = \sum_{r_i \in H_R} P(r_i, s_j|c_1, M_A) = 1/3 \\
 P(s_j|c_1,M_B) = \sum_{r_i \in H_R} P(r_i, s_j|c_1, M_B) = 1/2
 \end{split}
 \end{equation}
+\todo[inline]{Aclarar en el modelo B que j no puede ser 1}
 %
 Esto es equivalente a sumar todos los elementos de una de las filas de la tabla.
 %
@@ -1508,9 +1509,10 @@ En ambos modelos, la probabilidad marginal sobre la posici\'on del regalo es $1/
 
 % Parrafo
 
-Para calcular la distribuci\'on de probabilidad honesta luego de observar que la caja dos est\'a vac\'ia, debemos aplicar la regla del producto.
+Para calcular la distribuci\'on de probabilidad luego de observar que la caja dos est\'a vac\'ia, debemos aplicar la regla del producto.
 %
-La regla del producto simplemente codifica el principio de coherencia pues para calcularla nos debemos quedar \'unicamente con la creencia previa que siguen siendo compatibles con el observable, $P(r_i, s_2)$, esto es la fila de la distribuci\'on de probabilidad conjunta a priori correspondiente a la hip\'otesis elemental $s_2$.
+La regla del producto simplemente codifica el principio de coherencia pues para calcularla nos debemos quedar \'unicamente con la creencia previa que sigue siendo compatible con el observable (i.e., $P(r_i, s_2)$).
+Esto es la fila de la distribuci\'on de probabilidad conjunta a priori correspondiente a la hip\'otesis elemental $s_2$.
 %
 \begin{table}[ht!]
 \centering
@@ -1530,7 +1532,7 @@ $P(r_i, s_2 |c_1, M_A)$ \hspace{4.3cm} $P(r_i, s_2 | c_1, M_B)$ \\[0.1cm]
 
 % Parrafo
 
-La probabilidad que sobrevive, $P(r_i, s_2|c_1,M_k)$, no representa todav\'ia nuestra nueva creencia total pues no integrar 1, $\sum_i P(r_i,s_2|c_1,M_k) = P(s_2|c_1,M_k) < 1$.
+La probabilidad que sobrevive, $P(r_i, s_2|c_1,M_k)$, no representa todav\'ia nuestra nueva creencia total pues no suma 1, $\sum_i P(r_i,s_2|c_1,M_k) = P(s_2|c_1,M_k) < 1$.
 %
 Para que la probabilidad que sobrevive sea considerada nuestra nueva creencia total necesitamos normalizarla para que en conjunto vuelva a sumar 1.
 %
@@ -1577,9 +1579,9 @@ La nueva distribuci\'on de probabilidad a la que llegamos depende del modelo ele
 \caption{Distribuci\'on de probabilidad a posterior dado el dato $s_2$ y el modelo. El modelo $A$ asigna la misma probabilidad a la caja 1 y 3. El modelo $B$ asigna $1/3$ a la hip\'otesis $r_1$ y $2/3$ a la hip\'otesis $r_3$.}
 \end{figure}
 %
-Si bien ambas respuesta son diferentes, ellas comparten la propiedad de ser la distribuci\'on de probabilidad honesta dadas las restricciones.
+Si bien ambas respuesta son diferentes, ellas comparten la propiedad de ser la distribuci\'on de probabilidad que cumple con las restricciones.
 %
-Lo que hemos hecho no es otra cosa que aplicar el teorema de Bayes,
+Lo que hemos hecho no es otra cosa que aplicar el Teorema de Bayes,
 %
 \begin{equation}
 \begin{split}
@@ -1623,51 +1625,12 @@ Lo que hemos hecho no es otra cosa que aplicar el teorema de Bayes,
 
 % Parrafo
 
-\subsection{Evaluaci\'on honesta de modelos}
+\subsection{Evaluaci\'on de modelos}
 
-Computar las distribuciones de probabilidad honesta dado los modelos no tendr\'ia ning\'un valor si la elecci\'on del modelo quedara librada al arbitrio de las subjetividades individuales.
+Computar las distribuciones de probabilidad dados los modelos no tendr\'ia ning\'un valor si la elecci\'on del modelo quedara librada al arbitrio de las subjetividades individuales.
 %
-Y justamente, cuando tenemos m\'as de un sistemas de restricciones (o modelo), estamos en presencia de una hip\'otesis de investigaci\'on adicional $H_M = \{M_A, M_B\}$ que puede ser evaluada mediante la aplicaci\'on estricta de las reglas de la probabilidad.
-%
-% ?`Cu\'al de los dos modelos debemos usar?
-% %
-% ?`Cu\'al de los dos posterior debemos reportar?
-% %
-% En la formulaci\'on del teorema de Bayes inicial~\eqref{eq:teorema_bayes} solo hay hip\'otesis y datos.
-%
+Y, justamente cuando tenemos m\'as de un sistema de restricciones (o modelos), estamos en presencia de una hip\'otesis de investigaci\'on adicional $H_M = \{M_A, M_B\}$ que tambi\'en puede ser evaluada mediante la aplicaci\'on estricta de las reglas de la probabilidad.
 Es decir, en el fondo nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ debe incluir $H_M$, $\mathcal{H} = \{H_R, H_S, \{c_1\}, H_M\}$.
-% %
-% Si aplicamos el teorema de Bayes para actualizar la probabilidad de los modelos $M$ dado los datos $D = \{r_i, s_j, c_1\}$,
-% %
-% \begin{equation}\label{eq:p_modelo_|_datos}
-%  P(\text{Model\es{o}}|\text{Dat\en{a}\es{os}}) = \frac{\overbrace{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}, I)}^{\text{Evidencia}}\overbrace{P(\text{Model\es{o}}|I)}^{\text{Prior}}}{P(\text{Dat\en{a}\es{os}}|I)}
-% \end{equation}
-% %
-% La evidencia es la predicci\'on de los datos con la contribuci\'on de todas las hip\'otesis.
-% %
-% \begin{equation}
-% P(\text{Datos}|\text{Modelo},I) = \sum_{\text{Hip\'otesis}} P(\text{Datos}|\text{Hip\'otesis}, \text{Modelo},I) P(\text{Hip\'otesis}|\text{Modelo},I)
-% \end{equation}
-% %
-% Por la regla del producto, podemos expresar la evidencia conjunta de muchos datos $\{d_1, d_2, \dots \}$ como una productoria de predicciones a priori individuales,
-% %
-% \begin{equation} \label{eq:p<datos|modelo>}
-% \begin{split}
-% P(\text{Dat\en{a}\es{os}}=\{d_1, d_2, \dots \}|\text{Model\es{o}},I) & = P(d_1|\text{Model\es{o}},I)P(d_2|d_1,\text{Model\es{o}},I) \dots
-% \end{split}
-% \end{equation}
-% %
-% La probabilidad conjunta de todos los datos dado el modelo es igual a la probabilidad del primer dato $d_1$ dado el modelo, multiplicado por la probabilidad del segundo dato $d_2|d_1$ dado el primer dato y el modelo, y as\'i sucesivamente.
-% %
-% Notar que si alguna de las predicciones es $0$, toda la productoria se anula.
-% %
-% Por su parte, el denominador de la ecuaci\'on \ref{eq:p_modelo_|_datos} es la predicci\'on a priori del dato observado con la contribuci\'on de todos los modelos (y todas sus hip\'otesis).
-% %
-% \begin{equation}
-% P(\text{Datos}|I) = \sum_{\text{Modelo}} P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}, I) P(\text{Model\es{o}}, I)
-% \end{equation}
-%
-% % Parrafo
 
 Para evaluar los modelos generaremos datos sint\'eticos utilizando la distribuci\'on de probabilidad del modelo $M_B$, $P(H_R,H_S|c_1,M_B)$, eligiendo primero la posici\'on del regalo $r_i$ a partir de la distribuci\'on $P(r_i|c_1,M_B)$ y eligiendo luego la pista $s_j$ a partir de la distribuci\'on $P(s_j|r_i,c_1,M_B)$.
 %
