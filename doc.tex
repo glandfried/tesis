@@ -1021,7 +1021,7 @@ En este escenario tenemos tres hip\'otesis elementales $r_i$, donde cada una se 
 %
 En la figura~\ref{eq:campo_de_probabilidades_regalo} representamos las cajas con cuadrados negros con la probabilidad $P(r_i)$ de cada una de las hip\'otesis elementales.
 %
-La pregunta es, ¿Cu\'al de todas las infinitas distribuciones de probabilidades expresan m\'as fielmente nuestro conocimiento parcial del mundo?
+La pregunta es, ?`cu\'al de todas las infinitas distribuciones de probabilidades expresan m\'as fielmente nuestro conocimiento parcial del mundo?
 %
 \begin{figure}[ht!]
 \centering
@@ -1112,7 +1112,7 @@ De aqu\'i en adelante, diremos que \emph{distribuci\'on de probabilidad} y \emph
 
 Lo que queremos en ciencia emp\'irica no es expresar nuestras subjetividades individuales si no alcanzar acuerdos entre subjetividades.
 %
-La ciencia es una instituci\'on que tiene pretensi\'on de descubrir verdades, esto es afirmaciones que valgan para todas las personas.
+La ciencia es una instituci\'on que tiene pretensi\'on de descubrir verdades, esto es, afirmaciones que valgan para todas las personas.
 %
 Siguiendo al epistem\'ologo Juan Samaja, llamamos a esto \emph{acuerdos intersubjetivos} pues, a diferencia del concepto ``objetividad'', incluye una dimensi\'on constructiva entre las subjetividades~\cite{Samaja1999}.
 %
@@ -1123,23 +1123,23 @@ manera que puedas poner en correspondencia un\'ivoca los fen\'omenos percibidos 
 %
 Las ciencias formales (matem\'atica, l\'ogica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiom\'aticos cerrados.
 %
-Las ciencias emp\'iricas en cambio, desde la f\'isica hasta las ciencias sociales, deben alcanzar estos acuerdos en sistemas naturales abiertos que contienen siempre alg\'un grado de incertidumbre.
+Las ciencias emp\'iricas, desde la f\'isica hasta las ciencias sociales, deben alcanzar estos acuerdos en sistemas naturales abiertos que contienen siempre alg\'un grado de incertidumbre.
 %
-¿Es posible alcanzar acuerdos intersubjetivos en contextos de incertidumbre (a.k.a.~\emph{verdades emp\'iricas})?
+?`Es posible alcanzar acuerdos intersubjetivos en contextos de incertidumbre (i.e.,~\emph{verdades emp\'iricas})?
 
 % Parrafo
 
-Esta pregunta est\'a formulada desde el inicio de los debates del desarrollo de la teor\'ia de la probabilidad en 1648, cuando Pascal y Fermat discuten cu\'al es el \emph{precio justo} en contextos de incertidumbre~\cite{devlin2008-theUnfinishedGame}.
+Esta pregunta est\'a formulada desde el inicio de los debates del desarrollo de la teor\'ia de la probabilidad en 1648, cuando Pascal y Fermat discuten cu\'al es el \emph{precio justo} en contextos de incertidumbre~\cite{Devlin2008}.
 %
 La primer definici\'on matem\'atica de justicia, verdad u honestidad ya exist\'ia previamente a estos debates bajo el viejo principio filos\'ofico de \emph{indiferencia}, que es incorporado al inicio del siglo 18 por quienes ser\'an considerados luego los fundadores de la teor\'ia de la probabilidad~\cite{jaynes1984-bayesianBackground}.
 %
-Tres siglos despu\'es, luego que se deriva la teor\'ia de la informaci\'on a partir de la aplicaci\'on estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entrop\'ia} como medida de la tasa de informaci\'on temporal, se generaliza finalmente el concepto de \emph{honestidad} como m\'axima entrop\'ia dada la informaci\'on disponible (MaxEnt)~\cite{Jaynes2003}.
+Tres siglos despu\'es, luego que se deriva la teor\'ia de la informaci\'on a partir de la aplicaci\'on estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entrop\'ia} como medida de la tasa de informaci\'on, se generaliza finalmente el concepto de \emph{honestidad} como m\'axima entrop\'ia dada la informaci\'on disponible (MaxEnt)~\cite{Jaynes2003}.
 %
 \begin{quotation}
 The essence of ``honesty'' or ``objectivity'' demands that we take into account all the evidence we have, not just some arbitrarily chosen subset of it. Any such choice would amount either to ignoring evidence that we have, or presuming evidence that we do not have.
 \end{quotation}
 %
-En este sentido la distribuci\'on de probabilidad honesta es la que no afirma m\'as de lo que se sabe (maximizando incertidumbre) sin dejar de decir todo lo que s\'i se sabe (incorporando toda la informaci\'on disponible).
+En este sentido, la distribuci\'on de probabilidad honesta es la que no afirma m\'as de lo que se sabe sin dejar de decir todo lo que s\'i se sabe (incorporando toda la informaci\'on disponible).
 %
 Todas las distribuciones de probabilidad de la familia exponencial maximizan entrop\'ia dada la informaci\'on de los par\'ametros (Uniforme$(x|a,b)$, Bernoulli$(x|p)$, Beta$(x|\alpha, \beta)$, Gaussiana$(x|\mu, \sigma^2)$, \dots).
 %
@@ -1168,19 +1168,20 @@ Luego, para determinar la probabilidad \emph{a priori} $P(H|M)$ necesitamos defi
 %
 Generalmente $M$ representa el modelo causal, pero en principio $M$ incluye el sistema completo de restricciones que utilizamos como informaci\'on previa.
 %
-La secci\'on actual,~ \emph{\nameref{sec:acuerdos_intersubjetivos}}, terminar\'a con la evaluaci\'on honesta de los modelos causales alternativos.
+La secci\'on actual,~ \emph{\nameref{sec:acuerdos_intersubjetivos}}, terminar\'a con la evaluaci\'on de los modelos causales alternativos.
 %
 Pero antes de ello, veamos un ejemplo concreto.
 
 % Parrafo
 
+Retomemos el ejemplo de las tres cajas y el regalo escondido. 
 Supongamos que solo sabemos que el regalo est\'a escondido detr\'as de alguna de las tres cajas y no tenemos informaci\'on adicional que nos haga preferir alguna caja por sobre otra.
 %
-En este contexto no es dif\'icil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
+En este contexto, \textbf{no} es dif\'icil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
 %
-Esta distribuci\'on de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial} y no casualmente es la distribuci\'on que maximiza la incertidumbre (o entrop\'ia) entre todas las opciones que incorporan la \'unica informaci\'on disponible: el regalo est\'a en alguna de las tres cajas.
+Esta distribuci\'on de probabilidad se corresponde con la figura~\ref{fig:preferencia_maxima} y no casualmente es la distribuci\'on que maximiza la incertidumbre (o entrop\'ia) entre todas las opciones que incorporan la \'unica informaci\'on disponible: el regalo est\'a en alguna de las tres cajas.
 %
-Para derivar las distribuciones de probabilidad que maximizan la entrop\'ia dada las restricciones disponible se suele usar utilizan los multiplicadores de Lagrange.
+Para derivar las distribuciones de probabilidad que maximizan la entrop\'ia dada las restricciones disponibles, se suele usar los multiplicadores de Lagrange.
 %
 Aqu\'i nos bast\'o con utilizar el viejo principio filos\'ofico de indiferencia, que suele corresponderse con la intuici\'on com\'un.
 
@@ -1188,9 +1189,9 @@ Aqu\'i nos bast\'o con utilizar el viejo principio filos\'ofico de indiferencia,
 
 Ahora bien, continuemos con el ejemplo.
 %
-Supongamos que se nos pide que elijamos una caja y alguien que conoce la ubicaci\'on del regalo muestra el interior de una de las cajas que no contiene el regalo.
+Supongamos que se nos pide que elijamos una caja y alguien (un or\'aculo) que conoce la ubicaci\'on del regalo muestra el interior de una de las cajas que \textbf{no} contiene el regalo.
 %
-Se incorporan entonces las hip\'otesis elementales $c_i \equiv \text{ ``elegimos la caja $i$''}$ y $s_i \equiv \text{ ``muestran el interior de la caja $i$''}$.
+Se incorporan entonces las hip\'otesis elementales $c_i$ que corresponde con \emph{``elegimos la caja i''} y $s_i$ \emph{``muestran el interior de la caja i''}.
 %
 Luego, nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ consiste de tres hip\'otesis, $\mathcal{H} = \{H_R, H_C, H_S\}$, con $H_R=\{r_1, r_2, r_3\}$, $H_C=\{c_1, c_2, c_3\}$ y $H_S=\{s_1, s_2, s_3\}$.
 %
@@ -1623,9 +1624,9 @@ Computar las distribuciones de probabilidad honesta dado los modelos no tendr\'i
 %
 Y justamente, cuando tenemos m\'as de un sistemas de restricciones (o modelo), estamos en presencia de una hip\'otesis de investigaci\'on adicional $H_M = \{M_A, M_B\}$ que puede ser evaluada mediante la aplicaci\'on estricta de las reglas de la probabilidad.
 %
-% ¿Cu\'al de los dos modelos debemos usar?
+% ?`Cu\'al de los dos modelos debemos usar?
 % %
-% ¿Cu\'al de los dos posterior debemos reportar?
+% ?`Cu\'al de los dos posterior debemos reportar?
 % %
 % En la formulaci\'on del teorema de Bayes inicial~\eqref{eq:teorema_bayes} solo hay hip\'otesis y datos.
 %
@@ -1906,11 +1907,11 @@ En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal mediante una l
 %
 Supongamos adem\'as que tenemos 10 modelos lineales alternativos $M_D$, con $D \in \{0, \dots, 9\}$.
 %
-Una pregunta b\'asica que quisi\'eramos responder es, ¿cu\'al de todos los modelos lineales ``ajusta'' mejor los datos?
+Una pregunta b\'asica que quisi\'eramos responder es, ?`cu\'al de todos los modelos lineales ``ajusta'' mejor los datos?
 %
 Los modelos lineales de grado 0 a 2 no tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$, mientras que todos los modelos de grado mayor o igual a grado 3 s\'i tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
 %
-Sin la posibilidad de aplicar estrictamente las reglas de la probabilidad, ¿qu\'e significa que un modelo sea mejor que otro?
+Sin la posibilidad de aplicar estrictamente las reglas de la probabilidad, ?`qu\'e significa que un modelo sea mejor que otro?
 %
 El siguiente ejemplo est\'a presente en el cap\'itulo 3 del libro de Bishop~\cite{Bishop2006}.
 
@@ -2138,15 +2139,11 @@ En esta secci\'on revisaremos algunos conceptos relativos a la operacionalizaci\
 
 \subsection{Base emp\'irica e hip\'otesis te\'oricas}
 
-<<<<<<< HEAD
 En la sección \emph{\nameref{sec:teoria_elemental_probabilidad}} definimos el conjunto de datos como un subconjunto arbitrario de hipótesis elementales
 
 
 
 El matemático y epistemólogo de esta casa de estudios, Gregorio Klimovsky, llamó \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
-=======
-El matem\'atico y epistem\'ologo Gregorio Klimovsky, em\'erito de esta casa de estudios, llam\'o \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos moment\'aneamente) por toda una comunidad~\cite{klimovsky1994-desventuras}.
->>>>>>> 768f9da3f (Tesis Landfried: detalles en la parte de probabilidad)
 %
 La notación de la Teor\'ia de la Probabilidad la base emp\'irica se expresa expl\'icitamente a través del condicional, $P(\text{Hipótesis}|\text{Datos})$.
 %
@@ -2919,7 +2916,7 @@ El resto del modelo se preserva igual.
 %
 Un equipo vence a otro cuando su desempe\~no es mayor al del equipo contrario.
 %
-El resultado de una partida con varios equipos se modela con una desigualdad de los desempe\~nos de los equipos, tal que $t_{o_1}< \dots < t_{o_{|A|}}$, donde $o_i$ representa el equipo que qued\'o en la $i$-\'esima posici\'on.
+El resultado de una partida con varios equipos se modela con una desigualdad de los desempe\~nos de los equipos, tal que $t_{o_1}<   \dots < t_{o_{|A|}}$, donde $o_i$ representa el equipo que qued\'o en la $i$-\'esima posici\'on.
 %
 En resumen, el modelo TrueSkill puede representarse mediante el siguiente modelo causal (figura~\ref{fig:modelo_trueskill_equipos}).
 %
@@ -6217,7 +6214,7 @@ Por \'ultimo, discutimos nuestros resultados en relaci\'on con trabajos anterior
 
 \section{Introducci\'on}
 
-La integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas se debi\'o a una coevoluci\'on gen\'etico-cultural desencadenada por el surgimiento previo de la crianza cooperativa~\cite{Hrdy2020, Koster2020}.
+La integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite a los humanos desarrollar culturas complejas se debi\'o a una coevoluci\'on gen\'etico-cultural desencadenada por el surgimiento previo de la crianza cooperativa~\cite{Hrdy2020,Koster2020}.
 %
 El surgimiento de la comprensi\'on mutua produjo cambios radicales para nuestra especie.
 %
@@ -6239,9 +6236,9 @@ En este proceso, algunas de las variantes culturales se extienden m\'as r\'apida
 
 La estructura de estas ``redes culturales'' permite o impide el acceso a la informaci\'on cultural, afectando entonces los procesos de aprendizaje social y acumulaci\'on cultural~\cite{Derex2020}.
 %
-Aunque se ha demostrado que la capacidad de acumulaci\'on cultural es proporcional al tama\~no efectivo de la poblaci\'on~\cite{shennan2001-demographyAndCulture, Henrich2004, kempe2014-experiment}, estudios recientes han cuestionado la suposici\'on de que todo lo que maximice el flujo de informaci\'on cultural deber\'ia repercutir positivamente~\cite{Derex2020}.
+Aunque se ha demostrado que la capacidad de acumulaci\'on cultural es proporcional al tama\~no efectivo de la poblaci\'on~\cite{shennan2001-demographyAndCulture,Henrich2004,kempe2014-experiment}, estudios recientes han cuestionado la suposici\'on de que todo lo que maximice el flujo de informaci\'on cultural deber\'ia repercutir positivamente~\cite{Derex2020}.
 %
-La hip\'otesis afirma que las redes totalmente conectadas producen una homogeneizaci\'on cultural que reduce las posibilidades de innovaci\'on, mientras que las redes fragmentadas tienden a perder variantes culturales complejas con el tiempo~\cite{derex2018-divideAndConquer,Creanza2017}.
+La hip\'otesis afirma que las redes totalmente conectadas producen una homogeneizaci\'on cultural que reduce las posibilidades de innovaci\'on, mientras que las redes fragmentadas tienden a perder variantes culturales complejas con el tiempo~\cite{Derex2018a,Creanza2017}.
 %
 La raz\'on por la que es dif\'icil evaluar estas hip\'otesis en datos del mundo real es que debemos registrar todas las interacciones al interior de una comunidad a nivel individual, lo que suele ser dif\'icil~\cite{Derex2020}.
 %
@@ -6844,7 +6841,7 @@ As\'i, aunque los jugadores expertos pueden entender mejor que nadie las estrate
 
 Esto parece indicar que la posici\'on de los individuos en la red tendr\'ia un efecto de segundo orden que s\'olo se activa cuando las personas han adquirido suficientes conocimientos para aprovechar la informaci\'on cultural.
 %
-Pero, ¿por qu\'e es mejor una centralidad baja que una centralidad alta?
+Pero, ?`por qu\'e es mejor una centralidad baja que una centralidad alta?
 %
 Es importante se\~nalar que la plataforma online analizada facilita el contacto entre personas, con una tendencia a establecer juegos basados en el azar.
 %
