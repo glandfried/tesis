@@ -997,19 +997,19 @@ En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes se
 
 La teor\'ia de la probabilidad es el sistema de razonamiento para contextos de incertidumbre.
 %
-La aplicaci\'on estricta de sus reglas (enfoque bayesiano de la probabilidad) nos obliga a actualizar las probabilidades de las hip\'otesis a trav\'es del teorema de Bayes $P(H_i|D)$ y por lo tanto a definir una probabilidad \emph{a priori} de la hip\'otesis $P(H_i)$.
+La aplicaci\'on estricta de sus reglas (enfoque bayesiano de la probabilidad) nos obliga a actualizar las probabilidades de las hip\'otesis a trav\'es del teorema de Bayes $P(H_i|D)$ y, por lo tanto, a definir una probabilidad \emph{a priori} de la hip\'otesis $P(H_i)$.
 %
-Sin embargo, la \'unica restricci\'on que impone el sistema axiomático para asignar probabilidades a las hip\'otesis elementales es que la suma sea $h_1 + h_2 + \dots + h_n = 1$.
+Sin embargo, la \'unica restricci\'on que impone el sistema axiom\'atico para asignar probabilidades a las hip\'otesis elementales es que la suma sea $h_1 + h_2 + \dots + h_n = 1$.
 %
 Bajo este criterio, existen infinitas formas de asignar probabilidades a priori.
 %
 Es decir, la teor\'ia de la probabilidad nos obliga a definir una probabilidad a priori, pero no nos dice c\'omo.
 %
-En este cap\'itulo revisaremos algunos ejemplos concretos de la aplicaci\'on estricta de las reglas de la probabilidad que nos permiten discutiremos algunas de sus consecuencias más relevantes.
+En este cap\'itulo revisaremos algunos ejemplos concretos de la aplicaci\'on estricta de las reglas de la probabilidad que nos permiten discutiremos algunas de sus consecuencias m\'as relevantes.
 
 \subsection{Acuerdos intersubjetivos en contextos de incertidumbre} \label{sec:acuerdos_intersubjetivos}
 
-Debido a que las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos, el conocimiento contienen siempre alg\'un grado de incertidumbre.
+Debido a que las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos, el conocimiento contiene siempre alg\'un grado de incertidumbre.
 %
 La teor\'ia de la probabilidad es usada desde el siglo 18 para expresar conocimiento que es parcial.
 %
@@ -1017,11 +1017,11 @@ Por ejemplo, supongamos que tenemos tres cajas \emph{exactamente} iguales y una 
 %
 Una vez escondido, el regalo permanece en la misma caja, su posici\'on no es aleatoria.
 %
-En este escenario tenemos tres hip\'otesis elementales $r_i \equiv \emph{el regalo se encuentra en la caja }i$, siendo el conjunto de hip\'otesis elementales $H_R = \{r_1, r_2, r_3\}$.
+En este escenario tenemos tres hip\'otesis elementales $r_i$, donde cada una se interpreta como \emph{el regalo se encuentra en la caja i}, siendo el conjunto de hip\'otesis elementales $H_R = \{r_1, r_2, r_3\}$.
 %
 En la figura~\ref{eq:campo_de_probabilidades_regalo} representamos las cajas con cuadrados negros con la probabilidad $P(r_i)$ de cada una de las hip\'otesis elementales.
 %
-La pregunta es, ¿Cuál de todas las infinitas distribuciones de probabilidades expresan más fielmente nuestro conocimiento parcial del mundo?
+La pregunta es, ¿Cu\'al de todas las infinitas distribuciones de probabilidades expresan m\'as fielmente nuestro conocimiento parcial del mundo?
 %
 \begin{figure}[ht!]
 \centering
@@ -1049,7 +1049,7 @@ Esta situaci\'on se representa en la figura~\ref{fig:preferencia_total} en la qu
 %
 Sin certeza, en cambio, nos vemos obligados a dividir la probabilidad de alguna forma.
 %
-Cuando tenemos una creencia a favor de que el regalo se encuentra en alguna de las caja $r_i$ podemos expresarlo asignando mayor probabilidad a esa hip\'otesis que al resto, $P(r_i) > P(r_j)$.
+Cuando tenemos una creencia a favor de que el regalo se encuentra en alguna de las cajas $r_i$, podemos expresarlo asignando mayor probabilidad a esa hip\'otesis que al resto.
 %
 Esta situaci\'on se representa en la figura~\ref{fig:preferencia_parcial}, en la que asignamos mayor probabilidad a la hip\'otesis $r_2$ que al resto.
 %
@@ -1098,15 +1098,15 @@ Cuando no tenemos informaci\'on alguna que nos haga preferir alguna de las hip\'
          \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
         }
-    \caption{Incertidumbre máxima}
-    \label{fig:preferencia_parcial}
+    \caption{Incertidumbre m\'axima}
+    \label{fig:preferencia_maxima}
 \end{subfigure}
-\caption{Tres distribuciones de probabilidades que expresan una conocimiento completo (incertidumbre nula), conocimiento parcial (incertidumbre parcial) e ignorancia total (incertidumbre máxima).
+\caption{Tres distribuciones de probabilidades que expresan: \subref{fig:preferencia_total} un conocimiento completo (incertidumbre nula), \subref{fig:preferencia_parcial} conocimiento parcial (incertidumbre parcial) y \subref{fig:preferencia_maxima} ignorancia total (incertidumbre m\'axima).
  }
 \label{fig:distribucion_de_creencias}
 \end{figure}
 %
-De aqu\'i en adelante \emph{distribuciones de probabilidad} y \emph{distribuci\'on de creencias} son sin\'onimos.
+De aqu\'i en adelante, diremos que \emph{distribuci\'on de probabilidad} y \emph{distribuci\'on de creencias} se utilizar\'an indistintamente.
 
 % Parrafo
 
@@ -1117,7 +1117,7 @@ La ciencia es una instituci\'on que tiene pretensi\'on de descubrir verdades, es
 Siguiendo al epistem\'ologo Juan Samaja, llamamos a esto \emph{acuerdos intersubjetivos} pues, a diferencia del concepto ``objetividad'', incluye una dimensi\'on constructiva entre las subjetividades~\cite{Samaja1999}.
 %
 \begin{quotation}
-Pero no en una ``intersubjetividad'' que podr\'ia resultar de un acuerdo ocasional, contingente, entre los sujetos, sino como la forma de la equilibraci\'on en que pueden coexistir los sujetos en una comunidad que ``distribuye'' entre ellos las cosas de ``un \'unico y mismo modo''. [\dots]. Si esto ha de ser as\'i, los demás no están forzados a admitir los dictámenes de mi conciencia privada y el conocimiento se debe regir por un imperativo paralelo: ``conoce de tal
+Pero no en una ``intersubjetividad'' que podr\'ia resultar de un acuerdo ocasional, contingente, entre los sujetos, sino como la forma de la equilibraci\'on en que pueden coexistir los sujetos en una comunidad que ``distribuye'' entre ellos las cosas de ``un \'unico y mismo modo''. [\dots]. Si esto ha de ser as\'i, los dem\'as no est\'an forzados a admitir los dict\'amenes de mi conciencia privada y el conocimiento se debe regir por un imperativo paralelo: ``conoce de tal
 manera que puedas poner en correspondencia un\'ivoca los fen\'omenos percibidos por tu conciencia con alg\'un esquema de operaci\'on que sea p\'ublicamente inteligible y reproducible''.
 \end{quotation}
 %
@@ -1129,23 +1129,23 @@ Las ciencias emp\'iricas en cambio, desde la f\'isica hasta las ciencias sociale
 
 % Parrafo
 
-Esta pregunta está formulada desde el inicio de los debates del desarrollo de la teor\'ia de la probabilidad en 1648, cuando Pascal y Fermat discuten cuál es el \emph{precio justo} en contextos de incertidumbre~\cite{devlin2008-theUnfinishedGame}.
+Esta pregunta est\'a formulada desde el inicio de los debates del desarrollo de la teor\'ia de la probabilidad en 1648, cuando Pascal y Fermat discuten cu\'al es el \emph{precio justo} en contextos de incertidumbre~\cite{devlin2008-theUnfinishedGame}.
 %
-La primer definici\'on matemática de justicia, verdad u honestidad ya exist\'ia previamente a estos debates bajo el viejo principio filos\'ofico de \emph{indiferencia}, que es incorporado al inicio del siglo 18 por quienes serán considerados luego los fundadores de la teor\'ia de la probabilidad~\cite{jaynes1984-bayesianBackground}.
+La primer definici\'on matem\'atica de justicia, verdad u honestidad ya exist\'ia previamente a estos debates bajo el viejo principio filos\'ofico de \emph{indiferencia}, que es incorporado al inicio del siglo 18 por quienes ser\'an considerados luego los fundadores de la teor\'ia de la probabilidad~\cite{jaynes1984-bayesianBackground}.
 %
-Tres siglos despu\'es, luego que se deriva la teor\'ia de la informaci\'on a partir de la aplicaci\'on estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entrop\'ia} como medida de la tasa de informaci\'on temporal, se generaliza finalmente el concepto de \emph{honestidad} como máxima entrop\'ia dada la informaci\'on disponible (MaxEnt)~\cite{Jaynes2003}.
+Tres siglos despu\'es, luego que se deriva la teor\'ia de la informaci\'on a partir de la aplicaci\'on estricta de las reglas de la probabilidad y se define finalmente el concepto de \emph{entrop\'ia} como medida de la tasa de informaci\'on temporal, se generaliza finalmente el concepto de \emph{honestidad} como m\'axima entrop\'ia dada la informaci\'on disponible (MaxEnt)~\cite{Jaynes2003}.
 %
 \begin{quotation}
 The essence of ``honesty'' or ``objectivity'' demands that we take into account all the evidence we have, not just some arbitrarily chosen subset of it. Any such choice would amount either to ignoring evidence that we have, or presuming evidence that we do not have.
 \end{quotation}
 %
-En este sentido la distribuci\'on de probabilidad honesta es la que no afirma más de lo que se sabe (maximizando incertidumbre) sin dejar de decir todo lo que s\'i se sabe (incorporando toda la informaci\'on disponible).
+En este sentido la distribuci\'on de probabilidad honesta es la que no afirma m\'as de lo que se sabe (maximizando incertidumbre) sin dejar de decir todo lo que s\'i se sabe (incorporando toda la informaci\'on disponible).
 %
-Todas las distribuciones de probabilidad de la familia exponencial maximizan entrop\'ia dada la informaci\'on de los parámetros (Uniforme$(x|a,b)$, Bernoulli$(x|p)$, Beta$(x|\alpha, \beta)$, Gaussiana$(x|\mu, \sigma^2)$, \dots).
+Todas las distribuciones de probabilidad de la familia exponencial maximizan entrop\'ia dada la informaci\'on de los par\'ametros (Uniforme$(x|a,b)$, Bernoulli$(x|p)$, Beta$(x|\alpha, \beta)$, Gaussiana$(x|\mu, \sigma^2)$, \dots).
 %
 Se ha demostrado tambi\'en que las soluciones que encuentra la f\'isica estad\'istica en el siglo 19 cumplen con este principio~\cite{jaynes1957-I, jaynes1957-II}.
 %
-Lo interesante es que este principio ya está codificado en la propia regla del producto de la teor\'ia de la probabilidad.
+Lo interesante es que este principio ya est\'a codificado en la propia regla del producto de la teor\'ia de la probabilidad.
 %
 Lo que esperamos de una probabilidad \emph{a priori} es justamente que incorpore toda la informaci\'on $M$ que tenemos antes de comenzar a ver los datos $D$~\cite{Jaynes2003}.
 %
@@ -1164,21 +1164,21 @@ P(DH|M) = P(D|HM)P(H|M) = P(H|DM)P(D|M)
 \end{align}
 \end{quotation}
 %
-Luego, para determinar la probabilidad \emph{a priori} $P(H|M)$ necesitamos definir con precisi\'on cuál es la informaci\'on previa $M$.
+Luego, para determinar la probabilidad \emph{a priori} $P(H|M)$ necesitamos definir con precisi\'on cu\'al es la informaci\'on previa $M$.
 %
 Generalmente $M$ representa el modelo causal, pero en principio $M$ incluye el sistema completo de restricciones que utilizamos como informaci\'on previa.
 %
-La secci\'on actual,~ \emph{\nameref{sec:acuerdos_intersubjetivos}}, terminará con la evaluaci\'on honesta de los modelos causales alternativos.
+La secci\'on actual,~ \emph{\nameref{sec:acuerdos_intersubjetivos}}, terminar\'a con la evaluaci\'on honesta de los modelos causales alternativos.
 %
 Pero antes de ello, veamos un ejemplo concreto.
 
 % Parrafo
 
-Supongamos que solo sabemos que el regalo está escondido detrás de alguna de las tres cajas y no tenemos informaci\'on adicional que nos haga preferir alguna caja por sobre otra.
+Supongamos que solo sabemos que el regalo est\'a escondido detr\'as de alguna de las tres cajas y no tenemos informaci\'on adicional que nos haga preferir alguna caja por sobre otra.
 %
 En este contexto no es dif\'icil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
 %
-Esta distribuci\'on de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial} y no casualmente es la distribuci\'on que maximiza la incertidumbre (o entrop\'ia) entre todas las opciones que incorporan la \'unica informaci\'on disponible: el regalo está en alguna de las tres cajas.
+Esta distribuci\'on de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial} y no casualmente es la distribuci\'on que maximiza la incertidumbre (o entrop\'ia) entre todas las opciones que incorporan la \'unica informaci\'on disponible: el regalo est\'a en alguna de las tres cajas.
 %
 Para derivar las distribuciones de probabilidad que maximizan la entrop\'ia dada las restricciones disponible se suele usar utilizan los multiplicadores de Lagrange.
 %
@@ -1204,7 +1204,7 @@ A esta informaci\'on inicial la llamaremos Modelo $A$, $M_A$.
 %
 Necesitamos entonces la distribuci\'on de probabilidad honesta $P(H_R,H_C,H_S|M_A)$.
 %
-Para simplificar el problema supondremos además que siempre elegimos la caja 1, reduciendo el problema a solo dos hip\'otesis, $P(H_R,H_S|c_1, M_A)$.
+Para simplificar el problema supondremos adem\'as que siempre elegimos la caja 1, reduciendo el problema a solo dos hip\'otesis, $P(H_R,H_S|c_1, M_A)$.
 %
 El sistema de restricciones de los modelos se suele representar mediante lo que se conoce como \emph{redes bayesianas}.
 %
@@ -1278,7 +1278,7 @@ En la figura~\ref{fig:modelo_causal_2} se especifica el modelo $M_B$ de forma gr
 %
 En la notaci\'on de redes bayesianas, las hip\'otesis que finalmente son observadas (los datos) se agregan como nodos pintados de gris.
 %
-Es el caso de la hip\'otesis $c_1$, que aparece en la representaci\'on gráfica del modelo $M_B$.
+Es el caso de la hip\'otesis $c_1$, que aparece en la representaci\'on gr\'afica del modelo $M_B$.
 %
 En el modelo $M_A$ podr\'iamos haber agregado el nodo, pero por simplicidad no lo hicimos debido a que seg\'un el modelo $M_A$ la hip\'otesis $C$ no interact\'ua con el resto de las hip\'otesis.
 
@@ -1304,7 +1304,7 @@ En el resto de los casos, cuando la elecci\'on de la caja no coincide con la pos
 
 Aplicando el principio de indiferencia, la distribuci\'on honesta surge de dividir la probabilidad en partes iguales en cada una de las bifurcaciones de los universos paralelos que producen los modelos alterativos.
 %
-En la figura~\ref{fig:caminos} se representan el árbol de los posibles universos paralelos baja  cada uno de los modelos.
+En la figura~\ref{fig:caminos} se representan el \'arbol de los posibles universos paralelos baja  cada uno de los modelos.
 %
 Cada camino que va de la ra\'iz a una de las hojas representa un universo posible.
 %
@@ -1415,7 +1415,7 @@ Y las bifurcaciones contienen una fracci\'on que representa c\'omo se divide la 
 
 Luego, para calcular la probabilidad conjunta de que el regalo se encuentre en la caja $i$ y se nos muestre la caja $j$, $P(r_i, s_j|c_1,M_k)$, debemos multiplicar todas las fracciones presentes en cada uno de los caminos que van de la ra\'iz a las hojas.
 %
-Los caminos no presentes en el árbol de universos paralelos se les debe asignar probabilidad 0 debido a que son caminos imposibles dadas las restricciones del modelo.
+Los caminos no presentes en el \'arbol de universos paralelos se les debe asignar probabilidad 0 debido a que son caminos imposibles dadas las restricciones del modelo.
 %
 La probabilidad asignada a cada uno de los universos paralelos (o combinaciones) se resume en la tabla~\ref{tab:creencia_conjunta}.
 %
@@ -1445,7 +1445,7 @@ Una vez calculada la distribuci\'on de probabilidad conjunta honesta, podemos re
 %
 La regla de la suma establece que cualquier creencia marginal honesta puede ser obtenida integrando la creencia conjunta.
 %
-Por ejemplo, para obtener la probabilidad de la hip\'otesis $s_j$ debemos recuperar las probabilidades que asignamos a todos los universos paralelos en los que esa hip\'otesis elemental está presente,
+Por ejemplo, para obtener la probabilidad de la hip\'otesis $s_j$ debemos recuperar las probabilidades que asignamos a todos los universos paralelos en los que esa hip\'otesis elemental est\'a presente,
 %
 \begin{equation} \label{eq:creencia_marginal}
 \begin{split}
@@ -1497,12 +1497,12 @@ En ambos modelos, la probabilidad marginal sobre la posici\'on del regalo es $1/
 \caption{$P(r_i|s_2,c_1,M_k)$}
 \label{fig:posterior_regalo}
 \end{subfigure}
-\caption{En la figura~\ref{fig:prior_regalo} mostramos la distribuci\'on de probabilidad marginal de la hip\'otesis $R$ a priori. La cerradura representa la restricci\'on $c_1$. En ambos modelos el prior sobre el regalo es el mismo. En la figura \ref{fig:posterior_regalo} nos preguntamos cuál es la distribuci\'on de probabilidad honesta sobre la posici\'on del regalo luego de observar que la caja 2 está vac\'ia.}
+\caption{En la figura~\ref{fig:prior_regalo} mostramos la distribuci\'on de probabilidad marginal de la hip\'otesis $R$ a priori. La cerradura representa la restricci\'on $c_1$. En ambos modelos el prior sobre el regalo es el mismo. En la figura \ref{fig:posterior_regalo} nos preguntamos cu\'al es la distribuci\'on de probabilidad honesta sobre la posici\'on del regalo luego de observar que la caja 2 est\'a vac\'ia.}
 \end{figure}
 
 % Parrafo
 
-Para calcular la distribuci\'on de probabilidad honesta luego de observar que la caja dos está vac\'ia, debemos aplicar la regla del producto.
+Para calcular la distribuci\'on de probabilidad honesta luego de observar que la caja dos est\'a vac\'ia, debemos aplicar la regla del producto.
 %
 La regla del producto simplemente codifica el principio de coherencia pues para calcularla nos debemos quedar \'unicamente con la creencia previa que siguen siendo compatibles con el observable, $P(r_i, s_2)$, esto es la fila de la distribuci\'on de probabilidad conjunta a priori correspondiente a la hip\'otesis elemental $s_2$.
 %
@@ -1621,11 +1621,11 @@ Lo que hemos hecho no es otra cosa que aplicar el teorema de Bayes,
 
 Computar las distribuciones de probabilidad honesta dado los modelos no tendr\'ia ning\'un valor si la elecci\'on del modelo quedara librada al arbitrio de las subjetividades individuales.
 %
-Y justamente, cuando tenemos más de un sistemas de restricciones (o modelo), estamos en presencia de una hip\'otesis de investigaci\'on adicional $H_M = \{M_A, M_B\}$ que puede ser evaluada mediante la aplicaci\'on estricta de las reglas de la probabilidad.
+Y justamente, cuando tenemos m\'as de un sistemas de restricciones (o modelo), estamos en presencia de una hip\'otesis de investigaci\'on adicional $H_M = \{M_A, M_B\}$ que puede ser evaluada mediante la aplicaci\'on estricta de las reglas de la probabilidad.
 %
-% ¿Cuál de los dos modelos debemos usar?
+% ¿Cu\'al de los dos modelos debemos usar?
 % %
-% ¿Cuál de los dos posterior debemos reportar?
+% ¿Cu\'al de los dos posterior debemos reportar?
 % %
 % En la formulaci\'on del teorema de Bayes inicial~\eqref{eq:teorema_bayes} solo hay hip\'otesis y datos.
 %
@@ -1739,7 +1739,7 @@ P(\text{Datos}|\text{Modelo},\text{Restricciones}) = \prod_{t=1}^N P(s_{jt}|M,c_
 %
 Debido a que los datos fueron generados usando la distribuci\'on de probabilidad honesta del modelo $M_B$, los datos respetan tambi\'en la restricci\'on entre hip\'otesis del modelo $M_A$.
 %
-Esto significa que ninguno de los modelos observarán eventos imposibles, es decir, la productoria \eqref{eq:evidencia_monty_hall} no contiene ning\'un cero.
+Esto significa que ninguno de los modelos observar\'an eventos imposibles, es decir, la productoria \eqref{eq:evidencia_monty_hall} no contiene ning\'un cero.
 %
 En particular, las predicciones que hace el modelo $M_A$ son siempre las mismas debido que no importa cual sea la pista $s_{jt}$ y la posici\'on del regalo $r_{it}$, siempre vale $P(s_{jt}|M_A,c_{1t}) = 1/3$ y $P(r_{it}|s_{jt},M_A,c_{1t}) = 1/2$.
 %
@@ -1767,17 +1767,17 @@ Este mismo m\'etodo ser\'a usado para evaluar modelos a lo largo de la tesis.
 
 \subsection{Consecuencias de la ruptura de las reglas de la probabilidad}
 
-El obstáculo hist\'orico de la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del las hip\'otesis de investigaci\'on (o experimento) $\mathcal{H} = \{H_1, H_2, \dots, H_N\}$.
+El obst\'aculo hist\'orico de la aplicaci\'on estricta de las reglas de la probabilidad ha sido el costo computacional asociado a la evaluaci\'on completa del las hip\'otesis de investigaci\'on (o experimento) $\mathcal{H} = \{H_1, H_2, \dots, H_N\}$.
 %
-En el caso más simple, con hip\'otesis de investigaci\'on binarias $|H_i|=2$, la cantidad de combinaciones (o universos paralelos) a evaluar, $P(h_1, h_2, \dots h_N)$, crece de forma exponencial $2^N$.
+En el caso m\'as simple, con hip\'otesis de investigaci\'on binarias $|H_i|=2$, la cantidad de combinaciones (o universos paralelos) a evaluar, $P(h_1, h_2, \dots h_N)$, crece de forma exponencial $2^N$.
 %
 No solo hay que asignar probabilidades iniciales a cada una de esas combinaciones de hip\'otesis elementales.
 %
 Cuando observamos alguna de las hip\'otesis elementales, se debe incorporar la informaci\'on que transmite a trav\'es del grado de grado de sorpresa (o predicci\'on a priori) asociada a cada una de la $2^{N-1}$ combinaci\'on de hip\'otesis elementales no observadas.
 %
-En casos más complejos, que involucran además preguntas (o hip\'otesis) de investigaci\'on continuas ni siquiera es posible aplicar la regla de la suma cuando sus integrales no tienen soluci\'on anal\'itica.
+En casos m\'as complejos, que involucran adem\'as preguntas (o hip\'otesis) de investigaci\'on continuas ni siquiera es posible aplicar la regla de la suma cuando sus integrales no tienen soluci\'on anal\'itica.
 %
-El famoso modelo lineal es un caso paradigmático en la historia de la probabilidad, pues sus integrales tienen soluci\'on anal\'itica pero que no pudo ser evaluado correctamente hasta el desarrollo de la computaci\'on moderna debido al costo computacional asociado a la inversi\'on de matrices.
+El famoso modelo lineal es un caso paradigm\'atico en la historia de la probabilidad, pues sus integrales tienen soluci\'on anal\'itica pero que no pudo ser evaluado correctamente hasta el desarrollo de la computaci\'on moderna debido al costo computacional asociado a la inversi\'on de matrices.
 
 %
 
@@ -1793,7 +1793,7 @@ y_i \leftarrow \sum_{d = 0}^{D} w_d x_d^d \hspace{1cm} \text{$i \in \{0, \dots,N
 %
 La flecha representa la dependencia causal.
 %
-Esta notaci\'on, adoptada en el área de Inferencia Bayesiana Causal~\cite{pearl2009-causality}, involucra la idea de que cambios en los valores de las causas producen cambios en los valores de las consecuencias, pero no a la inversa.
+Esta notaci\'on, adoptada en el \'area de Inferencia Bayesiana Causal~\cite{pearl2009-causality}, involucra la idea de que cambios en los valores de las causas producen cambios en los valores de las consecuencias, pero no a la inversa.
 %
 Las hip\'otesis de investigaci\'on (o experimento) de un modelo causal lineal son $\mathcal{H}=\{Y_0, \dots , Y_N, W_0, \dots, W_D\}$, con $Y_0=\dots=Y_N=W_0=\dots = W_D = (-\infty, \infty)$.
 %
@@ -1805,7 +1805,7 @@ A trav\'es de la observaci\'on de las consecuencias $Y_0$ a $Y_{N-1}$ tenemos qu
 
 % Parrafo
 
-Al modelo lineal, se le agrega un elemento más.
+Al modelo lineal, se le agrega un elemento m\'as.
 %
 Los valores observados $y_i$ se generan con un ruido aleatorio que tiene media 0 y desv\'io $\beta$.
 %
@@ -1825,7 +1825,7 @@ La distribuci\'on de probabilidad a priori de las causas $W_i$ son,
 p(w_d|\sigma,M_D) = \N(w_d|0, \sigma^2) \hspace{1cm} \text{$d \in \{0,\dots,D\}$}
 \end{equation}
 %
-En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notaci\'on de redes bayesianas que representan a las hip\'otesis ocultas con c\'irculos blancos, las hip\'otesis observadas con c\'irculos grises, los parámetros del modelo con puntos negros, y las dependencias causales mediante flechas.
+En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notaci\'on de redes bayesianas que representan a las hip\'otesis ocultas con c\'irculos blancos, las hip\'otesis observadas con c\'irculos grises, los par\'ametros del modelo con puntos negros, y las dependencias causales mediante flechas.
 %
 \begin{figure}[ht!]
     \centering
@@ -1870,7 +1870,7 @@ Sea $\bm{w} \in (W_0, \dots, W_D)$ un vector que contiene las hip\'otesis elemen
 %
 La distribuci\'on de probabilidad a posteriori de las causas, $p(\bm{w}|\bm{y}, \bm{x}, \sigma, M_D)$, y la predicci\'on de la pr\'oxima consecuencia $p(y_{N}|x_{N}, \bm{w}, \beta, M_D)$, ambas son distribuciones Gaussianas conocidas (cap\'itulo 2~\cite{Bishop2006}).
 %
-Sin embargo, ante la dificultad para resolver la inferencia del modelo lineal aplicando estrictamente las reglas de la probabilidad, durante el siglo 20 se adopt\'o el hábito de seleccionar una \'unica hip\'otesis elemental para cada hip\'otesis de investigaci\'on no observable en base a alg\'un criterio ad-hoc, como por ejemplo \emph{máxima verosimilitud}.
+Sin embargo, ante la dificultad para resolver la inferencia del modelo lineal aplicando estrictamente las reglas de la probabilidad, durante el siglo 20 se adopt\'o el h\'abito de seleccionar una \'unica hip\'otesis elemental para cada hip\'otesis de investigaci\'on no observable en base a alg\'un criterio ad-hoc, como por ejemplo \emph{m\'axima verosimilitud}.
 %
 \begin{equation*}
  \underset{\bm{w}}{\text{ max }} p(\bm{y} | \bm{x}, \bm{w}, \beta, M_D)
@@ -1890,13 +1890,13 @@ p(y_N|x_N, \beta, M_D)
 %
 En vez de predecir el valor de la hip\'otesis a\'un no observada $y_N$ con la contribuci\'on de todas las hip\'otesis no observables $\bm{w}$ mediante la aplicaci\'on estricta de la regla de la suma, estos enfoques aproximan la predicci\'on de $y_N$ mediante la selecci\'on del vector de hip\'otesis elementales $\bm{w}$ que maximiza la funci\'on de costo ad-hoc sobre los datos de entrenamiento.
 %
-A diferencia de la predicci\'on realizada mediante la regla de la suma, las predicciones realizadas con un \'unico vector $\bm{w}$ de hip\'otesis elementales son más inestables, esto es tiene mayor tendencia a asignar a priori probabilidad cercana a cero a la hip\'otesis elemental $y_N$ que finalmente se hace observable.
+A diferencia de la predicci\'on realizada mediante la regla de la suma, las predicciones realizadas con un \'unico vector $\bm{w}$ de hip\'otesis elementales son m\'as inestables, esto es tiene mayor tendencia a asignar a priori probabilidad cercana a cero a la hip\'otesis elemental $y_N$ que finalmente se hace observable.
 %
-Además, la ruptura de la aplicaci\'on estricta de las reglas de la probabilidad impide evaluar correctamente los modelos alternativos.
+Adem\'as, la ruptura de la aplicaci\'on estricta de las reglas de la probabilidad impide evaluar correctamente los modelos alternativos.
 
 % Parrafo
 
-Por ejemplo, supongamos que tenemos un conjunto de datos generado a partir de una funci\'on sinoidal con un ruido aleatorio que tiene desv\'io estándar $\beta$ y media nula.
+Por ejemplo, supongamos que tenemos un conjunto de datos generado a partir de una funci\'on sinoidal con un ruido aleatorio que tiene desv\'io est\'andar $\beta$ y media nula.
 %
 \begin{equation*}
 p(y_i|x_i,\beta) = \N(y_i \,| \, \text{sen}(x_i), \beta^2)  \hspace{1cm} \text{$i \in \{0,\dots,N-1\}$}
@@ -1904,15 +1904,15 @@ p(y_i|x_i,\beta) = \N(y_i \,| \, \text{sen}(x_i), \beta^2)  \hspace{1cm} \text{$
 %
 En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal mediante una l\'inea punteada, y las observaciones $y_0$ a $y_{N-1}$ mediante puntos negros.
 %
-Supongamos además que tenemos 10 modelos lineales alternativos $M_D$, con $D \in \{0, \dots, 9\}$.
+Supongamos adem\'as que tenemos 10 modelos lineales alternativos $M_D$, con $D \in \{0, \dots, 9\}$.
 %
-Una pregunta básica que quisi\'eramos responder es, ¿cuál de todos los modelos lineales ``ajusta'' mejor los datos?
+Una pregunta b\'asica que quisi\'eramos responder es, ¿cu\'al de todos los modelos lineales ``ajusta'' mejor los datos?
 %
 Los modelos lineales de grado 0 a 2 no tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$, mientras que todos los modelos de grado mayor o igual a grado 3 s\'i tienen la flexibilidad suficiente para ``ajustar'' (o acercarse) a la sinoidal en el rango $x_i \in [-\pi, \pi]$.
 %
 Sin la posibilidad de aplicar estrictamente las reglas de la probabilidad, ¿qu\'e significa que un modelo sea mejor que otro?
 %
-El siguiente ejemplo está presente en el cap\'itulo 3 del libro de Bishop~\cite{Bishop2006}.
+El siguiente ejemplo est\'a presente en el cap\'itulo 3 del libro de Bishop~\cite{Bishop2006}.
 
 %
 
@@ -1936,7 +1936,7 @@ Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre 
   \begin{subfigure}[t]{0.32\textwidth}
   \centering
   \includegraphics[width=0.9\textwidth]{figures/pdf/model_selection_maxLikelihood.pdf}
-  \caption{Máxima verosimilitud}
+  \caption{M\'axima verosimilitud}
   \label{fig:model_selection_maxLikelihood}
   \end{subfigure}
   \begin{subfigure}[t]{0.32\textwidth}
@@ -1946,8 +1946,8 @@ Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre 
   \label{fig:model_selection_maxApriori_online}
   \end{subfigure}
   \caption{Modelos lineal de grado $D=0$ a $D=9$ ajustados por m\'axima verosimilitud a datos generados con una sinodal, $\N(y_i \,| \, \text{sen}(x_i), \beta^2)$ en el rango $[-\pi,\pi]$.
-  En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal con l\'inea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (l\'inea roja) y el modelo grado 9 (l\'inea celeste).
-  En la figura~\ref{fig:model_selection_maxLikelihood} se muestra el valor de máxima verosimilitud obtenido por cada uno de los modelos.
+  En la figura~\ref{fig:model_selection_OLS} se grafica la sinoidal con l\'inea punteada, y los ajustes obtenidos por m\'axima verosimilitud de los modelos, destacando el modelo de grado 3 (l\'inea roja) y el modelo grado 9 (l\'inea celeste).
+  En la figura~\ref{fig:model_selection_maxLikelihood} se muestra el valor de m\'axima verosimilitud obtenido por cada uno de los modelos.
   En la figura~\ref{fig:model_selection_maxApriori_online} se muestra la probabilidad de los modelo aproximando cada una de las predicciones individuales a priori mediante la ecuaci\'on ad-hoc \eqref{eq:prediccion_ad_hoc}, usando como dato de entrenamiento en cada paso solo los datos observados previamente.
    }
   \label{fig:overfitting}
@@ -1963,7 +1963,7 @@ En la figura~\ref{fig:model_selection_maxApriori_online} se puede observar que e
 %
 Podr\'ia pensarse que este procedimiento de entrenamiento en l\'inea resuelve el problema del sobreajuste en tanto penaliza los modelos que tienen mayor complejidad de la necesaria.
 %
-Sin embargo, hemos ``sobreajustado'' nuevamente los datos debido a que hemos seleccionado un \'unico modelo que no será capaz de predecir correctamente datos que se encuentren fuera del rango $x_i \in [-\pi, \pi]$.
+Sin embargo, hemos ``sobreajustado'' nuevamente los datos debido a que hemos seleccionado un \'unico modelo que no ser\'a capaz de predecir correctamente datos que se encuentren fuera del rango $x_i \in [-\pi, \pi]$.
 %
 %Con los criterios de selecci\'on de hip\'otesis ad-hoc aparece siempre, por alg\'un lado, las consecuencias negativas de la ruptura de la aplicaci\'on estricta de las reglas de la probabilidad.
 
@@ -2025,11 +2025,11 @@ Sin embargo, hemos ``sobreajustado'' nuevamente los datos debido a que hemos sel
 
 % Parrafo
 
-?`Será que la aplicaci\'on estricta de las reglas de la probabilidad produce sobreajuste?
+?`Ser\'a que la aplicaci\'on estricta de las reglas de la probabilidad produce sobreajuste?
 %
 Los modelos lineales que estamos implementando tienen soluci\'on anal\'itica, por lo que hoy en d\'ia podemos calcular la predicci\'on exacta que hacen los modelos $P(\bm{y}|\bm{x}, \bm{w}, \beta, \sigma, M_D)$, y calcular entonces el posterior exacto de los modelos $P(M_D|\bm{y},\bm{x}, \beta, \sigma)$.
 %
-En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica el máximo valor de la distribuci\'on posterior (o predicci\'on) de la hip\'otesis a\'un no observada $y_N$ para cada uno de los modelos (sin su incertidumbre asociada), y se grafica nuevamente la sinoidal (l\'inea punteada) y los datos (puntos negros).
+En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica el m\'aximo valor de la distribuci\'on posterior (o predicci\'on) de la hip\'otesis a\'un no observada $y_N$ para cada uno de los modelos (sin su incertidumbre asociada), y se grafica nuevamente la sinoidal (l\'inea punteada) y los datos (puntos negros).
 %
 En la figura~\ref{fig:model_selection_evidence} se reporta la probabilidad a posteriori sobre el conjunto de modelos alternativos en base a los datos observados.
 
@@ -2059,7 +2059,7 @@ Los \'unicos modelos rechazados son los que tienen menor complejidad de la neces
   \label{fig:model_selection_evidence}
   \end{subfigure}
   \caption{Modelos lineal de grado $D=0$ a $D=9$ ajustados mediante la aplicaci\'on estricta de las reglas de la probabilidad a datos generados con una sinodal, $\N(y_i \,| \, \text{sen}(x_i), \beta^2)$ en el rango $[-\pi,\pi]$.
-  En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica la sinoidal con l\'inea punteada, y los ajustes obtenidos por máxima verosimilitud de los modelos, destacando el modelo de grado 3 (l\'inea roja) y el modelo grado 9 (l\'inea celeste).
+  En la figura~\ref{fig:model_selection_MAP_non-informative} se grafica la sinoidal con l\'inea punteada, y los ajustes obtenidos por m\'axima verosimilitud de los modelos, destacando el modelo de grado 3 (l\'inea roja) y el modelo grado 9 (l\'inea celeste).
   En la figura~\ref{fig:model_selection_evidence} se muestra la probabilidad de los modelos calculada mediante la aplicaci\'on estricta de las reglas de la probabilidad.}
   \label{fig:evaluacion_de_modelo}
 \end{figure}
@@ -2078,7 +2078,7 @@ El modelo complejo (grado $D=9$) tambi\'en concentra la mayor parte de su probab
 
 % Parrafo
 
-El balance naturalmente de las reglas de la probabilidad está relacionado con el hecho de que las distribuciones de probabilidad debe sumar o integrar 1.
+El balance naturalmente de las reglas de la probabilidad est\'a relacionado con el hecho de que las distribuciones de probabilidad debe sumar o integrar 1.
 %
 Esto hace que los modelos que m\'as complejos, al ser m\'as flexibles, distribuyan la predicci\'on en un espacio m\'as amplio que los modelos m\'as simples.
 %
@@ -2096,7 +2096,7 @@ Y dependiendo de d\'onde caiga el siguiente dato, hay una regi\'on en la que gan
 
 A diferencia de los enfoque basados en criterios ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad realiza las predicciones con la contribuci\'on de todas las hip\'otesis $\bm{w}$.
 %
-Si empezamos a ver datos por fuera del rango $x_i \in [-\pi, \pi]$, los modelos más complejos están a\'un disponibles para predecirlos.
+Si empezamos a ver datos por fuera del rango $x_i \in [-\pi, \pi]$, los modelos m\'as complejos est\'an a\'un disponibles para predecirlos.
 %
 \begin{equation*}
 \begin{split}
@@ -2123,7 +2123,7 @@ The system must be designed to operate for each each possible selection, not jus
 %
 Como seres biol\'ogicos nos comunicamos con la realidad mediante nuestras percepciones y acciones.
 %
-%Quisi\'eramos que el mensaje que recibimos de la realidad sea lo más preciso posible.
+%Quisi\'eramos que el mensaje que recibimos de la realidad sea lo m\'as preciso posible.
 Debido a que no tenemos acceso directo a la realidad, debemos inferirla a partir de los mensajes distorsionados e indirectos que percibimos.
 %
 Las soluciones a este problema se suelen dividir en dos tipos~\cite{Mackay2003}.
@@ -2132,17 +2132,21 @@ Una soluci\'on f\'isica, como ``acercarse para escuchar mejor''.
 %
 Y una soluci\'on inferencial, que ser\'ia simplemente interpretar la se\~nal con ruido que recibimos.
 %
-Sin embargo, la soluci\'on f\'isica tambi\'en requiere resolver un proceso de inferencia pues en definitiva no sabemos a priori cuál de todas las acciones alternativas mejoran efectivamente la comunicaci\'on con la realidad.
+Sin embargo, la soluci\'on f\'isica tambi\'en requiere resolver un proceso de inferencia pues en definitiva no sabemos a priori cu\'al de todas las acciones alternativas mejoran efectivamente la comunicaci\'on con la realidad.
 %
 En esta secci\'on revisaremos algunos conceptos relativos a la operacionalizaci\'on de datos en las ciencias emp\'iricas.
 
 \subsection{Base emp\'irica e hip\'otesis te\'oricas}
 
+<<<<<<< HEAD
 En la sección \emph{\nameref{sec:teoria_elemental_probabilidad}} definimos el conjunto de datos como un subconjunto arbitrario de hipótesis elementales
 
 
 
 El matemático y epistemólogo de esta casa de estudios, Gregorio Klimovsky, llamó \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
+=======
+El matem\'atico y epistem\'ologo Gregorio Klimovsky, em\'erito de esta casa de estudios, llam\'o \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos moment\'aneamente) por toda una comunidad~\cite{klimovsky1994-desventuras}.
+>>>>>>> 768f9da3f (Tesis Landfried: detalles en la parte de probabilidad)
 %
 La notación de la Teor\'ia de la Probabilidad la base emp\'irica se expresa expl\'icitamente a través del condicional, $P(\text{Hipótesis}|\text{Datos})$.
 %
@@ -2158,11 +2162,11 @@ En la jerga de la Teor\'ia de la Probabilidad (o de la Informaci\'on) se les lla
 %
 Sin embargo, el conjunto de hip\'otesis de investigaci\'on $\mathcal{H}$ re\'une tanto a las hip\'otesis ocultas (preguntas abiertas) $H \subseteq \mathcal{H}$, como las hip\'otesis de base emp\'irica (o informaci\'on inicial) $I \subset \mathcal{H}$, con $I \cap H = \emptyset$ y $I \cup H = \mathcal{H}$.
 %
-El conjunto de hip\'otesis de base emp\'irica está compuesto por lo que llamamos restricciones formales $R \subseteq I$, por datos $D \subseteq I$, o por preguntas cerradas $C \subseteq I$.
+El conjunto de hip\'otesis de base emp\'irica est\'a compuesto por lo que llamamos restricciones formales $R \subseteq I$, por datos $D \subseteq I$, o por preguntas cerradas $C \subseteq I$.
 %
 En todos los casos, las hip\'otesis de base emp\'irica $I$ tienen concentran la probabilidad en una \'unica hip\'otesis elemental, $\forall \, I_i \in I \text{cardinal}( \{h | h \in I_i, P(h)=1 \}=1$.
 %
-En cambio, las hip\'otesis ocultas $H$ distribuyen la probabilidad entre más de una hip\'otesis elemental, $\forall \,H_i \in H  \ \text{cardinal}( \{h | h \in H_i, P(h)=1 \}=0$.
+En cambio, las hip\'otesis ocultas $H$ distribuyen la probabilidad entre m\'as de una hip\'otesis elemental, $\forall \,H_i \in H  \ \text{cardinal}( \{h | h \in H_i, P(h)=1 \}=0$.
 
 % Parrafo
 
