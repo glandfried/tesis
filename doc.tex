@@ -1019,7 +1019,7 @@ Por ejemplo, supongamos que tenemos tres cajas \emph{exactamente} iguales y una 
 %
 Una vez escondido, el regalo permanece en la misma caja, su posición no es aleatoria.
 %
-En este escenario tenemos tres hipótesis elementales $r_i \equiv \emph{el regalo se encuentra en la caja }i$, siendo el conjunto de hipótesis elementales $\textbf{R} = \{r_1, r_2, r_3\}$.
+En este escenario tenemos tres hipótesis elementales $r_i \equiv \emph{el regalo se encuentra en la caja }i$, siendo el conjunto de hipótesis elementales $H_R = \{r_1, r_2, r_3\}$.
 %
 En la figura~\ref{eq:campo_de_probabilidades_regalo} representamos las cajas con cuadrados negros con la probabilidad $P(r_i)$ de cada una de las hipótesis elementales.
 %
@@ -1168,23 +1168,23 @@ P(DH|M) = P(D|HM)P(H|M) = P(H|DM)P(D|M)
 %
 Luego, para determinar la probabilidad \emph{a priori} $P(H|M)$ necesitamos definir con precisión cuál es la información previa $M$.
 %
-Generalmente $M$ representa el modelo causal, pero en principio $M$ incluye todas las restricciones que utilizamos como información previa.
+Generalmente $M$ representa el modelo causal, pero en principio $M$ incluye el sistema completo de restricciones que utilizamos como información previa.
 %
-La sección actual,~\nameref{sec:acuerdos_intersubjetivos}, termina justamente con la evaluación honesta de los modelos causales alternativos.
+La sección actual,~ \emph{\nameref{sec:acuerdos_intersubjetivos}}, terminará con la evaluación honesta de los modelos causales alternativos.
+%
+Pero antes de ello, veamos un ejemplo concreto.
 
 % Parrafo
 
-Comencemos entonces definiendo precisamente cuál es la información previa de nuestro ejemplo $M$.
-%
 Supongamos que solo sabemos que el regalo está escondido detrás de alguna de las tres cajas y no tenemos información adicional que nos haga preferir alguna caja por sobre otra.
 %
 En este contexto no es difícil estar de acuerdo en que debemos dividir la probabilidad en partes iguales para expresar de forma honesta el estado actual de nuestro conocimiento.
 %
-Esta distribución de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial} y no casualmente es la distribución que maximiza la incertidumbre entre todas las opciones que incorporan la única información disponible: el regalo está en alguna de las tres cajas.
+Esta distribución de probabilidad se corresponde con la figura~\ref{fig:preferencia_parcial} y no casualmente es la distribución que maximiza la incertidumbre (o entropía) entre todas las opciones que incorporan la única información disponible: el regalo está en alguna de las tres cajas.
 %
 Para derivar las distribuciones de probabilidad que maximizan la entropía dada las restricciones disponible se suele usar utilizan los multiplicadores de Lagrange.
 %
-Aquí nos bastó con utilizar el viejo principio filosófico de indiferencia.
+Aquí nos bastó con utilizar el viejo principio filosófico de indiferencia, que suele corresponderse con la intuición común.
 
 % Parrafo
 
@@ -1194,80 +1194,80 @@ Supongamos que se nos pide que elijamos una caja y alguien que conoce la ubicaci
 %
 Se incorporan entonces las hipótesis elementales $c_i \equiv \text{ ``elegimos la caja $i$''}$ y $s_i \equiv \text{ ``muestran el interior de la caja $i$''}$.
 %
-Luego, nuestro problema de investigación (o experimento) $\mathcal{H}$ consiste de tres hipótesis, $\mathcal{H} = \{R, C, S\}$, con $R=\{r_1, r_2, r_3\}$, $C=\{c_1, c_2, c_3\}$ y $S=\{s_1, s_2, s_3\}$.
+Luego, nuestro problema de investigación (o experimento) $\mathcal{H}$ consiste de tres hipótesis, $\mathcal{H} = \{H_R, H_C, H_S\}$, con $H_R=\{r_1, r_2, r_3\}$, $H_C=\{c_1, c_2, c_3\}$ y $H_S=\{s_1, s_2, s_3\}$.
 %
-En la descripción podemos notar que existe la siguiente restricción: si el regalo se encuentra en el caja $i$ no puede ocurrir que se muestre el interior de la caja $i$.
+En la descripción se explicita la siguiente restricción: si el regalo se encuentra en el caja $i$, $r_i$, no puede ocurrir que se muestre el interior de la caja $i$, $s_i$.
 %
-Esto hace que, si el regalo se encuentra en la caja 1, $R=r_1$, no haya preferencia por la ninguna de las hipótesis elementales $s_2$ o $s_3$.
-%
-Y de forma equivalente ocurre en los otros casos $R =r_i$.
+Debido a que no tenemos ninguna otra restricción adicional, si el regalo se encuentra en la caja 1, $r_1$, no hay preferencia por ninguna de las hipótesis elementales $s_2$ o $s_3$ (y de forma equivalente para los otros casos $r_i$).
 
 % Parrafo
 
 A esta información inicial la llamaremos Modelo $A$, $M_A$.
 %
-Necesitamos entonces la distribución de probabilidad honesta $P(R,C,S|M_A)$.
+Necesitamos entonces la distribución de probabilidad honesta $P(H_R,H_C,H_S|M_A)$.
 %
-Para simplificar el problema supondremos además que siempre elegimos la caja 1, reduciendo el problema a solo dos hipótesis, $P(R,S|C=c_1, M_A)$.
+Para simplificar el problema supondremos además que siempre elegimos la caja 1, reduciendo el problema a solo dos hipótesis, $P(H_R,H_S|c_1, M_A)$.
 %
-Las restricciones vinculadas a los modelos suelen representarse mediante lo que se conoce como  \emph{redes bayesianas}.
+El sistema de restricciones de los modelos se suele representar mediante lo que se conoce como \emph{redes bayesianas}.
 %
-Los nodos de esa red son las hipótesis del problema de investigación $\mathcal{H} = \{R, S\}$ y los ejes representan una dependencia entre hipótesis.
+Los nodos de esa red son las hipótesis del problema de investigación $\mathcal{H} = \{H_R, H_S\}$ y los ejes representan una dependencia entre hipótesis.
 %
-En el modelo $A$ hay una dependencia entre la hipótesis $R$ y la hipótesis $S$.
+En el modelo $A$ hay una dependencia entre la hipótesis $H_R$ y la hipótesis $H_S$.
 %
-En la figura~\ref{fig:modelo_causal_1} se especifica de forma gr\'afica la red bayesiana.
+En la figura~\ref{fig:modelo_causal_1} se especifica el sistema de restricciones $M_A$ usando la notación de redes bayesianas.
 
 % Parrafo
 
-Nada nos obliga a suponer que el modelo $A$ es correcto.
+Nada nos obliga a suponer que el modelo $M_A$ es correcto.
 %
-Podemos sospechar, por ejemplo, que existe una dependencia adicional que existe pero no estuvo expresada en la descripción entre la caja que elegimos y la pista que nos dan: si elegimos la caja $i$, $C=c_i$, no puede ocurrir que se muestre el interior de la caja $S=s_i$.
+Podemos sospechar, por ejemplo, que existe una restricción (o dependencia) adicional no explicitada en la descripción entre la elección de la caja $H_c$ y la pista que recibimos $H_S$: si elegimos la caja $i$, $c_i$, no puede ocurrir $s_i$.
 %
-A la información previa que incorporamos además sta restricción le llamamos Modelo $B$.
+Al sistema de información previa $M_A$ que incorpora esta nueva restricción, le llamamos Modelo $M_B$, y tiene asociada la distribución de probabilidad honesta $P(H_R,H_S|c_1,M_B)$.
 %
-Necesitamos entonces la distribución de probabilidad honesta $P(R,S|C=c_1,M_B)$.
+Bajo el sistema de restricciones $M_B$, si el regalo se encuentra en la caja 1, $r_1$, no tenemos información que nos haga preferir ninguna de las hipótesis elementales $s_2$ o $s_3$.
 %
-Esto hace que, si el regalo se encuentra en la caja 1, $r_1$, no tengamos preferencia por ninguna de las hipótesis elementales $s_2$ o $s_3$.
-%
-Pero si el regalo se encuentra en una caja distinta a la que elegimos $r_i \neq r_1$, entonces la persona que muestra el interior de la caja tiene una única opción.
+En cambio, si el regalo se encuentra en una caja distinta a la que elegimos $r_i \neq r_1$, entonces la persona que muestra el interior de la caja tiene una única opción, $s_j$ con $j\neq i$ y $j\neq 1$.
 
 \begin{figure}[ht!]
-  \centering
+   \hspace{0.5cm}
   \begin{subfigure}[b]{0.33\textwidth}
   \centering
   \tikz{
     \node[latent,] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,left=of r] (nr) {\Large $R$} ;
-
+    \node[const,left=of r] (nr) {\Large $H_R$} ;
 
     \node[latent, below=of r, yshift=0.3cm] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const, left=of d] (nd) {\Large $S$};
+    \node[const, left=of d] (nd) {\Large $H_S$};
+
+    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(r_i, s_i|c_1,M_A)=0$} ;
 
     \edge {r} {d};
   }
-  \caption{Modelo A}
+  \caption{Modelo $M_A$}
   \label{fig:modelo_causal_1}
   \end{subfigure}
+  \hspace{1cm}
   \begin{subfigure}[b]{0.33\textwidth}
   \centering
   \tikz{
 
     \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const,above=of d] (nd) {\Large $S$} ;
+    \node[const,above=of d] (nd) {\Large $H_S$} ;
 
     \node[latent, above=of d, yshift=-0.3cm, xshift=-1.2cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,left=of r] (nr) {\Large $\ \ R$} ;
+    \node[const,left=of r] (nr) {\Large $\ \ H_R$} ;
 
     \node[latent, fill=black!30, above=of d, yshift=-0.3cm, xshift=1.2cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
-    \node[const,right=of c] (nc) {\Large $C=c_1$} ;
+    \node[const,right=of c] (nc) {\Large $c_1$} ;
+
+    \node[const,below=of d] (M) {\footnotesize $\forall\, i \in \{1,2,3\} \ \  P(r_i, s_i|c_1,M_A)=0 \land P(r_i, s_1|c_1,M_A)=0$ \hspace{1cm}} ;
 
     \edge {r,c} {d};
   }
-  \caption{Modelo B}
+  \caption{Modelo $M_B$}
   \label{fig:modelo_causal_2}
   \end{subfigure}
-  \caption{Modelos alternativos especificados como redes bayesianas. Los nodos representan las hipótesis, la flecha representa relaciones de dependencia entre hipótesis, y los nodos pintados de gris representan hipótesis ya conocidas (datos).
+  \caption{Modelos alternativos especificados como redes bayesianas. Los nodos blancos representan las hipótesis, la flecha representa relaciones de dependencia entre hipótesis, y los nodos pintados de gris representan hipótesis ya conocidas (datos).
   En el Modelo A~\subref{fig:modelo_causal_1} la pista s\'olo depende de la posici\'on del regalo, no puede mostrarse el interior de la caja que contiene el regalo $P(r_i, s_i|c_1,M_A)=0$. En el Modelo B~\subref{fig:modelo_causal_2} la pista depende de la posici\'on del regalo y la caja elegida previamente, no puede mostrarse el interior de la caja que contiene el regalo, ni la caja elegida $P(r_i, s_i|c_1,M_B)=0$, $P(r_i, s_1|c_1,M_B)=0$.
   }
   \label{fig:modelos_causales}
@@ -1276,17 +1276,17 @@ Pero si el regalo se encuentra en una caja distinta a la que elegimos $r_i \neq 
 
 % Parrafo
 
-En la figura~\ref{fig:modelo_causal_2} se especifica el modelo $B$ de forma gr\'afica a través de una red bayesiana.
+En la figura~\ref{fig:modelo_causal_2} se especifica el modelo $M_B$ de forma gr\'afica a través de una red bayesiana.
 %
 En la notación de redes bayesianas, las hipótesis que finalmente son observadas (los datos) se agregan como nodos pintados de gris.
 %
-Es el caso de la hipótesis $C=c_1$, que aparece en la representación gráfica del modelo $B$.
+Es el caso de la hipótesis $c_1$, que aparece en la representación gráfica del modelo $M_B$.
 %
-En el modelo $A$ podríamos haber agregado el nodo, pero decidimos no hacerlo debido que según el modelo $A$ la hipótesis $C$ no interactúa con el resto de las hipótesis.
+En el modelo $M_A$ podríamos haber agregado el nodo, pero por simplicidad no lo hicimos debido a que según el modelo $M_A$ la hipótesis $C$ no interactúa con el resto de las hipótesis.
 
 % Parrafo
 
-Para calcular las distribuciones de probabilidad honesta, $P(R,S|c_1,M_A)$ y $P(R,S|c_1,M_B)$, analicemos en detalle las restricciones de los modelos.
+Para calcular las distribuciones de probabilidad honesta, $P(H_R,H_S|c_1,M_A)$ y $P(H_R,H_S|c_1,M_B)$, analicemos en detalle las restricciones de los modelos.
 %
 En particular, cada modelo tiene asociado un conjunto de universos posibles.
 %
@@ -1294,11 +1294,11 @@ En ambos modelos, el regalo puede estar indistintamente en cualquier caja.
 %
 Sin embargo, las cajas que se pueden mostrar dependen del modelo y la posición del regalo.
 %
-En el modelo $A$, si el regalo se encuentra en la caja 1, $R=r_1$, la caja que se nos muestra puede ser indistintamente $S=s_2$ o $S=s_3$.
+En el modelo $M_A$, si el regalo se encuentra en la caja 1, $r_1$, la caja que se nos muestra puede ser indistintamente $S=s_2$ o $S=s_3$.
 %
-De forma equivalente, para cada posible posición del regalo $R =r_i$, en el modelo $A$ nos pueden mostrar indistintamente cualquiera de las otras dos cajas.
+De forma equivalente, para cada posible posición del regalo $r_i$, en el modelo $M_A$ nos pueden mostrar indistintamente cualquiera de las otras dos cajas.
 %
-En el modelo $B$, solo cuando la posición de regalo no coincide con la caja que elegimos, se nos puede mostrar indistintamente $s_2$ o $s_3$.
+En el modelo $M_B$, solo cuando la posición de regalo no coincide con la caja que elegimos, se nos puede mostrar indistintamente $s_2$ o $s_3$.
 %
 En el resto de los casos, cuando la elección de la caja no coincide con la posición del regalo, solo es posible que nos muestren una única caja.
 
@@ -1358,7 +1358,7 @@ Y las bifurcaciones contienen una fracción que representa cómo se divide la pr
 % \edge[-] {r3d1} {br3d1};
 % \edge[-] {r3d2} {br3d2};
 }
-\caption{Modelo A}
+\caption{Modelo $M_A$}
 \label{fig:caminos_pre_montyhall}
 \end{subfigure}
 \begin{subfigure}[b]{0.48\textwidth}
@@ -1406,20 +1406,20 @@ Y las bifurcaciones contienen una fracción que representa cómo se divide la pr
 % \edge[-] {r2d3} {br2d3};
 % \edge[-] {r3d2} {br3d2};
 }
-\caption{Modelo B}
+\caption{Modelo $M_B$}
 \label{fig:caminos_montyhall}
 \end{subfigure}
-\caption{Los posibles universos dadas las restricciones de los modelos alternativos. Por el principio de indiferencia dividimos la creencia en partes iguales en cada una de las bifurcaciones de los caminos paralelos del modelo causal. Por simplicidad suponemos que $c_1$.}
+\caption{Los posibles universos dados los sistemas de restricciones alternativos (o modelos). Debido a que no hay información previa que nos haga preferir alguna de las bifurcaciones, por el principio de indiferencia dividimos la creencia en partes iguales en cada una de ellas. Por simplicidad suponemos que $c_1$.}
 \label{fig:caminos}
 \end{figure}
 
 % Parrafo
 
-Luego, para calcular la probabilidad conjunta de que el regalo se encuentre en la caja $i$ y se nos muestre la caja $j$, $P(r_i, s_j|c_1,M)$, debemos multiplicar todas las fracciones presentes en cada uno de los caminos que van de la raíz a las hojas.
+Luego, para calcular la probabilidad conjunta de que el regalo se encuentre en la caja $i$ y se nos muestre la caja $j$, $P(r_i, s_j|c_1,M_k)$, debemos multiplicar todas las fracciones presentes en cada uno de los caminos que van de la raíz a las hojas.
 %
 Los caminos no presentes en el árbol de universos paralelos se les debe asignar probabilidad 0 debido a que son caminos imposibles dadas las restricciones del modelo.
 %
-Esta informaci\'on la podemos resumir en forma de tabla~\ref{tab:creencia_conjunta}, que representa la probabilidad asignada a cada uno de los universos paralelos.
+La probabilidad asignada a cada uno de los universos paralelos (o combinaciones) se resume en la tabla~\ref{tab:creencia_conjunta}.
 %
 \begin{table}[ht!]
 \centering
@@ -1451,14 +1451,14 @@ Por ejemplo, para obtener la probabilidad de la hipótesis $s_j$ debemos recuper
 %
 \begin{equation} \label{eq:creencia_marginal}
 \begin{split}
-P(s_j|c_1,M_A) = \sum_{r_i \in R} P(r_i, s_j|c_1, M_A) = 1/3 \\
-P(s_j|c_1,M_B) = \sum_{r_i \in R} P(r_i, s_j|c_1, M_B) = 1/2
+P(s_j|c_1,M_A) = \sum_{r_i \in H_R} P(r_i, s_j|c_1, M_A) = 1/3 \\
+P(s_j|c_1,M_B) = \sum_{r_i \in H_R} P(r_i, s_j|c_1, M_B) = 1/2
 \end{split}
 \end{equation}
 %
 Esto es equivalente a sumar todos los elementos de una de las filas de la tabla.
 %
-Del mismo modo podemos calcular la probabilidad marginal de la hipótesis $R=r_i$.
+Del mismo modo podemos calcular la probabilidad marginal de las hipótesis $r_i \in H_R$.
 %
 En ese caso deberíamos sumar todos los elementos de una columna.
 %
@@ -1480,7 +1480,7 @@ En ambos modelos, la probabilidad marginal sobre la posición del regalo es $1/3
          \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
         }
-\caption{$P(r_i|c_1,M)$}
+\caption{$P(r_i|c_1,M_k)$}
 \label{fig:prior_regalo}
 \end{subfigure}
 \begin{subfigure}[b]{0.48\textwidth}
@@ -1491,12 +1491,12 @@ En ambos modelos, la probabilidad marginal sobre la posición del regalo es $1/3
          \node[det, minimum size=1cm, xshift=1.5cm] (p2) {\includegraphics[width=0.06\textwidth]{static/dedo.png}} ;
          \node[factor, minimum size=1cm, xshift=3cm] (p3) {} ;
          \node[const, above=of p1, yshift=.15cm] (fp1) {$?$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$?$};
+         \node[const, above=of p2, yshift=.15cm] (fp2) {$0$};
          \node[const, above=of p3, yshift=.15cm] (fp3) {$?$};
          \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
 
         }
-\caption{$P(r_i|s_2,c_1,M)$}
+\caption{$P(r_i|s_2,c_1,M_k)$}
 \label{fig:posterior_regalo}
 \end{subfigure}
 \caption{En la figura~\ref{fig:prior_regalo} mostramos la distribución de probabilidad marginal de la hipótesis $R$ a priori. La cerradura representa la restricción $c_1$. En ambos modelos el prior sobre el regalo es el mismo. En la figura \ref{fig:posterior_regalo} nos preguntamos cuál es la distribución de probabilidad honesta sobre la posición del regalo luego de observar que la caja 2 está vacía.}
@@ -1526,7 +1526,7 @@ $P(r_i, s_2 |c_1, M_A)$ \hspace{4.3cm} $P(r_i, s_2 | c_1, M_B)$ \\[0.1cm]
 
 % Parrafo
 
-La probabilidad que sobrevive, $P(r_i, s_2|c_1,M)$, no representa todav\'ia nuestra nueva creencia total pues no integrar 1, $\sum_i P(r_i,s_2|c_1,M) = P(s_2|c_1,M) < 1$.
+La probabilidad que sobrevive, $P(r_i, s_2|c_1,M_k)$, no representa todav\'ia nuestra nueva creencia total pues no integrar 1, $\sum_i P(r_i,s_2|c_1,M_k) = P(s_2|c_1,M_k) < 1$.
 %
 Para que la probabilidad que sobrevive sea considerada nuestra nueva creencia total necesitamos normalizarla para que en conjunto vuelva a sumar 1.
 %
@@ -1579,7 +1579,7 @@ Lo que hemos hecho no es otra cosa que aplicar el teorema de Bayes,
 %
 \begin{equation}
 \begin{split}
-\underbrace{P(r_i|s_2,c_1,M)}_{\text{Posterior}} = \frac{P(r_i,s_2|c_1,M)}{P(s_2|c_1,M)} = \frac{\overbrace{P(s_2|r_i,c_1,M)}^{\text{Verosimilitud}}\overbrace{P(r_i|c_1,M)}^{\text{Prior}}}{\underbrace{P(s_2|c_1,M)}_{\text{Evidencia}}}
+\underbrace{P(r_i|s_2,c_1,M_k)}_{\text{Posterior}} = \frac{P(r_i,s_2|c_1,M_k)}{P(s_2|c_1,M_k)} = \frac{\overbrace{P(s_2|r_i,c_1,M_k)}^{\text{Verosimilitud}}\overbrace{P(r_i|c_1,M_k)}^{\text{Prior}}}{\underbrace{P(s_2|c_1,M_k)}_{\text{Evidencia}}}
 \end{split}
 \end{equation}
 
@@ -1621,57 +1621,57 @@ Lo que hemos hecho no es otra cosa que aplicar el teorema de Bayes,
 
 \subsection{Evaluación honesta de modelos}
 
-Computar las distribuciones de probabilidad honesta dado los modelos no tendría ningún valor si la elección del modelo quedara librado al arbitrio de las subjetividades individuales.
+Computar las distribuciones de probabilidad honesta dado los modelos no tendría ningún valor si la elección del modelo quedara librada al arbitrio de las subjetividades individuales.
 %
-¿Cuál de los dos modelos debemos usar?
+Y justamente, cuando tenemos más de un sistemas de restricciones (o modelo), estamos en presencia de una hipótesis de investigación adicional $H_M = \{M_A, M_B\}$ que puede ser evaluada mediante la aplicación estricta de las reglas de la probabilidad.
 %
-¿Cuál de los dos posterior debemos reportar?
+% ¿Cuál de los dos modelos debemos usar?
+% %
+% ¿Cuál de los dos posterior debemos reportar?
+% %
+% En la formulación del teorema de Bayes inicial~\eqref{eq:teorema_bayes} solo hay hipótesis y datos.
 %
-En la formulación del teorema de Bayes inicial~\eqref{eq:teorema_bayes} solo hay hipótesis y datos.
+Es decir, en el fondo nuestro problema de investigación (o experimento) $\mathcal{H}$ debe incluir $H_M$, $\mathcal{H} = \{H_R, H_S, H_M\}$.
+% %
+% Si aplicamos el teorema de Bayes para actualizar la probabilidad de los modelos $M$ dado los datos $D = \{r_i, s_j, c_1\}$,
+% %
+% \begin{equation}\label{eq:p_modelo_|_datos}
+%  P(\text{Model\es{o}}|\text{Dat\en{a}\es{os}}) = \frac{\overbrace{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}, I)}^{\text{Evidencia}}\overbrace{P(\text{Model\es{o}}|I)}^{\text{Prior}}}{P(\text{Dat\en{a}\es{os}}|I)}
+% \end{equation}
+% %
+% La evidencia es la predicción de los datos con la contribución de todas las hipótesis.
+% %
+% \begin{equation}
+% P(\text{Datos}|\text{Modelo},I) = \sum_{\text{Hipótesis}} P(\text{Datos}|\text{Hipótesis}, \text{Modelo},I) P(\text{Hipótesis}|\text{Modelo},I)
+% \end{equation}
+% %
+% Por la regla del producto, podemos expresar la evidencia conjunta de muchos datos $\{d_1, d_2, \dots \}$ como una productoria de predicciones a priori individuales,
+% %
+% \begin{equation} \label{eq:p<datos|modelo>}
+% \begin{split}
+% P(\text{Dat\en{a}\es{os}}=\{d_1, d_2, \dots \}|\text{Model\es{o}},I) & = P(d_1|\text{Model\es{o}},I)P(d_2|d_1,\text{Model\es{o}},I) \dots
+% \end{split}
+% \end{equation}
+% %
+% La probabilidad conjunta de todos los datos dado el modelo es igual a la probabilidad del primer dato $d_1$ dado el modelo, multiplicado por la probabilidad del segundo dato $d_2|d_1$ dado el primer dato y el modelo, y as\'i sucesivamente.
+% %
+% Notar que si alguna de las predicciones es $0$, toda la productoria se anula.
+% %
+% Por su parte, el denominador de la ecuaci\'on \ref{eq:p_modelo_|_datos} es la predicci\'on a priori del dato observado con la contribuci\'on de todos los modelos (y todas sus hip\'otesis).
+% %
+% \begin{equation}
+% P(\text{Datos}|I) = \sum_{\text{Modelo}} P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}, I) P(\text{Model\es{o}}, I)
+% \end{equation}
 %
-Sin embargo, los modelos tambi\'en son hip\'otesis, y por lo tanto, pueden ser evaluadas mediante la aplicación estricta de las reglas de la probabilidad.
-%
-Es decir, en el fondo nuestro problema de investigación (o experimento) $\mathcal{H}$ debe incluir también la hipótesis $M = \{M_A, M_B\}$, tal que $\mathcal{H} = \{R, S, M\}$.
-%
-Si aplicamos el teorema de Bayes para actualizar la probabilidad de los modelos $M$ dado los datos $D = \{r_i, s_j\}$ y la información incial $I = \{c_1\}$,
-%
-\begin{equation}\label{eq:p_modelo_|_datos}
- P(\text{Model\es{o}}|\text{Dat\en{a}\es{os}}, I) = \frac{\overbrace{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}, I)}^{\text{Evidencia}}\overbrace{P(\text{Model\es{o}}|I)}^{\text{Prior}}}{P(\text{Dat\en{a}\es{os}}|I)}
-\end{equation}
-%
-La evidencia es la predicción de los datos con la contribución de todas las hipótesis.
-%
-\begin{equation}
-P(\text{Datos}|\text{Modelo},I) = \sum_{\text{Hipótesis}} P(\text{Datos}|\text{Hipótesis}, \text{Modelo},I) P(\text{Hipótesis}|\text{Modelo},I)
-\end{equation}
-%
-Por la regla del producto, podemos expresar la evidencia conjunta de muchos datos $\{d_1, d_2, \dots \}$ como una productoria de predicciones a priori individuales,
-%
-\begin{equation} \label{eq:p<datos|modelo>}
-\begin{split}
-P(\text{Dat\en{a}\es{os}}=\{d_1, d_2, \dots \}|\text{Model\es{o}},I) & = P(d_1|\text{Model\es{o}},I)P(d_2|d_1,\text{Model\es{o}},I) \dots
-\end{split}
-\end{equation}
-%
-La probabilidad conjunta de todos los datos dado el modelo es igual a la probabilidad del primer dato $d_1$ dado el modelo, multiplicado por la probabilidad del segundo dato $d_2|d_1$ dado el primer dato y el modelo, y as\'i sucesivamente.
-%
-Notar que si alguna de las predicciones es $0$, toda la productoria se anula.
-%
-Por su parte, el denominador de la ecuaci\'on \ref{eq:p_modelo_|_datos} es la predicci\'on a priori del dato observado con la contribuci\'on de todos los modelos (y todas sus hip\'otesis).
-%
-\begin{equation}
-P(\text{Datos}|I) = \sum_{\text{Modelo}} P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}, I) P(\text{Model\es{o}}, I)
-\end{equation}
+% % Parrafo
 
-% Parrafo
-
-Para evaluar los modelos generaremos datos sintéticos utilizando la distribución de la probabilidad del modelo $B$, $P(R,S|c_1,M_B)$, eligiendo primero la posici\'on del regalo $r_i$ a partir de la distribución $P(r_i|c_1,M_B)$ y eligiendo luego la pista $s_j$ a partir de la distribución $P(s_j|r_i,c_1,M_B)$.
+Para evaluar los modelos generaremos datos sintéticos utilizando la distribución de probabilidad del modelo $M_B$, $P(H_R,H_S|c_1,M_B)$, eligiendo primero la posici\'on del regalo $r_i$ a partir de la distribución $P(r_i|c_1,M_B)$ y eligiendo luego la pista $s_j$ a partir de la distribución $P(s_j|r_i,c_1,M_B)$.
 %
-Repetiremos el procedimiento $N$ veces, $t \in \{1, \dots, N\}$ .
+Repetiremos el procedimiento $T$ veces, $t \in \{1, \dots, T\}$ .
 %
-Luego, nuestro problema de investigación (o experimento) contiene $\mathcal{H} = \{R_1, S_1, R_2, S_2, \dots, R_N, S_N, M_A, M_B\}$, con $R_t = \{r_{1t}, r_{2t}, r_{3t}\}$ y $S_t = \{s_{1t}, s_{2t}, s_{3t} \}$.
+Luego, nuestro problema de investigación (o experimento) contiene $\mathcal{H} = \{H_{R_1}, H_{S_1}, \dots, H_{R_T}, H_{S_T}, M_A, M_B\}$, con $H_{R_t} = \{r_{1t}, r_{2t}, r_{3t}\}$ y $H_{S_t} = \{s_{1t}, s_{2t}, s_{3t} \}$.
 %
-Vamos a considerar los mismos modelos, es decir, las mismas dependencias entre hipótesis al interior de cada repetición pero ninguna dependencia adicional entre repeticiones.
+Vamos a considerar las mismas restricciones entre hipótesis al interior de cada repetición y ninguna nueva restricción adicional entre repeticiones.
 %
 Las repeticiones se especifican en redes bayesianas mediante el uso de placas (ver figura~\ref{fig_modelos_con_repeticiones}).
 %
@@ -1681,14 +1681,14 @@ Las repeticiones se especifican en redes bayesianas mediante el uso de placas (v
   \centering
   \tikz{
     \node[latent,] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,left=of r] (nr) {\Large $R_t$} ;
+    \node[const,left=of r] (nr) {\Large $H_{R_t}$} ;
 
 
     \node[latent, below=of r, yshift=0.3cm] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const, left=of d] (nd) {\Large $S_t$};
+    \node[const, left=of d] (nd) {\Large $H_{S_t}$};
 
     \edge {r} {d};
-    \plate {Datos} {(r)(nr)(d)(nd)} {$t \in \{1, \dots N\} $}; %
+    \plate {Datos} {(r)(nr)(d)(nd)} {$t \in \{1, \dots T\} $}; %
   }
   \caption{Modelo A}
   \end{subfigure}
@@ -1697,49 +1697,56 @@ Las repeticiones se especifican en redes bayesianas mediante el uso de placas (v
   \tikz{
 
     \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const,above=of d] (nd) {\Large $S_t$} ;
+    \node[const,above=of d] (nd) {\Large $H_{S_t}\,$} ;
 
     \node[latent, above=of d, yshift=-0.3cm, xshift=-1.2cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,left=of r] (nr) {\Large $\ \ R_t$} ;
+    \node[const,left=of r] (nr) {\Large $\ \ H_{R_t}$} ;
 
     \node[latent, fill=black!30, above=of d, yshift=-0.3cm, xshift=1.2cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
-    \node[const,right=of c] (nc) {\Large $C_t=c_{1t}$} ;
+    \node[const,right=of c] (nc) {\Large $c_{1t}$} ;
 
     \edge {r,c} {d};
-    \plate {Datos} {(r)(nr)(d)(nd)(c)(nc)} {$t \in \{1, \dots N\} $}; %
+    \plate {Datos} {(r)(nr)(d)(nd)(c)(nc)} {$t \in \{1, \dots T\} $}; %
   }
   \caption{Modelo B}
   \end{subfigure}
-  \caption{}
+  \caption{Extensión de los modelos $M_A$ y $M_B$ mediante la repeticiones de las restricciones entre hipótesis.}
   \label{fig_modelos_con_repeticiones}
 \end{figure}
 %
-Si se despliegan las placas de la figura~\ref{fig_modelos_con_repeticiones} veríamos N redes bayesianas, una al lado de la otra, sin dependencias que las vinculen entre sí.
+Si se despliegan las placas de la figura~\ref{fig_modelos_con_repeticiones} veríamos $T$ redes bayesianas, una al lado de la otra, sin dependencias entre hipótesis que las vinculen entre sí.
 %
-El hecho de que no estén conectadas entre sí hace que los datos que se observan en una de las repeticiones no afecte al resto.
-%
-Luego, vamos a calcular la predicción de los datos dado los modelos $M = \{M_A, M_B\}$ y la información inicial $I = \{c_{11}, \dots, c_{1N}\}$,
-%
-\begin{equation}
-P(\{r_{i1}, s_{j1}, \dots \}|M,I) = \prod_{t=1}^N P(s_{jt}|M,c_{1t})P(r_{it}|s_{jt},M,c_{1t})
-\end{equation}
-%
-Debido a que los datos fueron generados usando la distribución de probabilidad el modelo $B$, los datos respetan las restricciones entre hipótesis presenten en el modelo $B$, y por lo tanto también la restricción entre hipótesis del modelo $A$.
-%
-Esto significa que no los modelos no observaran eventos imposibles.
-%
-Luego, las predicciones que hace el modelo $A$ son siempre las mismas debido que no importa cual sea la pista $s_{jt}$ y la posición del reaglo $r_{it}$, siempre vale $P(s_{jt}|M_A,c_{1t}) = 1/3$ y $P(r_{it}|s_{jt},M_A,c_{1t}) = 1/2$.
-%
-El modelo $B$ tambi\'en predice la pista siempre con la misma probabilidad $P(s_{jt}|M_A,c_{1t})=1/2$, pues no habr\'a en los datos generados $s_{1t}$.
-%
-Sin embargo, el modelo $B$ un tercio de las veces el regalo estará en la caja elegida, $P(r_{1t}|s_{jt},M_A,c_{1t}) = 1/3$, y dos tercios de las veces el regalo estará en la caja $i$ no elegida, $P(r_{it}|s_{jt},M_A,c_{1t}) = 2/3$, con $i\neq1$ y $i\neq j$.
+El hecho de que no estén conectadas entre sí hace que la información que se incorpora en una de las repeticiones no afecte al resto.
 
+% Parrafp
+
+Para computar la distribución de probabilidades honesta respecto de los modelos alternativos debemos aplicar el teorema de Bayes luego de observar los datos.
+%
+Sea $\text{Datos}\in (H_{R_1}, H_{S_1}, \dots, H_{R_T}, H_{S_T})$ el vector de hipótesis elementales observadas $(r_{i1}, s_{j1}, \dots, r_{iT}, s_{jT})$, y sea la restricción restante $R=c_1$ es, el posterior del modelo $M_k$ es,
+%
 \begin{equation}\label{eq:posterior_modelo_montyhall}
-P(M_k|\overbrace{r_{i1},s_{j1}, \dots }^{\text{Datos}},\overbrace{c_1}^{I}) = \frac{\prod_{t=1}^N P(s_{jt}|M,c_{1t})P(r_{it}|s_{jt},M,c_{1t}) P(M_k|c_1)}{P(\text{Datos}|c_1)}
+\underbrace{P(M_k|\overbrace{r_{i1},s_{j1}, \dots }^{\text{Datos}},\overbrace{c_1}^{R})}_{P(\text{Modelo}|\text{Datos},\text{Restricciones})} = \frac{\overbrace{P(r_{i1},s_{j1}, \dots |M_k,c_1)}^{P(\text{Datos}|\text{Modelo},\text{Restricciones})} P(M_k|c_1)}{P(\text{Datos}|c_1)}
 \end{equation}
+%
+Donde la probabilidad de los datos dado el modelo y la restricción restante es,
+%
+\begin{equation} \label{eq:evidencia_monty_hall}
+P(\text{Datos}|\text{Modelo},\text{Restricciones}) = \prod_{t=1}^N P(s_{jt}|M,c_{1t})P(r_{it}|s_{jt},M,c_{1t})
+\end{equation}
+%
+Debido a que los datos fueron generados usando la distribución de probabilidad honesta del modelo $M_B$, los datos respetan también la restricción entre hipótesis del modelo $M_A$.
+%
+Esto significa que ninguno de los modelos observarán eventos imposibles, es decir, la productoria \eqref{eq:evidencia_monty_hall} no contiene ningún cero.
+%
+En particular, las predicciones que hace el modelo $M_A$ son siempre las mismas debido que no importa cual sea la pista $s_{jt}$ y la posición del regalo $r_{it}$, siempre vale $P(s_{jt}|M_A,c_{1t}) = 1/3$ y $P(r_{it}|s_{jt},M_A,c_{1t}) = 1/2$.
+%
+El modelo $M_B$ tambi\'en predice la pista siempre con la misma probabilidad $P(s_{jt}|M_A,c_{1t})=1/2$, pues no habr\'a en los datos generados $s_{1t}$.
+%
+Sin embargo, cuando el regalo se encuentra dentro de la caja elegida (1/3 de las veces), el modelo $M_B$ predice $P(r_{1t}|s_{jt},M_A,c_{1t}) = 1/3$, y cuando el regalo se encuentra en la caja no elegida uno abierta (2/3 de las veces), el modelo $M_B$ predice $P(r_{it}|s_{jt},M_A,c_{1t}) = 2/3$, con $i\neq1$ y $i\neq j$.
 
+% Parrafo
 
-R\'apidamente, con unas decenas de observaciones podemos tener una preferencia fuerte por modelo $B$, que es justamente el modelo que se utilizó para generar los datos.
+R\'apidamente, con unas decenas de observaciones podemos tener una preferencia fuerte por modelo $M_B$, que es justamente el modelo que se utilizó para generar los datos.
 %
 \begin{figure}[H]
     \centering
@@ -1747,12 +1754,12 @@ R\'apidamente, con unas decenas de observaciones podemos tener una preferencia f
     \includegraphics[width=\linewidth]{figures/monty_hall_selection.pdf}
     \end{subfigure}
     \caption{
-    Selecci\'on de modelos alternativos
+    Distribución de probabilidad honesta a posteriori sobre los sistemas de restricciones (o modelos) alternativos $M_A$ y $M_B$ dado los datos y la restricción restante $R$.
     }
     \label{fig:monty_hall_selection}
 \end{figure}
 %
-Este mismo m\'etodo ser\'a usado para evaluar el modelo a lo largo de la tesis.
+Este mismo m\'etodo ser\'a usado para evaluar modelos a lo largo de la tesis.
 
 
 \subsection{Consecuencias de la ruptura de las reglas de la probabilidad}
@@ -1945,9 +1952,9 @@ Este problema se lo conoce en la jerga de Inteligencia Artificial con el nombre 
 
 % Parrafo
 
-Hemos visto en la sección anterior que para evaluar modelos alternativos necesitamos la predicción a priori de los datos que hace cada uno de ellos, $P(\text{Datos}|\text{Modelo}, I)$, la que se descompone como una secuencia de predicciones individuales de cada condicionada en la informaci\'on de todos los datos anteriores (revisar ecuaci\'on~\ref{eq:p<datos|modelo>}).
+Hemos visto en la sección anterior que para evaluar modelos alternativos necesitamos la predicción a priori de los datos que hace cada uno de ellos, $P(\text{Datos}|\text{Modelo}, R)$, la que se descompone como una secuencia de predicciones individuales de cada condicionada en la informaci\'on de todos los datos anteriores (revisar ecuaci\'on~\ref{eq:p<datos|modelo>}).
 %
-Para aproximar el posterior de los modelos bajo el enfoque ad-hoc, cada una de las predicciones individuales involucradas en la productoria \eqref{eq:p<datos|modelo>} se computan aplicando la predicción ad-hic \ref{eq:prediccion_ad_hoc} mediante un procedimiento de ``entrenamiento en línea'', en el que en cada paso se selecciona un nuevo vector $\bm{w}$ en base al conjunto de datos de entrenamiento disponible hasta el momento.
+Para aproximar el posterior de los modelos bajo el enfoque ad-hoc, cada una de las predicciones individuales involucradas en la productoria \eqref{eq:p<datos|modelo>} se computan aplicando la predicción ad-hoc \ref{eq:prediccion_ad_hoc} mediante un procedimiento de ``entrenamiento en línea'', en el que en cada paso se selecciona un nuevo vector $\bm{w}$ en base al conjunto de datos de entrenamiento disponible hasta el momento.
 %
 En la figura~\ref{fig:model_selection_maxApriori_online} se puede observar que esta aproximación del posterior de los modelo asigna probabilidad 1 al modelo de grado 3.
 %
@@ -2084,13 +2091,13 @@ Y dependiendo de d\'onde caiga el siguiente dato, hay una regi\'on en la que gan
 
 % Parrafo
 
-A diferencia de los enfoque basados en criterios ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad realiza las predicciones con la contribuci\'on de todas las hip\'otesis.
+A diferencia de los enfoque basados en criterios ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad realiza las predicciones con la contribuci\'on de todas las hip\'otesis $\bm{w}$.
 %
 Si empezamos a ver datos por fuera del rango $x_i \in [-\pi, \pi]$, los modelos más complejos están aún disponibles para predecirlos.
 %
 \begin{equation*}
 \begin{split}
-\underbrace{p(\bm{y}|\bm{x},\beta)}_{p(\text{Datos}|I)} & = \sum_{d=1}^D \left( \underbrace{ \int\dots\int_{\bm{w} \in (W_0, \dots, W_d)} \overbrace{p(\bm{y}|\bm{x}, \bm{w}, \beta, M_d)}^{p(\text{Datos}|\text{Hipótesis},\text{Modelo},I)} \, \text{d}\bm{w} }_{p(\text{Datos}|\text{Modelo},I)} \right) P(M_d)
+\underbrace{p(\bm{y}|\bm{x},\beta)}_{p(\text{Datos}|R)} & = \sum_{d=1}^D \left( \underbrace{ \int\dots\int_{\bm{w} \in (W_0, \dots, W_d)} \overbrace{p(\bm{y}|\bm{x}, \bm{w}, \beta, M_d)}^{p(\text{Datos}|\text{Hipótesis},\text{Modelo},R)} \, \text{d}\bm{w} }_{p(\text{Datos}|\text{Modelo},R)} \right) P(M_d)
 \end{split}
 \end{equation*}
 %
@@ -2099,8 +2106,6 @@ Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la 
 
 
 \section{Cuestiones relativas a la operacionalizaci\'on del los datos} \label{sec:base_empirica_metodo}
-
-
 
 El problema fundamental de la teor\'ia de la informaci\'on es el de la comunicaci\'on con la realidad.
 %
@@ -2113,35 +2118,51 @@ The significant aspect is that the actual message is one selected from a set of 
 The system must be designed to operate for each each possible selection, not just the one which will actually be chosen since this is unknown at the time of design.
 \end{quotation}
 %
-En ciencias empíricas, al no tener acceso directo a la realidad, debemos inferirla a partir de los mensajes distorsionados e indirectos que percibimos.
+Como seres biológicos nos comunicamos con la realidad mediante nuestras percepciones y acciones.
 %
-
-%
-Quisi\'eramos que el mensaje que recibimos de la realidad sea igual al enviado.
+%Quisi\'eramos que el mensaje que recibimos de la realidad sea lo más preciso posible.
+Debido a que no tenemos acceso directo a la realidad, debemos inferirla a partir de los mensajes distorsionados e indirectos que percibimos.
 %
 Las soluciones a este problema se suelen dividir en dos tipos~\cite{Mackay2003}.
 %
-Una soluci\'on f\'isica, que podr\'ia ser ``acercarse para escuchar mejor''.
+Una soluci\'on f\'isica, como ``acercarse para escuchar mejor''.
 %
 Y una soluci\'on inferencial, que ser\'ia simplemente interpretar la se\~nal con ruido que recibimos.
 %
-En cualquier caso, la soluci\'on f\'isica tambi\'en requiere resolver un proceso de inferencia.
+Sin embargo, la soluci\'on f\'isica tambi\'en requiere resolver un proceso de inferencia pues en definitiva no sabemos a priori cuál de todas las acciones alternativas mejoran efectivamente la comunicación con la realidad.
 %
-En definitiva, el problema consiste en que nunca tenemos contacto directo con la realidad.
-%
-Ni siquiera nuestras propias percepciones son la realidad externa, sino el resultado de una maquinaria biol\'ogica sumamente compleja.
-%
-En este contexto ?`c\'omo podemos hacer para acceder a la realidad?
-%
-?`Cu\'al es el conjunto de elementos del mundo que sirven de evidencia indubitable (dato)?
+En esta sección revisaremos algunos conceptos relativos a la operacionalización de datos en las ciencias empíricas.
 
-\subsection{Base emp\'irica y datos T-te\'oricos}
+\subsection{Base emp\'irica e hipótesis te\'oricas}
 
-Llamamos \emph{base emp\'irica} a la porci\'on del ``mundo'' que es aceptada como verdad por una comunidad, al menos por un cierto momento.
+El matemático y epistemólogo Gregorio Klimovsky, emérito de esta casa de estudios, llamó \emph{base emp\'irica} a los supuestos que son aceptados como verdad indubitable (al menos momentáneamente) por toda una comunidad~\cite{klimovsky1994-desventuras}.
 %
-Para aceptar la entidad de nuestros objetos m\'as cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verduler\'ia, o el resultado de la final de los \'ultimos mundiales de f\'utbol, son suficientes los supuestos del sentido com\'un.
+En la jerga de la Teoría de la Probabilidad (o de la Información) se les llama ``Datos'' a las hipótesis de investigación (o experimento) que en cierto momento pasan a formar parte del conjunto de restricciones indubitables, tautológicas, inamovibles.
 %
-A pesar de que existan c\'irculos filos\'oficos que pretendan poner en duda las percepciones y supuestos m\'as b\'asicos, reduciendo la base emp\'irica a un conjunto vac\'io (que Klimovsky~\cite{klimovsky1994-desventuras} llama \emph{base emp\'irica filos\'ofica}), en la vida cotidiana no hay mayor controversia al respecto.
+Sin embargo, el conjunto de hipótesis de investigación $\mathcal{H}$ reúne tanto a las hipótesis ocultas (preguntas abiertas) $H \subseteq \mathcal{H}$, como las hipótesis de base empírica (o información inicial) $I \subset \mathcal{H}$, con $I \cap H = \emptyset$ y $I \cup H = \mathcal{H}$.
+%
+El conjunto de hipótesis de base empírica está compuesto por lo que llamamos restricciones formales $R \subseteq I$, por datos $D \subseteq I$, o por preguntas cerradas $C \subseteq I$.
+%
+En todos los casos, las hipótesis de base empírica $I$ tienen concentran la probabilidad en una única hipótesis elemental, $\forall \, I_i \in I \text{cardinal}( \{h | h \in I_i, P(h)=1 \}=1$.
+%
+En cambio, las hipótesis ocultas $H$ distribuyen la probabilidad entre más de una hipótesis elemental, $\forall \,H_i \in H  \ \text{cardinal}( \{h | h \in H_i, P(h)=1 \}=0$.
+
+% Parrafo
+
+El teorema de Bayes nos permite transitar entre diferentes para actualizar la creencia de alguna hipótesis oculta $H_i \in Q$
+
+%
+Para que una comunidad se ponga de acuerdo sobre la existencia de los objetos cotidianos, como por ejemplo el precio al que ayer nos vendieron los tomates en la verduler\'ia, o el resultado de la final del \'ultimo mundial de f\'utbol, suele ser suficiente los supuestos que Klimovsky llama de ``sentido com\'un''.
+%
+Ciertamente el ``sentido común'' puede variar entre culturas y entre disciplinas.
+%
+Por ejemplo, ciertos círculos filosóficos llegan a poner en duda las percepciones y supuestos m\'as b\'asicos, reduciendo la base emp\'irica a un conjunto vac\'io.
+
+
+
+En este sentido, Klimovsky llama \emph{base emp\'irica filos\'ofica} al conjunto de supuestos aceptados incluso
+
+A pesar de que existan c\'irculos filos\'oficos que(que Klimovsky llama \emph{base emp\'irica filos\'ofica}), en la vida cotidiana no hay mayor controversia al respecto.
 %
 Los objetos que cualquier persona tomar\'ia por ciertos en su vida cotidiana constituyen una base emp\'irica significativamente m\'as amplia, que llama \emph{base emp\'irica epistemol\'ogica}, pues son la base de control inicial de toda actividad cient\'ifica.
 %

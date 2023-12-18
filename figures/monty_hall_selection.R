@@ -32,10 +32,10 @@ axis(side=1, labels=NA, cex.axis=0.6,tck=0.015)
 axis(lwd=0,side=1, las=0,cex.axis=1.5,line=-0.45)
 axis(lwd=0,side=2, cex.axis=1.5,line=-0.45)
 
-mtext(text ="P(Modelo | Datos)" ,side =2 ,line=2.25,cex=2)
+mtext(text ="P(Modelo | Datos, R)" ,side =2 ,line=2.25,cex=2)
 mtext(text="Cantidad de datos" ,side =1 ,line=2.25,cex=2)
 
-legend(18,0.66, col=c(rgb(0.6,0.2,0.4),rgb(0.2,0.6,0.4)), lwd=3, legend = c("Modelo A", "Modelo B"), bty = "n",cex = 1.75, ncol=1)
+legend(18,0.66, col=c(rgb(0.6,0.2,0.4),rgb(0.2,0.6,0.4)), lwd=3, legend = c(expression("Modelo"~M[A]), expression("Modelo"~M[B])), bty = "n",cex = 1.75, ncol=1)
 
 
 #######################################
