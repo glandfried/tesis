@@ -6792,7 +6792,6 @@ Los jugadores novatos aprenden principalmente por experiencia individual, y los 
 
 \chapter{Discusi\'on. Los aprendizajes epist\'emicos y evolutivos}\label{ch:epistemico}
 
-REESCRIBIR primera parte.
 
 \begin{quotation}
 The cost function approach [..] can actually be used to analyze nearly any branch of human endeavor.
@@ -6805,77 +6804,9 @@ The situation which will be chosen here is one in which a gambler uses knowledge
 
 \section{La funci\'on de costo epist\'emico-evolutiva}
 
-La ciencia es una instituci\'on que tiene pretensi\'on de verdad: de alcanzar acuerdos intersubjetivos con validez intercultural, universal.
-%
-Las ciencias formales (matem\'atica, l\'ogica) alcanzan estos acuerdos derivando teoremas dentro de sistemas axiom\'aticos cerrados.
-%
-Sin embargo, las ciencias emp\'iricas (desde la f\'isica hasta las ciencias sociales) deben validar sus proposiciones en sistemas naturales abiertos que contienen siempre alg\'un grado de incertidumbre.
-%
-?`Es posible entonces alcanzar acuerdos intersubjetivos (``verdades'') en las ciencias emp\'iricas si es inevitable decir ``no s\'e''?
-%
-S\'i.
-%
-En pocas palabras, podemos evitar mentir: no decir m\'as de lo que se sabe, incorporando al mismo tiempo toda la informaci\'on disponible.
-
-% Parrafo
-
-Por ejemplo, supongamos que sabemos que hay un regalo escondido detr\'as de una caja entre tres.
-%
-?`D\'onde est\'a el regalo?
-%
-Si elegimos alguna de las cajas estar\'iamos afirmando m\'as de lo que sabemos porque en los hechos no tenemos informaci\'on que nos haga preferir ninguna de ellas.
-% Parrafo
-\begin{figure}[ht!]
- \centering
- \begin{subfigure}[b]{0.48\textwidth}
- \centering
-  \tikz{ %
-         \node[factor, minimum size=0.8cm] (p1) {} ;
-         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
-         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
-
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$0$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$1$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$0$};
-        }
-    \caption{\En{Full certainty}\Es{Certidumbre total}}
-    \label{fig:preferencia_parcial_2}
- \end{subfigure}
- \begin{subfigure}[b]{0.48\textwidth}
- \centering
-  \tikz{ %
-         \node[factor, minimum size=0.8cm] (p1) {} ;
-         \node[factor, minimum size=0.8cm, xshift=1.5cm] (p2) {} ;
-         \node[factor, minimum size=0.8cm, xshift=3cm] (p3) {} ;
-
-         \node[const, above=of p1, yshift=.15cm] (fp1) {$1/3$};
-         \node[const, above=of p2, yshift=.15cm] (fp2) {$1/3$};
-         \node[const, above=of p3, yshift=.15cm] (fp3) {$1/3$};
-        }
-    \caption{\En{Maximum uncertainty}\Es{M\'axima incertidumbre}}
-    \label{fig:preferencia_total_2}
- \end{subfigure}
-\caption{
-Dos distribuci\'on de creencias. Maximizar incertidumbre permite alcanzar un primer acuerdo intersubjetivo.
-}
- \label{fig:distribucion_de_creencias_2}
-\end{figure}
-% Parrafo
-\noindent
-%
-Si nos permitimos dividir la creencia vamos a estar de acuerdo en la necesidad de distriburla en partes iguales, justamente porque no tenemos preferencia por ninguna caja.
-%
-En este ejemplo maximizamos incertidumbre (al dividir la creencia en partes iguales) incorporando la informaci\'on disponible (al no asignar creencia afuera de las tres cajas).
-%
-Evitar mentir (maximizando incertidumbre dada la informaci\'on disponible) nos permiti\'o alcanzar un primer acuerdo intersubjetivo en contextos de incertidumbre!
-%
-Bien. ?`Pero ahora, c\'omo preservamos el acuerdo intersubjetivo en casos m\'as complejos, cuando recibimos nueva informaci\'on?
-
-% Parrafo
-
 La l\'ogica de la incertidumbre (teor\'ia de la probabilidad) ha sido derivada repetidas veces a partir de diversos principios (axiomas), llegando siempre a las mismas dos simples reglas.
 %
-La \emph{regla de la suma} garantiza no perder creencia cuando la distribuimos entre hip\'otesis mutuamente contradictorias: al sumar cu\'anto le hemos asignado a cada hip\'otesis, recuperamos el 100\% inicial.
+La \emph{regla de la suma} garantiza no perder creencia cuando la distribuimos entre hip\'otesis mutuamente excluyentes: al sumar cu\'anto le hemos asignado a cada hip\'otesis elemental, recuperamos el 100\% inicial.
 %
 \begin{equation*}
 \overset{\hfrac{\text{\small \En{Sum rule}\Es{Regla de la suma}: }}{\phantom{x}}}{P(A) + P(\text{no\En{t} } A) = 1}
@@ -6892,135 +6823,8 @@ Y la \emph{regla del producto} (o condicional), garantiza la coherencia de las c
 Estas son las reglas de la probabilidad para actualizar las creencias en contextos de incertidumbre.
 %
 No hay m\'as.
-
-% Parrafo
-
-Veamos un ejemplo.
 %
-Supongamos que ahora nos dejan elegir una de las cajas y luego alguien nos dar\'a una pista abriendo una caja distinta a la que elegimos en la que no est\'a el regalo (figura~\ref{fig:monty_hall}).
-%
-Con esta informaci\'on previa podemos definir un modelo causal sobre la pista (figura~\ref{fig:modelo_causal}).
-%
-Antes de recibir la informaci\'on de la pista tenemos una creencia previa que surge de maximizar incertidumbre incorporando la informaci\'on del modelo causal: dividiendo la creencia en partes iguales por los universos paralelos que induce el modelo causal (figura~\ref{fig:caminos_montyhall_compatibles_2}).
-%
-Las hojas del \'arbol las podemos ordenar en forma de matriz (tabla de la figura~\ref{fig:f3}) y representan nuestra creencia conjunta inicial de que ocurra tanto $r_i$ y $s_j$, $P(r_i,s_j)$.
-%
-Para actualizar nuestra creencia simplemente preservamos la creencia conjunta inicial que sigue siendo compatible con el dato (el rengl\'on $s_2$ en la figura~\ref{fig:f3}).
-%
-Finalmente, la creencia que sobrevive la expresamos como nueva creencia total (para que sume $1$).
-%
-\begin{figure}[ht!]
- \centering
-  \begin{subfigure}[b]{0.3\textwidth}
-  \centering
-  \tikz{
-
-    \node[latent] (d) {\includegraphics[width=0.10\textwidth]{static/dedo.png}} ;
-    \node[const,below=of d] (nd) {\En{Hint}\Es{Pista}: $s \neq r$, $s \neq c$  } ;
-
-    \node[latent, above=of d,yshift=-1.2cm, xshift=-1.3cm] (r) {\includegraphics[width=0.12\textwidth]{static/regalo.png}} ;
-    \node[const,above=of r] (nr) {\phantom{g}\En{Gift}\Es{Regalo}: $r$\phantom{g}} ;
-
-    \node[latent, fill=black!30, above=of d,yshift=-1.2cm, xshift=1.3cm] (c) {\includegraphics[width=0.12\textwidth]{static/cerradura.png}} ;
-    \node[const,above=of c] (nc) {\phantom{g}\En{Election}\Es{Elecci\'on}: $c_1$\phantom{g}} ;
-
-    \edge {r,c} {d};
-
-         \node[factor, minimum size=0.8cm, xshift=-1.3cm, yshift=2.5cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
-         \node[det, minimum size=0.8cm, yshift=2.5cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=0.8cm, xshift=1.3cm, yshift=2.5cm] (p3) {} ;
-         \node[const, above=of p1, yshift=.05cm] (fp1) {$?$};
-         \node[const, above=of p2, yshift=.05cm] (fp2) {$?$};
-         \node[const, above=of p3, yshift=.05cm] (fp3) {$?$};
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-
-  }
-  \caption{}
-  \label{fig:modelo_causal}
-  \end{subfigure}
- \begin{subfigure}[b]{0.32\textwidth}
-\centering
-\tikz{
-\node[latent, draw=white, yshift=0.7cm] (b0) {$1$};
-\node[latent,below=of b0,yshift=0.9cm, xshift=-1.5cm] (r1) {$r_1$};
-{\color{black}\node[latent,draw=black,below=of b0,yshift=0.9cm] (r2) {$r_2$}; }
-\node[latent,below=of b0,yshift=0.9cm, xshift=1.5cm] (r3) {$r_3$};
-\node[latent, below=of r1, draw=white, yshift=0.7cm] (bc11) {$\frac{1}{3}$};
-{\color{black}\node[latent, below=of r2, draw=white, yshift=0.7cm] (bc12) {$\frac{1}{3}$};}
-\node[latent, below=of r3, draw=white, yshift=0.7cm] (bc13) {$\frac{1}{3}$};
-\node[latent,below=of bc11,yshift=0.9cm, xshift=-0.5cm] (r1d2) {$s_2$};
-{\color{black}\node[latent,draw=black,below=of bc11,yshift=0.9cm, xshift=0.5cm] (r1d3) {$s_3$};}
-{\color{black}\node[latent, draw=black,below=of bc12,yshift=0.9cm] (r2d3) {$s_3$};}
-\node[latent,below=of bc13,yshift=0.9cm] (r3d2) {$s_2$};
-
-\node[latent,below=of r1d2,yshift=0.9cm,draw=white] (br1d2) {$\frac{1}{3}\frac{1}{2}$};
-{\color{black}\node[latent,below=of r1d3,yshift=0.9cm, draw=white] (br1d3) {$\frac{1}{3}\frac{1}{2}$};}s
-{\color{black}\node[latent,below=of r2d3,yshift=0.9cm,draw=white] (br2d3) {$\frac{1}{3}$};}
-\node[latent,below=of r3d2,yshift=0.9cm,draw=white] (br3d2) {$\frac{1}{3}$};
-\edge[-] {b0} {r1,r3};
-\edge[-,draw=black] {b0} {r2};
-\edge[-] {r1} {bc11};
-\edge[-,draw=black] {r2} {bc12};
-\edge[-] {r3} {bc13};
-\edge[-] {bc11} {r1d2};
-\edge[-,draw=black] {bc11} {r1d3};
-\edge[-,draw=black] {bc12} {r2d3};
-\edge[-] {bc13} {r3d2};
-\edge[-] {r1d2} {br1d2};
-\edge[-,draw=black] {r1d3} {br1d3};
-\edge[-,draw=black] {r2d3} {br2d3};
-\edge[-] {r3d2} {br3d2};
-}
-\caption{}
-\label{fig:caminos_montyhall_compatibles_2}
-\end{subfigure}
-\
-\begin{subfigure}[b]{0.34\textwidth}
-\phantom{$P(s_j)$\hspace{0.7cm}g}$P(r_i, s_j)$\phantom{g}\hspace{0.9cm}$P(s_j)$
-\centering
-  \begin{tabular}{|c|c|c|c||c|} \hline  \setlength\tabcolsep{0.4cm}
- & \, $r_1$ \, &  \, $r_2$ \, & \, $r_3$ \, &  \\ \hline
-  $\gray s_1$ & $\gray0$ & $\gray0$ & $\gray0$ &   $\gray 0$ \\ \hline
-  $\bm{s_2}$ & $\bm{1/6}$ & $\bm{0}$ & $\bm{1/3}$ &  $\bm{1/2}$ \\  \hline
-  $\gray s_3$ & $\gray1/6$ & $\gray1/3$ & $\gray0$ & $\gray1/2$ \\ \hline
-  \end{tabular}
-
-  \phantom{--}\\[0.1cm]
-
-  \tikz{
-
-         \node[factor, minimum size=0.8cm, xshift=-1.3cm] (p1) {\includegraphics[width=0.075\textwidth]{static/cerradura.png}} ;
-         \node[det, minimum size=0.8cm] (p2) {\includegraphics[width=0.085\textwidth]{static/dedo.png}} ;
-         \node[factor, minimum size=0.8cm, xshift=1.3cm] (p3) {} ;
-         \node[const, below=of p1, yshift=-.025cm] (fp1) {$1/3$};
-         \node[const, below=of p2, yshift=-.025cm] (fp2) {$0$};
-         \node[const, below=of p3, yshift=-.025cm] (fp3) {$2/3$};
-         \node[const, above=of p2, yshift=.045cm] (title) {$P(r_i | s_2)=P(r_i,s_2)/P(s_2)$};
-
-         \node[const, below=of p2, yshift=-.10cm, xshift=0.3cm] (dedo) {};
-
-  }
-
-\caption{}
-\label{fig:f3}
-\end{subfigure}
-\caption{
-Acuerdo intersubjetivo dada toda la informaci\'on disponible (modelo causal y datos).
-%
-(\subref{fig:modelo_causal}) El modelo causal asegura que la pista $s$ no puede se\~nalar la caja elegida $c$ (con la cerradura) ni la caja donde se encuentra el regalo $r$ (la hip\'otesis oculta): $s\neq c$ y $s\neq r$.
-%
-(\subref{fig:caminos_montyhall_compatibles_2}) Calculamos la creencia que maximiza la incertidumbre dado el modelo causal dividiendo la creencia en partes iguales en cada bifurcaci\'on de los universos paralelos.
-%
-(\subref{fig:f3}) La nueva creencia no es m\'as que la creencia inicial (tabla) que sigue siendo compatible con el dato $s_2$ (rengl\'on oscuro), expresada como 100\%
-}
-\label{fig:monty_hall}
-\end{figure}
-
-% Parrafo
-
-A diferencia de los enfoques ad hoc que seleccionan una \'unica hip\'otesis (e.g.~por m\'axima verosimilitud), la aplicaci\'on estricta de las reglas de la probabilidad (enfoque bayesiano), considerando al mismo tiempo hip\'otesis mutuamente contradictorias (A y no A), permite que sea la sorpresa, \'unica fuente de informaci\'on, el filtro de las creencias previas.
-%
-En general, si tenemos $\text{Datos} = \{ \text{dato}_1, \text{dato}_2, \dots \}$,
+A diferencia de lo que ocurre con la mayoría de funciones de costo ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad actualiza la creencia de una hipótesis mediante un proceso multiplicativo, una secuencia de predicciones.
 %
 \begin{equation} \label{eq:funcion_de_costo}
 \underbrace{P(\text{\En{Hypothesis}\Es{Hip\'otesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo inter-}}}{\text{\footnotesize\En{agreement}\Es{subjetivo inicial}}}} \underbrace{P(\text{dato}_1 |\text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ci\'on} 1}} \, \underbrace{P(\text{dato}_2 | \text{dato}_1 , \text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ci\'on} 2}} \dots
@@ -7033,35 +6837,52 @@ Si la predicci\'on del dato observado es 1 (sorpresa nula), entonces preservamos
 %
 Si la predicci\'on del dato observado es 0 (sorpresa total), entonces la hip\'otesis se hace falsa para siempre.
 %
-Le ocurre lo mismo que a las especies, de la extinci\'on no se vuelve.
-
+De forma similar a lo que le ocurre a las especies en evolución, la hipótesis que se extinguen nunca más vuelven.
 
 % Parrafo
 
-As\'i como la evaluaci\'on de las hip\'otesis en probabilidad se hace a trav\'es de la secuencias de predicciones, la selecci\'on de las formas de vida en evoluci\'on tambi\'en sigue un proceso de naturaleza multiplicativa, por secuencia de tasas de supervivencia y reproducci\'on.
+En evoluci\'on las formas de vida tambi\'en se seleccionan mediante un proceso de naturaleza multiplicativa, por secuencia de tasas de supervivencia y reproducci\'on.
 %
-De hecho, el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, es estructuralmente equivalente al teorema de Bayes, lo que llev\'o a autores reconocidos en ambas \'areas a proponer el isomorfismo entre las teor\'ia de la evoluci\'on y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
+De hecho, el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic}, es estructuralmente equivalente al teorema de Bayes.
 %
-\begin{equation*}
-\overbrace{P\Big(\hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporci\'on}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos},  \Big|  \hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporci\'on}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporci\'on}}{\text{\scriptsize sobreviviente}}}}
+Esto llev\'o recientemente a autores reconocidos en ambas \'areas a proponer el isomorfismo entre las teor\'ia de la evoluci\'on y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
+%
+En la siguiente ecuación ofrecemos un esquema del isomorfismo propuesto.
+%
+\begin{equation*} \small
+\overbrace{P\Big(\hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporci\'on}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos}  \Big|  \hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporci\'on}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporci\'on}}{\text{\scriptsize sobreviviente}}}}
 \end{equation*}
 %
-Debido a que en los procesos multiplicativos los impactos de las p\'erdidas son m\'as fuertes que los de las ganancias (por ejemplo, un \'unico cero en la secuencia produce una extinci\'on irreversible) veremos que existe una ventaja a favor de las variantes que reducen las fluctuaciones (secci\'on ``\nameref{sec:propiedades_funcion_costo}''): por diversificaci\'on individual (\emph{propiedad epist\'emica}), por cooperaci\'on (\emph{propiedad evolutiva}), por especializaci\'on cooperativa (\emph{propiedad de especiaci\'on}), y por heterogeneidad cooperativa (\emph{propiedad ecol\'ogica}).
+La noción de \emph{función de costo epistémico-evolutiva} hace referencia a este isomorfismo.
 %
-Durante mucho tiempo se crey\'o que la evoluci\'on de la cooperaci\'on estaba condicionada por un dilema.
+Luego, comprender las propiedades de esta función de costo parece esencial para comprender los mecanismos fundamentales del aprendizaje.
+
+
+
+
+
+% Debido a que en los procesos multiplicativos los impactos de las p\'erdidas son m\'as fuertes que los de las ganancias (por ejemplo, un \'unico cero en la secuencia produce una extinci\'on irreversible) veremos que existe una ventaja a favor de las variantes que reducen las fluctuaciones (secci\'on ``\nameref{sec:propiedades_funcion_costo}''): por diversificaci\'on individual (\emph{propiedad epist\'emica}), por cooperaci\'on (\emph{propiedad evolutiva}), por especializaci\'on cooperativa (\emph{propiedad de especiaci\'on}), y por heterogeneidad cooperativa (\emph{propiedad ecol\'ogica}).
+% %
+% Durante mucho tiempo se crey\'o que la evoluci\'on de la cooperaci\'on estaba condicionada por un dilema.
+% %
+% En la siguiente secci\'on veremos que no existe tal dilema debido a que en los procesos de selecci\'on multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
 %
-En la siguiente secci\'on veremos que no existe tal dilema debido a que en los procesos de selecci\'on multiplicativos, los individuos desertores aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo (\emph{propiedad mayor}).
 
 % Parrafo
 
 \section{Propiedades de la funci\'on de costo epist\'emico-evolutiva} \label{sec:propiedades_funcion_costo}
-Desde su origen, la vida adquiri\'o una extraordinaria complejidad en t\'erminos de diversificaci\'on, cooperaci\'on, especializaci\'on y heterogeneidad.
+
+Para estudiar las propiedades de la función de costo epistémico-evolutiva, veamos qu\'e le ocurre a las variantes sujetas a procesos multiplicativos.
 %
-Para ver por qu\'e, veamos qu\'e ocurre con un proceso multiplicativo.
+En base a los ejemplos propuestos por John Kelly~\cite{kelly1956} y Ole Peters~\cite{peters2019-ergodicityEconomics}, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporci\'on $b_c = b$ a Cara y $b_s = 1 - b$ a Seca, con $b \in [0,1]$.
 %
-Por ejemplo, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporci\'on $b_c = b$ a Cara y $b_s = 1 - b$ a Seca (apostar solo un parte de los recursos puede mostrarse que tiene una soluci\'on equivalente).
+Sea $\omega_{t}$ los recursos totales en el tiempo $t$.
 %
-Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con una apuestas $b \in [0,1]$ despu\'es de una Cara y una Seca es el producto de nuestros resultados.
+Luego, los recursos que se apuestan en el tiempo $t$ a Cara $w_t \, b$, se pierden si sale Seca, o se multiplican por $Q_c$ si sale Cara.
+%
+De forma similar, los recursos que se apuestan en el tiempo $t$ a Seca $w_t \, (1-b)$, se pierden si sale Cara, o se multiplican por $Q_s$ si sale Seca.
+%
+En particular, sean nuestros recursos iniciales $\omega_0$, los recursos que conseguimos con la apuesta en dos pasos temporales $\omega_2(b)$, luego de obtener una Cara y una Seca, son
 %
  \begin{equation*}
 \begin{split}
@@ -7069,14 +6890,36 @@ Si nuestros recursos iniciales son $\omega_0$, los recursos que obtenemos con un
 \end{split}
 \end{equation*}
 %
-Las apuestas son entonces procesos multiplicativos.
+donde los recursos obtenidos en el primer paso temporal, $\omega_1(b)$, se generaron luego de que los recursos apostados a Cara $\omega_0\,b$ fuera multiplicada por el pago correspondiente a Cara, $Q_c$.
 %
-Vamos a buscar las estrategias que maximizan la tasa de crecimiento de los recursos.
+De forma similar, los recursos en el segundo paso temporal, $\omega_1(b)$, se generaron luego de que los recursos apostados a Seca $\omega_1(b)\,(1-b)$ fuera multiplicada por el pago correspondiente a Seca, $Q_s$.
+%
+En términos generales, los recursos que conseguimos con una apuesta $b$ en $T$ pasos temporales es,
+%
+\begin{equation*}
+\omega_T(b) = \omega_0 (b \, Q_c )^{n_c} ((1-b)\,Q_s)^{n_s}
+\end{equation*}
+%
+donde $n_c$ es la cantidad de Caras y Secas $n_s$ la cantidad de Secas, con $T=n_c+n_s$.
+%
+De forma miliar a lo que ocurre con la función de costo epistémico-evolutiva, los recursos se actualizan siguiendo un proceso multiplicativo.
+%
+Como ocurre en la evaluación de hipótesis en probabilidad \eqref{eq:funcion_de_costo} o la selección de formas de vida en evolución, introducir un único cero en la secuencia produce la pérdida total e irreversible de los recursos.
+%
+Esto hace que no debemos apostar todo los recursos a una de las opciones, ni a Cara $b=1$ ni a Seca $b=0$.
+%
+Pero ¿Cuál apuesta maximiza la tasa de crecimiento de los recursos?
+
 
 \subsection{Propiedad epist\'emica.} \label{sec:propiedad_epistemica}
+
+Supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas por una moneda no sesgada, con probabilidad $p=0.5$.
+%
+En este escenario existe la tendencia a apostar más a Caras que Secas.
+%
 Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
 %
-  \begin{equation}
+\begin{equation}
 \begin{split}
 & \frac{\omega_T(b)}{\omega_T(d)} = \frac{\omega_0 \,  (b \,  \cancel{Q_c})^{n_c}  \,  ((1-b) \, \bcancel{Q_s})^{n_s}}{\omega_0 \,   (d \,  \cancel{Q_c})^{n_c}  \,  ((1-d) \, \bcancel{Q_s})^{n_s}}
 \end{split}
@@ -7084,54 +6927,53 @@ Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego
 %
 encontramos que el valor relativo de una apuesta respecto de la otra es independiente de los pagos $Q_c$ y $Q_s$ que ofrece la casa de apuestas!
 %
-S\'i, lo que estamos diciendo es que podemos decidir la apuesta sin conocer los pagos.
+Este descubrimiento fue realizado por Kelly~\cite{kelly1956} y en su manuscrito también aparece reportado con un signo de admiración.
 %
-En general, queremos la apuesta $b$ que maximiza la tasa de crecimiento $r(b)$,
+Pero, ¿Cuál es la apuesta $b$ \'optima?
+
 %
-\begin{figure}[ht!]
- \centering
- \begin{subfigure}[b]{0.50\textwidth}
-  \begin{equation*}
+
+Para calcular el valor de la tasa de crecimiento de los recursos en el tiempo $r(b)$, debemos analizar la siguiente función,
+%
+\begin{equation}
 \begin{split}
-  \omega_0 \, r(b)^T &= \omega_0 \, (b \,  Q_c)^{n_c}  \,  ((1-b) \, Q_s)^{n_s}   \\
-  r(b) &=(b \,  Q_c)^{n_c/T}  \,  ((1-b) \, Q_s)^{n_s/T}
-\end{split}
-\end{equation*}
- \end{subfigure}
- \begin{subfigure}[b]{0.49\textwidth}
-  \begin{equation}
-\begin{split}
-\overbrace{\underset{b}{\text{arg max}} \phantom{T} r(b)}^{\hfrac{\text{\scriptsize \En{Optimal}\Es{Apuesta}}}{\text{\scriptsize \En{bet}\Es{\'optima}}}} \ = \overbrace{n_c/T}^{\hfrac{\text{\scriptsize \En{Observed}\Es{Frecuencia}}}{\text{\scriptsize \En{frequency}\Es{observada}}}}
+\lim_{T \rightarrow \infty } \omega_0 \, r(b)^T &= \lim_{T \rightarrow \infty } \omega_0 (b \, Q_c)^{n_c} ((1-b) \, Q_s )^{n_s} \\
+r(b) &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^{\frac{n_s}{T}} = (b \, Q_c)^{p} ((1-b) \, Q_s )^{1-p}
 \end{split}
 \end{equation}
- \end{subfigure}
-\end{figure}
-
-% Parrafo
-
-\noindent
+%
+Donde $p = \lim_{T \rightarrow \infty} \frac{n_s}{T}$ es la frecuencia de la moneda.
+%
+Debido a que lo pagos que ofrece la casa de apuestas no importan, el el valor óptimo de $b$ es,
+%
+\begin{equation}
+\begin{split}
+\overbrace{\underset{b}{\text{arg max}} \phantom{T} \log r(b)}^{\hfrac{\text{\scriptsize \En{Optimal}\Es{Apuesta}}}{\text{\scriptsize \En{bet}\Es{\'optima}}}} \ = \underset{b}{\text{arg max}} \phantom{T} \overbrace{\log p \log b + (1-p) \log (1-b)}^{-\text{Entropía cruzada}} \overset{*}{=} p
+\end{split}
+\end{equation}
+%
+Es decir, maximizar la tasa de crecimiento de la apuesta es equivalente a minimizar la entropía cruzada.
+%
 En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta \'optima  $b^{*}$ es la que divide los recursos en la misma proporci\'on que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia t\'ipica $\lim_{T \rightarrow \infty} n_c/T = p$.
 %
-\'Esta es la \emph{propiedad epist\'emica} que le permite a la teor\'ia de la probabilidad adquirir conocimiento sobre el mundo, pues al evaluar las hip\'otesis individuales en base al producto de las sorpresas se produce una ventaja a favor de las hip\'otesis que diversifican la predicci\'on en la misma proporci\'on que la frecuencia observada.
+A esta propiedad la llamamos \emph{propiedad epist\'emica} debido a que es la que permite a la teor\'ia de la probabilidad adquirir conocimiento sobre el mundo: al evaluar las hip\'otesis elementales en base al producto de las sorpresas se produce una ventaja a favor de las hip\'otesis que diversifican la predicci\'on en la misma proporci\'on que la frecuencia observada.
 %
-Del mismo modo, el proceso de selecci\'on evolutiva por secuencias de tasas de crecimiento y reproducci\'on, produce la emergencia de formas de vida que reducen las fluctuaciones a trav\'es de la diversificaci\'on individual.
+Del mismo modo, el proceso de selecci\'on evolutiva por secuencias de tasas de crecimiento y reproducci\'on, produce la emergencia de formas de vida que reducen las fluctuaciones a trav\'es de la diversificaci\'on (\emph{Bet hedging})~\cite{starrfelt2012-bet}.
 
 % Parrafo
 
-Por ejemplo, supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas.
+%En este escenario, con pagos $Q_c=3$, $Q_s=1.2$ y una moneda Si sabemos que la moneda es no sesgada, lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
+En este caso, si calculamos la tasa de crecimiento veremos que los recursos caen a una tasa cercana a $5\%$ ($r(b) \approx 0.95$), pues las ganancias de 50\% que obtenemos con Caras ($1.5 = Q_c \, b^*$) no alcanza para compensar las ca\'idas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b^*)$).
 %
-Si sabemos que la moneda es no sesgada, lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
-% bien con estos par\'ametros el valor esperado es positivo, $( Q_c \, b \, p + Q_s \, (1-b) \, (1-p)) = 1.05$,
-En este caso, sin embargo, no podemos ganar este juego individualmente debido a que las ganancias de 50\% con Caras ($1.5 = Q_c \, b$) no alcanza para compensar las ca\'idas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b)$).
-%
-Incluso con el comportamiento \'optimo, individualmente las trayectorias de los recursos caen a una tasa cercana a $5\%$, pues $r(b) \approx 0.95$ (figura~\ref{fig:coop}).
+En la figura~\ref{fig:ergodicity_individual_trayectories}, las curvas de colores muestran las trayectoria de los recursos individuales en el tiempo.
 
 % Parrafo
 
 \subsection{Propiedad evolutiva.} \label{sec:propiedad_evolutiva}
+
 A pesar de que la diversificaci\'on individual no es suficiente para ganar este juego, la vida encontr\'o estrategias para florecer en casos como estos, reduciendo aun m\'as las fluctuaciones individuales mediante cooperaci\'on~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
 %
-Por ejemplo, si los individuos de un grupo de tama\~no $N$ redistribuyen los recursos en partes iguales luego de apostar, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
+Por ejemplo, si los individuos de un grupo de tama\~no $N$ redistribuyen los recursos en partes iguales luego de cada apuesta, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
 %
 \begin{equation}
 \begin{split}
@@ -7144,14 +6986,10 @@ Y la tasa de crecimiento de los individuos pasa a ser el promedio de todos los r
 %
 La reducci\'on de fluctuaciones que genera este simple acto de intercambio de recursos, hace que la tasa de crecimiento de todos los individuos se vuelve positiva.
 %
-\'Esta es la \emph{propiedad evolutiva}.
-%
-A trav\'es de la cooperaci\'on podemos reducir aun m\'as las fluctuaciones, aumentando as\'i la tasa de crecimiento de todos sus miembros.
-%
 \begin{figure}[ht!]
 \vspace{-0.1cm}
 \centering
- \begin{subfigure}[c]{0.50\textwidth}
+ \begin{subfigure}[b]{0.50\textwidth}
  \centering
   \begin{tabular}{|l|c|c|c|c|c|}
      \hline
@@ -7161,11 +6999,15 @@ A trav\'es de la cooperaci\'on podemos reducir aun m\'as las fluctuaciones, aume
         A coop & $1$ & $1.5$ & $1.05$ & $0.6$ & $\bm{1.1}$ \\ \hline
         B coop & $1$ & $0.6$ & $1.05$ & $1.5$ & $\bm{1.1}$\\ \hline
 \end{tabular}
+\vspace{0.5cm}
+\caption{}
+\label{fig:tabla_coop}
  \end{subfigure}
- \begin{subfigure}[c]{0.45\textwidth}
-\begin{flushright}
+ \hfill
+ \begin{subfigure}[b]{0.4\textwidth}
  \includegraphics[width=0.9\linewidth]{figures/pdf/ergodicity_individual_trayectories.pdf}
- \end{flushright}
+ \caption{}
+ \label{fig:ergodicity_individual_trayectories}
  \end{subfigure}
  \caption{
  La cooperaci\'on le permite a los individuos alcanzar tasas de crecimiento que jam\'as obtendr\'ian solos.
@@ -7174,11 +7016,17 @@ A trav\'es de la cooperaci\'on podemos reducir aun m\'as las fluctuaciones, aume
  %
  En la figura (derecha), las curvas de colores son las trayectoria de los recursos jugando individualmente, y la recta negra es la trayectoria de los recursos individuales jugando en grupos cooperativos grandes.
  }
+
  \label{fig:coop}
  \vspace{-0.1cm}
  \end{figure}
 
 % Parrafo
+
+%
+\'Esta es la \emph{propiedad evolutiva}.
+%
+A trav\'es de la cooperaci\'on podemos reducir aun m\'as las fluctuaciones, aumentando as\'i la tasa de crecimiento de todos sus miembros.
 
 \subsection{Propiedad de especiaci\'on.}
 Si bien jugando individualmente nos ve\'iamos obligados a apostar ignorando los pagos que ofrece la casa de apuestas, una vez que emerge la cooperaci\'on deja de ser necesario reducir las fluctuaciones por diversificaci\'on individual y aparece una ventaja a favor de la especializaci\'on cooperativa, que permite sacar provecho de la mejor opci\'on disponible, aumentando a\'un m\'as la tasa de crecimiento de todos los individuos del grupo cooperativo.
