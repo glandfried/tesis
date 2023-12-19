@@ -1694,7 +1694,7 @@ Si se despliegan las placas de la figura~\ref{fig_modelos_con_repeticiones} ver\
 \todo[inline]{Que significa ``desplegar''? Quizas una manera de decir esto es que las placas condensan o comprimen lo que queres mostrar}
 %
 El hecho de que no est\'en conectadas entre s\'i hace que la informaci\'on que se incorpora en una de las repeticiones no afecte al resto.
-\todo[inline]{¿Informacion? estas hablando de modelos sinteticos que repetis muchas veces y saltas a informacion que se incorpora? Suena descolgado... no querras decir que la instancia de cada repetici\'on es independiente del resto y listo?}
+\todo[inline]{?`Informacion? estas hablando de modelos sinteticos que repetis muchas veces y saltas a informacion que se incorpora? Suena descolgado... no querras decir que la instancia de cada repetici\'on es independiente del resto y listo?}
 % Parrafp
 
 Para computar la distribuci\'on de probabilidades respecto de los modelos alternativos debemos aplicar el Teorema de Bayes luego de observar los datos.
@@ -1740,7 +1740,7 @@ R\'apidamente, con unas decenas de observaciones podemos tener una preferencia f
 %
 Este mismo m\'etodo ser\'a usado para evaluar modelos a lo largo de la tesis.
 \todo[inline]{Aca dejas abierta una puerta medio extra\~na, porque tu m\'etodo de evaluaci\'on se basa en datos ``recortados'', es decir, que hay combinaciones que nunca vas a generar que el modelo A podr\'ia aceptar y que vos no vas a tener nunca entre tus datos. Creo que yo entiendo que la idea en este apartado es suponer como verdadero MB y generar los datos siguiendo MB como oraculo y despues evaluar cual de los dos funciona mejor. Bueno, eso tendrias que aclararlo bien cuando hablas de generar los datos sint\'eticos porque no se entiende.}
-\todo[inline]{Ademas, podr\'ias ser una buena idea mostrar los numeros de como vas generando la probabilidad de cada modelo, pondría tambien una tabla con las hip\'otesis elementales y c\'omo va quedan el producto}
+\todo[inline]{Ademas, podr\'ias ser una buena idea mostrar los numeros de como vas generando la probabilidad de cada modelo, pondr\'ia tambien una tabla con las hip\'otesis elementales y c\'omo va quedan el producto}
 
 \subsection{Consecuencias de la ruptura de las reglas de la probabilidad}
 
@@ -1767,7 +1767,7 @@ Un modelo causal lineal de grado D supone que el mundo tiene $D+1$ causas ($W_0$
 \begin{equation*} \label{eq:modelo_lineal}
 y_i \leftarrow \sum_{d = 0}^{D} w_d x_d^d \hspace{1cm} \text{$i \in \{0, \dots,N\}$}
 \end{equation*}
-\todo[inline]{Ver notacion: en el texto es W e Y mayusculas, pero en la ecuación se vuelven minusculas}
+\todo[inline]{Ver notacion: en el texto es W e Y mayusculas, pero en la ecuaci\'on se vuelven minusculas}
 
 %
 La flecha representa la dependencia causal.
@@ -1779,7 +1779,7 @@ Las hip\'otesis de investigaci\'on (o experimento) de un modelo causal lineal so
 \todo[inline]{no se entiende la notaci\'on, quiere decir que son todos iguales entre s\'i e iguales al par ordenado de los infinitos? Aclara como leer eso}
 %
 Las variables $x_i \in (-\infty, \infty)$ no son hip\'otesis sino constantes que conocemos con exactitud al momento de recibir la observaci\'on de la hip\'otesis $Y_i$.
-\todo[inline]{Esto tambien esta raro, primero decis que son variables, pero luego decis que son constantes que conoces, y que estan en un rango entre los dos infinitos? no estar\'ia viendo que informaci\'on indica que este comprendido entre menos y mas infinito, esto no sería cualquier cosa?}
+\todo[inline]{Esto tambien esta raro, primero decis que son variables, pero luego decis que son constantes que conoces, y que estan en un rango entre los dos infinitos? no estar\'ia viendo que informaci\'on indica que este comprendido entre menos y mas infinito, esto no ser\'ia cualquier cosa?}
 %
 Las hip\'otesis $Y_0$ hasta $Y_{N-1}$ son observables.
 \todo[inline]{De vuelta volves a las mayusculas, pero en las ecuaciones son minusculas. Ademas, traes el principal motivo del modelo lineal que es la relacion oculta entre observables y no observables y ni siquiera lo mencionas de antes... medio raro}
@@ -1791,7 +1791,7 @@ A trav\'es de la observaci\'on de las consecuencias $Y_0$ a $Y_{N-1}$ tenemos qu
 Al modelo lineal, se le agrega un elemento m\'as.
 %
 Los valores observados $y_i$ se generan con un ruido aleatorio que tiene media 0 y desv\'io $\beta$.
-\todo[inline]{¿Como que se ``generan''? Hay un generador de observables o queres decir que se supone que tienen un ruido con desvio $\beta$?}
+\todo[inline]{?`Como que se ``generan''? Hay un generador de observables o queres decir que se supone que tienen un ruido con desvio $\beta$?}
 %
 La distribuci\'on respecto a la informaci\'on de la media y el desv\'io es la distribuci\'on Gaussiana o Normal.
 \todo[inline]{La informacion de la media y el desvio? Que significa?}
@@ -1812,7 +1812,6 @@ p(w_d|\sigma,M_D) = \N(w_d|0, \sigma^2) \hspace{1cm} \text{$d \in \{0,\dots,D\}$
 \todo[inline]{explicar al menos de donde sale sigma}
 %
 En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notaci\'on de redes bayesianas que representan a las hip\'otesis ocultas con c\'irculos blancos, las hip\'otesis observadas con c\'irculos grises, los par\'ametros del modelo con puntos negros, y las dependencias causales mediante flechas.
-\todo[inline]{aca creo que 
 %
 \begin{figure}[ht!]
     \centering
@@ -2388,13 +2387,13 @@ $P(\textit{habilidad}(\text{Messi}) = h | d, M)$ \\
 
 El mensaje enviado por la fuente, la se\~nal enviada por el transmisor, y la se\~nal recibida por el receptor est\'an producidas por la realidad causal oculta.
 %
-En cambio, el receptor es el que realiza inferencia: ``performs the inverse operation of that done by the transmitter, reconstructing the message from the signal'' y enviando como mensaje la distribuci\'on de probabilidad a posteriori de la hip\'otesis de investigaci\'on oculta.
+En cambio, el receptor es el que realiza inferencia: ``performs the inverse operation of that done by the transmitter, reconstructing the message from the signal'', enviando como mensaje la distribuci\'on de probabilidad a posteriori de la hip\'otesis de investigaci\'on oculta.
 
 % Parrafo
 
 %Todo dato de base emp\'irica metodol\'ogica se construye proponiendo una v\'inculo causal que ponga en de los conceptos abstractos no observables con la realidad concreta observable, y una interpretaci\'on de la realidad efectivamente observada, inferencial, de los conceptos abstractos no observados.
 
-\subsection{Tasa de informaci\'on de las proposiciones emp\'iricas} \label{sec:tasa_de_informacion}
+\subsection{Tasa de informaci\'on de los sistemas de informaci\'on} \label{sec:tasa_de_informacion}
 
 Una misma funci\'on proposicional, como por ejemplo \emph{habilidad}(Messi), puede tener varias operacionalizaciones alternativas si consideramos distintas hip\'otesis observables $D$, si consideramos distintos procedimiento $P$, o si consideramos distintas base emp\'iricas $B$.
 %
@@ -2475,28 +2474,55 @@ Debido a que la tasa de predicci\'on no es m\'as que el negativo de la tasa de i
 %
 Luego, preferimos las operacionalizaciones de las proposiciones emp\'iricas que minimizar la tasa de informaci\'on que recibimos de la realidad, maximizando la predicci\'on conjunta que hacemos de los datos.
 %
-En la siguiente secci\'on veremos c\'omo se ha construido el dato de base emp\'irica \emph{habilidad} durante el siglo 20 hasta princpios del siglo 21.
+En la siguiente secci\'on veremos c\'omo se ha construido el dato de base emp\'irica \emph{habilidad} durante el siglo 20 hasta principios del siglo 21.
 
 
-\section{Operacionalizaci\'on de \emph{habilidad} en la industria del video juego.} \label{sec:operacionalizacion_habilidad}
+\section{Operacionalizaci\'on de \emph{habilidad}} \label{sec:operacionalizacion_habilidad}
 
-Conocer c\'omo cambian las habilidades individuales a lo largo del tiempo es esencial en el sistema educativo y laboral.
+Conocer c\'omo aprenden las personas a lo largo del tiempo es importante en muchos aspectos de la vida, especialmente en el sistema educativo, deportivo y laboral.
 %
-Dado que son variables ocultas, lo mejor que podemos hacer es estimarlas a partir de sus consecuencias observables directas: el producto de la resoluci\'on de problemas y competencias.
+Dado que la habilidad es una hip\'otesis ocultas, debemos estimarla a partir de sus consecuencias observables directas: el \'exito o fracaso en en la resoluci\'on de problemas y competencias.
 %
-Sin embargo la estimaci\'on de curvas de aprendiaje es tema sensible, especialmente cuando se las pretende utilizar para tomar decisiones que pueden impactar a las personas.
+Considerar s\'olo la frecuencia \'exitos como indicador de la habilidad de los individuos puede conducir a aproximaciones err\'oneas, fundamentalmente porque el valor de un \'exito o un fracaso depende de la dificultad de los desaf\'ios.
 %
-Considerar s\'olo la frecuencia de resultados positivos como indicador de la habilidad de los individuos puede conducir a aproximaciones erroneas, fundamentalmente porque su valor depende tambi\'en de la dificultad de los desaf\'ios.
+Por esta raz\'on, todos los modelos de habilidad ampliamente utilizados consideran que el resultado de la resoluci\'on de problemas se produce en relaci\'on a otra entidad oculta, que puede ser la habilidad de la persona contra la que compiten o la dificultad de intr\'inseca del problema.
 %
-Por esta raz\'on, todos los estimadores de habilidad ampliamente usados se basan en comparaciones por pares.
+Los primeros modelos causales, propuestos hace casi un siglo por~\cite{Thurstone1927} y~\cite{Zermelo1929}, supon\'ian que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ (\emph{performance}) del agente $i$ y de su oponente $j$, $P(\, r \,|\, p_i, \, p_j \,)$.
 %
-Desde los primeros modelos generativos, propuestos hace casi un siglo por~\cite{Thurstone1927} y~\cite{Zermelo1929}, se supone que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ del agente $i$ y de su oponente $j$, expresada como $P(\, r \,|\, p_i, \, p_j \,)$.
-%
-El campo sigui\'o progresando con los trabajos de Bradley y Terry \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}Mosteller, que condujeron al gran avance que tuvo lugar cuando Arpad Elo~\cite{Elo2008} desarroll\'o una metodolog\'ia para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
+El campo sigui\'o progresando con los trabajos de Bradley y Terry \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c} Mosteller, que permiti\'o a Arpad Elo~\cite{Elo2008} desarrollar una metodolog\'ia de estimaci\'on de habilidad para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
 
-\subsection{Antecedentes: el modelo de habilidad Elo}
+% Parrafo
 
-El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas profesionales supone que las habilidades ocultas generan el resultado observable a trav\'es de desempe\~nos aleatorios.
+Hasta las v\'isperas del siglo 21, la estimaci\'on de habilidad se resolv\'ian utilizando funciones de costo ad-hoc.
+%
+Con el desarrollo de la computaci\'on moderna estos modelos comienzan a ser resueltos mediante la aplicaci\'on estricta de las reglas de la probabilidad.
+%
+Actualmente, los modelos bayesianos de habilidad Glicko \cite{glickman2001} y TrueSkill \cite{Herbrich2007} son los m\'as utilizados por la industria del video juego, y al inicio de esta tesis eran considerados est\'andares para la estimaci\'on de habilidad en el tiempo.
+%
+Gracias a la aceptaci\'on generalizada, las estimaciones de habilidad de estos modelos ser\'an consideradas base emp\'irica metodol\'ogica a lo largo de esta tesis sobre la cual evaluaremos los posibles factores de aprendizaje (figura~\ref{fig:base_empirica_tesis}).
+%
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
+    \end{subfigure}
+    \caption{Niveles de base emp\'irica de esta tesis. La base emp\'irica epistemol\'ogica (en negro) son lo resultados (Ganar/Perder) observados directamente en las bases de datos de comunidades de video juegos en l\'inea. La base emp\'irica metodol\'ogica (en gris) son las estimaciones de habilidad realizadas con los modelos bayesianos estados del arte en la industria del video juego. En base a esta informaci\'on estudiaremos algunos posibles factores de aprendizaje (en blanco) no considerados previamente por la literatura de aprendizaje humano.}
+    \label{fig:base_empirica_tesis}
+\end{figure}
+% Pararfo
+En esta secci\'on entonces, revisaremos en detalle los modelos de habilidad mediante los cuales analizaremos los posibles factores de aprendizaje social al interior de las comunidades virtuales estudiadas en esta tesis.
+
+% Parrafo
+
+\subsection{Modelo de habilidad Elo}
+
+El modelo causal de base emp\'irica utilizado por Elo para estimar la habilidad de los ajedrecistas profesionales en base al resultado de observado de una partida, supone que las habilidades (\emph{skills}) ocultas de dos agentes $i$ y $j$, $H_{S_i} = H_{S_j} = (-\infty,\infty)$, generan el resultado observable $H_R= \{\text{Ganar}, \text{Perder} \}$ a trav\'es de la diferencia $H_D = (-\infty,\infty)$ de los desempe\~nos aleatorios $H_{P_i} = H_{P_j} = (-\infty,\infty)$.
+%
+Luego, el problema de investigaci\'on contiene las siguientes hip\'otesis, $\mathcal{H} = \{H_{S_i}, H_{S_j}, H_{P_i}, H_{P_j}, H_D, H_R \}$.
+%
+En la figura~\ref{fig:generative_model_elo} especificamos la versi\'on ``Gaussiana'' del modelo Elo (descrita en el art\'iculo~\cite{Herbrich2007}) utilizando la notaci\'on de redes bayesianas.
+%
+Debido a que durante el siglo 20 se seleccionaba una \'unica hip\'otesis elemental de habilidad $H_{S_i} = \{ s_i \}$, $H_{S_j} = \{ s_j \}$, (en base a una funci\'on de costo ad-hoc que revisaremos m\'as adelante), especificamos las hip\'otesis de habailidad mediante puntos negros, que representan constantes.
 %
 \begin{figure}[ht!]
   \centering
@@ -2525,44 +2551,53 @@ El modelo causal propuesto por Elo para estimar la habilidad de los ajedrecistas
 
     \node[invisible, below=of r, yshift=-0.7cm] (inv) {};
   }
-  \caption{}
+  \caption{Red bayesiana del modelo causal}
   \label{fig:generative_model_elo}
   \end{subfigure}
-  \begin{subfigure}[b]{0.375\textwidth}
+  \begin{subfigure}[b]{0.43\textwidth}
       \centering
-       \includegraphics[width=1\textwidth]{figures/probaOfWin_2D.pdf}
-       \caption{}
+       \includegraphics[width=0.8\textwidth]{figures/probaOfWin_2D.pdf}
+       \caption{Probabilidad de desempe\~nos y resultado}
      \label{fig:probaOfWin_2D}
     \end{subfigure}
      \caption{
-    (\subref{fig:generative_model_elo}) Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
+    \subref{fig:generative_model_elo} Modelo generativo en el que las habilidades causan los resultados observables a trav\'es de la diferencia de los rendimientos ocultos, $d=p_i-p_j$, ambas variables aleatorias centradas en la verdadera habilidad, $p \sim \N(s,\beta^2)$.
     %
     Quien haya obtenido mayor rendimiento gana, $r = (d > 0)$.
     %
     Las variables observables se pintan de gris, las ocultas en blanco, y las constantes se muestran como puntos negros.
     %
-    (\subref{fig:probaOfWin_2D}) La probabilidad conjunta de los desempe\~nos.
-    %
-    El volumen de un lado y del otro de la diagonal representa la predicci\'on del resultado.
+    \subref{fig:probaOfWin_2D} La probabilidad conjunta de los desempe\~nos es una Gaussiana bivariada, y la probabilidad del resultado es el volumen de un lado y del otro de la diagonal $p_i=p_j$.
     }
 \end{figure}
 %
-En su versi\'on ``Gaussiana'' (la figura~\ref{fig:generative_model_elo}, las persona exhiben distintos desempe\~nos en cada evento, que var\'ian alrededor de su verdadera habilidad, $\N(p\,|\,s,\beta^2)$.
+En cualquier caso, el modelo supone que las personas exhiben desempe\~nos aleatorios, que var\'ian alrededor de su verdadera habilidad con un desv\'io est\'andar $\beta$, $\N(p\,|\,s,\beta^2)$.
 %
-El modelo supone que gana el agente con mayor desempe\~no, $r = (p_i > p_j)$.
+Una vez que se generan los desempe\~nos, el resultado queda determinado pues seg\'un el modelo gana el agente con obtuvo mayor desempe\~no, $r = (p_i > p_j)$.
 %
-El par\'ametro $\beta^2$, al ser el mismo para todos los agentes, act\'ua como la escala de las estimaciones: habilidades a una distancia de un $\beta$ implica 76\% probabilidad de ganar, independiente del valor absoluto de las estimaciones%
-%
-A partir de este modelo causal podemos derivar la predicci\'on a priori del resultado, $P(r|s_i^{\text{old}},s_j^{\text{old}})$.
+El par\'ametro $\beta^2$, es el mismo para todos los agentes, y act\'ua como la escala de las estimaciones: habilidades a un $\beta$ de distancia, $s_i-s_j=\beta$, implica 76\% de probabilidad de ganar, $P(p_i > p_j|s_i,s_j)\approx0.76$, independientemente del valor absoluto de las habilidad $s_i$ y $s_j$.
 %
 En t\'erminos gr\'aficos, podemos representar esa probabilidad como el volumen indicado en la figura \ref{fig:probaOfWin_2D}.
 
 % Parrafo
 
-Arpad Elo propone a mediados del siglo 20 un procedimiento ad-hoc de selecci\'on de hip\'otesis sobre el valor de la variable (habilidad de los ajedrecistas) a trav\'es del indicador observado (el resultado de la partida) y el modelo causal descrito.
+Arpad Elo propone a mediados del siglo 20 un procedimiento ad-hoc de selecci\'on de las hip\'otesis de habilidad basado en las predicciones del modelo (continuamos con la versi\'on provista en el art\'iculo~\cite{Herbrich2007}).
+%
+Sea $s_i^{\text{old}}$ y $s_j^{\text{old}}$ las estimaciones de habilidad seleccionadas previamente, la predicci\'on a priori del siguiente resultado es $P(H_R|s_i^{\text{old}},s_j^{\text{old}})$.
 %
 La idea es que la magnitud de la sorpresa est\'a relacionada con cuan buenas son las estimaciones previas, y por lo tanto podr\'ia usarse para actualizarlas.
 %
+Sea el resultado $r \in H_R$, la ``sorpresa'' la define como,
+%
+Donde $\Delta$ se define como el complemento de la predicci\'on.
+%
+\begin{equation*}
+ \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{\footnotesize Sorpresa}}{\text{\footnotesize del resultado}}}
+\end{equation*}
+
+
+%
+
 Resultados inesperados indicar\'ian que las estimaciones actuales no son del todo correctas y deber\'ian actualizarse en mayor medida que si hubieran ocurrido como se esperaba.
 %
 La propuesta de Elo fue entonces utilizar la sorpresa $\Delta$ como factor de correcci\'on de las estimaciones previas.
@@ -2571,11 +2606,7 @@ La propuesta de Elo fue entonces utilizar la sorpresa $\Delta$ como factor de co
  s_{\text{winner}_\text{new}} = s_{\text{winner}_\text{old}} + \Delta \ \ \ \ \ s_{\text{loser}_\text{new}} = s_{\text{loser}_\text{old}} - \Delta
 \end{equation}
 %
-Donde $\Delta$ se define como el complemento de la predicci\'on.
-%
-\begin{equation*}
- \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{\footnotesize Sorpresa}}{\text{\footnotesize del resultado}}}
-\end{equation*}
+
 %
 Esta es la hip\'otesis indicadora de Elo.
 %
@@ -2891,44 +2922,6 @@ Con dos equipos, la funci\'on exacta de actualizaci\'on posterior es (ver \ref{c
 donde $\delta(s_i) = \delta - \mu_i + s_i$, la diferencia esperada entre equipos reemplazando la habilidad estimada ($\mu$) por su verdadera habilidad $s_i$.
 %
 La soluci\'on multiequipos no tiene una forma cerrada, requiere una iteraci\'on para alcanzar convergencia que ser\'a explicada en detalle en el cap\'itulo \ref{ch:ttt}.
-
-\subsection{Base emp\'irica metodol\'ogica \emph{habilidad}.}
-
-El modelo de habilidad TrueSkill corrije los errores del modelo Elo a trav\'es del la evaluaci\'on bayesiana de todo el espacio de hip\'otesis.
-%
-Si bien en la actualidad la federaci\'on de internacional de ajedrez, y una parte de la industria del video juego sigue usando el modelo Elo por tradici\'on hist\'orica, los resultados que se obtienen con el modelo TrueSkill son ampliamente superiores.
-%
-El sistema Glicko~\cite{Glikman2013} es un desarroll\'o bayesiano previo, que a diferencia de TrueSkill, no garantiza que la distribuci\'on gaussiana seleccionada para aproximar al posterior exacto sea la mejor en t\'erminos de minizaci\'on de la divergencia Kullback-Leibler entre la distribuci\'on verdadera y la aproximada.
-
-% Pararfo
-
-Ambos modelos bayesianos de habilidad, TrueSkill y Glicko, son los elegidos por la industria del video juego, considerados como los est\'andares para estimar la habilidad de los usuarios en el tiempo.
-%
-Al ser los modelos m\'as ampliamente adoptados por la comunidad de los video juegos, las estimaciones de habilidad pueden ser considerada base emp\'irica metodol\'ogica sobre la cual evaluar modelos de aprendizaje.
-% Parrafo
-\begin{figure}[ht!]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[page=3,width=\linewidth]{figures/baseEmpirica.pdf}
-    \end{subfigure}
-    \caption{Niveles de base emp\'irica. En negro la base emp\'irica epistemol\'ogica, en gris la base emp\'irica metodol\'ogica, y en blanco los datos que todav\'ia no han alcanzado un acuerdo intersubjetivo amplio.}
-\end{figure}
-%
-En cualquier caso, los resultados de las partidas son la base emp\'irica epistemol\'ogica a partir de la cual se infieren las distribuciones de creencias sobre las habilidades ocultas (no observable) de la personas.
-%
-Estas estimaciones de habilidad ser\'an la base emp\'irica metodol\'ogica que utilizaremos a lo largo del pr\'oximo cap\'itulo para estudiar los factores de aprendizaje social.
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
