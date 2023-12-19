@@ -1192,7 +1192,7 @@ Supongamos que se nos pide que elijamos una caja y alguien (un or\'aculo), quien
 %
 Se incorporan, entonces, las hip\'otesis elementales $c_i$ que corresponde con \emph{``elegimos la caja i''} y $s_i$ con \emph{``muestran el interior de la caja i''}.
 %
-Luego, nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ consiste de tres hip\'otesis, $\mathcal{H} = \{H_R, H_C, H_S\}$, cada una con tres hipótesis elementales, $H_R=\{r_1, r_2, r_3\}$, $H_C=\{c_1, c_2, c_3\}$ y $H_S=\{s_1, s_2, s_3\}$.
+Luego, nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ consiste de tres hip\'otesis, $\mathcal{H} = \{H_R, H_C, H_S\}$, cada una con tres hip\'otesis elementales, $H_R=\{r_1, r_2, r_3\}$, $H_C=\{c_1, c_2, c_3\}$ y $H_S=\{s_1, s_2, s_3\}$.
 %
 En la descripci\'on del juego se explicita la siguiente restricci\'on: si el regalo se encuentra en el caja $i$, no puede ocurrir que se muestre el interior de la caja $i$.
 %
@@ -1213,9 +1213,9 @@ En la figura~\ref{fig:modelo_causal_1} se especifica el sistema de restricciones
 %
 Los nodos de las redes bayesianas represetan las hip\'otesis del problema de investigaci\'on $\mathcal{H} = \{H_R, H_S, \{c_1\}\}$ y la flechas entres nodos representan la dependencia entre hip\'otesis.
 %
-En el modelo $A$ hay una única dependencia entre la hip\'otesis $H_R$ y la hip\'otesis $H_S$, $\forall\, i \in \{1,2,3\} \ P(s_i|r_i,M_A)=0$.
+En el modelo $A$ hay una \'unica dependencia entre la hip\'otesis $H_R$ y la hip\'otesis $H_S$, $\forall\, i \in \{1,2,3\} \ P(s_i|r_i,M_A)=0$.
 %
-Debido a que en el modelo $M_A$ no existe ninguna dependencia que involucre a $H_C$, por simplicidad decidimos no incluir esa hipótesis en la red bayesiana.
+Debido a que en el modelo $M_A$ no existe ninguna dependencia que involucre a $H_C$, por simplicidad decidimos no incluir esa hip\'otesis en la red bayesiana.
 
 
 % Parrafo
@@ -1226,7 +1226,7 @@ Por ejemplo, podemos sospechar que la caja que se muestran $s_i$ tampoco puede c
 %
 Esto plantea una restricci\'on (o dependencia) adicional.
 %
-El sistema de restricciones que incluye esta restricción y todas las restricciones del modelo $A$, le llamamos Modelo $B$ ($M_B$).
+El sistema de restricciones que incluye esta restricci\'on y todas las restricciones del modelo $A$, le llamamos Modelo $B$ ($M_B$).
 %
 Este modelo tiene asociado la distribuci\'on de probabilidad $P(H_R,H_S|c_1,M_B)$.
 %
@@ -1591,7 +1591,7 @@ Lo que hemos hecho no es otra cosa que aplicar el Teorema de Bayes,
 \end{equation}
 
 \todo[inline]{Creo que quedar\'ia bien volver a ponerle los valores de que salen del ejemplo a esta ecuaci\'on y calcular las posterior de cada modelo, me parece que como cierre puede andar y queda claro para cerrar la explicaci\'on}
-\todo[inline, color=gray]{No entendí}
+\todo[inline, color=gray]{No entend\'i}
 
 
 % Parrafo
@@ -1693,16 +1693,16 @@ Las repeticiones se especifican en redes bayesianas mediante el uso de placas (v
   }
   \caption{Modelo $B$}
   \end{subfigure}
-  \caption{Extensi\'on de los modelos $A$ y $B$ mediante la repeticiones de las restricciones entre hip\'otesis. La notación de redes bayesianas especifica las repeticiones mediante placas. Las placas son como pilas de naipes, que difieren entre sí solo por el número indicado en el subíndice, $t \in \{1,\dots,T\}$.
+  \caption{Extensi\'on de los modelos $A$ y $B$ mediante la repeticiones de las restricciones entre hip\'otesis. La notaci\'on de redes bayesianas especifica las repeticiones mediante placas. Las placas son como pilas de naipes, que difieren entre s\'i solo por el n\'umero indicado en el sub\'indice, $t \in \{1,\dots,T\}$.
   }
   \label{fig_modelos_con_repeticiones}
 \end{figure}
 %
-Las placas son como naipes repetidos, uno arriba del otro, que difieren solamente en el número indicado por el subíndice.
+Las placas son como naipes repetidos, uno arriba del otro, que difieren solamente en el n\'umero indicado por el sub\'indice.
 %
 Si se despliegan las placas de la figura~\ref{fig_modelos_con_repeticiones} ver\'iamos $T$ redes bayesianas, una al lado de la otra, sin dependencias entre hip\'otesis que las vinculen entre s\'i.
 %
-El hecho de que no est\'en conectadas hace que sean independientes entre s\'i, las hipótesis observadas en una placa no afectan las probabilidades en el resto de las placas.
+El hecho de que no est\'en conectadas hace que sean independientes entre s\'i, las hip\'otesis observadas en una placa no afectan las probabilidades en el resto de las placas.
 
 % Parrafo
 
@@ -1724,7 +1724,7 @@ En la figura~\ref{fig:monty_hall_selection} mostrar c\'omo se actualizan las pro
 %
 Para producir esta figura primero generamos la variable \texttt{regaloEn1}, que indica si el regalo se se encuentra en la caja 1.
 %
-Luego calculamos las predicciones de los modelos (o evidencia) usando el lenguaje de programación \texttt{Julia}.
+Luego calculamos las predicciones de los modelos (o evidencia) usando el lenguaje de programaci\'on \texttt{Julia}.
 %
 \begin{lstlisting}[backgroundcolor=\color{all}]
 regaloEn1 = [ rand(1:3) == 1 ? 1 : 0 for _ in 1:32]
@@ -1823,7 +1823,7 @@ La distribuci\'on de probabilidad a priori de las causas $W_i$ son,
 p(w_d|\sigma,M_D) = \N(w_d|0, \sigma^2) \hspace{1cm} \text{$d \in \{0,\dots,D\}$}
 \end{equation}
 %
-donde $\sigma$ representa la incertidumbre a priori de las hipótesis $W_0$ a $W_D$.
+donde $\sigma$ representa la incertidumbre a priori de las hip\'otesis $W_0$ a $W_D$.
 %
 En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notaci\'on de redes bayesianas que representan a las hip\'otesis ocultas con c\'irculos blancos, las hip\'otesis observadas con c\'irculos grises, los par\'ametros del modelo con puntos negros, y las dependencias causales mediante flechas.
 
@@ -2783,7 +2783,7 @@ Esta es la estimaci\'on de habilidad correcta dado el modelo causal Elo.
 Es importante remarcar que la posterior, aunque se parezca, no es una distribuci\'on gaussiana, lo que nos impedir\'a usar la ecuaci\'on~\eqref{eq:posterior_win} iterativamente.
 
 
-\subsection{Posterior aproximado y extensión del modelo}
+\subsection{Posterior aproximado y extensi\'on del modelo}
 
 Por la forma del posterior exacto, una gaussiana puede ser usada como una buena aproximaci\'on, permiti\'endonos evitar el costo computacional de las metodolog\'ias de muestreo.
 %
@@ -2894,7 +2894,7 @@ Entonces, la probabilidad del desempe\~no de un equipo integrando los desempe\~n
  & = \N\left(t\,|\,\sum_{i\in A_e} \mu_i,\sum_{i\in A_e} \beta^2 + \sigma_i^2\right)
 \end{align}
 %
-Con dos equipos, la funci\'on exacta de actualizaci\'on posterior es (más detalles en el capítulo \ref{ch:ttt}),
+Con dos equipos, la funci\'on exacta de actualizaci\'on posterior es (m\'as detalles en el cap\'itulo \ref{ch:ttt}),
 %
 \begin{equation}
  P(s_i \mid r, A) \propto
@@ -6824,7 +6824,7 @@ Estas son las reglas de la probabilidad para actualizar las creencias en context
 %
 No hay m\'as.
 %
-A diferencia de lo que ocurre con la mayoría de funciones de costo ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad actualiza la creencia de una hipótesis mediante un proceso multiplicativo, una secuencia de predicciones.
+A diferencia de lo que ocurre con la mayor\'ia de funciones de costo ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad actualiza la creencia de una hip\'otesis mediante un proceso multiplicativo, una secuencia de predicciones.
 %
 \begin{equation} \label{eq:funcion_de_costo}
 \underbrace{P(\text{\En{Hypothesis}\Es{Hip\'otesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo inter-}}}{\text{\footnotesize\En{agreement}\Es{subjetivo inicial}}}} \underbrace{P(\text{dato}_1 |\text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ci\'on} 1}} \, \underbrace{P(\text{dato}_2 | \text{dato}_1 , \text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ci\'on} 2}} \dots
@@ -6837,7 +6837,7 @@ Si la predicci\'on del dato observado es 1 (sorpresa nula), entonces preservamos
 %
 Si la predicci\'on del dato observado es 0 (sorpresa total), entonces la hip\'otesis se hace falsa para siempre.
 %
-De forma similar a lo que le ocurre a las especies en evolución, la hipótesis que se extinguen nunca más vuelven.
+De forma similar a lo que le ocurre a las especies en evoluci\'on, la hip\'otesis que se extinguen nunca m\'as vuelven.
 
 % Parrafo
 
@@ -6847,15 +6847,15 @@ De hecho, el modelo est\'andar de evoluci\'on, conocido como \emph{replicator dy
 %
 Esto llev\'o recientemente a autores reconocidos en ambas \'areas a proponer el isomorfismo entre las teor\'ia de la evoluci\'on y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
 %
-En la siguiente ecuación ofrecemos un esquema del isomorfismo propuesto.
+En la siguiente ecuaci\'on ofrecemos un esquema del isomorfismo propuesto.
 %
 \begin{equation*} \small
 \overbrace{P\Big(\hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}}  \Big| \text{Datos}, \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Nueva proporci\'on}}{\text{\scriptsize de la variante}}} = \frac{ \overbrace{P\Big(\text{Datos}  \Big|  \hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}}  , \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Adaptabilidad de la}}{\text{\scriptsize variante a la realidad}}} \overbrace{P\Big(\hfrac{\text{Hip\'otesis o}}{\text{Forma de vida}} \Big|  \hfrac{\text{Modelo}}{\text{Causal}} \Big)}^{\hfrac{\text{\scriptsize Vieja proporci\'on}}{\text{\scriptsize de la variante}}}}{\underbrace{P\Big(\text{Datos},  \hfrac{\text{\small Modelo}}{\text{\small Causal}} \Big)}_{\hfrac{\text{\scriptsize Proporci\'on}}{\text{\scriptsize sobreviviente}}}}
 \end{equation*}
 %
-La noción de \emph{función de costo epistémico-evolutiva} hace referencia a este isomorfismo.
+La noci\'on de \emph{funci\'on de costo epist\'emico-evolutiva} hace referencia a este isomorfismo.
 %
-Luego, comprender las propiedades de esta función de costo parece esencial para comprender los mecanismos fundamentales del aprendizaje.
+Luego, comprender las propiedades de esta funci\'on de costo parece esencial para comprender los mecanismos fundamentales del aprendizaje.
 
 
 
@@ -6872,7 +6872,7 @@ Luego, comprender las propiedades de esta función de costo parece esencial para
 
 \section{Propiedades de la funci\'on de costo epist\'emico-evolutiva} \label{sec:propiedades_funcion_costo}
 
-Para estudiar las propiedades de la función de costo epistémico-evolutiva, veamos qu\'e le ocurre a las variantes sujetas a procesos multiplicativos.
+Para estudiar las propiedades de la funci\'on de costo epist\'emico-evolutiva, veamos qu\'e le ocurre a las variantes sujetas a procesos multiplicativos.
 %
 En base a los ejemplos propuestos por John Kelly~\cite{kelly1956} y Ole Peters~\cite{peters2019-ergodicityEconomics}, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporci\'on $b_c = b$ a Cara y $b_s = 1 - b$ a Seca, con $b \in [0,1]$.
 %
@@ -6894,7 +6894,7 @@ donde los recursos obtenidos en el primer paso temporal, $\omega_1(b)$, se gener
 %
 De forma similar, los recursos en el segundo paso temporal, $\omega_1(b)$, se generaron luego de que los recursos apostados a Seca $\omega_1(b)\,(1-b)$ fuera multiplicada por el pago correspondiente a Seca, $Q_s$.
 %
-En términos generales, los recursos que conseguimos con una apuesta $b$ en $T$ pasos temporales es,
+En t\'erminos generales, los recursos que conseguimos con una apuesta $b$ en $T$ pasos temporales es,
 %
 \begin{equation*}
 \omega_T(b) = \omega_0 (b \, Q_c )^{n_c} ((1-b)\,Q_s)^{n_s}
@@ -6902,20 +6902,20 @@ En términos generales, los recursos que conseguimos con una apuesta $b$ en $T$ 
 %
 donde $n_c$ es la cantidad de Caras y Secas $n_s$ la cantidad de Secas, con $T=n_c+n_s$.
 %
-De forma miliar a lo que ocurre con la función de costo epistémico-evolutiva, los recursos se actualizan siguiendo un proceso multiplicativo.
+De forma miliar a lo que ocurre con la funci\'on de costo epist\'emico-evolutiva, los recursos se actualizan siguiendo un proceso multiplicativo.
 %
-Como ocurre en la evaluación de hipótesis en probabilidad \eqref{eq:funcion_de_costo} o la selección de formas de vida en evolución, introducir un único cero en la secuencia produce la pérdida total e irreversible de los recursos.
+Como ocurre en la evaluaci\'on de hip\'otesis en probabilidad \eqref{eq:funcion_de_costo} o la selecci\'on de formas de vida en evoluci\'on, introducir un \'unico cero en la secuencia produce la p\'erdida total e irreversible de los recursos.
 %
 Esto hace que no debemos apostar todo los recursos a una de las opciones, ni a Cara $b=1$ ni a Seca $b=0$.
 %
-Pero ¿Cuál apuesta maximiza la tasa de crecimiento de los recursos?
+Pero ?`Cu\'al apuesta maximiza la tasa de crecimiento de los recursos?
 
 
 \subsection{Propiedad epist\'emica.} \label{sec:propiedad_epistemica}
 
 Supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas por una moneda no sesgada, con probabilidad $p=0.5$.
 %
-En este escenario existe la tendencia a apostar más a Caras que Secas.
+En este escenario existe la tendencia a apostar m\'as a Caras que Secas.
 %
 Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
 %
@@ -6927,13 +6927,13 @@ Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego
 %
 encontramos que el valor relativo de una apuesta respecto de la otra es independiente de los pagos $Q_c$ y $Q_s$ que ofrece la casa de apuestas!
 %
-Este descubrimiento fue realizado por Kelly~\cite{kelly1956} y en su manuscrito también aparece reportado con un signo de admiración.
+Este descubrimiento fue realizado por Kelly~\cite{kelly1956} y en su manuscrito tambi\'en aparece reportado con un signo de admiraci\'on.
 %
-Pero, ¿Cuál es la apuesta $b$ \'optima?
+Pero, ?`Cu\'al es la apuesta $b$ \'optima?
 
 %
 
-Para calcular el valor de la tasa de crecimiento de los recursos en el tiempo $r(b)$, debemos analizar la siguiente función,
+Para calcular el valor de la tasa de crecimiento de los recursos en el tiempo $r(b)$, debemos analizar la siguiente funci\'on,
 %
 \begin{equation}
 \begin{split}
@@ -6944,15 +6944,15 @@ r(b) &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^
 %
 Donde $p = \lim_{T \rightarrow \infty} \frac{n_s}{T}$ es la frecuencia de la moneda.
 %
-Debido a que lo pagos que ofrece la casa de apuestas no importan, el el valor óptimo de $b$ es,
+Debido a que lo pagos que ofrece la casa de apuestas no importan, el el valor \'optimo de $b$ es,
 %
 \begin{equation}
 \begin{split}
-\overbrace{\underset{b}{\text{arg max}} \phantom{T} \log r(b)}^{\hfrac{\text{\scriptsize \En{Optimal}\Es{Apuesta}}}{\text{\scriptsize \En{bet}\Es{\'optima}}}} \ = \underset{b}{\text{arg max}} \phantom{T} \overbrace{\log p \log b + (1-p) \log (1-b)}^{-\text{Entropía cruzada}} \overset{*}{=} p
+\overbrace{\underset{b}{\text{arg max}} \phantom{T} \log r(b)}^{\hfrac{\text{\scriptsize \En{Optimal}\Es{Apuesta}}}{\text{\scriptsize \En{bet}\Es{\'optima}}}} \ = \underset{b}{\text{arg max}} \phantom{T} \overbrace{\log p \log b + (1-p) \log (1-b)}^{-\text{Entrop\'ia cruzada}} \overset{*}{=} p
 \end{split}
 \end{equation}
 %
-Es decir, maximizar la tasa de crecimiento de la apuesta es equivalente a minimizar la entropía cruzada.
+Es decir, maximizar la tasa de crecimiento de la apuesta es equivalente a minimizar la entrop\'ia cruzada.
 %
 En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta \'optima  $b^{*}$ es la que divide los recursos en la misma proporci\'on que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia t\'ipica $\lim_{T \rightarrow \infty} n_c/T = p$.
 %
