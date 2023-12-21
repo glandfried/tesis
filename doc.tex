@@ -6950,6 +6950,18 @@ Justamente porque queremos tener la menor sorpresa posible, reducir al m\'aximo 
 
 \section{Los aprendizajes epist\'emicos y evolutivos}
 
+En la teor\'ia de la probabilidad, las redes bayesianas son la especificaci\'on matem\'atica completa de los sistemas de comunicaci\'on con la realidad que utilizamos para realizar la inferencia sobre las hip\'otesis ocultas en base a las se\~nales efectivamente detectadas.
+%
+La aplicaci\'on estricta de las reglas de la probabilidad nos permite evaluar sistemas de comunicaci\'on alternativos, y aprender de la realidad.
+%
+En la vida, nuestros cuerpos act\'uan como sistemas de comunicaci\'on con la realidad f\'isicos capaces de detectar se\~nales del mundo y ajustar sus comportamientos para sobrevivir y reproducirse.
+%
+La selecci\'on natural en evoluci\'on favoreci\'o las formas de vida mejor adaptadas al ambiente, produciendo el enorme aprendizaje que la vida a adquirido desde su origen hasta ahora.
+%
+En esta secci\'on discutiremos algunos aspectos comunes a los aprendizajes epist\'emicos (en probabilidad) y evolutivos (de la vida).
+
+\subsection{La funci\'on de costo epist\'emico-evolutiva}
+
 \begin{quotation}
 The cost function approach [..] can actually be used to analyze nearly any branch of human endeavor.
 The utility theory of Von Neumann shows us one way to obtain such a cost function.
@@ -6957,11 +6969,6 @@ The point here is that an arbitrary combination of a statistical transducer (i.e
 What can be done, however, is to take some real-life situation which seems to possess the essential features of a communication problem, and to analyze it without the introduction of an arbitrary cost function.
 The situation which will be chosen here is one in which a gambler uses knowledge of the received symbols of a communication channel in order to make profitable bets on the transmitted symbols. (Kelly 1956 \emph{A New Interpretation of Information Rate} Bell Labs)
 \end{quotation}
-
-
-\subsection{La funci\'on de costo epist\'emico-evolutiva}
-
-
 
 La l\'ogica de la incertidumbre (teor\'ia de la probabilidad) ha sido derivada repetidas veces a partir de diversos principios (axiomas), llegando siempre a las mismas dos simples reglas.
 %
@@ -6983,7 +6990,7 @@ Estas son las reglas de la probabilidad para actualizar las creencias en context
 %
 No hay m\'as.
 %
-A diferencia de lo que ocurre con la mayor\'ia de funciones de costo ad-hoc, la aplicaci\'on estricta de las reglas de la probabilidad actualiza la creencia de una hip\'otesis mediante un proceso multiplicativo, una secuencia de predicciones.
+A diferencia de lo que ocurre con la mayor\'ia de funciones de costo ad hoc, la aplicaci\'on estricta de las reglas de la probabilidad actualiza la creencia de una hip\'otesis mediante un proceso multiplicativo, una secuencia de predicciones.
 %
 \begin{equation} \label{eq:funcion_de_costo}
 \underbrace{P(\text{\En{Hypothesis}\Es{Hip\'otesis}},\text{\En{Data}\Es{Datos}})}_{\hfrac{\text{\footnotesize\En{Initial belief compatible}\Es{Creencia compatible }}}{\text{\footnotesize \En{with the data}\Es{con los datos}}}} = \underbrace{P(\text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\hfrac{\text{\footnotesize\En{Initial intersubjective}\Es{Acuerdo inter-}}}{\text{\footnotesize\En{agreement}\Es{subjetivo inicial}}}} \underbrace{P(\text{dato}_1 |\text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ci\'on} 1}} \, \underbrace{P(\text{dato}_2 | \text{dato}_1 , \text{\En{Hypothesis}\Es{Hip\'otesis}})}_{\text{\footnotesize Predic\En{tion}\Es{ci\'on} 2}} \dots
@@ -6996,7 +7003,7 @@ Si la predicci\'on del dato observado es 1 (sorpresa nula), entonces preservamos
 %
 Si la predicci\'on del dato observado es 0 (sorpresa total), entonces la hip\'otesis se hace falsa para siempre.
 %
-De forma similar a lo que le ocurre a las especies en evoluci\'on, la hip\'otesis que se extinguen nunca m\'as vuelven.
+De forma similar a lo que le ocurre a las especies en evoluci\'on, cuando una hip\'otesis se hace falsa se extingue, y de la extinci\'on no se vuelve.
 
 % Parrafo
 
@@ -7014,7 +7021,7 @@ En la siguiente ecuaci\'on ofrecemos un esquema del isomorfismo propuesto.
 %
 La noci\'on de \emph{funci\'on de costo epist\'emico-evolutiva} hace referencia a este isomorfismo.
 %
-Luego, comprender las propiedades de esta funci\'on de costo parece esencial para comprender los mecanismos fundamentales del aprendizaje.
+Comprender las propiedades de esta funci\'on de costo, luego, resulta esencial para comprender los mecanismos fundamentales del aprendizaje en probabilidad y evoluci\'on.
 
 
 
@@ -7031,17 +7038,19 @@ Luego, comprender las propiedades de esta funci\'on de costo parece esencial par
 
 \subsection{Propiedades de la funci\'on de costo epist\'emico-evolutiva} \label{sec:propiedades_funcion_costo}
 
-Para estudiar las propiedades de la funci\'on de costo epist\'emico-evolutiva, veamos qu\'e le ocurre a las variantes sujetas a procesos multiplicativos.
+Para estudiar las propiedades de la funci\'on de costo epist\'emico-evolutiva, estudiaremos un procesos multiplicativos.
 %
-En base a los ejemplos propuestos por John Kelly~\cite{kelly1956} y Ole Peters~\cite{peters2019-ergodicityEconomics}, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente y que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporci\'on $b_c = b$ a Cara y $b_s = 1 - b$ a Seca, con $b \in [0,1]$.
+En base a los ejemplos propuestos por John Kelly~\cite{kelly1956} y Ole Peters~\cite{peters2019-ergodicityEconomics}, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente.
+%
+Sin p\'erdida de generalidad, supongamos que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporci\'on $b_c = b$ a Cara y $b_s = 1 - b$ a Seca, con $b \in [0,1]$.
 %
 Sea $\omega_{t}$ los recursos totales en el tiempo $t$.
 %
-Luego, los recursos que se apuestan en el tiempo $t$ a Cara $w_t \, b$, se pierden si sale Seca, o se multiplican por $Q_c$ si sale Cara.
+Luego, los recursos que se apuestan en el tiempo $t$ a Cara son $w_t \, b$, y los recursos que se apuestan en el tiempo $t$ a Seca son $w_t \, (1-b)$.
 %
-De forma similar, los recursos que se apuestan en el tiempo $t$ a Seca $w_t \, (1-b)$, se pierden si sale Cara, o se multiplican por $Q_s$ si sale Seca.
+Si sale Cara, perdemos los recursos asignados a Seca, pero recibimos el pago correspondiente a Cara, $(w_t \, b)\, Q_c$ (y a la inversa si sale Seca).
 %
-En particular, sean nuestros recursos iniciales $\omega_0$, los recursos que conseguimos con la apuesta en dos pasos temporales $\omega_2(b)$, luego de obtener una Cara y una Seca, son
+En particular, sean nuestros recursos iniciales $\omega_0$, los recursos que conseguimos con la apuesta $b$ en dos pasos temporales, $\omega_2(b)$, luego de obtener una Cara y una Seca, son
 %
  \begin{equation*}
 \begin{split}
@@ -7049,9 +7058,7 @@ En particular, sean nuestros recursos iniciales $\omega_0$, los recursos que con
 \end{split}
 \end{equation*}
 %
-donde los recursos obtenidos en el primer paso temporal, $\omega_1(b)$, se generaron luego de que los recursos apostados a Cara $\omega_0\,b$ fuera multiplicada por el pago correspondiente a Cara, $Q_c$.
-%
-De forma similar, los recursos en el segundo paso temporal, $\omega_1(b)$, se generaron luego de que los recursos apostados a Seca $\omega_1(b)\,(1-b)$ fuera multiplicada por el pago correspondiente a Seca, $Q_s$.
+donde los recursos obtenidos en el primer paso temporal, $\omega_1(b)$, se generaron luego de que los recursos apostados a Cara $\omega_0\,b$ fuera multiplicada por el pago correspondiente a Cara, $Q_c$; y los recursos en el segundo paso temporal, $\omega_2(b)$, se generaron luego de que los recursos apostados a Seca $\omega_1(b)\,(1-b)$ fuera multiplicada por el pago correspondiente a Seca, $Q_s$.
 %
 En t\'erminos generales, los recursos que conseguimos con una apuesta $b$ en $T$ pasos temporales es,
 %
@@ -7061,11 +7068,9 @@ En t\'erminos generales, los recursos que conseguimos con una apuesta $b$ en $T$
 %
 donde $n_c$ es la cantidad de Caras y Secas $n_s$ la cantidad de Secas, con $T=n_c+n_s$.
 %
-De forma miliar a lo que ocurre con la funci\'on de costo epist\'emico-evolutiva, los recursos se actualizan siguiendo un proceso multiplicativo.
+De forma miliar a lo que ocurre con la evaluaci\'on de hip\'otesis en probabilidad \eqref{eq:funcion_de_costo} o la selecci\'on de formas de vida en evoluci\'on, introducir un \'unico cero en la secuencia produce la p\'erdida total e irreversible de los recursos.
 %
-Como ocurre en la evaluaci\'on de hip\'otesis en probabilidad \eqref{eq:funcion_de_costo} o la selecci\'on de formas de vida en evoluci\'on, introducir un \'unico cero en la secuencia produce la p\'erdida total e irreversible de los recursos.
-%
-Esto hace que no debemos apostar todo los recursos a una de las opciones, ni a Cara $b=1$ ni a Seca $b=0$.
+Claramente no debemos apostar todo los recursos a una \'unica opciones, ni a Cara $b=1$ ni a Seca $b=0$.
 %
 Pero ?`Cu\'al apuesta maximiza la tasa de crecimiento de los recursos?
 
