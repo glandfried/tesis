@@ -2131,23 +2131,23 @@ Con que una \'unica hip\'otesis asigne a los datos probabilidad mayor a $0$, la 
 
 Conocer c\'omo aprenden las personas a lo largo del tiempo es importante en muchos aspectos de la vida, especialmente en el sistema educativo, deportivo y laboral.
 %
-Dado que la habilidad es una hip\'otesis ocultas, debemos estimarla a partir de sus consecuencias observables directas: el \'exito o fracaso en en la resoluci\'on de problemas y competencias.
+Dado que la habilidad es una hip\'otesis oculta, debemos estimarla a partir de sus consecuencias observables directas: el \'exito o fracaso en en la resoluci\'on de problemas y competencias.
 %
 Considerar s\'olo la frecuencia \'exitos como indicador de la habilidad de los individuos puede conducir a aproximaciones err\'oneas, fundamentalmente porque el valor de un \'exito o un fracaso depende de la dificultad de los desaf\'ios.
 %
 Por esta raz\'on, todos los modelos de habilidad ampliamente utilizados consideran que el resultado de la resoluci\'on de problemas se produce en relaci\'on a otra entidad oculta, que puede ser la habilidad de la persona contra la que compiten o la dificultad de intr\'inseca del problema.
 %
-Los primeros modelos causales, propuestos hace casi un siglo por~\cite{Thurstone1927} y~\cite{Zermelo1929}, supon\'ian que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ (\emph{performance}) del agente $i$ y de su oponente $j$, $P(\, r \,|\, p_i, \, p_j \,)$.
+Los primeros modelos causales, propuestos hace casi un siglo por Thurstone~\cite{Thurstone1927} y Zermelo~\cite{Zermelo1929}, supon\'ian que la probabilidad de un resultado observado $r$ depende del rendimiento $p$ (\emph{performance}) del agente $i$ y de su oponente $j$, $P(\, r \,|\, p_i, \, p_j \,)$.
 %
-El campo sigui\'o progresando con los trabajos de Bradley y Terry \cite{Bradley1952} y~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c} Mosteller, que permiti\'o a Arpad Elo~\cite{Elo2008} desarrollar una metodolog\'ia de estimaci\'on de habilidad para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
+El campo sigui\'o progresando con los trabajos de Bradley y Terry \cite{Bradley1952} y Mosteller~\cite{Mosteller1951a,Mosteller1951b,Mosteller1951c}, que permiti\'o a Arpad Elo~\cite{Elo2008} desarrollar una metodolog\'ia de estimaci\'on de habilidad para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
 
 % Parrafo
 
-Hasta las v\'isperas del siglo 21, la estimaci\'on de habilidad se resolv\'ian utilizando funciones de costo ad hoc.
+Hasta las v\'isperas del siglo 21, la estimaci\'on de habilidad se resolv\'ia utilizando funciones de costo ad hoc.
 %
-Con el desarrollo de la computaci\'on moderna estos modelos comienzan a ser resueltos mediante la aplicaci\'on estricta de las reglas de la probabilidad.
+Con el desarrollo de la computaci\'on moderna, estos modelos comienzan a ser resueltos mediante la aplicaci\'on estricta de las reglas de la probabilidad.
 %
-Actualmente, los modelos bayesianos de habilidad Glicko \cite{glickman2001} y TrueSkill \cite{Herbrich2007} son los m\'as utilizados por la industria del video juego, y al inicio de esta tesis eran considerados est\'andares para la estimaci\'on de habilidad en el tiempo.
+Actualmente, los modelos bayesianos de habilidad Glicko \cite{glickman2001} y TrueSkill \cite{Herbrich2007} son los m\'as utilizados por la industria del video juego y, al inicio de esta tesis, eran considerados como est\'andares para la estimaci\'on de habilidad en el tiempo.
 %
 En esta secci\'on entonces, revisaremos en detalle los modelos de habilidad mediante los cuales analizaremos los posibles factores de aprendizaje social al interior de las comunidades virtuales estudiadas en esta tesis.
 
@@ -2157,13 +2157,13 @@ En esta secci\'on entonces, revisaremos en detalle los modelos de habilidad medi
 
 Arpad Elo~\cite{Elo2008} desarrolla en la d\'ecada del 60' una metodolog\'ia de estimaci\'on de habilidad para la Federaci\'on de Ajedrez de los Estados Unidos (USCF), adoptada hasta el d\'ia de hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
 %
-El modelo causal de una partida de ajedrez supone que las habilidades (\emph{skills}) ocultas de dos agentes $i$ y $j$, $H_{S_i} = H_{S_j} = (-\infty,\infty)$, generan el resultado observable $H_R= \{\text{Ganar}, \text{Perder} \}$ a trav\'es de la diferencia $H_D = (-\infty,\infty)$ de los desempe\~nos aleatorios $H_{P_i} = H_{P_j} = (-\infty,\infty)$.
+El modelo causal de una partida de ajedrez supone que las habilidades (\emph{skills}) ocultas de dos agentes $i$ y $j$, $H_{S_i}, H_{S_j} \in \mathcal{R}$, generan el resultado observable $H_R= \{\text{Ganar}, \text{Perder} \}$ a trav\'es de la diferencia $H_D \in \mathcal{R}$ de los desempe\~nos aleatorios $H_{P_i}, H_{P_j} \in \mathcal{R}$.
 %
 Luego, el problema de investigaci\'on contiene las siguientes hip\'otesis, $\mathcal{H} = \{H_{S_i}, H_{S_j}, H_{P_i}, H_{P_j}, H_D, H_R \}$.
+
+En la figura~\ref{fig:generative_model_elo} especificamos la versi\'on ``gaussiana'' del modelo Elo (descrita en el trabajo de Herbrich et. al~\cite{Herbrich2007}) utilizando la notaci\'on de redes bayesianas.
 %
-En la figura~\ref{fig:generative_model_elo} especificamos la versi\'on ``gaussiana'' del modelo Elo (descrita en el art\'iculo~\cite{Herbrich2007}) utilizando la notaci\'on de redes bayesianas.
-%
-Debido a que durante el siglo 20 se seleccionaba una \'unica hip\'otesis elemental de habilidad $H_{S_i} = \{ s_i \}$, $H_{S_j} = \{ s_j \}$, (en base a una funci\'on de costo ad hoc que revisaremos m\'as adelante), especificamos las hip\'otesis de habailidad mediante puntos negros, que representan constantes.
+Debido a que durante el siglo 20 se seleccionaba una \'unica hip\'otesis elemental de habilidad $H_{S_i} = \{ s_i \}$, $H_{S_j} = \{ s_j \}$, (en base a una funci\'on de costo ad hoc que revisaremos m\'as adelante), especificamos las hip\'otesis de habilidad mediante puntos negros, que representan constantes.
 %
 \begin{figure}[ht!]
   \centering
@@ -2209,37 +2209,42 @@ Debido a que durante el siglo 20 se seleccionaba una \'unica hip\'otesis element
     Las variables observables se pintan de gris, las ocultas en blanco, y las constantes se muestran como puntos negros.
     %
     \subref{fig:probaOfWin_2D} La probabilidad conjunta de los desempe\~nos es una gaussiana bivariada, y la probabilidad del resultado es el volumen de un lado y del otro de la diagonal $p_i=p_j$.
+    \todo[inline]{Ojo, aca hablas de volumen, pero en la figura hay colores y superficies, tenes que decir que la altura estar\'ia dada por el color}
     }
 \end{figure}
 %
 En cualquier caso, el modelo supone que las personas exhiben desempe\~nos aleatorios, que var\'ian alrededor de su verdadera habilidad con un desv\'io est\'andar $\beta$, $\N(p\,|\,s,\beta^2)$.
 %
-Una vez que se generan los desempe\~nos, el resultado queda determinado pues seg\'un el modelo gana el agente con obtuvo mayor desempe\~no, $r = (p_i > p_j)$.
+Una vez que se generan los desempe\~nos, el resultado queda determinado pues, seg\'un el modelo, gana el agente que obtuvo mayor desempe\~no, $r = (p_i > p_j)$.
 %
-El par\'ametro $\beta^2$, es el mismo para todos los agentes, y act\'ua como la escala de las estimaciones: habilidades a un $\beta$ de distancia, $s_i-s_j=\beta$, implica 76\% de probabilidad de ganar, $P(p_i > p_j|s_i,s_j)\approx0.76$, independientemente del valor absoluto de las habilidad $s_i$ y $s_j$.
+El par\'ametro $\beta^2$, es el mismo para todos los agentes, y act\'ua como la escala de las estimaciones: habilidades a un $\beta$ de distancia, $s_i-s_j=\beta$, implica \SI{76}{\percent} de probabilidad de ganar, $P(p_i > p_j|s_i,s_j)\approx0.76$, independientemente del valor absoluto de las habilidades $s_i$ y $s_j$.
 %
-En t\'erminos gr\'aficos, podemos representar esa probabilidad como el volumen indicado en la figura \ref{fig:probaOfWin_2D}.
-
+En t\'erminos gr\'aficos, podemos representar esa probabilidad como el volumen indicado en la figura~\ref{fig:probaOfWin_2D}.
+\todo[inline]{explicar un poco m\'as c\'omo se interpreta el gr\'afico. Le falta la escala o qu\'e significa el gris}
 % Parrafo
 
-La metodolog\'ia desarrollada por Arpad Elo implementa un procedimiento ad hoc de selecci\'on de las hip\'otesis de habilidad basado en las predicciones del modelo (continuamos con la versi\'on provista en el art\'iculo~\cite{Herbrich2007}).
+La metodolog\'ia desarrollada por Arpad Elo implementa un procedimiento ad hoc de selecci\'on de las hip\'otesis de habilidad basado en las predicciones del modelo (continuamos con la versi\'on provista en el trabajo de Herbrich et. al~\cite{Herbrich2007}).
 %
 Sea $s_i^{\text{old}}$ y $s_j^{\text{old}}$ las estimaciones de habilidad seleccionadas previamente, la predicci\'on a priori del siguiente resultado es $P(H_R|s_i^{\text{old}},s_j^{\text{old}})$.
 %
-La idea es que la magnitud de la sorpresa est\'a relacionada con cuan buenas son las estimaciones previas, y por lo tanto podr\'ia usarse para actualizarlas.
+La idea es que la magnitud de la sorpresa est\'a relacionada con cuan buenas son las estimaciones previas y, por lo tanto, podr\'ia usarse para actualizarlas.
 %
-Sea el resultado $r \in H_R$, la ``sorpresa'' se define como,
+Sea el resultado $r \in H_R$, la \textbf{sorpresa} se define como,
 %
 \begin{equation*}
  \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{\footnotesize Sorpresa}}{\text{\footnotesize del resultado}}}
 \end{equation*}
+\todo[inline]{Aca podes dar una intuicion de lo que significa}
 %
 Su metodolog\'ia se basa en la idea de que resultados inesperados indicar\'ian que las estimaciones actuales no son del todo correctas.
 %
 Por ello, la propuesta de Elo fue entonces utilizar la sorpresa $\Delta$ como factor de correcci\'on de las estimaciones previas.
 %
 \begin{equation}\label{eq:elo_update}
- s_{\text{winner}}^{\text{new}} = s_{\text{winner}}^{\text{old}} + \Delta \ \ \ \ \ s_{\text{loser}}^{\text{new}} = s_{\text{loser}}^{\text{old}} - \Delta
+\begin{align}
+s_{\text{winner}}^{\text{new}} &= s_{\text{winner}}^{\text{old}} + \Delta \\
+s_{\text{loser}}^{\text{new}} &= s_{\text{loser}}^{\text{old}} - \Delta
+\end{align}
 \end{equation}
 %
 Cuanto m\'as inesperados son los resultados, en mayor medida se actualizan las estimaciones previas.
@@ -2254,9 +2259,10 @@ Sin embargo, el sistema Elo tiene algunas debilidades importantes.
 
 % Parrafo
 
-Por un lado, la regla de actualizaci\'on (Ec.~\eqref{eq:elo_update}) es sim\'etrica, lo que gana un agente lo pierde el otro.
+Por un lado, la regla de actualizaci\'on, expresada en la ecuaci\'on~\eqref{eq:elo_update}, es sim\'etrica. 
+Es decir, lo que gana un agente lo pierde el otro.
 %
-Debido a que a los agentes nuevos comienzan con estimaciones arbitrarias (el mismo valor inicial para cualquier individuo), ellas tienden a generan alta sorpresa y por lo tanto pueden modificar bruscamente las estimaciones de sus oponentes a pesar de que ya hubieran convergido.
+Debido a que los agentes nuevos comienzan con estimaciones arbitrarias (el mismo valor inicial para todos los individuos), los primeros cruces tienden a generar una alta sorpresa y, por lo tanto, pueden modificar bruscamente las estimaciones de sus oponentes a pesar de que ya hubieran convergido a valores estables.
 %
 Esta debilidad ocurre por no tener en cuenta la incertidumbre sobre las estimaciones de los agentes.
 %
@@ -2266,9 +2272,9 @@ Ese es rol que desempe\~na el K-factor usado por la FIDE, $\Delta_i = \Delta \cd
 %
 A medida que la persona tiene m\'as cantidad de partidas jugadas, el valor de K es menor.
 %
-De esa forma se rompe la simetr\'ia y se preserva las estimaciones de las personas que se consideran conocidas.
+De esa forma se rompe la simetr\'ia y se preservan las estimaciones de las personas que se consideran conocidas.
 %
-Esta definici\'on de habilidad es usada todav\'ia hoy por la federaci\'on internacional de ajedrez (FIDE).
+Esta definici\'on de habilidad es usada todav\'ia hoy por la Federaci\'on Internacional de Ajedrez (FIDE).
 
 % Parrafo
 
@@ -2294,7 +2300,7 @@ Lo importante es que la incertidumbre a priori, $\sigma$, sea lo suficientemente
 %
 Este valor depende del contexto.
 %
-En general se usa una incertidumbre que es 3 veces el desv\'io estandar del desempe\~no, $\beta$.
+En general, se usa una incertidumbre que es tres veces el desv\'io est\'andar del desempe\~no, $\beta$.
 
 % Parrafo
 
@@ -2308,7 +2314,7 @@ En la figura~\ref{paso_1_multiplicacion_normales} graficamos la distribuci\'on c
 %
 Para calcular la probabilidad del desempe\~no tenemos que integrar todos los posibles valores de habilidad, $p(p_i) = \int_{s_i} p(p_i|s_i)p(s_i) \text{d}s_i $.
 %
-En t\'erminos gr\'aficos esto es equivalente a computar al \'area debajo de la l\'inea s\'olida de la figura~\ref{paso_1_multiplicacion_normales}.
+En t\'erminos gr\'aficos, esto es equivalente a computar al \'area debajo de la l\'inea s\'olida de la figura~\ref{paso_1_multiplicacion_normales}.
 %
 \begin{figure}[ht!]
 \centering
@@ -2335,7 +2341,7 @@ Por las propiedades de la distribuci\'on gaussiana (ver anexo), esta integral se
 
 % Parrafo
 
-Calculada la distribuci\'on de probabilidad marginal de los desempe\~nos, la predicci\'on a priori del resultado de la partida entre dos individuos $i$ y $j$ se corresponde nuevamente con el volumen de un lado y del otro de la isol\'inea $p_i = p_j$ visto en la figura~\ref{fig:probaOfWin_2D}, .
+Calculada la distribuci\'on de probabilidad marginal de los desempe\~nos, la predicci\'on a priori del resultado de la partida entre dos individuos $i$ y $j$ se corresponde nuevamente con el volumen de un lado y del otro de la l\'inea de nivel $p_i = p_j$ visto en la figura~\ref{fig:probaOfWin_2D}.
 %
 En t\'erminos anal\'iticos, la diferencia de desempe\~nos, $d=p_i-p_j$, es una gaussiana centrada en la diferencia de las medias de las distribuciones de habilidad a priori ($\mu_i - \mu_j$), con una varianza que incorpora la incertidumbre de ambas estimaciones ($\sigma$) y la varianza de ambos rendimientos ($\beta$), $\N(\, d \, | \, \mu_i -\mu_j \, ,\ 2\beta^2 + \sigma_i^2 + \sigma_j^2 \,)$.
 %
