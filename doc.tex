@@ -2659,15 +2659,130 @@ A diferencia de otras plataformas, no hay contenido pago, ofreciendo las mismas 
 %
 No existe un mecanismo que defina la composici\'on de los equipos en funci\'on de las probabilidad de ganar de los jugadores.
 %
-La plataforma tiene una secci\'on ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
+% La plataforma tiene una secci\'on ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
+% %
+% Un entorno de juego t\'ipico de Conquer Club tiene cuatro elementos relevantes: el mapa actual con la ocupaci\'on de tropas en cada regi\'on, el estado del juego que muestra la ronda actual y un resumen de la informaci\'on de los jugadores, un chat p\'ublico del juego y un registro de movimientos.
+
+\paragraph{Gameplay}\label{sub:gameplay}
+
+Al comienzo de cada partida, las regiones del mapa se distribuyen aleatoriamente entre los jugadores a las que le asignan una cierta cantidad de tropas.
 %
-Un entorno de juego t\'ipico de Conquer Club tiene cuatro elementos relevantes: el mapa actual con la ocupaci\'on de tropas en cada regi\'on, el estado del juego que muestra la ronda actual y un resumen de la informaci\'on de los jugadores, un chat p\'ublico del juego y un registro de movimientos.
+Cada turno consiste en i) desplegar nuevas tropas, ii) asaltar las regiones vecinas del oponente y iii) reforzar las regiones.
+%
+El entorno del juego tiene cuatro elementos relevantes: el tablero actual, un panel con el estado del juego, un chat p\'ublico y un registro de movimientos.
 
 % Parrafo
 
-Los investigadores que estudian aprendizaje en ajedrez se basan en Elo, un estimador de habilidades utilizado por la Federaci\'on Mundial de Ajedrez~\cite{glickman1995-guideToChessRatings,glickman2001}.
+La figura~\ref{conquerImage} ejemplifica la visi\'on de un jugador en un escenarios de una partida de dos equipos en equipos de dos jugadores.
 %
-Nosotros nos basamos en \emph{TrueSkill}~\cite{Herbrich2007}, una extensi\'on Bayesiana del sistema de clasificaci\'on Elo.
+Los nodos del gr\'afico representan las regiones, el color indica a qui\'en pertenece, los n\'umeros representan el n\'umero de tropas y las formas indican la agrupaci\'on de regiones por zonas.
+%
+Al lado hay un panel con el n\'umero de ronda, el jugador activo y el tiempo restante para jugar la ronda actual, y un resumen de las tropas totales y las regiones controladas totales para cada jugador.
+%
+El color junto al apodo identifica el n\'umero total de regiones que tiene cada jugador en el mapa.
+%
+Un servicio de chat p\'ublico est\'a disponible dentro de cada juego.
+%
+El \emph{log} registra todos los movimientos de los jugadores.
+
+% Parrafo
+
+Al comienzo de cada turno, los jugadores ganan nuevas tropas.
+%
+La cantidad de tropas resulta del n\'umero de \emph{regions} ocupadas y la bonificaci\'on de la \emph{zone} controlada y eventualmente por el intercambio de \emph{spoils} (Section A en Anexo).
+%
+Podemos ver en la primera l\'inea del \emph{log} en la Fig.~\ref{conquerImage}d que el jugador $c$ recibi\'o tropas por mantener el Continente 4.
+%
+Estas tropas pueden desplegarse en sus regiones ocupadas.
+%
+Por ejemplo, el jugador $c$ despliega todas sus tropas en la regi\'on $M$.
+
+% Parrafo
+
+Una vez finalizado el despliegue comienza la fase de asalto.
+%
+Un jugador puede asaltar la regi\'on de cualquier oponente siempre que ambas est\'en adyacentes y la regi\'on asaltante tenga un m\'inimo de dos tropas.
+%
+El motor del juego tira un dado por cada tropa que asalta, excepto por una tropa que necesita permanecer en la regi\'on, hasta un m\'aximo de tres tropas.
+%
+Luego, el sistema lanza un dado por cada tropa defensora, hasta un m\'aximo de dos tropas.
+%
+Los valores obtenidos de cada dado se ordenan de forma creciente y luego se comparan uno por uno.
+%
+Si el dado de asalto es m\'as alto, la regi\'on defensora pierde una tropa.
+%
+Si el dado defensor es mayor o igual, la regi\'on atacante pierde una tropa.
+%
+Si el atacante destruye todas las tropas defensoras, algunas de las tropas restantes deben moverse para ocupar la regi\'on reci\'en conquistada.
+%
+En nuestro ejemplo, el jugador $c$ asalta la regi\'on $N$ desde la regi\'on $M$ y la conquista del jugador $a$.
+%
+Luego, este jugador usa las tropas movidas recientemente para conquistar otra regi\'on.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Fig5}
+    \caption{
+    Esquema del juego Conquer Club. a) El mapa mostrado como un gr\'afo con continentes (nodos con misma forma), jugadores (identificados con la escala de grises) y un n\'umero de tropas en cada regi\'on.
+    b) Estado general del juego: ronda actual, jugador activo y tiempo restante para jugar; y un resumen del total de tropas y regiones controladas para cada jugador.
+    c) Ejemplo de sesi\'on de chat durante un juego.
+    d) Registro del juego utilizado para extraer informaci\'on a trav\'es del web scrapper.
+    }
+    \label{conquerImage}
+\end{figure}
+
+Cuando el jugador termina los asaltos, se pueden usar algunas tropas para reforzar la posici\'on de defensa.
+%
+El jugador puede mover algunas (pero no todas) las tropas de una de sus regiones a cualquier otra de sus regi\'on que est\'en conectadas.
+%
+La configuraci\'on de las reglas del juego de refuerzos determina cu\'antas de estas jugadas de refuerzo est\'an permitidas.
+%
+En nuestro ejemplo, el jugador $c$ refuerza la regi\'on $P$ moviendo dos tropas de la regi\'on $M$.
+%
+Finalmente, el jugador $c$ termina el turno y el jugador $b$ comienza con su ronda.
+
+\paragraph{Matchmaking}
+
+La plataforma tiene una secci\'on ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
+%
+Cuando un jugador crea un juego, elige: a) opciones de juego, b) tipo de juego (todos contra todos o juego en equipo), c) el n\'umero de participantes, y d) el m\'etodo de participaci\'on, p\'ublico, p\'ublico con espacios reservados, y privado
+%
+Los juegos p\'ublicos son aquellos a los que cualquiera puede unirse.
+%
+Los juegos p\'ublicos con espacios reservados tienen espacios asignados a jugadores particulares, y el resto est\'a abierto a jugadores generales.
+%
+En los juegos privados solo las personas que tenga la contrase\~na pueden jugar.
+
+% Parrafo
+
+En esta plataforma, no existe un mecanismo de formaci\'on de equipos autom\'atico basado en la probabilidad de ganar entre jugadores.
+%
+Hay una clasificaci\'on interna y un sistema de puntos que los jugadores pueden usar como referencia para estimar la habilidad de los dem\'as.
+%
+El sistema de puntos se actualiza como {\small $\Delta = \text{min}(\frac{\text{Loser's score}}{\text{Winner's score}}20\,,\,100 )$}.
+%
+Sin embargo, no son indicadores precisos de la habilidad de los jugadores ni de la probabilidad de ganar entre oponentes.
+%
+El ranking interno es la conjunci\'on entre el n\'umero de partidos jugados y los puntos alcanzados.
+
+% Parrafo
+
+Cuando un jugador selecciona un juego, puede ver los nombres de los que ya se han unido.
+%
+Aparece un icono y una estrella junto a los nombres.
+%
+Los iconos representan el \emph{ranking} de habilidad interno.
+%
+Las estrellas resumen la opini\'on sobre la jugadora que expresaron algunos de sus anteriores contrincantes.
+%
+Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el comportamiento del resto de jugadores en cuanto a \emph{Fair Play}, \emph{Gameplay} y Actitud.
+%
+
+
+
+% Parrafo
+
+Los investigadores que estudian aprendizaje en ajedrez se basan en Elo, mientras que nosotros adoptamos una extensi\'on bayesiana llamada TrueSkill~\cite{Herbrich2007}.
 %
 En primer lugar, TrueSkill utiliza una distribuci\'on de creencias a priori, en lugar de un escalar, para representar las estimaciones de habilidades.
 %
@@ -2716,21 +2831,20 @@ De acuerdo con la ley de la pr\'actica, observamos una dependencia lineal en las
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.49\linewidth]{figures/Fig1}
-\caption{
-Ley de la pr\'actica.
+\caption{Ley de la pr\'actica.
 %
 Curva de aprendizaje de la subpoblaciones de jugadores seg\'un su nivel actividad total.
 %
 Cada curva de aprendizaje muestra la habilidad de los primeros $2^n$ partidas jugadas de la subpoblaci\'on con al menos $2^n$ partidas jugadas y menos de $2^{n+1}$.
 %
-Las subfiguras muestran los valores de los parametros (es decir, $\alpha$ y \emph{Skill}$_0$) de cada curva de aprendizaje siguiendo la ecuaci\'on~\ref{lawOfPractice}.
+Las subfiguras muestran los valores de los par\'ametros (es decir, $\alpha$ y \emph{Skill}$_0$) de cada curva de aprendizaje siguiendo la ecuaci\'on~\ref{lawOfPractice}.
 }
 \label{learningskill_curve}
 \end{figure}
 
 Las curvas de aprendizaje dependen del abandono, exhibi\'endose una habilidad m\'as baja para las subpoblaciones con una actividad total m\'as baja.
 %
-Sin embargo, la tasa de aprendizaje ($\alpha$) se mantiene estable para las subpoblaciones con al menos $32$ de partidas jugadas (subfigura superior derecha en~\ref{learningskill_curve}).
+Sin embargo, la tasa de aprendizaje ($\alpha$) se mantiene estable para las subpoblaciones con al menos $32$ de partidas jugadas (panel superior derecho de la figura~\ref{learningskill_curve}).
 %
 La diferencia entre ellos causa poca variaci\'on en la adquisici\'on de habilidades a largo plazo, con menos de $0.24$~tsp despu\'es de $1000$ partidas jugadas.
 %
@@ -3131,123 +3245,6 @@ Para calcular la habilidad, usamos el paquete \texttt{TrueSkill 0.4.4} de \textt
 Todos los jugadores comienzan con una habilidad media $\mu = 25$ y una desviaci\'on est\'andar de habilidad de $\sigma = 8,33$.
 %
 El valor de probabilidad de empate se estableci\'o en 0 ya que no hay posibilidad de empate en Conquer Club.
-
-\subsection{La plataforma}
-
-\paragraph{Gameplay}\label{sub:gameplay}
-
-Al comienzo de cada partida, las regiones del mapa se distribuyen aleatoriamente entre los jugadores a las que le asignan una cierta cantidad de tropas.
-%
-Cada turno consiste en i) desplegar nuevas tropas, ii) asaltar las regiones vecinas del oponente y iii) reforzar las regiones.
-%
-El entorno del juego tiene cuatro elementos relevantes: el tablero actual, un panel con el estado del juego, un chat p\'ublico y un registro de movimientos (Fig.~\ref{conquerImage}).
-
-% Parrafo
-
-En este ejemplo, se juega una partida de dos equipos en equipos de dos jugadores.
-%
-Los nodos del gr\'afico representan las regiones, el color indica a qui\'en pertenece, los n\'umeros representan el n\'umero de tropas y las formas indican la agrupaci\'on de regiones por zonas.
-%
-Al lado hay un panel con el n\'umero de ronda, el jugador activo y el tiempo restante para jugar la ronda actual, y un resumen de las tropas totales y las regiones controladas totales para cada jugador.
-%
-El color junto al apodo identifica el n\'umero total de regiones que tiene cada jugador en el mapa.
-%
-Un servicio de chat p\'ublico est\'a disponible dentro de cada juego.
-%
-El Log registra todos los movimientos de los jugadores.
-
-% Parrafo
-
-Al comienzo de cada turno, los jugadores ganan nuevas tropas.
-%
-La cantidad de tropas resulta del n\'umero de \emph{regions} ocupadas y la bonificaci\'on de la \emph{zone} controlada y eventualmente por el intercambio de \emph{spoils} (Section A en Anexo).
-%
-Podemos ver en la primera l\'inea del Log en la Fig.~\ref{conquerImage}d que el jugador $c$ recibi\'o tropas por mantener el Continente 4.
-%
-Estas tropas pueden desplegarse en sus regiones ocupadas.
-%
-Por ejemplo, el jugador $c$ despliega todas sus tropas en la regi\'on $M$.
-
-% Parrafo
-
-Una vez finalizado el despliegue comienza la fase de asalto.
-%
-Un jugador puede asaltar la regi\'on de cualquier oponente siempre que ambas est\'en adyacentes y la regi\'on asaltante tenga un m\'inimo de dos tropas.
-%
-El motor del juego tira un dado por cada tropa que asalta, excepto por una tropa que necesita permanecer en la regi\'on, hasta un m\'aximo de tres tropas.
-%
-Luego, el sistema lanza un dado por cada tropa defensora, hasta un m\'aximo de dos tropas.
-%
-Los valores obtenidos de cada lado se ordenan de forma creciente y luego se comparan uno por uno.
-%
-Si el dado de asalto es m\'as alto, la regi\'on defensora pierde una tropa.
-%
-Si el dado defensor es mayor o igual, la regi\'on atacante pierde una tropa.
-%
-Si el atacante destruye todas las tropas defensoras, algunas de las tropas restantes deben moverse para ocupar la regi\'on reci\'en conquistada.
-%
-In our example, player $c$ assaults region $N$ from region $M$ and conquers it from player $a$.
-%
-Luego, este jugador usa las tropas movidas recientemente para conquistar otra regi\'on.
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/Fig5}
-    \caption{
-    Esquema del juego Conquer Club. a) El mapa mostrado como un gr\'afo con continentes (nodos con misma forma), jugadores (identificados con la escala de grises) y un n\'umero de tropas en cada regi\'on.
-    b) Estado general del juego: ronda actual, jugador activo y tiempo restante para jugar; y un resumen del total de tropas y regiones controladas para cada jugador.
-    c) Ejemplo de sesi\'on de chat durante un juego.
-    d) Registro del juego utilizado para extraer informaci\'on a trav\'es del web scrapper.
-    }
-    \label{conquerImage}
-\end{figure}
-
-Cuando el jugador termina los asaltos, se pueden usar algunas tropas para reforzar la posici\'on de defensa.
-%
-El jugador puede mover algunas (pero no todas) las tropas de una de sus regiones a cualquier otra de sus regi\'on que est\'en conectadas.
-%
-La configuraci\'on de las reglas del juego de refuerzos determina cu\'antas de estas jugadas de refuerzo est\'an permitidas.
-%
-En nuestro ejemplo, el jugador $c$ refuerza la regi\'on $P$ moviendo dos tropas de la regi\'on $M$.
-%
-Finalmente, el jugador $c$ termina el turno y el jugador $b$ comienza con su ronda.
-
-\paragraph{Matchmaking}
-
-La plataforma tiene una secci\'on ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
-%
-Cuando un jugador crea un juego, elige: a) opciones de juego, b) tipo de juego, todos contra todos o juego en equipo, c) el n\'umero de participantes, y d) el m\'etodo de participaci\'on, p\'ublico, p\'ublico con espacios reservados, y privado
-%
-Los juegos p\'ublicos son aquellos a los que cualquiera puede unirse.
-%
-Los juegos p\'ublicos con espacios reservados tienen espacios asignados a jugadores particulares, y el resto est\'a abierto a jugadores generales.
-%
-En los juegos privados solo las personas que tenga la contrase\~na pueden jugar.
-
-% Parrafo
-
-En esta plataforma, no existe un mecanismo de formaci\'on de equipos autom\'atico basado en la probabilidad de ganar entre jugadores.
-%
-Hay una clasificaci\'on interna y un sistema de puntos que los jugadores pueden usar como referencia para estimar la habilidad de los dem\'as.
-%
-El sistema de puntos se actualiza como {\small $\Delta = \text{min}(\frac{\text{Loser's score}}{\text{Winner's score}}20\,,\,100 )$}.
-%
-Sin embargo, no son indicadores precisos de la habilidad de los jugadores y la probabilidad de ganar entre oponentes.
-%
-El ranking interno es la conjunci\'on entre el n\'umero de partidos jugados y los puntos alcanzados.
-
-% Parrafo
-
-Cuando un jugador selecciona un juego, puede ver los nombres de los que ya se han unido.
-%
-Aparece un icono y una estrella junto a los nombres.
-%
-Los iconos representan el ranking de habilidad interno.
-%
-Las estrellas resumen la opini\'on sobre la jugadora que expresaron algunos de sus anteriores contrincantes.
-%
-Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el comportamiento del resto de jugadores en cuanto a Fair Play, Gameplay y Actitud.
-%
 
 
 
