@@ -2291,8 +2291,9 @@ La soluci\'on bayesiana del modelo Elo, TrueSkill, representa la distribuci\'on 
 \begin{equation}
 p(s_i) = \N(s_i | \mu_i, \sigma_i^2)
 \end{equation}
+\todo[inline]{Me parece que falta un poquito de contexto e intuición para explicar qué significa, una oracion dando qué significa en terminos del modelo, tipo que refleja que no sea una constante, sino un valor que puede variar y esa variacion se puede deber a distintas circunstancias}
 %
-Para definir el valor a priori de la media, $\mu$, hay que recordar que lo que importa no es su valor absoluto sino la diferencia con otros jugadores, pues un $\beta$ de distancia entre habilidades, $s_i-s_j=\beta$ equivale a 76\% de probabilidad de ganar.
+Para definir el valor a priori de la media, $\mu$, hay que recordar que lo que importa no es su valor absoluto sino la diferencia con otros jugadores, pues un $\beta$ de distancia entre habilidades, $s_i-s_j=\beta$ equivale a \SI{76}{\percent} de probabilidad de ganar.
 %
 Lo importante es que la incertidumbre a priori, $\sigma$, sea lo suficientemente grande para asegurarnos de cubrir todos los posibles valores de habilidad.
 %
@@ -2339,13 +2340,13 @@ Por las propiedades de la distribuci\'on gaussiana (ver anexo), esta integral se
 
 % Parrafo
 
-Calculada la distribuci\'on de probabilidad marginal de los desempe\~nos, la predicci\'on a priori del resultado de la partida entre dos individuos $i$ y $j$ se corresponde nuevamente con el volumen de un lado y del otro de la l\'inea de nivel $p_i = p_j$ visto en la figura~\ref{fig:probaOfWin_2D}.
+Calculada la distribuci\'on de probabilidad marginal de los desempe\~nos, la predicci\'on a priori del resultado de la partida entre dos individuos $i$ y $j$ se corresponde, nuevamente, con el volumen de un lado y del otro de la l\'inea de nivel $p_i = p_j$ visto en la figura~\ref{fig:probaOfWin_2D}.
 %
 En t\'erminos anal\'iticos, la diferencia de desempe\~nos, $d=p_i-p_j$, es una gaussiana centrada en la diferencia de las medias de las distribuciones de habilidad a priori ($\mu_i - \mu_j$), con una varianza que incorpora la incertidumbre de ambas estimaciones ($\sigma$) y la varianza de ambos rendimientos ($\beta$), $\N(\, d \, | \, \mu_i -\mu_j \, ,\ 2\beta^2 + \sigma_i^2 + \sigma_j^2 \,)$.
 %
 Al observar que el agente $i$ gan\'o, sabemos por el modelo causal que la diferencia de desempe\~nos oculta fue en efecto positiva.
 %
-Por lo tanto, la predicci\'on a priori del resultado observado, o evidencia, es la densidad acumulada ($\Phi$) de todos los valores positivos de la gaussiana de diferencia de desempe\~nos (Eq.~\eqref{eq:evidence}).
+Por lo tanto, la predicci\'on a priori del resultado observado, o evidencia, es la densidad acumulada ($\Phi$) de todos los valores positivos de la gaussiana de diferencia de desempe\~nos:
 %
 \begin{equation}\label{eq:evidence}
  \overbrace{P(r)}^{\text{Evidenc\en{e}\es{ia}}} = 1-\Phi(0 \, | \overbrace{\mu_i^{\phantom{2}} - \mu_j}^{\hfrac{\text{\en{Expected}\es{Diferencia}}}{\text{\en{difference}\es{esperada}}}} , \, \overbrace{2\beta^2 + \sigma_i^2+ \sigma_j^2}^{\hfrac{\text{\en{Total}\es{Incertidumbre}}}{\text{\en{uncertainty}\es{total}}}})
@@ -2412,17 +2413,16 @@ Es importante remarcar que la posterior, aunque se parezca, no es una distribuci
 
 Por la forma del posterior exacto, una gaussiana puede ser usada como una buena aproximaci\'on, permiti\'endonos evitar el costo computacional de las metodolog\'ias de muestreo.
 %
-Uno de los principales aportes del sistema Glicko~\cite{Glikman2013} fue el desarroll\'o de un m\'etodo eficiente para aproximar la posterior exacta con una distribuci\'on gaussiana.
+Uno de los principales aportes del sistema Glicko~\cite{Glikman2013} fue el desarrollo de un m\'etodo eficiente para aproximar la posterior exacta con una distribuci\'on gaussiana.
 %
 Sin embargo, este m\'etodo no garantiza que la distribuci\'on gaussiana seleccionada sea la que mejor aproxima.
 %
-El \'exito de la soluci\'on TrueSkill~\cite{Herbrich2007} se basa en la aplicaci\'on de m\'etodo eficiente para calcular la gaussiana que mejor aproxima al posterior exacto (secci\'on~\ref{sec:approximate_posterior}),
+El \'exito de la soluci\'on TrueSkill~\cite{Herbrich2007} se basa en la aplicaci\'on de un m\'etodo eficiente para calcular la gaussiana que mejor aproxima al posterior exacto (secci\'on~\ref{sec:approximate_posterior}),
 %
 \begin{equation} \label{eq:approx}
  \widehat{p}(s_i| r, s_j) = \underset{\mu, \sigma}{\text{ arg min }} \ \ \text{KL}(\, p(s_i| r, s_j) \, || \,  \N(s_i|\mu, \sigma^2) \, )
 \end{equation}
-%
-en t\'erminos de minizaci\'on de la divergencia Kullback-Leibler entre la distribuci\'on verdadera y la aproximada.
+que se plantea en t\'erminos de minimizaci\'on de la divergencia Kullback-Leibler entre la distribuci\'on verdadera y la aproximada.
 %
 Este m\'etodo nos permite aplicar eficientemente la ecuaci\'on~\eqref{eq:posterior_win} iterativamente sobre una secuencia de observaciones, que de otra manera ser\'ia inviable.
 
@@ -2436,11 +2436,11 @@ Luego, el posterior aproximado en un determinado momento se define como,
  \widehat{\text{Posterior}}_t \propto \widehat{\text{Likelihood}}_t  \overbrace{\widehat{\text{Likelihood}}_{t-1} \dots \underbrace{\widehat{\text{Likelihood}}_{1} \text{Prior}_1}_{\widehat{\text{Posterior}}_{1} \text{ como } \text{Prior}_{2}} }^{\widehat{\text{Posterior}}_{t-1} \text{ \en{as}\es{como} } \text{Prior}_{t}} %= \text{Prior}_1 \prod_{i=1}^t \text{Likelihood}_i
 \end{equation}
 %
-Donde {\footnotesize $\widehat{\text{Posterior}}_i$} y {\footnotesize $\widehat{\text{Likelihood}}_i$} representan la aproximaciones inducidas por la ecuaci\'on~\eqref{eq:approx} en el $i$-\'esimo evento.
+donde {\footnotesize $\widehat{\text{Posterior}}_i$} y {\footnotesize $\widehat{\text{Likelihood}}_i$} representan la aproximaciones inducidas por la ecuaci\'on~\eqref{eq:approx} en el $i$-\'esimo evento.
 %
 Si consideramos la verosimilitud como un filtro del prior, cada posterior puede ser visto como una acumulaci\'on de todos los filtros anteriores.
 %
-De esta forma, la informaci\'on propaga del estimaciones pasadas hacia futuras.
+De esta forma, la informaci\'on se propaga de las estimaciones pasadas hacia las futuras.
 %
 Debido a que las habilidades cambian en el tiempo, es importante agregar alguna incertidumbre $\gamma$ luego de cada paso.
 %
@@ -2460,6 +2460,7 @@ El modelo supone que el desempe\~no de un equipo es la suma de los desempe\~nos 
 \begin{equation}
 t_e = \sum_{j\in A_e } p_j
 \end{equation}
+\todo[inline]{aca tenes que explicar al menos qu\'e representa te}
 %
 El resto del modelo se preserva igual.
 %
@@ -2548,7 +2549,7 @@ La soluci\'on multiequipos no tiene una forma cerrada, requiere una iteraci\'on 
 
 El problema de la adquisici\'on de habilidades es ubicuo y fundamental para la vida.
 %
-La mayor\'ia de las tareas humanas se realizan en sociedad, lo que  la cooperaci\'on con otros sujetos.
+La mayor\'ia de las tareas humanas se realizan en sociedad, en cooperaci\'on con otros sujetos.
 %
 A pesar de su importancia fundamental, la selecci\'on de compa\~neros de equipo suele pasarse por alto cuando se estudia el aprendizaje.
 %
@@ -2570,7 +2571,7 @@ Sin embargo, el ser humano por sus capacidades sociales incorpora muchos de los 
 %
 El aprendizaje social puede afectar el proceso de adquisici\'on de habilidades esperado por la experiencia individual, que pueden ser tanto beneficiosas como riesgosas~\cite{Boyd2011}.
 %
-En este art\'iculo, aprovechamos el repositorio virtualmente infinito del comportamiento humano disponible en Internet para estudiar un tema relevante en la ciencia antropol\'ogica: c\'omo las estrategias de agrupaci\'on pueden afectar la adquisici\'on de habilidades.
+Aprovechamos el repositorio virtualmente infinito del comportamiento humano disponible en Internet para estudiar un tema relevante en la ciencia antropol\'ogica: c\'omo las estrategias de agrupaci\'on pueden afectar la adquisici\'on de habilidades.
 
 % Parrafo
 
@@ -2582,7 +2583,7 @@ Newell se\~nal\'o en 1981 que la ley de potencia, en funci\'on del grado de pr\'
 %
 En los \'ultimos a\~nos, algunos autores se\~nalaron que la ley de potencia explica solamente las curvas de aprendizaje poblacionales y afirman la necesidad de proponer otras funciones para aproximar las curvas de aprendizaje individuales~\cite{heathcote2000-powerLawRepealedExponentialLawOfPractice}.
 %
-Sin embargo, las curvas de aprendizaje individuales son m\'as irregulares que las curvas de aprendizaje promediadas y la predicci\'on del desempe\~no a gran escala de tiempo basado en eventos de peque\~na escala de tiempo demostr\'o ser dif\'icil~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality}.
+Sin embargo, las curvas de aprendizaje individuales son, naturalmente, m\'as irregulares que las curvas de aprendizaje promediadas y la predicci\'on del desempe\~no a gran escala de tiempo basado en eventos de peque\~na escala de tiempo demostr\'o ser dif\'icil~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality}.
 %
 La pr\'actica es un factor de aprendizaje importante pero no es el \'unico.
 %
@@ -2600,7 +2601,7 @@ Los seres humanos aprendemos conocimientos de los dem\'as, los modificamos y los
 %
 La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que construirla por ensayo y error conduce a una evoluci\'on cultural acumulativa, lo que permite que las poblaciones humanas se adapten r\'apidamente a los cambios y nuevos entornos~\cite{Boyd2011}.
 %
-Se requiere un grado de credulidad para que este proceso funcione y, por lo tanto, los aprendices pueden adquirir informaci\'on inapropiada incluso en entornos uniformes y estables.~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
+Se requiere un grado de credulidad para que este proceso funcione y, por lo tanto, los aprendices pueden adquirir informaci\'on inapropiada incluso en entornos uniformes y estables~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
 %
 Descifrar c\'omo aprovechar la informaci\'on social mientras se manejan los inconvenientes que se derivan de su uso se ha convertido en el tema principal en la investigaci\'on sobre estrategias de aprendizaje social~\cite{henrich2003-evolutionOfCulturalEvolution,rendell2011-cognitiveCulture}.
 
@@ -2609,10 +2610,12 @@ Descifrar c\'omo aprovechar la informaci\'on social mientras se manejan los inco
 Se han propuesto muchos modelos sobre estrategias de aprendizaje social y su din\'amica de poblacional emergente.
 %
 Los investigadores han identificado varias estrategias te\'oricas~\cite{rendell2011-cognitiveCulture,rendell2010-socialLearningTournament}, que se puede clasificar como:
-(a) aquellas que especifican las circunstancias bajo las cuales los individuos copian a otros, y
-(b) aquellas que identifican de qui\'en aprenden los individuos.
+\begin{enumerate}[a)]
+\item aquellas que especifican las circunstancias bajo las cuales los individuos copian a otros.
+\item aquellas que identifican de qui\'en aprenden los individuos.
+\end{enumerate}
 %
-Se han realizado muchos estudios de aprendizaje social utilizando diferentes m\'etodos, como observaciones de campo~\cite{henrich2011-adaptativeLearningBiasesFiji}, controlled laboratory experiments~\cite{mesoudi2011-experimentalPayoffBiasedSocialLearningUnderused,toelch2014-humanSocialInformationUse,caldwell2016-innovationLaboratoryCulturalEvolution,muthukrishna2016-whenAndWhoSocialLearning} y experimentos de campo~\cite{henrich2001-eco15Soc,efferson2007-learningCulturalTransmissionBolivia,wisdom2013-experiment,Glowacki2017}.
+Se han realizado muchos estudios de aprendizaje social utilizando diferentes m\'etodos, como observaciones de campo~\cite{henrich2011-adaptativeLearningBiasesFiji}, experimentos controlados de laboratorio~\cite{mesoudi2011-experimentalPayoffBiasedSocialLearningUnderused,toelch2014-humanSocialInformationUse,caldwell2016-innovationLaboratoryCulturalEvolution,muthukrishna2016-whenAndWhoSocialLearning} y experimentos de campo~\cite{henrich2001-eco15Soc,efferson2007-learningCulturalTransmissionBolivia,wisdom2013-experiment,Glowacki2017}.
 %
 El aprendizaje social ahora constituye un \'area importante de estudio dentro de la biolog\'ia evolutiva y del comportamiento~\cite{mesoudi2016-individualAndCulturalVariationSocialLearning}.
 
@@ -2622,7 +2625,7 @@ Todos estos m\'etodos tiene una dificultad inherente para obtener muestras de da
 %
 Con el advenimiento de las comunidades virtuales surge la posibilidad de estudiar conjuntos de datos masivos sobre aprendizaje social correspondientes a largos per\'iodos de tiempo.
 %
-En este trabajo nos apoyamos en un vasto corpus ($\sim4.5$ millones de juegos), aprovechando la tendencia mundial de las personas a jugar juegos en l\'inea de varios jugadores y la existencia de servidores que acumulan datos p\'ublicos.
+En nuestro caso, nos apoyamos en un vasto corpus ($\sim4.5$ millones de juegos), aprovechando la tendencia mundial de las personas a jugar juegos en l\'inea de varios jugadores y la existencia de servidores que acumulan datos p\'ublicos.
 %
 Esta novedosa metodolog\'ia busca la aparici\'on estad\'istica de efectos potencialmente sutiles, que pueden ser detectables solo con un n\'umero notable de observaciones y pueden pasar desapercibidos en tama\~nos de muestra peque\~nos t\'ipicos de los estudios de laboratorio~\cite{slezak2012-doNotFearYourOpponent}.
 %
