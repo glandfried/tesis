@@ -7040,7 +7040,7 @@ Comprender las propiedades de esta funci\'on de costo, luego, resulta esencial p
 
 Para estudiar las propiedades de la funci\'on de costo epist\'emico-evolutiva, estudiaremos un procesos multiplicativos.
 %
-En base a los ejemplos propuestos por John Kelly~\cite{kelly1956} y Ole Peters~\cite{peters2019-ergodicityEconomics}, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente.
+En base a los ejemplos propuestos por John Kelly~\cite{kelly1956}, por Lewontin y Cohen~\cite{lewontin1969-randomlyVaryingEnvironment}) y por Ole Peters~\cite{peters2019-ergodicityEconomics}, supongamos que una casa de apuestas ofrece pagos $Q_c > 0$ y $Q_s > 0$ cuando una moneda sale Cara y Seca respectivamente.
 %
 Sin p\'erdida de generalidad, supongamos que los individuos se ven obligados a apostar en cada paso temporal todos sus recursos, asignando una proporci\'on $b_c = b$ a Cara y $b_s = 1 - b$ a Seca, con $b \in [0,1]$.
 %
@@ -7077,11 +7077,13 @@ Pero ?`Cu\'al apuesta maximiza la tasa de crecimiento de los recursos?
 
 \subsubsection{Propiedad epist\'emica.} \label{sec:propiedad_epistemica}
 
-Supongamos que la casa de apuestas ofrece $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas por una moneda no sesgada, con probabilidad $p=0.5$.
+Supongamos que la casa de apuestas ofrece pagos $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas por una moneda no sesgada, con probabilidad $p=0.5$.
 %
-En este escenario existe la tendencia a apostar m\'as a Caras que Secas.
+Claramente, obtenemos m\'as recursos con Caras que son Secas.
 %
-Si comparamos los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
+No hay duda.
+%
+Sin embargo, al comparar los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
 %
 \begin{equation}
 \begin{split}
@@ -7108,7 +7110,7 @@ r(b) &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^
 %
 Donde $p = \lim_{T \rightarrow \infty} \frac{n_s}{T}$ es la frecuencia de la moneda.
 %
-Debido a que lo pagos que ofrece la casa de apuestas no importan, el el valor \'optimo de $b$ es,
+Debido a que lo pagos que ofrece la casa de apuestas no importan, el el valor \'optimo de $b^*$ es,
 %
 \begin{equation}
 \begin{split}
@@ -7116,37 +7118,109 @@ Debido a que lo pagos que ofrece la casa de apuestas no importan, el el valor \'
 \end{split}
 \end{equation}
 %
-Es decir, maximizar la tasa de crecimiento de la apuesta es equivalente a minimizar la entrop\'ia cruzada.
+donde maximizar la tasa de crecimiento de la apuesta es equivalente a minimizar la entrop\'ia cruzada, con $b^* = p$.
 %
-En efecto, no importa los pagos que ofrezca la casa de apuestas, la apuesta \'optima  $b^{*}$ es la que divide los recursos en la misma proporci\'on que la frecuencia observada, $b^{*} = n_c/T$, la que en el largo plazo tiende a la frecuencia t\'ipica $\lim_{T \rightarrow \infty} n_c/T = p$.
+En tiempos finitos, ocurre algo similar.
 %
-A esta propiedad la llamamos \emph{propiedad epist\'emica} debido a que es la que permite a la teor\'ia de la probabilidad adquirir conocimiento sobre el mundo: al evaluar las hip\'otesis elementales en base al producto de las sorpresas se produce una ventaja a favor de las hip\'otesis que diversifican la predicci\'on en la misma proporci\'on que la frecuencia observada.
+No importa los pagos que ofrezca la casa de apuestas, la apuesta \'optima  $b^{*}$ es la que divide los recursos en la misma proporci\'on que la frecuencia observada, $b^{*} = n_c/T$.
+
+% Parrafo
+
+A esta propiedad la llamamos \emph{propiedad epist\'emica} debido a que es la que permite a la teor\'ia de la probabilidad adquirir conocimiento sobre el mundo: al evaluar las hip\'otesis elementales en base al producto de las predicciones (la regla del producto~\ref{eq:funcion_de_costo}) se produce una ventaja a favor de las hip\'otesis que diversifican la predicci\'on en la misma proporci\'on que la frecuencia observada.
 %
 Del mismo modo, el proceso de selecci\'on evolutiva por secuencias de tasas de crecimiento y reproducci\'on, produce la emergencia de formas de vida que reducen las fluctuaciones a trav\'es de la diversificaci\'on (\emph{Bet hedging})~\cite{starrfelt2012-bet}.
 
 % Parrafo
 
-%En este escenario, con pagos $Q_c=3$, $Q_s=1.2$ y una moneda Si sabemos que la moneda es no sesgada, lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b = p = 0.5$.
-En este caso, si calculamos la tasa de crecimiento veremos que los recursos caen a una tasa cercana a $5\%$ ($r(b) \approx 0.95$), pues las ganancias de 50\% que obtenemos con Caras ($1.5 = Q_c \, b^*$) no alcanza para compensar las ca\'idas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b^*)$).
+En este escenario, con pagos $Q_c=3$, $Q_s=1.2$ y una moneda no sesgada, lo mejor que podemos hacer a largo plazo es dividir los recursos en partes iguales, $b^* = p = 0.5$.
 %
-En la figura~\ref{fig:ergodicity_individual_trayectories}, las curvas de colores muestran las trayectoria de los recursos individuales en el tiempo.
+Sin embargo, la tasa de crecimiento de los recursos caen a una tasa cercana a $5\%$ ($r(b) \approx 0.95$), pues las ganancias de 50\% que obtenemos con Caras ($1.5 = Q_c \, b^*$) no alcanza para compensar las ca\'idas de 40\% que sufrimos con Secas ($0.6 = Q_s \, (1-b^*)$).
+%
+En la figura~\ref{fig:ergodicity_individual_trayectories} se pueden observar que las trayectoria de los recursos de muchos individuos en el tiempo (las curvas de colores) caen, a pesar de que la esperanza (recta negra en la figura ~\ref{fig:ergodicity_individual_trayectories}) sea positiva.
+%
+En particular, el promedio de los recursos en el primer y segundo paso temporal es,
+%
+\begin{equation}
+\begin{split}
+\langle \omega \rangle_1 & = 1.5 \cdot \frac{1}{2} + 0.6 \cdot  \frac{1}{2} = 1.05 \\
+\langle \omega \rangle_2 &=  1.5^2 \cdot \frac{1}{4} + 2 (0.6 \cdot 1.5 \cdot \frac{1}{4} ) + 0.6^2 \cdot \frac{1}{4}= 1.05^2
+\end{split}
+\end{equation}
+%
+el cual crece a una tasa de $5\%$ por paso temporal.
 
 % Parrafo
 
 \subsubsection{Propiedad evolutiva.} \label{sec:propiedad_evolutiva}
 
-A pesar de que la diversificaci\'on individual no es suficiente para ganar este juego, la vida encontr\'o estrategias para florecer en casos como estos, reduciendo aun m\'as las fluctuaciones individuales mediante cooperaci\'on~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}.
+A pesar de que la diversificaci\'on individual no es suficiente para ganar este juego, la vida encontr\'o estrategias para florecer en casos como estos.
 %
-Por ejemplo, si los individuos de un grupo de tama\~no $N$ redistribuyen los recursos en partes iguales luego de cada apuesta, la riqueza de cada uno pasa a ser el promedio de todos los recursos luego de que $m_c$ y $m_s$ individuos obtienen Cara y Seca respectivamente, con $m_c + m_s = N$.
+Para ejemplificar este problema, supongamos que tenemos un grupo de individuo, cada uno tira su propia moneda y apuesta una proporci\'on $b$ a Cara y $1-b$ a Seca.
+%
+Estos individuos pueden reducir aun m\'as las fluctuaciones individuales mediante cooperaci\'on.
+%
+Siguiendo los ejemplo de Yaari y Peters~\cite{yaari2010-cooperationEvolution, peters-cooperation2019.03.04}, supongamos que luego de que los individuos actualizan sus recursos (luego de que reciben el pago) deciden juntar todos los recursos y dividirlos en partes iguales.
+%
+Esquematizamos este proceso en la figura~\ref{fig:protocolo}.
+%
+\begin{figure}[ht!]
+\centering
+\scalebox{0.75}{
+\tikz{
+
+    \node[latent, minimum size=2cm ] (x1_0) {$\omega_t(b)$} ;
+    \node[latent, below=of x1_0, minimum size=2cm ] (x2_0) {$\omega_t(b)$} ;
+
+    \node[latent, right=of x1_0, minimum size=3cm ] (x1_0g) {$ \omega_t(b) \cdot b \cdot Q_c$} ;
+    \node[latent, right=of x2_0, minimum size=1.8cm, xshift=0.6cm , align=center] (x2_0g) {$\omega_t(b)\cdot$\\$(1-b)\cdot$\\$Q_s$} ;
+
+    \node[latent, right=of x1_0g, minimum size=3.8cm, yshift=-1.33cm, align=center] (x_0) {$\omega_t(b) \cdot b \cdot Q_c$\\$+$\\$\omega_t(b) \cdot (1-b) \cdot Q_s$ } ;
+
+    \node[const, above=of x_0] (nx_0) {$\overbrace{\text{Pool}\hspace{2.5cm}\text{Share}}^{\text{\normalsize Coopera\en{tion}\es{ci\'on}}}$} ;
+
+    \node[latent, right=of x1_0g, minimum size=2.5cm,  xshift=4.5cm] (x1_1) {$\omega_{t+1}(b)$ } ;
+    \node[latent, below=of x1_1, minimum size=2.5cm, yshift=0.7cm] (x2_1) {$\omega_{t+1}(b)$ } ;
+
+    \edge {x1_0} {x1_0g};
+    \edge {x2_0} {x2_0g};
+    \edge {x1_0g,x2_0g} {x_0};
+    \edge {x_0} {x1_1,x2_1};
+
+}
+}
+\caption{
+\en{The agents start with the same initial resources, update them independently according to the equation \ref{eq:estrategia_base}, and finally redistribute it in equal parts. }%
+\es{Los agentes comienzan con los mismos recursos iniciales, los actualizan independientemente de acuerdo con la ecuaci\'on \ref{eq:estrategia_base}, y finalmente lo redistribuyen en partes iguales. }%
+}
+\label{fig:protocolo}
+\end{figure}
+%
+Despu\'es de que cada agente actualiza sus recursos individuales, se ponen todos los recursos en un fondo com\'un que se divide en partes iguales.
+%
+Este proceso se repite indefinidamente.
+%
+La cooperaci\'on cambia la variable aleatoria de la que dependen las trayectorias individuales: jugando individualmente depend\'ian de la moneda; jugando cooperativamente dependen de la cuota que reciben del fondo com\'un.
+
+% Parrafo
+
+Para calcular la tasa de crecimiento cooperativa, supongamos que tenemos un grupo de individuos de tama\~no $N$, todos de los cuales utilizan una $b$.
+%
+Si los individuos  redistribuyen los recursos en partes iguales luego de cada apuesta, la riqueza en un paso temporal se actualiza como,
 %
 \begin{equation}
 \begin{split}
 \omega_{T+1}(N,b) & = \frac{1}{N} \overbrace{\bigg( m_c \, \omega_{T}(N,b) \, Q_c  \, b + m_s \, \omega_{T}(N,b) \, Q_s  \, (1-b)  \bigg)}^{\hfrac{\text{\footnotesize \phantom{g}\En{Sum of all resources}\Es{Suma de todos los recursos}\phantom{g} }}{\text{\scriptsize (\En{with}\Es{con} $m_s$ \En{Heads}\Es{Caras} y $m_s$ \En{Tails}\Es{Secas})}}} \\
-& =\omega_T(N,b) \, \underbrace{\left( \frac{m_c}{N}   Q_c  \, b + \frac{m_s}{N} \, Q_s  \, (1-b)  \right)}_{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Tasa de crecimiento}  \phantom{Tg}}} \\[0.3cm]
+& =\omega_T(N,b) \, \underbrace{\left( \frac{m_c}{N}   Q_c  \, b + \frac{m_s}{N} \, Q_s  \, (1-b)  \right)}_{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Tasa de crecimiento}  \phantom{Tg}}}
 \end{split}
 \end{equation}
 %
-Y la tasa de crecimiento de los individuos pasa a ser el promedio de todos los resultados del grupo.
+donde $\omega_{T}(N,b)$ es la riqueza previa del individuo (la cuota recibida del fondo com\'un), y $m_c$ y $m_s$ la cantidad de individuos obtienen Cara y Seca respectivamente en ese paso temporal, con $m_c + m_s = N$.
+%
+Podemos ver que la tasa de crecimiento de los individuos pasa a ser el promedio de todos los resultados del grupo.
+
+% Parrafo
+
+En la tabla~\ref{tabla_coop} se puede observar c\'omo se actualizan los recursos de dos individuos en dos pasos temporales cuando no cooperan (primer dos fila) y cuando cooperan (\'ultimas dos fila).
 %
 La reducci\'on de fluctuaciones que genera este simple acto de intercambio de recursos, hace que la tasa de crecimiento de todos los individuos se vuelve positiva.
 %
@@ -7165,7 +7239,7 @@ La reducci\'on de fluctuaciones que genera este simple acto de intercambio de re
 \end{tabular}
 \vspace{0.5cm}
 \caption{}
-\label{fig:tabla_coop}
+\label{tabla_coop}
  \end{subfigure}
  \hfill
  \begin{subfigure}[b]{0.4\textwidth}
@@ -7184,22 +7258,30 @@ La reducci\'on de fluctuaciones que genera este simple acto de intercambio de re
  \label{fig:coop}
  \vspace{-0.1cm}
  \end{figure}
-
-% Parrafo
-
 %
-\'Esta es la \emph{propiedad evolutiva}.
+Cuando el tama\~no de la poblaci\'on $N$ tiende a infinito, la tasa de crecimiento por paso temporal coincide con la esperanza (l\'inea negra de la figura~\ref{fig:ergodicity_individual_trayectories})
+\begin{equation}
+\begin{split}
+\lim_{N \rightarrow \infty} \omega_{T+1}(N,b) & =\omega_T(N,b) \, \underbrace{\left( p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)  \right)}_{\text{\scriptsize\phantom{Tg} $r(N,b)$: \En{growth rate}\Es{Esperanza}  \phantom{Tg}}} = \omega_T(N,b) \, 1.05
+\end{split}
+\end{equation}
 %
-A trav\'es de la cooperaci\'on podemos reducir aun m\'as las fluctuaciones, aumentando as\'i la tasa de crecimiento de todos sus miembros.
+\'Esta es un ejemplo de la \emph{propiedad evolutiva}: a trav\'es de la cooperaci\'on podemos reducir aun m\'as las fluctuaciones, aumentando as\'i la tasa de crecimiento de todos sus miembros.
 
 \subsubsection{Propiedad de especiaci\'on.}
 Si bien jugando individualmente nos ve\'iamos obligados a apostar ignorando los pagos que ofrece la casa de apuestas, una vez que emerge la cooperaci\'on deja de ser necesario reducir las fluctuaciones por diversificaci\'on individual y aparece una ventaja a favor de la especializaci\'on cooperativa, que permite sacar provecho de la mejor opci\'on disponible, aumentando a\'un m\'as la tasa de crecimiento de todos los individuos del grupo cooperativo.
+%
+A medida que el tama\~no del grupo cooperativo crece, la apuesta \'optima se va especializando hacia la mejor opci\'on disponible.
+%
+En la figura~\ref{fig:esp} mostramos la tasa de crecimiento $r(N,b)$ (eje y) para todas las posibles apuestas $b$ (eje x), para grupos de tama\~no $N \in \{1,\dots 5\}$ (colores).
+%
+Los puntos representan la apuesta \'optima en cada uno de los grupos.
 %
 \begin{figure}[ht!]
 \centering
   \begin{subfigure}[c]{0.45\textwidth}
 \begin{flushright}
- \includegraphics[width=1\linewidth]{figures/tasa-temporal2.pdf}
+ \includegraphics[width=1\linewidth]{figures/tasa-temporal.pdf}
  \end{flushright}
  \end{subfigure}
  \caption{
@@ -7209,46 +7291,50 @@ Tasa de crecimiento para grupos de tama\~no 1 a 5 (colores), para todas las posi
  \vspace{-0.1cm}
  \end{figure}
 %
-A medida que el tama\~no del grupo cooperativo crece, la apuesta \'optima se va especializando hacia la mejor opci\'on disponible (figura~\ref{fig:esp}).
+El punto negro representa la apuesta \'optima cuando el tama\~no de la poblaci\'on
 %
-\'Esta es la \emph{propiedad de especiaci\'on}.
-%
-Cuando el tama\~no del grupo tiende a infinito, la tasa de crecimiento pasa a ser la media aritm\'etica de los posibles resultados de las apuestas.
+En ese caso, la tasa de crecimiento pasa a ser la media aritm\'etica de los posibles resultados de las apuestas.
 %
 \begin{equation}
 \lim_{N \rightarrow \infty} r(N,b) = p \,  Q_c  \, b + (1-p) \, Q_s  \, (1-b)
 \end{equation}
 %
 Y la puesta \'optima es apostar todo a la mejor opci\'on, $b^* =1$.
-
-% Parrafo
+%
+\'Esta es la \emph{propiedad de especiaci\'on} y fue descubierta en el transcurso de la tesis.
 
 \subsubsection{Propiedad ecol\'ogica.}
-En este caso, todos los individuos est\'an sujetos a procesos estoc\'asticos que, si bien son independientes, tiene para todos ellos la misma probabilidad que no cambia en el tiempo.
+
+Hasta ahora hemos revisado condiciones homog\'eneas entre individuos, la probabilidad de la moneda no var\'ia en el tiempo y es siempre $0.5$.
 %
-En la naturaleza, por el contrario, estamos expuestos a variabilidades espacio-temporales, como las estaciones del a\~no.
+En la naturaleza, por el contrario, estamos expuestos a variabilidades espacio-temporales, como las estaciones del a\~no invierno / verano.
 %
-Para dar un ejemplo, supongamos que la moneda oscila entre dos probabilidades de que salga Cara, $p_1 = 0.2$ y $p_2 = 0.6$.
+Para dar un ejemplo, supongamos que la moneda oscila entre dos probabilidades de que salga Cara, en invierno $p_I = 0.2$ y en verano $p_V = 0.6$.
 %
-En los pasos temporales impares, la moneda tiene probabilidad $p_1$ en el hemisferio A y $p_2$ en el hemisferio B.
+Los individuos est\'an distribuidos en dos hemisferios, $A$ y $B$.
+%
+Cuando en un hemisferio es invierno en el otro es verano.
+%
+En los pasos temporales impares, es invierno en en el hemisferio A y verano en el hemisferio B.
 %
 Y a la inversa en los pasos temporales pares.
 %
-En casos como estos la variabilidad del proceso produce una ventaja adicional en favor de los grupos con mayor heterogeneidad interna.
+
+% Parrafo
+
+Sea una poblaci\'on de tama\~no infinito que coopera y sea especializa, apostando en invierno todos los recursos a Seca y en verano apostando todos los recursos a Cara, y sea $h$ la proporci\'on de individuos en el hemisferio A.
 %
-\'Esta es la \emph{propiedad ecol\'ogica}.
+En la parte izquierda de la figura~\ref{fig:divCoop} calculamos anal\'iticamente la tasa de crecimiento en los pasos temporales impares $r_1(h)$ y en los pasos temporales pares $r_2(h)$.
 %
-Sea $h$ la proporci\'on de individuos en el hemisferio A.
-%
-La tasa de crecimiento en un ejemplo simple, en el que el tama\~no del grupo es infinito y en el que los individuos se especializan la apuesta correspondiente a la etapa del ciclo que experimentan, es
+En el lado derecho de la figura~\ref{fig:divCoop} se muestra la tasa de crecimiento $r(h)$ (eje y) para los diferentes distribuciones de la poblaci\'on ente hemisferios $h$ (eje x).
 %
 \begin{figure}[ht!]
 \vspace{0cm}
 \centering
  \begin{subfigure}[c]{0.44\textwidth}
  \begin{align*}
- r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_1) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_2 \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
- r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_2 \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_1) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
+ r_{1}(h) = & \  \overbrace{(\underbrace{h \, (1-p_I) \, Q_s}_{\hfrac{\text{En hemisferio A se}}{\text{especializan en Secas}}} + \underbrace{(1-h) \, p_V \, Q_c )}_{\hfrac{\text{En el hemisferio B se}}{\text{especializan en Caras}}} }^{\text{Tasa de crecimiento en tiempos 1}} \\
+ r_{2}(h) = & \ \overbrace{ (\underbrace{h \ p_V \ Q_c}_{\hfrac{\text{En  hemisferio A se}}{\text{especializan en Caras}}} + \, \underbrace{(1-h) \, (1-p_I) \, Q_s}_{\hfrac{\text{En  hemisferio B se}}{\text{especializan en Secas}}} )}^{\text{Tasa de crecimiento en tiempos 2}} \\
  r(h) = & \ \overbrace{r_{1}(h)^{1/2} \ r_2(h)^{1/2}}^{\text{Tasa de crecimiento}}
 \end{align*}
  \end{subfigure}
@@ -7259,15 +7345,20 @@ La tasa de crecimiento en un ejemplo simple, en el que el tama\~no del grupo es 
  \end{flushright}
  \end{subfigure}
  \caption{
- En la figura vemos la tasa de crecimiento de los individuos en funci\'on de la proporci\'on de individuos en el hemisferio A. La tasa de crecimiento se maximiza cuando la heterogeneidad entre individuos es m\'axima.
+ En el lado izquierdo se calcula la tasa de crecimiento de los indiivuos en grupos de tama\~no infinito que cooperan y se especializan, apostando todos los recursos a Seca en invierno (probabilidad de la moneda $p_I = 0.2$) y a Cara en verano (probabilidad de la moneda $p_V = 0.6$).
+ %
+ En el lado derecho vemos la tasa de crecimiento de los individuos $r(h)$ en funci\'on de la proporci\'on de individuos en el hemisferio A, $h$.
  }
  \label{fig:divCoop}
  \vspace{-0.1cm}
  \end{figure}
-
-
-Esta tasa de crecimiento se maximiza cuando la distribuci\'on entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
 %
+Podemos ver que la tasa de crecimiento se maximiza cuando la distribuci\'on entre hemisferios es en partes iguales, con $h=0.5$ (figura~\ref{fig:divCoop}).
+%
+Es decir, la funci\'on de costo epist\'emico-evolutiva produce una ventaja favor de los grupos que tienen mayor heterogeneidad interna.
+%
+\'Esta es la \emph{propiedad ecol\'ogica}.
+
 
 \subsubsection{Propiedad mayor y menor.}
 Durante mucho tiempo se crey\'o que para que la cooperaci\'on evolucione deb\'ia resolverse primero lo que se conoce como ``dilema del prisionero''.
@@ -7288,8 +7379,12 @@ En nuestro ejemplo de las apuestas, habr\'ia una tentaci\'on por desertar: dejar
 %
 Si la evoluci\'on estuviera sujeta a un dilema del prisionero, entonces desertar en grupos enteramente cooperativos deber\'ia ofrecer al individuo una tasa de crecimiento m\'as alta que cooperar.
 %
-En la figura~\ref{fig:desert} mostramos la tasa de crecimiento de individuos en grupos cooperativos de tama\~no 100 con 0, 1 y 2 desertores.
+En la figura~\ref{fig:desert} mostramos la tasa de crecimiento de individuos en grupos cooperativos de tama\~no 100 con 0, 1 y 2 desertores, grupos verde, azul y rojo.
 %
+En el grupo verde con ning\'un desertor observamos una \'unica curva debido a que todos los individuos tienen la misma cantidad de recursos, las curvas se superponen.
+%
+Los individuos desertores, en cambio, se pueden distinguir al interior de los grupos pues tienen mayor recursos que los individuos cooperadores de sus grupos y mayor fluctuaci\'on de sus recursos.
+
 \begin{figure}[ht!]
 \centering
  \begin{subfigure}[c]{0.45\textwidth} \centering
@@ -7300,15 +7395,19 @@ Tasa de crecimiento de los individuos dentro de grupos cooperativos (colores) co
  \label{fig:desert}
  \end{figure}
  %
-All\'i se puede observar que los desertores tienen una tasa de crecimiento menor que la ten\'ian cuando cooperaban (\emph{propiedad mayor}), a pesar de que inicialmente obtienen un beneficio circunstancial (\emph{propiedad menor}).
+All\'i se puede observar que los desertores tienen una tasa de crecimiento menor que la ten\'ian cuando cooperaban (\emph{propiedad mayor}), a pesar de que inicialmente puedan obtener un beneficio circunstancial (\emph{propiedad menor}).
 %
 El primer agente que decide desertar unilateralmente (grupo azul con 1 desertor) reduce su tasa de crecimiento y sus recursos est\'an por debajo de los recursos que ten\'ia previamente dentro del grupo enteramente cooperador (grupo verde con 0 desertores).
 %
 La reducci\'on de recursos le ocurre incluso al segundo individuo que cambia de comportamiento cooperador a desertor.
-%
+
+% Parrafo
+
 Es decir, los bienes comunes no tiene la estructura del dilema del prisionero como habitualmente se afirma en la literatura.
 %
 Bajo procesos de selecci\'on multiplicativa no se puede sacar provecho mediante la deserci\'on porque, al aumentar las fluctuaciones los cooperadores de quienes se depende, aumenta tambi\'en las propias fluctuaciones afectando negativamente la propia tasa de crecimiento de largo plazo.
+%
+Esta propiedad ha sido descubierta en el transcurso de la tesis y no ha sido publicada todav\'ia.
 %
 En todos los casos, la tasa de crecimiento se maximiza mediante mutua cooperaci\'on.
 
