@@ -1,4 +1,4 @@
-all: R pdf/ergodicity_individual_trayectories_longrun.pdf agricultura.pdf pdf/ergodicity_individual_trayectories_longrun.pdf trueskillDimorphismMaxMin_ProbWin.pdf
+all: R agricultura.pdf pdf/ergodicity_individual_trayectories_longrun.pdf agricultura.pdf pdf/ergodicity_individual_trayectories_longrun.pdf trueskillDimorphismMaxMin_ProbWin.pdf
 
 agricultura.pdf:
 	pdflatex agricultura.tex
