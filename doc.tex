@@ -255,38 +255,50 @@ Universidad de Buenos Aires en el \'area Ciencias de la Computaci\'on
 
 \small
 
-Esta es una tesis en ciencias de la computaci\'on motivada por una pregunta antropol\'ogica.
-Entender las propiedades de los sistemas de informaci\'on cultural es uno de los problemas fundamentales de la antropolog\'ia, relevante para las ciencias de la computaci\'on y la inteligencia artificial multi-agente: la sociedad puede ser vista como un sistema de procesamiento distribuido de informaci\'on, y la cultura como el emergente de su intercambio de informaci\'on.
-Hasta ahora, las respuestas con mayor influencia para la antropolog\'ia se han propuesto a trav\'es de modelos matem\'aticos simples.
-De all\'i surgieron, por ejemplo, las hip\'otesis de que la capacidad de acumulaci\'on cultural es proporcional al tama\~no efectivo de la poblaci\'on, y que estructuras con moderada conexi\'on favorecen la innovaci\'on cultural.
-Si bien los resultados de estos modelos sirven para ganar intuici\'on de procesos complejos, sus resultados son analog\'ias que no est\'an destinadas a realizar predicciones y por lo tanto poseen una d\'ebil corroboraci\'on emp\'irica.
+Las especie humana tiene una singular capacidad de aprendizaje social, que le permite acumular soluciones sucesivas en el tiempo que van produciendo el inimaginablemente complejo sistema de informaci\'on cultural.
+%
+Si bien el aprendizaje humano ocurre en los cuerpos biol\'ogicos, el aprendizaje cultural es fen\'omeno poblacional que emerge en la interacci\'on prolongada entre individuos y entre generaciones.
+%
+Entender las propiedades de los sistemas de informaci\'on cultural es uno de los problemas fundamentales de la antropolog\'ia, relevante para las ciencias de la computaci\'on y la inteligencia artificial multi-agente.
 
 % Parrafo
 
-En la \'ultima d\'ecada, las ciencias de la computaci\'on han tenido un impacto profundo en casi todas las disciplinas cient\'ificas, produciendo la emergencia de la ciencia de datos.
-Esta tesis se enmarca en esta nueva forma de interdisciplina, que pone a prueba los m\'etodos computacionales en base al desempe\~no que tienen sobre datos reales.
-Para ello, decidimos centrarnos en las comunidades de videojuegos en l\'inea debido a que ellas son un lugar privilegiado para estudiar c\'omo cambian las estrategias en el tiempo.
-En el transcurso de la tesis, esta pregunta fue mutando hasta enfocarse en el estudio de los factores sociales que afectan el aprendizaje individual.
-En este contexto nos propusimos responder las siguientes preguntas.
+Entender las relaciones que vinculan el nivel poblacional (como la din\'amica y estructura de la red de intercambios de informaci\'on cultural)
+con el nivel individual (el aprendizaje efectivo que se produce en los cuerpos), ha sido la pregunta que motiv\'o esta tesis de doctorado.
+%
+Para ello, decidimos estudiar las comunidades de videojuegos en l\'inea.
+%
+Adem\'as de que ellas ofrecen la oportunidad de estudiar poblaciones grandes sin perder un alto grado de detalle, ellas son un lugar privilegiado para estudiar c\'omo cambian las estrategias en el tiempo.
+%
+Algunas de las preguntas que nos propusimos responder durante el doctorado fueron las siguientes preguntas.
+%
 ?`Cu\'al es la mejor forma de medir el aprendizaje de un individuo en el tiempo?
 ?`Cu\'al es la relaci\'on entre la formaci\'on de equipos y el aprendizaje individual a largo plazo?
 ?`Cu\'al es el efecto que la posici\'on topol\'ogica de un individuo en la red de intercambios din\'amica tiene sobre el aprendizaje individual?
+?`Cuales son algunas de las propiedades generales del aprendizaje?
 
 % Parrafo
 
-Si bien el aprendizaje autom\'atico funciona muy bien en ciertos contextos, puede colapsar si los datos se desv\'ian un poco de lo que el modelo est\'a acostumbrado.
-Las ciencias, sin embargo, buscan verdades con validez universal.
-Para no mentir en contextos de incertidumbre debemos no afirmar m\'as de lo que sabemos, sin dejar de decir todo lo que s\'i sabemos.
-Por ello, la aplicaci\'on estricta de las reglas de la probabilidad (enfoque bayesiano) es el m\'etodo con el que se fundamentan las verdades en contextos de incertidumbre.
-Al evaluar hip\'otesis mutuamente contradictorias (A y no A) la sorpresa, \'unica fuente de informaci\'on, act\'ua como filtro de las creencias previas, permitiendo no decir m\'as de lo que se sabe incorporando toda la informaci\'on disponible (maximiza incertidumbre compatible con los datos).
-Si bien hubieron algunas partes de la tesis que no pudimos evaluar todo el espacio de hip\'otesis, hicimos un esfuerzo por ajustarnos a este ideal.
+Durante el doctorado en ciencias de la computaci\'on el enfoque bayesiano de la probabilidad respondi\'o las preguntas metodol\'ogicas y epistemol\'ogicas m\'as profundas que tra\'ia de mi formaci\'on previa en ciencias antropol\'ogicas: c\'omo alcanzar acuerdos respecto a la correcta evaluaci\'on de argumentos causales alternativos.
+%
+Las reglas de la probabilidad se conocen desde finales del siglo 18 y desde entonces se las ha adoptado como sistema de razonamiento en todas las ciencias emp\'iricas.
+%
+Si bien en todo este tiempo no se ha propuesto nada mejor en t\'erminos pr\'acticos, el costo computacional asociado a la evaluaci\'on de todo el espacio de hip\'otesis ha limitado hist\'oricamente la aplicaci\'on estricta de las reglas de la probabilidad (enfoque bayesiano).
+%
+El enfoque bayesiano se fue incorporando lentamente durante el transcurso de la tesis, hasta transformarse en un protagonista.
 
-% Parrafo
+%
 
 En el primer trabajo usamos el modelo bayesiano de habilidad m\'as utilizado en la industria del video juego para estudiar una comunidad en el que las personas pod\'ian jugar individualmente o en equipos.
-All\'i encontramos que jugar en equipo est\'a asociado a mayor aprendizaje a largo plazo, y que mantener un equipo estable est\'a asociado a mayor velocidad de aprendizaje.
-En el segundo trabajo, replicamos el estimador de habilidad y descubrimos que ninguno de los modelos disponibles en aquel momento pod\'ia obtener estimaciones iniciales fiables ni garantizaban comparabilidad en el tiempo debido a una incorrecta propagaci\'on de la informaci\'on hist\'orica, solo en la direcci\'on del pasado hacia el futuro.
-En este contexto, implementamos un modelo (disponible hoy en Julia, Python y R) que al propagar correctamente la informaci\'on hist\'orica es capaz de proporcionar estimaciones con baja incertidumbre en todo momento, asegurando la comparabilidad hist\'orica.
+%
+Mediante test de hip\'otesis estad\'isticos detectamos que jugar en equipo est\'a asociado a mayor aprendizaje a largo plazo, y que mantener un equipo estable est\'a asociado a mayor velocidad de aprendizaje.
+%
+Los estimadores de habilidad disponibles, considerados estado del arte al inicio del doctorado, no permiten sin embargo obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio.
+%
+En el transcurso del doctorado descubrimos la especificaci\'on matem\'atica de un modelo conocido como TrueSkill Through Time (TTT) que resolv\'ia estos problemas realizando la inferencia en \'unica red bayesiana, propagando la informaci\'on hist\'orica correctamente.
+%
+Debido a que el modelo no se encontraba disponible en ning\'un lenguaje de programaci\'on en el segundo trabajo resolvimos la matem\'atica de este modelo, la documentamos, la implementamos y la publicamos en los lenguajes de programaci\'on Julia, Python y R.
+%
 En un tercer trabajo, estudiamos la evoluci\'on de una red de partidas en el juego de Go durante un periodo de ocho a\~nos y encontramos, con el nuevo estimador, que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje en los personas que est\'an en el medio del proceso de aprendizaje, ausente entre novatas y expertas.
 
 \vspace{0.1cm}
@@ -303,41 +315,49 @@ En un tercer trabajo, estudiamos la evoluci\'on de una red de partidas en el jue
 \textbf{Abstract}
 \end{center}
 
-
-This thesis in computer science is motivated by an anthropological question.
-One of the fundamental problems of anthropology, relevant to computer science and multi-agent artificial intelligence, is to understand the properties of cultural information systems.
-Society can be viewed as a distributed information processing system, and culture as the emergent result of information exchange.
-Until now, the most influential answers to these questions in anthropology have been proposed using simple mathematical models.
-They have led, for example, to the hypotheses that the capacity for cultural accumulation is proportional to the effective population size, and that moderately connected structures favor cultural innovation.
-While the results of these models serve to gain intuition of complex processes, their results are analogies not intended to make predictions and therefore have weak empirical support.
+The human species has a unique capacity for social learning, which allows it to accumulate successive solutions over time that, producing the unimaginably complex system of cultural information.
+%
+While human learning occurs in biological bodies, cultural learning is a population phenomenon that emerges in the prolonged interaction between individuals and between generations.
+%
+Understanding the properties of cultural information systems is one of the fundamental problems of anthropology, relevant to computer science and multi-agent artificial intelligence.
 
 % Parrafo
 
-In the last decade, computer science has had a profound impact on almost all scientific disciplines, producing the emergence of data science.
-This thesis is part of this new form of interdiscipline, which evaluates computational methods based on their performance on real data.
-To this end, we decided to focus on online gaming communities because they are a valuable source of informnation to study how strategies change over time.
-In the course of the thesis, this question gradually evolved into the study of the social factors that affect individual learning.
-In this context, we set out to answer the following questions:
-What is the best way to measure individual's learning curves over time?
+Understanding the relationships that link the population level (such as the dynamics and structure of the cultural information exchange network) with the individual level (the effective learning that occurs within individuals' bodies) has been the central question driving this doctoral thesis.
+%
+To address it, we chose to investigate online gaming communities. In addition to providing the opportunity to study large populations without sacrificing a high degree of detail, these communities are a privileged setting for examining how strategies change over time.
+%
+Some of the questions we aimed to answer during the course of the doctoral research were as follows:
+%
+What is the most effective way to measure an individual's learning over time?
 What is the relationship between team formation and long-term individual learning?
-What is the effect that an individual's topological position in the dynamic exchange network has on individual learning?
+What effect does an individual's topological position in the dynamic exchange network have on individual learning?
+What are some of the general properties of learning?
 
 % Parrafo
 
-While machine learning works very well in certain contexts, it can crash if the data deviates a bit from what the model is accustomed to.
-The sciences, however, seek truths with universal validity.
-To avoid lying in contexts of uncertainty, we must not assert more than we know, without saying less.
-Therefore, the strict application of the rules of probability (Bayesian approach) is the method by which truths are grounded in contexts of uncertainty.
-When evaluating mutually contradictory hypotheses (A and not A) surprise, the only source of information, acts as the filter of prior beliefs, allowing not to say more than what is known by incorporating all available information (maximizes uncertainty compatible with the data).
-Although there were some parts of the thesis that we could not evaluate the entire hypothesis space, we made an effort to adhere to this ideal.
+
+During the doctoral studies in computer science, the Bayesian approach to probability addressed the deeper methodological and epistemological questions that emerged from my prior education in anthropological sciences, specifically, how to reach agreements concerning the proper assessment of alternative causal arguments.
+%
+Probability rules have been known since the late 18th century and have since been adopted as a reasoning system in all empirical sciences.
+%
+Although, in practical terms, nothing better has been proposed over this period, the computational cost associated with evaluation of the entire hypothesis space has historically limited the strict application of probability rules (Bayesian approach).
+%
+The Bayesian approach was gradually integrated throughout the course of the thesis, eventually becoming a central player.
 
 % Parrafo
 
-In the first paper we used the Bayesian skill model most commonly used in the gaming industry to study a community in which people could play individually or in teams.
-There we find that playing in teams is associated with higher long-term learning, and that maintaining a stable teammate is associated with faster learning.
-In the second paper, we replicated the skill estimator and discovered that none of the models available at that time could obtain reliable initial estimates nor did they guarantee comparability over time due to an incorrect propagation of historical information, only in the direction from the past to the future.
-In this context, we implemented a model (now public in Julia, Python and R) that, by correctly propagating historical information, is able to provide estimates with low uncertainty at all times, ensuring historical comparability.
-In a third paper, we studied the evolution of a network of games in the game of Go over a period of eight years and we found, thanks to the new estimator, that the position of individuals in the network has a second-order effect on learning for individuals who are in the middle of the learning process, absent among novices and experts.
+In the first study, we employed the most widely used Bayesian skill model in the video game industry to examine a community where individuals could play either individually or in teams.
+%
+Through statistical hypothesis tests, we identified that playing in a team is associated with greater long-term learning, and maintaining a stable team is linked to a higher learning speed.
+%
+The skill estimators available, considered state-of-the-art at the beginning of the doctoral research, however, did not allow for obtaining reliable initial estimates or ensuring comparability between estimates across distant time and space.
+%
+During the course of the doctoral studies, we discovered the mathematical specification of a model known as TrueSkill Through Time (TTT), which addressed these issues by conducting inference in a single Bayesian network and accurately propagating historical information.
+%
+As this model was not available in any programming language in the second study, we tackled the mathematics of the model, documented it, implemented it, and published it in the Julia, Python, and R programming languages.
+%
+In a third paper, we studied the evolution of a network of games in the game of Go over a period of eight years and found with the new estimator that the position of individuals in the network has a second-order effect on learning in individuals who are in the middle of the learning process, absent between novices and experts.
 %
 \vspace{0.1cm}
 
