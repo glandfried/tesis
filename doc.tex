@@ -3339,12 +3339,12 @@ El valor de probabilidad de empate se estableci\'o en 0 ya que no hay posibilida
 Si bien las redes bayesianas han mostrado ser \'utiles para evaluar el aprendizaje en los sistemas educativos, hace falta m\'as trabajo en el desarrollo de redes bayesianas din\'amicas~\cite{Almond2015}.
 %
 Por ejemplo, los estimadores de habilidad m\'as utilizados en la industria del video juego, como Elo y TrueSkill, no permiten obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio debido a que propagan la informaci\'on en una sola direcci\'on a trav\'es del sistema, utilizando el \'ultimo posterior como prior del siguiente evento.
+
+Durante la realizaci\'on de esta tesis de doctorado, descubrimos la especificaci\'on de un modelo conocido como TrueSkill Through Time (TTT), que propaga toda la informaci\'on hist\'orica a trav\'es del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica.
 %
-Durante el doctorado descubrimos la especificaci\'on de un modelo conocido como TrueSkill Through Time (TTT), que propaga toda la informaci\'on hist\'orica a trav\'es del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica.
+Si bien el modelo TTT fue publicado hace m\'as una d\'ecada, no se encontraba disponible hasta entonces en ning\'un lenguaje de programaci\'on.
 %
-Si bien el modelo TTT fue publicado hace m\'as una d\'ecada, no se encontraba disponible hasta entonces en ning\'un lenguajes de programaci\'on.
-%
-Por ello, decidimos realizar nuestra propia implementaci\'on con la que ofrecimos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicaci\'on intuitiva comprensible para el p\'ublico general, y otra explicaci\'on en profundidad espec\'ifica para las persona con conocimientos b\'asicos en probabilidad.
+Por ello, decidimos realizar nuestra propia implementaci\'on con la que ofrecimos el primer software para \texttt{Julia}, \texttt{Python} y \texttt{R}, acompa\~nado por una explicaci\'on intuitiva comprensible para el p\'ublico general, y otra explicaci\'on en profundidad espec\'ifica para las personas con conocimientos b\'asicos en probabilidad.
 %
 La mejora de este modelo se hace evidente a partir de las predicciones a priori, que son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados.
 %
@@ -3408,14 +3408,9 @@ El par\'ametro $\beta^2$, al ser el mismo para todos los agentes, act\'ua como l
 
 % Parrafo
 
-Los estimadores de habilidad com\'unmente utilizados en la industria del video juego y la academia, como Elo, Glicko~\cite{Glickman1999}, TrueSkill \cite{Herbrich2007} e IRT \cite{Fox2010,VanDerLinden2016}, no pueden obtener estimaciones iniciales fiables ni asegurar la comparabilidad hist\'orica debido a que propagan la informaci\'on en una sola direcci\'on a trav\'es del sistema, utilizando el \'ultimo posterior como prior del siguiente evento (enfoque \emph{filtering}).
-
-%
-
-El enfoque adoptado por TrueSkill para tratar el proceso din\'amico, conocido como \emph{filtering}, usa el \'ultimo posterior aproximado como prior del siguiente evento.
-%
+Los estimadores de habilidad com\'unmente utilizados en la industria del video juego y la academia, como Elo, Glicko~\cite{Glickman1999}, TrueSkill \cite{Herbrich2007} e IRT \cite{Fox2010,VanDerLinden2016}, no pueden obtener estimaciones iniciales fiables ni asegurar la comparaci\'on hist\'orica debido a que propagan la informaci\'on en una sola direcci\'on a trav\'es del sistema, utilizando el \'ultimo posterior como prior del siguiente evento (enfoque \emph{filtering}).
 Luego, el posterior aproximado en un determinado momento se define como,
-%
+
 \begin{equation}\label{eq:filter} %\tag{\text{filtering}}
  \widehat{\text{Posterior}}_t \propto \widehat{\text{Likelihood}}_t  \overbrace{\widehat{\text{Likelihood}}_{t-1} \dots \underbrace{\widehat{\text{Likelihood}}_{1} \text{Prior}_1}_{\widehat{\text{Posterior}}_{1} \text{ como } \text{Prior}_{2}} }^{\widehat{\text{Posterior}}_{t-1} \text{ \en{as}\es{como} } \text{Prior}_{t}} %= \text{Prior}_1 \prod_{i=1}^t \text{Likelihood}_i
 \end{equation}
@@ -3436,29 +3431,29 @@ Debido a que el enfoque de filtrado es un procedimiento ad hoc que no surge de n
 %
 El m\'as obvio es que el inicio de toda secuencia de estimaciones siempre tiene alta incertidumbre.
 %
-Pero tambi\'en pueden producirse desacoplamientos temporales y espaciales que impidan comparar estimaciones distantes.
+Pero tambi\'en pueden producirse desacoples temporales y espaciales que impidan comparar estimaciones distantes.
 %
 Aunque la diferencias relativas entre estimaciones contempor\'aneas al interior de comunidades bien conectadas sean correctas, las estimaciones separadas en el tiempo y entre comunidades poco conectadas pueden ser incorrectas.
 %
 Todos estos problemas est\'an relacionados al hecho de que la informaci\'on propaga en una sola direcci\'on a trav\'es del sistema, cuando la inferencia deber\'ia realizarse con toda la informaci\'on disponible, tambi\'en de eventos que ocurren de forma paralela como de eventos futuros disponibles.
 
-\subsection{TrueSkill Through Time model}
+\subsection{Modelo TrueSkill Through Time}
 
-Para corregir los problemas del algoritmo TrueSkill es necesario realizar la inferencia dentro de una red bayesiana que inlcuya todas las actividades hist\'oricas, de modo que la informaci\'on pueda propagar por todo el sistema.
+Para corregir los problemas de TrueSkill, es necesario realizar la inferencia dentro de una red bayesiana que incluya todas las actividades hist\'oricas, de modo que la informaci\'on pueda propagar por todo el sistema.
 %
-De esta forma se garantiza tanto buenas estimaciones iniciales como la comparabilidad de las estimaciones que est\'an separadas en el tiempo y el espacio.
+De esta forma se garantiza tanto buenas estimaciones iniciales como la comparaci\'on de las estimaciones que est\'an separadas en el tiempo y el espacio.
 %
-La conectividad entre eventos surge de suponer que la habilidad de un jugador en un tiempo $t$ depende de su propia habilidad en un tiempo anterior $t-1$, generando un red que adquiere su estructura dependiendo de quienes participan en cada evento.
+La conectividad entre eventos surge de suponer de que la habilidad de un jugador en un tiempo $t$ depende de su propia habilidad en un tiempo anterior $t-1$, generando una red que adquiere su estructura dependiendo de quienes participan en cada evento.
 %
-Algoritmos similares fueron implementados por \cite{Coulom2008} y \cite{Maystre2019} basados en aproximaciones laplacianas y procesos gaussianos respectivamente.
+Algoritmos similares fueron implementados por Coulom~\cite{Coulom2008} y Maystre et. al~\cite{Maystre2019} basados en aproximaciones laplacianas y procesos gaussianos respectivamente.
 %
-Exluyendo el aspecto din\'amico, $\gamma = 0$, el prior de un agente $i$ en el $t$-\'esimo evento es el producto del todas sus verosimilitudes, salvo la del $t$-\'esimo evento.
+Excluyendo el aspecto din\'amico, $\gamma = 0$, el prior de un agente $i$ en el $t$-\'esimo evento es el producto del todas sus verosimilitudes, salvo la del $t$-\'esimo evento.
 %
 \begin{equation}\label{eq:smooth_prior}
  \text{Prior}_{i_t} = \text{Prior}_{i_0} \underbrace{\prod_{k = 1}^{t-1} \text{Verosimilitud}_{i_k}}_{\text{\en{Past information}\es{Informaci\'on pasada}}} \underbrace{\prod_{k = t + 1}^{T_i} \text{\en{Likelihood}\es{Verosimilitud}}_{i_k}}_{\text{\en{Future information}\es{Informaci\'on futura}}}
 \end{equation}
 %
-Donde $T_i$ es la cantidad total de eventos del agente $i$, siendo {\small Prior$_{i_0}$} su prior inicial.
+donde $T_i$ es la cantidad total de eventos del agente $i$, siendo {\small Prior$_{i_0}$} su prior inicial.
 %
 Esto produce una mutua dependencia entre estimaciones que nos obliga a usar iterativamente las \'ultimas verosimilitudes disponibles hasta alcanzar convergencia (detalles en la secci\'on~\ref{sec:throughTime}).
 %
@@ -3533,9 +3528,9 @@ En la figura~\ref{fig:smooth_example} mostramos c\'omo convergen las estimacione
 TrueSkill Through Time recupera, de acuerdo a lo que sugieren los datos (una victoria cada uno), las verdaderas diferencias entre habilidades indicando que ambos jugadores tienen misma habilidad (posterior centrado en cero), a diferencia de TrueSkill que ofrece estimaciones sesgadas.
 % Parrafo
 
-La ventaja de TrueSkill Through Time radica en que el modelo causal temporal permite que la informaci\'on propage correctamente por todo el sistema.
+La ventaja de TrueSkill Through Time radica en que el modelo causal temporal permite que la informaci\'on propague correctamente por todo el sistema.
 %
-A diferencia de las redes neuronales que tienen estructuras regulares, estas redes bayesianas adquieren siempre una estructura compleja, creci\'endo t\'ipicamente a millones de par\'ametros (e.g., videojuego).
+A diferencia de las redes neuronales que tienen estructuras regulares, estas redes bayesianas adquieren siempre una estructura compleja, creciendo t\'ipicamente a millones de par\'ametros (e.g., videojuego).
 %
 El procedimiento converge con unas pocas iteraciones lineales sobre los datos.
 %
@@ -3546,9 +3541,9 @@ Con este art\'iculo ponemos a disposici\'on los primeros paquetes de TrueSkill T
 
 \subsection{Evaluaci\'on de modelos}
 
-El modelo TrueSkill Through Time (TTT)~\cite{Dangauthier2007} propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio (enfoque \emph{smoothing}).
+El modelo TrueSkill Through Time (TTT)~\cite{Dangauthier2007} propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparaci\'on de las estimaciones distantes en el tiempo y el espacio (enfoque \emph{smoothing}).
 %
-Enfoque similares fueron implementados por \cite{Coulom2008} (Whole History Rating) y \cite{Maystre2019} (KickScore), basados en aproximaciones laplacianas y procesos gaussianos respectivamente.
+Enfoque similares fueron implementados en \emph{Whole History Rating}\cite{Coulom2008} y \emph{KickScore}~\cite{Maystre2019}, basados en aproximaciones laplacianas y procesos gaussianos respectivamente.
 % Parrafo
 
 En la tabla~\ref{Tab:Models} comparamos nuestra implementaci\'on del algoritmo TTT contra KickScore TrueSkill, Elo, y un modelo ``Constante'' en el que las habilidades no cambian en el tiempo.
@@ -3559,7 +3554,7 @@ Para evaluar los modelos debemos calcular su probabilidad dados los datos,%
  P(\text{Modelo}|\text{Datos}) = \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}})P(\text{Model\es{o}})}{P(\text{Dat\en{a}\es{os}})}
 \end{equation}
 %
-Cuando no tenemos acceso a todos los modelos, no podremos calcular la probabilidad $P(\text{Modelo}|\text{Datos})$, pero s\'i podremos comparar modelos.
+Cuando no tenemos acceso a todos los modelos, no podremos calcular $P(\text{Modelo}|\text{Datos})$, pero s\'i podremos comparar modelos.
 %
 \begin{equation}\label{eq:bayes_factor}
  \frac{P(\text{Modelo}_i|\text{Dat\en{a}\es{os}})}{P(\text{Model\es{o}}_j|\text{Dat\en{a}\es{os}})} = \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_i)P(\text{Model\es{o}}_i)}{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_j)P(\text{Model\es{o}}_j)} \overset{\text{\en{if}\es{si} } *}{=} \frac{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_i)}{P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}_j)}
@@ -3567,15 +3562,15 @@ Cuando no tenemos acceso a todos los modelos, no podremos calcular la probabilid
 %
 Esta expresi\'on se conoce como el \emph{Bayes factor}, el cual se suele expresar en escala logar\'itmica para reportar la diferencia en \'ordenes de magnitud.
 %
-En el caso especial en el que no tenemos preferencia a priori sobre ning\'un modelo (
+En el caso especial en el que no tenemos preferencia a priori sobre ning\'un modelo,
 %
 \begin{equation}
 P(\text{Dat\en{a}os}|\text{Model\es{o}}) = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots P(d_n|d_1,\dots, d_{n-1},\text{Model\es{o}})
 \end{equation}
 %
-donde cada elementos de la productoria es una predicci\'on del siguiente dato en base a los datos previos y el modelo.
+donde cada elemento de la productoria es una predicci\'on del siguiente dato en base a los datos previos y el modelo.
 %
-En este trabajo tambi\'en vamos a reportare la media geom\'etrica debido a que puede interpretarse como la predicci\'on ``caracter\'istica'' del modelo,%
+En este trabajo tambi\'en vamos a reportar la media geom\'etrica debido a que puede interpretarse como la predicci\'on ``caracter\'istica'' del modelo,
 %
 \begin{equation}\label{eq:gmean}
 P(\text{Dat\en{a}os}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Dat\en{a}\es{os}}|\text{Model\es{o}}))^{|\text{Dat\en{a}\es{os}}|}
@@ -3584,7 +3579,7 @@ P(\text{Dat\en{a}os}|\text{Model\es{o}}) = \text{geometric mean}(P(\text{Dat\en{
 donde $|\text{Datos}|$ representa el tama\~no del conjunto de datos.
 % Parrafo
 
-Para realizar la comparaci\'on seguiremos la metodolog\'ia empleada por \cite{Maystre2019} analizando las cuatro base de datos sobre las cuales ellos reportan sus predicciones a priori: ATP (tenis), NBA (baloncesto), FIFA (f\'utbol), y FIDE (ajedrez).
+Para realizar la comparaci\'on seguiremos la metodolog\'ia empleada por Maystre et. al~\cite{Maystre2019} analizando las cuatro base de datos sobre las cuales ellos reportan sus predicciones a priori: ATP (tenis), NBA (baloncesto), FIFA (f\'utbol), y FIDE (ajedrez).
 Usamos el \SI{70}{\percent} inicial de la base de datos para entrenar los hiperpar\'ametros y el \SI{30}{\percent} final para evaluar los modelos.
 %
 Para predecir el resultado de una observaci\'on en el tiempo $t$, ellos utilizan todos los datos (en los conjuntos de entrenamiento y de prueba) hasta el d\'ia anterior a $t$.
@@ -3610,49 +3605,47 @@ La tabla~\ref{Tab:Models} se resumen las comparaciones de los modelos en las cua
   %
   Las columnas GM reportan la media geom\'etrica de las predicciones a priori de los modelos (ecuaci\'on \ref{eq:gmean}).
   %
-  Las columnas $\text{log}_2$BF reportan el Bayes Factor (ecuaci\'on \ref{eq:bayes_factor}) entre TTT y otros modelos en escala logar\'itmica.
+  Las columnas $\text{log}_2$BF reportan el Bayes Factor, siguiendo la expresi\'on~\eqref{eq:bayes_factor}, entre TTT y otros modelos en escala logar\'itmica.
   %
   Como referencia, la columna LOOCV reporta la media geom\'etrica de las predicciones usando toda la informaci\'on hist\'orica, $p(d_i| d_1, \dots, d_{i-1}, d_{i+1}, \dots, d_n , M)$.
   %
-  La media geom\'etrica de los modelos se\~nalados con el s\'imbolo $\dagger$ fue obtenida por \cite{Maystre2019}.
+  La media geom\'etrica de los modelos se\~nalados con el s\'imbolo $\dagger$ fue obtenida por Maystre et. al~\cite{Maystre2019}.
   }
   \label{Tab:Models}
 \end{table}
 %
-El modelo TTT supera KickScore en la base de datos de tenis por $93$ \'ordenes de magnitud, mientras que KickScore supera a TTT en la base de ajedrez por $55$ \'ordenes de magnitud.
+El modelo TTT supera \emph{KickScore} en la base de datos de tenis por $93$ \'ordenes de magnitud, mientras que \emph{KickScore} supera a TTT en la base de basket por $55$ \'ordenes de magnitud.
 %
-Consideramos que los modelos empatan en las bases de datos de ajedrez y de f\'utbol en tanto la diferencia entre s es menor a 10 \'ordenes de magnitud.
+Consideramos que los modelos empatan en las bases de datos de ajedrez y de f\'utbol en tanto la diferencia es menor a 10 \'ordenes de magnitud.
 %
 Unificando las cuatro base de datos en una sola, el modelo TTT supera a KickScore por m\'as de 40 \'ordenes de magnitud.
 % Parrafo
 
-Para computar las predicciones ellos utilizan un cluster para crear en paralelo un modelo diferente por cada d\'ia $t$, que requieren cada uno cerca de 100 iteraciones para alcanzar convergencia.
+Para computar las predicciones, Maystre et.~al utilizan un cluster para crear en paralelo un modelo diferente por cada d\'ia $t$, cada uno requiere cerca de $100$ iteraciones para alcanzar convergencia.
 %
-En cambio, para nosotros fue suficiente usar una computadora de escritorio para crear un \'unico modelo al que le agregamos las datos d\'ia a d\'ia, realizando una \'unica iteraci\'on en cada paso.
+En cambio, en nuestro caso fue suficiente usar una computadora de escritorio para crear un \'unico modelo al que le agregamos las datos d\'ia a d\'ia, realizando una \'unica iteraci\'on en cada paso.
 %
 La selecci\'on de modelo la hemos realizado optimizando los hiperpar\'ametros, pero una selecci\'on de modelo bayesiana completa deber\'ia computar las predicciones integrando todo el espacio de hiperpar\'ametros.
 %
 Este procedimiento suele penalizar a los modelos complejos cuando la b\'usqueda en el espacio de hiperpar\'ametros es innecesaria.
 %
-Con no m\'as de tres hiperpar\'ametros intuitivos (incertidumbre a priori, incertidumbre din\'amica y probabilidad de empate), el modelo TTT logra resultados similares y hasta mejores que KickScore de forma m\'as eficiente, debido a que el \'ultimo debe optimizar en un espacio de par\'ametros mucho m\'as grande, que incluye la definci\'on de un \emph{kernel} y luego los hiperpar\'ametros espec\'ificos a ese \emph{kernel}.
+Con no m\'as de tres hiperpar\'ametros intuitivos (incertidumbre a priori, incertidumbre din\'amica y probabilidad de empate), el modelo TTT logra resultados similares y hasta mejores que \emph{KickScore} de forma m\'as eficiente, debido a que el \'ultimo debe optimizar en un espacio de par\'ametros mucho m\'as grande, que incluye la definici\'on de un \emph{kernel} y luego los hiperpar\'ametros espec\'ificos a ese \emph{kernel}.
 % Parrafo
 
 Cuando el objetivo es estimar las curvas de aprendizaje en el tiempo con la mayor precisi\'on posible, en vez de forzar al modelo a hacer la inferencia usando solamente la informaci\'on del pasado (como hicimos para comparar el desempe\~no de los modelos), conviene hacer la inferencia usando toda la informaci\'on hist\'orica.
 %
-Esto es \'util debido a que los modelos probabil\'isiticos pueden usar informaci\'on del futuro para inferir eventos del pasado, algo que intuitivamente hacemos cuando sospechamos que los deportistas destacados tambi\'en eran h\'abiles un tiempo antes de hacerse conocidos.
+Esto es \'util debido a que los modelos probabil\'isticos pueden usar informaci\'on del futuro para inferir eventos del pasado, algo que intuitivamente hacemos cuando sospechamos que los deportistas destacados tambi\'en eran h\'abiles un tiempo antes de hacerse conocidos.
 %
 La columna LOOCV de la tabla~\ref{Tab:Models} reporta la media geom\'etrica de las predicciones que usan toda la informaci\'on hist\'orica excepto el evento que se est\'a prediciendo, $p(d_i| d_1, \dots, d_{i-1}, d_{i+1}, \dots, d_n , M)$.
 %
-Si bien no usamos estas predicciones offline para comparar modelos (Bayes Factor), es interesante notar que incorporar toda la informaci\'on hist\'orica al modelo TTT mejora sus propias estimaciones centenas de \'ordenes de magnitud.
+Si bien no usamos estas predicciones \emph{offline} para comparar modelos (Bayes Factor), es interesante notar que incorporar toda la informaci\'on hist\'orica al modelo TTT mejora sus propias estimaciones centenas de \'ordenes de magnitud.
 % Parrafo
 
 Debido a que la estimaci\'on de habilidad es un problema sensible para los individuos, en las siguientes secciones ofrecemos una explicaci\'on lo m\'as intuitiva y completa posible.
 %
 Las comunidades que son evaluadas tanto en la industria del video juego como en los sistemas educativos necesitan conocer c\'omo funciona el algoritmo que mide su habilidad.
 %
-Este trabajo, adem\'as de ofrecer una herramienta de software, ofrece una reporte cient\'ifico completo y accesible al p\'ublico en general.
-
-
+Adem\'as de desarrollar una herramienta de software, ofrecemos un reporte cient\'ifico completo y accesible al p\'ublico en general.
 
 
 \section{Software: implementaci\'on del modelo}
@@ -3686,10 +3679,11 @@ Haciendo uso de las independencias entre las variables, nuestro modelo (figura~\
 \begin{equation} \label{eq:factorization}
  p(\bm{s},\bm{p},d,r) = p(s_1)p(s_2)p(p_1|s_1)p(p_2|s_2)p(d|\bm{p})P(r|d)
 \end{equation}
+\todo[inline]{Tenes que explicar la ecuaci\'on, que es cada termino y variable}
 %
-En la figura~\ref{fig:factor_graph} mostramos esta factorizaci\'on graficamente.
+En la figura~\ref{fig:factor_graph} mostramos esta factorizaci\'on gr\'aficamente.
 %
-Este tipo de representaciones, conocidas como \emph{factor graph}, son gr\'afos con dos tipos de nodos: nodos variables (c\'irculos blancos), y nodos funciones (cuadrados negros).
+Este tipo de representaciones, conocidas como \emph{factor graph}, son grafos con dos tipos de nodos: nodos variables (c\'irculos blancos), y nodos funciones (cuadrados negros).
 %
 Los ejes entre nodos variables y nodos funciones representan la relaci\'on matem\'atica ``la variable $v$ es argumento de la funci\'on $f$''.
 %
@@ -3731,15 +3725,13 @@ Los ejes entre nodos variables y nodos funciones representan la relaci\'on matem
 }
      \caption{%
      Forma gr\'afica de representar la factorizaci\'on de la distribuci\'on conjunta inducida por el modelo causal b\'asico (ecuaci\'on~\eqref{eq:factorization}).
-     %
      Los cuadrados negros representan las funciones, los c\'irculos blancos representan las variable, y los ejes entre ellos representan la relaci\'on matem\'atica ``la variable es argumento de la funci\'on''.
-     %
      }
     \label{fig:factor_graph}
 \label{modelo}
 \end{figure}
 %
-En nuestro caso querermos computar dos marginales, el posterior proporcional de las habilidades $p(s_i, r)$ y la probabilidad a priori del resultado $p(r)$.
+En nuestro caso, buscamos computar dos marginales, el posterior proporcional de las habilidades $p(s_i, r)$ y la probabilidad a priori del resultado $p(r)$.
 %
 El \emph{sum-product algorithm} es una forma general de descomponer las reglas de la probabilidad como mensajes que se env\'ian los nodos del \emph{factor graph}.
 %
