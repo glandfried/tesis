@@ -2851,12 +2851,12 @@ Las subfiguras muestran los valores de los par\'ametros (es decir, $\alpha$ y \e
 Las curvas de aprendizaje dependen del abandono, exhibi\'endose una habilidad m\'as baja para las subpoblaciones con una actividad total m\'as baja.
 %
 Sin embargo, la tasa de aprendizaje ($\alpha$) se mantiene estable para las subpoblaciones con al menos $32$ partidas jugadas (panel superior izquierdo de la figura~\ref{learningskill_curve}).
-\todo[inline]{se estaba refiriendo al panel superior derecho de la figura y en esa ubicación no hay nada, lo cambié a izquierdo}
+\todo[inline]{se estaba refiriendo al panel superior derecho de la figura y en esa ubicaci\'on no hay nada, lo cambi\'e a izquierdo}
 %
 La diferencia entre ellos causa poca variaci\'on en la adquisici\'on de habilidades a largo plazo, con menos de $0.24$~tsp despu\'es de $1000$ partidas jugadas.
 %
 La habilidad de inicial de la subpoblaci\'on ($Skill_0$) tambi\'en se ve afectada por el abandono (subfigura abajo a la derecha en la figura~\ref{learningskill_curve}).
-\todo[inline]{se estaba refiriendo al panel inferior izquierdo de la figura y en esa ubicación no hay nada, lo cambié a derecho}
+\todo[inline]{se estaba refiriendo al panel inferior izquierdo de la figura y en esa ubicaci\'on no hay nada, lo cambi\'e a derecho}
 %
 Sin embargo, todas las subpoblaciones con al menos $64$ juegos jugados, no tienen una habilidad inicial significativamente diferente (Wilcoxon rank-sum test en Anexo).
 
@@ -8172,24 +8172,29 @@ El hecho de que el modelo de habilidad estado del arte no estuviera disponible e
 Solo recientemente, en el trascurso del doctorado apareci\'o quiz\'as el primer modelo causal (en el sentido probabil\'istico del t\'ermino) capaz de integrar diversos elementos que son espec\'ificos al problema de estudio~\cite{minka2018-trueskill2}.
 %
 Este modelo es una extensi\'on de nuestra implementaci\'on, y todav\'ia no se encuentra disponible como paquete en ning\'un lenguaje de programaci\'on.
+%
+Por ello en el capitulo~\emph{\nameref{ch_volverAlFuturo}} discutimos algunos proyectos que buscan desarrollar en profundidad las metodolog\'ias de evaluaci\'on de modelos causales.
 
 % Parrafo
 
-En la
-
-Durante el transcurso del doctorado, investigadores que han sido protagonistas del desarrollo de la teor\'ia de la evoluci\'on moderna han comenzado a se\~nalar el isomorfismo que existe entre las teor\'ia de la evoluci\'on y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin} (el modelo est\'andar de evoluci\'on conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic} es estructuralmente equivalente al teorema de Bayes~\cite{harper2009-replicatorAsInference,shalizi2009-replicatorAsInference}).
+Para comprender la naturaleza del aprendizaje resulta importante considerar el isomorfismo entre las teor\'ia de la evoluci\'on y la inferencia bayesiana se\~nalado recientemente por investigadores protagonistas del desarrollo de la teor\'ia de la evoluci\'on moderna~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin}.
 %
+El modelo est\'andar de evoluci\'on conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic} es estructuralmente equivalente al teorema de Bayes~\cite{harper2009-replicatorAsInference,shalizi2009-replicatorAsInference}).
+%
+Y en particular, los procesos evolutivos de selecci\'on de las formas de vida, por secuencia de tasas de supervivencia y reproducci\'on, son como los procesos de selecci\'on de las hip\'otesis en la teor\'ia de la probabilidad, por secuencias de predicciones, de naturaleza multiplicativa
+
+% Parrafo
+
 En el cap\'itulo~\ref{ch_epistemico} discutimos algunas de las propiedades que se derivan de la funci\'on de costo compartida por las teor\'ias de la probabilidad y de la evoluci\'on.
 %
-Luego de haber extendido la frontera de los modelos de estimaci\'on de habilidad disponibles en los lenguajes de programaci\'on, y haberlo utilizado para explorar casos reales, finalizamos la tesis con esta reflexi\'on general respecto de la naturaleza de los aprendizajes epist\'emicos (de las hip\'otesis) y evolutivos (de la vida).
-
-
-
-
-
-
-
-
+Debido a que en los procesos multiplicativos los impactos de las p\'erdidas son m\'as fuertes que los de las ganancias (un cero en la secuencia produce una extinci\'on irreversible), las hip\'otesis o formas de vida que se seleccionan son aquellas que reducen las fluctuaciones por diversificaci\'on individual y por especializaci\'on heterog\'enea cooperativa.
+%
+Adem\'as, durante mucho tiempo se crey\'o que la evoluci\'on de la cooperaci\'on estaba condicionada por un dilema.
+%
+Sin embargo, hemos visto que que no existe tal dilema debido a que en los procesos de selecci\'on multiplicativos, los individuos desertores
+aumentan las fluctuaciones de los cooperadores de quienes dependen, aumentando por lo tanto sus propias fluctuaciones y afectando negativamente su propia tasa de crecimiento de largo plazo, lo que llamamos (\emph{propiedad mayor}).
+%
+Estas propiedades permiten comprender aspectos relevantes comunes a los aprendizajes de la vida (por evoluci\'on) y de las hip\'otesis (en probabilidad), discutidas en el cap\'itulo~\ref{ch_epistemico}.
 
 
 
