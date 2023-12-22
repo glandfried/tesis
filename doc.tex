@@ -2807,6 +2807,7 @@ La habilidad se estima seg\'un el m\'etodo \emph{TrueSkill}~\cite{Herbrich2007}.
 La diferencia de habilidad entre los oponentes indica con alta precisi\'on la probabilidad de ganar.
 %
 Con dos oponentes (equipos o individuos), la probabilidad de ganar cuando el otro tiene la misma habilidad es $1/2$ y una diferencia de $4$~tsp (puntos TrueSkill) aumenta la probabilidad de ganar a $2/3$~tsp.
+\todo[inline]{Seguro que el 2/3 tiene unidad? No es una probabilidad?}
 
 % Parrafo
 
@@ -2822,7 +2823,7 @@ donde $\alpha$ es la tasa de aprendizaje caracter\'istica de la poblaci\'on y \e
 
 % Parrafo
 
-Para analizar la ley de la pr\'actica, dividimos a los jugadores seg\'un su actividad total: (1) jugadores con al menos $8$ partidas y menos de $16$, (2) jugadores al menos $16$ partidas y menos de $32$, etc.
+Para analizar la ley de la pr\'actica, dividimos a los jugadores seg\'un su actividad total: (1) jugadores con al menos ocho partidas y menos de $16$, (2) jugadores al menos $16$ partidas y menos de $32$, etc.
 %
 Por lo tanto, ajustamos los par\'ametros de la ley de la pr\'actica a cada uno de los conjuntos de jugadores seg\'un su nivel de actividad.
 %
@@ -2837,18 +2838,20 @@ Curva de aprendizaje de la subpoblaciones de jugadores seg\'un su nivel activida
 %
 Cada curva de aprendizaje muestra la habilidad de los primeros $2^n$ partidas jugadas de la subpoblaci\'on con al menos $2^n$ partidas jugadas y menos de $2^{n+1}$.
 %
-Las subfiguras muestran los valores de los par\'ametros (es decir, $\alpha$ y \emph{Skill}$_0$) de cada curva de aprendizaje siguiendo la ecuaci\'on~\ref{lawOfPractice}.
-}
+Las subfiguras muestran los valores de los par\'ametros (es decir, $\alpha$ y \emph{Skill}$_0$) de cada curva de aprendizaje siguiendo la ecuaci\'on~\eqref{lawOfPractice}.
+\todo[inline]{Que poblacion est\'a incluida en la subfiguras?}}
 \label{learningskill_curve}
 \end{figure}
 
 Las curvas de aprendizaje dependen del abandono, exhibi\'endose una habilidad m\'as baja para las subpoblaciones con una actividad total m\'as baja.
 %
-Sin embargo, la tasa de aprendizaje ($\alpha$) se mantiene estable para las subpoblaciones con al menos $32$ de partidas jugadas (panel superior derecho de la figura~\ref{learningskill_curve}).
+Sin embargo, la tasa de aprendizaje ($\alpha$) se mantiene estable para las subpoblaciones con al menos $32$ partidas jugadas (panel superior izquierdo de la figura~\ref{learningskill_curve}).
+\todo[inline]{se estaba refiriendo al panel superior derecho de la figura y en esa ubicación no hay nada, lo cambié a izquierdo}
 %
 La diferencia entre ellos causa poca variaci\'on en la adquisici\'on de habilidades a largo plazo, con menos de $0.24$~tsp despu\'es de $1000$ partidas jugadas.
 %
-La habilidad de inicial de la subpoblaci\'on ($Skill_0$) tambi\'en se ve afectada por el abandono (subfigura abajo a la izquierda en~\ref{learningskill_curve}).
+La habilidad de inicial de la subpoblaci\'on ($Skill_0$) tambi\'en se ve afectada por el abandono (subfigura abajo a la derecha en la figura~\ref{learningskill_curve}).
+\todo[inline]{se estaba refiriendo al panel inferior izquierdo de la figura y en esa ubicación no hay nada, lo cambié a derecho}
 %
 Sin embargo, todas las subpoblaciones con al menos $64$ juegos jugados, no tienen una habilidad inicial significativamente diferente (Wilcoxon rank-sum test en Anexo).
 
@@ -2882,7 +2885,7 @@ Definimos el concepto \emph{Team-oriented behavior} (TOB) de los jugadores como 
 \text{\emph{Team-oriented behavior}} = \frac{\text{\emph{Partidas de equipo jugadas}}}{\text{\emph{Partidas jugadas}}}
 \end{equation}
 %
-Para evaluar la influencia de TOB en las curvas de aprendizaje, dividimos la poblaci\'on en TOB fuerte, medio y d\'ebil (es decir, $0.8<\text{\emph{TOB}}\leq 1$, $0.4 <\text{\emph{TOB}}\ leq 0,6$ y $0 <\text{\emph{TOB}}\leq 0.2$, respectivamente).
+Para evaluar la influencia de TOB en las curvas de aprendizaje, dividimos la poblaci\'on en TOB fuerte, medio y d\'ebil (es decir, $0.8<\text{\emph{TOB}}\leq 1$, $0.4 <\text{\emph{TOB}}\leq 0.6$ y $0 <\text{\emph{TOB}}\leq 0.2$, respectivamente).
 %
 En adelante, excluimos a los jugadores con menos de cuatro partidas en equipo.
 
@@ -2890,7 +2893,7 @@ En adelante, excluimos a los jugadores con menos de cuatro partidas en equipo.
 
 En el largo plazo, entre $200$ y $500$ juegos de experiencia, las curvas de aprendizaje se ordenan seg\'un su nivel de TOB, exhibiendo un mayor nivel de habilidad para las poblaciones con mayor TOB (Figura~\ref{learningskill_team_hasta4team}).
 %
-Los jugadores TOB altos muestran, despu\'es de $250$ partidas, una habilidad final significativamente m\'as alta en comparaci\'on con TOB medio y d\'ebil (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
+Los jugadores con TOB altos muestran, despu\'es de $250$ partidas, una habilidad final significativamente m\'as alta en comparaci\'on con TOB medio y d\'ebil (Wilcoxon rank-sum test, $p<1 \times10^{-4}$).
 
 % Parrafo
 
@@ -2923,7 +2926,7 @@ Los jugadores pueden elegir entre jugar con el mismo compa\~nero de equipo o sel
 %
 Nuestra hip\'otesis es que un comportamiento leal puede afectar el aprendizaje (aumentar o disminuir la tasa de adquisici\'on de habilidades) cuando se juega en equipo.
 %
-La mayor\'ia de las veces que dos personas aparecen recurrentemente en la misma partida vemos que la inmensa mayor\'ia las personas son compa\~neras de equipo en lugar de oponentes.
+La mayor\'ia de las veces que dos personas aparecen recurrentemente en la misma partida, vemos que la inmensa mayor\'ia son compa\~neras de equipo en lugar de oponentes.
 %
 Por lo tanto, enfocamos nuestro an\'alisis solo en la lealtad de los compa\~neros de equipo ya que la lealtad en los oponentes no est\'a presente en nuestra base de datos.
 %
@@ -2933,7 +2936,7 @@ Definimos el concepto \emph{loyalty} de las personas como la proporci\'on de vec
 \text{\emph{Loyalty}} = \frac{\text{\emph{M\'aximo de partidas jugadas con un mismo compa\~nero}}}{\text{\emph{Partidas de equipo jugadas}}}
 \end{equation}
 %
-Para evaluar la influencia del loyalty sobre el aprendizaje, examinamos la evoluci\'on de las habilidades de los jugadores con TOB fuerte en funci\'on de su valor de loyalty.
+Para evaluar la influencia del \emph{loyalty} sobre el aprendizaje, examinamos la evoluci\'on de las habilidades de los jugadores con TOB fuerte en funci\'on de su valor de \emph{loyalty}.
 %
 Definimos un jugador como \emph{leal} cuando $\text{\emph{loyalty}}>0.5$, y un jugador como \emph{casual} cuando $\text{\emph{loyalty}}\leq 0.2$.
 
@@ -2945,15 +2948,15 @@ Los jugadores leales muestran un incremento en la habilidad media de aproximadam
 %
 La distribuci\'on de habilidades en cada punto de la curva de aprendizaje es significativamente diferente hasta $386$ partidas jugadas (Wilcoxon rank-sum test $p<0.01$).
 %
-Un comportamiento an\'alogo entre las subclases leales y casuales ocurre tambi\'en para los TOB medios y d\'ebiles(Fig.~\ref{learning_curve_ployal_hasta4team_longRun} en Anexo), aunque menos intensos ya que est\'an menos orientados a equipos.
+Un comportamiento an\'alogo entre las subclases leales y casuales ocurre tambi\'en para los TOB medios y d\'ebiles (Fig.~\ref{learning_curve_ployal_hasta4team_longRun} en Anexo), aunque menos intensos ya que est\'an menos orientados a equipos.
 
 % Parrafo
 
-Para estudiar la interacci\'on entre TOB y loyalty en la adquisici\'on de habilidades, fijamos el n\'umero de juegos jugados en $100$.
+Para estudiar la interacci\'on entre TOB y \emph{loyalty} en la adquisici\'on de habilidades, fijamos el n\'umero de partidos en $100$.
 %
-Al aislar esta interacci\'on (sin la interferencia de la experiencia) encontramos que un aumento en loyalty siempre implica un aumento en la habilidad, m\'as prominente para valores m\'as altos de TOB (Fig.~\ref{skillModels_loyaltyTeamOriented_imageEmpirical}).
+Al aislar esta interacci\'on (sin la interferencia de la experiencia) encontramos que un aumento en \emph{loyalty} siempre implica un aumento en la habilidad, m\'as prominente para valores m\'as altos de TOB (Fig.~\ref{skillModels_loyaltyTeamOriented_imageEmpirical}).
 %
-Por el contrario, el aumento de los valores de TOB muestra una disminuci\'on de la habilidad para los niveles bajos de loyalty, y solo implica un aumento de la habilidad para los niveles altos de loyalty.
+Por el contrario, el aumento de los valores de TOB muestra una disminuci\'on de la habilidad para los niveles bajos de \emph{loyalty}, y solo implica un aumento de la habilidad para los niveles altos de \emph{loyalty}.
 %
 La diferencia de habilidad del m\'inimo al m\'aximo es mayor a $4.5$~tsp.
 
@@ -2964,11 +2967,11 @@ La diferencia de habilidad del m\'inimo al m\'aximo es mayor a $4.5$~tsp.
 \caption{
 Curvas de aprendizaje de las subclases leal y casual de la clase TOB fuerte.
 %
-La banda representa el intervalo de confianza 95\% Wilcoxon rank-sum, y la l\'inea media representa la pseudomediana.
+La banda representa el intervalo de confianza \SI{95}{\percent} Wilcoxon rank-sum, y la l\'inea media representa la pseudomediana.
 %
 Como referencia, mostramos la curva de aprendizaje de toda la poblaci\'on y la clase TOB fuerte.
 %
-Los resultados son an\'alogos a los obtenidos con la media y el intervalo de confianza 95\% t-test.
+Los resultados son an\'alogos a los obtenidos con la media y el intervalo de confianza \SI{95}{\percent} t-test.
 %
 La l\'inea vertical en $100$ partidas jugadas indica el an\'alisis realizado en la Fig.~\protect\ref{skillModels_loyaltyTeamOriented_imageEmpirical}.
 }
@@ -2979,7 +2982,7 @@ La l\'inea vertical en $100$ partidas jugadas indica el an\'alisis realizado en 
 \centering
 \includegraphics[width=.49\linewidth]{figures/Fig4}
 \caption{
-Interacci\'on de la habilidades entre loyalty y TOB para todos los jugadores.
+Interacci\'on de la habilidades entre \emph{loyalty} y TOB para todos los jugadores.
 %
 El papel de la experiencia se aisl\'o tomando la habilidad de los jugadores en el mismo punto de la experiencia.
 %
@@ -2994,7 +2997,7 @@ Las parcelas vac\'ias tienen menos de cinco jugadores.
 \label{skillModels_loyaltyTeamOriented_imageEmpirical}
 \end{figure}
 
-La interacci\'on entre loyalty y TOB se puede resumir como $ \text{\emph{Loyalty}} \cdot \text{\emph{TOB}} = \text{\emph{faithfulness}}$, lo que queda definido como,
+La interacci\'on entre \emph{loyalty} y TOB se puede resumir como $ \text{\emph{Loyalty}} \cdot \text{\emph{TOB}} = \text{\emph{faithfulness}}$, lo que queda definido como,
 %
 \begin{equation}
 \text{\emph{Faithfulness}} = \frac{\text{\emph{M\'aximo de partidas jugadas con un mismo compa\~nero}}}{\text{\emph{Partidas jugadas}}}
@@ -3004,17 +3007,17 @@ que es simplemente la proporci\'on de veces jugadas con el compa\~nero de equipo
 
 % Parrafo
 
-Para medir la influencia sobre la adquisici\'on de habilidades de loyalty, TOB and faithfulness, construimos un modelo lineal que ser\'a resuelto por m\'inimos cuadrados.
+Para medir la influencia sobre la adquisici\'on de habilidades de \emph{loyalty}, TOB and \emph{faithfulness}, construimos un modelo lineal que ser\'a resuelto por m\'inimos cuadrados.
 %
-La correlaci\'on entre las variables loyalty y TOB es baja ($0,11$) y Variance Inflation Factor es nulo ($1,01$), lo que sugiere que no hay evidencia de colinealidad.
+La correlaci\'on entre las variables \emph{loyalty} y TOB es baja ($0.11$) y \emph{Variance Inflation Factor} es nulo ($1.01$), lo que sugiere que no hay evidencia de colinealidad.
 
 \begin{equation}
 \text{skill}_i \sim \beta_1\text{loyalty}_i + \beta_2\text{TOB}_i + \beta_3\text{faithfulness}_i
 \end{equation}
 
-Con $100$ partidas jugadas, la variable loyalty tiene una pendiente positiva significativa, la variable TOB tiene una negativa significativa, mientras que la variable faithfulness tiene una pendiente positiva pronunciada significativa (Table~\ref{model}).
+Con $100$ partidas jugadas, la variable \emph{loyalty} tiene una pendiente positiva significativa, la variable TOB tiene una negativa significativa, mientras que la variable \emph{faithfulness} tiene una pendiente positiva pronunciada significativa (Tabla~\ref{model}).
 %
-La variable faithfulness es lo suficientemente fuerte como para revertir la contribuci\'on negativa de TOB sobre la habilidad a una positiva cuando $\text{\emph{loyalty}}>0.27$.
+La variable \emph{faithfulness} es lo suficientemente fuerte como para revertir la contribuci\'on negativa de TOB sobre la habilidad a una positiva cuando $\text{\emph{loyalty}}>0.27$.
 %
 El \emph{faithfulness-boost effect} es de alrededor de $3.7$~tsp, lo que genera una diferencia de habilidades entre jugadores con la misma experiencia extremadamente relevante en t\'erminos de probabilidad de ganar.
 
@@ -3031,7 +3034,7 @@ Intercept & 28.5707 & 0.0405 & 705.59 & $p< 2e^{-16}$ \\
    \hline
 \end{tabular}
 \caption{
-Influencia sobre el aprendizaje de las variables de loyalty, TOB and faithfulness (modelo lineal). Reportamos el valor de la pendiente estimada, su desviaci\'on est\'andar y la significatividad respecto a una pendiente cero. Todos los jugadores tienen juegos de $100$ de experiencia.
+Influencia sobre el aprendizaje de las variables de \emph{loyalty}, TOB y \emph{faithfulness} (modelo lineal). Reportamos el valor de la pendiente estimada, su desviaci\'on est\'andar y la significancia respecto a una pendiente cero. Todos los jugadores tienen juegos de $100$ de experiencia.
 }
 \label{model}
 \end{table}
@@ -3040,19 +3043,19 @@ Repetimos este procedimiento para jugadores con la misma experiencia, a partir d
 %
 El \emph{faithfulness-boost effect} sigue siendo significativo hasta $400$ partidas jugadas, siempre por encima de $3$~tsp.
 %
-A partir de $500$ partidas jugadas, la variable faithfulness deja de ser significativa pero la pendiente de la variable TOB revierte su contribuci\'on a una significativa positiva.
+A partir de $500$ partidas jugadas, la variable \emph{faithfulness} deja de ser significativa pero la pendiente de la variable TOB revierte su contribuci\'on a una significativa positiva.
 %
-La variable loyalty tiene un efecto positivo significativo en cualquier nivel de experiencia ($\geq 100$ partidas jugadas).
+La variable \emph{loyalty} tiene un efecto positivo significativo en cualquier nivel de experiencia ($\geq 100$ partidas jugadas).
 %
-Aunque el efecto de interacci\'on del modelo lineal (faithfulness) ya no es significativo a partir de $500$ partidas de experiencia, el punto de m\'axima habilidad siempre se alcanza maximizando tanto la variable loyalty y TOB.
+Aunque el efecto de interacci\'on del modelo lineal (\emph{faithfulness}) ya no es significativo a partir de $500$ partidas de experiencia, el punto de m\'axima habilidad siempre se alcanza maximizando tanto la variable \emph{loyalty} como TOB.
 %
 La magnitud de esta contribuci\'on siempre es relevante en t\'erminos de probabilidad de ganar, con m\'as de $2$~tsp.
 
 % Parrafo
 
-Para integrar todas las observaciones parciales realizadas hasta aqu\'i, realizamos un modelo general ajustado a todos los datos, incluyendo la experiencia, loyalty y TOB como predictores y la identidad de la persona como efecto aleatorio (Table~\ref{lmm}).
+Para integrar todas las observaciones parciales realizadas hasta aqu\'i, realizamos un modelo general ajustado a todos los datos, incluyendo la experiencia, \emph{loyalty} y TOB como predictores y la identidad de la persona como efecto aleatorio (Tabla~\ref{lmm}).
 %
-Elegimos un modelo mixto lineal porque la relaci\'on entre la experiencia y la habilidad es lineal en una escala logar\'itmica (Eq.~\ref{lawOfPractice}).
+Elegimos un modelo mixto lineal porque la relaci\'on entre la experiencia y la habilidad es lineal en una escala logar\'itmica siguiendo la expresi\'on~\eqref{lawOfPractice}.
 %
 La variable dependiente, habilidad de los jugadores, se transform\'o a una escala logar\'itmica,
 
@@ -3062,7 +3065,7 @@ $\text{log$_{10}$(\emph{skill})} = \text{log$_{10}$(\emph{experience})} + \text{
 
 El conjunto de datos utilizado contiene los valores para todos los jugadores entre $10$ y $500$ partidas jugadas.
 %
-La colinealidad entre variables es nula en t\'erminos del Variance Inflation Factor calculado a partir de un modelo lineal resuelto por m\'inimos cuadrados (es decir, todos los VIF son inferiores a $1.5$).
+La colinealidad entre variables es nula en t\'erminos del \emph{Variance Inflation Factor} calculado a partir de un modelo lineal resuelto por m\'inimos cuadrados (es decir, todos los VIF son inferiores a $1.5$).
 %
 Por tanto, podemos ajustar el modelo lineal sin incurrir en resultados artificiales.
 
@@ -3096,15 +3099,15 @@ Este modelo general confirma las observaciones ya introducidas.
 %
 La experiencia es el principal predictor en cuanto a su nivel de significatividad, tiene la pendiente m\'as significativa.
 %
-Inicialmente, la variable loyalty solo tiene un efecto positivo en contextos de orientados a equipos (loyal:tob).
+Inicialmente, la variable \emph{loyalty} solo tiene un efecto positivo en contextos de orientados a equipos (loyal:tob).
 %
 Ser leal sin un comportamiento orientado a equipo tiene un efecto muy marginal (loyal).
 %
 Sin un compa\~nero de equipo estable, jugar en equipos es un mal plan (tob).
 %
-Sin embargo a medida que se gana mayor experiencia, y el efecto de la interacci\'on faithfulness pierde fuerza (exp:loyal:tob), el efecto de la variable loyalty (exp:loyal) y TOB (exp:tob) revierten su contribuci\'on a una positiva.
+Sin embargo a medida que se gana mayor experiencia, y el efecto de la interacci\'on \emph{faithfulness} pierde fuerza (exp:loyal:tob), el efecto de la variable \emph{loyalty} (exp:loyal) y TOB (exp:tob) revierten su contribuci\'on a una positiva.
 %
-Debido a esta din\'amica el valor m\'aximo de habilidad se alcanza siempre cuando se maximizan ambas variables TOB y loyalty, es decir maximizando el faithfulness.
+Debido a esta din\'amica el valor m\'aximo de habilidad se alcanza siempre cuando se maximizan ambas variables TOB y \emph{loyalty}, es decir maximizando el \emph{faithfulness}.
 
 \section{Discusi\'on}
 
@@ -3132,11 +3135,15 @@ Si bien las curvas de aprendizaje individual son m\'as irregulares que el promed
 %
 Nuestra hip\'otesis para explicar las variaciones observadas afirma que el aprendizaje social produce un efecto de segundo orden en la adquisici\'on de habilidades.
 %
-Seg\'un las teor\'ias del aprendizaje social, los jugadores tienen dos opciones para aprender: i) descubrir por s\'i mismos las claves para jugar mejor; o ii) imitar la estrategia de otros disponibles en su red.
+Seg\'un las teor\'ias del aprendizaje social, los jugadores tienen dos opciones para aprender: 
+\begin{enumerate}[i)]
+\item descubrir por s\'i mismos las claves para jugar mejor.
+\item imitar la estrategia de otros disponibles en su red.
+\end{enumerate}
+
+Nos basamos en el juego en l\'inea \emph{Conquer Club} porque, a diferencia del ajedrez, se puede jugar en equipos.
 %
-Nos basamos en el juego en l\'inea Conquer Club porque, a diferencia del ajedrez, se puede jugar en equipos.
-%
-En Conquer Club tanto los oponentes como los compa\~neros de equipo son observables y, en consecuencia, son modelos a imitar.
+En \emph{Conquer Club} tanto los oponentes como los compa\~neros de equipo son observables y, en consecuencia, son modelos a imitar.
 %
 Sin embargo, enfocamos nuestro an\'alisis solo en la lealtad de los compa\~neros de equipo ya que la lealtad en los oponentes no est\'a presente en nuestra base de datos.
 
@@ -3154,8 +3161,6 @@ Encontramos que las estrategias de agrupaci\'on afectan significativamente c\'om
 
 Se sabe que el \'exito de nuestra especie depende de la formaci\'on de grupos~\cite{Richerson2010,dunbar1993-coevolutionNeocorticalSizeGroupSizeAndLanguage}.
 %
-Aqu\'i exploramos en qu\'e medida este comportamiento afecta la adquisici\'on de habilidades utilizando un entorno controlado: Conquer Club.
-%
 Hemos visto que la decisi\'on de jugar en equipos est\'a asociada con una mejora de habilidades a largo plazo.
 %
 Encontramos que la tendencia a jugar en grupos (el n\'umero de partidas jugadas en equipo dividido por el n\'umero total de partidas jugadas) mejora significativamente el nivel de habilidad alcanzado.
@@ -3164,9 +3169,9 @@ Encontramos que la tendencia a jugar en grupos (el n\'umero de partidas jugadas 
 
 Los modelos matem\'aticos muestran que las estrategias adaptadas a entornos distintos a los actuales (e.g. migraci\'on) puede ser un factor de riesgo para el aprendizaje social~\cite{boyd1989-socialLearningAsAdaptation}.
 %
-Estudiamos una versi\'on reducida de la migraci\'on entre grupos analizando c\'omo los jugadores repiten compa\~neros de equipo, lo que conduce a una estabilidad intragrupal (i.e.~loyalty).
+Estudiamos una versi\'on reducida de la migraci\'on entre grupos analizando c\'omo los jugadores repiten compa\~neros de equipo, lo que conduce a una estabilidad intragrupal (i.e.~\emph{loyalty}).
 %
-Siguiendo la teor\'ia del riesgo del cambio ambiental, afirmamos que no hay modificaciones ambientales en Conquer Club y, por lo tanto, la movilidad intergrupal no es una fuente para la difusi\'on de ideas mal adaptativas.
+Siguiendo la teor\'ia del riesgo del cambio ambiental, afirmamos que no hay modificaciones ambientales en \emph{Conquer Club} y, por lo tanto, la movilidad intergrupal no es una fuente para la difusi\'on de ideas mal adaptativas.
 %
 Por el contrario, la migraci\'on implicar\'ia el acceso a diferentes grupos y, por lo tanto, aprender de diferentes jugadores y aumentar las habilidades al aprender de una mayor variedad de compa\~neros de equipo.
 %
@@ -3216,12 +3221,11 @@ La investigaci\'on experimental es necesaria para determinar con certeza las cau
 %
 Creemos que el efecto positivo de la asociaci\'on surge del compromiso social.
 %
-Los derivados sociocognitivos de la lealtad como la confianza, la constancia y la comunicaci\'on fluida superan los costes de coordinaci\'on y la reducci\'on del abanico de relaciones que se pueden establecer.
-
+Los derivados socio-cognitivos de la lealtad como la confianza, la constancia y la comunicaci\'on fluida superan los costes de coordinaci\'on y la reducci\'on del abanico de relaciones que se pueden establecer.
 
 \section{Materiales y m\'etodos}
 
-Todos los juegos se descargaron de Conquer Club, un servicio gratuito de juegos en l\'inea tipo RISK.
+Todos los juegos se descargaron de \emph{Conquer Club}, un servicio gratuito que ofrece jugar juegos en l\'inea tipo RISK.
 %
 El sitio web permite a cualquier persona, y no solo a los participantes registrados, explorar los partidos y buscar sus datos relacionados.
 %
@@ -3231,20 +3235,20 @@ Adem\'as, durante el proceso de descarga, cada jugador fue identificado por un n
 %
 En consecuencia, no fue necesario el consentimiento individual debido a esta doble capa de anonimato y la naturaleza abierta del sitio web.
 %
-Nos comunicamos con los propietarios de Conquer Club para obtener la autorizaci\'on para realizar este proceso, cumpliendo as\'i con los t\'erminos de uso de este sitio.
+Adicionalmente, nos comunicamos con los propietarios de \emph{Conquer Club} para obtener la autorizaci\'on para realizar este proceso, cumpliendo as\'i con los t\'erminos de uso de este sitio.
 
 % Parrafo
 
-La aplicaci\'on consta de un script \texttt{Python} que se conecta al servidor de Conquer Club.
+La aplicaci\'on consta de un \emph{script} \texttt{Python} que se conecta al servidor de \emph{Conquer Club}.
 %
 Los datos entre $2006/01/03$ y $2009/07/12$ se almacenan en una base de datos \texttt{PostgreSQL}.
 Hay cerca de $4.4$ millones de partidas jugadas por casi $270$ mil usuarios diferentes.
 
 Para calcular la habilidad, usamos el paquete \texttt{TrueSkill 0.4.4} de \texttt{Python}.
 %
-Todos los jugadores comienzan con una habilidad media $\mu = 25$ y una desviaci\'on est\'andar de habilidad de $\sigma = 8,33$.
+Todos los jugadores comienzan con una habilidad media $\mu = 25$ y una desviaci\'on est\'andar de habilidad de $\sigma = 8.33$.
 %
-El valor de probabilidad de empate se estableci\'o en 0 ya que no hay posibilidad de empate en Conquer Club.
+El valor de probabilidad de empate se estableci\'o en 0 ya que no hay posibilidad de empate en \emph{Conquer Club}.
 
 
 
