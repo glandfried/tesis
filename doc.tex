@@ -639,9 +639,13 @@ Nuestro plan de tesis tiene como objetivo explorar los efectos que diversos fact
 Una de las razones por las que es dif\'icil evaluar el efecto que las interacciones sociales (su contexto, din\'amica y estructura) tiene sobre el aprendizaje individual es la necesidad de registrar los contactos a nivel individual, lo que suele ser dif\'icil en estudios antropol\'ogicos cl\'asicos.
 %
 Para evaluar algunas de estas hip\'otesis, decidimos estudiar en el tiempo la evoluci\'on de la habilidad al interior de comunidades de jugadores en l\'inea.
+%
+Las comunidades virtuales ofrecen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle, lo que no se logra con ninguna de las metodolog\'ias cl\'asicas de las ciencias sociales (censo, encuesta, etnograf\'ia).
 
 % Parrafo
 
+Sin dejar de tener en cuenta las particularidades que supone el estudio de comunidades virtuales en oposici\'on a las comunidades reales, es necesario reconocer que ellas son manifestaciones propias de las sociedades y como tales, son un medio para entender el comportamiento social emergente de los seres humanos.
+%
 Si bien el estudio de las comunidades virtuales impone alguna limitaciones, ellas ofrecen nuevos horizontes en la investigaci\'on cient\'ifica sobre comportamientos sociales pues re\'unen, al mismo tiempo, la posibilidad de estudiar poblaciones suficientemente grandes con un alto nivel de detalle.
 %
 Ninguna de las metodolog\'ias cl\'asicas de las ciencias sociales (censo, encuesta, etnograf\'ia) ofrecen simult\'aneamente ambos niveles de an\'alisis.
@@ -693,6 +697,7 @@ Entre las preguntas surgidas en este contexto, podemos destacar:
 
 \end{itemize}
 Estas son algunas de las preguntas particulares que desarrollamos en esta tesis.
+
 %
 % \paragraph{Estructura de la tesis}
 %
@@ -2291,7 +2296,7 @@ La soluci\'on bayesiana del modelo Elo, TrueSkill, representa la distribuci\'on 
 \begin{equation}
 p(s_i) = \N(s_i | \mu_i, \sigma_i^2)
 \end{equation}
-\todo[inline]{Me parece que falta un poquito de contexto e intuición para explicar qué significa, una oracion dando qué significa en terminos del modelo, tipo que refleja que no sea una constante, sino un valor que puede variar y esa variacion se puede deber a distintas circunstancias}
+\todo[inline]{Me parece que falta un poquito de contexto e intuici\'on para explicar qu\'e significa, una oracion dando qu\'e significa en terminos del modelo, tipo que refleja que no sea una constante, sino un valor que puede variar y esa variacion se puede deber a distintas circunstancias}
 %
 Para definir el valor a priori de la media, $\mu$, hay que recordar que lo que importa no es su valor absoluto sino la diferencia con otros jugadores, pues un $\beta$ de distancia entre habilidades, $s_i-s_j=\beta$ equivale a \SI{76}{\percent} de probabilidad de ganar.
 %
@@ -7852,11 +7857,15 @@ Entender las relaciones que vinculan el nivel poblacional (como la din\'amica y 
 
 % Parrafo
 
-\section{Verdades en contextos de incertidumbre.}
+Este plan qued\'o enmarcado inicialmente dentro del \'area denominada como Ciencias Sociales Computacionales~\cite{Lazer2009, Lazer2020}, que en la actualidad ya alcanz\'o reconocimiento en los gigantes tecnol\'ogicos relacionados a la industria del software.
+%
+Sin embargo, a medida que fue avanzando su desarrollo, el enfoque bayesiano de la probabilidad fue adquiriendo cada vez m\'as protagon\'ismo.
+
+\section{Enfoque bayesiano de la probabilidad}
 
 El doctorado en computaci\'on me permiti\'o responder las preguntas metodol\'ogicas y epistemol\'ogicas que tra\'ia de mi formaci\'on previa en antropolog\'ia.
 %
-Al mismo tiempo que surge la corriente econ\'omica neoliberal, surge una corriente filos\'ofica conocida como posmodernismo que fue hegem\'onica en la d\'ecada de los 90 y segu\'ia presente en el Departamento de Antropolog\'ia de la Universidad de Buenos Aires en la primera d\'ecada de los a\~nos 2000.
+Al mismo tiempo que surge la corriente econ\'omica neoliberal, surge la corriente filos\'ofica posmoderna que fue hegem\'onica en la d\'ecada de los 90 y segu\'ia presente en el Departamento de Antropolog\'ia de la Universidad de Buenos Aires en la primera d\'ecada de los a\~nos 2000.
 %
 El posmodernismo pone en duda la existencia de verdades universales.
 %
@@ -7938,52 +7947,57 @@ I enjoyed your Plos ONE paper immensely [1] and thought I would write to say tha
 
 % Parrafo
 
-Una de las hip\'otesis que se desprendi\'o de este primer trabajo era la idea de que el efecto positivo de tener compa\~neros estables estuviera producido por una especie de ``sinergia'' que se genera cuando dos personas aprenden a jugar juntas.
 
 
 \section{La primera evaluaci\'on de modelos alternativos}
 
+Una de las hip\'otesis que se desprendi\'o de este primer trabajo era la idea de que el efecto positivo de tener compa\~neros estables estuviera producido por una especie de ``sinergia'' que se genera cuando dos personas aprenden a jugar juntas.
+%
 Hemos visto que TrueSkill modela el desempe\~no de los equipos como una suma lineal de los desempe\~nos de los jugadores, sin considerar interacci\'on, por lo que no es capaz de detectar la presencia de sinergia.
 %
 En un segundo trabajo, no publicado en esta tesis, me propuse el objetivo de extender el modelo TrueSkill de modo tal que permitiera distinguir la habilidad de los individuos de la ``sinergia'' entre pares de individuos.
-%
+
+% Parrafo
+
 Incorporo al Anexo~\ref{sec:TrueSynergy} algunos an\'alisis realizados en esta etapa.
+%
+En esta etapa comenc\'e a interiorizarme con la matem\'atica detr\'as del modelo TrueSkill.
+%
+Dise\~n\'e un modelo alternativo, en el cual los desempe\~nos de los equipos se modela como una suma lineal de las habilidades de los individuos $s_i$ y las sinergias o habilidades entre pares de individuos $s_{ij}$, que llamamos TrueSynergy.
+%
+Es decir, en el modelo propuesto la sinergia se incorpora de la misma forma que las habilidades de los individuos, por lo que la matem\'atica necesaria para realizar la inferencia no cambia.
+%
+La \'unica diferencia respecto del modelo TrueSkill es que por cada par de jugadores $i$ y $j$ se incorpora una componente de habilidad adicional.
+%
+Este modelo es similar al utilizado en el cap\'itulo~\ref{ch_ttt} para estimar las habilidades de los tenistas profesionales en los diferentes pisos.
+%
+En ese caso, modelamos las habilidades de los tenistas como una suma lineal entre su habilidad ``general'' de jugar al tenis y su habilidad ``espec\'ifica'' relativa a cada uno de los pisos (polvo de ladrillo, pasto, etc.).
 
 % Parrafo
 
-Esta fue una etapa resolv\'i toda la matem\'atica detr\'as del modelo TrueSkill interioric\'e con algunos detalles t\'ecnicos del modelo.
-
-% Parrafo
-
-
+Para cuantificar el error de estimaci\'on de habilidad de TrueSkill cuando los equipos tienen un componente de sinergia, generamos datos sint\'eticos utilizando el modelo con sinergias TrueSynergy.
 %
-
-
-
-
-En la primera secci\'on realizamos simulaciones sint\'eticas para cuantificar el error de estimaci\'on de habilidad de TrueSkill cuando los equipos tienen un componente de sinergia.
+Se encontr\'o una funci\'on \eqref{eq:sobreestimacion} que predice la sobrestimaci\'on que hace el modelo TrueSkill de la habilidad de los individuos cuando existe sinergia entre jugadores.
 %
-En la segunda parte presentamos el modelo bayesiano \texttt{TrueSynergy}, una modificaci\'on del modelo TrueSkill.
+Evaluamos tambi\'en la mejora en la estimaci\'on del modelo que incorpora sinergias (figura~\ref{fig:sinergia}).
 %
-Realizamos simulaciones sint\'eticas para cuantificar la mejora de estimaci\'on de habilidad de \texttt{TrueSynergy} cuando los equipos tienen un componente de sinergia.
+Ambos modelos tienen una limitaci\'on com\'un.
+%
+Ninguno de los dos modelos puede diferenciar las habilidades de dos individuos (y su sinergia) si los individuos juegan siempre junto en el mismo equipo.
 
 % Parrafo
 
 Al haber producido un modelo alternativo, apareci\'o por primera vez la pregunta respecto de c\'omo evaluar correctamente modelos alternativos sobre los datos reales.
 %
-Este punto lo discutimos con mi co-director y fue una bisagra para mi doctorado.
+Este punto fue una bisagra para mi doctorado.
 %
 En el \'area inteligencia artificial hay muchas m\'etricas ad hoc para evaluar el desempe\~no de los modelos (accuracy, precision, Fscore, \'area ROC, etc).
 %
 En ese momento, mi co-director me propuso algunas m\'etrica ad hoc que no me convenc\'ian.
 %
 Esto me impuls\'o a estudiar cu\'al era la forma correcta de hacerlo.
-
-% Parrafo
-
-Hemos visto en la secci\'on metodolog\'ia que la evaluaci\'on de modelos, aplicando estrictamente las reglas de la probabilidad, obliga a computar el posterior de los modelos $M$ dado los datos $D$, $P(M|D)$.
 %
-En los casos que no tenemos disponible todos los modelos, podemos comparar la diferencia entre dos modelos a trav\'es del Bayes Factor.
+All\'i aprend\'i que la evaluaci\'on correcta de modelos requiere la aplicaci\'on estrictamente las reglas de la probabilidad de modo tal de computar el posterior de los modelos $M$ dado los datos $D$, $P(M|D)$.
 %
 Cuando le dije a mi codirector ``Encontr\'e la forma correcta de evaluar modelos'', me respondi\'o ``No hay una forma correcta de evaluar modelos''.
 %
@@ -7993,16 +8007,16 @@ La misma frase que hab\'ia escuchado en antropolog\'ia tantos a\~nos, respecto d
 
 El modelo que hab\'ia desarrollado era bastante m\'as complejo que TrueSkill, debido a que por cada par de jugadores era necesario agregar una componente de sinergia.
 %
-Hemos visto en la secci\'on metodolog\'ia que la forma correcta de evaluar modelos (a diferencia de las m\'etricas ad hoc) penalizan naturalmente la complejidad si ella no mejora la predicci\'on conjunta.
+Hemos visto en la secci\'on~\ref{sec:evaluacion_honesta_de_modelos} que la forma correcta de evaluar modelos penaliza naturalmente la complejidad si la complejidad agregada no mejora la predicci\'on a priori de los datos.
 %
 Y eso fue lo que ocurri\'o con el modelo propuesto, TrueSynergy.
 %
 Luego de confirmar que mi modelo no era mejor en desempe\~no predictivo, y sin apoyo de la direcci\'on en el trabajo, las estimaciones realizadas no fueron analizadas en detalle y la hip\'otesis original que hab\'ia motivado todo este trabajo no alcanz\'o a ser respondida de forma positiva o negativa.
-%
-Sin embargo, esta es una l\'inea de investigaci\'on que ser\'ia interesante finalizar.
 
 % Parrafo
 
+Sin embargo, esta es una l\'inea de investigaci\'on que ser\'ia interesante finalizar.
+%
 Algo similar ocurri\'o cuando estimamos las habilidades que los tenistas de la ATP tienen en los diferentes tipos de suelo.
 %
 Si bien sabemos que algunos jugadores de tenis tienen habilidades muy diferentes entre pisos (como Nadal), el desempe\~no del modelo que creamos en el cap\'itulo~\ref{ch_ttt} para estimarlas separadamente fue menor que el modelo que hace de cuenta que no existen diferencias.
@@ -8013,7 +8027,7 @@ Una estrategia interesante hubiera sido descomponer la predicci\'on y evaluar pa
 
 % Parrafo
 
-En ATP, por ejemplo, pudimos ver que la complejidad a\~nadida aumentaba la capacidad predictiva para ciertos jugadores, como el caso de Nadal, quien tiene amnifiestamemnte habilidades que var\'ian significativamente entre pisos.
+En ATP, por ejemplo, pudimos ver que la complejidad a\~nadida aumentaba la capacidad predictiva para ciertos jugadores, como el caso de Nadal, quien tiene habilidades que var\'ian significativamente entre pisos.
 %
 Un an\'alisis similar se podr\'ia haber realizado con lo datos de Conquer Club permitir\'ia distinguir los compa\~neros de equipo para los cuales la sinergia adquirida es significativa.
 %
@@ -8025,52 +8039,58 @@ El modelo con sinergias lo pudimos aplicar gracias a que exist\'ia una forma de 
 %
 Si yo quer\'ia realizar nuevas modificaciones al modelo TrueSkill, comenzaba a ser una necesidad comprender todos sus detalles.
 
-\subsubsection{Paso 3. La soluci\'on exacta al modelo aproximado por pasaje de mensajes}
+\section{La primera implementaci\'on del modelo de habilidad estado del arte}
+
+Esta tesis se destaca, en particular, por haber realizado la primera implementaci\'on del modelo de estimaci\'on de habilidad estado del arte en la industria del video juego, que si bien ya estaba especificado matem\'aticamente, no se encontraba todav\'ia disponible como paquete para ser utilizado en alg\'un lenguaje de programaci\'on.
+%
+Como hemos visto en el cap\'itulo~\ref{ch_ttt}, el modelo TrueSkill Through Time mejora significativamente le estimaciones respecto de TrueSkill gracias a que propaga la informaci\'on hist\'orica a trav\'es de toda la red de eventos, lo que le permite realizar estimaciones iniciales habilidad fiables y garantizar su comparabilidad en el tiempo y el espacio.
+%
+La novedad no es tanto el modelo causal de base (que se ve en detalle en el cap\'itulo~\ref{ch_Incertidumbre} y \ref{ch_ttt}), el cual es tan simple como en los anteriores.
+%
+La mejora que introduce proviene de integrar todos los modelos causales de base (los eventos donde ocurren los \'exitos o los fracasos) en una \'unica red causal hist\'orica (la habilidad del pasado es una causa de la habilidad del presente) que permite propagar la informaci\'on por toda la red, obteniendo as\'i estimaciones con menor incertidumbre en todas las series temporales.
+
+%
 
 El modelo TrueSkill ofrece una aproximaci\'on al posterior, no su soluci\'on exacta.
 %
 Tanto el paper original~\cite{Herbrich2007} y como sus patentes~\cite{trueskill_patent_06, trueskill_patent_09} no muestran c\'omo se deriva la aproximaci\'on propuesta ni tampoco la soluci\'on exacta.
 %
-En este punto, no hubo nadie que pudiera asistirme.
-%
-Mis directores me recomendaron que no siguiera intentando entrar en los detalles del modelo.
-%
-Los incentivos del sistema de ciencia actual premia la publicaci\'on de art\'iculos sin importar demasiado el contenido de los mismos.
-%
-Y redescubrir la rueda no es valorado a pesar de que se indispensable para poder hacerlas por nuestra cuenta.
-
+% En este punto, no hubo nadie que pudiera asistirme.
+% %
+% Mis directores me recomendaron que no siguiera intentando entrar en los detalles del modelo.
+% %
+% Los incentivos del sistema de ciencia actual premia la publicaci\'on de art\'iculos sin importar demasiado el contenido de los mismos.
+% %
+% Y redescubrir la rueda no es valorado a pesar de que se indispensable para poder hacerlas por nuestra cuenta.
 % Parrafo
-
 Debido a que la matem\'atica detr\'as del algoritmo no estaba disponible de forma completa en los art\'iculos oficiales, ni siquiera en las fuentes alternativas que pretend\'ian mostrar la matem\'atica detr\'as de TrueSkill~\cite{Mosser2011}, comenc\'e a dudar si efectivamente la soluci\'on propuesta era la mejor aproximaci\'on al posterior exacto.
 %
 Leyendo y releyendo el paper original y las patentes apareci\'o una cita al algoritmo \emph{sum-product}~\cite{Kschischang2001}.
 %
-Este algoritmo permite computar las marginales de una distribuci\'on de probabilidad a trav\'es de pasaje de mensajes entre los nodos de la red bayesiana expresada como un factor graph (Figura~\ref{fig:factor_graph}).
-%
-Los mensajes son en definitiva una descomposici\'on de la aplicaci\'on de las reglas de la suma y del producto de la teor\'ia de la probabilidad, lo que permite resolver el problema en partes, de forma distribuida y paralela.
-
+Hemos visto que este algoritmo permite computar las marginales de una distribuci\'on de probabilidad conjunta trav\'es de pasaje de mensajes entre los nodos de la red bayesiana expresada como un factor graph (secci\'on~\ref{sec:sumProductAlgorithm}).
 % Parrafo
-
-De esta forma, comenc\'e analizando los mensajes uno a uno.
 %
-El primer mensaje que deb\'ia resolver era el que la distribuci\'on de probabilidad del desempe\~no le env\'ia a la variable desempe\~no:
-$m_{f_p\rightarrow p}(p) = \int \N(s\,|\,\mu, \sigma^2) \N(p\,|\,s,\beta^2) \, ds$.
+% Los mensajes son en definitiva una descomposici\'on de la aplicaci\'on de las reglas de la suma y del producto de la teor\'ia de la probabilidad, lo que permite resolver el problema en partes, de forma distribuida y paralela.
 %
-Este mensaje es una convoluci\'on de gaussianas.
+Con este algoritmo comenc\'e resolver los mensajes uno a uno.
 %
-Por las propiedades de la distribuci\'on gaussiana (anexo~\ref{sec:propiedades_de_la_gaussiana}), la integral sigue siendo gaussiana.
+% El primer mensaje que deb\'ia resolver era el que la distribuci\'on de probabilidad del desempe\~no le env\'ia a la variable desempe\~no:
+% $m_{f_p\rightarrow p}(p) = \int \N(s\,|\,\mu, \sigma^2) \N(p\,|\,s,\beta^2) \, ds$.
+% %
+% Este mensaje es una convoluci\'on de gaussianas.
+% %
+% Por las propiedades de la distribuci\'on gaussiana (anexo~\ref{sec:propiedades_de_la_gaussiana}), la integral sigue siendo gaussiana.
+% %
+% As\'i fui resolviendo los mensajes descendentes y ascendentes uno a uno hasta llegar finalmente al posterior exacto.
+% %
+% En la secci\'on~\ref{sec:2vs2} mostramos en detalle cada uno de estos mensajes.
 %
-As\'i fui resolviendo los mensajes descendentes y ascendentes uno a uno hasta llegar finalmente al posterior exacto.
-%
-En la secci\'on~\ref{sec:2vs2} mostramos en detalle cada uno de estos mensajes.
-
 % Parrafo
-
 Una vez alcanzada la soluci\'on exacta pude comprobar mediante m\'etodos num\'ericos que la aproximaci\'on propuesta era efectivamente la mejor en t\'erminos de divergencia KL.
 %
 Pero quiz\'as m\'as importante, de esta forma hab\'ia logrado comprender absolutamente todos los detalles del modelo TrueSkill.
 
-\subsubsection{Paso 4. La implementaci\'on del modelo estado del arte}
+% Parrafo
 
 Luego de comprender todos los detalles del modelo TrueSkill, encuentro la existencia de una extensi\'on conocida como TrueSkill Through Time que no estaba implementada hasta el momento como paquete de ning\'un lenguaje de programaci\'on.
 %
@@ -8084,60 +8104,78 @@ Uno de los colaboradores activos del paquete respondi\'o ``Having just read the 
 
 Efectivamente, ya hab\'ia pasado una d\'ecada de su publicaci\'on~\cite{Dangauthier2007} y este algoritmo segu\'ia sin estar disponible en ning\'un lenguaje de programaci\'on a pesar de que mejoraba significativamente las estimaciones de todos los modelos disponibles hasta el momento.
 %
-Como hemos visto en el cap\'itulo~\ref{ch_ttt}, el modelo TrueSkill Through Time mejora significativamente le estimaciones respecto de TrueSkill gracias a que propaga la informaci\'on hist\'orica a trav\'es de toda la red de eventos, lo que le permite realizar estimaciones iniciales habilidad fiables y garantizar su comparabilidad en el tiempo y el espacio.
-
-% Parrafo
-
 Aprender todos los detalles del modelo TrueSkill fue un camino largo.
 %
-Sin embargo, cuando le\'i la especificaci\'on del modelo TrueSkill Through Time~\cite{Dangauthier2007} inmediatamente entend\'i lo que hac\'ia.
+Sin embargo, cuando le\'i la especificaci\'on del modelo TrueSkill Through Time~\cite{Dangauthier2007} inmediatamente entend\'i c\'omo resolverlo.
 %
-Al contrario de la dificultad aparente, gracias a que ya hab\'ia comprendido los detalles de TrueSkill, estuve en condiciones de implementar TrueSkill Through Time en apenas una semana.
+%Al contrario de la dificultad aparente, gracias a que ya hab\'ia comprendido los detalles de TrueSkill, estuve en condiciones de implementar TrueSkill Through Time en apenas una semana.
 %
 Debido a que no estaba implementado en ning\'un lenguaje, repliqu\'e la implementaci\'on en Python, Julia y R.
 %
 Y aprovech\'e esta ocaci\'on para documentar no solo toda la matem\'atica detr\'as de TrueSkill, sino tambi\'en la de TrueSkill Through Time.
 
+% Parrafo
 
+Este trabajo ha sido aceptado para su publicaci\'on en el Journal of Statistical Software.
 
-\todo[inline]{acaa}
+\section{Efecto en el aprendizaje individual de la posici\'on en el red cultural}
 
-
-
-% El concepto de aprendizaje tiene diferentes acepciones.
-% %
-% Los modelos de estimaci\'on de habilidad que se utilizan para medir el desempe\~no de los individuos en la industria del videojuego difiere del concepto de aprendizaje que se establece desde un punto de vista biol\'ogico, cognitivo o social.
-% %
-% En pocas palabras, los modelos utilizados en la industria del videojuego (as\'i como gran parte de las evaluaciones internacionales de los sistemas educativos) son instrumentos que predicen la probabilidad de \'exito o fracaso.
-% %
-% En definitiva, el modelo causal sobre el que se basan sus estimaciones (ver detalles en cap\'itulo~\ref{ch_Incertidumbre} y \ref{ch_ttt}) es una simplificaci\'on extrema de la realidad causal que gobierna los procesos de aprendizaje humano.
+El aprendizaje humano dependa en gran medida del contexto, las interacciones sociales y la transmisi\'on de informaci\'on cultural entre individuos, por lo que est\'a ampliamente aceptado que la estructura de las ``redes culturales'' afecta los procesos de aprendizaje individual y colectivo.
+%
+Estudios recientes sin embargo han cuestionado la hip\'otesis de que todo lo que maximice el flujo de informaci\'on cultural deber\'ia repercutir positivamente en el aprendizaje.
+%
+Para explorar este problema decidimos estudiar la relaci\'on entre el aprendizaje de los individuos en el tiempo y la estructura de interacciones en una importante comunidad virtual de Go a lo largo de 8 a\~nos.
 
 % Parrafo
 
-Cuando hacemos referencia a modelos causales nos estamos refiriendo a modelos que se resuelven aplicando las reglas de la probabilidad y que cumplen con la definici\'on probabil\'istica de causalidad (ver definici\'on precisa en la secci\'on~\ref{}).
-%\todo[inline]{Arriba te qued\'o una referencia sin completar}
+Para el desarrollo de la base de datos, dise\~namos un script (escrito en \texttt{Python}) para extraer la informaci\'on de cada de las partidas del sitio OGS.
 %
-Idealmente quisi\'eramos tener teor\'ias causales, o sistemas de modelos causales, que incluyan todos los elementos relevantes de la realidad causal estudiada.
+Dado el enfoque de este trabajo y la naturaleza de los datos, decidimos usar una base de datos no relacional basada en grafos: \texttt{Neo4j}.
+% %
+% En nuestro caso, decidimos tener dos tipos de nodos: jugadores, y partidas.
+% %
+% Tomamos la decisi\'on de modelar las partidas como nodos (en lugar de tener un multigrafo \'unicamente con nodos de tipo jugador) porque as\'i ser\'ia m\'as f\'acil y r\'apido poder almacenar y hacer consultas sobre la informaci\'on de las partidas.
+% %
+Sin embargo, ciertas consultas son extremadamente costosas (por ejemplo, calcular centralidades), y pueden ser prohibitivas en (como encontrar caminos m\'inimos).
 %
-Y quisi\'eramos adem\'as que el efecto causal se derive de la correcta evaluaci\'on de las teor\'ias causales alternativas.
-%
-Sin embargo, en la actualidad no existe tal cosa.
+Por esta raz\'on, decidimos exportar los datos de la base de datos a un formato que pudiera ser interpretado por alguna biblioteca en \texttt{Python}, como \texttt{NetworkX} que ofrece m\'etodos que resultaron m\'as eficientes para calcular algoritmos complejos, como centralidades, \emph{clustering}, caminos m\'inimos, etc.
 
 % Parrafo
 
-Esta tesis se destaca, en particular, por haber realizado la primera implementaci\'on del modelo de estimaci\'on de habilidad estado del arte en la industria del video juego, que si bien ya estaba especificado matem\'aticamente, no se encontraba todav\'ia disponible como paquete para ser utilizado en alg\'un lenguaje de programaci\'on.
+En este trabajo exploramos el v\'inculo entre la red de partidas y la evoluci\'on de las habilidades de todos los individuos a lo largo de 8 a\~nos, con \num{446000} jugadores y \num{818000} partidas, per\'iodo libre de bots.
 %
-La novedad no es tanto el modelo causal de base (que se ve en detalle en el cap\'itulo~\ref{ch_Incertidumbre} y \ref{ch_ttt}), el cual es tan simple como en los anteriores.
+Dado que para evaluar la tasa de aprendizaje de los individuos debemos conocer el valor inicial de habilidad, este trabajo solo pudo ser llevado a cabo gracias a nuestra implementaci\'on del modelo TrueSkill Through Time.
 %
-La mejora que introduce proviene de integrar todos los modelos causales de base (los eventos donde ocurren los \'exitos o los fracasos) en una \'unica red causal hist\'orica (la habilidad del pasado es una causa de la habilidad del presente).
+Al resolver la inferencia en una \'unica red bayesiana con toda la historia de partidas, obtuvimos buenas estimaciones de habilidad incluso al inicio de las series temporales.
 %
-Esto permite propagar la informaci\'on por toda la red, obteniendo as\'i estimaciones con menor incertidumbre en todas las series temporales.
+Esto nos permiti\'o clasificar a los usuarios en tres categor\'ias, novatos, intermedios y expertos.
 
 % Parrafo
 
-Este modesto avance da cuenta de la dificultad que existe en el campo de los estudios del aprendizaje para proponer y evaluar modelos causales capaces de integrar los diversos elementos de inter\'es que forman parte de nuestros objetos reales de estudio.
+Para analizar la posici\'on topol\'ogica que ocupan los individuos en la red de partidas a lo largo del tiempo utilizamos una t\'ecnicas de grafos din\'amicos que divide la red en peque\~nas subredes, compuestas \'unicamente por nodos y v\'ertices activos en un periodo determinado, y analiza mediante m\'etricas cl\'asicas de grafos.
 %
-Por ese motivo, cuando en los cap\'itulos~\ref{ch_team} y \ref{ch_topo} exploramos en bases de datos reales el efecto que algunos factores sociales tienen sobre el aprendizaje de los individuos, nos vimos obligados a recurrir a diversas heur\'isticas estad\'isticas que si bien arrojan luz, no garantizan conclusiones definitivas.
+Para describir la posici\'on de los individuos analizamos 6 medidas de centralidad, que pueden ser clasificadas en 3 grupos: medidas de popularidad, como \emph{degree} y \emph{eigenvector}; medidas de cercan\'ia, como \emph{closeness} y \emph{harmonic}; medidas de intermediaci\'on, como \emph{betweenness} o \emph{communicability}.
+
+% Parrafo
+
+Siguiendo los principales hallazgos de la bibliograf\'ia sobre aprendizaje social y acumulaci\'on cultural (figura~\ref{fig:general_model}), para evaluar el efecto de la posici\'on en la red sobre el aprendizaje individual se observ\'o el cambio en la habilidad en funci\'on de la posici\'on de los individuos en la red (alta o baja centralidad) para valores determinados de experiencia individual y habilidad inicial.
+%
+De esta forma encontramos que solo los individuos est\'an en la mitad del proceso de aprendizaje se ven afectados por la posici\'on en la red de partidas.
+%
+Es interesante que el aprendizaje de la poblaci\'on de novatos, que es la
+que tiene m\'as por aprender, depende solo de la experiencia y es independiente de la posici\'on de los individuos en la red.
+%
+Esto puede estar relacionado con el hecho de que el aprendizaje social requiere una maduraci\'on para comprender las estrategias del adversario e incorporar algunos de sus aspectos a la estrategia propia.
+%
+Adem\'as, nuestro resultado se alinea con la literatura antropol\'ogica reciente que afirma que las estructuras con conexi\'on moderada favorecen en mayor medida los procesos de aprendizaje social y acumulaci\'on cultural que las estructuras de red hiperconectadas.
+
+\section{Aprendizaje epist\'emico-evolutivo}
+
+Para evaluar correctamente las hip\'otesis causales sobre base de datos deber\'iamos evaluar teor\'ias causales alternativas mediante la aplicaci\'on estricta de las reglas de la probabilidad.
+%
+Sin embargo, en la actualidad no es posible tal cosa.
+%
+El hecho de que el modelo de habilidad estado del arte no estuviera disponible en ning\'un lenguaje de programaci\'on da cuenta de la dificultad que existe en el campo de los estudios del aprendizaje para proponer y evaluar modelos causales capaces de integrar los diversos elementos de inter\'es que forman parte de nuestros objetos reales de estudio.
 %
 Solo recientemente, en el trascurso del doctorado apareci\'o quiz\'as el primer modelo causal (en el sentido probabil\'istico del t\'ermino) capaz de integrar diversos elementos que son espec\'ificos al problema de estudio~\cite{minka2018-trueskill2}.
 %
@@ -8145,54 +8183,14 @@ Este modelo es una extensi\'on de nuestra implementaci\'on, y todav\'ia no se en
 
 % Parrafo
 
+En la
+
 Durante el transcurso del doctorado, investigadores que han sido protagonistas del desarrollo de la teor\'ia de la evoluci\'on moderna han comenzado a se\~nalar el isomorfismo que existe entre las teor\'ia de la evoluci\'on y la inferencia bayesiana~\cite{czegel2019-bayesianEvolution, czegel2022-bayesDarwin} (el modelo est\'andar de evoluci\'on conocido como \emph{replicator dynamic} \cite{taylor1978-replicatorDynamic} es estructuralmente equivalente al teorema de Bayes~\cite{harper2009-replicatorAsInference,shalizi2009-replicatorAsInference}).
 %
 En el cap\'itulo~\ref{ch_epistemico} discutimos algunas de las propiedades que se derivan de la funci\'on de costo compartida por las teor\'ias de la probabilidad y de la evoluci\'on.
 %
 Luego de haber extendido la frontera de los modelos de estimaci\'on de habilidad disponibles en los lenguajes de programaci\'on, y haberlo utilizado para explorar casos reales, finalizamos la tesis con esta reflexi\'on general respecto de la naturaleza de los aprendizajes epist\'emicos (de las hip\'otesis) y evolutivos (de la vida).
 
-% Parrafo
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
-
-\todo[inline]{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Antes de ingresar al doctorado en Ciencias de la Computaci\'on yo segu\'ia con la idea de trabajar con modelos de simulaci\'on sobre sistemas complejos.
-%
-De hecho, la aplicaci\'on de la teor\'ia de juegos al problema de la cooperaci\'on hab\'ia producido uno de los cuerpos te\'oricos m\'as influyentes  para explicar c\'omo cambia la informaci\'on cultural a trav\'es del tiempo.
-%
-La teor\'ia de juegos evolucionaria \cite{taylor1978-replicatorDynamic, maynardSmith1982-evolutionGameTheory} modela los equilibrios evolutivos que se producen entre estrategias en competencia, en el que la adaptabilidad de cada variante depende de las frecuencias de las otras variantes en la poblaci\'on.
-%
-Basada en los principios de la teor\'ia de la evoluci\'on (descendencia, modificaci\'on y selecci\'on), se desarroll\'o un marco te\'orico de \emph{evoluci\'on cultural} para explicar c\'omo cambia la cultura en el tiempo~\cite{boyd1985-evolutionaryProcess, boyd2005-origin}.
-
-% Parrafo
-
-Cuando convers\'e con quien iba a ser mi director, Esteban, le llev\'e uno de esos libros, llenos de integrales y ecuaciones diferenciales.
-%
-Su respuesta fue: ``Hac\'e lo que quieras, pero con datos''.
-%
-Efectivamente, esos trabajos son modelos formales destinados a comprender las consecuencias que ciertas relaciones causales podr\'ian tener en fen\'omenos naturales en caso de que sus estructuras sean an\'alogas.
-%
-Este es un abordaje \'util para ganar intuici\'on de procesos que son demasiado complejos, como son las propiedades que emergen en los sistemas a partir de la interacci\'on de sus partes.
-%
-Sin embargo, suelen ser modelos simples que no est\'an destinados a realizar predicciones, y por lo tanto poseen poca o nula corroboraci\'on emp\'irica.
-%Algunos de las ideas detr\'as de esos modelos, que aparecieron tangencialmente durante las tesis, motivaron el dise\~no del plan original.
-
-% Parrafo
-
-Dise\~namos un plan tesis en ciencias de la computaci\'on basado en datos enfocado en analizar la din\'amica de las estrategias al interior de comunidades de videojuegos.
-%
-Las comunidades virtuales ofrecen al mismo tiempo la posibilidad de estudiar poblaciones suficientemente grandes con un alto grado de detalle, lo que no se logra con ninguna de las metodolog\'ias cl\'asicas de las ciencias sociales (censo, encuesta, etnograf\'ia).
-%
-Sin dejar de tener en cuenta las particularidades que supone el estudio de comunidades virtuales en oposici\'on a las comunidades reales, es necesario reconocer que ellas son manifestaciones propias de las sociedades y como tales, son un medio para entender el comportamiento social emergente de los seres humanos.
-
-% Parrafo
-
-Este plan qued\'o enmarcado inicialmente dentro del \'area denominada como Ciencias Sociales Computacionales~\cite{Lazer2009, Lazer2020}, que en la actualidad ya alcanz\'o reconocimiento en los gigantes tecnol\'ogicos relacionados a la industria del software.
-%
-Sin embargo, a medida que fue avanzando su desarrollo, el enfoque bayesiano de la probabilidad fue adquiriendo cada vez m\'as protagon\'ismo.
 
 
 
@@ -8251,6 +8249,9 @@ Sin embargo, a medida que fue avanzando su desarrollo, el enfoque bayesiano de l
 
 
 \chapter{Trabajo futuro} \label{ch_volverAlFuturo}
+
+
+
 
 La aplicaci\'on estricta de las reglas de probabilidad (o enfoque bayesiano) constituye la base de la inteligencia artificial y de las ciencias emp\'iricas que aspiran a alcanzar verdades en contextos de incertidumbre.
 %
