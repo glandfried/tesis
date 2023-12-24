@@ -3750,7 +3750,7 @@ Los ejes entre nodos variables y nodos funciones representan la relaci\'on matem
 }
      \caption{%
      Forma gr\'afica de representar la factorizaci\'on de la distribuci\'on conjunta inducida por el modelo causal b\'asico (ecuaci\'on~\eqref{eq:factorization}).
-     Los cuadrados negros representan las funciones, los c\'irculos blancos representan las variable, y los ejes entre ellos representan la relaci\'on matem\'atica ``la variable es argumento de la funci\'on''.
+     Los cuadrados negros representan las funciones, los c\'irculos blancos representan las variables, y los ejes entre ellos representan la relaci\'on matem\'atica \emph{``la variable es argumento de la funci\'on''}.
      }
     \label{fig:factor_graph}
 \label{modelo}
@@ -3792,7 +3792,7 @@ Este algoritmo codifica la m\'inima cantidad de pasos que se requieren para calc
 
 \subsection{Propiedades matem\'aticas y notaci\'on}\label{sec:propiedades}
 
-La eficiencia de TrueSkill Through Time se obtiene gracias que las marginales se pueden computar de forma anal\'itica.
+La eficiencia de TrueSkill Through Time se obtiene gracias a que las marginales se pueden computar de forma anal\'itica.
 %
 En esta secci\'on enumeramos las propiedades que necesitamos para derivar los mensajes exactos y aproximados que surgen del \emph{sum-product algorithm}.
 %
@@ -3826,7 +3826,7 @@ La funci\'on indicadora $\mathbb{I}(\cdot=\cdot)$ vale $1$ cuando la igualdad es
 % %
 Se usa para representar distribuciones de probabilidad de variables discretas no aleatorias, como el resultado de las partidas dada la diferencia de desempe\~nos $p(r|d)$.
 %
-De la misma forma, la funci\'on delta de Dirac $\delta(\cdot=\cdot)$ se usa para representar distribuciones de probabilidad de variables continuas no aleatoria, es la diferencia de desempe\~nos dados los rendimientos de los agentes $p(d|\bm{p})$.
+De la misma forma, la funci\'on delta de Dirac $\delta(\cdot=\cdot)$ se usa para representar distribuciones de probabilidad de variables continuas no aleatorias, es la diferencia de desempe\~nos dados los rendimientos de los agentes $p(d|\bm{p})$.
 %
 Cuando permite remplazar variable dentro de una integral,
 %
@@ -3996,7 +3996,7 @@ S\'olo necesitamos el \emph{sum-product algorithm} y las propiedades arriba menc
 %
 Empezaremos primero con los mensajes ``descendentes'', desde los priors al resultado, hasta calcular la evidencia, y seguiremos con los mensajes ``ascendentes'', desde el resultado observado a los priors, hasta calcular el posterior de cada agente.
 
-\subsubsection{Mensajes descendentes.}%
+\subsubsection{Mensajes descendentes}%
 %
 Siguiendo el~\ref{eq:m_f_v} del \emph{sum-product algorithm} y la factorizaci\'on del modelo presentado en la figura~\ref{fig:modelo_trueskill_2vs2}, podemos ver que los mensajes que env\'ian los factores de habilidad $f_{s_i}$ a la variable $s_i$ no son otra cosa m\'as que el prior.
 %
@@ -4105,16 +4105,16 @@ e = 1 - cdf(0,d@mu,d@sigma)
 \begin{lstlisting}[captionpos=b,backgroundcolor=\color{white},label=lst:difference, caption={Computando la predicci\'on a priori del resultado observado (o evidencia)}, aboveskip=0cm, belowskip=0cm]
 \end{lstlisting}
 %
-Donde \texttt{e} contiene el valor de la ecuaci\'on \texttt{evidence}.
+donde \texttt{e} contiene el valor de la ecuaci\'on \texttt{evidence}.
 
-\subsubsection{Mensajes ascendentes.}%
+\subsubsection{Mensajes ascendentes}%
 %
 Examinemos ahora los mensajes ascendentes.
 %
 %
 % As\'i como los mensajes descendente pod\'iamos interpretarlos como priors, en este caso los mensajes ascendentes van a poder ser interprestados como likelihoods, debido a que transmiten la informaci\'on del resultado observado.
 % %
-El primer mensaje ascendentes lo env\'ia el factor de resultados $f_r$ a la variable de diferencia $d$.
+El primer mensaje ascendente lo env\'ia el factor de resultados $f_r$ a la variable de diferencia $d$.
 %
 \begin{equation}%\label{eq:m_fr_d} \tag{\texttt{exact\_lhood\_d}}
 \begin{split}
@@ -4124,7 +4124,7 @@ m_{f_r \rightarrow d}(d) & = \mathbb{I}(d>0)
 %
 El mensaje contiene la funci\'on indicadora del factor $f_r$, que transite la informaci\'on del resultado observado.
 %
-El mensaje que el factor diferencia $f_d$ env\'ia la variables de desempe\~no del equipo ganador $t_a$ es,
+El mensaje que el factor diferencia $f_d$ env\'ia la variable de desempe\~no del equipo ganador $t_a$ es,
 \begin{equation}%\label{eq:m_fd_ta} \tag{\texttt{exact\_lhood\_ta}}
 \begin{split}
 m_{f_{d} \rightarrow t_a}(t_a) & = \iint \delta(d = t_a - t_b) \mathbb{I}(d > 0) \N(t_b | \mu_b , \sigma_b^2 ) \, dd\,dt_b \\
@@ -4189,7 +4189,7 @@ En la figura~\ref{fig:draw_a} se puede ver en t\'erminos gr\'aficos las probabil
   \label{fig:draw}
 \end{figure}
 %
-Este modelo b\'asico requiere determinar el largo del margen.
+Este modelo b\'asico requiere determinar el valor usado para determinar si hubo empate.
 %
 El art\'iculo original~\cite{Herbrich2007} propone usar la frecuencia emp\'irica de empates como indicio para definirlo.
 %
@@ -4209,7 +4209,8 @@ As\'i es que podemos definir una ecuaci\'on que vincula el margen con la probabi
 \begin{equation}
  \text{Draw probability} = \Phi(\frac{\varepsilon}{\sqrt{n_1+n_2}\beta}) - \Phi(\frac{-\varepsilon}{\sqrt{n_1+n_2}\beta})
 \end{equation}
-%
+\todo[inline]{Tenes que explicar la ecuaci\'on, que es cada cosa y la intuici\'on atr\'as}
+
 En el siguiente c\'odigo usamos la funci\'on \texttt{compute\_margin()} para calcular el tama\~no del margen de empate.
 \begin{paracol}{3}
 \begin{lstlisting}[backgroundcolor=\color{julia!60},belowskip=0cm]
@@ -4264,9 +4265,9 @@ post = posteriors(g)
 \begin{lstlisting}[captionpos=b,backgroundcolor=\color{white}, label=lst:post_2vs2, caption={Computando el posterior aproximado}, belowskip=0cm, aboveskip=0cm]
 \end{lstlisting}
 %
-Donde la variable \texttt{teams} fue inicializada en el c\'odigo~\ref{lst:game}.
+donde la variable \texttt{teams} fue inicializada en el c\'odigo~\ref{lst:game}.
 %
-La necesidad de aproximar el posterior ocurre debido a que la distribuci\'on de diferencia de desempe\~nos es una gaussiana truncada.
+La necesidad de aproximar el posterior surge debido a que la distribuci\'on de diferencia de desempe\~nos es una gaussiana truncada.
 %
 \begin{equation}\label{eq:p_d}
 p(d) =
@@ -4276,7 +4277,7 @@ p(d) =
 \end{cases}
 \end{equation}
 %
-Se sabe que la familia exponencial, a la que pertenece la distribuci\'on gaussianas, minimizan la divergencia Kullback-Leibler respecto de la verdadera distribuci\'on $p$, $KL(p||q)$, cuando ambas tienen mismos momentos~\cite{Minka2005}.
+Se sabe que la familia exponencial, a la que pertenece la distribuci\'on gaussiana, minimizan la divergencia Kullback-Leibler respecto de la verdadera distribuci\'on $p$, $KL(p||q)$, cuando ambas tienen mismos momentos~\cite{Minka2005}.
 %
 La esperanza y la varianza de una gaussiana truncada $\N(x|\mu,\sigma^2)$ en un intervalo $[a,b]$ son,
 %
@@ -4353,7 +4354,7 @@ El mensaje aproximado que el factor diferencia $f_d$ env\'ia a la variables de d
 \begin{equation}
 \begin{split}
 \widehat{m}_{f_{d} \rightarrow t_a}(t_a) & =  \iint \delta(d = t_a - t_b) \N(d_1 | \psi_{\div}, \vartheta_{\div}^2) \N(t_b | \mu_b , \sigma_b^2 )  \, d{d} \,dt_b \\
-& = \int  \N( t_a-t_b | \psi_{\div}, \vartheta_{\div}^2) \N(t_b | \mu_b , \sigma_b^2 )  \,  d_{t_b} = \N(t_a \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \\
+& = \int  \N( t_a-t_b | \psi_{\div}, \vartheta_{\div}^2) \N(t_b | \mu_b , \sigma_b^2 )  \,  dt_b = \N(t_a \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \\
 \end{split}
 \end{equation}
 %
@@ -4361,8 +4362,8 @@ El mensaje aproximado que el factor desempe\~no de equipo $f_{t_a}$ env\'ia a la
 %
 \begin{equation}
 \begin{split}
-\widehat{m}_{f_{t_a} \rightarrow p_1}(p_1) &= \iint \delta(t_a = p_1 + p_2) \N(t_a \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \N(p_2 | \mu_2 , \sigma_2^2 + \beta^2)  \, d{t_a} d_{p_2} \\
-& = \int \N(p_1 + p_2 \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \N(p_2 | \mu_2 , \sigma_2^2+ \beta^2 )   \, d_{p_2} \\
+\widehat{m}_{f_{t_a} \rightarrow p_1}(p_1) &= \iint \delta(t_a = p_1 + p_2) \N(t_a \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \N(p_2 | \mu_2 , \sigma_2^2 + \beta^2)  \, d{t_a} d{p_2} \\
+& = \int \N(p_1 + p_2 \, | \, \mu_b + \psi_{\div} \, , \, \vartheta_{\div}^2 + \sigma_b^2) \N(p_2 | \mu_2 , \sigma_2^2+ \beta^2 )   \, dp_2 \\
 & = \N( p_1 \,|\,  \underbrace{\mu_b - \mu_2}_{\mu_1-\psi} + \psi_{\div}  \,,\,\vartheta_{\div}^2 + \underbrace{\sigma_b^2 + \sigma_2^2 + \beta^2}_{\vartheta^2 - (\sigma_1^2 + \beta^2)})  \\
 \end{split}
 \end{equation}
@@ -4431,7 +4432,7 @@ Se puede ver que el posterior que nosotros hemos computado es el mismo que devue
 
 \subsection{Varios equipos} \label{sec:iterative_posterior}
 
-La interfaz de los paquetes exhiben ninguna diferencia entre partidas de dos equipos o de varios equipos, como se puede ver en los c\'odigos de ejemplo \ref{lst:game} y \ref{lst:multiple_team_game}.
+La interfaz de los paquetes no exhibe ninguna diferencia entre partidas de dos equipos o de varios equipos, como se puede ver en los c\'odigos de ejemplo~\ref{lst:game} y \ref{lst:multiple_team_game}.
 %
 Sin embargo, en presencia de m\'as de dos equipos nos vemos obligados a implementar un algoritmo iterativo debido a una dependencia mutua entre resultados.
 %
@@ -4759,7 +4760,7 @@ Pero de su aplicaci\'on tambi\'en aparece la existencia del mensaje~\emph{backwa
 %
 La cantidad de incertidumbre din\'amica agregada a los mensajes \emph{forwardPrior} y \emph{backwardPrior} en la ecuaci\'on \eqref{eq:dynamic_history} es la misma.
 %
-Sin embargo, a veces quisi\'eramos que la incertidumbre dinamica dependa de la distancia temporal entre variables de habilidad adyacentes.
+Sin embargo, a veces quisi\'eramos que la incertidumbre din\'amica dependa de la distancia temporal entre variables de habilidad adyacentes.
 %
 Nuestros paquetes admiten ambas opciones.
 %
@@ -4830,6 +4831,8 @@ R syntax
 %
 donde la l\'inea completa la usamos cuando la sintaxis de los tres lenguajes coinciden, y las columnas las usamos cuando los lenguajes difieren: \texttt{Julia} a la izquierda, \texttt{Python} al centro, y \texttt{R} a la derecha.
 
+\todo[inline]{Fijate que esta convenci\'on la usaste antes sin aclarar} 
+
 %%%%%%%%%%%%%%%
 \subsection{\'Unico evento} \label{sec:singleEvent}
 
@@ -4869,7 +4872,7 @@ Y la probabilidad de empate de las partidas (\texttt{p\_draw}) se suele iniciali
         \texttt{p\_draw} & $0.0$ \\ \hline
         \end{tabular}
     \vspace{0.5cm}
-    \caption{Parameters.}
+    \caption{Par\'ametros}
     \label{fig:default_values}
     \end{subfigure}
 %
@@ -4897,11 +4900,11 @@ a1 = Player(Gaussian(mu, sigma), beta, gamma); a2 = Player(); a3 = Player(); a4 
 %
 El primer jugador fue creado haciendo expl\'icitos los par\'ametros, mientras que el resto se inicializan con los valores por defecto del constructor.
 %
-La clase \texttt{Gaussian} se usa para modelar las operaciones estandar de las distribuciones gaussianas, incluyendo multiplicaci\'on, suma, divisi\'on y resta (detalles en la secci\'on~\ref{sec:Gaussian}).
+La clase \texttt{Gaussian} se usa para modelar las operaciones est\'andar de las distribuciones gaussianas, incluyendo multiplicaci\'on, suma, divisi\'on y resta (detalles en la secci\'on~\ref{sec:Gaussian}).
 %
 En el siguiente paso creamos una partida con dos equipos de dos jugadores.
 %
-En presencia de equipos, el rendimiento observado depende de la suma de los rendimientos de cada equipo (detalles en la secci\'on \ref{sec:2vs2}).
+En presencia de equipos, el rendimiento observado depende de la suma de los rendimientos de cada equipo (detalles en la secci\'on~\ref{sec:2vs2}).
 %
 \begin{paracol}{3}
 \begin{lstlisting}[backgroundcolor=\color{julia!60}, belowskip=0cm]
@@ -4932,7 +4935,7 @@ Este es el ejemplo de uso m\'as simple.
 %
 M\'as adelante veremos como especificar expl\'icitamente el resultado.
 %
-Duarante la inicializaci\'on, la clase \texttt{Game} calcula la predicci\'on a priori del resultado observado (\texttt{evidence}) y las verosimilitud aproximada de cada jugador (\texttt{likelihoods}).
+Durante la inicializaci\'on, la clase \texttt{Game} calcula la predicci\'on a priori del resultado observado (\texttt{evidence}) y las verosimilitud aproximada de cada jugador (\texttt{likelihoods}).
 %
 \begin{paracol}{3}
 \begin{lstlisting}[backgroundcolor=\color{julia!60},belowskip=0cm]
@@ -5055,11 +5058,12 @@ De este modo podemos especificar cualquier resultado, incluidos empates globales
 La evidencia y el posterior se obtienen de la misma forma que hemos visto.
 
 \subsection{Secuencia de eventos} \label{sec:sequence_of_events}
+
 La clase \texttt{History} se usa para computar los posteriors y la evidencia de secuencias de eventos.
 %
-En el primer ejemplo, inicializamos la clase \texttt{History} con tres jugadores (\texttt{"a"}, \texttt{"b"} y \texttt{"c"}) y tres partidas.
+En el primer ejemplo, inicializamos la clase \texttt{History} con tres jugadores (\verb|"a"|, \verb|"b"| y \verb|"c"|) y tres partidas.
 %
-En la primera partida \texttt{"a"} le gana a \texttt{"b"}, en la segunda \texttt{"b"} le gana a \texttt{"c"} y en la tercera \texttt{"c"} le gana a \texttt{"a"}.
+En la primera partida \verb|"a"| le gana a \verb|"b"|, en la segunda \verb|"b"| le gana a \verb|"c"| y en la tercera \verb|"c"| le gana a \verb|"a"|.
 %
 En resumen, todos los agentes ganan una partida y pierden otra.
 %
@@ -5093,12 +5097,12 @@ donde la variable \texttt{c1}, \texttt{c2} y \texttt{c3} modela la composici\'on
 %
 El resultado queda definido impl\'icitamente por el orden en el que la composiciones de las partidas fueron inicializadas: los equipos que aparecen primero en la lista vencen a los que aparecen despu\'es.
 %
-El resto de los par\'ametros se inicializa con los valores por defecto vistos en el c\'odigo~\ref{lst:parameters}.
+El resto de los par\'ametros se inicializan con los valores por defecto vistos en el c\'odigo~\ref{lst:parameters}.
 % Parrafo
 
 En este ejemplo, en el que todos los agentes se ganan mutuamente y sus habilidades no cambian en el tiempo, los datos sugieren que todos tienen la misma habilidad.
 %
-Al inicializarse, la clase \texttt{History} inmediatamente instancia un nuevo jugador por cada nombre y activa el computo de las estimaciones TrueSkill, usando los posteriors de cada partida como prior de la siguiente.
+Al inicializarse, la clase \texttt{History} inmediatamente instancia un nuevo jugador por cada nombre y activa el c\'omputo de las estimaciones TrueSkill, usando los posteriors de cada partida como prior de la siguiente.
 %
 Para acceder a ellas podemos llamar al m\'etodo \texttt{learning\_curves()} de la clase \texttt{History}, que devuelve un diccionario indexado por los nombres de los agentes.
 %
@@ -5140,14 +5144,14 @@ lc_print(lc[["b"]])
 > [(1, Gaussian(mu=-3.339, sigma=4.985)), (2, Gaussian(mu=0.059, sigma=4.218))]
 \end{lstlisting}
 %
-Las curvas de aprendizaje de los jugador \texttt{"a"} y \texttt{"b"} contienen una tupla por partida jugada (no incluye el prior inicial).
+Las curvas de aprendizaje de los jugador \verb|"a"| y \verb|"b"| contienen una tupla por partida jugada (no incluye el prior inicial).
 %
 % events for each player and also among players for each event
 A pesar de que en este ejemplo ning\'un jugador muestra ser m\'as fuerte que los dem\'as, las estimaciones de TrueSkill var\'ian mucho entre jugadores.
 %
-Las estimaciones obtenidas luego de la primera partida, en la que \texttt{"a"} vence a \texttt{"b"}, tienen misma incertidumbre y mismo media en valor absoluta, siendo positiva para el jugador ganador y negativo para el perdedor.
+Las estimaciones obtenidas luego de la primera partida, en la que \verb|"a"| vence a \verb|"b"|, tienen misma incertidumbre y mismo media en valor absoluta, siendo positiva para el jugador ganador y negativo para el perdedor.
 %
-Las estimaciones calculadas luego de los eventos en los que juega \texttt{"c"}, tienen menor incertidumbre y medias que se encuentran m\'as cerca del cero.
+Las estimaciones calculadas luego de los eventos en los que juega \verb|"c"|, tienen menor incertidumbre y medias que se encuentran m\'as cerca del cero.
 % Parrafo
 
 TrueSkill Through Time resuelve la incapacidad de TrueSkill para obtener las estimaciones correctas permitiendo que la informaci\'on propague por todo el sistema.
@@ -5195,6 +5199,7 @@ lc_print(lc[["a"]])
 TrueSkill Through Time no s\'olo devuelve las estimaciones correctas (la misma para todos los jugadores), tambi\'en tienen menos incertidumbre.
 
 \subsection{Evoluci\'on de habilidad} \label{sec:skill_evolution}
+
 Ahora analizamos un escenario en el que un jugador nuevo se integra a una comunidad grande de jugadores ya conocidos.
 %
 En este ejemplo queremos ver cuan cercana es la estimaci\'on de la verdadera habilidad.
@@ -5510,10 +5515,10 @@ La tabla~\ref{Tab:TwoTeams} muestra los tiempos de ejecuci\'on.
     \begin{tabular}{ccc}
         Versi\'on & \en{Runtime}\es{Tiempo} & \en{Speedup}\es{Mejora} \\
         \hline
-        \texttt{trueskill} $0.4.5$     & \SI{1.45}{\ms}    & $1.0$X  \\ \hline
-        \texttt{R} $3.4.4$        & \SI{4.35}{\ms}    & $0.33$X \\ \hline
-        \texttt{Python} $3.6.9$   & \SI{0.14}{\ms}    & $10.4$X \\ \hline
-        \texttt{Julia} $1.5.0$    & \SI{0.064}{\ms}   & $22.7$X \\ \hline
+        \texttt{trueskill 0.4.5}     & \SI{1.45}{\ms}    & $1.0$X  \\ \hline
+        \texttt{R 3.4.4}        & \SI{4.35}{\ms}    & $0.33$X \\ \hline
+        \texttt{Python 3.6.9}   & \SI{0.14}{\ms}    & $10.4$X \\ \hline
+        \texttt{Julia 1.5.0}    & \SI{0.064}{\ms}   & $22.7$X \\ \hline
     \end{tabular}
     \caption{:  Two-teams game}
     \label{Tab:TwoTeams}
@@ -5522,20 +5527,20 @@ La tabla~\ref{Tab:TwoTeams} muestra los tiempos de ejecuci\'on.
     \begin{tabular}{ccc}
         Versi\'on & \en{Runtime}\es{Tiempo} & \en{Speedup}\es{Mejora} \\
         \hline
-        \texttt{trueskill} $0.4.5$     & \SI{2.45}{\ms}    & $1.0$X  \\
+        \texttt{trueskill 0.4.5}     & \SI{2.45}{\ms}    & $1.0$X  \\
         \hline
-        \texttt{R} $3.4.4$        & \SI{31.3}{\ms}   & $0.078$X \\
+        \texttt{R 3.4.4}        & \SI{31.3}{\ms}   & $0.078$X \\
         \hline
-        \texttt{Python} $3.6.9$   & \SI{0.93}{\ms}    & $2.63$X \\
+        \texttt{Python 3.6.9}   & \SI{0.93}{\ms}    & $2.63$X \\
         \hline
-        \texttt{Julia} $1.5.0$    & \SI{0.096}{\ms}   & $25.5$X \\
+        \texttt{Julia 1.5.0}    & \SI{0.096}{\ms}   & $25.5$X \\
         \hline
     \end{tabular}
     \caption{:  Three-teams game}
     \label{Tab:ThreeTeams}
     \end{subtable}
      \caption{
-     Tiempos de ejecuci\'on de la inicializaci\'on de la clase \texttt{Game} y del m\'etodo \texttt{posteriors()} para la partida de dos equipos, y la mejora es respecto al paquete original \texttt{trueskill} $0.4.5$ de \texttt{Python}.
+     Tiempos de ejecuci\'on de la inicializaci\'on de la clase \texttt{Game} y del m\'etodo \texttt{posteriors()} para la partida de dos equipos, y la mejora es respecto al paquete original \texttt{trueskill 0.4.5} de \texttt{Python}.
      }
 \end{table}
 %
@@ -5543,25 +5548,25 @@ Nuestros paquetes de \texttt{Python} y \texttt{Julia} son 10 y 20 veces m\'as r\
 %
 La table~\ref{Tab:ThreeTeams} presenta los tiempos de ejecuci\'on del evento con tres equipos.
 %
-Siempre que hay m\'as de dos equipos en la partida es necesario ejecutar un algoritmo iterativo que aumenta los tiempos requiridos para computar los posterios.
+Siempre que hay m\'as de dos equipos en la partida es necesario ejecutar un algoritmo iterativo que aumenta los tiempos requeridos para computar los posteriors.
 %
 Nuevamente, nuestros paquetes de \texttt{Python} y \texttt{Julia} son m\'as r\'apido que el paquete de \texttt{trueskill} original, mientras que el paquete de \texttt{R} es m\'as lento.
 \textbf{Secuencia de eventos:}
 %
 En la secci\'on \ref{sec:sequence_of_events} presentamos la inicializaci\'on de la clase \texttt{History} y el m\'etodo \texttt{convergence()} en los c\'odigos \ref{lst:history} y \ref{lst:ttt} respectivamente.
 %
-Si bien la inicializaci\'on de la clase \texttt{History} calcula las estimaciones para las cuales est\'a pensado el paquete original \texttt{trueskill}~$0.4.5$, no hacer m\'as comparaciones debido a que este paquete no cuenta con una funci\'on para resolver las secuencias de eventos autom\'aticamente.
+Si bien la inicializaci\'on de la clase \texttt{History} calcula las estimaciones para las cuales est\'a pensado el paquete original \texttt{trueskill 0.4.5}, no hacer m\'as comparaciones debido a que este paquete no cuenta con una funci\'on para resolver las secuencias de eventos autom\'aticamente.
 %
 En la tabla~\ref{Tab:Sequence} presentamos los tiempos de ejecuci\'on para inicializar la clase \texttt{History} y realizar una \'unica iteraci\'on del m\'etodo \texttt{convergence()}.
 %
 \begin{table}[ht!] \centering
     \begin{tabular}{ccc}
         Versi\'on & \texttt{History} & \texttt{convergence()} \\ \hline
-        \texttt{R} $3.4.4$        & \SI{74.4}{\ms}   & \SI{46.8}{\ms} \\
+        \texttt{R 3.4.4}        & \SI{74.4}{\ms}   & \SI{46.8}{\ms} \\
         \hline
-        \texttt{Python} $3.6.9$   & \SI{1.09}{\ms}    & \SI{1.88}{\ms} \\
+        \texttt{Python 3.6.9}   & \SI{1.09}{\ms}    & \SI{1.88}{\ms} \\
         \hline
-        \texttt{Julia} $1.5.0$    &  \SI{0.31}{\ms}   & \SI{0.58}{\ms} \\
+        \texttt{Julia 1.5.0}    &  \SI{0.31}{\ms}   & \SI{0.58}{\ms} \\
         \hline
     \end{tabular}
     \caption{
@@ -5579,18 +5584,18 @@ El paquete de \texttt{Julia} aumenta la velocidad respecto de nuestro paquete \t
 Y el paquete de \texttt{R}, si bien mantiene la diferencia de tiempo respecto de \texttt{Python} durante la convergencia, tiene una demora adicional durante la incializaci\'on debida a la creaci\'on de ``clases por referencia''.
 \textbf{Evoluci\'on de habilidad:}
 %
-En la secci\'on \ref{sec:skill_evolution} analizamos la evoluci\'on de habilidad de un jugador que juega contra 1000 oponentes distintos.
+En la secci\'on \ref{sec:skill_evolution} analizamos la evoluci\'on de habilidad de un jugador que juega contra $1000$ oponentes distintos.
 %
 Los tiempos de ejecuci\'on para inicializar la clase \texttt{History} y para una \'unica iteraci\'on de convergencia fueron,
 %
 \begin{table}[ht!] \centering
     \begin{tabular}{rrr}
         Lenguaje & \texttt{History} & \texttt{convergence()} \\ \hline
-        \texttt{R} $3.4.4$        & \SI{31000}{\ms} & \SI{26000}{\ms} \\
+        \texttt{R 3.4.4}        & \SI{31000}{\ms} & \SI{26000}{\ms} \\
         \hline
-        \texttt{Python} $3.6.9$   & \SI{380.2}{\ms} & \SI{876.3}{\ms} \\
+        \texttt{Python 3.6.9}   & \SI{380.2}{\ms} & \SI{876.3}{\ms} \\
         \hline
-        \texttt{Julia} $1.5.0$    & \SI{38.1}{\ms}  & \SI{75.7}{\ms}\\
+        \texttt{Julia 1.5.0}    & \SI{38.1}{\ms}  & \SI{75.7}{\ms}\\
     \end{tabular}
     \caption{
      Inicializaci\'on de la clase \texttt{History} y una \'unica iteraci\'on del m\'etodo \texttt{convergencia()} en una secuencia de $1000$ partidas que un jugador tiene contra oponentes distintos.
@@ -5598,7 +5603,7 @@ Los tiempos de ejecuci\'on para inicializar la clase \texttt{History} y para una
     \label{Tab:Evolution}
 \end{table}
 %
-En este caso el paquete de \texttt{Julia} es $10$ veces m\'as r\'apido que el paquete de \texttt{Python}.
+En este caso el paquete de \texttt{Julia} es diez veces m\'as r\'apido que el paquete de \texttt{Python}.
 %
 Esto sugiere que la cantidad de trabajo mejora la eficiencia relativa del paquete de \texttt{Julia}.
 %
@@ -5615,15 +5620,15 @@ La table~\ref{Tab:ATP} presenta los tiempos de ejecuci\'on totales de inicializa
 %
 \begin{table}[ht!] \centering
     \begin{tabular}{ccc}
-        Computadora & \en{Version}\es{Versi\'on} & \en{Runtime}\es{Tiempo} \\
+        Plataforma & \en{Version}\es{Versi\'on} & \en{Runtime}\es{Tiempo} \\
         \hline
-        A & \texttt{Python} $3.6.9$   & \SI{4498.8}{\s} \\
+        A & \texttt{Python 3.6.9}   & \SI{4498.8}{\s} \\
         \hline
-        B & \texttt{Python} $3.6.8$   & \SI{1368.6}{\s} \\
+        B & \texttt{Python 3.6.8}   & \SI{1368.6}{\s} \\
         \hline
-        A & \texttt{Julia} $1.5.0$    & \SI{387.5}{\s} \\
+        A & \texttt{Julia 1.5.0}    & \SI{387.5}{\s} \\
         \hline
-        B & \texttt{Julia} $1.5.3$    & \SI{138.5}{\s} \\
+        B & \texttt{Julia 1.5.3}    & \SI{138.5}{\s} \\
         \hline
     \end{tabular}
     \caption{
@@ -5632,33 +5637,19 @@ La table~\ref{Tab:ATP} presenta los tiempos de ejecuci\'on totales de inicializa
     \label{Tab:ATP}
 \end{table}
 %
-La inicializaci\'on m\'as las 10 iteraciones de convergencia eval\'uan en total $447000\times 21$ eventos: una pasada sobre todas las partidas correspondiente al computar la estimaciones de TrueSkill durante la inicializaci\'on, y dos pasadas sobre todas las partidas por cada iteraci\'on (backward y forward).
+La inicializaci\'on m\'as las diez iteraciones de convergencia eval\'uan en total $447000\times 21$ eventos: una pasada sobre todas las partidas correspondiente al computar la estimaciones de TrueSkill durante la inicializaci\'on, y dos pasadas sobre todas las partidas por cada iteraci\'on (backward y forward).
 %
-Dados los tiempos de ejecuci\'on de los eventos reportados en la tabla \ref{Tab:TwoTeams}, el tiempo de ejecuci\'on m\'inimo que se necesitar\'ia para computar las estimaciones TrueSkill Through Time mediante el paquete original \texttt{trueskill}~$0.4.5$ no podr\'ia ser menor a \SI{13611}{\s} en la computadora A, tres veces m\'as de lo que tarda nuestro paquete \texttt{Python} para realizar la totalidad del computo.
+Dados los tiempos de ejecuci\'on de los eventos reportados en la tabla~\ref{Tab:TwoTeams}, el tiempo de ejecuci\'on m\'inimo que se necesitar\'ia para computar las estimaciones TrueSkill Through Time mediante el paquete original \texttt{trueskill 0.4.5} no podr\'ia ser menor a \SI{13611}{\s} en la computadora A, tres veces m\'as de lo que tarda nuestro paquete \texttt{Python} para realizar la totalidad del c\'omputo.
 %
-Nuestro paquete de \texttt{Julia} demora menos de lo esperado considerando los tiempos reportados en la tabla \ref{Tab:TwoTeams} debido a optimizaciones que autom\'aticamente realiza \texttt{Julia}.
+Nuestro paquete de \texttt{Julia} demora menos de lo esperado considerando los tiempos reportados en la tabla~\ref{Tab:TwoTeams} debido a optimizaciones que autom\'aticamente realiza \texttt{Julia}.
+
+\section{Conclusiones y discusi\'on} \label{sec:summary}
+
+La principal contribuci\'on es la implementaci\'on de uno de los modelos m\'as importantes de la industria de los video juegos, que a\'un no estaba disponible en los lenguajes de programaci\'on con mayores comunidades, como \texttt{Julia}, \texttt{Python} y \texttt{R}.
+
+Que un m\'etodo tan atractivo como \'este haya estado ausente hasta ahora en estos lenguajes de programaci\'on creemos que ha sido la consecuencia de la falta de documentaci\'on que permitiera a los desarrolladores de software entender todos los aspectos te\'oricos que se requieren para su implementaci\'on.
 %
-% The results in this paper were obtained using
-% \texttt{R}~3.4.1 with the
-% \texttt{MASS}~7.3.47 package. \texttt{R} itself
-% and all packages used are available from the Comprehensive
-% \texttt{R} Archive Network (CRAN) at
-% \url{https://CRAN.R-project.org/}
-
-
-
-
-\section{Conlusiones y discusi\'on} \label{sec:summary}
-
-
-La principal contribuci\'on de este trabajo es la implementaci\'on de uno de los modelos m\'as importantes de la industria de los video juegos, que a\'un no estaba disponible en los lenguajes de programaci\'on con mayores comunidades, como \texttt{Julia}, \texttt{Python} y \texttt{R}.
-%
-% \en{?`Hablar de la tabla 1 ac\'a?}
-% ?`Hablar de la tabla 1 ac\'a?}
-% %
-Que un algoritmo tan importante como \'este haya estado ausente hasta ahora en estos lenguajes de programaci\'on creemos que ha sido la consecuencia de la falta de documentaci\'on que permitiera a los desarrolladores de software entender todos los aspectos te\'oricos que se requieren para su implementaci\'on.
-%
-Esta informaci\'on no est\'a presente ni en los art\'iculos originales \cite{Herbrich2007, Dangauthier2007} ni en reportes t\'ecnicos informales famosos como el desarrollado por \cite{Mosser2011}.
+Esta informaci\'on no est\'a presente ni en los art\'iculos originales Herbrich et al.~\cite{Herbrich2007} y Dangauthier et al.~\cite{Dangauthier2007} ni en reportes t\'ecnicos informales famosos como el desarrollado por Mosser~\cite{Mosser2011}.
 %
 Por este motivo, hemos dedicado la secci\'on metodolog\'ia para documentar todos los argumentos te\'oricos paso a paso, de modo que sea comprensible para cualquier persona con conocimientos b\'asicos de probabilidad.
 %
