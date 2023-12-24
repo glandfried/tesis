@@ -21,6 +21,8 @@
 \usepackage{float} % para que los gr\'aficos se queden en su lugar con [H]
 \usepackage[labelformat=simple]{subcaption}
 \renewcommand\thesubfigure{(\alph{subfigure})}
+\renewcommand\thesubtable{(\alph{subtable})}
+
 
 \usepackage{color}
 \usepackage{colortbl} % para que funcione color en las tablas
@@ -5670,7 +5672,7 @@ Esta estrategia, adem\'as de producir malas estimaciones iniciales de habilidad,
 
 La aplicaci\'on estricta de las reglas de la probabilidad nos obliga a realizar la inferencia usando toda la informaci\'on disponible, incluso la que se encuentra en el el futuro, algo que intuitivamente hacemos cuando concluimos que los deportistas famosos tambi\'en eran h\'abiles tambi\'en un tiempo antes de hacerse famosos.
 %
-Por este motivo el modelo TTT, propagando toda la informaci\'on hist\'orica a trav\'es de una \'unica red causal, proporciona estimaciones con baja incertidumbre en todo la serie temporal, permitiendo estimaciones iniciales de habilidad fiables y asegurando su comparabilidad hist\'orica.
+Por este motivo el modelo TTT, propagando toda la informaci\'on hist\'orica a trav\'es de una \'unica red causal, proporciona estimaciones con baja incertidumbre en todo la serie temporal, permitiendo estimaciones iniciales de habilidad fiables y asegurando su comparaci\'on hist\'orica.
 %
 De esta forma, sus predicciones a priori son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados (Tabla~\ref{Tab:Models}).
 %
@@ -5686,16 +5688,16 @@ Hemos mostrado que este procedimiento requiere pocas iteraciones para converger 
 %
 En la siguiente secci\'on, detalles computacionales, estudiamos los tiempos de ejecuci\'on de los tres paquetes que presentamos en este trabajo.
 %
-Nuestro paquete de \texttt{Python} resuelve los eventos individuales diez veces m\'as r\'apido que el paquete original \texttt{trueskill}~$0.4.5$~\cite{Lee2012}.
+Nuestro paquete de \texttt{Python} resuelve los eventos individuales diez veces m\'as r\'apido que el paquete original \texttt{trueskill 0.4.5}~\cite{Lee2012}.
 %
 A su vez, nuestro paquete de \texttt{Julia} resuelve las secuencias de eventos diez veces m\'as r\'apido  que nuestro paquete de \texttt{Python}.
 %
-Por el contrario, nuestro paquete de \texttt{R} es varias veces m\'as lento que que el paquete b\'asico \texttt{trueskill}~$0.4.5$.
+Por el contrario, nuestro paquete de \texttt{R} es varias veces m\'as lento que que el paquete b\'asico \texttt{trueskill 0.4.5}.
 % Parrafo
 
-Esperamos que esta primera implementaci\'on abierta en \texttt{Julia}, \texttt{Python} y \texttt{R}, de uno de los modelos de estimaci\'on de habilidad m\'as importantes, acompa\~nada por una explicaci\'on cient\'ifica en profundidad, ofrezca las condiciones para generar una proceso colectivo continuo de mejora.
+Esperamos que esta primera implementaci\'on abierta en \texttt{Julia}, \texttt{Python} y \texttt{R}, d\'e uno de los modelos de estimaci\'on de habilidad m\'as importantes, acompa\~nada por una explicaci\'on cient\'ifica en profundidad, ofrezca las condiciones para generar una proceso colectivo continuo de mejora.
 %
-Por ejemplo, la implementaci\'on actual no cuenta todav\'ia con la extensi\'on realizada por~\cite{Guo2012}, en el que los datos observables ya no son los valores ordinales de los resultados (perder/empatar/ganar), sino la cantidad de puntos que obtuvo cada equipo.
+Por ejemplo, la implementaci\'on actual no cuenta todav\'ia con la extensi\'on realizada por Guo et al.~\cite{Guo2012}, en el que los datos observables ya no son los valores ordinales de los resultados (perder/empatar/ganar), sino la cantidad de puntos que obtuvo cada equipo.
 %
 Una de las dificultades m\'as grandes del modelo actual es distinguir la habilidad de los individuos de un mismo equipo usando los resultados del equipo como \'unico observable.
 %
@@ -5722,7 +5724,7 @@ Ahora que ofrecemos la primera implementaci\'on de TrueSkill Through Time en \te
 
 
 
-\chapter{Resultado 3. Efecto de la posici\'on en el red de intercambios en el aprendizaje.}\label{ch_topo}
+\chapter{Resultado 3. Efecto en el aprendizaje de la posici\'on en la red de intercambios}\label{ch_topo}
 
 Los seres humanos crecen y se desarrollan en entornos culturales din\'amicos, haciendo que el aprendizaje humano dependa en gran medida de las interacciones sociales y la transmisi\'on cultural.
 %
@@ -5730,9 +5732,9 @@ Aunque est\'a ampliamente aceptado que la estructura de esas ``redes culturales'
 %
 La raz\'on por la que resulta dif\'icil para los estudios antropol\'ogicos evaluar estas hip\'otesis es la falta de datos granulares sobre la interacci\'on de todos los individuos de una comunidad humana a lo largo del tiempo.
 %
-En este trabajo estudiamos la estructura de interacciones y la evoluci\'on de las habilidades de todos los individuos de una de las comunidades virtuales de Go m\'as importantes, a lo largo de 8 a\~nos.
+En este cap\'itulo estudiamos la estructura de interacciones y la evoluci\'on de las habilidades de todos los individuos de una de las comunidades virtuales de Go m\'as importantes, a lo largo de ocho a\~nos.
 %
-Dado que la tasa de aprendizaje depende de la etapa en la que se encuentran los individuos al inicio del proceso, implementamos el modelo de habilidad estado del arte para obtener estimaciones precisas a lo largo de toda la serie temporal, permitiendo comparar por separado a individuos novatos, intermedios y expertos.
+Dado que la tasa de aprendizaje depende de la etapa en la que se encuentran los individuos al inicio del proceso, usamos el modelo de estimaci\'on de habilidad del estado del arte para obtener estimaciones precisas a lo largo de toda la serie temporal, permitiendo comparar por separado a individuos novatos, intermedios y expertos.
 %
 Analizando la posici\'on topol\'ogica que ocupan los individuos en la red a lo largo del tiempo mediante t\'ecnicas cl\'asicas de grafos din\'amicos, descubrimos que los valores moderados de centralidad tienen un efecto positivo de segundo orden cuando los individuos est\'an en la mitad del proceso de aprendizaje.
 %
@@ -5774,9 +5776,9 @@ Existen algunos estudios, sin embargo, que demuestran que las sociedades humanas
 
 % Parrafo
 
-Para responder c\'omo la estructura de la red de intercambio afecta los procesos de aprendizaje social a nivel individual, decidimos estudiar en detalle la evoluci\'on de una de las mayores comunidades de jugadores de Go en l\'inea (OGS \url{https://online-go.com}) durante 8 a\~nos.
+Para responder c\'omo la estructura de la red de intercambio afecta los procesos de aprendizaje social a nivel individual, decidimos estudiar en detalle la evoluci\'on de una de las mayores comunidades de jugadores de Go en l\'inea (OGS \url{https://online-go.com}) durante ocho a\~nos.
 %
-El Go es un juego de mesa para dos jugadores creado en China hace aproximadamente 3.000 a\~nos.
+El Go es un juego de mesa para dos jugadores creado en China hace aproximadamente 3000 a\~nos.
 %
 Aunque las reglas son sencillas, el Go presenta una enorme complejidad en comparaci\'on con el ajedrez: fue en 1996 cuando el primer algoritmo de inteligencia artificial venci\'o a uno de los mejores jugadores de ajedrez~\cite{Campbell2002}, mientras que en el juego del Go este objetivo se consigui\'o 20 a\~nos despu\'es~\cite{Silver2016}.
 %
@@ -7608,7 +7610,7 @@ La integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite
 %
 A diferencia de nuestros parientes m\'as cercanos (chimpanc\'es, bonobos, gorilas y orangutanes), en los que la crianza est\'a bajo supervisi\'on estricta de la madre, hace aproximadamente 3.5 millones de a\~nos, nuestros ancestros comenzaron a desarrollar un tipo de crianza cooperativa.
 %
-Esta forma de crianza cooperativa produjo un ambiente que favoreci\'o la selecci\'on de j\'ovenes capaces de monitorear y comprender las intenciones de los dem\'as, y de trasmitir a sus cuidadadores sus propias necesidades, dando inicio a un largo proceso de coevoluci\'on gen\'etico-cultural~\cite{Hardy2020}.
+Esta forma de crianza cooperativa produjo un ambiente que favoreci\'o la selecci\'on de j\'ovenes capaces de monitorear y comprender las intenciones de los dem\'as, y de trasmitir a sus cuidadadores sus propias necesidades, dando inicio a un largo proceso de coevoluci\'on gen\'etico-cultural~\cite{Hrdy2020}.
 %
 La evoluci\'on del lenguaje es un ejemplo claro.
 %
