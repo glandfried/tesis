@@ -978,7 +978,7 @@ Queremos ver que vale el teorema de la probabilidad total
 P(D) = P(D|H_1)P(H_1) + P(D|H_2)P(H_2) + \dots + P(D|H_n)P(H_n)
 \end{equation}
 %
-Para demostrarlo, descomponemos el conjunto $D$ como la unión (suma) de la intersección (producto) del conjunto $D$ con cada hipótesis de investigación $H_i$.
+Para demostrarlo, descomponemos el conjunto $D$ como la uni\'on (suma) de la intersecci\'on (producto) del conjunto $D$ con cada hip\'otesis de investigaci\'on $H_i$.
 %
 \begin{equation*}
 D = H_1D + H_2D + \dots + H_nD
@@ -1010,7 +1010,7 @@ En palabras de Kolmogorov
 The formula \eqref{eq:full_bayes_theorem_kologorov} is considered as the probability $P(H_i|D)$ of the hypothesis $H_i$ after the occurrence of event $D$ ($P(H_i)$ then denotes the \emph{a priori} probability of $H_i$).
 \end{quotation}
 %
-En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes se\~nalando los nombres que se les ha asignado históricamente a las probabilidades involucradas.
+En l\'inea con esta interpretaci\'on, volvemos a expresar el teorema de Bayes se\~nalando los nombres que se les ha asignado hist\'oricamente a las probabilidades involucradas.
 % %
 % \begin{equation*}
 % \underbrace{P(\text{Hip\'otesis }|\text{ Datos})}_{\text{\scriptsize Posteriori}} = \frac{\overbrace{P(\text{Datos }|\text{ Hip\'otesis})}^{\text{\scriptsize Verosimilitud}} \overbrace{P(\text{Hip\'otesis})}^{\text{\scriptsize Priori}} }{\underbrace{P(\text{Datos})}_{\text{\scriptsize Evidencia}}}
@@ -1033,7 +1033,7 @@ Bajo este criterio, existen infinitas formas de asignar probabilidades a priori.
 %
 Es decir, la teor\'ia de la probabilidad nos obliga a definir una probabilidad a priori, pero no nos dice c\'omo.
 %
-En esta sección revisaremos algunas cuestiones relacionadas con la aplicaci\'on estricta de las reglas de la probabilidad.
+En esta secci\'on revisaremos algunas cuestiones relacionadas con la aplicaci\'on estricta de las reglas de la probabilidad.
 
 \subsection{Acuerdos intersubjetivos en contextos de incertidumbre} \label{sec:acuerdos_intersubjetivos}
 
@@ -1166,7 +1166,7 @@ Tres siglos despu\'es, luego que se deriva la teor\'ia de la informaci\'on a par
 The essence of ``honesty'' or ``objectivity'' demands that we take into account all the evidence we have, not just some arbitrarily chosen subset of it. Any such choice would amount either to ignoring evidence that we have, or presuming evidence that we do not have.
 \end{quotation}
 %
-En este sentido, la distribuci\'on de probabilidad honesta será la que no afirma m\'as de lo que se sabe (maximizando incertidumbre o entropía) sin dejar de decir todo lo que s\'i se sabe (incorporando toda la informaci\'on disponible).
+En este sentido, la distribuci\'on de probabilidad honesta ser\'a la que no afirma m\'as de lo que se sabe (maximizando incertidumbre o entrop\'ia) sin dejar de decir todo lo que s\'i se sabe (incorporando toda la informaci\'on disponible).
 %
 \begin{quotation}
 We interpret Shannon's theorem as indicating that, out of all distributions $p_i$ that agree with the constraints, the one that maximizes the Shannon entropy, represents the ``most honest'' description of our state of knowledge, in the following sense: it expresses the enumeration of the possibilities and the evidence E; but is careful to assume nothing beyond that. If we subsequently acquire more information B that can be interpreted as an event in $H_0$, then we can update this distribution by Bayes' theorem. \cite{jaynes1984-bayesianBackground}
@@ -1859,7 +1859,7 @@ donde $\sigma$ representa la incertidumbre a priori de las hip\'otesis $W_0$ a $
 %
 En la figura~\ref{fig:modelo_lineal} se especifican las dependencias del modelo causal lineal, $M_D$, mediante la notaci\'on de redes bayesianas que representan a las hip\'otesis ocultas con c\'irculos blancos, las hip\'otesis observadas con c\'irculos grises, y las dependencias causales mediante flechas.
 %
-En esta red bayesiana se incluye además los parámetros del modelo, que al ser constantes al momento de la inferencia se representan con puntos negros.
+En esta red bayesiana se incluye adem\'as los par\'ametros del modelo, que al ser constantes al momento de la inferencia se representan con puntos negros.
 %
 \begin{figure}[ht!]
     \centering
@@ -2262,7 +2262,7 @@ Sea el resultado $r \in H_R$, la \textbf{sorpresa} se define como,
  \Delta = \underbrace{(1 - P(r|s_i^{\text{old}},s_j^{\text{old}}))}_{\hfrac{\textbf{\footnotesize Sorpresa}}{\text{\footnotesize del resultado}}}
 \end{equation*}
 %
-Si la predicción del resultado es $P(r|s_i^{\text{old}},s_j^{\text{old}}) = 1$, luego la sorpresa es nula $\Delta = 0$, y viceversa.
+Si la predicci\'on del resultado es $P(r|s_i^{\text{old}},s_j^{\text{old}}) = 1$, luego la sorpresa es nula $\Delta = 0$, y viceversa.
 %
 La metodolog\'ia Elo se basa en la idea de que resultados inesperados indicar\'ian que las estimaciones actuales no son del todo correctas.
 %
@@ -2318,7 +2318,7 @@ Adem\'as, extiende el modelo causal, permitiendo estimar la habilidad de los jug
 
 Los problemas vinculados al modelo Elo se solucionan naturalmente aplicado estrictamente las reglas de la probabilidad.
 %
-Para ello es necesario definir una distribución a priori sobre las habilidades.
+Para ello es necesario definir una distribuci\'on a priori sobre las habilidades.
 %
 La soluci\'on bayesiana al modelo Elo (TrueSkill) define la distribuci\'on de creencias a priori sobre la habilidad de un individuo $i$, $s_i \in H_{S_i}$, mediante una distribuci\'on gaussiana
 %
@@ -2486,9 +2486,9 @@ Debido a que las habilidades cambian en el tiempo, es importante agregar alguna 
 
 \subsubsection{Modelo con equipos}
 
-Otra de las novedades de TrueSkill fue la extensión del modelo Elo para permitir estimaci\'on de habilidad cuando los individuos compiten en equipos.
+Otra de las novedades de TrueSkill fue la extensi\'on del modelo Elo para permitir estimaci\'on de habilidad cuando los individuos compiten en equipos.
 %
-Para ello se agrega una hipótesis de investigación adicional, $H_{T_e} \subset \mathbb{R}$, que representa el desempeño oculto de los equipos.
+Para ello se agrega una hip\'otesis de investigaci\'on adicional, $H_{T_e} \subset \mathbb{R}$, que representa el desempe\~no oculto de los equipos.
 %
 Sea $A_e$ el conjunto de jugadores que forman parte del equipo $e$.
 %
@@ -2583,7 +2583,7 @@ La soluci\'on multiequipos no tiene una forma cerrada, requiere una iteraci\'on 
 
 \chapter{Resultado 1. Efecto de la formaci\'on de equipos sobre el aprendizaje}\label{ch_team}
 
-El problema de la adquisici\'on de habilidades es ubicuo y fundamental para la vida.
+El problema de adquisici\'on de habilidades es ubicuo y fundamental para la vida.
 %
 La mayor\'ia de las tareas humanas se realizan en sociedad, en cooperaci\'on con otros sujetos.
 %
@@ -2595,25 +2595,25 @@ Analizamos el impacto de las estrategias de formaci\'on de equipos en la adquisi
 %
 Revelamos un efecto sutil pero fuerte en la adquisici\'on de habilidades basado en la forma en que se forman y mantienen los equipos a lo largo del tiempo.
 %
-El \emph{``Faithfulness-boost effect''} proporciona un impulso de habilidad durante los primeros juegos que solo se adquirir\'ia despu\'es de miles de partidas de experiencia.
+%El \emph{``Faithfulness-boost effect''} proporciona un impulso de habilidad durante los primeros juegos que solo se adquirir\'ia despu\'es de miles de partidas de experiencia.
 %
 La tendencia a jugar en equipos se asocia con una mejora de las habilidades a largo plazo, mientras que jugar lealmente con el mismo compa\~nero de equipo acelera significativamente la adquisici\'on de habilidades a corto plazo.
 
 \section{Introducci\'on}
 
-La habilidad se adquiere principalmente a partir de la experiencia individual.
+Ciertamente las habilidades se adquieren principalmente a trav\'es de la experiencia.
 %
-Sin embargo, el ser humano por sus capacidades sociales incorpora muchos de los conocimientos aprendiendo de los dem\'as.
+Sin embargo, por sus capacidades sociales el ser humano incorpora muchos de los conocimientos aprendiendo de los dem\'as (\emph{aprendizaje social}).
 %
-El aprendizaje social puede afectar el proceso de adquisici\'on de habilidades esperado por la experiencia individual, que pueden ser tanto beneficiosas como riesgosas~\cite{Boyd2011}.
+Este aprendizaje social afecta el proceso de adquisici\'on de habilidades esperado por la experiencia individual~\cite{Boyd2011}.
 %
-Aprovechamos el repositorio virtualmente infinito del comportamiento humano disponible en Internet para estudiar un tema relevante en la ciencia antropol\'ogica: c\'omo las estrategias de agrupaci\'on pueden afectar la adquisici\'on de habilidades.
+En este trabajo, aprovechamos exploramos el efecto que las estrategias de formaci\'on de equipo tienen sobre los procesos de adquisici\'on de habilidades.
 
 % Parrafo
 
-Las investigaciones sobre toma de decisiones expertas se iniciaron con el estudio del comportamiento de los ajedrecistas profesionales~\cite{deGroot1978-thoughtAndChoiceInChess,chase1973-perceptionInChess,simon1974-howBigIsAChunk}.
-%
 La experiencia individual ha sido durante mucho tiempo estudiado como el factor principal en la mejora del desempe\~no.
+%
+Las investigaciones sobre toma de decisiones expertas se iniciaron con el estudio del comportamiento de los ajedrecistas profesionales~\cite{deGroot1978-thoughtAndChoiceInChess,chase1973-perceptionInChess,simon1974-howBigIsAChunk}.
 %
 Newell se\~nal\'o en 1981 que la ley de potencia, en funci\'on del grado de pr\'actica adquirida, describ\'ia todos los datos sobre aprendizaje analizados hasta el momento~\cite{Newell1981}.
 %
@@ -2623,7 +2623,7 @@ Sin embargo, las curvas de aprendizaje individuales son, naturalmente, m\'as irr
 %
 La pr\'actica es un factor de aprendizaje importante pero no es el \'unico.
 %
-Se deben tener en cuenta otros componentes esenciales para comprender mejor los procesos de aprendizaje.
+Por ello se deben tener en cuenta otros componentes esenciales para comprender mejor los procesos de aprendizaje.
 
 % Parrafo
 
@@ -2631,39 +2631,31 @@ En los animales pro-sociales, la capacidad de aprendizaje social es un factor qu
 %
 El aprendizaje social se define como cambios a largo plazo en el comportamiento causados por est\'imulos derivados de la observaci\'on o la interacci\'on con otros individuos~\cite{hoppitt2013-socialLearningAnIntroductionBook,bandura1977-socialLearning}.
 %
-Nuestra especie estuvo involucrada en una coevoluci\'on gen\'etica-cultura \'unica que provoc\'o el surgimiento de nuestras habilidades especiales de aprendizaje social: una maquinaria cognitiva costosa que permite la adquisici\'on eficiente de tradiciones complejas~\cite{Richerson2010}.
+Nuestra especie estuvo involucrada en un proceso de coevoluci\'on gen\'etico-cultura \'unico, que provoc\'o el surgimiento de nuestras singulares capacidades de aprendizaje social: una maquinaria cognitiva costosa que permite la adquisici\'on eficiente de tradiciones complejas~\cite{Richerson2010}.
 %
-Los seres humanos aprendemos conocimientos de los dem\'as, los modificamos y los transmitimos a la siguiente generaci\'on, lo que lleva a una acumulaci\'on cultural que no puede ser desarrollada por un solo individuo durante su vida~\cite{boyd1985-evolutionaryProcess}.
+Los seres humanos aprendemos conocimientos de los dem\'as, los modificamos y los transmitimos a la siguiente generaci\'on, produciendo una acumulaci\'on cultural que no puede ser desarrollada por ning\'un individuo asilado en un per\'iodo de vida~\cite{boyd1985-evolutionaryProcess}.
 %
-La capacidad de adquirir comportamientos basados en la experiencia de otros sin tener que construirla por ensayo y error conduce a una evoluci\'on cultural acumulativa, lo que permite que las poblaciones humanas se adapten r\'apidamente a los cambios y nuevos entornos~\cite{Boyd2011}.
+La capacidad de adquirir comportamientos basados en la experiencia de otros, permite evitar reconstruir los conocimientos por ensayo y error, lo que permite a las poblaciones humanas adaptarse r\'apidamente a los cambios y nuevos entornos~\cite{Boyd2011}.
 %
-Se requiere un grado de credulidad para que este proceso funcione y, por lo tanto, los aprendices pueden adquirir informaci\'on inapropiada incluso en entornos uniformes y estables~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
+Sin embargo se requiere un grado de credulidad para que este proceso funcione y, por lo tanto, existe el riesgo de adquirir informaci\'on inapropiada incluso en entornos uniformes y estables~\cite{feldman1996-individualVsSocialLearningEvolutionaryAnalysis,giraldeau2002-potentialDisadvantagesSocialLearning}.
 %
-Descifrar c\'omo aprovechar la informaci\'on social mientras se manejan los inconvenientes que se derivan de su uso se ha convertido en el tema principal en la investigaci\'on sobre estrategias de aprendizaje social~\cite{henrich2003-evolutionOfCulturalEvolution,rendell2011-cognitiveCulture}.
+Descifrar c\'omo aprovechar la informaci\'on social mientras se manejan los inconvenientes que se derivan de su uso se ha convertido en uno de los temas principales en la investigaci\'on sobre estrategias de aprendizaje social~\cite{henrich2003-evolutionOfCulturalEvolution,rendell2011-cognitiveCulture}.
 
 % Parrafo
 
-Se han propuesto muchos modelos sobre estrategias de aprendizaje social y su din\'amica de poblacional emergente.
+Se han propuesto muchos modelos sobre estrategias de aprendizaje social y su din\'amica poblacional emergente.
 %
-Los investigadores han identificado varias estrategias te\'oricas~\cite{rendell2011-cognitiveCulture,rendell2010-socialLearningTournament}, que se puede clasificar como:
-\begin{enumerate}[a)]
-\item aquellas que especifican las circunstancias bajo las cuales los individuos copian a otros.
-\item aquellas que identifican de qui\'en aprenden los individuos.
-\end{enumerate}
+Los investigadores han identificado varias estrategias te\'oricas~\cite{rendell2011-cognitiveCulture,rendell2010-socialLearningTournament}, que pueden clasificarse entre: aquellas que especifican las circunstancias bajo las cuales los individuos copian a otros; y aquellas que identifican de qui\'en aprenden los individuos.
 %
-Se han realizado muchos estudios de aprendizaje social utilizando diferentes m\'etodos, como observaciones de campo~\cite{henrich2011-adaptativeLearningBiasesFiji}, experimentos controlados de laboratorio~\cite{mesoudi2011-experimentalPayoffBiasedSocialLearningUnderused,toelch2014-humanSocialInformationUse,caldwell2016-innovationLaboratoryCulturalEvolution,muthukrishna2016-whenAndWhoSocialLearning} y experimentos de campo~\cite{henrich2001-eco15Soc,efferson2007-learningCulturalTransmissionBolivia,wisdom2013-experiment,Glowacki2017}.
+Normalmente, los estudios de aprendizaje social se realizan utilizando m\'etodos como observaciones de campo~\cite{henrich2011-adaptativeLearningBiasesFiji}, experimentos controlados de laboratorio~\cite{mesoudi2011-experimentalPayoffBiasedSocialLearningUnderused,toelch2014-humanSocialInformationUse,caldwell2016-innovationLaboratoryCulturalEvolution,muthukrishna2016-whenAndWhoSocialLearning} y experimentos de campo~\cite{henrich2001-eco15Soc,efferson2007-learningCulturalTransmissionBolivia,wisdom2013-experiment,Glowacki2017}.
 %
-El aprendizaje social ahora constituye un \'area importante de estudio dentro de la biolog\'ia evolutiva y del comportamiento~\cite{mesoudi2016-individualAndCulturalVariationSocialLearning}.
-
-% Parrafo
-
 Todos estos m\'etodos tiene una dificultad inherente para obtener muestras de datos grandes y longitudinales.
+
+% Parrafo
+
+Con el advenimiento de las comunidades virtuales comienza a ser posible estudiar datos masivos sobre aprendizaje social sobre largos per\'iodos de tiempo.
 %
-Con el advenimiento de las comunidades virtuales surge la posibilidad de estudiar conjuntos de datos masivos sobre aprendizaje social correspondientes a largos per\'iodos de tiempo.
-%
-En nuestro caso, nos apoyamos en un vasto corpus ($\sim4.5$ millones de juegos), aprovechando la tendencia mundial de las personas a jugar juegos en l\'inea de varios jugadores y la existencia de servidores que acumulan datos p\'ublicos.
-%
-Esta novedosa metodolog\'ia busca la aparici\'on estad\'istica de efectos potencialmente sutiles, que pueden ser detectables solo con un n\'umero notable de observaciones y pueden pasar desapercibidos en tama\~nos de muestra peque\~nos t\'ipicos de los estudios de laboratorio~\cite{slezak2012-doNotFearYourOpponent}.
+Esto permite buscar efectos potencialmente sutiles, detectables solo con un n\'umero grande de observaciones, que pueden pasar desapercibidos en muestras peque\~nos, t\'ipicas de los estudios de laboratorio~\cite{slezak2012-doNotFearYourOpponent}.
 %
 Nuestro estudio tambi\'en incorpora la capacidad actual para estimar las habilidades con alta precisi\'on.
 %
@@ -2679,9 +2671,11 @@ Los datos de ajedrez masivos permitieron el an\'alisis de la influencia de la ed
 
 % Parrafo
 
-Aqu\'i nos propusimos investigar el impacto de las estrategias de juego en equipo en la adquisici\'on de habilidades en \emph{Conquer Club}, un juego multijugador en l\'inea por turnos.
+Aqu\'i nos propusimos investigar el impacto de las estrategias de formaci\'on de equipo en la adquisici\'on de habilidades en \emph{Conquer Club}, un juego multijugador en l\'inea por turnos.
 %
-A diferencia de la naturaleza individual del ajedrez, en \emph{Conquer Club} (inspirado en el juego de mesa RISK) puede participar una cantidad variable de jugadores en cada evento, jugando individualmente o en equipos.
+%En este trabajo analizamos en un corpus de $\sim4.5$ millones de partidas.
+%
+A diferencia de la naturaleza individual del ajedrez, en \emph{Conquer Club} (inspirado en el juego de mesa RISK) en cada partida puede participar una cantidad variable de usuarios, jugando individualmente o en equipos.
 %
 En Conquer Club hay un fuerte incentivo para la colaboraci\'on: los resultados de los juegos son por equipos.
 %
@@ -2700,7 +2694,7 @@ No existe un mecanismo que defina la composici\'on de los equipos en funci\'on d
 % Un entorno de juego t\'ipico de Conquer Club tiene cuatro elementos relevantes: el mapa actual con la ocupaci\'on de tropas en cada regi\'on, el estado del juego que muestra la ronda actual y un resumen de la informaci\'on de los jugadores, un chat p\'ublico del juego y un registro de movimientos.
 
 
-Los investigadores que estudian aprendizaje en ajedrez se basan en Elo, mientras que nosotros adoptamos una extensi\'on bayesiana llamada TrueSkill~\cite{Herbrich2007}.
+Los investigadores que estudian aprendizaje en ajedrez se basan en Elo para estimar las habilidades, mientras que nosotros adoptamos una extensi\'on bayesiana llamada TrueSkill~\cite{Herbrich2007}.
 %
 En primer lugar, TrueSkill utiliza una distribuci\'on de creencias a priori, en lugar de un escalar, para representar las estimaciones de habilidades.
 %
@@ -2756,7 +2750,7 @@ El entorno del juego tiene cuatro elementos relevantes: el tablero actual, un pa
 
 % Parrafo
 
-La figura~\ref{conquerImage} ejemplifica la visi\'on de un jugador en un escenarios de una partida de dos equipos en equipos de dos jugadores.
+La figura~\ref{conquerImage} ejemplifica la interfaz de una partida de dos equipos de dos jugadores.
 %
 Los nodos del gr\'afico representan las regiones, el color indica a qui\'en pertenece, los n\'umeros representan el n\'umero de tropas y las formas indican la agrupaci\'on de regiones por zonas.
 %
@@ -2770,9 +2764,9 @@ El \emph{log} registra todos los movimientos de los jugadores.
 
 % Parrafo
 
-Al comienzo de cada turno, los jugadores ganan nuevas tropas.
+Al comienzo de cada turno, los jugadores reciben nuevas tropas.
 %
-La cantidad de tropas resulta del n\'umero de \emph{regions} ocupadas y la bonificaci\'on de la \emph{zone} controlada y eventualmente por el intercambio de \emph{spoils} (Section A en Anexo).
+La cantidad de tropas resulta del n\'umero de \emph{regions} ocupadas y la bonificaci\'on de la \emph{zona} controlada y eventualmente por el intercambio de \emph{spoils}.
 %
 Podemos ver en la primera l\'inea del \emph{log} en la Fig.~\ref{conquerImage}d que el jugador $c$ recibi\'o tropas por mantener el Continente 4.
 %
@@ -2806,7 +2800,7 @@ Luego, este jugador usa las tropas movidas recientemente para conquistar otra re
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Fig5}
     \caption{
-    Esquema del juego Conquer Club. a) El mapa mostrado como un gr\'afo con continentes (nodos con misma forma), jugadores (identificados con la escala de grises) y un n\'umero de tropas en cada regi\'on.
+    Esquema del juego Conquer Club. a) El mapa representado como un gr\'afo con continentes (nodos con misma forma), jugadores (identificados con la escala de grises) y un n\'umero de tropas en cada regi\'on.
     b) Estado general del juego: ronda actual, jugador activo y tiempo restante para jugar; y un resumen del total de tropas y regiones controladas para cada jugador.
     c) Ejemplo de sesi\'on de chat durante un juego.
     d) Registro del juego utilizado para extraer informaci\'on a trav\'es del web scrapper.
@@ -2852,13 +2846,13 @@ El ranking interno es la conjunci\'on entre el n\'umero de partidos jugados y lo
 
 Cuando un jugador selecciona un juego, puede ver los nombres de los que ya se han unido.
 %
-Aparece un icono y una estrella junto a los nombres.
+Aparece un \'icono y una estrella junto a los nombres.
 %
-Los iconos representan el \emph{ranking} de habilidad interno.
-%
-Las estrellas resumen la opini\'on sobre la jugadora que expresaron algunos de sus anteriores contrincantes.
+Los \'iconos representan el \emph{ranking} de habilidad interno.
 %
 Al final de un juego, los jugadores pueden reportar, en una escala de 1 a 5, el comportamiento del resto de jugadores en cuanto a \emph{Fair Play}, \emph{Gameplay} y Actitud.
+%
+Las estrellas resumen la opini\'on sobre la persona indicada por algunos de sus anteriores contrincantes.
 %
 
 
@@ -2869,11 +2863,9 @@ Primero, estudiamos c\'omo las personas mejoran su desempe\~no a medida que gana
 %
 Estimamos la experiencia de cada jugador por el n\'umero de partidas jugadas.
 %
-La habilidad se estima seg\'un el m\'etodo \emph{TrueSkill}~\cite{Herbrich2007}.
+La diferencia de habilidad entre los oponentes (medida con \emph{TrueSkill}~\cite{Herbrich2007}) indica con alta precisi\'on la probabilidad de ganar.
 %
-La diferencia de habilidad entre los oponentes indica con alta precisi\'on la probabilidad de ganar.
-%
-Con dos oponentes (equipos o individuos), la probabilidad de ganar cuando el otro tiene la misma habilidad es $1/2$ y una diferencia de $4$~tsp (puntos TrueSkill) aumenta la probabilidad de ganar a $2/3$.
+La probabilidad de ganar cuando los oponentes tiene la misma habilidad es $1/2$, y una diferencia de $4$~tsp (puntos TrueSkill) aumenta la probabilidad de ganar a $2/3$.
 
 % Parrafo
 
@@ -2900,24 +2892,21 @@ De acuerdo con la ley de la pr\'actica, observamos una dependencia lineal en las
 \includegraphics[width=.49\linewidth]{figures/Fig1}
 \caption{Ley de la pr\'actica.
 %
-Curva de aprendizaje de la subpoblaciones de jugadores seg\'un su nivel actividad total.
+Curva de aprendizaje de la subpoblaciones de jugadores seg\'un su nivel de actividad total.
 %
 Cada curva de aprendizaje muestra la habilidad de los primeros $2^n$ partidas jugadas de la subpoblaci\'on con al menos $2^n$ partidas jugadas y menos de $2^{n+1}$.
 %
-Las subfiguras muestran los valores de los par\'ametros (es decir, $\alpha$ y \emph{Skill}$_0$) de cada curva de aprendizaje siguiendo la ecuaci\'on~\eqref{lawOfPractice}.
-\todo[inline]{Que poblacion est\'a incluida en la subfiguras?}}
+Las subfiguras muestran los valores de los par\'ametros (es decir, $\alpha$ y \emph{Skill}$_0$) de las curva de aprendizaje de cada subpoblaci\'on (eje x) siguiendo la ecuaci\'on~\eqref{lawOfPractice}.
+}
 \label{learningskill_curve}
 \end{figure}
 
 Las curvas de aprendizaje dependen del abandono, exhibi\'endose una habilidad m\'as baja para las subpoblaciones con una actividad total m\'as baja.
 %
 Sin embargo, la tasa de aprendizaje ($\alpha$) se mantiene estable para las subpoblaciones con al menos $32$ partidas jugadas (panel superior izquierdo de la figura~\ref{learningskill_curve}).
-\todo[inline]{se estaba refiriendo al panel superior derecho de la figura y en esa ubicaci\'on no hay nada, lo cambi\'e a izquierdo}
-%
 La diferencia entre ellos causa poca variaci\'on en la adquisici\'on de habilidades a largo plazo, con menos de $0.24$~tsp despu\'es de $1000$ partidas jugadas.
 %
-La habilidad de inicial de la subpoblaci\'on ($Skill_0$) tambi\'en se ve afectada por el abandono (subfigura abajo a la derecha en la figura~\ref{learningskill_curve}).
-\todo[inline]{se estaba refiriendo al panel inferior izquierdo de la figura y en esa ubicaci\'on no hay nada, lo cambi\'e a derecho}
+La habilidad inicial de la subpoblaci\'on ($Skill_0$) tambi\'en se ve afectada por el abandono (subfigura abajo a la derecha en la figura~\ref{learningskill_curve}).
 %
 Sin embargo, todas las subpoblaciones con al menos $64$ juegos jugados, no tienen una habilidad inicial significativamente diferente (Wilcoxon rank-sum test en Anexo).
 
@@ -2935,17 +2924,17 @@ De hecho, los jugadores que siempre terminan sus juegos tienen una curva de apre
 
 \section{Aprendizaje social}
 
-El aprendizaje social es esencial para los animales prosociales.
+El aprendizaje social es esencial en los animales prosociales.
 %
-Nuestra hip\'otesis es que la curva de aprendizaje esperada por la experiencia individual podr\'ia verse alterada por diferentes comportamientos de agrupaci\'on.
+Nuestra hip\'otesis es que la curva de aprendizaje esperada por la experiencia individual podr\'ia verse alterada por diferentes estrategias de formaci\'on de equipo.
 %
-Para estudiarlo, analizamos el comportamiento de los jugadores en la selecci\'on de equipos.
+Para estudiarlo, analizamos el comportamiento de los jugadores en lo que respecta a la selecci\'on de equipos.
 
 % Parrafo
 
 En la plataforma de juego, los usuarios pueden elegir entre jugar individualmente o en equipos.
 %
-Definimos el concepto \emph{Team-oriented behavior} (TOB) de los jugadores como el n\'umero de partidas en las que participa de un equipo dividido por el n\'umero total de partidas jugadas:
+Definimos el concepto \emph{Team-oriented behavior} (TOB), como el n\'umero de partidas en las que participa en equipo, dividido por el n\'umero total de partidas jugadas:
 %
 \begin{equation}
 \text{\emph{Team-oriented behavior}} = \frac{\text{\emph{Partidas de equipo jugadas}}}{\text{\emph{Partidas jugadas}}}
@@ -2963,7 +2952,7 @@ Los jugadores con TOB altos muestran, despu\'es de $250$ partidas, una habilidad
 
 % Parrafo
 
-En este intervalo, la poblaci\'on de TOB fuerte y media est\'a distanciada por alrededor de $1$~tps.
+En este intervalo, la poblaci\'on de TOB fuerte y medio est\'an distanciadas por aproximadamente $1$~tps.
 %
 Un comportamiento TOB alto adquiere, a largo plazo, un mayor valor de habilidad incluso en comparaci\'on con jugadores sin juegos de equipo.
 
@@ -2992,10 +2981,10 @@ Los jugadores pueden elegir entre jugar con el mismo compa\~nero de equipo o sel
 %
 Nuestra hip\'otesis es que un comportamiento leal puede afectar el aprendizaje (aumentar o disminuir la tasa de adquisici\'on de habilidades) cuando se juega en equipo.
 %
-La mayor\'ia de las veces que dos personas aparecen recurrentemente en la misma partida, vemos que la inmensa mayor\'ia son compa\~neras de equipo en lugar de oponentes.
+La mayor\'ia de las veces que dos personas aparecen recurrentemente en la misma partida, vemos que la inmensa mayor\'ia son compa\~neros de equipo en lugar de oponentes.
 %
 Por lo tanto, enfocamos nuestro an\'alisis solo en la lealtad de los compa\~neros de equipo ya que la lealtad en los oponentes no est\'a presente en nuestra base de datos.
-%
+%w
 Definimos el concepto \emph{loyalty} de las personas como la proporci\'on de veces que juegan con el compa\~nero de equipo m\'as recurrente dividida por la cantidad de partidas de equipo jugadas:
 %
 \begin{equation}
@@ -3018,9 +3007,9 @@ Un comportamiento an\'alogo entre las subclases leales y casuales ocurre tambi\'
 
 % Parrafo
 
-Para estudiar la interacci\'on entre TOB y \emph{loyalty} en la adquisici\'on de habilidades, fijamos el n\'umero de partidos en $100$.
+Para estudiar la interacci\'on entre TOB y \emph{loyalty} en la adquisici\'on de habilidades, fijamos el n\'umero de partidas de experiencia en $100$.
 %
-Al aislar esta interacci\'on (sin la interferencia de la experiencia) encontramos que un aumento en \emph{loyalty} siempre implica un aumento en la habilidad, m\'as prominente para valores m\'as altos de TOB (Fig.~\ref{skillModels_loyaltyTeamOriented_imageEmpirical}).
+Al aislar el efecto de la experiencia, encontramos que un aumento en \emph{loyalty} siempre implica un aumento en la habilidad, m\'as prominente para valores m\'as altos de TOB (Fig.~\ref{skillModels_loyaltyTeamOriented_imageEmpirical}).
 %
 Por el contrario, el aumento de los valores de TOB muestra una disminuci\'on de la habilidad para los niveles bajos de \emph{loyalty}, y solo implica un aumento de la habilidad para los niveles altos de \emph{loyalty}.
 %
@@ -3050,7 +3039,7 @@ La l\'inea vertical en $100$ partidas jugadas indica el an\'alisis realizado en 
 \caption{
 Interacci\'on de la habilidades entre \emph{loyalty} y TOB para todos los jugadores.
 %
-El papel de la experiencia se aisl\'o tomando la habilidad de los jugadores en el mismo punto de la experiencia.
+El papel de la experiencia se aisl\'o tomando la habilidad de los jugadores en el mismo punto de experiencia.
 %
 Todos los jugadores tienen $100$ de partidas jugadas.
 %
@@ -3069,11 +3058,11 @@ La interacci\'on entre \emph{loyalty} y TOB se puede resumir como $ \text{\emph{
 \text{\emph{Faithfulness}} = \frac{\text{\emph{M\'aximo de partidas jugadas con un mismo compa\~nero}}}{\text{\emph{Partidas jugadas}}}
 \end{equation}
 %
-que es simplemente la proporci\'on de veces jugadas con el compa\~nero de equipo m\'as leal sobre todos las partidas jugadas.
+que es simplemente la proporci\'on de veces jugadas con el compa\~nero de equipo m\'as leal sobre todas las partidas jugadas.
 
 % Parrafo
 
-Para medir la influencia sobre la adquisici\'on de habilidades de \emph{loyalty}, TOB and \emph{faithfulness}, construimos un modelo lineal que ser\'a resuelto por m\'inimos cuadrados.
+Para medir la influencia sobre la adquisici\'on de habilidades de \emph{loyalty}, TOB y \emph{faithfulness}, construimos un modelo lineal que ser\'a resuelto por m\'inimos cuadrados.
 %
 La correlaci\'on entre las variables \emph{loyalty} y TOB es baja ($0.11$) y \emph{Variance Inflation Factor} es nulo ($1.01$), lo que sugiere que no hay evidencia de colinealidad.
 
@@ -3085,7 +3074,7 @@ Con $100$ partidas jugadas, la variable \emph{loyalty} tiene una pendiente posit
 %
 La variable \emph{faithfulness} es lo suficientemente fuerte como para revertir la contribuci\'on negativa de TOB sobre la habilidad a una positiva cuando $\text{\emph{loyalty}}>0.27$.
 %
-El \emph{faithfulness-boost effect} es de alrededor de $3.7$~tsp, lo que genera una diferencia de habilidades entre jugadores con la misma experiencia extremadamente relevante en t\'erminos de probabilidad de ganar.
+El \emph{faithfulness-boost effect} es de aproximadamente $3.7$~tsp, lo que genera una diferencia de habilidades entre jugadores con la misma experiencia extremadamente relevante en t\'erminos de probabilidad de ganar.
 
 \begin{table}[ht]
 \centering
@@ -3100,7 +3089,7 @@ Intercept & 28.5707 & 0.0405 & 705.59 & $p< 2e^{-16}$ \\
    \hline
 \end{tabular}
 \caption{
-Influencia sobre el aprendizaje de las variables de \emph{loyalty}, TOB y \emph{faithfulness} (modelo lineal). Reportamos el valor de la pendiente estimada, su desviaci\'on est\'andar y la significancia respecto a una pendiente cero. Todos los jugadores tienen juegos de $100$ de experiencia.
+Influencia sobre el aprendizaje de las variables de \emph{loyalty}, TOB y \emph{faithfulness} (modelo lineal). Reportamos el valor de la pendiente estimada, su desviaci\'on est\'andar y la significancia respecto a una pendiente cero. Todos los jugadores tienen $100$ partidas de experiencia.
 }
 \label{model}
 \end{table}
@@ -3119,7 +3108,7 @@ La magnitud de esta contribuci\'on siempre es relevante en t\'erminos de probabi
 
 % Parrafo
 
-Para integrar todas las observaciones parciales realizadas hasta aqu\'i, realizamos un modelo general ajustado a todos los datos, incluyendo la experiencia, \emph{loyalty} y TOB como predictores y la identidad de la persona como efecto aleatorio (Tabla~\ref{lmm}).
+Para integrar todas las observaciones parciales realizadas hasta aqu\'i, ajustamos un modelo general a todos los datos, incluyendo la experiencia, \emph{loyalty} y TOB como predictores y la identidad de la persona como efecto aleatorio (Tabla~\ref{lmm}).
 %
 Elegimos un modelo mixto lineal porque la relaci\'on entre la experiencia y la habilidad es lineal en una escala logar\'itmica siguiendo la expresi\'on~\eqref{lawOfPractice}.
 %
@@ -3153,7 +3142,7 @@ Group Var     		&  0.002  &          &           &        &       \\
    \hline
 \end{tabular}
 \caption{
-Modelo mixto lineal para ajustado para todos los datos entre 10 y 500 partidas jugadas de experiencia individual.
+Modelo mixto lineal ajustado para todos los datos entre 10 y 500 partidas jugadas de experiencia individual.
 %
 En la columna Norm.Est. transformamos los estimadores, en escala logar\'itmica, a su valor normalizado (e.g. $\text{Intercept} = 10^{1.415}$, $\text{exp} = 10^{1.415+0.016} - 10^{1.415}$).
 %
@@ -3163,7 +3152,7 @@ M\'etodo: REML converged. N\'umero de grupos: $65335$. Tama\~no m\'aximo de grup
 
 Este modelo general confirma las observaciones ya introducidas.
 %
-La experiencia es el principal predictor en cuanto a su nivel de significatividad, tiene la pendiente m\'as significativa.
+La experiencia es el principal predictor en tanto tiene la pendiente m\'as significativa.
 %
 Inicialmente, la variable \emph{loyalty} solo tiene un efecto positivo en contextos de orientados a equipos (loyal:tob).
 %
@@ -3179,71 +3168,35 @@ Debido a esta din\'amica el valor m\'aximo de habilidad se alcanza siempre cuand
 
 Tradicionalmente el aprendizaje ha sido modelado en funci\'on de la experiencia.
 %
-En este art\'iculo nos enfocamos en c\'omo la curva de aprendizaje esperada por la experiencia individual se ve alterada por diferentes estrategias de agrupamiento.
+En este art\'iculo exploramos c\'omo la curva de aprendizaje esperada por la experiencia individual se ve alterada por diferentes estrategias de agrupamiento.
 %
 Nuestro m\'etodo se basa en datos masivos que permitieron realizar un estudio longitudinal con una precisi\'on muy alta para detectar cambios sutiles.
-
-% Parrafo
-
-Analizamos el aprendizaje en un contexto competitivo.
 %
-En este tipo de juegos el aprendizaje se mide en t\'erminos de la probabilidad de ganar a otras personas.
+% % Parrafo
 %
-A diferencia de las tareas en las que se puede determinar la cantidad absoluta de errores que comete un individuo al resolverla, en los juegos competitivos la probabilidad de ganar es una propiedad relativa que depende del nivel de aprendizaje de los oponentes.
+% Analizamos el aprendizaje en un contexto competitivo.
+% %
+% En este tipo de juegos el aprendizaje se mide en t\'erminos de la probabilidad de ganar a otras personas.
+% %
+% A diferencia de las tareas en las que se puede determinar la cantidad absoluta de errores que comete un individuo al resolverla, en los juegos competitivos la probabilidad de ganar es una propiedad relativa que depende del nivel de aprendizaje de los oponentes.
+% %
+% Las curvas de aprendizaje derivadas de tareas en las que la habilidad se mide en t\'erminos relativos son m\'as vol\'atiles que las medidas en t\'erminos absolutos.
+% %
+% Por lo tanto, las curvas de aprendizaje individuales de los jugadores que compiten a veces son dif\'iciles de ajustar~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,Gaschler2014}.
 %
-Las curvas de aprendizaje derivadas de tareas en las que la habilidad se mide en t\'erminos relativos son m\'as vol\'atiles que las medidas en t\'erminos absolutos.
+% % Parrafo
 %
-Por lo tanto, las curvas de aprendizaje individuales de los jugadores que compiten a veces son dif\'iciles de ajustar~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,Gaschler2014}.
-
-% Parrafo
-
-Si bien las curvas de aprendizaje individual son m\'as irregulares que el promedio de un conjunto de curvas de aprendizaje, la variaci\'on entre ellas debe ser explicada.
-%
+% Si bien las curvas de aprendizaje individual son m\'as irregulares que el promedio de un conjunto de curvas de aprendizaje, la variaci\'on entre ellas debe ser explicada.
+% %
 Nuestra hip\'otesis para explicar las variaciones observadas afirma que el aprendizaje social produce un efecto de segundo orden en la adquisici\'on de habilidades.
-%
-Seg\'un las teor\'ias del aprendizaje social, los jugadores tienen dos opciones para aprender: 
-\begin{enumerate}[i)]
-\item descubrir por s\'i mismos las claves para jugar mejor.
-\item imitar la estrategia de otros disponibles en su red.
-\end{enumerate}
+
+% Parrafo
 
 Nos basamos en el juego en l\'inea \emph{Conquer Club} porque, a diferencia del ajedrez, se puede jugar en equipos.
 %
 En \emph{Conquer Club} tanto los oponentes como los compa\~neros de equipo son observables y, en consecuencia, son modelos a imitar.
 %
 Sin embargo, enfocamos nuestro an\'alisis solo en la lealtad de los compa\~neros de equipo ya que la lealtad en los oponentes no est\'a presente en nuestra base de datos.
-
-% Parrafo
-
-Por ejemplo, una estrategia de aprendizaje social simple consiste en copiar la mayor\'ia de los otros modelos disponibles, lo que se conoce como \emph{frequency-based strategy}.
-%
-Otra estrategia de aprendizaje social es copiar el modelo disponible m\'as exitoso, denominado como \emph{payoff-based strategy}.
-%
-Hasta donde sabemos, no se ha propuesto ninguna estrategia de aprendizaje social que tenga en cuenta diferentes estrategias de agrupaci\'on.
-%
-Encontramos que las estrategias de agrupaci\'on afectan significativamente c\'omo se adquiere la habilidad.
-
-% Parrafo
-
-Se sabe que el \'exito de nuestra especie depende de la formaci\'on de grupos~\cite{Richerson2010,dunbar1993-coevolutionNeocorticalSizeGroupSizeAndLanguage}.
-%
-Hemos visto que la decisi\'on de jugar en equipos est\'a asociada con una mejora de habilidades a largo plazo.
-%
-Encontramos que la tendencia a jugar en grupos (el n\'umero de partidas jugadas en equipo dividido por el n\'umero total de partidas jugadas) mejora significativamente el nivel de habilidad alcanzado.
-
-% Parrafo
-
-Los modelos matem\'aticos muestran que las estrategias adaptadas a entornos distintos a los actuales (e.g. migraci\'on) puede ser un factor de riesgo para el aprendizaje social~\cite{boyd1989-socialLearningAsAdaptation}.
-%
-Estudiamos una versi\'on reducida de la migraci\'on entre grupos analizando c\'omo los jugadores repiten compa\~neros de equipo, lo que conduce a una estabilidad intragrupal (i.e.~\emph{loyalty}).
-%
-Siguiendo la teor\'ia del riesgo del cambio ambiental, afirmamos que no hay modificaciones ambientales en \emph{Conquer Club} y, por lo tanto, la movilidad intergrupal no es una fuente para la difusi\'on de ideas mal adaptativas.
-%
-Por el contrario, la migraci\'on implicar\'ia el acceso a diferentes grupos y, por lo tanto, aprender de diferentes jugadores y aumentar las habilidades al aprender de una mayor variedad de compa\~neros de equipo.
-%
-En este sentido, lo que esper\'abamos encontrar era que este tipo de migraci\'on sea beneficiosa para mejorar el aprendizaje.
-%
-Sin embargo encontramos lo opuesto.
 
 % Parrafo
 
@@ -3274,6 +3227,41 @@ Tambi\'en es importante se\~nalar que ser parte de un equipo con pocas probabili
 Asociarse con un compa\~nero de equipo con menos habilidades implicar\'a efectivamente una disminuci\'on en la probabilidad de ganar, pero no necesariamente implicar\'a una disminuci\'on en la habilidad.
 %
 Si la colaboraci\'on es s\'olida, ambos jugadores se beneficiar\'an del efecto positivo sobre la adquisici\'on de habilidades.
+
+% Parrafo
+
+
+Hasta donde sabemos, no se ha propuesto ninguna estrategia de aprendizaje social que tenga en cuenta diferentes estrategias de agrupaci\'on.
+%
+Por ejemplo, una estrategia de aprendizaje social simple consiste en copiar la mayor\'ia de los otros modelos disponibles, lo que se conoce como \emph{frequency-based strategy}.
+%
+Otra estrategia de aprendizaje social es copiar el modelo disponible m\'as exitoso, denominado como \emph{payoff-based strategy}.
+%
+En este trabajo, encontramos que las estrategias de agrupaci\'on afectan significativamente c\'omo se adquiere la habilidad.
+
+% Parrafo
+
+Se sabe que el \'exito de nuestra especie depende de la formaci\'on de grupos~\cite{Richerson2010,dunbar1993-coevolutionNeocorticalSizeGroupSizeAndLanguage}.
+%
+Hemos visto que la decisi\'on de jugar en equipos est\'a asociada con una mejora de habilidades a largo plazo.
+%
+Encontramos que la tendencia a jugar en grupos (el n\'umero de partidas jugadas en equipo dividido por el n\'umero total de partidas jugadas) mejora significativamente el nivel de habilidad alcanzado.
+
+% Parrafo
+
+\todo[inline]{Reformular discusi\'on. Incroporar \cite{Derex2020}}
+
+Los modelos matem\'aticos muestran que las estrategias adaptadas a entornos distintos a los actuales (e.g. migraci\'on) puede ser un factor de riesgo para el aprendizaje social~\cite{boyd1989-socialLearningAsAdaptation}.
+%
+Estudiamos una versi\'on reducida de la migraci\'on entre grupos analizando c\'omo los jugadores repiten compa\~neros de equipo, lo que conduce a una estabilidad intragrupal (i.e.~\emph{loyalty}).
+%
+Siguiendo la teor\'ia del riesgo del cambio ambiental, afirmamos que no hay modificaciones ambientales en \emph{Conquer Club} y, por lo tanto, la movilidad intergrupal no es una fuente para la difusi\'on de ideas mal adaptativas.
+%
+Por el contrario, la migraci\'on implicar\'ia el acceso a diferentes grupos y, por lo tanto, aprender de diferentes jugadores y aumentar las habilidades al aprender de una mayor variedad de compa\~neros de equipo.
+%
+En este sentido, lo que esper\'abamos encontrar era que este tipo de migraci\'on sea beneficiosa para mejorar el aprendizaje.
+%
+Sin embargo encontramos lo opuesto.
 
 % Parrafo
 
@@ -3367,7 +3355,7 @@ Si bien las redes bayesianas han mostrado ser \'utiles para evaluar el aprendiza
 %
 Por ejemplo, los estimadores de habilidad m\'as utilizados en la industria del video juego, como Elo y TrueSkill, no permiten obtener estimaciones iniciales fiables ni garantizar la comparabilidad entre estimaciones distantes en el tiempo y el espacio debido a que propagan la informaci\'on en una sola direcci\'on a trav\'es del sistema, utilizando el \'ultimo posterior como prior del siguiente evento.
 
-Durante la realizaci\'on de esta tesis de doctorado, descubrimos la especificaci\'on de un modelo conocido como TrueSkill Through Time (TTT), que propaga toda la informaci\'on hist\'orica a trav\'es del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica.
+Durante la realizaci\'on de esta tesis de doctorado, descubrimos la especificaci\'on matem\'atica de un modelo conocido como TrueSkill Through Time (TTT), que propaga toda la informaci\'on hist\'orica a trav\'es del sistema, lo que permite realizar estimaciones fiables de la habilidad inicial y garantizar la comparabilidad hist\'orica.
 %
 Si bien el modelo TTT fue publicado hace m\'as una d\'ecada, no se encontraba disponible hasta entonces en ning\'un lenguaje de programaci\'on.
 %
@@ -3470,7 +3458,7 @@ Para corregir los problemas de TrueSkill, es necesario realizar la inferencia de
 %
 De esta forma se garantiza tanto buenas estimaciones iniciales como la comparaci\'on de las estimaciones que est\'an separadas en el tiempo y el espacio.
 %
-La conectividad entre eventos surge de suponer de que la habilidad de un jugador en un tiempo $t$ depende de su propia habilidad en un tiempo anterior $t-1$, generando una red que adquiere su estructura dependiendo de quienes participan en cada evento.
+La conectividad entre eventos surge de suponer que la habilidad de un jugador en un tiempo $t$ depende de su propia habilidad en un tiempo anterior $t-1$, generando una red que adquiere su estructura dependiendo de quienes participan en cada evento.
 %
 Algoritmos similares fueron implementados por Coulom~\cite{Coulom2008} y Maystre et. al~\cite{Maystre2019} basados en aproximaciones laplacianas y procesos gaussianos respectivamente.
 %
@@ -3589,7 +3577,7 @@ Cuando no tenemos acceso a todos los modelos, no podremos calcular $P(\text{Mode
 %
 Esta expresi\'on se conoce como el \emph{Bayes factor}, el cual se suele expresar en escala logar\'itmica para reportar la diferencia en \'ordenes de magnitud.
 %
-En el caso especial en el que no tenemos preferencia a priori sobre ning\'un modelo,
+En el caso especial en el que no tenemos preferencia a priori sobre ning\'un modelo ($\overset{\text{\en{if}\es{si} } *}{=}$) la comparaci\'on de modelos depende de,
 %
 \begin{equation}
 P(\text{Dat\en{a}os}|\text{Model\es{o}}) = P(d_1|\text{Model\es{o}})P(d_2|d_1,\text{Model\es{o}}) \dots P(d_n|d_1,\dots, d_{n-1},\text{Model\es{o}})
@@ -3650,7 +3638,7 @@ Unificando las cuatro base de datos en una sola, el modelo TTT supera a KickScor
 
 Para computar las predicciones, Maystre et.~al utilizan un cluster para crear en paralelo un modelo diferente por cada d\'ia $t$, cada uno requiere cerca de $100$ iteraciones para alcanzar convergencia.
 %
-En cambio, en nuestro caso fue suficiente usar una computadora de escritorio para crear un \'unico modelo al que le agregamos las datos d\'ia a d\'ia, realizando una \'unica iteraci\'on en cada paso.
+En cambio, en nuestro caso fue suficiente usar una computadora de escritorio para crear un \'unico modelo al que le agregamos los datos d\'ia a d\'ia, realizando una \'unica iteraci\'on en cada paso.
 %
 La selecci\'on de modelo la hemos realizado optimizando los hiperpar\'ametros, pero una selecci\'on de modelo bayesiana completa deber\'ia computar las predicciones integrando todo el espacio de hiperpar\'ametros.
 %
@@ -3666,6 +3654,7 @@ Esto es \'util debido a que los modelos probabil\'isticos pueden usar informaci\
 La columna LOOCV de la tabla~\ref{Tab:Models} reporta la media geom\'etrica de las predicciones que usan toda la informaci\'on hist\'orica excepto el evento que se est\'a prediciendo, $p(d_i| d_1, \dots, d_{i-1}, d_{i+1}, \dots, d_n , M)$.
 %
 Si bien no usamos estas predicciones \emph{offline} para comparar modelos (Bayes Factor), es interesante notar que incorporar toda la informaci\'on hist\'orica al modelo TTT mejora sus propias estimaciones centenas de \'ordenes de magnitud.
+
 % Parrafo
 
 Debido a que la estimaci\'on de habilidad es un problema sensible para los individuos, en las siguientes secciones ofrecemos una explicaci\'on lo m\'as intuitiva y completa posible.
@@ -3676,6 +3665,7 @@ Adem\'as de desarrollar una herramienta de software, ofrecemos un reporte cient\
 
 
 \section{Software: implementaci\'on del modelo}
+
 
 
 En esta secci\'on ofrecemos la documentaci\'on matem\'atica completa del modelo TrueSkill Through Time.
@@ -3694,19 +3684,43 @@ En la secci\'on \ref{sec:iterative_posterior} explicamos la soluci\'on general m
 %
 En la secci\'on~\ref{sec:throughTime} justificamos los pasos matem\'aticos requeridos para resolver el modelo TrueSkill Through Time completo.
 
+%
+
+Debido a que la herramienta fue desarrollada con tres lenguajes de programaci\'on, identificaremos las diferentes sintaxis usando el siguiente formato:
+%
+\begin{lstlisting}[captionpos=b, backgroundcolor=\color{all}, belowskip=-0.77 \baselineskip,escapechar=|]
+Syntax common to Julia, Python and R
+\end{lstlisting}
+\begin{paracol}{3}
+\begin{lstlisting}[backgroundcolor=\color{julia!60}]
+Julia syntax
+\end{lstlisting}
+  \switchcolumn
+\begin{lstlisting}[backgroundcolor=\color{python!60}]
+Python syntax
+\end{lstlisting}
+   \switchcolumn
+\begin{lstlisting}[backgroundcolor=\color{r!50}]
+R syntax
+\end{lstlisting}
+\end{paracol}
+%
+donde la l\'inea completa la usamos cuando la sintaxis de los tres lenguajes coinciden, y las columnas las usamos cuando los lenguajes difieren: \texttt{Julia} a la izquierda, \texttt{Python} al centro, y \texttt{R} a la derecha.
+
 
 \subsection{Sum-product algorithm} \label{sec:sumProductAlgorithm}
 
-El \emph{sum-product algorithm}~\cite{Kschischang2001} aprovecha la estructura de la distribuci\'on de probabilidad conjunta, impuesta por el modelo causal, para aplicar eficientemente las reglas de la probabilidad.
-%
 Cualquier modelo puede factorizarse en el producto de probabilidades condicionales.
 %
-Haciendo uso de las independencias entre las variables, nuestro modelo (figura~\ref{fig:generative_model}) puede factorizarse como,
+El \emph{sum-product algorithm}~\cite{Kschischang2001} aprovecha la estructura de la distribuci\'on de probabilidad conjunta, impuesta por el modelo causal (figura~\ref{fig:generative_model}), para aplicar eficientemente las reglas de la probabilidad.
+%
+El problema de investigaci\'on relativo a una partida con dos jugadores contiene las hip\'otesis $\mathcal{H} = \{H_{S_1}, H_{S_2}, H_{P_1}, H_{P_2}, H_{D}, H_{R} \}$, donde $s_1 \in H_{S_1}$ y $s_2 \in H_{S_2}$ representan habilidades, $p_1 \in H_{P_1}$ y $p_2 \in H_{P_2}$ desempe\~nos, $d \in H_{D}$  diferencia de desempe\~nos y $r \in H_{R}$ el resultado.
+%
+Haciendo uso de esas las independencias entre hip\'otesis especificada en la figura~\ref{fig:generative_model}, la probabilidad conjunta puede factorizarse como,
 %
 \begin{equation} \label{eq:factorization}
  p(\bm{s},\bm{p},d,r) = p(s_1)p(s_2)p(p_1|s_1)p(p_2|s_2)p(d|\bm{p})P(r|d)
 \end{equation}
-\todo[inline]{Tenes que explicar la ecuaci\'on, que es cada termino y variable}
 %
 En la figura~\ref{fig:factor_graph} mostramos esta factorizaci\'on gr\'aficamente.
 %
@@ -3772,7 +3786,7 @@ m_{v \rightarrow f}(v) = \prod_{h \in n(v) \setminus \{f\} } m_{h \rightarrow v}
 %
 donde $n(v)$ representa el conjunto de vecinos del nodo $v$.
 %
-En pocas palabras, los mensajes que env\'ia una variable $v$ es simplemente la multiplicaci\'on de los mensajes que recibi\'o del resto de sus vecinos $h \in n(v)$ salvo $f$.
+Es decir, el mensaje que env\'ia una variable $v$ a un factor $f$ es simplemente la multiplicaci\'on de los mensajes que recibe del resto de sus vecinos $h \in n(v)$ salvo $f$.
 %
 Los mensajes que env\'ian los nodos funciones codifican una parte de la regla de la suma.
 %
@@ -3782,7 +3796,7 @@ m_{f \rightarrow v}(v) = \int \cdots \int \Big( f(\bm{h},v) \prod_{h \in n(f) \s
 %
 donde $\bm{h} = n(f)\setminus \{v\}$ es el conjunto de todos los vecinos de $f$ salvo $v$, y $f(\bm{h},v)$ representa la funci\'on $f$, evaluada en todos sus argumentos.
 %
-En pocas palabras, los mensajes que env\'ia una funci\'on $f$ tambi\'en es la multiplicaci\'on de los mensajes que recibi\'o del resto de sus vecinos $h \in n(f)$ salvo $v$, por s\'i misma $f(\cdot)$, integrando (o sumando) sobre $\bm{h}$.
+En pocas palabras, el mensaje que env\'ia una funci\'on $f$ a una variable $v$ tambi\'en es la multiplicaci\'on de los mensajes que recibe del resto de sus vecinos $h \in n(f)$ salvo $v$, incluyendo en el producto el factor mismo $f(\cdot)$, integrando (o sumando) sobre los vecinos $\bm{h}$.
 %
 Finalmente, la distribuci\'on de probabilidad marginal de una variable $v$ es simplemente la multiplicaci\'on de los mensajes que $v$ recibe de todos sus vecinos.
 %
@@ -4020,6 +4034,7 @@ m_{f_{p_i} \rightarrow p_i}(p_i) = \int \N(p_i| s_i, \beta^2) \N(s_i| \mu_i, \si
 %
 Tenemos acceso a estos mensajes mediante el m\'etodo \texttt{performance()} de la clase \texttt{Player}.
 %
+\todo[inline]{REACOMODAR EL C\'ODIGO}
 \begin{paracol}{3}
 \begin{lstlisting}[backgroundcolor=\color{julia!60},belowskip=0cm]
 p1 = performance(a1)
@@ -4434,7 +4449,7 @@ Se puede ver que el posterior que nosotros hemos computado es el mismo que devue
 
 \subsection{Varios equipos} \label{sec:iterative_posterior}
 
-La interfaz de los paquetes no exhibe ninguna diferencia entre partidas de dos equipos o de varios equipos, como se puede ver en los c\'odigos de ejemplo~\ref{lst:game} y \ref{lst:multiple_team_game}.
+La interfaz de los paquetes no distinguen entre partidas de dos equipos o de varios equipos, como se puede ver en los c\'odigos de ejemplo \ref{lst:game} y \ref{lst:multiple_team_game}.
 %
 Sin embargo, en presencia de m\'as de dos equipos nos vemos obligados a implementar un algoritmo iterativo debido a una dependencia mutua entre resultados.
 %
@@ -4811,27 +4826,7 @@ Este algoritmo requiere s\'olo unas pocas iteraciones lineales sobre los datos p
 En esta secci\'on mostramos c\'omo usar los paquetes de \texttt{Julia}, \texttt{Python} y \texttt{R} para resolver un evento, una secuencia de tres eventos, la evoluci\'on de habilidad de un jugador, y la historia de la Asociaci\'on de Tenis Profesional (ATP).
 %
 Presentamos las soluciones de los modelos TrueSkill y TrueSkill Through Time, y los pasos para obtener los posteriors, las curvas de aprendizaje, y la predicci\'on a priori del dato observado (i.e.~evidencia).
-%
-Debido a que la herramienta fue desarrollada con tres lenguajes de programaci\'on, identificaremos las diferentes sintaxis usando el siguiente formato:
-%
-\begin{lstlisting}[captionpos=b, backgroundcolor=\color{all}, belowskip=-0.77 \baselineskip,escapechar=|]
-Syntax common to Julia, Python and R
-\end{lstlisting}
-\begin{paracol}{3}
-\begin{lstlisting}[backgroundcolor=\color{julia!60}]
-Julia syntax
-\end{lstlisting}
-  \switchcolumn
-\begin{lstlisting}[backgroundcolor=\color{python!60}]
-Python syntax
-\end{lstlisting}
-   \switchcolumn
-\begin{lstlisting}[backgroundcolor=\color{r!50}]
-R syntax
-\end{lstlisting}
-\end{paracol}
-%
-donde la l\'inea completa la usamos cuando la sintaxis de los tres lenguajes coinciden, y las columnas las usamos cuando los lenguajes difieren: \texttt{Julia} a la izquierda, \texttt{Python} al centro, y \texttt{R} a la derecha.
+
 
 \todo[inline]{Fijate que esta convenci\'on la usaste antes sin aclarar} 
 
