@@ -297,7 +297,7 @@ Los estimadores de habilidad disponibles, considerados estado del arte al inicio
 %
 En el transcurso del doctorado descubrimos la especificaci\'on matem\'atica de un modelo conocido como TrueSkill Through Time (TTT) que resolv\'ia estos problemas realizando la inferencia en \'unica red bayesiana, propagando la informaci\'on hist\'orica correctamente.
 %
-Debido a que el modelo no se encontraba disponible en ning\'un lenguaje de programaci\'on en el segundo trabajo resolvimos la matem\'atica de este modelo, la documentamos, la implementamos y la publicamos en los lenguajes de programaci\'on Julia, Python y R.
+Debido a que el modelo no se encontraba disponible en ning\'un lenguaje de programaci\'on en el segundo trabajo resolvimos la matem\'atica de este modelo, la documentamos, la implementamos y la publicamos en los lenguajes de programaci\'on \texttt{Julia}, \texttt{Python} y \texttt{R}.
 %
 En un tercer trabajo, estudiamos la evoluci\'on de una red de partidas en el juego de Go durante un periodo de ocho a\~nos y encontramos, con el nuevo estimador, que la posici\'on de los individuos en la red tiene un efecto de segundo orden sobre el aprendizaje en los personas que est\'an en el medio del proceso de aprendizaje, ausente entre novatas y expertas.
 
@@ -315,7 +315,7 @@ En un tercer trabajo, estudiamos la evoluci\'on de una red de partidas en el jue
 \textbf{Abstract}
 \end{center}
 
-The human species has a unique capacity for social learning, which allows it to accumulate successive solutions over time that, producing the unimaginably complex system of cultural information.
+The human species has a unique capacity for social learning, accumulating successive solutions over time and producing an unimaginably complex cultural information system.
 %
 While human learning occurs in biological bodies, cultural learning is a population phenomenon that emerges in the prolonged interaction between individuals and between generations.
 %
@@ -325,23 +325,23 @@ Understanding the properties of cultural information systems is one of the funda
 
 Understanding the relationships that link the population level (such as the dynamics and structure of the cultural information exchange network) with the individual level (the effective learning that occurs within individuals' bodies) has been the central question driving this doctoral thesis.
 %
-To address it, we chose to investigate online gaming communities. In addition to providing the opportunity to study large populations without sacrificing a high degree of detail, these communities are a privileged setting for examining how strategies change over time.
+To address this, we chose to investigate online gaming communities. In addition to providing the opportunity to study large populations without sacrificing a high degree of detail, these communities are a privileged setting for examining how strategies change over time.
 %
 Some of the questions we aimed to answer during the course of the doctoral research were as follows:
 %
 What is the most effective way to measure an individual's learning over time?
 What is the relationship between team formation and long-term individual learning?
-What effect does an individual's topological position in the dynamic exchange network have on individual learning?
+What is the effect of an individual’s topological position in the dynamic exchange network on individual learning?
 What are some of the general properties of learning?
 
 % Parrafo
 
 
-During the doctoral studies in computer science, the Bayesian approach to probability addressed the deeper methodological and epistemological questions that emerged from my prior education in anthropological sciences, specifically, how to reach agreements concerning the proper assessment of alternative causal arguments.
+During my doctoral studies in computer science, the Bayesian approach to probability addressed the deeper methodological and epistemological questions that emerged from my prior education in anthropological sciences, specifically, how to reach agreements concerning the proper assessment of alternative causal arguments.
 %
 Probability rules have been known since the late 18th century and have since been adopted as a reasoning system in all empirical sciences.
 %
-Although, in practical terms, nothing better has been proposed over this period, the computational cost associated with evaluation of the entire hypothesis space has historically limited the strict application of probability rules (Bayesian approach).
+Although, in practical terms, nothing better has been proposed over this period, the computational cost associated with the evaluation of the entire hypothesis space has historically limited the strict application of probability rules (Bayesian approach).
 %
 The Bayesian approach was gradually integrated throughout the course of the thesis, eventually becoming a central player.
 
@@ -355,7 +355,7 @@ The skill estimators available, considered state-of-the-art at the beginning of 
 %
 During the course of the doctoral studies, we discovered the mathematical specification of a model known as TrueSkill Through Time (TTT), which addressed these issues by conducting inference in a single Bayesian network and accurately propagating historical information.
 %
-As this model was not available in any programming language in the second study, we tackled the mathematics of the model, documented it, implemented it, and published it in the Julia, Python, and R programming languages.
+As this model was not available in any programming language in the second study, we tackled the mathematics of the model, documented it, implemented it, and published it in the \texttt{Julia}, \texttt{Python}, and \texttt{R} programming languages.
 %
 In a third paper, we studied the evolution of a network of games in the game of Go over a period of eight years and found with the new estimator that the position of individuals in the network has a second-order effect on learning in individuals who are in the middle of the learning process, absent between novices and experts.
 %
@@ -5782,11 +5782,15 @@ El Go es un juego de mesa para dos jugadores creado en China hace aproximadament
 %
 Aunque las reglas son sencillas, el Go presenta una enorme complejidad en comparaci\'on con el ajedrez: fue en 1996 cuando el primer algoritmo de inteligencia artificial venci\'o a uno de los mejores jugadores de ajedrez~\cite{Campbell2002}, mientras que en el juego del Go este objetivo se consigui\'o 20 a\~nos despu\'es~\cite{Silver2016}.
 %
-Aprender a jugar al Go no solo implica adquirir una tradici\'on cultural milenaria, un conjunto de estrategias complejas acumuladas de generaci\'on en generaci\'on, sino tambi\'en adaptarse a las innovaciones que surgen cada d\'ia.
+Aprender a jugar al Go no solo implica adquirir una tradici\'on cultural milenaria y un conjunto de estrategias complejas acumuladas de generaci\'on en generaci\'on, sino tambi\'en adaptarse a las innovaciones que surgen cada d\'ia.
 
 % Parrafo
 
-Aunque nuestra base de datos cuenta con m\'as de 7 millones de jugadores y casi 15 millones de partidas entre noviembre de 2005 y julio de 2018, hemos decidido trabajar exclusivamente con los ocho primeros a\~nos (con \num{446000} jugadores y \num{818000} partidas) porque: 1. pudimos comprobar a trav\'es de la informaci\'on proporcionada por la plataforma OGS, que no hay bots en ese per\'iodo; 2. a finales de 2013 se produce una fusi\'on entre OGS y otro portal de Go que (Nova) que produce un cambio repentino en la estructura de la red.
+Aunque nuestra base de datos cuenta con m\'as de 7 millones de jugadores y casi 15 millones de partidas entre noviembre de 2005 y julio de 2018, hemos decidido trabajar exclusivamente con los ocho primeros a\~nos (con \num{446000} jugadores y \num{818000} partidas) por los siguientes motivos: 
+\begin{enumerate}
+\item Pudimos comprobar a trav\'es de la informaci\'on proporcionada por la plataforma OGS, que no hay \emph{bots} en ese per\'iodo. 
+\item A finales de 2013, se produce una fusi\'on entre OGS y Nova, otro portal de Go, que produce un cambio repentino en la estructura de la red.
+\end{enumerate}
 %
 El juego Go ya ha permitido estudiar c\'omo las variantes culturales particulares son impulsadas por una mezcla de procesos de aprendizaje individuales y sociales~\cite{Beheim2014}.
 
@@ -5794,15 +5798,15 @@ El juego Go ya ha permitido estudiar c\'omo las variantes culturales particulare
 
 Dado que los individuos aprenden principalmente cuando est\'an directamente implicados en tareas de resoluci\'on de problemas en los que se ven comprometidos personalmente~\cite{Ormrod2017}, nos enfocamos en la red de partidas, definida como un grafo en el que los nodos representan a los jugadores y los juegos jugados entre ellos son las aristas.
 %
-Para calcular la posici\'on topol\'ogica de los individuos en la red, nos basamos en una metodolog\'ia cl\'asica y robusta de ventanas deslizantes de an\'alisis din\'amico de grafos~\cite{Kossinets2006, Mcgregor2014}.
+Para calcular la posici\'on topol\'ogica de los individuos en la red, nos basamos en una metodolog\'ia cl\'asica y robusta de ventanas deslizantes de an\'alisis de grafos din\'amicos ~\cite{Kossinets2006, Mcgregor2014}.
 %
 Esta t\'ecnica divide la red en peque\~nas subredes compuestas \'unicamente por nodos y v\'ertices activos en un periodo determinado.
 %
-Luego, cada una de estas subredes se analiza utilizando varias m\'etricas de redes cl\'asicas.
+Luego, cada una de estas subredes se analizan utilizando m\'etodos altamente aceptados en grafos cl\'asicos, con lo que podemos estar seguros acerca de su robustez metodol\' ogica.
 
 % Parrafo
 
-Seg\'un los principales hallazgos de la bibliograf\'ia sobre aprendizaje social y acumulaci\'on cultural~\cite{Derex2020}, el aprendizaje humano depende de al menos cuatro variables fundamentales: el \emph{entorno}, el \emph{experiencia individual}, el \emph{estructura de red} que da acceso a la informaci\'on cultural, y la \emph{habilidad inicial}.
+Seg\'un los principales hallazgos de la bibliograf\'ia sobre aprendizaje social y acumulaci\'on cultural~\cite{Derex2020}, el aprendizaje humano depende de al menos cuatro variables fundamentales: el \emph{entorno}, la \emph{experiencia individual}, la \emph{estructura de red} que da acceso a la informaci\'on cultural, y la \emph{habilidad inicial}.
 %
 \begin{figure}[ht!]
 \centering \small
@@ -5837,7 +5841,7 @@ Seg\'un los principales hallazgos de la bibliograf\'ia sobre aprendizaje social 
 \end{figure}
 % Parrafo
 
-En la figure~\ref{fig:general_model} resumimos el modelo causal en t\'erminos gr\'aficos, donde las flechas representan relaciones causales entre las variables y los colores representan el rol que las variables cumplen en el an\'alisis estad\'istico: causa (rojo), efecto (rosa), control (gris), constante (negro), no observable (blanco).
+En la figura~\ref{fig:general_model} resumimos el modelo causal en t\'erminos gr\'aficos, donde las flechas representan relaciones causales entre las variables y los colores representan el rol que las variables cumplen en el an\'alisis estad\'istico: causa (rojo), efecto (rosa), control (gris), constante (negro), no observable (blanco).
 %
 Dado que queremos explorar el efecto que la estructura de la red tiene en el aprendizaje humano (camino rojo), la informaci\'on cultural debe tratarse como una variable oculta~\cite{pearl2009-causality}.
 %
@@ -5853,9 +5857,9 @@ Si bien las redes bayesianas han mostrado ser \'utiles para evaluar el aprendiza
 %
 Por ejemplo, todos los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no pueden obtener estimaciones iniciales fiables debido a que usan el \'ultimo posterior como prior del siguiente evento, propagando la informaci\'on en una sola direcci\'on por el sistema, del pasado al futuro.
 %
-En cambio, el modelo estado del arte de la industria del video juego, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
+En cambio, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
 %
-Como este modelo no estaba disponible en los lenguajes de programaci\'on m\'as populares, lo implementamos en Julia, Python y R~\cite{Landfried2021-TTT}.
+Como este modelo no estaba disponible en los lenguajes de programaci\'on m\'as populares, lo implementamos en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT}.
 
 % Parrafo
 
@@ -5879,7 +5883,7 @@ Esta secci\'on est\'a dividida en cuatro partes: describimos el conjunto de dato
 % https://forums.online-go.com/t/can-we-get-an-sgf-database-dump/38837/22
 % https://archive.org/details/ogs2021
 
-En este trabajo usamos m\'etodos no experimentales, realizando an\'alisis sobre datos de archivo, provistos por la plataforma de juego de Go en l\'inea OGS.
+En este cap\'itulo usamos m\'etodos no experimentales, realizando an\'alisis sobre datos de archivo, provistos por la plataforma de juego de Go en l\'inea OGS.
 %
 El conjunto de datos se ha hecho p\'ublico hace varios a\~nos, y se encuentra disponibles para realizar trabajos de investigaci\'on cient\'ifica.
 %
@@ -5905,7 +5909,7 @@ La decisi\'on se tom\'o por dos razones.
 %
 Por un lado, excluimos del an\'alisis el impacto que la fusi\'on entre las plataformas OGS y Nova tuvo sobre la base de datos, la que se produjo a fines del 2013.
 %
-Por otro lado, restringiendo el an\'alisis al per\'iodo previo a 2013 garantizamos que la base de datos estuviera libre de bots, algo que pudimos constatar a trav\'es de consultas que le hicimos a la API que prove\'e OGS para interactuar con la base de datos.
+Por otro lado, restringiendo el an\'alisis al per\'iodo previo a 2013 garantizamos que la base de datos estuviera libre de \emph{bots}, algo que pudimos constatar a trav\'es de consultas que le hicimos a la API que prove\'e OGS para interactuar con la base de datos.
 %
 Finalmente, si bien analizamos la base de datos completas, decidimos enfocar el estudio sobre los individuos que jugaron al menos $150$ partidas, para estudiar curvas de aprendizaje suficientemente largas.
 %
@@ -5916,7 +5920,7 @@ Debido a que la cantidad de partidas jugadas por persona sigue una distribuci\'o
 
 Los estimadores de habilidad habitualmente utilizados en la industria del video juego y la academia (e.g.~Elo, Glicko, Item Response Theory y TrueSkill) no permiten obtener estimaciones iniciales fiables debido a que usan el \'ultimo posterior como prior del siguiente evento, propagando la informaci\'on en una sola direcci\'on por el sistema, del pasado al futuro.
 %
-En cambio, el modelo de estimaci\'on de habilidad estado del arte, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
+En cambio, TrueSkill Through Time~\cite{Landfried2021-TTT, Dangauthier2007}, propaga la informaci\'on hist\'orica a trav\'es de toda la red, proporcionando estimaciones con baja incertidumbre en cualquier momento, ofreciendo estimaciones iniciales de habilidad fiables y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
 
 % Parrafo
 
@@ -6051,7 +6055,7 @@ Decidimos utilizar una ventana de tama\~no medio debido a que nos permite evitar
 
 \subsection{La posici\'on de los individuos en la red}
 
-Para describir la posici\'on de los individuos analizamos 6 medidas de centralidad, que pueden ser clasificadas en 3 grupos.
+Para describir la posici\'on de los individuos analizamos 6 medidas de centralidad, que pueden ser clasificadas en tres grupos.
 %
 \begin{enumerate}[i)]
 \item Las medidas de popularidad, como \emph{degree} y \emph{eigenvector}, est\'an basadas en la cantidad de ejes que tiene los nodos (y sus vecinos): las personas que conocen a todo el mundo (y sus conocidos tambi\'en) tiene valores altos de popularidad.
@@ -6061,7 +6065,7 @@ Para describir la posici\'on de los individuos analizamos 6 medidas de centralid
 \item Y medidas de intermediaci\'on, como \emph{betweenness} o \emph{communicability}, est\'an basadas en la influencia que un nodo tiene para los flujos de informaci\'on: las personas que conectan varias comunidades separadas tienen valores altos de intermediaci\'on.
 \end{enumerate}
 %
-Las definiciones est\'an basadas en las implementaciones del paquete \texttt{networkx} de Python que usamos durante el estudio~\cite{hagberg2020-networkx}.
+Las definiciones est\'an basadas en las implementaciones del paquete \texttt{Networkx} de \texttt{Python} que usamos durante el estudio~\cite{hagberg2020-networkx}.
 
 
 \subsubsection{Indicadores de popularidad o prestigio}
@@ -6170,21 +6174,21 @@ Conocer la habilidad inicial es importante debido a que en todos los modelos cau
 %
 Sin embargo, los modelos de habilidad m\'as utilizados en la industria del video juego y la academia no son capaces de ofrecer buenas estimaciones iniciales fiables.
 %
-Por el contrario, el estimador de habilidad estado del arte, TrueSkill Through Time, ofrece estimaciones con baja incertidumbre a lo largo de toda la curva de aprendizaje, proporcionando estimaciones precisas de la habilidad inicial y garantizando la comparabilidad de las estimaciones distantes en el tiempo y el espacio.
+Por el contrario, TrueSkill Through Time ofrece estimaciones con baja incertidumbre a lo largo de toda la curva de aprendizaje, proporcionando estimaciones precisas de la habilidad inicial y garantizando la comparaci\'on de las estimaciones distantes en tiempo y espacio.
 %
 Si bien la especificaci\'on de este modelo hab\'ia sido publicadas m\'as de una d\'ecada atr\'as~\cite{Dangauthier2007}, no exist\'ia ninguna versi\'on de c\'odigo abierto disponible hasta el lanzamiento de nuestros paquetes en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT}.
 %
-Sin nuestra implementaci\'on no hubiera sido posible distinguir el estad\'io inicial en el que se encuentran los individuos antes de comenzar el proceso de aprendizaje, y por lo tanto hubiera sido imposible evaluar el efecto causal que la posici\'on en la red tiene sobre el aprendizaje.
+Sin nuestra implementaci\'on, no hubiera sido posible distinguir el estad\'io inicial en el que se encuentran los individuos antes de comenzar el proceso de aprendizaje y, por lo tanto, hubiera sido imposible evaluar el efecto causal que la posici\'on en la red tiene sobre el aprendizaje.
 
 % Parrafo
 
-En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribuci\'on de habilidades iniciales de los jugadores con al menos 150 partidas jugadas.
+En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribuci\'on de habilidades iniciales de los jugadores con al menos $150$ partidas jugadas.
 %
 Antes de explorar los posibles efectos causales, discriminamos a la poblaci\'on en grupos seg\'un el nivel de su habilidad inicial: ``novatos'', ``intermedios'' y ``expertos''.
 %
 % Parrafo
 
-En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribuci\'on de habilidades iniciales de los jugadores con al menos 150 partidas jugadas.
+En la figura~\ref{Figuras.HistogramaTTTInicial} mostramos la distribuci\'on de habilidades iniciales de los jugadores con al menos $150$ partidas jugadas.
 %
 Antes de explorar los posibles efectos causales, discriminamos a la poblaci\'on en grupos seg\'un el nivel de su habilidad inicial: ``novatos'', ``intermedios'' y ``expertos''.
 %
@@ -6192,7 +6196,7 @@ Antes de explorar los posibles efectos causales, discriminamos a la poblaci\'on 
  	\centering
 	\includegraphics[width=0.5\linewidth]{static/hist-ttt-inicial-min-150-partidas}
 	\caption{
-	Distribuci\'on de habilidad inicial para individuos con al menos 150 partidas jugadas. En color se\~nalamos los estad\'ios iniciales de las curvas de aprendizaje individuales que analizamos en este trabajo: novatos, intermedio y experto.
+	Distribuci\'on de habilidad inicial para individuos con al menos $150$ partidas jugadas. En color se\~nalamos los estad\'ios iniciales de las curvas de aprendizaje individuales que analizamos en este trabajo: novatos, intermedio y experto.
 	}
 	\label{Figuras.HistogramaTTTInicial}
  \end{figure}
@@ -6215,9 +6219,9 @@ Por ello, es esperable que el efecto de la posici\'on en la red sea diferente en
 
 \subsection{La posici\'on topol\'ogica de los individuos en la red} \label{sec:results_centralities}
 
-Para describir la posici\'on topol\'ogica de los individuos en cada una de las ventanas deslizantes computamos seis medidas de centralidad individual, que clasificamos en 3 grupos: popularidad, cercan\'ia e intermediaci\'on (descritos en la secci\'on metodolog\'ia).
+Para describir la posici\'on topol\'ogica de los individuos en cada una de las ventanas deslizantes computamos seis medidas de centralidad individual, que clasificamos en tres grupos: popularidad, cercan\'ia e intermediaci\'on (descritos en la secci\'on metodolog\'ia).
 % s
-En la figura~\ref{Figuras.HistogramasCentralidades} mostramos la distribuci\'on de medianas de eigenvalue, harmonic y load, una medida de centralidad por cada tipo de indiciador (popularidad, cercan\'ia e intermediaci\'on).
+En la figura~\ref{Figuras.HistogramasCentralidades} mostramos la distribuci\'on de medianas de \emph{eigenvalue}, \emph{harmonic} y \emph{load}, una medida de centralidad por cada tipo de indiciador (popularidad, cercan\'ia e intermediaci\'on).
 %
 \begin{figure}[ht!]
  	\centering
@@ -6237,12 +6241,12 @@ En la figura~\ref{Figuras.HistogramasCentralidades} mostramos la distribuci\'on 
 	\label{fig:load-centrality-150-partidas-hist}
 	\end{subfigure}
 	\caption{
-	Distribuci\'on de medianas de las centralidades eigenvalue, harmonic y load, teniendo en cuenta \'unicamente las primeras 50 partidas jugadas de usuarios con al menos 150 partidas jugadas totales. Las l\'ineas punteadas muestran los percentiles 2, 40, 60 y 98.
+	Distribuci\'on de medianas de las centralidades \emph{eigenvalue}, \emph{harmonic} y \emph{load}, teniendo en cuenta \'unicamente las primeras $50$ partidas jugadas de usuarios con al menos $150$ partidas jugadas totales. Las l\'ineas punteadas muestran los percentiles 2, 40, 60 y 98.
 	}
 	\label{Figuras.HistogramasCentralidades}
  \end{figure}
 %
-Las figuras \ref{fig:eigenvector-centrality-150-partidas-hist} y \ref{fig:load-centrality-150-partidas-hist} tienen el eje x en escala logar\'itmica.
+Las figuras \ref{fig:eigenvector-centrality-150-partidas-hist} y \ref{fig:load-centrality-150-partidas-hist} tienen el eje $x$ en escala logar\'itmica.
 %
 Aqu\'i mostramos el valor mediano de centralidad en las primeras $50$ partidas de los jugadores activos que alcanzaron al menos $150$ partidos de experiencia.
 %
@@ -6325,9 +6329,9 @@ Las curvas de aprendizaje azule y naranja representa la habilidad en poblaciones
 	\label{fig:curvas_de_aprendizaje}
 \end{figure}
 %
-Al interior de cada figura, el eje x permite comparar las curvas de aprendizaje para mismos valores de experiencia.
+Al interior de cada figura, el eje $x$ permite comparar las curvas de aprendizaje para mismos valores de experiencia.
 %
-En el eje y, las curvas de aprendizaje est\'an medidas usando el modelo de habilidad estado del arte de la industria del video juego, bajo una escala en la que un punto diferencia de habilidad equivalga a 76\% de probabilidad de ganar.
+En el eje $y$, las curvas de aprendizaje est\'an medidas usando el modelo de habilidad estado del arte de la industria del video juego, bajo una escala en la que un punto diferencia de habilidad equivalga a \SI{76}{\percent} de probabilidad de ganar.
 %
 La leyenda indica el tama\~no de la poblaci\'on en cada una de las curvas de aprendizaje.
 %
@@ -6337,8 +6341,7 @@ El \'area sombrada representa dos desv\'ios est\'andar de la curva de aprendizaj
 
 Curiosamente, el efecto de la centralidad sobre las curvas de aprendizaje solo se observa en la poblaci\'on con habilidad inicial intermedia.
 %
-El impacto en las curvas de aprendizaje no es significativo solo en t\'erminos estad\'isticos, es adem\'as relevante en t\'erminos cualitativos en tanto la diferencia de habilidad entre tig
-las poblaciones con baja y alta centralidad alcanza al final de la serie una distancia de 1 punto, lo que equivale a 76\% de probabilidad de ganar.
+El impacto en las curvas de aprendizaje no es significativo solo en t\'erminos estad\'isticos, es adem\'as relevante en t\'erminos cualitativos en tanto la diferencia de habilidad entre las poblaciones con baja y alta centralidad alcanza al final de la serie una distancia de 1 punto, lo que equivale a \SI{76}{\percent} de probabilidad de ganar.
 %
 No es sorprendente que este efecto no se observe en la poblaci\'on experta pues, como ellas no tienen nada m\'as que aprender, sus curvas de aprendizaje se mantienen planas.
 %
@@ -6349,7 +6352,7 @@ Lo que puede parecer sorprendente es que las curvas de aprendizaje de la poblaci
 \section{Discusiones}
 
 
-En este trabajo, exploramos el efecto que la posici\'on topol\'ogica de los individuos en una red de intercambios culturales tiene sobre el aprendizaje individual.
+En este cap\'itulo, exploramos el efecto que la posici\'on topol\'ogica de los individuos en una red de intercambios culturales tiene sobre el aprendizaje individual.
 %
 Estudiando la red de partidas de una de las comunidades virtuales m\'as importantes de Go durante sus primeros 8 a\~nos de vida (2005-2013), pudimos detectar la existencia de un efecto de segundo orden de la posici\'on de los individuos en la red sobre el aprendizaje, que solo se activa cuando los jugadores tienen una habilidad inicial intermedia.
 %
@@ -6483,7 +6486,7 @@ Sin embargo, en ciencias emp\'iricas las hip\'otesis de investigaci\'on no se ev
 
 % Parrafo
 
-El matem\'atico y epistem\'ologo de esta casa de estudios, Gregorio Klimovsky, llam\'o \emph{base emp\'irica} al conjunto de supuestos que son aceptados como verdad indubitable (al menos moment\'aneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
+El matem\'atico y epistem\'ologo Gregorio Klimovsky llam\'o \emph{base emp\'irica} al conjunto de supuestos que son aceptados como verdad indubitable (al menos moment\'aneamente) al interior de una cierta comunidad~\cite{klimovsky1994-desventuras}.
 %
 La base emp\'irica no es m\'as que el sistema de restricciones iniciales que no se pone en duda (evidencia formal o modelo) y lo que hasta ahora llamamos ``observaciones'' (evidencia emp\'irica o datos).
 %
@@ -6499,13 +6502,13 @@ En la terminolog\'ia de la Teor\'ia de la Probabilidad, la conclusi\'on de una i
 %
 Por definici\'on, la base emp\'irica contiene todas las hip\'otesis elementales (restricciones formales o datos) que se consideran ciertas al interior de una comunidad.
 %
-A pesar de que existan ciertos c\'irculos filos\'oficos que pretendan poner en duda las percepciones y supuestos m\'as b\'asicos, reduciendo la base emp\'irica a un conjunto vac\'io (que Klimovsky~\cite{klimovsky1994-desventuras} denomina \emph{base emp\'irica filos\'ofica}), en la vida cotidiana el ``sentido com\'un'' es suficientes para alcanzar acuerdos sobre las entidades m\'as b\'asica, como el precio al que ayer nos vendieron los tomates, o el resultado de la final del mundial de f\'utbol del a\~no 2022.
+A pesar de que existan ciertos c\'irculos filos\'oficos que pretendan poner en duda las percepciones y supuestos m\'as b\'asicos, reduciendo la base emp\'irica a un conjunto vac\'io (que Klimovsky~\cite{klimovsky1994-desventuras} denomina \emph{base emp\'irica filos\'ofica}), en la vida cotidiana el ``sentido com\'un'' es suficientes para alcanzar acuerdos sobre las entidades m\'as b\'asicas, como el precio al que ayer nos vendieron los tomates, o el resultado de la final del mundial de f\'utbol del a\~no 2022.
 %
 El conjunto de hip\'otesis elementales que cualquier persona dar\'ia por ciertos en su vida cotidiana constituyen una base emp\'irica significativamente m\'as amplia.
 %
 A este conjunto Klimovsky lo denomina \emph{base emp\'irica epistemol\'ogica} debido a que constituye la base de control de toda la actividad cient\'ifica.
 %
-Sin embargo, a medida que la ciencia y la t\'ecnica avanza, el resultado derivado de complejos instrumentos de medici\'on, como la temperatura atmosf\'erica o la inflaci\'on, dejan en cierto momento de ponerse en duda al interior de cierta comunidad y pasan a ser utilizados como ``datos'' indubitable sobre los cuales se eval\'uan nuevas hip\'otesis de investigaci\'on (como el cambio clim\'atico o el desempe\~no de pol\'itica econ\'omica alternativas).
+Sin embargo, a medida que la ciencia y la t\'ecnica avanza, el resultado derivado de complejos instrumentos de medici\'on, como la temperatura atmosf\'erica o la inflaci\'on, dejan en cierto momento de ponerse en duda al interior de cierta comunidad y pasan a ser utilizados como ``datos'' indubitables sobre los cuales se eval\'uan nuevas hip\'otesis de investigaci\'on (como el cambio clim\'atico o el desempe\~no de pol\'itica econ\'omica alternativas).
 %
 Este conjunto de ``datos'' que no son indubitables mediante el mero ``sentido com\'un'', como la temperatura atmosf\'erica o la inflaci\'on, sino que dependen de la aceptaci\'on previa de complejos instrumentos de medici\'on o teor\'ias cient\'ificas, Klimovsky lo denomina \emph{base emp\'irica metodol\'ogica}~\cite{klimovsky1994-desventuras}.
 
@@ -6694,7 +6697,7 @@ By a communication system we will mean a system of the type indicated schematica
 \node[const, right=of perceptor, yshift=-0.35cm, xshift=0.05cm] (senal_recibida) {$\hfrac{\text{Se\~nal}}{\text{recibida}}$};
 
 \node[det, below=of perceptor, yshift=0.2cm] (ruido) {};
-\node[const, below=of ruido] (n_ruido) {\scriptsize Rudio};
+\node[const, below=of ruido] (n_ruido) {\scriptsize Ruido};
 
 \node[det, right=of perceptor, xshift=0.7cm] (receptor) {};
 \node[const, above=of receptor] (n_receptor) {\scriptsize Receptor};
@@ -6743,7 +6746,7 @@ El mensaje enviado por la fuente, la se\~nal enviada por el transmisor, y la se\
 %
 En cambio, el receptor es el que realiza inferencia: ``performs the inverse operation of that done by the transmitter, reconstructing the message from the signal'', enviando como mensaje la distribuci\'on de probabilidad a posteriori de la hip\'otesis de investigaci\'on oculta.
 %
-La pregunta que queremos hacer aqu\'i es: ?`es posible evaluar los sistemas de comunicaci\'on alternativos?.
+La pregunta que queremos hacer aqu\'i es: ?`es posible evaluar los sistemas de comunicaci\'on alternativos?
 
 
 \subsection{Tasa de informaci\'on de los sistemas de comunicaci\'on} \label{sec:tasa_de_informacion}
@@ -6868,7 +6871,7 @@ En la figura~\ref{fig_hui_walter_evaluacion} se presenta el verdadero valor (pun
 \label{fig_hui_walter}
 \end{figure}
 %
-Cuando existen dependencias entre tests, sin embargo, el modelo Hui-Walter puede sobreestimar u subestimar sus desempe\~nos.
+Cuando existen dependencias entre tests, sin embargo, el modelo Hui-Walter puede sobrestimar o subestimar sus desempe\~nos.
 %
 Existen sin embargo otros modelos m\'as complejos que pueden estimar correctamente el desempe\~no de los tests cuando existen covarianzas entre ellos.
 %
@@ -7970,7 +7973,7 @@ Incorporo al Anexo~\ref{sec:TrueSynergy} algunos an\'alisis realizados en esta e
 %
 En esta etapa comenc\'e a interiorizarme con la matem\'atica detr\'as del modelo TrueSkill.
 %
-Dise\~n\'e un modelo alternativo, en el cual los desempe\~nos de los equipos se modela como una suma lineal de las habilidades de los individuos $s_i$ y las sinergias o habilidades entre pares de individuos $s_{ij}$, que llamamos TrueSynergy.
+Dise\~n\'e un modelo alternativo, en el cual los desempe\~nos de los equipos se modelan como una suma lineal de las habilidades de los individuos $s_i$ y las sinergias o habilidades entre pares de individuos $s_{ij}$, que llamamos TrueSynergy.
 %
 Es decir, en el modelo propuesto la sinergia se incorpora de la misma forma que las habilidades de los individuos, por lo que la matem\'atica necesaria para realizar la inferencia no cambia.
 %
@@ -7998,15 +8001,15 @@ Al haber producido un modelo alternativo, apareci\'o por primera vez la pregunta
 %
 Este punto fue una bisagra para mi doctorado.
 %
-En el \'area inteligencia artificial hay muchas m\'etricas ad hoc para evaluar el desempe\~no de los modelos (accuracy, precision, Fscore, \'area ROC, etc).
+En el \'area inteligencia artificial hay muchas magnitudes ad hoc para evaluar el desempe\~no de los modelos (\emph{accuracy}, \emph{precision}, \emph{Fscore}, \'area ROC, etc).
 %
-En ese momento, mi co-director me propuso algunas m\'etrica ad hoc que no me convenc\'ian.
+En ese momento, mi co-director me propuso algunas adicionales que no me convenc\'ian.
 %
 Esto me impuls\'o a estudiar cu\'al era la forma correcta de hacerlo.
 %
 All\'i aprend\'i que la evaluaci\'on correcta de modelos requiere la aplicaci\'on estrictamente las reglas de la probabilidad de modo tal de computar el posterior de los modelos $M$ dado los datos $D$, $P(M|D)$.
 %
-Cuando le dije a mi codirector ``Encontr\'e la forma correcta de evaluar modelos'', me respondi\'o ``No hay una forma correcta de evaluar modelos''.
+Cuando le dije a mi codirector \emph{``Encontr\'e la forma correcta de evaluar modelos''}, me respondi\'o \emph{``No hay una forma correcta de evaluar modelos''}.
 %
 La misma frase que hab\'ia escuchado en antropolog\'ia tantos a\~nos, respecto de la imposibilidad de alcanzar acuerdos intersubjetivos, se me hab\'ia presentado nuevamente, esta vez en el seno del \'area de inteligencia artificial.
 
@@ -8030,13 +8033,13 @@ Si bien sabemos que algunos jugadores de tenis tienen habilidades muy diferentes
 %
 Si bien la predicci\'on conjunta de los modelos complejos fue menor tanto en Conquer Club (para estimar sinergia) como en ATP (para estimar habilidad por piso), las estimaciones ofrecen informaci\'on interesante para analizar.
 %
-Una estrategia interesante hubiera sido descomponer la predicci\'on y evaluar para qu\'e individuos la complejidad a\~nadia s\'i era necesaria.
+Una estrategia interesante hubiera sido descomponer la predicci\'on y evaluar para qu\'e individuos la complejidad a\~nadida s\'i era necesaria.
 
 % Parrafo
 
 En ATP, por ejemplo, pudimos ver que la complejidad a\~nadida aumentaba la capacidad predictiva para ciertos jugadores, como el caso de Nadal, quien tiene habilidades que var\'ian significativamente entre pisos.
 %
-Un an\'alisis similar se podr\'ia haber realizado con lo datos de Conquer Club permitir\'ia distinguir los compa\~neros de equipo para los cuales la sinergia adquirida es significativa.
+Un an\'alisis similar se podr\'ia haber realizado con lo datos de Conquer Club que permitir\'ia distinguir los compa\~neros de equipo para los cuales la sinergia adquirida es significativa.
 %
 En cualquier caso, nuestro modelo, al igual que TrueSkill tiene una dificultad para distinguir de d\'onde proviene el desempe\~no cuando dos personas siempre juegan juntas, por lo que el an\'alisis hubiera quedado limitado a pares de jugadores no estables, y la hip\'otesis inicial no hubiera podido responderse.
 
@@ -8074,7 +8077,7 @@ Debido a que la matem\'atica detr\'as del algoritmo no estaba disponible de form
 %
 Leyendo y releyendo el paper original y las patentes apareci\'o una cita al algoritmo \emph{sum-product}~\cite{Kschischang2001}.
 %
-Hemos visto que este algoritmo permite computar las marginales de una distribuci\'on de probabilidad conjunta trav\'es de pasaje de mensajes entre los nodos de la red bayesiana expresada como un factor graph (secci\'on~\ref{sec:sumProductAlgorithm}).
+Hemos visto que este algoritmo permite computar las marginales de una distribuci\'on de probabilidad conjunta trav\'es de pasaje de mensajes entre los nodos de la red bayesiana expresada como un \emph{factor graph} (secci\'on~\ref{sec:sumProductAlgorithm}).
 % Parrafo
 %
 % Los mensajes son en definitiva una descomposici\'on de la aplicaci\'on de las reglas de la suma y del producto de la teor\'ia de la probabilidad, lo que permite resolver el problema en partes, de forma distribuida y paralela.
@@ -8101,41 +8104,39 @@ Pero quiz\'as m\'as importante, de esta forma hab\'ia logrado comprender absolut
 
 Luego de comprender todos los detalles del modelo TrueSkill, encuentro la existencia de una extensi\'on conocida como TrueSkill Through Time que no estaba implementada hasta el momento como paquete de ning\'un lenguaje de programaci\'on.
 %
-De hecho, exist\'ia un issue abierto en el paquete de TrueSkill de Python en el cu\'al se solicitaba su implementaci\'on\footnote{\url{https://github.com/sublee/trueskill/issues/14}}.
+De hecho, exist\'ia un \emph{issue} abierto en el paquete de TrueSkill de \texttt{Python} en el cu\'al se solicitaba su implementaci\'on\footnote{\url{https://github.com/sublee/trueskill/issues/14}}.
 %
-Su desarrollador Heungsub Lee respondi\'o que no implementar\'ia la extrensi\'on, pero dejaba abierta la posibilidad para que otra persona lo hiciera.
+Su desarrollador Heungsub Lee respondi\'o que no implementar\'ia la extensi\'on, pero dejaba abierta la posibilidad para que otra persona lo hiciera.
 %
-Uno de los colaboradores activos del paquete respondi\'o ``Having just read the paper I admit I don't see TTT is not something that can be implemented meaningfully without some significant qualification and work.''
+Uno de los colaboradores activos del paquete respondi\'o \emph{``Having just read the paper I admit I don't see TTT is not something that can be implemented meaningfully without some significant qualification and work.''}
 
 % Parrafo
 
 Efectivamente, ya hab\'ia pasado una d\'ecada de su publicaci\'on~\cite{Dangauthier2007} y este algoritmo segu\'ia sin estar disponible en ning\'un lenguaje de programaci\'on a pesar de que mejoraba significativamente las estimaciones de todos los modelos disponibles hasta el momento.
 %
-Aprender todos los detalles del modelo TrueSkill fue un camino largo.
+Aprender todos los detalles del modelo TrueSkill fue un camino largo y arduo.
 %
 Sin embargo, cuando le\'i la especificaci\'on del modelo TrueSkill Through Time~\cite{Dangauthier2007} inmediatamente entend\'i c\'omo resolverlo.
 %
-%Al contrario de la dificultad aparente, gracias a que ya hab\'ia comprendido los detalles de TrueSkill, estuve en condiciones de implementar TrueSkill Through Time en apenas una semana.
+Debido a que no estaba implementado en ning\'un lenguaje, repliqu\'e la implementaci\'on en \texttt{Python}, \texttt{Julia} y \texttt{R}.
 %
-Debido a que no estaba implementado en ning\'un lenguaje, repliqu\'e la implementaci\'on en Python, Julia y R.
-%
-Y aprovech\'e esta ocaci\'on para documentar no solo toda la matem\'atica detr\'as de TrueSkill, sino tambi\'en la de TrueSkill Through Time.
+Y aprovech\'e esta ocasi\'on para documentar no solo toda la matem\'atica detr\'as de TrueSkill, sino tambi\'en la de TrueSkill Through Time.
 
 % Parrafo
 
-Este trabajo ha sido aceptado para su publicaci\'on en el Journal of Statistical Software.
+Este trabajo ha sido aceptado para su publicaci\'on en el \emph{Journal of Statistical Software}.
 
 \section{Efecto en el aprendizaje individual de la posici\'on en el red cultural}
 
-El aprendizaje humano dependa en gran medida del contexto, las interacciones sociales y la transmisi\'on de informaci\'on cultural entre individuos, por lo que est\'a ampliamente aceptado que la estructura de las ``redes culturales'' afecta los procesos de aprendizaje individual y colectivo.
+El aprendizaje humano depende, en gran medida, del contexto, las interacciones sociales y la transmisi\'on de informaci\'on cultural entre individuos, por lo que est\'a ampliamente aceptado que la estructura de las ``redes culturales'' afecta los procesos de aprendizaje individual y colectivo.
 %
-Estudios recientes sin embargo han cuestionado la hip\'otesis de que todo lo que maximice el flujo de informaci\'on cultural deber\'ia repercutir positivamente en el aprendizaje.
+Estudios recientes, sin embargo, han cuestionado la hip\'otesis de que todo lo que maximice el flujo de informaci\'on cultural deber\'ia repercutir positivamente en el aprendizaje.
 %
-Para explorar este problema decidimos estudiar la relaci\'on entre el aprendizaje de los individuos en el tiempo y la estructura de interacciones en una importante comunidad virtual de Go a lo largo de 8 a\~nos.
+Para explorar este problema decidimos estudiar la relaci\'on entre el aprendizaje de los individuos en el tiempo y la estructura de interacciones en una importante comunidad virtual de Go a lo largo de ocho a\~nos.
 
 % Parrafo
 
-Para el desarrollo de la base de datos, dise\~namos un script (escrito en \texttt{Python}) para extraer la informaci\'on de cada de las partidas del sitio OGS.
+Para el desarrollo de la base de datos, dise\~namos un \emph{script} (escrito en \texttt{Python}) para extraer la informaci\'on de cada de las partidas del sitio OGS.
 %
 Dado el enfoque de este trabajo y la naturaleza de los datos, decidimos usar una base de datos no relacional basada en grafos: \texttt{Neo4j}.
 % %
@@ -8143,13 +8144,13 @@ Dado el enfoque de este trabajo y la naturaleza de los datos, decidimos usar una
 % %
 % Tomamos la decisi\'on de modelar las partidas como nodos (en lugar de tener un multigrafo \'unicamente con nodos de tipo jugador) porque as\'i ser\'ia m\'as f\'acil y r\'apido poder almacenar y hacer consultas sobre la informaci\'on de las partidas.
 % %
-Sin embargo, ciertas consultas son extremadamente costosas (por ejemplo, calcular centralidades), y pueden ser prohibitivas en (como encontrar caminos m\'inimos).
+Sin embargo, ciertas consultas son extremadamente costosas (por ejemplo, calcular centralidades), y pueden ser prohibitivas en como encontrar caminos m\'inimos.
 %
 Por esta raz\'on, decidimos exportar los datos de la base de datos a un formato que pudiera ser interpretado por alguna biblioteca en \texttt{Python}, como \texttt{NetworkX} que ofrece m\'etodos que resultaron m\'as eficientes para calcular algoritmos complejos, como centralidades, \emph{clustering}, caminos m\'inimos, etc.
 
 % Parrafo
 
-En este trabajo exploramos el v\'inculo entre la red de partidas y la evoluci\'on de las habilidades de todos los individuos a lo largo de 8 a\~nos, con \num{446000} jugadores y \num{818000} partidas, per\'iodo libre de bots.
+En este trabajo exploramos el v\'inculo entre la red de partidas y la evoluci\'on de las habilidades de todos los individuos a lo largo de 8 a\~nos, con \num{446000} jugadores y \num{818000} partidas, per\'iodo libre de \emph{bots}.
 %
 Dado que para evaluar la tasa de aprendizaje de los individuos debemos conocer el valor inicial de habilidad, este trabajo solo pudo ser llevado a cabo gracias a nuestra implementaci\'on del modelo TrueSkill Through Time.
 %
@@ -8161,7 +8162,7 @@ Esto nos permiti\'o clasificar a los usuarios en tres categor\'ias, novatos, int
 
 Para analizar la posici\'on topol\'ogica que ocupan los individuos en la red de partidas a lo largo del tiempo utilizamos una t\'ecnicas de grafos din\'amicos que divide la red en peque\~nas subredes, compuestas \'unicamente por nodos y v\'ertices activos en un periodo determinado, y analiza mediante m\'etricas cl\'asicas de grafos.
 %
-Para describir la posici\'on de los individuos analizamos 6 medidas de centralidad, que pueden ser clasificadas en 3 grupos: medidas de popularidad, como \emph{degree} y \emph{eigenvector}; medidas de cercan\'ia, como \emph{closeness} y \emph{harmonic}; medidas de intermediaci\'on, como \emph{betweenness} o \emph{communicability}.
+Para describir la posici\'on de los individuos analizamos seis medidas de centralidad, que pueden ser clasificadas en tres grupos: medidas de popularidad, como \emph{degree} y \emph{eigenvector}; medidas de cercan\'ia, como \emph{closeness} y \emph{harmonic}; medidas de intermediaci\'on, como \emph{betweenness} o \emph{communicability}.
 
 % Parrafo
 
