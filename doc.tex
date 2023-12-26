@@ -1226,7 +1226,7 @@ Se incorporan, entonces, las hip\'otesis elementales $c_i$ que corresponde con \
 %
 Luego, nuestro problema de investigaci\'on (o experimento) $\mathcal{H}$ consiste de tres hip\'otesis, $\mathcal{H} = \{H_R, H_C, H_S\}$, cada una con tres hip\'otesis elementales, $H_R=\{r_1, r_2, r_3\}$, $H_C=\{c_1, c_2, c_3\}$ y $H_S=\{s_1, s_2, s_3\}$.
 %
-En la descripci\'on del juego se explicita la siguiente restricci\'on: si el regalo se encuentra en el caja $i$, no puede ocurrir que se muestre el interior de la caja $i$.
+En la descripci\'on del juego se explicita la siguiente restricci\'on: si el regalo se encuentra en la caja $i$, no puede ocurrir que se muestre el interior de la caja $i$.
 %
 Debido a que no tenemos ninguna otra restricci\'on adicional, si el regalo se encontrara en la caja 1, es decir que es cierta $r_1$, no hay preferencia por ninguna de las hip\'otesis elementales $s_2$ o $s_3$ (de forma equivalente se puede hacer el razonamiento para los casos en los que fueran ciertas $r_2$ o $r_3$).
 
@@ -1247,18 +1247,18 @@ Los nodos de las redes bayesianas represetan las hip\'otesis del problema de inv
 %
 En el modelo $A$ hay una \'unica dependencia entre la hip\'otesis $H_R$ y la hip\'otesis $H_S$, $\forall\, i \in \{1,2,3\} \ P(s_i|r_i,M_A)=0$.
 %
-Debido a que en el modelo $M_A$ no existe ninguna dependencia que involucre a $H_C$, por simplicidad decidimos no incluir esa hip\'otesis en la red bayesiana.
+Debido a que en $M_A$ no existe ninguna dependencia que involucre a $H_C$, por simplicidad decidimos no incluir esa hip\'otesis en la red bayesiana.
 
 
 % Parrafo
 
 Nada nos obliga a suponer que el $M_A$ es correcto.
 %
-Por ejemplo, podemos sospechar que la caja que se muestran $s_i$ tampoco puede coincidir con la caja elegida $c_1$, $P(s_1|c_1,M_A)=0$.
+Por ejemplo, podemos sospechar que $s_i$, la caja que se muestra, tampoco puede coincidir con la caja elegida $c_1$, $P(s_1|c_1,M_A)=0$.
 %
 Esto plantea una restricci\'on (o dependencia) adicional.
 %
-El sistema de restricciones que incluye esta restricci\'on y todas las restricciones del modelo $A$, le llamamos Modelo $B$ ($M_B$).
+El sistema de restricciones que incluye esta restricci\'on y todas las restricciones del modelo $A$, lo llamamos Modelo $B$ ($M_B$).
 %
 Este modelo tiene asociado la distribuci\'on de probabilidad $P(H_R,H_S|c_1,M_B)$.
 %
@@ -1314,13 +1314,13 @@ En cambio, si el regalo se encontrara en una caja distinta a la que elegimos (i.
 
 % Parrafo
 
-En la figura~\ref{fig:modelo_causal_2} se especifica el modelo $M_B$ de forma gr\'afica a trav\'es de una red bayesiana.
+En la figura~\ref{fig:modelo_causal_2} se especifica el modelo $B$ de forma gr\'afica a trav\'es de una red bayesiana.
 %
 En la notaci\'on de redes bayesianas, las hip\'otesis que finalmente son observadas (los datos) se agregan como nodos pintados de gris.
 %
 Es el caso de la hip\'otesis $c_1$, que aparece en la representaci\'on gr\'afica del modelo $M_B$.
 %
-En $M_A$ podr\'iamos haber agregado ese nodo, pero por simplicidad no lo hicimos debido a que seg\'un $M_A$ la hip\'otesis $H_C$ no interact\'ua con el resto de las hip\'otesis.
+En $M_A$ podr\'iamos haber agregado ese nodo, pero por simplicidad no lo hicimos debido a que, seg\'un $M_A$, la hip\'otesis $H_C$ no interact\'ua con el resto de las hip\'otesis.
 
 % Parrafo
 
