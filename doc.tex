@@ -7097,7 +7097,7 @@ Claramente no debemos apostar todo los recursos a una \'unica opciones, ni a Car
 Pero, ?`cu\'al apuesta maximiza la tasa de crecimiento de los recursos?
 
 
-\subsubsection{Propiedad epist\'emica.} \label{sec:propiedad_epistemica}
+\subsubsection{Propiedad epist\'emica} \label{sec:propiedad_epistemica}
 
 Supongamos que la casa de apuestas ofrece pagos $Q_c = 3$ por Caras y $Q_s = 1.2$ por Secas por una moneda no sesgada, con probabilidad $p=0.5$.
 %
@@ -7106,6 +7106,7 @@ Claramente, obtenemos m\'as recursos con Caras que con Secas.
 No hay duda.
 %
 Sin embargo, al comparar los recursos de dos apuestas diferentes $b \neq d \in [0,1]$ luego de obtener $n_c$ Caras y $n_s$ Secas, en el tiempo $T = n_c + n_s$,
+\todo[inline]{Ojo, no podes pedir en el cerrado porque eso te puede hacer 0 el denominador}
 %
 \begin{equation}
 \begin{split}
@@ -7117,11 +7118,12 @@ encontramos que !`el valor relativo de una apuesta respecto de la otra es indepe
 %
 Este descubrimiento fue realizado por Kelly~\cite{kelly1956} y en su manuscrito tambi\'en aparece reportado con un signo de admiraci\'on.
 %
-Pero, ?`Cu\'al es la apuesta $b$ \'optima?
+Pero, ?`cu\'al es la apuesta $b$ \'optima?
 
 %
 
 Para calcular el valor de la tasa de crecimiento de los recursos en el tiempo $r(b)$, debemos analizar la siguiente funci\'on,
+\todo[inline]{Aca no calculas la tasa de crecimiento sino la expectativa de crecimiento a largo plazo, una tasa por definición implica una relación con el tiempo, acá estás sacando el tiempo del medio al tomar el limite y miras algo que podría ser como el estado estacionario. Ademas cambias la nomenclatura de w a r...} 
 %
 \begin{equation}
 \begin{split}
@@ -7129,6 +7131,7 @@ Para calcular el valor de la tasa de crecimiento de los recursos en el tiempo $r
 r(b) &= \lim_{T \rightarrow \infty } (b \, Q_c)^{\frac{n_c}{T}} ((1-b) \, Q_s )^{\frac{n_s}{T}} = (b \, Q_c)^{p} ((1-b) \, Q_s )^{1-p}
 \end{split}
 \end{equation}
+\todo[inline]{No es claro como pasas del primer renglon al segundo, que estás aplicando?}
 %
 donde $p = \lim_{T \rightarrow \infty} \frac{n_s}{T}$ es la frecuencia de la moneda.
 %
@@ -7145,13 +7148,13 @@ donde maximizar la tasa de crecimiento de la apuesta es equivalente a minimizar 
 %
 En tiempos finitos, ocurre algo similar.
 %
-No importa los pagos que ofrezca la casa de apuestas, la apuesta \'optima  $b^{*}$ es la que divide los recursos en la misma proporci\'on que la frecuencia observada, $b^{*} = n_c/T$.
+No importan los pagos que ofrezca la casa de apuestas, la apuesta \'optima  $b^{*}$ es la que divide los recursos en la misma proporci\'on que la frecuencia observada, $b^{*} = n_c/T$.
 
 % Parrafo
 
 A esta propiedad la llamamos \emph{propiedad epist\'emica} debido a que es la que permite a la teor\'ia de la probabilidad adquirir conocimiento sobre el mundo: al evaluar las hip\'otesis elementales en base al producto de las predicciones (la regla del producto~\ref{eq:funcion_de_costo}) se produce una ventaja a favor de las hip\'otesis que diversifican la predicci\'on en la misma proporci\'on que la frecuencia observada.
 %
-Del mismo modo, el proceso de selecci\'on evolutiva por secuencias de tasas de crecimiento y reproducci\'on, produce la emergencia de formas de vida que reducen las fluctuaciones a trav\'es de la diversificaci\'on (\emph{Bet hedging})~\cite{starrfelt2012-bet}.
+Del mismo modo, el proceso de selecci\'on evolutiva por secuencias de tasas de crecimiento y reproducci\'on, produce la emergencia de formas de vida que reducen las fluctuaciones a trav\'es de la diversificaci\'on (\emph{Bet hedging})~\cite{Starrfelt2012}.
 
 % Parrafo
 
@@ -7174,11 +7177,11 @@ el cual crece a una tasa de $5\%$ por paso temporal.
 
 % Parrafo
 
-\subsubsection{Propiedad evolutiva.} \label{sec:propiedad_evolutiva}
+\subsubsection{Propiedad evolutiva} \label{sec:propiedad_evolutiva}
 
 A pesar de que la diversificaci\'on individual no es suficiente para ganar este juego, la vida encontr\'o estrategias para florecer en casos como estos.
 %
-Para ejemplificar este problema, supongamos que tenemos un grupo de individuo, cada uno tira su propia moneda y apuesta una proporci\'on $b$ a Cara y $1-b$ a Seca.
+Para ejemplificar este problema, supongamos que tenemos un grupo de individuos, cada uno tira su propia moneda y apuesta una proporci\'on $b$ a Cara y $1-b$ a Seca.
 %
 Estos individuos pueden reducir aun m\'as las fluctuaciones individuales mediante cooperaci\'on.
 %
@@ -7241,7 +7244,7 @@ Podemos ver que la tasa de crecimiento de los individuos pasa a ser el promedio 
 
 % Parrafo
 
-En la tabla~\ref{tabla_coop} se puede observar c\'omo se actualizan los recursos de dos individuos en dos pasos temporales cuando no cooperan (primer dos fila) y cuando cooperan (\'ultimas dos fila).
+En la tabla~\ref{tabla_coop} se puede observar c\'omo se actualizan los recursos de dos individuos en dos pasos temporales cuando no cooperan (primeras dos filas) y cuando cooperan (\'ultimas dos filas).
 %
 La reducci\'on de fluctuaciones que genera este simple acto de intercambio de recursos, hace que la tasa de crecimiento de todos los individuos se vuelve positiva.
 %
@@ -7289,7 +7292,8 @@ Cuando el tama\~no de la poblaci\'on $N$ tiende a infinito, la tasa de crecimien
 %
 \'Esta es un ejemplo de la \emph{propiedad evolutiva}: a trav\'es de la cooperaci\'on podemos reducir aun m\'as las fluctuaciones, aumentando as\'i la tasa de crecimiento de todos sus miembros.
 
-\subsubsection{Propiedad de especiaci\'on.}
+\subsubsection{Propiedad de especiaci\'on}
+
 Si bien jugando individualmente nos ve\'iamos obligados a apostar ignorando los pagos que ofrece la casa de apuestas, una vez que emerge la cooperaci\'on deja de ser necesario reducir las fluctuaciones por diversificaci\'on individual y aparece una ventaja a favor de la especializaci\'on cooperativa, que permite sacar provecho de la mejor opci\'on disponible, aumentando a\'un m\'as la tasa de crecimiento de todos los individuos del grupo cooperativo.
 %
 A medida que el tama\~no del grupo cooperativo crece, la apuesta \'optima se va especializando hacia la mejor opci\'on disponible.
