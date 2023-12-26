@@ -19,12 +19,12 @@ epsilon <- 1
 
 D <- seq(mu-3*sigma,mu+3*sigma,0.1)
 dnormal <- dnorm(D,mu,sigma)
-plot(D,dnormal, type="l",lwd=1, xlab=expression(delta),axes = F,ann = F)
+plot(D,dnormal, type="l",lwd=1, xlab=expression(phi),axes = F,ann = F)
 
 axis(side=2, labels=NA,cex.axis=0.6,tck=0.015)
 axis(side=1, labels=NA,cex.axis=0.6,tck=0.015)
 axis(lwd=0,side=1, at=0,las=0,cex.axis=1.75,line=-0.45)
-axis(lwd=1,side=1, at=mu,labels=expression(delta) ,las=0,cex.axis=2,line=-0.3)
+axis(lwd=1,side=1, at=mu,labels=expression(psi) ,las=0,cex.axis=2,line=-0.3)
 axis(lwd=0,side=1, at=-epsilon*1.3,labels=expression(-epsilon) ,las=0,cex.axis=2.33,line=-0.45)
 
 mtext(text ="Density" ,side =2 ,line=1,cex=1.75)

@@ -1622,9 +1622,6 @@ Lo que hemos hecho no es otra cosa que aplicar el Teorema de Bayes,
 \end{split}
 \end{equation}
 
-\todo[inline]{Creo que quedar\'ia bien volver a ponerle los valores de que salen del ejemplo a esta ecuaci\'on y calcular las posterior de cada modelo, me parece que como cierre puede andar y queda claro para cerrar la explicaci\'on}
-\todo[inline, color=gray]{No entend\'i}
-
 
 % Parrafo
 % \subsubsection{Evidencia}
@@ -4007,10 +4004,35 @@ Toda partida con dos equipos tiene soluci\'on anal\'itica exacta.
 % Parrafo
 
 %
-En esta secci\'on mostramos los pasos para calcular la evidencia exacta y los likelihoods exactos de una partida con dos equipos.
+En esta secci\'on mostramos los pasos para calcular la predicción a priori (o evidencia) exacta y los likelihoods exactos de una partida con dos equipos.
+%
 S\'olo necesitamos el \emph{sum-product algorithm} y las propiedades arriba mencionadas.
 %
 Empezaremos primero con los mensajes ``descendentes'', desde los priors al resultado, hasta calcular la evidencia, y seguiremos con los mensajes ``ascendentes'', desde el resultado observado a los priors, hasta calcular el posterior de cada agente.
+%
+Además, acompañaremos la derivación matemática con código en \texttt{Julia}, \text{python} y \texttt{R}.
+%
+\begin{paracol}{3}
+\begin{lstlisting}[backgroundcolor=\color{julia!60},belowskip=0cm]
+using TrueSkillThroughTime
+\end{lstlisting}
+  \switchcolumn
+\begin{lstlisting}[backgroundcolor=\color{python!60},belowskip=0cm]
+import trueskillthroughtime
+\end{lstlisting}
+   \switchcolumn
+\begin{lstlisting}[backgroundcolor=\color{r!50},belowskip=0cm]
+library(TrueSkillThroughTime)
+\end{lstlisting}
+\end{paracol}
+\begin{lstlisting}[backgroundcolor=\color{all}, aboveskip=0cm, belowskip=0cm]
+mu = 0.0; sigma = 6.0; beta = 1.0; gamma = 0.03
+a1 = Player(Gaussian(mu, sigma), beta, gamma); a2 = Player(); a3 = Player(); a4 = Player()
+\end{lstlisting}
+\begin{lstlisting}[captionpos=b,backgroundcolor=\color{all},label=lst:player_0, caption={Inicializaci\'on de los jugadores}, aboveskip=0cm, belowskip=0cm]
+\end{lstlisting}
+%
+Aquí creamos $4$ jugadores mediante el método \texttt{Player()}.
 
 \subsubsection{Mensajes descendentes}%
 %
@@ -4022,7 +4044,24 @@ Siguiendo el~\ref{eq:m_f_v} del \emph{sum-product algorithm} y la factorizaci\'o
 %
 Tenemos acceso a este mensaje llamando al atributo \texttt{prior} de la clase \texttt{Player}.
 %
-Podemos ver tambi\'en, siguiendo el~\ref{eq:m_v_f} del \emph{sum-product algorithm} y la factorizaci\'on del modelo, que el mensaje que env\'ia la variable $s_i$ al factor rendimiento $f_{p_i}$ es nuevamente el prior.
+\begin{paracol}{3}
+\begin{lstlisting}[backgroundcolor=\color{julia!60},belowskip=0cm]
+a1.prior
+\end{lstlisting}
+  \switchcolumn
+\begin{lstlisting}[backgroundcolor=\color{python!60},belowskip=0cm]
+a1.prior
+\end{lstlisting}
+   \switchcolumn
+\begin{lstlisting}[backgroundcolor=\color{r!50},belowskip=0cm]
+a1@prior
+\end{lstlisting}
+\end{paracol}
+\begin{lstlisting}[captionpos=b,backgroundcolor=\color{all},label=lst:prior_0, caption={Prior de uno de los agentes}, aboveskip=0cm, belowskip=0cm]
+> Gaussian(mu=0, sigma=6.0)
+\end{lstlisting}
+%
+Además, siguiendo el~\ref{eq:m_v_f} del \emph{sum-product algorithm} y la factorizaci\'on del modelo, el mensaje que env\'ia la variable $s_i$ al factor rendimiento $f_{p_i}$, $m_{s_i \rightarrow f_{p_i}}(s_i)$, es nuevamente el prior.
 %
 Debido a que es trivial calcular los mensajes que env\'ian las variables (siempre es el producto de los mensajes que reciben de atr\'as), vamos a evitar escribirlos.
 %
@@ -4034,7 +4073,6 @@ m_{f_{p_i} \rightarrow p_i}(p_i) = \int \N(p_i| s_i, \beta^2) \N(s_i| \mu_i, \si
 %
 Tenemos acceso a estos mensajes mediante el m\'etodo \texttt{performance()} de la clase \texttt{Player}.
 %
-\todo[inline]{REACOMODAR EL C\'ODIGO}
 \begin{paracol}{3}
 \begin{lstlisting}[backgroundcolor=\color{julia!60},belowskip=0cm]
 p1 = performance(a1)
@@ -4059,8 +4097,6 @@ p4 = performance(a4)
 \end{paracol}
 \begin{lstlisting}[captionpos=b,backgroundcolor=\color{white},label=lst:performance, caption={Computando el desempe\~no individual a priori}, aboveskip=0cm, belowskip=0cm]
 \end{lstlisting}
-%
-donde los agentes \texttt{a1}, \texttt{a2}, \texttt{a3} y \texttt{a4}, fueron inicializados en el c\'odigo~\ref{lst:player}.
 %
 El mensaje que env\'ian los factores equipos $f_{t_e}$ a la variable equipo $t_e$ es una integral sobre todas las variables de desempe\~no individual,
 %
@@ -4179,21 +4215,21 @@ Esta es la verosimilitud exacta discutida en la ecuaci\'on~\eqref{eq:posterior_w
 
 \subsection{Modelo b\'asico de empates} \label{sec:empate}
 %
-El modelo supone que ocurre un empate cuando la diferencia de rendimientos no supera un cierto margen, $|t_a - t_b| \leq \varepsilon$.
+El modelo supone que ocurre un empate cuando la diferencia de rendimientos $d$ no supera un cierto margen, $|t_a - t_b| \leq \varepsilon$.
 %
-En la figura~\ref{fig:draw_a} se puede ver en t\'erminos gr\'aficos las probabilidades de los tres resultados posibles.
+En la figura~\ref{fig:draw_a} se muestra la distribución de probabilidad de la diferencia de desempeños, $\N(d|\psi, \vartheta^2)$, junto con los tres resultados posibles.
 %
 \begin{figure}[ht!]
 \centering
 \begin{subfigure}[t]{0.48\textwidth}
  \includegraphics[width=1\textwidth]{figures/draw.pdf}
- \caption{Los tres posibles resultados}
+ \caption{Diferencia de desempeños}
  \label{fig:draw_a}
 \end{subfigure}
 \begin{subfigure}[t]{0.48\textwidth}
   \includegraphics[page=2,width=1\textwidth]{figures/draw.pdf}
   \caption{
-  Probabilidad de empate constante}
+  Probabilidad empate dado misma habilidad}
  \label{fig:draw_b}
 \end{subfigure}
   \caption{
@@ -4201,7 +4237,7 @@ En la figura~\ref{fig:draw_a} se puede ver en t\'erminos gr\'aficos las probabil
   %
   En la figura~\subref{fig:draw_a} mostramos un ejemplo de las \'areas correspondientes a la probabilidad de perder, empatar y ganar.
   %
-  En la figura~\subref{fig:draw_b} mostramos c\'omo el margen de empate se debe adaptar para mantener la probabilidad de empate constante cuando la incertidumbre de la distribuci\'on cambia.
+  En la figura~\subref{fig:draw_b} mostramos c\'omo el margen de empate $\varepsilon$ se debe adaptar para mantener la probabilidad de empate constante (dado equipos con misma habilidad) cuando la incertidumbre de la distribuci\'on cambia.
   }
   \label{fig:draw}
 \end{figure}
@@ -4226,8 +4262,9 @@ As\'i es que podemos definir una ecuaci\'on que vincula el margen con la probabi
 \begin{equation}
  \text{Draw probability} = \Phi(\frac{\varepsilon}{\sqrt{n_1+n_2}\beta}) - \Phi(\frac{-\varepsilon}{\sqrt{n_1+n_2}\beta})
 \end{equation}
-\todo[inline]{Tenes que explicar la ecuaci\'on, que es cada cosa y la intuici\'on atr\'as}
-
+%
+donde $\Phi$ representa la acumulada de una Gaussiana estandarizada, con media 0 y desvío 1.
+%
 En el siguiente c\'odigo usamos la funci\'on \texttt{compute\_margin()} para calcular el tama\~no del margen de empate.
 \begin{paracol}{3}
 \begin{lstlisting}[backgroundcolor=\color{julia!60},belowskip=0cm]
@@ -4827,8 +4864,6 @@ En esta secci\'on mostramos c\'omo usar los paquetes de \texttt{Julia}, \texttt{
 %
 Presentamos las soluciones de los modelos TrueSkill y TrueSkill Through Time, y los pasos para obtener los posteriors, las curvas de aprendizaje, y la predicci\'on a priori del dato observado (i.e.~evidencia).
 
-
-\todo[inline]{Fijate que esta convenci\'on la usaste antes sin aclarar} 
 
 %%%%%%%%%%%%%%%
 \subsection{\'Unico evento} \label{sec:singleEvent}
