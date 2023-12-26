@@ -8743,12 +8743,11 @@ La complejidad del problema pone en tensi\'on las metodolog\'ias actuales de las
 
 % Parrafo
 
-\chapter{Referencias}
 \bibliographystyle{plos2015}
 \bibliography{../../bibliografia/journalsLong,../../bibliografia/Gaming/gaming}
 
 
-\chapter{Apendice} \label{app:technical}
+\chapter{Apéndice} \label{app:technical}
 
 
 
@@ -8757,7 +8756,7 @@ La complejidad del problema pone en tensi\'on las metodolog\'ias actuales de las
 \subsection{\en{Skill evolution}\es{Evoluci\'on de habilidad}}\label{sec:appendix_skill_evolution}
 
 \en{We attach the \texttt{Julia} and \texttt{R} codes that solve the example presented in the section \ref{sec:skill_evolution} about estimation the skill evolution of a new player. }%
-\es{Adjuntamos los c\'odigos de \texttt{Julia} y \texttt{R} que resuelven el ejemplo presentado en la secci\'on \ref{sec:skill_evolution} sobre la evoluci\'on de habilidad de un jugador nuevo. }%
+\es{Se adjuntan los c\'odigos de \texttt{Julia} y \texttt{R} que resuelven el ejemplo presentado en la secci\'on \ref{sec:skill_evolution} sobre la evoluci\'on de habilidad de un jugador nuevo. }%
 %
 \begin{lstlisting}[backgroundcolor=\color{julia!60},caption={\en{\texttt{Julia} code}\es{C\'odigo \texttt{Julia}}},aboveskip=0.0 \baselineskip, belowskip=0.1cm]
 using Random; Random.seed!(999); N = 1000
@@ -8797,7 +8796,9 @@ for(tp in lc_a){mu = c(mu,tp[[2]]@mu)}
 \end{lstlisting}
 
 \subsection{\en{The history of the Association of Tennis Professionals (ATP)}\es{Historia de la Asociaci\'on de Tenistas Profesionales (ATP)}} \label{sec:appendix_atp_code}
-%
+
+Se adjuntan los c\'odigos de \texttt{Python} y \texttt{R} que resuelven el ejemplo presentado en la secci\'on \ref{sec:atp} sobre la estimación de habilidad de los tenistas profesionales.
+
 \begin{lstlisting}[backgroundcolor=\color{python!60},caption={\en{\texttt{Python} code}\es{C\'odigo \texttt{Python}}},aboveskip=0.0 \baselineskip, belowskip=0.1cm]
 import pandas as pd; from datetime import datetime
 df = pd.read_csv('input/history.csv')
@@ -8831,6 +8832,10 @@ h = History(composition = composition, times = days, sigma = 1.6, gamma = 0.036)
 h$convergence(epsilon=0.01, iterations=10)
 \end{lstlisting}
 
+
+
+En la figura~\ref{atp_trueskill} se incluye la estimación de habilidad TrueSkill de ATP (con 0 iteraciones).
+%
 \begin{figure}[ht!]
  \centering
   \includegraphics[page={1},width=.8\linewidth]{figures/atp_trueskill}
@@ -8839,7 +8844,7 @@ h$convergence(epsilon=0.01, iterations=10)
 \end{figure}
 
 
-
+\newpage
 
 \section{TrueSynergy} \label{sec:TrueSynergy}
 
@@ -8850,9 +8855,7 @@ El modelo \texttt{TrueSkill}, que fue dise\~nado espec\'ificamente para estimar 
 \vspace{0.3cm}
 
 En la primera parte realizamos simulaciones sint\'eticas para cuantificar el error de estimaci\'on de habilidad de \texttt{TrueSkill} cuando los equipos tienen un componente de sinergia.
-En la segunda parte presentamos el modelo bayesiano \texttt{TrueSynergy}, una modificaci\'on del modelo \texttt{TrueSkill}.
-Realizamos simulaciones sint\'eticas para cuantificar la mejora de estimaci\'on de habilidad de \texttt{TrueSynergy} cuando los equipos tienen un componente de sinergia.
-%A su vez, ejecutamos simulaciones para cuantificar los efectos negativos que genera el agregado de complejidad del modelo \texttt{TrueSynergy} sobre la estimaci\'on de habilidad de los jugadores individuales en contextos donde no hay presencia alguna de sinergia.
+En la segunda parte evaluamos el desempeño del modelo \texttt{TrueSynergy}, una modificaci\'on del modelo.
 
 \subsection{TrueSkill: sobrestimaci\'on de habilidad en contextos de sinergia}
 
@@ -9083,7 +9086,7 @@ Si dos jugadores siempre juegan juntos, no es posible saber si existe entre ello
 En el peor de los casos, cuando el 100\% de las partidas son dentro del mismo equipo, la habilidad y la sinergia se reparte en partes iguales.
 Si bien la estimaci\'on individual no es precisa, si lo es la estimaci\'on de la habilidad del equipo como un todo.
 
-
+\newpage
 
 \section{Efectos sociales sobre el aprendizaje}
 
@@ -9318,7 +9321,7 @@ Weak & $3845$ &  \\
 
 
 
-
+\newpage
 
 \section{Propiedad de las distribuci\'on gaussiana} \label{sec:propiedades_de_la_gaussiana}
 
