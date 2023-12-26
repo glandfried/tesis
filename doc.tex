@@ -3163,53 +3163,87 @@ Debido a esta din\'amica el valor m\'aximo de habilidad se alcanza siempre cuand
 
 \section{Discusi\'on}
 
-Tradicionalmente el aprendizaje ha sido modelado en funci\'on de la experiencia.
+Tradicionalmente el aprendizaje ha sido modelado en funci\'on de la experiencia individual.
+%
+% Nuestra hip\'otesis inicial suponía que el aprendizaje social produce un efecto de segundo orden en la adquisici\'on de habilidades.
 %
 En este art\'iculo exploramos c\'omo la curva de aprendizaje esperada por la experiencia individual se ve alterada por diferentes estrategias de agrupamiento.
 %
-Nuestro m\'etodo se basa en datos masivos que permitieron realizar un estudio longitudinal con una precisi\'on muy alta para detectar cambios sutiles.
+Para ello, analizamos el juego en l\'inea \emph{Conquer Club} que, a diferencia del ajedrez, se puede jugar en equipos.
 %
-% % Parrafo
-%
-% Analizamos el aprendizaje en un contexto competitivo.
-% %
-% En este tipo de juegos el aprendizaje se mide en t\'erminos de la probabilidad de ganar a otras personas.
-% %
-% A diferencia de las tareas en las que se puede determinar la cantidad absoluta de errores que comete un individuo al resolverla, en los juegos competitivos la probabilidad de ganar es una propiedad relativa que depende del nivel de aprendizaje de los oponentes.
-% %
-% Las curvas de aprendizaje derivadas de tareas en las que la habilidad se mide en t\'erminos relativos son m\'as vol\'atiles que las medidas en t\'erminos absolutos.
-% %
-% Por lo tanto, las curvas de aprendizaje individuales de los jugadores que compiten a veces son dif\'iciles de ajustar~\cite{howard2014-learningCurvesChessPlayersATestOfPowerLawGenerality,Gaschler2014}.
-%
-% % Parrafo
-%
-% Si bien las curvas de aprendizaje individual son m\'as irregulares que el promedio de un conjunto de curvas de aprendizaje, la variaci\'on entre ellas debe ser explicada.
-% %
-Nuestra hip\'otesis para explicar las variaciones observadas afirma que el aprendizaje social produce un efecto de segundo orden en la adquisici\'on de habilidades.
+Nuestro estudio se basa en datos masivos, que permitieron realizar un estudio longitudinal con una precisi\'on muy alta para detectar cambios sutiles.
 
-% Parrafo
-
-Nos basamos en el juego en l\'inea \emph{Conquer Club} porque, a diferencia del ajedrez, se puede jugar en equipos.
 %
-En \emph{Conquer Club} tanto los oponentes como los compa\~neros de equipo son observables y, en consecuencia, son modelos a imitar.
-%
-Sin embargo, enfocamos nuestro an\'alisis solo en la lealtad de los compa\~neros de equipo ya que la lealtad en los oponentes no est\'a presente en nuestra base de datos.
-
-% Parrafo
 
 Primero, verificamos la ley de la pr\'actica en nuestro conjunto de datos.
 %
-% Encontramos la forma emp\'irica de lo que llamamos la ``curva de aprendizaje esperada por la experiencia''.
+Encontramos la forma emp\'irica de lo que llamamos la ``curva de aprendizaje esperada por la experiencia''.
 %
-Tom\'andolo como \emph{baseline}, cuantificamos en qu\'e medida los diferentes comportamientos de agrupamiento alteran la adquisici\'on de habilidades esperadas por la experiencia.
+Tom\'andola como \emph{baseline}, cuantificamos en qu\'e medida los diferentes comportamientos de agrupamiento alteran la adquisici\'on de habilidades esperadas por la experiencia.
+
 %
-Encontramos que un comportamiento orientado a equipo est\'a relacionado con una mejora significativa del nivel de habilidad a largo plazo.
+
+En primer lugar, encontramos que los comportamientos orientados a equipo est\'an relacionados con una mejora significativa del nivel de habilidad a largo plazo a pesar de tener una tasa de crecimiento inicial más lenta.
 %
-Una tendencia de estabilidad dentro del grupo (la lealtad) se asocia con una r\'apida mejora de las habilidades a corto plazo.
+Este resultado se aliena con las expectativas previas.
 %
-La combinaci\'on de estos dos efectos puede ser aprovechado para el aprendizaje.
+El \emph{aprendizaje social} es factor fundamental en los seres humanos para la adquisición de habilidades.
 %
-El \emph{faithfulness-boost effect} proporciona un impulso de habilidad que se adquirir\'ia, a trav\'es de la experiencia, solo despu\'es de miles de partidas de pr\'actica.
+Jugar en equipo ofrece un espacio privilegiado para la socialización y la transmisión de conocimientos.
+%
+Pero también implica una desafío.
+%
+Coordinar correctamente las actividades con otros compañeros de equipo requiere la adquisición de una habilidad adicional, que puede explicar la lenta tasa de crecimiento inicial.
+
+% Parrafo
+
+En segundo lugar, encontramos que la estabilidad en la formación de equipos se asocia con una mejora de las habilidades a corto plazo.
+%
+Este resultado se alinea parcialmente con las expectativas previas.
+%
+Si el aprendizaje asociado a la coordinación de equipo debe renovarse cada vez que se cambia de compañeros de equipo, entonces es esperable que la estabilidad de compañeros de equipo amortigue ese impacto negativo, acelerando los efectos positivos relacionados con el aprendizaje social.
+
+% Parrafo
+
+En tercer lugar, hemos visto que la combinaci\'on de estos dos efectos, definido como \emph{faithfulness}, intensifica ambas observaciones previas.
+%
+A medida que las personas juegan más partidas en equipo el aprendizaje a largo plazo es mayor.
+%
+Y si además de este efecto positivo, las personas forman equipo lealmente, se observa una impulso temprano de las habilidades.
+%
+El efecto positivo de estos factores de aprendizaje social solo se adquirir\'ia a trav\'es de la experiencia individual luego de miles de partidas de pr\'actica.
+
+% Parrafo
+
+Uno aspecto nos resultó sorprendente respecto de nuestras expectativas previas.
+%
+Antes de comenzar este trabajo esperábamos encontrar algún efecto positivo vinculado al cambiar de equipo.
+%
+Esta idea estaba basada en una hipótesis ingenua, que suponía que el acceso a diferentes grupos ofrecería un mayor repertorio cultural del cual aprender.
+%
+Sin embargo, estudios recientes han cuestionado la hip\'otesis de que todo lo que maximice el flujo de informaci\'on cultural deber\'ia repercutir positivamente en el aprendizaje.
+%
+En particular, se afirma que un exceso en la interconexión reduce las posibilidades de innovación~\cite{Derex2020}.
+%
+De hecho la plataforma es en sí misma un facilitador de contacto entre personas.
+%
+Por el contrario, la formación de subgrupos beneficiaría el desarrollo de innovaciones~\cite{Derex2020}.
+%
+En este sentido, nuestro resultado se alinea con los trabajos teóricos y experimentales recientes.
+
+% Parrafo
+
+Hasta donde sabemos, no se ha propuesto ninguna estrategia de aprendizaje social que tenga en cuenta diferentes estrategias de agrupaci\'on.
+%
+Por ejemplo, una estrategia de aprendizaje social simple consiste en copiar la mayor\'ia de los otros modelos disponibles, lo que se conoce como \emph{frequency-based strategy}.
+%
+Otra estrategia de aprendizaje social es copiar el modelo disponible m\'as exitoso, denominado como \emph{payoff-based strategy}.
+%
+En este trabajo, encontramos que las estrategias de agrupaci\'on afectan significativamente c\'omo se adquiere la habilidad.
+
+% Parrafo
+
+
 
 % Parrafo
 
@@ -3224,17 +3258,6 @@ Tambi\'en es importante se\~nalar que ser parte de un equipo con pocas probabili
 Asociarse con un compa\~nero de equipo con menos habilidades implicar\'a efectivamente una disminuci\'on en la probabilidad de ganar, pero no necesariamente implicar\'a una disminuci\'on en la habilidad.
 %
 Si la colaboraci\'on es s\'olida, ambos jugadores se beneficiar\'an del efecto positivo sobre la adquisici\'on de habilidades.
-
-% Parrafo
-
-
-Hasta donde sabemos, no se ha propuesto ninguna estrategia de aprendizaje social que tenga en cuenta diferentes estrategias de agrupaci\'on.
-%
-Por ejemplo, una estrategia de aprendizaje social simple consiste en copiar la mayor\'ia de los otros modelos disponibles, lo que se conoce como \emph{frequency-based strategy}.
-%
-Otra estrategia de aprendizaje social es copiar el modelo disponible m\'as exitoso, denominado como \emph{payoff-based strategy}.
-%
-En este trabajo, encontramos que las estrategias de agrupaci\'on afectan significativamente c\'omo se adquiere la habilidad.
 
 % Parrafo
 
