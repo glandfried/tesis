@@ -1236,7 +1236,7 @@ A esta informaci\'on inicial la llamaremos Modelo $A$, o simplemente $M_A$.
 %
 Necesitamos entonces la distribuci\'on de probabilidad que sigue la visi\'on honesta del sistema $P(H_R,H_C,H_S|M_A)$.
 %
-Para simplificar el problema y sin perder generalidad, supondremos adem\'as que siempre elegimos la caja 1, es decir,  que es cierta $c_1$. 
+Para simplificar el problema, y sin perder generalidad, supondremos adem\'as que siempre elegimos la caja 1, es decir,  que es cierta $c_1$. 
 De esta manera, reducimos el problema a solo dos hip\'otesis: $P(H_R,H_S|c_1, M_A)$.
 %
 El sistema de restricciones de los modelos se suele representar mediante lo que se conoce como \emph{redes bayesianas}.
@@ -1743,13 +1743,13 @@ Sea $\text{Datos}\in (H_{R_1}, H_{S_1}, \dots, H_{R_T}, H_{S_T})$ el vector de h
 \underbrace{P(M_k|\overbrace{r_{i1},s_{j1}, \dots }^{\text{Datos}},\overbrace{c_1}^{R})}_{P(\text{Modelo}|\text{Datos},\text{Restricciones})} = \frac{\overbrace{P(r_{i1},s_{j1}, \dots |M_k,c_1)}^{P(\text{Datos}|\text{Modelo},\text{Restricciones})} P(M_k|c_1)}{P(\text{Datos}|c_1)}
 \end{equation}
 %
-Donde la probabilidad de los datos dado el modelo y la restricci\'on restante es,
+donde la probabilidad de los datos dado el modelo y la restricci\'on restante es,
 %
 \begin{equation} \label{eq:evidencia_monty_hall}
 P(\text{Datos}|\text{Modelo},\text{Restricciones}) = \prod_{t=1}^T P(s_{jt}|M,c_{1t})P(r_{it}|s_{jt},M,c_{1t})
 \end{equation}
 %
-En la figura~\ref{fig:monty_hall_selection} mostrar c\'omo se actualizan las probabilidades de los modelos a medida que observamos datos nuevos.
+En la figura~\ref{fig:monty_hall_selection} mostramos c\'omo se actualizan las probabilidades de los modelos a medida que observamos datos nuevos.
 %
 Para producir esta figura primero generamos la variable \texttt{regaloEn1}, que indica si el regalo se se encuentra en la caja 1.
 %
@@ -1776,9 +1776,9 @@ Debido a que los datos fueron generados usando la distribuci\'on de probabilidad
 %
 Esto significa que ninguno de los modelos observar\'an eventos imposibles, es decir, la productoria~\eqref{eq:evidencia_monty_hall} no contiene ning\'un cero.
 %
-En particular, las predicciones que hace el modelo $M_A$ son siempre las mismas debido que no importa cual sea la pista $s_{jt}$ y la posici\'on del regalo $r_{it}$, siempre vale $P(s_{jt}|M_A,c_{1t}) = 1/3$ y $P(r_{it}|s_{jt},M_A,c_{1t}) = 1/2$.
+En particular, las predicciones que hace el modelo $A$ son siempre las mismas debido que no importa cual sea la pista $s_{jt}$ y la posici\'on del regalo $r_{it}$, siempre vale $P(s_{jt}|M_A,c_{1t}) = 1/3$ y $P(r_{it}|s_{jt},M_A,c_{1t}) = 1/2$.
 %
-El modelo $M_B$ tambi\'en predice la pista siempre con la misma probabilidad $P(s_{jt}|M_A,c_{1t})=1/2$, pues no habr\'a en los datos generados $s_{1t}$.
+El modelo $B$ tambi\'en predice la pista siempre con la misma probabilidad $P(s_{jt}|M_A,c_{1t})=1/2$, pues no habr\'a en los datos generados $s_{1t}$.
 %
 Sin embargo, cuando el regalo se encuentra dentro de la caja elegida (1/3 de las veces), el modelo $M_B$ predice $P(r_{1t}|s_{jt},M_A,c_{1t}) = 1/3$, y cuando el regalo se encuentra en la caja no elegida uno abierta (2/3 de las veces), el modelo $M_B$ predice $P(r_{it}|s_{jt},M_A,c_{1t}) = 2/3$, con $i\neq1$ y $i\neq j$.
 
@@ -1807,7 +1807,7 @@ En el caso m\'as simple, con hip\'otesis de investigaci\'on binarias $|H_i|=2$, 
 %
 No solo hay que asignar probabilidades iniciales a cada una de esas combinaciones de hip\'otesis elementales.
 %
-Cuando observamos alguna de las hip\'otesis elementales, se debe incorporar la informaci\'on que transmite a trav\'es del grado de grado de sorpresa (o predicci\'on a priori) asociada a cada una de la $2^{N-1}$ combinaci\'on de hip\'otesis elementales no observadas.
+Cuando observamos alguna de las hip\'otesis elementales, se debe incorporar la informaci\'on que transmite a trav\'es del grado de sorpresa (o predicci\'on a priori) asociada a cada una de la $2^{N-1}$ combinaci\'on de hip\'otesis elementales no observadas.
 %
 En casos m\'as complejos, que involucran adem\'as preguntas (o hip\'otesis) de investigaci\'on continuas ni siquiera es posible aplicar la regla de la suma cuando sus integrales no tienen soluci\'on anal\'itica.
 %
@@ -2125,7 +2125,7 @@ Y, dependiendo de d\'onde caiga el siguiente dato, hay una regi\'on en la que ga
 
 % Parrafo
 
-A diferencia de los enfoque basados en criterios ad hoc, la aplicaci\'on estricta de las reglas de la probabilidad realiza las predicciones con la contribuci\'on de todas las hip\'otesis $\bm{w}$.
+A diferencia de los enfoques basados en criterios ad hoc, la aplicaci\'on estricta de las reglas de la probabilidad realiza las predicciones con la contribuci\'on de todas las hip\'otesis $\bm{w}$.
 %
 Si empezamos a ver datos por fuera del dominio $[-\pi, \pi]$, los modelos m\'as complejos est\'an a\'un disponibles para predecirlos.
 %
@@ -2468,7 +2468,7 @@ Luego, el posterior aproximado en un determinado momento se define como,
  \widehat{\text{Posterior}}_t \propto \widehat{\text{Likelihood}}_t  \overbrace{\widehat{\text{Likelihood}}_{t-1} \dots \underbrace{\widehat{\text{Likelihood}}_{1} \text{Prior}_1}_{\widehat{\text{Posterior}}_{1} \text{ como } \text{Prior}_{2}} }^{\widehat{\text{Posterior}}_{t-1} \text{ \en{as}\es{como} } \text{Prior}_{t}} %= \text{Prior}_1 \prod_{i=1}^t \text{Likelihood}_i
 \end{equation}
 %
-donde {\footnotesize $\widehat{\text{Posterior}}_i$} y {\footnotesize $\widehat{\text{Likelihood}}_i$} representan la aproximaciones inducidas por la ecuaci\'on~\eqref{eq:approx} en el $i$-\'esimo evento.
+donde {\footnotesize $\widehat{\text{Posterior}}_i$} y {\footnotesize $\widehat{\text{Likelihood}}_i$} representan las aproximaciones inducidas por la ecuaci\'on~\eqref{eq:approx} en el $i$-\'esimo evento.
 %
 Si consideramos la verosimilitud como un filtro del prior, cada posterior puede ser visto como una acumulaci\'on de todos los filtros anteriores.
 %
