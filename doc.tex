@@ -2629,7 +2629,7 @@ Por ello se deben tener en cuenta otros componentes esenciales para comprender m
 
 % Parrafo
 
-En los animales pro-sociales, la capacidad de aprendizaje social es un factor que modifica las curvas de aprendizaje esperadas por aprendizaje individual.
+%En los animales pro-sociales, la capacidad de aprendizaje social es un factor que modifica las curvas de aprendizaje esperadas por aprendizaje individual.
 %
 El aprendizaje social se define como cambios a largo plazo en el comportamiento causados por est\'imulos derivados de la observaci\'on o la interacci\'on con otros individuos~\cite{hoppitt2013-socialLearningAnIntroductionBook,bandura1977-socialLearning}.
 %
@@ -2673,15 +2673,13 @@ Los datos de ajedrez masivos permitieron el an\'alisis de la influencia de la ed
 
 % Parrafo
 
-Aqu\'i nos propusimos investigar el impacto de las estrategias de formaci\'on de equipo en la adquisici\'on de habilidades en \emph{Conquer Club}, un juego multijugador en l\'inea por turnos.
+Aqu\'i nos propusimos investigar el impacto de las estrategias de formaci\'on de equipo en la adquisici\'on de habilidades en \emph{Conquer Club}, un juego multijugador en l\'inea por turnos inspirado en el juego de mesa RISK o TEG.
 %
 %En este trabajo analizamos en un corpus de $\sim4.5$ millones de partidas.
 %
-A diferencia de la naturaleza individual del ajedrez, en \emph{Conquer Club} (inspirado en el juego de mesa RISK) en cada partida puede participar una cantidad variable de usuarios, jugando individualmente o en equipos.
+A diferencia de la naturaleza individual del ajedrez, en \emph{Conquer Club} se puede jugar individualmente o en equipos.
 %
-En Conquer Club hay un fuerte incentivo para la colaboraci\'on: los resultados de los juegos son por equipos.
-%
-Todos los miembros de un equipo ganan o pierden juntos.
+Adem\'as, en Conquer Club hay un fuerte incentivo para la colaboraci\'on pues los resultados de los juegos son por equipos: todos los miembros de un equipo ganan o pierden juntos.
 %
 Un jugador que es eliminado durante un juego a\'un puede terminar ganando si sus compa\~neros de equipo derrotan al resto de los equipos.
 %
@@ -2714,17 +2712,17 @@ Con nuestro enorme conjunto de datos, podemos investigar el impacto de las estra
 
 \section{Materiales y m\'etodos}
 
-Todos los juegos se descargaron de \emph{Conquer Club}, un servicio gratuito que ofrece jugar juegos en l\'inea tipo RISK.
+Todos los juegos se descargaron de \emph{Conquer Club}, un servicio gratuito que ofrece jugar juegos en l\'inea tipo RISK o TEG.
 %
 El sitio web permite a cualquier persona, y no solo a los participantes registrados, explorar los partidos y buscar sus datos relacionados.
 %
-Los usuarios registrados se identifican por sus apodos y, para ser aceptados como usuarios, deben aceptar que sus partidas se almacenen en un servidor de acceso p\'ublico.
+Los usuarios registrados se identifican por sus apodos y, para registrarse en la plataforma deben aceptar que sus partidas se almacenen en un servidor de acceso p\'ublico.
 %
 Adem\'as, durante el proceso de descarga, cada jugador fue identificado por un n\'umero de identificaci\'on interno, anonimizando los datos.
 %
 En consecuencia, no fue necesario el consentimiento individual debido a esta doble capa de anonimato y la naturaleza abierta del sitio web.
 %
-Adicionalmente, nos comunicamos con los propietarios de \emph{Conquer Club} para obtener la autorizaci\'on para realizar este proceso, cumpliendo as\'i con los t\'erminos de uso de este sitio.
+Adicionalmente, nos comunicamos con los propietarios de \emph{Conquer Club} para obtener la autorizaci\'on para realizar esta investigaci\'on, cumpliendo as\'i con los t\'erminos de uso de este sitio.
 
 % Parrafo
 
@@ -2732,6 +2730,10 @@ La aplicaci\'on consta de un \emph{script} \texttt{Python} que se conecta al ser
 %
 Los datos entre $2006/01/03$ y $2009/07/12$ se almacenan en una base de datos \texttt{PostgreSQL}.
 Hay cerca de $4.4$ millones de partidas jugadas por casi $270$ mil usuarios diferentes.
+%
+Debido a una doble capa de anonimato y la naturaleza abierta del sitio web pudimos publicar la base de datos en Dryad~\cite{landfried2019-conquerClub}, una plataforma para la reutilizaci\'on de datos de investigaci\'on.
+
+
 
 Para calcular la habilidad, usamos el paquete \texttt{TrueSkill 0.4.4} de \texttt{Python}.
 %
@@ -2742,11 +2744,11 @@ El valor de probabilidad de empate se estableci\'o en 0 ya que no hay posibilida
 
 \paragraph{Gameplay}\label{sub:gameplay}
 
-
-
+Los juegos de mesa tipo RISK o TEG contienen mapas con regiones.
+%
 Al comienzo de cada partida, las regiones del mapa se distribuyen aleatoriamente entre los jugadores a las que le asignan una cierta cantidad de tropas.
 %
-Cada turno consiste en i) desplegar nuevas tropas, ii) asaltar las regiones vecinas del oponente y iii) reforzar las regiones.
+Cada turno consiste en i) desplegar nuevas tropas, ii) conquistar las regiones vecinas del oponente y iii) reforzar las regiones.
 %
 El entorno del juego tiene cuatro elementos relevantes: el tablero actual, un panel con el estado del juego, un chat p\'ublico y un registro de movimientos.
 
@@ -2824,7 +2826,7 @@ Finalmente, el jugador $c$ termina el turno y el jugador $b$ comienza con su ron
 
 La plataforma tiene una secci\'on ``Unirse a un juego'', donde todos los jugadores pueden ver todos los juegos abiertos.
 %
-Cuando un jugador crea un juego, elige: a) opciones de juego, b) tipo de juego (todos contra todos o juego en equipo), c) el n\'umero de participantes, y d) el m\'etodo de participaci\'on, p\'ublico, p\'ublico con espacios reservados, y privado
+Cuando un usuario crea una nueva partida debe elegir: a) opciones de juego, b) tipo de juego (todos contra todos o juego en equipo), c) el n\'umero de participantes, y d) el m\'etodo de participaci\'on, p\'ublico, p\'ublico con espacios reservados, y privado.
 %
 Los juegos p\'ublicos son aquellos a los que cualquiera puede unirse.
 %
@@ -3177,22 +3179,16 @@ En este art\'iculo exploramos c\'omo la curva de aprendizaje esperada por la exp
 Para ello, analizamos el juego en l\'inea \emph{Conquer Club} que, a diferencia del ajedrez, se puede jugar en equipos.
 %
 Nuestro estudio se basa en datos masivos, que permitieron realizar un estudio longitudinal con una precisi\'on muy alta para detectar cambios sutiles.
+%
+All\'i verificamos la ley de la pr\'actica en nuestro conjunto de datos, que llamamos la ``curva de aprendizaje esperada por la experiencia'', la cual tomamos como \emph{baseline} para cuantificamos el efecto de los diferentes comportamientos de agrupamiento sobre la adquisici\'on de habilidades.
 
-%
-
-Primero, verificamos la ley de la pr\'actica en nuestro conjunto de datos.
-%
-Encontramos la forma emp\'irica de lo que llamamos la ``curva de aprendizaje esperada por la experiencia''.
-%
-Tom\'andola como \emph{baseline}, cuantificamos en qu\'e medida los diferentes comportamientos de agrupamiento alteran la adquisici\'on de habilidades esperadas por la experiencia.
-
-%
+% Parrafo
 
 En primer lugar, encontramos que los comportamientos orientados a equipo est\'an relacionados con una mejora significativa del nivel de habilidad a largo plazo a pesar de tener una tasa de crecimiento inicial m\'as lenta.
 %
 Este resultado se aliena con las expectativas previas.
 %
-El \emph{aprendizaje social} es factor fundamental en los seres humanos para la adquisici\'on de habilidades.
+El \emph{aprendizaje social} es un factor fundamental en los seres humanos para la adquisici\'on de habilidades.
 %
 Jugar en equipo ofrece un espacio privilegiado para la socializaci\'on y la transmisi\'on de conocimientos.
 %
@@ -3204,7 +3200,7 @@ Coordinar correctamente las actividades con otros compa\~neros de equipo requier
 
 En segundo lugar, encontramos que la estabilidad en la formaci\'on de equipos se asocia con una mejora de las habilidades a corto plazo.
 %
-Este resultado se alinea parcialmente con las expectativas previas.
+Este resultado se alinea con algunas expectativas previas.
 %
 Si el aprendizaje asociado a la coordinaci\'on de equipo debe renovarse cada vez que se cambia de compa\~neros de equipo, entonces es esperable que la estabilidad de compa\~neros de equipo amortigue ese impacto negativo, acelerando los efectos positivos relacionados con el aprendizaje social.
 
@@ -3212,27 +3208,27 @@ Si el aprendizaje asociado a la coordinaci\'on de equipo debe renovarse cada vez
 
 En tercer lugar, hemos visto que la combinaci\'on de estos dos efectos, definido como \emph{faithfulness}, intensifica ambas observaciones previas.
 %
-A medida que las personas juegan m\'as partidas en equipo el aprendizaje a largo plazo es mayor.
+Es decir, a medida que las personas juegan m\'as partidas en equipo el aprendizaje a largo plazo es mayor.
 %
 Y si adem\'as de este efecto positivo, las personas forman equipo lealmente, se observa una impulso temprano de las habilidades.
 %
-El efecto positivo de estos factores de aprendizaje social solo se adquirir\'ia a trav\'es de la experiencia individual luego de miles de partidas de pr\'actica.
+El efecto positivo producto de la conjunci\'on de estos factores es equivalente al aprendizaje que adquiere luego de mies de partidas de pr\'actica de experiencia individual.
 
 % Parrafo
 
-Uno aspecto nos result\'o sorprendente respecto de nuestras expectativas previas.
+Un aspecto nos result\'o sorprendente respecto de nuestras expectativas previas.
 %
-Antes de comenzar este trabajo esper\'abamos encontrar alg\'un efecto positivo vinculado al cambiar de equipo.
+Antes de comenzar este trabajo esper\'abamos encontrar alg\'un efecto positivo vinculado a cambiar de equipo.
 %
-Esta idea estaba basada en una hip\'otesis ingenua, que supon\'ia que el acceso a diferentes grupos ofrecer\'ia un mayor repertorio cultural del cual aprender.
+Esta idea estaba basada en una hip\'otesis ingenua, que supon\'ia que el acceso a diferentes grupos ofrecer\'ia un mayor repertorio cultural que ser\'ia positivo para el aprendizaje .
 %
 Sin embargo, estudios recientes han cuestionado la hip\'otesis de que todo lo que maximice el flujo de informaci\'on cultural deber\'ia repercutir positivamente en el aprendizaje.
 %
-En particular, se afirma que un exceso en la interconexi\'on reduce las posibilidades de innovaci\'on~\cite{Derex2020}.
-%
-De hecho la plataforma es en s\'i misma un facilitador de contacto entre personas.
+En particular, el exceso en la interconexi\'on reducir\'ia las posibilidades de innovaci\'on~\cite{Derex2020}.
 %
 Por el contrario, la formaci\'on de subgrupos beneficiar\'ia el desarrollo de innovaciones~\cite{Derex2020}.
+%
+%La plataforma de video juegos ya es en s\'i misma un facilitador de contacto entre personas, por lo que cambiar de equipo regularmente podr\'ia no
 %
 En este sentido, nuestro resultado se alinea con los trabajos te\'oricos y experimentales recientes.
 
@@ -5702,9 +5698,9 @@ Estos modelos comparten un problema com\'un: ellos propagan la informaci\'on his
 Esta estrategia, adem\'as de producir malas estimaciones iniciales de habilidad, impide comparar estimaciones que est\'an alejadas en el tiempo y el espacio.
 % Parrafo
 
-La aplicaci\'on estricta de las reglas de la probabilidad nos obliga a realizar la inferencia usando toda la informaci\'on disponible, incluso la que se encuentra en el el futuro, algo que intuitivamente hacemos cuando concluimos que los deportistas famosos tambi\'en eran h\'abiles tambi\'en un tiempo antes de hacerse famosos.
+La aplicaci\'on estricta de las reglas de la probabilidad nos obliga a realizar la inferencia usando toda la informaci\'on disponible, incluso la que se encuentra en el el futuro, algo que intuitivamente hacemos cuando concluimos que los deportistas famosos tambi\'en eran h\'abiles un tiempo antes de hacerse famosos.
 %
-Por este motivo el modelo TTT, propagando toda la informaci\'on hist\'orica a trav\'es de una \'unica red causal, proporciona estimaciones con baja incertidumbre en todo la serie temporal, permitiendo estimaciones iniciales de habilidad fiables y asegurando su comparaci\'on hist\'orica.
+Por este motivo el modelo TTT, al propagar toda la informaci\'on hist\'orica a trav\'es de una \'unica red causal, proporciona estimaciones con baja incertidumbre en todo la serie temporal, permitiendo estimaciones iniciales de habilidad fiables y asegurando su comparaci\'on hist\'orica.
 %
 De esta forma, sus predicciones a priori son varios \'ordenes de magnitud m\'as precisas que las obtenidas con los modelos mencionados (Tabla~\ref{Tab:Models}).
 %
@@ -5718,16 +5714,17 @@ Gracias a los m\'etodos de aproximaci\'on anal\'itica y a los algoritmos de pasa
 %
 Hemos mostrado que este procedimiento requiere pocas iteraciones para converger incluso en bases de datos grandes como la de la Asociaci\'on de Tennis Profesional.
 %
-En la siguiente secci\'on, detalles computacionales, estudiamos los tiempos de ejecuci\'on de los tres paquetes que presentamos en este trabajo.
+En la secci\'on \emph{Detalles computacionales} estudiamos los tiempos de ejecuci\'on de los tres paquetes que presentamos en este trabajo.
 %
 Nuestro paquete de \texttt{Python} resuelve los eventos individuales diez veces m\'as r\'apido que el paquete original \texttt{trueskill 0.4.5}~\cite{Lee2012}.
 %
 A su vez, nuestro paquete de \texttt{Julia} resuelve las secuencias de eventos diez veces m\'as r\'apido  que nuestro paquete de \texttt{Python}.
 %
 Por el contrario, nuestro paquete de \texttt{R} es varias veces m\'as lento que que el paquete b\'asico \texttt{trueskill 0.4.5}.
+
 % Parrafo
 
-Esperamos que esta primera implementaci\'on abierta en \texttt{Julia}, \texttt{Python} y \texttt{R}, d\'e uno de los modelos de estimaci\'on de habilidad m\'as importantes, acompa\~nada por una explicaci\'on cient\'ifica en profundidad, ofrezca las condiciones para generar una proceso colectivo continuo de mejora.
+Esperamos que esta primera implementaci\'on abierta en \texttt{Julia}, \texttt{Python} y \texttt{R}, de uno de los modelos de estimaci\'on de habilidad m\'as importantes, al estar acompa\~nada adem\'as por una explicaci\'on cient\'ifica en profundidad, ofrezca las condiciones para generar una proceso colectivo continuo de mejora.
 %
 Por ejemplo, la implementaci\'on actual no cuenta todav\'ia con la extensi\'on realizada por Guo et al.~\cite{Guo2012}, en el que los datos observables ya no son los valores ordinales de los resultados (perder/empatar/ganar), sino la cantidad de puntos que obtuvo cada equipo.
 %
@@ -5766,9 +5763,9 @@ La raz\'on por la que resulta dif\'icil para los estudios antropol\'ogicos evalu
 %
 En este cap\'itulo estudiamos la estructura de interacciones y la evoluci\'on de las habilidades de todos los individuos de una de las comunidades virtuales de Go m\'as importantes, a lo largo de ocho a\~nos.
 %
-Dado que la tasa de aprendizaje depende de la etapa en la que se encuentran los individuos al inicio del proceso, usamos el modelo de estimaci\'on de habilidad del estado del arte para obtener estimaciones precisas a lo largo de toda la serie temporal, permitiendo comparar por separado a individuos novatos, intermedios y expertos.
+Dado que la tasa de aprendizaje depende de la etapa en la que se encuentran los individuos al inicio del proceso, usamos el modelo de habilidad del estado del arte para obtener estimaciones precisas a lo largo de toda la serie temporal, permitiendo comparar por separado a individuos novatos, intermedios y expertos.
 %
-Analizando la posici\'on topol\'ogica que ocupan los individuos en la red a lo largo del tiempo mediante t\'ecnicas cl\'asicas de grafos din\'amicos, descubrimos que los valores moderados de centralidad tienen un efecto positivo de segundo orden cuando los individuos est\'an en la mitad del proceso de aprendizaje.
+Analizando la posici\'on topol\'ogica que ocupan los individuos en la red de interacciones a lo largo del tiempo mediante t\'ecnicas cl\'asicas de grafos din\'amicos, descubrimos que los valores moderados de centralidad tienen un efecto positivo solo cuando los individuos est\'an en la mitad del proceso de aprendizaje.
 %
 Por el contrario, los jugadores novatos aprenden principalmente por experiencia individual, y los jugadores expertos no tienen nada m\'as que aprender.
 %
@@ -5780,7 +5777,7 @@ La integraci\'on de los procesos biol\'ogicos, cognitivos y sociales que permite
 %
 El surgimiento de la comprensi\'on mutua produjo cambios radicales para nuestra especie.
 %
-Esas cadenas de transmisi\'on de informaci\'on producen artefactos m\'as complejos que cualquier individuo act\'uan solo~\cite{Derex2015}.
+Esas cadenas de transmisi\'on de informaci\'on producen innovaciones m\'as complejos que de lo que cualquier persona podr\'ia crear individualmente~\cite{Derex2015}.
 %
 Emergi\'o as\'i un nuevo sistema de informaci\'on, aut\'onomo del sistema de informaci\'on biol\'ogico, lo que nos permiti\'o ocupar todos los nichos ecol\'ogicos de la tierra como ning\'un otro vertebrado terrestre hab\'ia logrado antes~\cite{Boyd2011}.
 
@@ -6190,9 +6187,9 @@ Estas dos soluciones est\'an basadas en caminos m\'inimos.
 
 \section{An\'alisis}
 
-En esta secci\'on exploramos el efecto causal que la posici\'on topol\'ogica de los individuos en la red partidas tiene sobre sus procesos de aprendizaje individual.
+En esta secci\'on exploramos el efecto causal que la posici\'on topol\'ogica de los individuos en la red de partidas tiene sobre sus procesos de aprendizaje individual.
 %
-En la subsecci\'on~\ref{sec:initial_ability} estimamos la habilidad inicial de los individuos a trav\'es del modelo estado-del-arte de la industria y la academia (TrueSkill Through Time), que hemos publicado por primera vez desde su creaci\'on en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT}.
+En la subsecci\'on~\ref{sec:initial_ability} estimamos la habilidad inicial de los individuos a trav\'es del modelo estado del arte de la industria y la academia (TrueSkill Through Time), que hemos publicado por primera vez desde su creaci\'on en \texttt{Julia}, \texttt{Python} y \texttt{R}~\cite{Landfried2021-TTT}.
 %
 En la subsecci\'on~\ref{sec:results_centralities} medimos la posici\'on topol\'ogica de los individuos en la red de intercambios de informaci\'on (indicadores de popularidad, cercan\'ia e intermediaci\'on) utilizando la metodolog\'ia cl\'asica de an\'alisis de grafos din\'amicos~\cite{Kossinets2006, Mcgregor2014}.
 %
@@ -7962,7 +7959,7 @@ Adem\'as, desarrollamos una script \texttt{Python} que ingresaba a cada una de l
 %
 Obtuvimos la autorizaci\'on de los propietarios de Conquer Club para descargar cerca de $4,4$ millones de partidas jugadas por casi $270$ mil usuarios diferentes entre $2006/01/03$ y $2009/07/12$.
 %
-Debido a una doble capa de anonimato y la naturaleza abierta del sitio web pudimos publicar la base de datos en Dyard~\cite{landfried2019-conquerClub}, una plataforma para la publicaci\'on y reutilizaci\'on de datos de investigaci\'on.
+Debido a una doble capa de anonimato y la naturaleza abierta del sitio web pudimos publicar la base de datos en Dryad~\cite{landfried2019-conquerClub}, una plataforma para la reutilizaci\'on de datos de investigaci\'on.
 
 % Parrafo
 
